@@ -1,0 +1,73 @@
+- action:
+  - alias: Bright in Lounge
+    data:
+      group_name: Lounge
+      scene_name: Bright
+    service: light.hue_activate_scene
+  alias: Lights on at sunset
+  condition: []
+  id: '1506795142546'
+  trigger:
+  - event: sunset
+    platform: sun
+- action:
+  - alias: turn switch on
+    data:
+      entity_id: switch.my_smart_plug
+    service: switch.turn_on
+  alias: Lights Sync
+  condition: []
+  id: '1508056350422'
+  trigger:
+  - entity_id: light.twigs
+    from: 'off'
+    platform: state
+    to: 'on'
+- alias: BBC One
+  trigger:
+  - platform: state
+    entity_id: input_select.channel
+    to: BBC One
+  action:
+    service: shell_command.bbcone
+- alias: BBC Two
+  trigger:
+  - platform: state
+    entity_id: input_select.channel
+    to: BBC Two
+  action:
+    service: shell_command.bbctwo
+- alias: ITV
+  trigger:
+  - platform: state
+    entity_id: input_select.channel
+    to: ITV
+  action:
+    service: shell_command.itv
+- alias: Channel 4
+  trigger:
+  - platform: state
+    entity_id: input_select.channel
+    to: Channel 4
+  action:
+    service: shell_command.channel4
+- alias: Sky 1
+  trigger:
+  - platform: state
+    entity_id: input_select.channel
+    to: Sky 1
+  action:
+    service: shell_command.sky1
+- action:
+  - data:
+      entity_id: group.all_lights
+    service: light.turn_off
+  - data:
+      entity_id: switch.my_smart_plug
+    service: switch.turn_off
+  alias: Lights off at night
+  condition: []
+  id: '1509874606449'
+  trigger:
+  - at: 00:30:00
+    platform: time

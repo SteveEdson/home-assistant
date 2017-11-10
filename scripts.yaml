@@ -1,0 +1,53 @@
+good_night:
+    alias: Good night
+    sequence:
+      # Turn off all lights
+      - service: light.turn_off
+        data:
+          entity_id: group.all_lights
+      - service: switch.turn_off
+        data:
+          entity_id: switch.my_smart_plug
+      - service: media_player.turn_off 
+        data: 
+          entity_id: media_player.samsung_tv_remote
+      - service: light.turn_on
+        data:
+          entity_id: group.bedroom_lights
+          brightness: 60
+      - delay:
+          minutes: 3
+      - service: light.turn_off
+        data:
+          entity_id: group.bedroom_lights 
+          
+deep_blue:
+    alias: Deep Blue
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+            group_name: "Lounge"
+            scene_name: "Deep Sea"
+        
+optical1:
+    alias: Optical Channel 1
+    sequence:
+        - service: broadlink.send_packet_192_168_1_168
+          data:
+            packet: 
+                - 'JgBQAAABJ5USExISFBIROBQREhQTERMSEjgUNxI3ExMSNxI4FDYTNxM3FBESExITFDYTEhQRExITEhM3EzcSOBMSEjgTNxM3EgAFIQABKEsRAA0FAAAAAAAAAAA'
+optical2:
+    alias: Optical Channel 2
+    sequence:
+    - service: broadlink.send_packet_192_168_1_168
+      data:
+        packet: 
+            - 'JgBQAAABKpETExITEhIVNhISFRESExQQFTYUNRM3FRASOBU2EzYSOBU1FBEVEBI4FTUUERQREhMSExM3FDYSExITEzcUNhI4EgAFIQABKkgSAA0FAAAAAAAAAAA'
+
+power_toggle:
+    alias: Surround Sound Power Toggle
+    sequence:
+        - service: broadlink.send_packet_192_168_1_168
+          data:
+            packet: 
+                - 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA'

@@ -1,0 +1,143 @@
+lights:
+  view: yes
+  icon: mdi:ceiling-light
+  name: Lights
+  entities:
+    - group.lounge_lights
+    - group.office_lights
+    - group.kitchen_lights
+    - group.bedroom_lights
+
+kitchen:
+  view: yes
+  name: Kitchen
+  entities:
+    - media_player.kitchen_home
+    - group.kitchen_lights
+    
+lounge:
+  view: yes
+  name: Lounge
+  entities:
+    - media_player.lounge_speakers
+    - media_player.lounge_tv
+    - group.lounge_lights
+    - switch.my_smart_plug
+    - camera.mjpeg_camera
+    - sensor.living_room_nest_protect_battery_health
+    - sensor.living_room_nest_protect_co_status
+    - binary_sensor.living_room_nest_protect_online
+    - sensor.living_room_nest_protect_smoke_status
+    - group.lounge_protect
+    
+bedroom:
+  view: yes
+  name: Bedroom
+  entities:
+    - group.bedroom_lights
+    - media_player.bedroom_tv
+    - media_player.bedroom_speaker
+    
+office:
+  view: yes
+  name: Office
+  entities:
+    - light.office
+    - light.office_2
+    - switch.aegis
+    - media_player.office_speakers
+    - group.network_stats
+    
+Devices:
+  - device_tracker.android900796f346bd222d
+  - device_tracker.android5eda54b5cc642e06
+  - device_tracker.stevesmbp
+  - device_tracker.desktopkvl6s86
+  - switch.aegis
+  
+Lounge Protect:
+  - sensor.living_room_nest_protect_battery_health
+  - sensor.living_room_nest_protect_co_status
+  - binary_sensor.living_room_nest_protect_online
+  - sensor.living_room_nest_protect_smoke_status
+
+Lounge Lights:
+  - light.left_lamp
+  - light.twigs
+  - light.corner_lamp
+  - switch.my_smart_plug
+  
+Office Lights:
+  - light.office
+
+Bedroom Lights:
+  - light.bedroom_light
+  
+Kitchen Lights:
+  - light.kitchen_light_1
+  - light.color_temperature_light_1
+ 
+Television:
+  - input_select.channel
+  - script.playpause
+  - script.record
+  
+Upstairs Protect:
+  - sensor.upstairs_nest_protect_battery_health
+  - sensor.upstairs_nest_protect_co_status
+  - binary_sensor.upstairs_nest_protect_online
+  - sensor.upstairs_nest_protect_smoke_status
+  
+Health:
+  - sensor.weight
+  - sensor.charge_2_battery
+  - sensor.resting_heart_rate
+  - sensor.steps
+  
+Uber:
+  - sensor.uberassist_price
+  - sensor.uberassist_time
+  - sensor.uberexec_price
+  - sensor.uberexec_time
+  - sensor.uberx_price
+  - sensor.uberx_time
+  - sensor.uberxl_price
+  - sensor.uberxl_time
+
+Steam:
+  - sensor.steam_76561198059721761
+
+Lounge Media:
+  - media_player.samsung_tv_remote
+  - media_player.lounge_tv
+  - media_player.lounge
+  
+Bedroom Media:
+  - media_player.bedroom_tv
+  - media_player.bedroom_speaker
+  
+Network Stats:
+  - sensor.speedtest_download
+  - sensor.speedtest_ping
+  - sensor.speedtest_upload
+  - sensor.pihole_ads_blocked_today
+  - sensor.pihole_ads_percentage_blocked_today
+  - sensor.pihole_dns_queries_cached
+  - sensor.pihole_dns_queries_forwarded
+  - sensor.pihole_dns_queries_today
+  - sensor.pihole_dns_unique_clients
+  - sensor.pihole_dns_unique_domains
+  - sensor.pihole_domains_blocked
+  - binary_sensor.do1
+  
+Weather:
+  - sun.sun
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_daily_summary
+  - sensor.dark_sky_hourly_summary
+  - sensor.dark_sky_icon
+  - sensor.dark_sky_minutely_summary
+  - sensor.dark_sky_nearest_storm_distance
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_temperature
+  

@@ -1,0 +1,15 @@
+secrets.*
+fitbit.conf
+home-assistant.log
+home-assistant_v2.db
+html5_push_registrations.conf
+*.pyc
+nest.conf
+phue.conf
+plex.conf
+.uuid
+.HA_VERSION
+*.mp3
+*.bak
+config.tar.gz
+known_devices.conf

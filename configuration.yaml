@@ -1,0 +1,193 @@
+hassio:
+
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret my_latitude
+  longitude: !secret my_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 117
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+input_select: !include inputs/input_select.yaml
+# input_slider: !include inputs/input_slider.yaml
+
+shell_command: !include shell_commands.yaml
+
+
+image_processing:
+ - platform: openalpr_cloud
+   api_key: !secret openalr_api_key
+   region: eu
+   source:
+    - entity_id: camera.mjpeg_camera
+
+#device_sun_light_trigger:
+#  light_group: group.lounge
+#  light_profile: Bright
+#  device_group: group.devices
+#  disable_turn_off: 1
+
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+map:
+
+# Track the sun
+sun:
+
+binary_sensor:
+  - platform: digital_ocean
+    droplets:
+      - 'do-1'
+
+# Weather Prediction
+sensor:
+  - platform: steam_online
+    api_key: !secret steam_api_key
+    accounts:
+      - !secret steam_account_id
+  - platform: fitbit
+    monitored_resources:
+      - "body/weight"
+      - "activities/steps"
+      - "activities/heart"
+      - "devices/battery"
+  - platform: pi_hole
+    host: 192.168.1.193
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+    minute:
+      - 0
+      - 30
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - nearest_storm_distance
+      - apparent_temperature
+      - minutely_summary
+
+# Text to speech
+tts:
+  platform: google
+
+config:
+
+camera:
+  platform: mjpeg
+  mjpeg_url: http://192.168.1.5/stream/video.mjpeg
+  
+mqtt:
+  #broker: 172.17.0.1
+  #broker: 127.0.0.1
+  #port: 1883
+  #client_id: home-assistant
+  #username: pi
+  #password: raspberry
+
+light:
+  - platform: hue
+    host: 192.168.1.16
+    allow_hue_groups: false
+  - platform: blinkt
+
+#media_player:
+#  - platform: plex
+
+media_player:
+  - platform: samsungtv
+    host: 192.168.1.115
+    mac: !secret samsung_tv_mac
+
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.1.1
+    username: !secret router_username
+    password: !secret router_password
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: no
+
+switch:
+  - platform: tplink
+    host: 192.168.1.185
+    
+  - platform: wake_on_lan
+    mac_address: !secret pc_mac
+    name: Aegis
+    host: 192.168.1.11
+    
+  - platform: broadlink
+    host: 192.168.1.168
+    mac: !secret broadlink_mac
+    friendly_name: 'Broadlink IR'
+    switches:
+      surround_sound:
+        friendly_name: Surround Sound
+        command_on: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA'
+        command_off: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA'
+
+automation: !include automations.yaml
+
+notify:
+  - name: Home Assistant
+    platform: pushover
+    api_key: !secret pushover_api_key
+    user_key: !secret pushover_user_key
+  - name: HTML5
+    platform: html5
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+ifttt:
+  key: !secret ifttt_key
+
+script: !include scripts.yaml
+  
+digital_ocean:
+  access_token: !secret digital_ocean_key
+
+logger:
+  default: debug
+
+group: !include groups.yaml
+  

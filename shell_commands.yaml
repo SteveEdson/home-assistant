@@ -1,0 +1,10 @@
+### SHELL COMMANDS ###
+
+# Sky #
+record: sky-remote-cli 192.168.1.123 record
+playpause: sky-remote-cli 192.168.1.123 pause
+bbcone: sky-remote-cli 192.168.1.123 1 0 1
+bbctwo: sky-remote-cli 192.168.1.123 1 0 2
+itv: sky-remote-cli 192.168.1.123 1 0 3
+channel4: sky-remote-cli 192.168.1.123 1 0 4
+sky1: sky-remote-cli 192.168.1.123 1 0 6
