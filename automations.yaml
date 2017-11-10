@@ -1,15 +1,18 @@
 - action:
   - alias: Bright in Lounge
     data:
-      group_name: Lounge
-      scene_name: Bright
-    service: light.hue_activate_scene
+      transition: 900 # 15 minutes
+      brightness_pct: 100
+      kelvin: 2700 
+      entity_id: group.lounge_lights
+    service: light.turn_on
   alias: Lights on at sunset
   condition: []
   id: '1506795142546'
   trigger:
   - event: sunset
     platform: sun
+    offset: "-00:25:00"
 
 - action:
   - alias: turn switch on
