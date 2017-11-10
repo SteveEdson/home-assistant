@@ -18,6 +18,9 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  themes:
+    purple:
+      primary-color: "#5C33AE"
 
 input_select: !include inputs/input_select.yaml
 # input_slider: !include inputs/input_slider.yaml
