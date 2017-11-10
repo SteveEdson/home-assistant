@@ -109,6 +109,12 @@ Uber:
 Steam:
   - sensor.steam_76561198059721761
 
+Kitchen Media:
+  - media_player.kitchen_home
+
+Office Media:
+  - media_player.office_speakers
+
 Lounge Media:
   - media_player.samsung_tv_remote
   - media_player.lounge_tv
