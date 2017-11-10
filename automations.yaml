@@ -71,3 +71,21 @@
   trigger:
   - at: 00:30:00
     platform: time
+- action:
+  - data:
+      name: darkorange
+    service: frontend.set_theme
+  alias: Dark theme at night
+  condition: []
+  trigger:
+  - at: 23:00:00
+    platform: time
+- action:
+  - data:
+      name: default
+    service: frontend.set_theme
+  alias: Light theme in day
+  condition: []
+  trigger:
+  - at: 07:30:00
+    platform: time
