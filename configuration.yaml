@@ -159,6 +159,7 @@ switch:
     host: 192.168.1.168
     mac: !secret broadlink_mac
     friendly_name: 'Broadlink IR'
+    timeout: 15
     type: 'rm_mini'
     switches:
       surround_sound:
