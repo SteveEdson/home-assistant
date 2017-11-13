@@ -106,7 +106,7 @@
       to: 'playing'
     - platform: state
       entity_id: media_player.entire_house
-        to: 'playing'
+      to: 'playing'
   condition: []
   action:
     - service: script.optical2
