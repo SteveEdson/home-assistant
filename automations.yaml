@@ -98,7 +98,6 @@
     
 
 - alias: Dark theme at night
-  hidden: true
   action:
   - data:
       name: darkorange
@@ -109,7 +108,6 @@
     at: '23:00:00'
 
 - alias: Light theme in day
-  hidden: true
   action:
   - data:
       name: default
