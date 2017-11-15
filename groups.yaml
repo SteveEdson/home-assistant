@@ -156,3 +156,16 @@ Weather:
   - sensor.dark_sky_summary
   - sensor.dark_sky_temperature
   
+Hive:
+  - climate.hive_heating
+  - climate.hive_hotwater
+  - sensor.hive_current_temperature
+  - sensor.hive_heating_boost
+  - sensor.hive_heating_mode
+  - sensor.hive_heating_state
+  - sensor.hive_hot_water_boost
+  - sensor.hive_hot_water_mode
+  - sensor.hive_hot_water_state
+  - sensor.hive_target_temperature
+  - sensor.hive_thermostat_battery_level
+
