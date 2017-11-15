@@ -1,5 +1,5 @@
 script.good_night:
-  icon: mdi:good_night
+  icon: mdi:sleep
 
 script.optical1:
   icon: mdi:television
