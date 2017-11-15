@@ -1,0 +1,11 @@
+script.delay_heating:
+  icon: mdi:good_night
+
+script.optical1:
+  icon: mdi:television
+
+script.optical2:
+  icon: mdi:google-chrome
+  
+script.power_toggle:
+  icon: mdi:speaker
