@@ -30,3 +30,15 @@ automation.chromecast_input_when_playing:
   
 automation.tv_audio_input_when_not_playing:
   icon: mdi:music-note-off
+
+automation.automation.light_theme_in_day:
+  icon: mdi:weather-sunny
+  
+automation.dark_theme_at_night:
+  icon: mdi:automation.dark_theme_at_night
+  
+automation.automation.lights_sync_off:
+  hidden: true
+  
+automation.automation.lights_sync_on:
+  hidden: true
