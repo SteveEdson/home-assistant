@@ -35,10 +35,16 @@ automation.automation.light_theme_in_day:
   icon: mdi:weather-sunny
   
 automation.dark_theme_at_night:
-  icon: mdi:automation.dark_theme_at_night
+  icon: mdi:theme-light-dark
   
 automation.automation.lights_sync_off:
   hidden: true
   
 automation.automation.lights_sync_on:
   hidden: true
+
+automation.lights_off_at_night:
+  icon: mdi:weather-night
+  
+automation.lights_on_at_sunset:
+  icon: mdi:weather-sunset-down
