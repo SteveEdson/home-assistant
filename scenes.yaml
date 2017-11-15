@@ -27,4 +27,7 @@
         - 255
         - 0
         - 0
+        
+    switch.my_smart_plug:
+      state: on
       
