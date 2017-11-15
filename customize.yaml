@@ -1,4 +1,4 @@
-script.delay_heating:
+script.good_night:
   icon: mdi:good_night
 
 script.optical1:
@@ -9,3 +9,18 @@ script.optical2:
   
 script.power_toggle:
   icon: mdi:speaker
+  
+automation.bbc_one:
+  icon: mdi:numeric-1-box
+
+automation.bbc_two:
+  icon: mdi:numeric-2-box
+  
+automation.itv:
+  icon: mdi:numeric-3-box
+
+automation.channel_4:
+  icon: mdi:numeric-4-box
+  
+automation.sky_1:
+  icon: mdi:satellite-variant
