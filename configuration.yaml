@@ -192,4 +192,5 @@ logger:
   default: info
 
 group: !include groups.yaml
-  
+
+scene: !include scenes.yaml
