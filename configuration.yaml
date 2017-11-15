@@ -38,6 +38,7 @@ shell_command: !include shell_commands.yaml
 #  device_group: group.devices
 #  disable_turn_off: 1
 
+customize: !include customize.yaml
 
 http:
   # Uncomment this to add a password (recommended!)
