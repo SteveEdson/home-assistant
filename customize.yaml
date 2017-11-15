@@ -48,3 +48,6 @@ automation.lights_off_at_night:
   
 automation.lights_on_at_sunset:
   icon: mdi:weather-sunset-down
+  
+scene.deep_blue:
+  icon: mdi:anchor
