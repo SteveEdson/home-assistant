@@ -20,14 +20,6 @@ good_night:
       - service: light.turn_off
         data:
           entity_id: group.bedroom_lights 
-          
-deep_blue:
-    alias: Deep Blue
-    sequence:
-      - service: light.hue_activate_scene
-        data:
-            group_name: "Lounge"
-            scene_name: "Deep Sea"
         
 optical1:
     alias: Optical Channel 1
