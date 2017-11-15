@@ -12,6 +12,7 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/London
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -37,8 +38,6 @@ shell_command: !include shell_commands.yaml
 #  light_profile: Bright
 #  device_group: group.devices
 #  disable_turn_off: 1
-
-customize: !include customize.yaml
 
 http:
   # Uncomment this to add a password (recommended!)
