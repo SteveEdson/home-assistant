@@ -24,3 +24,9 @@ automation.channel_4:
   
 automation.sky_1:
   icon: mdi:satellite-variant
+
+automation.chromecast_input_when_playing:
+  icon: mdi:music-note
+  
+automation.tv_audio_input_when_not_playing:
+  icon: mdi:music-note-off
