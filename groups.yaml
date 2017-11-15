@@ -124,6 +124,13 @@ Bedroom Media:
   - media_player.bedroom_tv
   - media_player.bedroom_speaker
   
+TV Channels:
+  - automation.bbc_one
+  - automation.bbc_two
+  - automation.itv
+  - automation.channel_4
+  - automation.sky_1
+  
 Network Stats:
   - sensor.speedtest_download
   - sensor.speedtest_ping
