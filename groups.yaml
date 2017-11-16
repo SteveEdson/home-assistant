@@ -13,14 +13,10 @@ media_players:
   icon: mdi:music-box
   name: Media Players
   entities:
-    - media_player.kitchen_home
-    - media_player.lounge_speakers
-    - media_player.lounge_tv
-    - media_player.bedroom_tv
-    - media_player.bedroom_speaker
-    - media_player.office_speakers
-    - media_player.samsung_tv_remote
-    - media_player.lounge
+    - group.kitchen_media
+    - group.lounge_media
+    - group.bedroom_media
+    - group.office_media
 
 kitchen:
   view: yes
