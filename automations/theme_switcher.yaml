@@ -1,7 +1,7 @@
 - alias: Dark theme at night
   action:
   - data:
-      name: darkorange
+      name: PmxMononight
     service: frontend.set_theme
   condition: []
   trigger:
