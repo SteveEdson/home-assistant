@@ -54,3 +54,6 @@ scene.deep_blue:
 
 group.tv_channels:
   hidden: true
+
+automation.notification_action__turn_heating_on:
+  hidden: true
