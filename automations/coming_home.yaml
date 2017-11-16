@@ -19,17 +19,7 @@
         entity_id: group.people
         state: not_home
   action:
-    service: notify.html5
-    data:
-      title: "Turn the heating on?"
-      message: >
-        Turn the heating on? The house is currently {{ states('sensor.hive_current_temperature') }}°c
-      data:
-        actions:
-          - action: html_turn_heating_on
-            title: "Set to 19.5°c"
-          - title: "No"
-        tag: "coming-home-notification"
+    service: script.send_heating_notification
 
 - id: html_turn_heating_on
   alias: Notification action - Turn heating on

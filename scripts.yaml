@@ -43,3 +43,18 @@ power_toggle:
           data:
             packet: 
                 - 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
+
+send_heating_notification:
+    alias: Send Heating Notification
+    sequence:
+      - service: notify.html5
+        data:
+          title: "Turn the heating on?"
+          message: >
+            Turn the heating on? The house is currently {{ states('sensor.hive_current_temperature') }}°c
+          data:
+            actions:
+              - action: html_turn_heating_on
+                title: "Set to 19.5°c"
+              - title: "No"
+            tag: "coming-home-notification"
