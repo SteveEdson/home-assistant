@@ -14,6 +14,14 @@ homeassistant:
   time_zone: Europe/London
   customize: !include customize.yaml
 
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
 # Show links to resources in log and frontend
 #introduction:
 
@@ -32,20 +40,6 @@ shell_command: !include shell_commands.yaml
 #    region: eu
 #    source:
 #     - entity_id: camera.mjpeg_camera
-
-#device_sun_light_trigger:
-#  light_group: group.lounge
-#  light_profile: Bright
-#  device_group: group.devices
-#  disable_turn_off: 1
-
-http:
-  # Uncomment this to add a password (recommended!)
-  api_password: !secret api_password
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
 
 # Checks for available updates
 updater:
@@ -73,34 +67,7 @@ binary_sensor:
       - 'do-1'
 
 # Weather Prediction
-sensor:
-  - platform: steam_online
-    api_key: !secret steam_api_key
-    accounts:
-      - !secret steam_account_id
-  - platform: fitbit
-    monitored_resources:
-      - "body/weight"
-      - "activities/steps"
-      - "activities/heart"
-      - "devices/battery"
-  - platform: pi_hole
-    host: 192.168.1.193
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-    minute:
-      - 0
-      - 30
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    monitored_conditions:
-      - summary
-      - nearest_storm_distance
-      - apparent_temperature
-      - minutely_summary
+sensor: !include sensors.yaml
 
 # Text to speech
 tts:

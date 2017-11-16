@@ -1,0 +1,27 @@
+- platform: steam_online
+  api_key: !secret steam_api_key
+  accounts:
+    - !secret steam_account_id
+- platform: fitbit
+  monitored_resources:
+    - "body/weight"
+    - "activities/steps"
+    - "activities/heart"
+    - "devices/battery"
+- platform: pi_hole
+  host: 192.168.1.193
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  minute:
+    - 0
+    - 30
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - nearest_storm_distance
+    - apparent_temperature
+    - minutely_summary
