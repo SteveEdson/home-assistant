@@ -8,6 +8,20 @@ lights:
     - group.kitchen_lights
     - group.bedroom_lights
 
+media_players:
+  view: yes
+  icon: mdi:music-box
+  name: Media Players
+  entities:
+    - media_player.kitchen_home
+    - media_player.lounge_speakers
+    - media_player.lounge_tv
+    - media_player.bedroom_tv
+    - media_player.bedroom_speaker
+    - media_player.office_speakers
+    - media_player.samsung_tv_remote
+    - media_player.lounge
+
 kitchen:
   view: yes
   name: Kitchen
