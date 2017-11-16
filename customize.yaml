@@ -51,3 +51,6 @@ automation.lights_on_at_sunset:
   
 scene.deep_blue:
   icon: mdi:anchor
+
+group.tv_channels:
+  hidden: true
