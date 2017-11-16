@@ -1,0 +1,19 @@
+- alias: Dark theme at night
+  action:
+  - data:
+      name: darkorange
+    service: frontend.set_theme
+  condition: []
+  trigger:
+    platform: time 
+    at: '23:00:00'
+
+- alias: Light theme in day
+  action:
+  - data:
+      name: default
+    service: frontend.set_theme
+  condition: []
+  trigger:
+    platform: time
+    at: '07:30:00'

@@ -1,0 +1,29 @@
+- alias: TV audio input when not playing
+  trigger:
+    - platform: state
+      entity_id: media_player.lounge
+      from: 'playing'
+    - platform: state
+      entity_id: media_player.downstairs
+      from: 'playing'
+    - platform: state
+      entity_id: media_player.entire_house
+      from: 'playing'
+  condition: []
+  action:
+    - service: script.optical1
+
+- alias: Chromecast input when playing
+  trigger:
+    - platform: state
+      entity_id: media_player.lounge
+      to: 'playing'
+    - platform: state
+      entity_id: media_player.downstairs
+      to: 'playing'
+    - platform: state
+      entity_id: media_player.entire_house
+      to: 'playing'
+  condition: []
+  action:
+    - service: script.optical2

@@ -1,0 +1,12 @@
+- alias: Lights Sync (Off)
+  action:
+  - alias: turn switch off
+    data:
+      entity_id: switch.my_smart_plug
+    service: switch.turn_off
+  condition: []
+  trigger:
+  - entity_id: light.twigs
+    from: 'on'
+    platform: state
+    to: 'off'
