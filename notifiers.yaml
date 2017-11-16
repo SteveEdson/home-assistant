@@ -2,6 +2,7 @@
   platform: pushover
   api_key: !secret pushover_api_key
   user_key: !secret pushover_user_key
+  
 - name: HTML5
   platform: html5
   gcm_api_key: !secret gcm_api_key
