@@ -21,7 +21,7 @@
   action:
     service: script.send_heating_notification
 
-- id: html_turn_heating_on
+- id: turn_heating_on
   alias: Notification action - Turn heating on
   trigger:
     platform: event
