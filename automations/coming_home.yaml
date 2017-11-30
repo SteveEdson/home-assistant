@@ -3,7 +3,7 @@
   trigger:
     platform: time
     hours: 17
-    minutes: 37
+    minutes: 35
     seconds: 0
   condition:
     condition: and
