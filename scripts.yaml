@@ -58,3 +58,13 @@ send_heating_notification:
               - title: "No"
                 action: ignore
             tag: "coming-home-notification"
+            
+heating_confirmed_notification:
+    alias: Send Heating Confirmation
+    sequence:
+      - service: notify.html5
+        data:
+          title: "Heating has been set to 19.5°c"
+          message: The house is currently {{ states('sensor.hive_current_temperature') }}°c
+          data:
+            tag: "coming-home-notification"
