@@ -163,3 +163,14 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: !secret home_assistant_url
+    
+google_assistant:
+  project_id: home-assistant-184009
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  agent_user_id: !secret google_agent_user_id
+  api_key: !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - light
+    - group
