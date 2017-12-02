@@ -162,7 +162,7 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: !secret home_assistant_url
+    url: !secret home_assistant_config
     
 google_assistant:
   project_id: home-assistant-184009
