@@ -25,3 +25,10 @@
     - nearest_storm_distance
     - apparent_temperature
     - minutely_summary
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  # If errors occur, remove degree symbol below
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) }}'
+  
