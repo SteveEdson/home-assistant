@@ -71,3 +71,8 @@ sensor.fantasyformula1couk:
 sensor.steveedsoncouk:
   icon: mdi:account
 
+script.heating_confirmed_notification:
+  hidden: true
+
+script.send_heating_notification:
+  hidden: true
