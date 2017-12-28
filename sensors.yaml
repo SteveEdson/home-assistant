@@ -40,3 +40,7 @@
 - platform: whois
   domain: steveedson.co.uk
   name: SteveEdson.co.uk
+
+- platform: whois
+  domain: fantasyformula1.co.uk
+  name: FantasyFormula1.co.uk

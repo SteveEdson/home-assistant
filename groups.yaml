@@ -191,3 +191,6 @@ Hive:
   - sensor.hive_target_temperature
   - sensor.hive_thermostat_battery_level
 
+Websites:
+  - sensor.steveedsoncouk
+  - sensor.fantasyformula1couk

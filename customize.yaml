@@ -64,3 +64,10 @@ switch.my_smart_plug:
 
 script.boost_heating:
   icon: mdi:thermometer-lines
+
+sensor.fantasyformula1couk:
+  icon: mdi:flag-checkered
+
+sensor.steveedsoncouk:
+  icon: mdi:account
+
