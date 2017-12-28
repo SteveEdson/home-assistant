@@ -11,16 +11,6 @@ good_night:
       - service: media_player.turn_off 
         data: 
           entity_id: media_player.samsung_tv_remote
-      - service: light.turn_on
-        data:
-          entity_id: group.bedroom_lights
-          brightness: 60
-      - delay:
-          minutes: 3
-      - service: light.turn_off
-        data:
-          entity_id: group.bedroom_lights 
-        
 
 boost_heating:
     alias: Boost Heating
@@ -30,6 +20,8 @@ boost_heating:
             entity_id: climate.hive_heating
             temperature: 19.5
         - service: script.heating_confirmed_notification
+
+
 optical1:
     alias: Optical Channel 1
     sequence:
@@ -37,6 +29,7 @@ optical1:
           data:
             packet: 
                 - 'JgBwAAABKZMUEBMTEhMUNhITFBAVERITFDYSNxM4ExEVNhM2EjgTNxQ2EhMUERUQEjgTEhITEhMTEhI4FDYSOBITFDYSNxM4FAAFHwABJ0oVAAxYAAEpSBMADFkAAShJFAAMWQABJ0oTAAxZAAEpSRQADQUAAAAAAAAAAA=='
+
 optical2:
     alias: Optical Channel 2
     sequence:
