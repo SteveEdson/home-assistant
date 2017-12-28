@@ -21,7 +21,6 @@ boost_heating:
             temperature: 19.5
         - service: script.heating_confirmed_notification
 
-
 optical1:
     alias: Optical Channel 1
     sequence:
