@@ -29,8 +29,4 @@
     event_data:
       action: html_turn_heating_on
   action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.hive_heating
-        temperature: 19.5
-    - service: script.heating_confirmed_notification
+    - service: script.boost_heating

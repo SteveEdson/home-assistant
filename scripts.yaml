@@ -21,6 +21,15 @@ good_night:
         data:
           entity_id: group.bedroom_lights 
         
+
+boost_heating:
+    alias: Boost Heating
+    sequence:
+        - service: climate.set_temperature
+          data:
+            entity_id: climate.hive_heating
+            temperature: 19.5
+        - service: script.heating_confirmed_notification
 optical1:
     alias: Optical Channel 1
     sequence:
