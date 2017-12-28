@@ -103,6 +103,9 @@ Television:
   - script.playpause
   - script.record
   
+Home Assistant:
+  - sensor.cpu_temperature
+
 Upstairs Protect:
   - sensor.upstairs_nest_protect_battery_health
   - sensor.upstairs_nest_protect_co_status
