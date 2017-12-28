@@ -2,14 +2,17 @@
   api_key: !secret steam_api_key
   accounts:
     - !secret steam_account_id
+
 - platform: fitbit
   monitored_resources:
     - "body/weight"
     - "activities/steps"
     - "activities/heart"
     - "devices/battery"
+
 - platform: pi_hole
   host: 192.168.1.193
+
 - platform: speedtest
   monitored_conditions:
     - ping
@@ -18,6 +21,7 @@
   minute:
     - 0
     - 30
+
 - platform: darksky
   api_key: !secret darksky_api_key
   monitored_conditions:
@@ -25,10 +29,14 @@
     - nearest_storm_distance
     - apparent_temperature
     - minutely_summary
+
 - platform: command_line
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   # If errors occur, remove degree symbol below
   unit_of_measurement: "°C"
   value_template: '{{ value | multiply(0.001) }}'
-  
+
+- platform: whois
+  domain: steveedson.co.uk
+  name: SteveEdson.co.uk
