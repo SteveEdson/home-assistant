@@ -60,7 +60,7 @@ automation.notification_action__turn_heating_on:
   
 switch.my_smart_plug:
   icon: mdi:pine-tree
-  name: Christmas Tree
+  friendly_name: Christmas Tree
 
 script.boost_heating:
   icon: mdi:thermometer-lines
