@@ -12,4 +12,4 @@ plex.conf
 *.mp3
 *.bak
 config.tar.gz
-known_devices.conf
+known_devices.yaml
