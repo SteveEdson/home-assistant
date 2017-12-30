@@ -90,9 +90,11 @@ Bedroom Lights:
   - light.bedroom_light
   
 Kitchen Lights:
-  - light.kitchen_light_1
   - light.kitchen_table
-  - light.color_temperature_light_1
+  - light.kitchen_light_1
+  - light.kitchen_light_2
+  - light.kitchen_light_3
+  - light.kitchen_light_4
  
 Television:
   - input_select.channel
