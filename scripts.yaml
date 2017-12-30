@@ -11,16 +11,16 @@ good_night:
       - service: media_player.turn_off 
         data: 
           entity_id: media_player.samsung_tv_remote
-      - service: light.turn_on
-        data:
-          entity_id: group.bedroom_lights
-          brightness: 60
-      - delay:
-          minutes: 3
-      - service: light.turn_off
-        data:
-          entity_id: group.bedroom_lights 
-        
+
+boost_heating:
+    alias: Boost Heating
+    sequence:
+        - service: climate.set_temperature
+          data:
+            entity_id: climate.hive_heating
+            temperature: 19.5
+        - service: script.heating_confirmed_notification
+
 optical1:
     alias: Optical Channel 1
     sequence:
@@ -28,6 +28,7 @@ optical1:
           data:
             packet: 
                 - 'JgBwAAABKZMUEBMTEhMUNhITFBAVERITFDYSNxM4ExEVNhM2EjgTNxQ2EhMUERUQEjgTEhITEhMTEhI4FDYSOBITFDYSNxM4FAAFHwABJ0oVAAxYAAEpSBMADFkAAShJFAAMWQABJ0oTAAxZAAEpSRQADQUAAAAAAAAAAA=='
+
 optical2:
     alias: Optical Channel 2
     sequence:
@@ -57,4 +58,14 @@ send_heating_notification:
                 title: "Set to 19.5°c"
               - title: "No"
                 action: ignore
+            tag: "coming-home-notification"
+            
+heating_confirmed_notification:
+    alias: Send Heating Confirmation
+    sequence:
+      - service: notify.html5
+        data:
+          title: "Heating has been set to 19.5°c"
+          message: The house is currently {{ states('sensor.hive_current_temperature') }}°c
+          data:
             tag: "coming-home-notification"

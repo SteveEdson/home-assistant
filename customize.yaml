@@ -57,3 +57,22 @@ group.tv_channels:
 
 automation.notification_action__turn_heating_on:
   hidden: true
+  
+switch.my_smart_plug:
+  icon: mdi:pine-tree
+  friendly_name: Christmas Tree
+
+script.boost_heating:
+  icon: mdi:thermometer-lines
+
+sensor.fantasyformula1couk:
+  icon: mdi:flag-checkered
+
+sensor.steveedsoncouk:
+  icon: mdi:account
+
+script.heating_confirmed_notification:
+  hidden: true
+
+script.send_heating_notification:
+  hidden: true

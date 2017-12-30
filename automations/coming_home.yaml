@@ -16,12 +16,12 @@
           - thu
           - fri
       - condition: state
-        entity_id: group.people
+        entity_id: group.devices
         state: not_home
   action:
     service: script.send_heating_notification
 
-- id: html_turn_heating_on
+- id: turn_heating_on
   alias: Notification action - Turn heating on
   trigger:
     platform: event
@@ -29,7 +29,4 @@
     event_data:
       action: html_turn_heating_on
   action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.hive_heating
-        temperature: 19.5
+    - service: script.boost_heating

@@ -24,7 +24,7 @@ kitchen:
   entities:
     - media_player.kitchen_home
     - group.kitchen_lights
-    
+
 lounge:
   view: yes
   name: Lounge
@@ -60,8 +60,10 @@ office:
     
 Devices:
   - device_tracker.android900796f346bd222d
-  - device_tracker.android5eda54b5cc642e06
+  - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
+
+Computers:
   - device_tracker.desktopkvl6s86
   - switch.aegis
   
@@ -77,6 +79,9 @@ Lounge Lights:
   - light.corner_lamp
   - switch.my_smart_plug
   - light.blinkt
+
+Hallway:
+  - light.landing_light
   
 Office Lights:
   - light.office
@@ -94,6 +99,9 @@ Television:
   - script.playpause
   - script.record
   
+Home Assistant:
+  - sensor.cpu_temperature
+
 Upstairs Protect:
   - sensor.upstairs_nest_protect_battery_health
   - sensor.upstairs_nest_protect_co_status
@@ -179,3 +187,6 @@ Hive:
   - sensor.hive_target_temperature
   - sensor.hive_thermostat_battery_level
 
+Websites:
+  - sensor.steveedsoncouk
+  - sensor.fantasyformula1couk
