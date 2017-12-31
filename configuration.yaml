@@ -135,4 +135,7 @@ google_assistant:
   api_key: !secret google_assistant_api_key
   exposed_domains:
     - switch
-    - group
+    
+calendar:
+  - platform: todoist
+    token: !secret todoist_api_token
