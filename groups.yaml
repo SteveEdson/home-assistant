@@ -54,7 +54,6 @@ office:
   name: Office
   entities:
     - light.office
-    - light.office_2
     - switch.aegis
     - media_player.office_speakers
     - group.network_stats
