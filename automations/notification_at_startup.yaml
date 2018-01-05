@@ -3,10 +3,7 @@
     data:
       title: "Home assistant has started"
       message: "Message text"
-      data:
-        tag: "ha-started"
   alias: Notification at start up
   condition: []
-  id: '1506795142546'
   trigger:
   - event: homeassistant_start
