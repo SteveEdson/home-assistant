@@ -1,3 +1,7 @@
+default_view:
+    view: yes
+    icon: mdi:home
+
 lights:
   view: yes
   icon: mdi:ceiling-light
@@ -61,7 +65,15 @@ office:
     - switch.aegis
     - media_player.office_speakers
     - group.network_stats
-    
+
+settings:
+  name: Settings
+  icon: mdi:auto-fix
+  view: yes
+  entities:
+    - group.all_automations
+    - group.all_scripts    
+
 Devices:
   - device_tracker.android900796f346bd222d
   - device_tracker.android9cbeeb67e498559e
