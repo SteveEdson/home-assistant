@@ -1,9 +1,0 @@
-- action:
-  - service: notify.html5
-    data:
-      title: "Home assistant has started"
-      message: "Message text"
-  alias: Notification at start up
-  condition: []
-  trigger:
-  - event: homeassistant_start
