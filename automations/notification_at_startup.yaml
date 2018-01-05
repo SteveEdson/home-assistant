@@ -1,10 +1,10 @@
 - action:
   - service: notify.html5
+    data:
+      title: "Home assistant has started"
+      message: "Message text"
       data:
-        title: "Home assistant has started"
-        message: "Message text"
-        data:
-          tag: "ha-started"
+        tag: "ha-started"
   alias: Notification at start up
   condition: []
   id: '1506795142546'
