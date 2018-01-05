@@ -21,6 +21,7 @@ media_players:
 
 kitchen:
   view: yes
+  icon: mdi:kettle
   name: Kitchen
   entities:
     - media_player.kitchen_home
@@ -28,6 +29,7 @@ kitchen:
 
 lounge:
   view: yes
+  icon: mdi:sofa
   name: Lounge
   entities:
     - media_player.lounge_speakers
@@ -43,6 +45,7 @@ lounge:
     
 bedroom:
   view: yes
+  icon: mdi:hotel
   name: Bedroom
   entities:
     - group.bedroom_lights
@@ -51,6 +54,7 @@ bedroom:
     
 office:
   view: yes
+  icon: mdi:desktop-tower
   name: Office
   entities:
     - light.office
