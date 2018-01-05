@@ -76,3 +76,6 @@ script.heating_confirmed_notification:
 
 script.send_heating_notification:
   hidden: true
+
+group.default_view:
+  icon: mdi:home
