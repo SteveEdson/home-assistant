@@ -58,9 +58,9 @@ group.tv_channels:
 automation.notification_action__turn_heating_on:
   hidden: true
   
-switch.my_smart_plug:
-  icon: mdi:pine-tree
-  friendly_name: Christmas Tree
+#switch.my_smart_plug:
+#  icon: mdi:pine-tree
+#  friendly_name: Christmas Tree
 
 script.boost_heating:
   icon: mdi:thermometer-lines
