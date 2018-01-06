@@ -80,4 +80,8 @@ script.send_heating_notification:
 group.default_view:
   icon: mdi:home
 
-group.all_automations: {}
+group.all_automations:
+  hidden: false
+
+group.all_scripts:
+  hidden: false
