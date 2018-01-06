@@ -61,6 +61,7 @@ office:
     - switch.aegis
     - media_player.office_speakers
     - group.network_stats
+    - group.steam
 
 settings:
   name: Settings
