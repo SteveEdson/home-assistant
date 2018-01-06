@@ -63,13 +63,13 @@ office:
     - group.network_stats
     - group.steam
 
-settings:
-  name: Settings
-  icon: mdi:auto-fix
-  view: yes
-  entities:
-    - group.all_automations
-    - group.all_scripts    
+# settings:
+#   name: Settings
+#   icon: mdi:auto-fix
+#   view: yes
+#   entities:
+#     - group.all_automations
+#     - group.all_scripts    
 
 Devices:
   - device_tracker.android900796f346bd222d
