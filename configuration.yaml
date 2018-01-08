@@ -144,3 +144,10 @@ calendar:
         due_date_days: 0
       - name: 'Due This Week'
         due_date_days: 7
+
+weblink: 
+  entities: 
+    - name: Router 
+      url: http://192.168.1.1/
+      icon: mdi:router-wireless
+
