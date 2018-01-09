@@ -13,3 +13,4 @@ plex.conf
 *.bak
 config.tar.gz
 known_devices.yaml
+.idea/
