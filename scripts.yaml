@@ -80,3 +80,7 @@ morning_notification:
             Good morning Steve, it will take you {{ states("sensor.time_to_home") }} minutes to get to work. Today, the weather is {{ states("sensor.dark_sky_summary") }} and the outside temperature is {{ states("sensor.dark_sky_apparent_temperature") }}°C, it is {{ states("sensor.hive_current_temperature") }}°C inside the house.
           data:
             tag: "good-morning"
+      - service: tts.google_say
+        message: >
+          Good morning Steve, it will take you {{ states("sensor.time_to_home") }} minutes to get to work. Today, the weather is {{ states("sensor.dark_sky_summary") }} and the outside temperature is {{ states("sensor.dark_sky_apparent_temperature") }}°C, it is {{ states("sensor.hive_current_temperature") }}°C inside the house.
+        entity_id: media_player.entire_house
