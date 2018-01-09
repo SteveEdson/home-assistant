@@ -1,0 +1,22 @@
+- id: morning_notification
+  alias: 'Morning notification'
+  trigger:
+    platform: time
+    hours: 07
+    minutes: 15
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: group.devices
+        state: home
+  action:
+    service: script.send_morning_notification
