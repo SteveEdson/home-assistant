@@ -80,6 +80,9 @@ script.send_heating_notification:
 group.default_view:
   icon: mdi:home
 
+script.morning_notification:
+  icon: mdi:weather-sunset-up
+
 #group.all_automations:
 #  hidden: false
 #
