@@ -4,3 +4,4 @@ api_password: !secret api_password
 # base_url: example.duckdns.org:8123
 ssl_certificate: /ssl/fullchain.pem
 ssl_key: /ssl/privkey.pem
+base_url: !secret base_url
