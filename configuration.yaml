@@ -153,3 +153,8 @@ weblink:
       url: http://192.168.1.1/
       icon: mdi:router-wireless
 
+history_graph:
+  gr1:
+    entities:
+      - sensor.time_to_home
+      - sensor.time_to_work
