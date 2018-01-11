@@ -57,8 +57,10 @@
   origin: !secret work_address
   destination: !secret home_address
   
-- platform: cert_expiry 
+- platform: cert_expiry
+  name: SteveEdson.co.uk SSL 
   host: steveedson.co.uk
  
 - platform: cert_expiry 
   host: fantasyformula1.co.uk
+  name: FantasyFormula1.co.uk SSL
