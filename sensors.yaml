@@ -56,3 +56,9 @@
   api_key: !secret google_assistant_api_key
   origin: !secret work_address
   destination: !secret home_address
+  
+- platform: cert_expiry 
+  host: steveedson.co.uk
+ 
+- platform: cert_expiry 
+  host: fantasyformula1.co.uk
