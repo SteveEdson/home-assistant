@@ -156,7 +156,7 @@ weblink:
 history_graph:
   travel_time:
     name: Travel Time
-    hours_to_show: 48
+    hours_to_show: 72
     refresh: 60
     entities:
       - sensor.time_to_home
@@ -164,7 +164,7 @@ history_graph:
 
   temperatures:
       name: Temperature
-      hours_to_show: 48
+      hours_to_show: 168
       refresh: 60
       entities:
         - sensor.hive_current_temperature
