@@ -155,6 +155,9 @@ weblink:
 
 history_graph:
   gr1:
+    name: Travel Time
+    hours_to_show: 48
+    refresh: 60
     entities:
       - sensor.time_to_home
       - sensor.time_to_work
