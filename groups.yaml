@@ -209,3 +209,8 @@ Websites:
   - sensor.fantasyformula1couk_ssl
   - sensor.home_assistant
   - sensor.home_assistant_ssl
+
+Travel Time:
+  - sensor.time_to_work
+  - sensor.time_to_home
+  - history_graph.travel_time
