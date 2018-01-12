@@ -47,6 +47,11 @@ binary_sensor:
   - platform: digital_ocean
     droplets:
       - 'do-1'
+  - platform: template
+    sensors:
+      ha_domain_due:
+        value_template: '{{ sensor.home_assistant < 30 }}'
+        friendly_name: 'Home Assistant domain due for renewal'
 
 # Weather Prediction
 sensor: !include sensors.yaml
@@ -97,13 +102,6 @@ device_tracker:
 switch: !include switches.yaml
 
 automation: !include_dir_merge_list automations/
-
-binary_sensor:
-  - platform: template
-    sensors:
-      ha_domain_due:
-        value_template: '{{ sensor.home_assistant < 30 }}'
-        friendly_name: 'Home Assistant domain due for renewal'
 
 alert:
   homeassistant_domain_renewal:
