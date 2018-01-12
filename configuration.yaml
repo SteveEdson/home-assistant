@@ -98,6 +98,28 @@ switch: !include switches.yaml
 
 automation: !include_dir_merge_list automations/
 
+binary_sensor:
+  - platform: template
+    sensors:
+      ha_domain_due:
+        value_template: '{{ sensor.home_assistant < 30 }}'
+        friendly_name: 'Home Assistant domain due for renewal'
+
+alert:
+  homeassistant_domain_renewal:
+    name: Home Assistant domain due for renewal
+    done_message: Home Assistant domain has been renewed
+    entity_id: binary_sensor.ha_domain_due
+    state: 'on'
+    repeat:
+      - 60 # 60 minutes
+      - 1440 # 1 day
+      - 2880 # every 2 days
+    can_acknowledge: True
+    skip_first: True
+    notifiers:
+      - notify.html5
+
 notify: !include notifiers.yaml
 
 nest:
