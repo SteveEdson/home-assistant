@@ -118,7 +118,7 @@ alert:
     can_acknowledge: True
     skip_first: True
     notifiers:
-      - notify.html5
+      - html5
 
 notify: !include notifiers.yaml
 
