@@ -42,6 +42,10 @@
   name: SteveEdson.co.uk
 
 - platform: whois
+  domain: !secret base_url
+  name: Home Assistant
+
+- platform: whois
   domain: fantasyformula1.co.uk
   name: FantasyFormula1.co.uk
 
@@ -64,3 +68,7 @@
 - platform: cert_expiry 
   host: fantasyformula1.co.uk
   name: FantasyFormula1.co.uk SSL
+
+- platform: cert_expiry
+  host: !secret base_url
+  name: Home Assistant SSL
