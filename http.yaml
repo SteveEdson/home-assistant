@@ -2,6 +2,6 @@
 api_password: !secret api_password
 # Uncomment this if you are using SSL or running in Docker etc
 # base_url: example.duckdns.org:8123
-ssl_certificate: /ssl/fullchain.pem
-ssl_key: /ssl/privkey.pem
+#ssl_certificate: /ssl/fullchain.pem
+#ssl_key: /ssl/privkey.pem
 base_url: !secret base_url
