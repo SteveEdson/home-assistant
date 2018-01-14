@@ -173,19 +173,19 @@ weblink:
       url: http://192.168.1.1/
       icon: mdi:router-wireless
 
-history_graph:
-  travel_time:
-    name: Travel Time
-    hours_to_show: 72
-    refresh: 60
-    entities:
-      - sensor.time_to_home
-      - sensor.time_to_work
+#history_graph:
+  #travel_time:
+  #  name: Travel Time
+  #  hours_to_show: 72
+  #  refresh: 60
+  #  entities:
+   #   - sensor.time_to_home
+  #    - sensor.time_to_work
 
-  temperatures:
-      name: Temperature
-      hours_to_show: 168
-      refresh: 60
-      entities:
-        - sensor.hive_current_temperature
-        - sensor.dark_sky_apparent_temperature
+ # temperatures:
+  #   name: Temperature
+  #    hours_to_show: 168
+  #    refresh: 60
+   #   entities:
+   #     - sensor.hive_current_temperature
+   #     - sensor.dark_sky_apparent_temperature
