@@ -173,9 +173,9 @@ weblink:
       url: http://192.168.1.1/
       icon: mdi:router-wireless
 
-weather: 
-  - platform: darksky
-    api_key: !secret darksky_api_key
+#weather: 
+#  - platform: darksky
+#    api_key: !secret darksky_api_key
 
 #history_graph:
   #travel_time:
