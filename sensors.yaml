@@ -11,7 +11,7 @@
     - "devices/battery"
 
 - platform: pi_hole
-  host: 192.168.1.193
+  host: 192.168.1.120
 
 - platform: speedtest
   monitored_conditions:
