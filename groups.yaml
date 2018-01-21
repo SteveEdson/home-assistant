@@ -98,7 +98,7 @@ Lounge Lights:
   - light.left_lamp
   - light.twigs
   - light.corner_lamp
-  - switch.my_smart_plug
+  - switch.tplink_switch
   - light.blinkt
 
 Hallway:
