@@ -89,6 +89,18 @@ group.work:
 group.jaywing:
   entity_picture: https://jaywing.com/favicon.ico
   
+sensor.holiday_allowance_remaining_this_year:
+  icon: mdi:airplane
+
+sensor.holidays_not_yet_taken:
+  icon: mdi:calendar
+
+sensor.time_to_work:
+  icon: mdi:navigation
+
+sensor.time_to_home:
+  icon: mdi:navigation
+
 #group.all_automations:
 #  hidden: false
 #
