@@ -68,7 +68,7 @@ work:
   icon: mdi:briefcase
   name: Work
   entities:
-    - group.work
+    - group.jaywing
 
 # settings:
 #   name: Settings
@@ -124,7 +124,7 @@ Television:
 Home Assistant:
   - sensor.cpu_temperature
 
-Work:
+Jaywing:
   - sensor.holiday_allowance_remaining_this_year
   - sensor.holidays_not_yet_taken
   - sensor.time_to_work
