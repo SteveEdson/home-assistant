@@ -63,6 +63,13 @@ office:
     - group.network_stats
     - group.steam
 
+work:
+  view: yes
+  icon: mdi:briefcase
+  name: Work
+  entities:
+    - group.work
+
 # settings:
 #   name: Settings
 #   icon: mdi:auto-fix
@@ -116,6 +123,12 @@ Television:
   
 Home Assistant:
   - sensor.cpu_temperature
+
+Work:
+  - sensor.holiday_allowance_remaining_this_year
+  - sensor.holidays_not_yet_taken
+  - sensor.time_to_work
+  - sensor.time_to_home
 
 Upstairs Protect:
   - sensor.upstairs_nest_protect_battery_health
@@ -210,7 +223,7 @@ Websites:
   - sensor.home_assistant
   - sensor.home_assistant_ssl
 
-Travel Time:
-  - sensor.time_to_work
-  - sensor.time_to_home
-  - history_graph.travel_time
+# Travel Time:
+#   - sensor.time_to_work
+#   - sensor.time_to_home
+#   - history_graph.travel_time
