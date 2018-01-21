@@ -124,6 +124,9 @@ Television:
   
 Home Assistant:
   - sensor.cpu_temperature
+  - sensor.average_load_5m
+  - sensor.ram_available
+  - sensor.disk_free_
 
 Jaywing:
   - sensor.holiday_allowance_remaining_this_year
