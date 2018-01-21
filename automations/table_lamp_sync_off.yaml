@@ -2,7 +2,7 @@
   action:
   - alias: turn switch off
     data:
-      entity_id: switch.my_smart_plug
+      entity_id: switch.tplink_switch
     service: switch.turn_off
   condition: []
   trigger:
