@@ -203,6 +203,8 @@ Weather:
   - sensor.dark_sky_temperature
   
 Hive:
+  - climate.heating
+  - climate.hot_water
   - climate.hive_heating
   - climate.hive_hotwater
   - sensor.hive_current_temperature
