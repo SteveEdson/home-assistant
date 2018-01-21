@@ -83,6 +83,12 @@ group.default_view:
 script.morning_notification:
   icon: mdi:weather-sunset-up
 
+group.work:
+  entity_picture: https://jaywing.com/-/media/images/misc/jaywinglogosvg.svg
+
+group.jaywing:
+  entity_picture: https://jaywing.com/-/media/images/misc/jaywinglogosvg.svg
+  
 #group.all_automations:
 #  hidden: false
 #
