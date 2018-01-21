@@ -82,5 +82,5 @@
 - platform: rest
   resource: !secret google_holiday_sheet
   name: Holiday's not yet taken
-  value_template: '{{ value_json.feed.entry[0]["gsx$daysbookedyettobetaken"]["$t"] }}'
+  value_template: '{{ value_json.feed.entry[0]["gsx$futureholidays"]["$t"] }}'
   unit_of_measurement: days
