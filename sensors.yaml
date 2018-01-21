@@ -84,3 +84,10 @@
   name: Holiday's not yet taken
   value_template: '{{ value_json.feed.entry[0]["gsx$futureholidays"]["$t"] }}'
   unit_of_measurement: days
+
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /
+    - type: memory_free
+    - type: load_5m
