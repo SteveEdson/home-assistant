@@ -106,3 +106,6 @@ sensor.time_to_home:
 #
 #group.all_scripts:
 #  hidden: false
+
+binary_sensor.ha_domain_due:
+  hidden: true
