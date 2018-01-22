@@ -80,7 +80,7 @@ work:
 #     - group.all_scripts    
 
 Devices:
-  - device_tracker.android900796f346bd222d
+  - device_tracker.oneplus_3
   - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
 
@@ -197,20 +197,10 @@ Network Stats:
   
 Weather:
   - sun.sun
-  - sensor.dark_sky_apparent_temperature
-  - sensor.dark_sky_daily_summary
-  - sensor.dark_sky_hourly_summary
-  - sensor.dark_sky_icon
-  - sensor.dark_sky_minutely_summary
-  - sensor.dark_sky_nearest_storm_distance
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_temperature
   
 Hive:
   - climate.heating
   - climate.hot_water
-  - climate.hive_heating
-  - climate.hive_hotwater
   - sensor.hive_current_temperature
   - sensor.hive_heating_boost
   - sensor.hive_heating_mode
