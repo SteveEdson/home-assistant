@@ -58,7 +58,9 @@ sensor: !include sensors.yaml
 
 # Text to speech
 tts:
-  platform: google
+  - platform: google
+  - platform: picotts
+
 
 config:
 
