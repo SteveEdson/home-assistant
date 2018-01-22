@@ -101,4 +101,5 @@
 - platform: scrape
   name: Bin Days
   resource: !secret council_url
-  select: ".your_waste_collections table tbody tr"
+  select: ".your_waste_collections table tbody td:first-of-type"
+  value: 
