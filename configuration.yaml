@@ -64,6 +64,7 @@ tts:
     language: en-gb
     gender: Female
     type: Susan, Apollo
+    rate: 20
 
 
 config:
