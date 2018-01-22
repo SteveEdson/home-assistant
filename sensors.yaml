@@ -92,6 +92,7 @@
   json_attributes:
     - date
     - bins
+  scan_interval: 7200
 
 - platform: systemmonitor
   resources:
