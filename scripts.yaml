@@ -76,7 +76,7 @@ morning_notification:
       - service: notify.html5
         data:
           title: "Good morning"
-          message: {{ states("sensor.daily_summary") }}
+          message: "{{ states('sensor.daily_summary') }}"
           data:
             tag: "good-morning"
       - service: media_player.set_volume
@@ -86,5 +86,5 @@ morning_notification:
       - service: tts.google_say
         data_template:
           cache: false
-          message: {{ states("sensor.daily_summary") }}
+          message: "{{ states('sensor.daily_summary') }}"
           entity_id: media_player.entire_house
