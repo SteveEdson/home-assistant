@@ -99,5 +99,6 @@
       value_template: "Good morning Steve, it will take you {{ states(\"sensor.time_to_home\") }} minutes to get to work. Today, the weather is {{ states.weather.dark_sky }} and the outside temperature is {{ states.weather.dark_sky.attributes.temperature }}°C, it is {{ climate.heating.current_temperature }}°C inside the house."
 
 - platform: scrape
+  name: Bin Days
   resource: !secret council_url
   select: ".your_waste_collections table tbody tr"
