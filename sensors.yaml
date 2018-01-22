@@ -88,7 +88,7 @@
 - platform: rest
   resource: !secret bins_api
   name: Bin days
-  value_template: "{{ value_json[0] }}"
+  value_template: "{{ value_json[0].date }} {{ value_json[0].bins }}"
   json_attributes:
     - date
     - bins
