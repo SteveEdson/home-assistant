@@ -76,8 +76,7 @@ morning_notification:
       - service: notify.html5
         data:
           title: "Good morning"
-          message: >
-            Good morning Steve, it will take you {{ states("sensor.time_to_home") }} minutes to get to work. Today, the weather is {{ states.weather.dark_sky }} and the outside temperature is {{ states.weather.dark_sky.attributes.temperature }}°C, it is {{ climate.heating.current_temperature }}°C inside the house.
+          message: {{ states("sensor.daily_summary") }}
           data:
             tag: "good-morning"
       - service: media_player.set_volume
@@ -87,6 +86,5 @@ morning_notification:
       - service: tts.google_say
         data_template:
           cache: false
-          message: >
-            Good morning Steve, it will take you {{ states("sensor.time_to_home") }} minutes to get to work. Today, the weather is {{ states.weather.dark_sky }} and the outside temperature is {{ states.weather.dark_sky.attributes.temperature }}°C, it is {{ climate.heating.current_temperature }}°C inside the house.
+          message: {{ states("sensor.daily_summary") }}
           entity_id: media_player.entire_house
