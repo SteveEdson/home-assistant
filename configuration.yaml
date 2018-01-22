@@ -200,3 +200,6 @@ weather:
    #   entities:
    #     - sensor.hive_current_temperature
    #     - sensor.dark_sky_apparent_temperature
+
+
+media_extractor:
