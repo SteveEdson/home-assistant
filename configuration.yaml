@@ -61,6 +61,9 @@ tts:
   - platform: google
   - platform: microsoft
     api_key: !secret microsoft_api_key
+    language: en-gb
+    gender: Female
+    type: Susan, Apollo
 
 
 config:
