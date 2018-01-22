@@ -42,7 +42,7 @@
   name: SteveEdson.co.uk
 
 - platform: whois
-  domain: !secret base_url
+  domain: !secret base_domain
   name: Home Assistant
 
 - platform: whois
