@@ -3,7 +3,7 @@
   trigger:
     platform: time
     hours: 07
-    minutes: 05
+    minutes: 15
     seconds: 0
   condition:
     condition: and
@@ -17,6 +17,6 @@
           - fri
       - condition: state
         entity_id: group.devices
-        state: home
+        state: "home"
   action:
     service: script.send_morning_notification
