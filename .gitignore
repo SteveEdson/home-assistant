@@ -14,3 +14,4 @@ plex.conf
 config.tar.gz
 known_devices.yaml
 .idea/
+node_modules/
