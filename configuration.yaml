@@ -209,4 +209,4 @@ zone:
   - name: Work
     latitude: !secret work_lat
     longitude: !secret work_long
-    radius: 250
+    radius: 150
