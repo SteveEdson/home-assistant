@@ -209,7 +209,8 @@ zone:
   - name: Work
     latitude: !secret work_lat
     longitude: !secret work_long
-    radius: 250
+    radius: 150
+    icon: mdi:brush
 
 xiaomi_aqara:
   discovery_retry: 5
