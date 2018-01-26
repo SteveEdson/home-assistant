@@ -203,3 +203,9 @@ weather:
 
 
 media_extractor:
+
+zone:
+  - name: Work
+    latitude: !secret work_lat
+    longitude: !secret work_long
+    radius: 250
