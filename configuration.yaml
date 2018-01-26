@@ -210,3 +210,8 @@ zone:
     latitude: !secret work_lat
     longitude: !secret work_long
     radius: 250
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_gateway
