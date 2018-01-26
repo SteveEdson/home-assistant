@@ -1,0 +1,55 @@
+- alias: kitchen motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001643c27
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+        after_offset: "-0:20:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.kitchen
+        brightness_pct: 100 
+
+
+# Dim the lights after no motion
+- alias: Kitchen no motion 5 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001643c27
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 5
+  condition:
+    condition: state
+    entity_id: group.kitchen
+    state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.kitchen
+        brightness_pct: 25
+
+#Turn off kitchen light with no motion for 15 mins
+- alias: Kitchen no motion 15 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001643c27
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 15
+  condition:
+    condition: state
+    entity_id: group.kitchen
+    state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.kitchen
