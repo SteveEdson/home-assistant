@@ -112,3 +112,6 @@ binary_sensor.ha_domain_due:
 
 sensor.daily_summary:
   hidden: true
+
+script.bin_notification:
+  icon: mdi:delete
