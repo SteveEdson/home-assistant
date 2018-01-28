@@ -122,6 +122,9 @@ Television:
   - script.playpause
   - script.record
   
+Events:
+  - sensor.bin_days
+
 Home Assistant:
   - sensor.cpu_temperature
   - sensor.average_load_5m
