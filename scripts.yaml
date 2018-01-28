@@ -104,7 +104,7 @@ bin_notification:
           entity_id: media_player.entire_house
           volume_level: 0.3
       - service: tts.google_say
-        data:
+        data_template:
           cache: false
           message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} for tomorrow"
           entity_id: media_player.entire_house
