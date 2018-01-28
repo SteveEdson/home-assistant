@@ -102,7 +102,7 @@ bin_notification:
       - service: media_player.volume_set
         data:
           entity_id: media_player.entire_house
-          volume_level: 0.3
+          volume_level: 0.4
       - service: tts.google_say
         data_template:
           cache: false
