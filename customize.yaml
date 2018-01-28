@@ -118,3 +118,7 @@ script.bin_notification:
 
 binary_sensor.workday_sensor:
   hidden: true
+
+light.gateway_light_7811dcb25e74:
+  friendly_name: Gateway Light
+  icon: mdi:google-circles-extended
