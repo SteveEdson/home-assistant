@@ -115,3 +115,6 @@ sensor.daily_summary:
 
 script.bin_notification:
   icon: mdi:delete
+
+binary_sensor.workday_sensor:
+  hidden: true
