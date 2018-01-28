@@ -79,7 +79,7 @@ morning_notification:
           message: "{{ states('sensor.daily_summary') }}"
           data:
             tag: "good-morning"
-      - service: media_player.set_volume
+      - service: media_player.volume_set
         data:
           entity_id: media_player.entire_house
           volume_level: 0.3
@@ -99,7 +99,7 @@ bin_notification:
           message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} for tomorrow"
           data:
             tag: "bin-reminder"
-      - service: media_player.set_volume
+      - service: media_player.volume_set
         data:
           entity_id: media_player.entire_house
           volume_level: 0.3
