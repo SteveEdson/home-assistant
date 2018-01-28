@@ -19,4 +19,4 @@
      #   entity_id: group.devices
      #   state: "home"
   action:
-    service: script.send_morning_notification
+    service: script.morning_notification

@@ -1,0 +1,11 @@
+- alias: Bin notification
+  action:
+    service: script.send_bin_notification
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ as_timestamp(now()) > as_timestamp(strptime(states.sensor.bin_days.attributes.date, '%d/%m/%Y')) - (60 * 60 * 24) }}'
+  trigger:
+    platform: time
+    at: '19:30:00'
