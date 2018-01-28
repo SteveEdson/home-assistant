@@ -90,7 +90,7 @@
 - platform: rest
   resource: !secret bins_api
   name: Bin days
-  value_template: '{{ as_timestamp(strptime(value_json.date, "%d/%m/%Y")) }} {{ value_json.bins }}'
+  value_template: '{{ relative_time(as_timestamp(strptime(value_json.date, "%d/%m/%Y"))) }} {{ value_json.bins }}'
   json_attributes:
     - date
     - bins
