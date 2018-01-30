@@ -9,7 +9,7 @@
     conditions:
       - condition: sun
         after: sunset
-        after_offset: "-0:20:00"
+        after_offset: "-1:00:00"
   action:
     - service: light.turn_on
       data:
