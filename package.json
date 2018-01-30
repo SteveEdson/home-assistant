@@ -21,8 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'this is pre-commit'",
-      "pre-push": "npm test"
+
     }
   }
 }
