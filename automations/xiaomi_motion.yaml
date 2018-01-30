@@ -13,7 +13,7 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: group.kitchen
+        entity_id: group.kitchen_lights
         brightness_pct: 100 
 
 
@@ -28,12 +28,12 @@
       minutes: 5
   condition:
     condition: state
-    entity_id: group.kitchen
+    entity_id: group.kitchen_lights
     state: 'on'
   action:
     - service: light.turn_on
       data:
-        entity_id: group.kitchen
+        entity_id: group.kitchen_lights
         brightness_pct: 25
 
 #Turn off kitchen light with no motion for 15 mins
@@ -47,9 +47,9 @@
       minutes: 15
   condition:
     condition: state
-    entity_id: group.kitchen
+    entity_id: group.kitchen_lights
     state: 'on'
   action:
     - service: light.turn_off
       data:
-        entity_id: group.kitchen
+        entity_id: group.kitchen_lights
