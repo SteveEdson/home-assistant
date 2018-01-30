@@ -1,0 +1,6 @@
+alias: Optical Channel 2
+sequence:
+  - service: switch.broadlink_send_packet_192_168_1_168
+    data:
+      packet: 
+          - 'JgBQAAABKpETExITEhIVNhISFRESExQQFTYUNRM3FRASOBU2EzYSOBU1FBEVEBI4FTUUERQREhMSExM3FDYSExITEzcUNhI4EgAFIQABKkgSAA0FAAAAAAAAAAA='

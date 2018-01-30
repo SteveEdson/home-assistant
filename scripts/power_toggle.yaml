@@ -1,0 +1,6 @@
+alias: Surround Sound Power Toggle
+sequence:
+    - service: broadlink.send_packet_192_168_1_168
+      data:
+        packet: 
+            - 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='

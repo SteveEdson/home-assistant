@@ -1,0 +1,13 @@
+alias: Send Heating Notification
+sequence:
+  - service: notify.html5
+    data:
+      title: "Turn the heating on?"
+      message: Turn the heating on? The house is currently {{ states.climate.heating.attributes.current_temperature }}°c
+      data:
+        actions:
+          - action: html_turn_heating_on
+            title: "Set to 19.5°c"
+          - title: "No"
+            action: ignore
+        tag: "coming-home-notification"

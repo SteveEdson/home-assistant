@@ -141,7 +141,7 @@ hive:
 ifttt:
   key: !secret ifttt_key
 
-script: !include scripts.yaml
+script: !include_dir_named scripts
   
 digital_ocean:
   access_token: !secret digital_ocean_key
