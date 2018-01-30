@@ -3,13 +3,15 @@
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001643c27
     from: 'off'
-    to: 'on'
-  condition:
-    condition: and
+      to: 'on'
+  condition: and
     conditions:
-      - condition: sun
+      - condition: sun # 20 mins before sunset
         after: sunset
-        after_offset: "-1:00:00"
+        after_offset: "-0:20:00"
+      - condition: sun # 1 hour after sunrise
+        before: sunrise
+        before_offset: "1:00:00"
   action:
     - service: light.turn_on
       data:
@@ -25,7 +27,7 @@
     from: 'on'
     to: 'off'
     for:
-      minutes: 5
+      minutes: 2
   condition:
     condition: state
     entity_id: group.kitchen_lights
@@ -44,7 +46,7 @@
     from: 'on'
     to: 'off'
     for:
-      minutes: 15
+      minutes: 8
   condition:
     condition: state
     entity_id: group.kitchen_lights
