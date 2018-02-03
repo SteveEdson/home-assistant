@@ -31,3 +31,26 @@
     switch.my_smart_plug:
       state: on
       
+- name: Bright
+  entities:
+    light.corner_lamp:
+      state: on
+      color: white
+      brightness_pct: 100
+    
+    light.left_lamp:
+      state: on
+      color: white
+      brightness_pct: 100
+      
+    light.twigs:
+      state: on
+      brightness_pct: 100
+      
+    light.blinkt:
+      state: on
+      brightness_pct: 100
+      color: white
+        
+    switch.my_smart_plug:
+      state: on      
