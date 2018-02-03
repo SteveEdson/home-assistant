@@ -35,12 +35,12 @@
   entities:
     light.corner_lamp:
       state: on
-      color: white
+      color_name: white
       brightness_pct: 100
     
     light.left_lamp:
       state: on
-      color: white
+      color_name: white
       brightness_pct: 100
       
     light.twigs:
@@ -50,7 +50,7 @@
     light.blinkt:
       state: on
       brightness_pct: 100
-      color: white
+      color_name: white
         
     switch.my_smart_plug:
       state: on      
