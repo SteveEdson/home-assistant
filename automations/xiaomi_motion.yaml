@@ -57,21 +57,33 @@
       data:
         entity_id: group.kitchen_lights
 
-- alias: Cube volume
+- alias: Cube rotation clockwise
   trigger:
     platform: event
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001041dc7
       action_type: rotate
+  condition:
+    condition: template
+    value_template: "{{ (trigger.event.data.action_value|float) > 0 }}"
   action:
     - service: scene.turn_on
       entity_id: scene.deep_blue
-    - service: notify.html5
-      data_template:
-        title: "Cube event"
-        message: "{{ trigger.event.data.action_type }} {{ trigger.event.data.action_value }}"
 
+- alias: Cube rotation anticlockwise
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type: rotate
+  condition:
+    condition: template
+    value_template: "{{ (trigger.event.data.action_value|float) < 0 }}"
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bright
 
 - alias: Cube volume
   trigger:
