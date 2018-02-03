@@ -68,6 +68,6 @@
     - service: scene.turn_on
       entity_id: scene.deep_blue
     - service: notify.html5
-      data:
+      data_template:
         title: "Cube event"
         message: "{{ trigger.event.data.action_type }} {{ trigger.event.data.action_value }}"
