@@ -56,3 +56,18 @@
     - service: light.turn_off
       data:
         entity_id: group.kitchen_lights
+
+- alias: Cube volume
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type: rotate
+  action:
+    - service: scene.turn_on
+      entity_id: scene.deep_blue
+    - service: notify.html5
+      data:
+        title: "Cube event"
+        message: "{{ trigger.event.data.action_type }} {{ trigger.event.data.action_value }}""
