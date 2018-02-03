@@ -2,7 +2,7 @@
   action:
   - alias: turn switch on
     data:
-      entity_id: switch.tplink_switch
+      entity_id: switch.my_smart_plug
     service: switch.turn_on
   condition: []
   id: '1508056350422'
