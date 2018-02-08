@@ -7,3 +7,7 @@
   platform: html5
   gcm_api_key: !secret gcm_api_key
   gcm_sender_id: !secret gcm_sender_id
+
+- name: Google Assistant
+  platform: rest
+  resource: !secret home_assistant_google_broadcast
