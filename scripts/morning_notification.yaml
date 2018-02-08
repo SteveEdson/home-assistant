@@ -6,13 +6,6 @@ sequence:
       message: "{{ states('sensor.daily_summary') }}"
       data:
         tag: "good-morning"
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.entire_house
-      volume_level: 0.5
-  - service: tts.microsoft_say
+  - service: notify.google_assistant
     data_template:
-      cache: false
       message: "{{ states('sensor.daily_summary') }}"
-      entity_id: media_player.entire_house
-
