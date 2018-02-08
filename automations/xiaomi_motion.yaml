@@ -57,7 +57,7 @@
       data:
         entity_id: group.kitchen_lights
 
-- alias: Cube rotation clockwise
+- alias: Cube volume up
   trigger:
     platform: event
     event_type: cube_action
@@ -68,10 +68,9 @@
     condition: template
     value_template: "{{ (trigger.event.data.action_value|float) > 0 }}"
   action:
-    - service: scene.turn_on
-      entity_id: scene.deep_blue
+    - service: script.surround_sound_vol_up
 
-- alias: Cube rotation anticlockwise
+- alias: Cube volume down
   trigger:
     platform: event
     event_type: cube_action
@@ -82,8 +81,29 @@
     condition: template
     value_template: "{{ (trigger.event.data.action_value|float) < 0 }}"
   action:
+    - service: script.surround_sound_vol_down
+
+- alias: Cube flip90
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type: flip90
+  action:
     - service: scene.turn_on
       entity_id: scene.bright
+
+- alias: Cube flip180
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type: flip180
+  action:
+    - service: scene.turn_on
+      entity_id: scene.deep_blue
 
 - alias: Cube volume
   trigger:
