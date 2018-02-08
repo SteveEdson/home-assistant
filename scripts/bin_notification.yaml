@@ -3,15 +3,13 @@ sequence:
   - service: notify.html5
     data:
       title: "Take out the bin"
-      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} for tomorrow"
+      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow."
       data:
         tag: "bin-reminder"
   - service: media_player.volume_set
     data:
       entity_id: media_player.entire_house
       volume_level: 0.5
-  - service: tts.microsoft_say
+  - service: notify.google_assistant_broadcast
     data_template:
-      cache: false
-      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} for tomorrow"
-      entity_id: media_player.entire_house
+      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow."
