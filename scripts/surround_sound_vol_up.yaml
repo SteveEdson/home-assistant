@@ -1,0 +1,6 @@
+alias: Turn Surround Sound Up
+sequence:
+  - service: switch.broadlink_send_packet_192_168_1_168
+    data:
+      packet: 
+        - "JgBIAAABJ5ATEhQRExEUNRQRExITERQREzYUNRM2FBEUNRQ1FDYTNhQREzYTERQ2EzYUEBQRExITNhQQFDYTERQRFDUTNhQ1FAANBQ"
