@@ -6,6 +6,6 @@ sequence:
       message: "{{ states('sensor.daily_summary') }}"
       data:
         tag: "good-morning"
-  - service: notify.google_assistant
+  - service: notify.google_assistant_broadcast
     data_template:
       message: "{{ states('sensor.daily_summary') }}"
