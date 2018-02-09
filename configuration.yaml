@@ -43,6 +43,13 @@ map:
 # Track the sun
 sun:
 
+dialogflow:
+
+intent_script:
+  GetTemperature:
+    speech:
+      text: The temperature at home is 38 degrees
+
 binary_sensor:
   - platform: digital_ocean
     droplets:
