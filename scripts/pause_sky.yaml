@@ -3,4 +3,4 @@ sequence:
   - service: switch.broadlink_send_packet_192_168_1_168
     data:
       packet: 
-        - "JgAuAFgcEAwRDBEbEBsfDBANEQwRDBANHhsgDBEMERoRDBANEQsgGhEMHxsQDBEADQUAAAAAAAAAAAAA"
+        - "JgAuAFkbEA0ODxAbEBsdDxANEAwQDQ8OHR0dDhANEBsPDhANEA0dHRANHhsODw4ADQUAAAAAAAAAAAAA"
