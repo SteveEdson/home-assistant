@@ -6,6 +6,11 @@ sequence:
       message: "{{ states('sensor.daily_summary') }}"
       data:
         tag: "good-morning"
+        
+  - service: media_player.volume_set
+    data:       
+      entity_id: group.media_players     
+      volume_level: 0.5
   - service: notify.google_assistant_broadcast
     data_template:
       message: "{{ states('sensor.daily_summary') }}"
