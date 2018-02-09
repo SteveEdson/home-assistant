@@ -115,3 +115,30 @@
   action:
     - service: light.toggle
       entity_id: group.lounge_lights
+
+
+- alias: Cube Tap Twice
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type:  
+  action:
+    - service_template: >
+        {% if is_state('media_player.lounge_tv', 'on') %}
+         media_player.toggle
+         {% elif is_state('media_player.lounge', 'on') %}
+         media_player.toggle
+         {% else %}
+          script.pause_sky
+         {% endif %}
+      data_template:
+        entity_id: >
+         {% if is_state('media_player.lounge_tv', 'on') %}
+         media_player.lounge_tv
+         {% elif is_state('media_player.lounge', 'on') %}
+         media_player.lounge
+         {% else %}
+          media_player.samsung_tv
+         {% endif %}

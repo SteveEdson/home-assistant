@@ -1,0 +1,6 @@
+alias: Play/Pause Sky
+sequence:
+  - service: switch.broadlink_send_packet_192_168_1_168
+    data:
+      packet: 
+        - "JgAuAFgcEAwQDREbEBsfDBANEA0QDRANHxofDRANEBsQDRANEAwfGxANIBoQDRAADQUAAAAAAAAAAAAA"
