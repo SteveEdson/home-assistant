@@ -123,7 +123,7 @@
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001041dc7
-      action_type:  
+      action_type: tap_twice 
   action:
     - service_template: >
          {% if is_state('media_player.lounge_tv', 'on') %}
