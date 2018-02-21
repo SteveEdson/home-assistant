@@ -26,6 +26,14 @@ kitchen:
   entities:
     - media_player.kitchen_home
     - group.kitchen_lights
+    - binary_sensor.motion_sensor_158d0001643c27
+
+hall:
+  view: yes
+  icon: mdi:stairs
+  name: Hallway
+  entities:
+    - group.hallway
 
 lounge:
   view: yes
@@ -103,6 +111,8 @@ Lounge Lights:
 
 Hallway:
   - light.landing_light
+  - binary_sensor.door_window_sensor_158d0002253f18
+  - sensor.illumination_7811dcb25e74
   
 Office Lights:
   - light.office
