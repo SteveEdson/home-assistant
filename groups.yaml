@@ -91,6 +91,7 @@ Devices:
   - device_tracker.oneplus_3
   - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
+  - device_tracker.stevegps
 
 Computers:
   - device_tracker.desktopkvl6s86
