@@ -142,3 +142,7 @@ binary_sensor.door_window_sensor_158d0002253f18:
 binary_sensor.switch_158d0001f354ea:
   friendly_name: Lights Switch
   icon: mdi:flash-circle
+
+sensor.illumination_7811dcb25e74:
+  friendly_name: Hallway Illumination
+  icon: mdi:brightness-6
