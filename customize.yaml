@@ -130,3 +130,11 @@ binary_sensor.motion_sensor_158d0002234460:
 binary_sensor.motion_sensor_158d0001643c27:
   friendly_name: Kitchen Motion Sensor
   icon: mdi:fridge
+
+binary_sensor.cube_158d0001041dc7:
+  friendly_name: Magic Cube
+  icon: mdi:cube-send
+
+binary_sensor.door_window_sensor_158d0002253f18:
+  friendly_name: Front Door Sensor
+  icon: mdi:door
