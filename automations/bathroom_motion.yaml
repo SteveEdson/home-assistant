@@ -1,0 +1,57 @@
+- alias: Bathroom motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002234460
+    from: 'off'
+    to: 'on'
+#  condition:
+#    condition : or
+#    conditions:
+#      - condition: sun # 20 mins before sunset
+#        after: sunset
+#        after_offset: "-0:20:00"
+#      - condition: sun # 1 hour after sunrise
+#        before: sunrise
+#        before_offset: "1:00:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway
+        brightness_pct: 100
+
+# Dim the lights after no motion
+- alias: Bathroom no motion 5 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002234460
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 2
+  condition:
+    condition: state
+    entity_id: group.hallway
+    state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway
+        brightness_pct: 25
+
+#Turn off kitchen light with no motion for 15 mins
+- alias: Bathroom no motion 15 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002234460
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 8
+  condition:
+    condition: state
+    entity_id: group.hallway
+    state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.hallway
