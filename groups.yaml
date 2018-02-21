@@ -127,9 +127,16 @@ Events:
 
 Home Assistant:
   - sensor.cpu_temperature
-  - sensor.average_load_5m
-  - sensor.ram_available
   - sensor.disk_free_
+  - sensor.load_5m
+  - sensor.memory_free
+
+Xiaomi:
+  - binary_sensor.motion_sensor_158d0002234460
+  - binary_sensor.motion_sensor_158d0001643c27
+  - binary_sensor.door_window_sensor_158d0002253f18
+  - binary_sensor.switch_158d0001f354ea
+  - binary_sensor.cube_158d0001041dc7
 
 Jaywing:
   - sensor.holiday_allowance_remaining_this_year
