@@ -4,15 +4,15 @@
     entity_id: binary_sensor.motion_sensor_158d0002234460
     from: 'off'
     to: 'on'
-#  condition:
-#    condition : or
-#    conditions:
-#      - condition: sun # 20 mins before sunset
-#        after: sunset
-#        after_offset: "-0:20:00"
-#      - condition: sun # 1 hour after sunrise
-#        before: sunrise
-#        before_offset: "1:00:00"
+  condition:
+    condition : or
+    conditions:
+      - condition: sun # 20 mins before sunset
+        after: sunset
+        after_offset: "-0:20:00"
+      - condition: sun # 1 hour after sunrise
+        before: sunrise
+        before_offset: "1:00:00"
   action:
     - service: light.turn_on
       data:
