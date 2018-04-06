@@ -114,4 +114,5 @@
        {% if (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
        Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
        {% endif %}
+       {% if(((as_timestamp(strptime("14/04/2018", "%d/%m/%Y")) - as_timestamp(now())) / (60 * 60 * 24)) | round > 0) %} Holy shit, it's only {{ ((as_timestamp(strptime("14/04/2018", "%d/%m/%Y")) - as_timestamp(now())) / (60 * 60 * 24)) | round }} days until the wedding! ARGH!{% endif %}
        Have a great day.
