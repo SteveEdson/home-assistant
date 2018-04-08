@@ -63,7 +63,7 @@ bedroom:
 
 bathroom:
   view: yes
-  icon: mdi:bath
+  icon: mdi:hot-tub
   name: Bathroom
   entities:
     - group.bathroom_lights
