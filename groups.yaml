@@ -60,7 +60,15 @@ bedroom:
     - group.bedroom_lights
     - media_player.bedroom_tv
     - media_player.bedroom_speaker
-    
+
+bathroom:
+  view: yes
+  icon: mdi:bath
+  name: Bathroom
+  entities:
+    - group.bathroom_lights
+    - binary_sensor.motion_sensor_158d0002234460
+
 office:
   view: yes
   icon: mdi:desktop-tower
