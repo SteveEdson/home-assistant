@@ -8,6 +8,7 @@ lights:
     - group.kitchen_lights
     - group.bedroom_lights
     - group.hallway
+    - group.bathroom_lights
 
 media_players:
   view: yes
