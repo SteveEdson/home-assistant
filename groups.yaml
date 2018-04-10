@@ -9,6 +9,7 @@ lights:
     - group.bedroom_lights
     - group.hallway
     - group.bathroom_lights
+    - group.all_lights
 
 media_players:
   view: yes
