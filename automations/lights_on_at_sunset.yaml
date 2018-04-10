@@ -12,4 +12,4 @@
   trigger:
   - event: sunset
     platform: sun
-    offset: "-00:25:00"
+    offset: "-00:35:00"
