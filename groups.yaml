@@ -134,6 +134,9 @@ Bedroom Lights:
 Kitchen Lights:
   - light.kitchen_table
   - light.kitchen_light_1
+  - light.kitchen_light_2
+  - light.kitchen_light_3
+  - light.kitchen_light_4
 
 Bathroom Lights:
   - light.bathroom_light_1
