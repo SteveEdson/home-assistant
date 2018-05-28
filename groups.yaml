@@ -124,6 +124,7 @@ Hallway:
   - light.landing_light
   - binary_sensor.door_window_sensor_158d0002253f18
   - sensor.illumination_7811dcb25e74
+  - light.porch 
   
 Office Lights:
   - light.office
