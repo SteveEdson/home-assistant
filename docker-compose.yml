@@ -1,0 +1,12 @@
+  version: '3'
+  services:
+    homeassistant:
+      container_name: home-assistant
+      image: homeassistant/home-assistant
+      volumes:
+        - /home/steve/repos/home-assistant:/config
+        - /etc/localtime:/etc/localtime:ro
+      restart: always
+      network_mode: host
+
+
