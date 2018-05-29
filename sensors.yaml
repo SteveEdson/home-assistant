@@ -18,9 +18,12 @@
     - ping
     - download
     - upload
-  minute:
+  minute: 30
+  hour:
     - 0
-    - 30
+    - 6
+    - 12
+    - 18
 
 #- platform: darksky
 #  api_key: !secret darksky_api_key
