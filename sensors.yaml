@@ -10,8 +10,8 @@
     - "activities/heart"
     - "devices/battery"
 
-- platform: pi_hole
-  host: 192.168.1.120
+#- platform: pi_hole
+#  host: 192.168.1.120
 
 - platform: speedtest
   monitored_conditions:
