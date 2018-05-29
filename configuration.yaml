@@ -1,5 +1,3 @@
-hassio:
-
 homeassistant: !include home_assistant.yaml
 
 http: !include http.yaml
