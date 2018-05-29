@@ -15,3 +15,6 @@ config.tar.gz
 known_devices.yaml
 .idea/
 node_modules/
+.config_entries.json
+entity_registry.yaml
+deps/
