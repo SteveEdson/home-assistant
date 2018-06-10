@@ -88,8 +88,8 @@ mqtt:
   #username: pi
   #password: raspberry
 
-light:
-  - platform: blinkt
+#light:
+#  - platform: blinkt
 
 hue:
   bridges:

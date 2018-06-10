@@ -118,8 +118,7 @@ Lounge Lights:
   - light.twigs
   - light.corner_lamp
   - switch.my_smart_plug
-  - light.blinkt
-
+ 
 Hallway:
   - light.landing_light
   - binary_sensor.door_window_sensor_158d0002253f18
