@@ -241,6 +241,7 @@ Weather:
 Hive:
   - climate.heating
   - climate.hot_water
+  - sensor.hub_status
   - sensor.hive_current_temperature
   - sensor.hive_heating_boost
   - sensor.hive_heating_mode
