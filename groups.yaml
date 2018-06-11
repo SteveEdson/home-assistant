@@ -170,6 +170,8 @@ Jaywing:
   - sensor.holidays_not_yet_taken
   - sensor.time_to_work
   - sensor.time_to_home
+  - sensor.home_eta
+  - binary_sensor.home_away
 
 Upstairs Protect:
   - sensor.upstairs_nest_protect_battery_health
@@ -234,6 +236,7 @@ Network Stats:
   
 Weather:
   - sun.sun
+  - sensor.outside_temperature
   
 Hive:
   - climate.heating
