@@ -18,3 +18,8 @@ sequence:
   - service: notify.google_assistant_broadcast
     data_template:
       message: "{{ states('sensor.daily_summary') }}"
+  - service: tts.microsoft_say
+    data_template:
+      cache: false
+      message: "{{ states('sensor.daily_summary') }}"
+      entity_id: media_player.entire_house
