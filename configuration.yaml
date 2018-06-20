@@ -153,7 +153,7 @@ digital_ocean:
   access_token: !secret digital_ocean_key
 
 logger:
-  default: info
+  default: warning
 
 group: !include groups.yaml
 
