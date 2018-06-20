@@ -112,7 +112,7 @@
       friendly_name: "Daily Summary"
       value_template: >
        Good morning Steve! It will take you {{ states.sensor.time_to_work.attributes.duration_in_traffic }} to get to work.
-       Today, the weather is {{ states('weather.dark_sky') }}, and the outside temperature is {{ states.weather.dark_sky.attributes.temperature }}°C.
+       Today, the weather is {{ states('weather.dark_sky') }}, with a temperature of {{ states.weather.dark_sky.attributes.forecast[0].temperature}}°C.
        It is {{ states.climate.heating.attributes.current_temperature }}°C inside the house.
        {% if (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
        Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
