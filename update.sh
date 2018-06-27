@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 git pull
-sudo docker-compose pull
-sudo docker-compose down
-sudo docker-compose up -d
+docker-compose pull
+docker-compose down
+docker-compose up -d
