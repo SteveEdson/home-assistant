@@ -38,7 +38,7 @@
   command: "sensors | grep -Po \"\\d*\\.\\d*\" | head -1"
   # If errors occur, remove degree symbol below
   unit_of_measurement: "°C"
-  value_template: '{{ value | round(2) }}'
+  value_template: '{{ value | float | round(2) }}'
 
 - platform: whois
   domain: steveedson.co.uk
