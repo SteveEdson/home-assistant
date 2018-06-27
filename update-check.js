@@ -1,6 +1,12 @@
 const exec = require('child-process-promise').exec;
 const Push = require('pushover-notifications');
 
+console.log('env', {
+    user: process.env['PUSHOVER_USER'],
+    token: process.env['PUSHOVER_TOKEN'],
+    url: process.env.HOMEASSISTANT_URL,
+});
+
 const p = new Push({
     user: process.env['PUSHOVER_USER'],
     token: process.env['PUSHOVER_TOKEN'],
