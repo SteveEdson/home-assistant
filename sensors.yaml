@@ -35,10 +35,10 @@
 
 - platform: command_line
   name: CPU Temperature
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  command: "sensors | grep -Po "\d*\.\d*" | head -1"
   # If errors occur, remove degree symbol below
   unit_of_measurement: "°C"
-  value_template: '{{ value | multiply(0.001) | round(2) }}'
+  value_template: '{{ value | round(2) }}'
 
 - platform: whois
   domain: steveedson.co.uk
