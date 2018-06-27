@@ -24,7 +24,8 @@ const updateMessage = {
     url_title: "Open Home Assistant"
 };
 
-fetchPromise.then(() => {
+fetchPromise.then(({ stdout }) => {
+    console.log('fetch', stdout);
     return Promise.all([localRef, remoteRef]).then(refs => {
         console.log({refs});
 
