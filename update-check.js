@@ -20,10 +20,6 @@ let localRef = exec('git rev-parse HEAD', {
    cwd: __dirname
 }).then(({ stdout }) => stdout);
 
-let remoteRef = exec('git rev-parse origin/master', {
-   cwd: __dirname
-}).then(({ stdout }) => stdout);
-
 const updateMessage = {
     title: "Home Assistant Updated",
     url: process.env.HOMEASSISTANT_URL,
@@ -31,6 +27,10 @@ const updateMessage = {
 };
 
 fetchPromise.then(({ stdout }) => {
+    let remoteRef = exec('git rev-parse origin/master', {
+        cwd: __dirname
+    }).then(({ stdout }) => stdout);
+
     console.log('fetch', stdout);
     return Promise.all([localRef, remoteRef]).then(refs => {
         console.log({refs});
