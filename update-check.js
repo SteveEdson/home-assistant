@@ -30,8 +30,8 @@ fetchPromise.then(() => {
 
         if(refs[0] !== refs[1]) {
             exec('./update.sh', {
-   cwd: __dirname
-}).then(({ stdout }) => {
+               cwd: __dirname
+            }).then(({ stdout }) => {
                 console.log(stdout);
 
                 updateMessage.message = `Updated from ${refs[0]} to ${refs[1]}`;
