@@ -19,14 +19,6 @@
     light.twigs:
       state: on
       brightness_pct: 100
-      
-    light.blinkt:
-      state: on
-      brightness_pct: 100
-      rgb_color:
-        - 255
-        - 0
-        - 0
         
     switch.my_smart_plug:
       state: on
@@ -46,11 +38,6 @@
     light.twigs:
       state: on
       brightness_pct: 100
-      
-    light.blinkt:
-      state: on
-      brightness_pct: 100
-      color_temp: 350
         
     switch.my_smart_plug:
       state: on      
