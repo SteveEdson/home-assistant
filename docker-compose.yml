@@ -8,10 +8,20 @@
         - /etc/localtime:/etc/localtime:ro
       restart: always
       network_mode: host
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8123"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3        
       logging:
-          driver: "json-file"
-          options:
-              max-size: "100k"
-              max-file: "20"
-
-
+        driver: "json-file"
+        options:
+            max-size: "100k"
+            max-file: "20"
+    autoheal:
+      restart: always
+      image: willfarrell/autoheal
+      environment:
+        - AUTOHEAL_CONTAINER_LABEL=all
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
