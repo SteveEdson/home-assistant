@@ -46,7 +46,14 @@ fetchPromise.then(({ stdout }) => {
 
                 updateMessage.message = `Updated from ${refs[0]} to ${refs[1]}`;
 
-                p.send(updateMessage);
+                p.send(updateMessage, function( err, result ) {
+                    if (err) {
+                        console.error(err);
+                        throw err;
+                    }
+
+                    console.log('pushover', result);
+                });
 
                 process.exit(0);
             });
