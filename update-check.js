@@ -6,7 +6,7 @@ const p = new Push({
     token: process.env['PUSHOVER_TOKEN'],
 });
 
-let fetchPromise = exec('git fetch', {
+let fetchPromise = exec('git fetch --verbose', {
    cwd: __dirname
 });
 
