@@ -171,14 +171,14 @@ google_assistant:
   exposed_domains:
     - switch
     
-calendar:
-  - platform: todoist
-    token: !secret todoist_api_token
-    custom_projects:
-      - name: 'Due Today'
-        due_date_days: 0
-      - name: 'Due This Week'
-        due_date_days: 7
+#calendar:
+#  - platform: todoist
+#    token: !secret todoist_api_token
+#    custom_projects:
+#      - name: 'Due Today'
+#        due_date_days: 0
+#      - name: 'Due This Week'
+#        due_date_days: 7
 
 weather: 
  - platform: darksky
