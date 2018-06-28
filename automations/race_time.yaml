@@ -1,0 +1,8 @@
+- alias: Race Time
+  trigger:
+    platform: state
+    entity_id: calendar.f1_calendar_2018
+    from: off
+    to: on
+  action:
+    service: script.race_start

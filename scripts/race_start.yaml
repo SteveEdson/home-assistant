@@ -1,0 +1,15 @@
+alias: Ask to watch F1
+sequence:
+  - service: notify.html5
+    data:
+      title: "{{ states.calendar.f1_calendar_2018.attributes.message }} is about to start"
+      message: "Watch the race in {{ states.calendar.f1_calendar_2018.attributes.location }}?"
+      data:
+        actions:
+#          - action: watch_race
+#            title: "Watch"
+          - title: "No"
+            action: ignore
+        tag: "f1-race"
+
+#alias: Watch race
