@@ -27,7 +27,7 @@ views:
             tap_action: toggle
             style:
               top: 80%
-              left: 80%
+              left: 90%
 #      - type: glance
 #        title: Doors
 #        entities:
