@@ -23,7 +23,7 @@ views:
             service_data:
               entity_id: group.all_lights
           - type: state-icon
-            entity: light.kitchen_lights
+            entity: light.bathroom_light_1
             tap_action: toggle
             style:
               top: 45%
