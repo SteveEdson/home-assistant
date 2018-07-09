@@ -29,11 +29,11 @@ views:
               top: 80%
               left: 87%
           - type: state-icon
-            entity: light.landing_light
+            entity: group.lounge_lights
             tap_action: toggle
             style:
-              top: 55%
-              left: 87%
+              top: 60%
+              left: 40%
       - type: picture-elements
         title: Upstairs
         image: https://steveedson.co.uk/images/floorplan-upstairs.png
