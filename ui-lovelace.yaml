@@ -11,7 +11,7 @@ views:
     cards:
       - type: picture-elements
         title: Main Level
-        image: https://steveedson.co.uk/floorplan.png
+        image: https://steveedson.co.uk/images/floorplan-downstairs.png
         elements:
           - type: service-button
             title: Lights Off
