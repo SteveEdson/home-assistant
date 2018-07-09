@@ -29,11 +29,23 @@ views:
               top: 80%
               left: 87%
           - type: state-icon
-            entity: group.lounge_lights
+            entity: light.twigs
             tap_action: toggle
             style:
-              top: 60%
-              left: 40%
+              top: 80%
+              left: 30%
+          - type: state-icon
+            entity: switch.my_smart_plug
+            tap_action: toggle
+            style:
+              top: 50%
+              left: 45%
+          - type: state-icon
+            entity: light.left_lamp
+            tap_action: toggle
+            style:
+              top: 50%
+              left: 45%
       - type: picture-elements
         title: Upstairs
         image: https://steveedson.co.uk/images/floorplan-upstairs.png
