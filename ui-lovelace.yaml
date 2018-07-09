@@ -2,9 +2,7 @@ resources:
   - url: /local/custom_ui/weather-card.js
     type: js
 
-#   - url: /local/custom_ui/wired-card.js
-#     type: module
-title: ARS Home
+title: Edson Home
 views:
   - icon: mdi:home-assistant
     id: home
