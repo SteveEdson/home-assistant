@@ -10,7 +10,7 @@ views:
     title: Home
     cards:
       - type: picture-elements
-        title: Main Level
+        title: Downstairs
         image: https://steveedson.co.uk/images/floorplan-downstairs.png
         elements:
           - type: service-button
@@ -23,7 +23,32 @@ views:
             service_data:
               entity_id: group.all_lights
           - type: state-icon
-            entity: light.bathroom_light_1
+            entity: group.kitchen_lights
+            tap_action: toggle
+            style:
+              top: 80%
+              left: 87%
+          - type: state-icon
+            entity: light.landing_light
+            tap_action: toggle
+            style:
+              top: 55%
+              left: 87%
+      - type: picture-elements
+        title: Upstairs
+        image: https://steveedson.co.uk/images/floorplan-upstairs.png
+        elements:
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 95%
+              right: 1%
+              padding: 0px
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: state-icon
+            entity: group.bathroom_lights
             tap_action: toggle
             style:
               top: 80%
