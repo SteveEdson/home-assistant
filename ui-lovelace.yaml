@@ -52,13 +52,13 @@ views:
             tap_action: toggle
             style:
               top: 80%
-              left: 87%
+              left: 52%
           - type: state-icon
             entity: light.landing_light
             tap_action: toggle
             style:
               top: 55%
-              left: 87%
+              left: 52%
 #      - type: glance
 #        title: Doors
 #        entities:
