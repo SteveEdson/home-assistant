@@ -13,7 +13,7 @@ views:
     cards:
       - type: picture-elements
         title: Main Level
-        image: /local/floorplan.png
+        image: /config/resources/floorplan.png
         elements:
           - type: service-button
             title: Lights Off
