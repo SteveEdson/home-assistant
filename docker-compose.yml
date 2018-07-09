@@ -6,6 +6,7 @@
       volumes:
         - /home/steve/repos/home-assistant:/config
         - /etc/localtime:/etc/localtime:ro
+        - /home/steve/repos/home-assistant/resources:/local
       restart: always
       network_mode: host
       healthcheck:
