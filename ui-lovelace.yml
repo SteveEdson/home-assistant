@@ -1,0 +1,65 @@
+resources:
+  - url: /local/custom_ui/weather-card.js
+    type: js
+
+#   - url: /local/custom_ui/wired-card.js
+#     type: module
+title: ARS Home
+views:
+  - icon: mdi:home-assistant
+    id: home
+    # Name of the view. Will be used as the tooltip for tab icon
+    title: Home
+    cards:
+      - type: picture-elements
+        title: Main Level
+        image: /local/floorplan.png
+        elements:
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 97%
+              right: 00%
+              padding: 0px
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: state-icon
+            entity: light.kitchen_lights
+            tap_action: toggle
+            style:
+              top: 45%
+              left: 11%
+#      - type: glance
+#        title: Doors
+#        entities:
+#          - binary_sensor.back_door
+#          - binary_sensor.front_door
+#          - entity: binary_sensor.door_window_sensor_158d0001bf26df
+#            title: Garage
+#          - entity: binary_sensor.ring_front_door_motion
+#            title: Front Motion
+#      - type: entity-filter
+#        filter:
+#          - domain: light
+#            state: 'on'
+#          - domain: light
+#            state: 'off'
+#          - entity_id: switch.driveway
+#          - entity_id: switch.wemoporch
+#        card:
+#          title: Lights
+#      - type: entities
+#        title: Switches
+#        entities:
+#          - switch.wemoswitch
+#          - switch.garage_relay_switch
+#          - switch.wemoinsight
+#      - type: entities
+#        title: Ring Doorbell
+#        entities:
+#          - binary_sensor.ring_front_door_ding
+#          - binary_sensor.ring_front_door_motion
+#          - sensor.ring_front_door_last_activity
+#          - sensor.ring_front_door_last_ding
+#          - sensor.ring_front_door_last_motion
