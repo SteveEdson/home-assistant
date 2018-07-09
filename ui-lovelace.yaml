@@ -16,8 +16,8 @@ views:
           - type: service-button
             title: Lights Off
             style:
-              top: 97%
-              right: 00%
+              top: 95%
+              right: 5%
               padding: 0px
             service: light.turn_off
             service_data:
