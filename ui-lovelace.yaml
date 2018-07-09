@@ -17,7 +17,7 @@ views:
             title: Lights Off
             style:
               top: 95%
-              right: 5%
+              right: 1%
               padding: 0px
             service: light.turn_off
             service_data:
