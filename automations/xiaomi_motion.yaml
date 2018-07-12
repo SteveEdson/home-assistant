@@ -7,10 +7,10 @@
   condition:
     condition : or
     conditions:
-      - condition: sun # 20 mins before sunset
+      - condition: sun # after 20 mins before sunset
         after: sunset
-        after_offset: "-0:20:00"
-      - condition: sun # 1 hour after sunrise
+        after_offset: "-1:00:00"
+      - condition: sun # before 1 hour after sunrise
         before: sunrise
         before_offset: "1:00:00"
   action:
