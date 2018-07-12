@@ -38,14 +38,31 @@ views:
             entity: switch.my_smart_plug
             tap_action: toggle
             style:
-              top: 50%
-              left: 45%
+              top: 51%
+              left: 35%
+          - type: state-icon
+            entity: light.corner_lamp
+            tap_action: toggle
+            style:
+              top: 58%
+              left: 65%
           - type: state-icon
             entity: light.left_lamp
             tap_action: toggle
             style:
-              top: 50%
-              left: 45%
+              top: 49%
+              left: 17%
+          - type: state-icon
+            entity: light.porch
+            tap_action: toggle
+            style:
+              top: 92%
+              left: 78%
+          - type: state-icon
+            entity: binary_sensor.door_window_sensor_158d0002253f18	off
+            style:
+              top: 96%
+              left: 78%
       - type: picture-elements
         title: Upstairs
         image: https://steveedson.co.uk/images/floorplan-upstairs.png
