@@ -50,13 +50,13 @@ views:
             entity: binary_sensor.motion_sensor_158d0001643c27
             tap_action: toggle
             style:
-              top: 28%
-              left: 73%
+              top: 15%
+              left: 36.6%
           - type: state-icon
             entity: light.kitchen_table
             style:
-              top: 15%
-              left: 36.6%
+              top: 28%
+              left: 73%
           - type: state-icon
             entity: light.twigs
             tap_action: toggle
