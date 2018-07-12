@@ -129,8 +129,20 @@ views:
             entity: light.landing_light
             tap_action: toggle
             style:
-              top: 55%
-              left: 52%
+              top: 45%
+              left: 63%
+          - type: state-icon
+            entity: light.office
+            tap_action: toggle
+            style:
+              top: 90.5%
+              left: 22%
+          - type: state-icon
+            entity: switch.aegis
+            tap_action: toggle
+            style:
+              top: 90.5%
+              left: 51%
 #      - type: glance
 #        title: Doors
 #        entities:
