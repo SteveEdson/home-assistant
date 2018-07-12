@@ -59,7 +59,7 @@ views:
               top: 92%
               left: 78%
           - type: state-icon
-            entity: binary_sensor.door_window_sensor_158d0002253f18	off
+            entity: binary_sensor.door_window_sensor_158d0002253f18
             style:
               top: 96%
               left: 78%
