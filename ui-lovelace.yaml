@@ -137,7 +137,7 @@ views:
             style:
               top: 84.5%
               left: 73%
-           - type: state-icon
+          - type: state-icon
             entity: light.bedroom_light
             tap_action: toggle
             style:
