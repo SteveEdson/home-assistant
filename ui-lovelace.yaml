@@ -120,11 +120,23 @@ views:
             service_data:
               entity_id: group.all_lights
           - type: state-icon
-            entity: group.bathroom_lights
+            entity: light.bathroom_light_1
             tap_action: toggle
             style:
-              top: 80%
-              left: 52%
+              top: 84.5%
+              left: 65%
+          - type: state-icon
+            entity: light.bathroom_light_2
+            tap_action: toggle
+            style:
+              top: 84.5%
+              left: 69%
+          - type: state-icon
+            entity: light.bathroom_light_3
+            tap_action: toggle
+            style:
+              top: 84.5%
+              left: 73%
           - type: state-icon
             entity: light.landing_light
             tap_action: toggle
