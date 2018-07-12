@@ -23,17 +23,35 @@ views:
             service_data:
               entity_id: group.all_lights
           - type: state-icon
-            entity: group.kitchen_lights
+            entity: light.kitchen_light_1
             tap_action: toggle
             style:
-              top: 80%
-              left: 87%
+              top: 28%
+              left: 34%
+          - type: state-icon
+            entity: light.kitchen_light_2
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 39%
+          - type: state-icon
+            entity: light.kitchen_light_3
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 44%
+          - type: state-icon
+            entity: light.kitchen_light_4
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 49%
           - type: state-icon
             entity: light.twigs
             tap_action: toggle
             style:
-              top: 80%
-              left: 30%
+              top: 84%
+              left: 14%
           - type: state-icon
             entity: switch.my_smart_plug
             tap_action: toggle
