@@ -20,7 +20,7 @@
         brightness_pct: 100
 
 # Dim the lights after no motion
-- alias: Bathroom no motion 3 min
+- alias: Bathroom no motion 2 min
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0002234460
@@ -38,8 +38,8 @@
         entity_id: group.bathroom_lights
         brightness_pct: 25
 
-#Turn off kitchen light with no motion for 15 mins
-- alias: Bathroom no motion 5 mins
+#Turn off kitchen light with no motion for 3 mins
+- alias: Bathroom no motion 3 mins
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0002234460
