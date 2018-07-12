@@ -89,6 +89,11 @@ views:
               top: 49%
               left: 17%
           - type: state-icon
+            entity: media_player.samsung_tv_remote
+            style:
+              top: 89.5%
+              left: 23%
+          - type: state-icon
             entity: light.porch
             tap_action: toggle
             style:
