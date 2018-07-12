@@ -97,11 +97,18 @@ views:
         image: https://steveedson.co.uk/images/floorplan-upstairs.png
         elements:
           - type: service-button
+            title: Lights On
+            style:
+              top: 98%
+              right: 18%
+            service: light.turn_on
+            service_data:
+              entity_id: group.all_lights
+          - type: service-button
             title: Lights Off
             style:
-              top: 95%
-              right: 1%
-              padding: 0px
+              top: 98%
+              right: 0
             service: light.turn_off
             service_data:
               entity_id: group.all_lights
