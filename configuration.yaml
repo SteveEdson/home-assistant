@@ -83,6 +83,7 @@ camera:
   name: Camera
   platform: mjpeg
   mjpeg_url: http://192.168.1.5/stream/video.mjpeg
+  still_image_url: http://192.168.1.5/stream/snapshot.jpeg?delay_s=0
   
 mqtt:
   #broker: 172.17.0.1
