@@ -175,3 +175,11 @@ views:
           - switch.my_smart_plug
           - media_player.samsung_tv_remote
         image: https://images2.roomstogo.com/is/image/roomstogo/lr_rm_bellingham_gray~Cindy-Crawford-Home-Bellingham-Gray-5-Pc-Living-Room.jpeg
+      - type: glance
+        title: Lounge
+        entities:
+          - light.twigs
+          - light.corner_lamp
+          - light.left_lamp
+          - switch.my_smart_plug
+          - media_player.lounge_tv
