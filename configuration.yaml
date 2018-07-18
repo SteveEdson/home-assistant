@@ -233,3 +233,12 @@ xiaomi_aqara:
   discovery_retry: 5
   gateways:
     - key: !secret xiaomi_gateway
+
+alarm_control_panel:
+  - platform: manual
+    name: House Alarm
+    code: !secret alarm_code
+    delay_time: 30
+    armed_home:
+      pending_time: 0
+      delay_time: 0
