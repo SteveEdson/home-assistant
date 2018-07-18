@@ -59,7 +59,7 @@
     service: alarm_control_panel.alarm_disarm
     data:
       entity_id: alarm_control_panel.house_alarm
-      code: !secret alarm_pin
+      code: !secret alarm_code
 
 #arm the alarm after leaving
 - id: alarm_on_depart
@@ -75,7 +75,7 @@
     service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.house_alarm
-      code: !secret alarm_pin
+      code: !secret alarm_code
 
 - id: disarm_on_arrival
   alias: 'Disarm the alarm on arrival'
@@ -88,7 +88,7 @@
     service: alarm_control_panel.alarm_disarm
     data:
       entity_id: alarm_control_panel.house_alarm
-      code: !secret alarm_pin
+      code: !secret alarm_code
 
 - id: alarm_on_depart
   alias: 'Arm the alarm after leaving'
