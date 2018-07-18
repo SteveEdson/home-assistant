@@ -35,7 +35,7 @@
   alias: 'Arm the alarm after leaving'
   trigger:
     platform: state
-    entity_id: group.people
+    entity_id: group.all_devices
     to: 'not_home'
     from: 'home'
     for:
@@ -50,7 +50,7 @@
   alias: 'Disarm the alarm on arrival'
   trigger:
     platform: state
-    entity_id: group.people
+    entity_id: group.all_devices
     to: 'home'
     from: 'not_home'
   action:
@@ -63,7 +63,7 @@
   alias: 'Arm the alarm after leaving'
   trigger:
     platform: state
-    entity_id: group.people
+    entity_id: group.all_devices
     to: 'not_home'
     from: 'home'
     for:
@@ -78,7 +78,7 @@
   alias: 'Disarm the alarm on arrival'
   trigger:
     platform: state
-    entity_id: group.people
+    entity_id: group.all_devices
     to: 'home'
     from: 'not_home'
   action:
