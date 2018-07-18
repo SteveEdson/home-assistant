@@ -106,5 +106,3 @@ themes:
     paper-slider-disabled-secondary-color: 'hsl(var(--base-hue), 80%, 25%)'
     paper-dialog-color: 'hsl(var(--base-hue), 20%, 80%)'
 javascript_version: latest
-extra_html_url:
-  - /local/lovelace.html
