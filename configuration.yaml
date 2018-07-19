@@ -76,6 +76,11 @@ tts:
     type: Susan, Apollo
     rate: 20
 
+panel_custom:
+  - name: Lovelace
+    sidebar_title: Lovelace
+    sidebar_icon: mdi:hand-pointing-right
+    url_path: /lovelace/home
 
 config:
 
