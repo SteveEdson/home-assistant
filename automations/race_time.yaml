@@ -4,5 +4,11 @@
     entity_id: calendar.f1_calendar_2018
     from: 'off'
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
   action:
     service: script.race_start
+
+## todo: add trigger when state changes to home, and the race is on
