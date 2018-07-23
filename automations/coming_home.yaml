@@ -18,6 +18,8 @@
       - condition: state
         entity_id: group.devices
         state: not_home
+      - condition: template
+        value_template: {{ states.climate.heating.attributes.current_temperature <= 17 }}
   action:
     service: script.send_heating_notification
 
