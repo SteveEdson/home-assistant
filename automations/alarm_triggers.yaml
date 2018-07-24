@@ -73,16 +73,3 @@
     data:
       entity_id: alarm_control_panel.house_alarm
       code: !secret alarm_code
-
-- id: disarm_on_arrival
-  alias: 'Disarm the alarm on arrival'
-  trigger:
-    platform: state
-    entity_id: group.all_devices
-    to: 'home'
-    from: 'not_home'
-  action:
-    service: alarm_control_panel.alarm_disarm
-    data:
-      entity_id: alarm_control_panel.house_alarm
-      code: !secret alarm_code
