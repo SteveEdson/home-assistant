@@ -99,6 +99,17 @@
     - bins
   scan_interval: 7200
 
+- platform: rest
+  resource: !secret pay_day_api
+  name: Bin days
+  value_template: '{{ value_json.fromNow }}'
+  json_attributes:
+    - payday
+    - fromNow
+    - formatted
+    - unix
+  scan_interval: 7200
+
 - platform: systemmonitor
   resources:
     - type: disk_free
