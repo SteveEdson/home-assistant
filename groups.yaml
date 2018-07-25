@@ -102,6 +102,9 @@ Devices:
   - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
   - device_tracker.stevegps
+  - device_tracker.edsonmacbook
+  - device_tracker.oneplus5t
+  - device_tracker.oneplus_6
 
 Computers:
   - device_tracker.desktopkvl6s86
@@ -112,6 +115,7 @@ Lounge Protect:
   - sensor.living_room_nest_protect_co_status
   - binary_sensor.living_room_nest_protect_online
   - sensor.living_room_nest_protect_smoke_status
+  - sensor.living_room_nest_protect_color_status
 
 Lounge Lights:
   - light.left_lamp
@@ -166,6 +170,7 @@ Xiaomi:
   - sensor.illumination_7811dcb25e74
 
 Jaywing:
+  - sensor.pay_day
   - sensor.holiday_allowance_remaining_this_year
   - sensor.holidays_not_yet_taken
   - sensor.time_to_work
@@ -178,6 +183,7 @@ Upstairs Protect:
   - sensor.upstairs_nest_protect_co_status
   - binary_sensor.upstairs_nest_protect_online
   - sensor.upstairs_nest_protect_smoke_status
+  - sensor.upstairs_nest_protect_color_status
   
 Health:
   - sensor.weight
@@ -237,7 +243,10 @@ Network Stats:
 Weather:
   - sun.sun
   - sensor.outside_temperature
-  
+
+Security:
+  - alarm_control_panel.house_alarm
+
 Hive:
   - climate.heating
   - climate.hot_water
@@ -251,6 +260,7 @@ Hive:
   - sensor.hive_hot_water_state
   - sensor.hive_target_temperature
   - sensor.hive_thermostat_battery_level
+  - sensor.hive_hub_status
 
 Websites:
   - sensor.steveedsoncouk
