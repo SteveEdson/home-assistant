@@ -101,7 +101,7 @@
 
 - platform: rest
   resource: !secret pay_day_api
-  name: Bin days
+  name: Pay Day
   value_template: '{{ value_json.fromNow }}'
   json_attributes:
     - payday
