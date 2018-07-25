@@ -108,6 +108,8 @@
     - fromNow
     - formatted
     - unix
+    - daysRemaining
+    - isToday
   scan_interval: 7200
 
 - platform: systemmonitor
