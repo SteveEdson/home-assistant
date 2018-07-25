@@ -108,6 +108,7 @@
     - fromNow
     - formatted
     - unix
+    - status
     - daysRemaining
     - isToday
   scan_interval: 7200
