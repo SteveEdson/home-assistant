@@ -76,12 +76,6 @@ tts:
     type: Susan, Apollo
     rate: 20
 
-panel_iframe:
-  lovelace:
-    title: Lovelace
-    icon: mdi:hand-pointing-right
-    url: /lovelace/home
-
 config:
 
 camera:
