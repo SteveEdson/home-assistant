@@ -58,18 +58,3 @@
     data:
       entity_id: alarm_control_panel.house_alarm
       code: !secret alarm_code
-
-- id: alarm_on_depart
-  alias: 'Arm the alarm after leaving'
-  trigger:
-    platform: state
-    entity_id: group.all_devices
-    to: 'not_home'
-    from: 'home'
-    for:
-      minutes: 10
-  action:
-    service: alarm_control_panel.alarm_arm_away
-    data:
-      entity_id: alarm_control_panel.house_alarm
-      code: !secret alarm_code
