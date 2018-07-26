@@ -1,7 +1,3 @@
-resources:
-  - url: /local/custom_ui/weather-card.js
-    type: js
-
 title: Edson Home
 views:
   - icon: mdi:home-assistant
