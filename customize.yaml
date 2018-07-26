@@ -110,9 +110,6 @@ sensor.time_to_home:
 binary_sensor.ha_domain_due:
   hidden: true
 
-sensor.daily_summary:
-  hidden: true
-
 script.bin_notification:
   icon: mdi:delete
 

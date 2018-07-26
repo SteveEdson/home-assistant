@@ -3,7 +3,7 @@ sequence:
   - service: notify.html5
     data:
       title: "Good morning"
-      message: "{{ states('sensor.daily_summary') }}"
+      message: !include daily_summary.yaml
       data:
         tag: "good-morning"
         
@@ -17,4 +17,4 @@ sequence:
       volume_level: 0.35
   - service: notify.google_assistant_broadcast
     data_template:
-      message: "{{ states('sensor.daily_summary') }}"
+      message: !include daily_summary.yaml
