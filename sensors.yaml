@@ -25,13 +25,12 @@
     - 12
     - 18
 
-#- platform: darksky
-#  api_key: !secret darksky_api_key
-#  monitored_conditions:
-#    - summary
-#    - nearest_storm_distance
-#    - apparent_temperature
-#    - minutely_summary
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - minutely_summary
+  update_interval: '01:00'
 
 - platform: command_line
   name: CPU Temperature
