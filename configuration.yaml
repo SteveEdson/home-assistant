@@ -78,11 +78,7 @@ tts:
 
 config:
 
-camera:
-  name: Camera
-  platform: mjpeg
-  mjpeg_url: http://192.168.1.5/stream/video.mjpeg
-  still_image_url: http://192.168.1.5/stream/snapshot.jpeg?delay_s=0
+camera: !include cameras.yaml
   
 mqtt:
   discovery: true
@@ -243,3 +239,7 @@ alarm_control_panel:
     armed_home:
       pending_time: 0
       delay_time: 0
+
+- platform: ffmpeg
+  name: DaFang3
+  input: -rtsp_transport tcp -i rtsp://dafang:8554/unicast
