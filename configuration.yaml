@@ -66,6 +66,8 @@ binary_sensor:
 # Weather Prediction
 sensor: !include sensors.yaml
 
+camera: !include cameras.yaml
+
 # Text to speech
 tts:
   - platform: google
@@ -78,8 +80,6 @@ tts:
 
 config:
 
-camera: !include cameras.yaml
-  
 mqtt:
   discovery: true
   discovery_prefix: homeassistant
