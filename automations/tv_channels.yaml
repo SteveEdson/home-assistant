@@ -4,7 +4,10 @@
     entity_id: input_select.channel
     to: BBC One
   action:
-    service: shell_command.bbcone
+    service: mqtt.publish
+    data:
+      topic: sky_command
+      payload: "1 1 5"
 
 - alias: BBC Two
   trigger:
@@ -12,7 +15,10 @@
     entity_id: input_select.channel
     to: BBC Two
   action:
-    service: shell_command.bbctwo
+    service: mqtt.publish
+    data:
+      topic: sky_command
+      payload: "1 0 2"
 
 - alias: ITV
   trigger:
@@ -20,7 +26,10 @@
     entity_id: input_select.channel
     to: ITV
   action:
-    service: shell_command.itv
+    service: mqtt.publish
+    data:
+      topic: sky_command
+      payload: "1 0 3"
 
 - alias: Channel 4
   trigger:
@@ -28,7 +37,10 @@
     entity_id: input_select.channel
     to: Channel 4
   action:
-    service: shell_command.channel4
+    service: mqtt.publish
+    data:
+      topic: sky_command
+      payload: "1 3 8"
 
 - alias: Sky 1
   trigger:
@@ -36,4 +48,7 @@
     entity_id: input_select.channel
     to: Sky 1
   action:
-    service: shell_command.sky1
+    service: mqtt.publish
+    data:
+      topic: sky_command
+      payload: "1 0 6"

@@ -11,8 +11,6 @@ frontend: !include frontend.yaml
 input_select: !include inputs/input_select.yaml
 # input_slider: !include inputs/input_slider.yaml
 
-shell_command: !include shell_commands.yaml
-
 google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
