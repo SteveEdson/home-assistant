@@ -32,3 +32,14 @@
       action: html_turn_heating_on
   action:
     - service: script.boost_heating
+
+- id: sophie_home
+  alias: Sophie Home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sophie_arrived_home
+      to: 'on'
+  action:
+    - service: notify.google_assistant_broadcast
+      data_template:
+        message: Welcome home Sophie!
