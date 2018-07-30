@@ -70,6 +70,7 @@ binary_sensor:
         platform: 'state'
         to_state: 'home'
       - entity_id: 'binary_sensor.door_window_sensor_158d0002253f18'
+        platform: 'state'
         to_state: 'on'
         prob_given_true: 0.6
         prob_given_false: 0.2
