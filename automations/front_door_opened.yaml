@@ -1,0 +1,9 @@
+- alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0002253f18 # front door
+      to: 'on'
+  action:
+    service: counter.increment
+    data:
+      entity_id: counter.door_opened
