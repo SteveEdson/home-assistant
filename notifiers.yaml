@@ -11,7 +11,9 @@
 - name: Google Assistant Broadcast
   platform: rest
   resource: !secret home_assistant_google_broadcast
+  timeout: 30
 
 - name: Google Assistant Command
   platform: rest
   resource: !secret home_assistant_google_command
+  timeout: 30
