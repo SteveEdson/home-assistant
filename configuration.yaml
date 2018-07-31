@@ -256,3 +256,10 @@ counter:
   door_opened:
     initial: 0
     step: 1
+
+homekit:
+  filter:
+    include_domains:
+      - alarm_control_panel
+      - light
+      - switch
