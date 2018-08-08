@@ -90,6 +90,14 @@
   scan_interval: 7200
 
 - platform: rest
+  resource: !secret ff1_stats_url
+  name: FF1 Stats
+  value_template: '{{ value_json.data.next.name }} - {{ value_json.data.next.percentPredicted }}% Predicted'
+  json_attributes:
+    - data
+  scan_interval: 7200
+
+- platform: rest
   resource: !secret bins_api
   name: Bin days
   value_template: '{% set numSeconds = (as_timestamp(strptime(value_json.date, "%d/%m/%Y")) | float) - (as_timestamp(now()) | float) %}{{ value_json.bins }} in {{ (numSeconds / 60 / 60 / 24) | round }} days'
