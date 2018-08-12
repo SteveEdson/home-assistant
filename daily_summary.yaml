@@ -1,7 +1,7 @@
 Good morning Steve! It will take you {{ states.sensor.time_to_work.attributes.duration_in_traffic }} to get to work.
 Today, the weather is {{ states('weather.dark_sky') }}, with a high of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|max }}°C and a low of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|min }}°C.
 It is {{ states.climate.heating.attributes.current_temperature }}°C inside the house.
-{% if is_state("sensor.bin_days", "unknown") == false and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
+{% if is_state("sensor.bin_days", "unavailable") == false and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
 Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
 {% endif %}
 {% if states.sensor.pay_day.attributes.daysRemaining == 0 %}It's payday, hooray!{% endif %}
