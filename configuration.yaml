@@ -95,16 +95,9 @@ config:
 mqtt:
   discovery: true
   discovery_prefix: homeassistant
-
-  #broker: 172.17.0.1
-  #broker: 127.0.0.1
-  #port: 1883
-  #client_id: home-assistant
-  #username: pi
-  #password: raspberry
-
-#light:
-#  - platform: blinkt
+  broker: 127.0.0.1
+  client_id: home-assistant
+  port: 1883
 
 light:
   - platform: group
@@ -121,6 +114,11 @@ light:
       - light.kitchen_light_3
       - light.kitchen_light_4
       - light.kitchen_table
+  - platform: mqtt_json
+    name: Kitchen Counter
+    command_topic: !secret anavi_channel
+    brightness: true
+    rgb: true
 
 hue:
   bridges:
