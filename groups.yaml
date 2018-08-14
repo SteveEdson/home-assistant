@@ -141,6 +141,7 @@ Kitchen Lights:
   - light.kitchen_light_2
   - light.kitchen_light_3
   - light.kitchen_light_4
+  - light.cupboard
 
 Bathroom Lights:
   - light.bathroom_light_1
