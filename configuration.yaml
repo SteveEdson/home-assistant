@@ -198,7 +198,6 @@ google_assistant:
   api_key: !secret google_assistant_api_key
   exposed_domains:
     - switch
-    - light
   entity_config:
     light.cupboard:
        name: Cupboard lights
