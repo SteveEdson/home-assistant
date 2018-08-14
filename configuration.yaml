@@ -115,10 +115,13 @@ light:
       - light.kitchen_light_4
       - light.kitchen_table
   - platform: mqtt_json
-    name: Kitchen Counter
+    name: Cupboard
     command_topic: !secret anavi_channel
     brightness: true
     rgb: true
+    retain: true
+    effect: true
+    brightness_scale: 4095
 
 hue:
   bridges:
