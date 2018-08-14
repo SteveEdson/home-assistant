@@ -200,7 +200,7 @@ google_assistant:
     - switch
     - light
   entity_config:
-    light.kitchen_counter:
+    light.cupboard:
        name: Cupboard lights
        aliases:
         - kitchen counter lights
