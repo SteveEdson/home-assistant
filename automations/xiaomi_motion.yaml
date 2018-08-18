@@ -19,6 +19,31 @@
         entity_id: group.kitchen_lights
         brightness_pct: 100 
 
+- alias: kitchen led motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001643c27
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.cupboard
+        brightness_pct: 100
+
+- alias: Kitchen no motion 5 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001643c27
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 2
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.cupboard
+
 
 # Dim the lights after no motion
 - alias: Kitchen no motion 5 mins
