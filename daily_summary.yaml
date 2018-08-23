@@ -1,13 +1,20 @@
+{%- set secondsTillHoliday = (as_timestamp(strptime(states("sensor.next_holiday"), "%d/%m/%Y")) - as_timestamp(now())) %}
+{%- set secondsInDay = (60 * 60 * 24) %}
+
 Good morning{% if now().isoweekday() == 5 %} and happy Friday{% endif %}! It will take you {{ states.sensor.time_to_work.attributes.duration_in_traffic }} to get to work.
 Today, the weather is {{ states('weather.dark_sky') }}, with a high of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|max }}°C and a low of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|min }}°C.
 It is {{ states.climate.heating.attributes.current_temperature }}°C inside the house.
-{% if is_state("sensor.bin_days", "unavailable") == false and state_attr('sensor.bin_days', 'date') != None and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
+{%- if is_state("sensor.bin_days", "unavailable") == false and state_attr('sensor.bin_days', 'date') != None and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
 Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
 {% endif %}
-{% if states.sensor.pay_day.attributes.daysRemaining == 0 %}
+{%- if states.sensor.pay_day.attributes.daysRemaining == 0 %}
 It's pay day, hooray!
-{% elif states.sensor.pay_day.attributes.daysRemaining <= 3 %}
+{%- elif states.sensor.pay_day.attributes.daysRemaining <= 3 %}
 It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay day!
 {% endif %}
+
+{%- if secondsTillHoliday < (secondsInDay * 70) %}
+Woo, you have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
+{% endif -%}
 
 Have a great day.
