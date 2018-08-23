@@ -1,5 +1,5 @@
 {%- set secondsTillHoliday = (as_timestamp(strptime(states("sensor.next_holiday"), "%d/%m/%Y")) - as_timestamp(now())) %}
-{%- set secondsInDay = (60 * 60 * 24) %}
+{%- set secondsInDay = (60 * 60 * 24) -%}
 
 Good morning{% if now().isoweekday() == 5 %} and happy Friday{% endif %}! It will take you {{ states.sensor.time_to_work.attributes.duration_in_traffic }} to get to work.
 Today, the weather is {{ states('weather.dark_sky') }}, with a high of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|max }}°C and a low of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|min }}°C.
