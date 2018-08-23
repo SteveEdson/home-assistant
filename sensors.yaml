@@ -90,6 +90,12 @@
   scan_interval: 7200
 
 - platform: rest
+  resource: !secret google_holiday_sheet
+  name: Next Holiday
+  value_template: '{{ value_json.feed.entry[0]["gsx$nextholiday""]["$t"] }}'
+  scan_interval: 7200
+
+- platform: rest
   resource: !secret ff1_stats_url
   name: FF1 Stats
   value_template: '{{ value_json.data.next.name }} - {{ value_json.data.next.percentPredicted }}% Predicted'
