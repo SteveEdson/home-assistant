@@ -5,7 +5,7 @@ It is {{ states.climate.heating.attributes.current_temperature }}°C inside the 
 Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
 {% endif %}
 {% if states.sensor.pay_day.attributes.daysRemaining == 0 %}
-It's payday, hooray!
+It's pay day, hooray!
 {% elif states.sensor.pay_day.attributes.daysRemaining <= 3 %}
 It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay day!
 {% endif %}
