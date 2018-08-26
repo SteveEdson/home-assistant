@@ -1,0 +1,6 @@
+alias: Turn TV On To Channel
+sequence:
+  - service: mqtt.publish
+    data:
+      topic: "sky_command"
+      payload: "{{ channel }}"

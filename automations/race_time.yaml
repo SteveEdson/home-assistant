@@ -11,4 +11,29 @@
   action:
     service: script.race_start
 
-## todo: add trigger when state changes to home, and the race is on
+
+- id: turn_tv_on_ch4
+  alias: Turn TV on to Channel 4
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: html_turn_tv_on_to_channel_4
+  action:
+    - service: script.turn_tv_on_to_channel
+      data:
+        variables:
+          channel: "1 0 4"
+
+- id: turn_tv_on_sky
+  alias: Turn TV on to Sky 1
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: html_turn_tv_on_to_sky_1
+  action:
+    - service: script.turn_tv_on_to_channel
+      data:
+        variables:
+          channel: "1 0 6"

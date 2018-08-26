@@ -6,10 +6,8 @@ sequence:
       message: "Watch the race in {{ states.calendar.f1_calendar_2018.attributes.location }}?"
       data:
         actions:
-#          - action: watch_race
-#            title: "Watch"
-          - title: "No"
-            action: ignore
+         - action: html_turn_tv_on_to_channel_4
+           title: "Watch Channel"
+         - title: "Watch Sky"
+           action: html_turn_tv_on_to_sky_1
         tag: "f1-race"
-
-#alias: Watch race
