@@ -1,5 +1,8 @@
 alias: Turn TV On To Channel
 sequence:
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.samsung_tv_remote
   - service: mqtt.publish
     data:
       topic: "sky_command"
