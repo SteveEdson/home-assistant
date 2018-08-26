@@ -4,6 +4,6 @@ sequence:
     data:
       entity_id: media_player.samsung_tv_remote
   - service: mqtt.publish
-    data:
+    data_template:
       topic: "sky_command"
       payload: "{{ channel }}"
