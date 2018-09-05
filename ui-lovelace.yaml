@@ -4,4 +4,4 @@ views:
     id: home
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
-    cards: !include_dir_list lovelace-cards
+    cards: !include_dir_list lovelace-cards/dashboard
