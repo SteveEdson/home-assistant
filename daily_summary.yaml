@@ -18,11 +18,13 @@ It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay d
 Woo, you have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
 {% endif %}
 
+{% if state_attr('sensor.ff1_stats', 'data') %}
 {% set raceDeadlineDay = (states.sensor.ff1_stats.attributes.data.next.date - as_timestamp(now())) < secondsInDay %}
 {%- if raceDeadlineDay and states.sensor.ff1_stats.attributes.data.next.date > (as_timestamp(now()) - secondsInDay) %}
 Yesterday was the predictions deadline for the {{ states.sensor.ff1_stats.attributes.data.next.name }}, {{ states.sensor.ff1_stats.attributes.data.next.percentPredicted }}% of users placed predictions.
 {%- elif raceDeadlineDay %}
 Today is the deadline for predictions for the {{ states.sensor.ff1_stats.attributes.data.next.name }}, {{ states.sensor.ff1_stats.attributes.data.next.percentPredicted }}% of users have placed predictions.
 {% endif -%}
+{% endif %}
 
 Have a great day.
