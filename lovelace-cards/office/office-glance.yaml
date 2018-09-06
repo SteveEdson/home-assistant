@@ -1,0 +1,5 @@
+type: glance
+title: Office
+entities:
+  - light.office
+  - switch.aegis
