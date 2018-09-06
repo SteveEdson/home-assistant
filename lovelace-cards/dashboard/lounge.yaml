@@ -7,3 +7,4 @@ entities:
   - switch.my_smart_plug
   - media_player.samsung_tv_remote
 image: !secret photos_lounge
+entity: group.lounge_lights
