@@ -15,7 +15,7 @@ It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay d
 {% endif %}
 
 {% if secondsTillHoliday < (secondsInDay * 7) %}
-Woo, you have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
+Woo! You have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
 {% endif %}
 
 {% if state_attr('sensor.ff1_stats', 'data') %}
