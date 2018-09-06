@@ -6,5 +6,4 @@ entities:
   - light.left_lamp
   - switch.my_smart_plug
   - media_player.samsung_tv_remote
-image: /local/lounge.jpg
-entity: group.lounge_lights
+image: !secret photos_lounge
