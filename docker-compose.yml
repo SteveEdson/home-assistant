@@ -1,7 +1,8 @@
 version: '3'
 services:
   homeassistant:
-    depends_on: mosquitto
+    depends_on: 
+      - mosquitto
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
     volumes:
@@ -21,7 +22,8 @@ services:
           max-size: "100k"
           max-file: "20"
   autoheal:
-    depends_on: homeassistant
+    depends_on: 
+      - homeassistant
     restart: always
     image: willfarrell/autoheal
     environment:
@@ -36,6 +38,6 @@ services:
     image: toke/mosquitto
     volumes:
       - 'mosquitto_data:/mqtt/data'
-      
+
 volumes:
   mosquitto_data:
