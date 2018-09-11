@@ -20,3 +20,4 @@ node_modules/
 entity_registry.yaml
 deps/
 google_calendars.yaml
+.storage/
