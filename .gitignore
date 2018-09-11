@@ -21,3 +21,4 @@ entity_registry.yaml
 deps/
 google_calendars.yaml
 .storage/
+.google.token
