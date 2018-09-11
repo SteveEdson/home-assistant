@@ -3,12 +3,12 @@
   accounts:
     - !secret steam_account_id
 
-- platform: fitbit
-  monitored_resources:
-    - "body/weight"
-    - "activities/steps"
-    - "activities/heart"
-    - "devices/battery"
+# - platform: fitbit
+#   monitored_resources:
+#     - "body/weight"
+#     - "activities/steps"
+#     - "activities/heart"
+#     - "devices/battery"
 
 #- platform: pi_hole
 #  host: 192.168.1.120
