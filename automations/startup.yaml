@@ -1,0 +1,9 @@
+- alias: 'Home Assistant Started'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.html5
+      data:
+        message: 'Home assistant has started'
+      
