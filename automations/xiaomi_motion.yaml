@@ -31,14 +31,14 @@
         entity_id: light.cupboard
         brightness_pct: 100
 
-- alias: Kitchen cupboard no motion 2 mins
+- alias: Kitchen cupboard no motion 4 mins
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001643c27
     from: 'on'
     to: 'off'
     for:
-      minutes: 2
+      minutes: 4
   condition:
     condition: state # after 20 mins before sunset
     entity_id: light.kitchen_table
@@ -57,7 +57,7 @@
     from: 'on'
     to: 'off'
     for:
-      minutes: 2
+      minutes: 5
   condition:
     condition: state
     entity_id: group.kitchen_lights
@@ -69,14 +69,14 @@
         brightness_pct: 25
 
 #Turn off kitchen light with no motion for 15 mins
-- alias: Kitchen no motion 15 mins
+- alias: Kitchen no motion 10 mins
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001643c27
     from: 'on'
     to: 'off'
     for:
-      minutes: 8
+      minutes: 10
   condition:
     condition: state
     entity_id: group.kitchen_lights
