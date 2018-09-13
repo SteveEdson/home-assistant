@@ -1,30 +1,35 @@
 Good morning{% if now().isoweekday() == 5 %} and happy Friday{% endif %}! It will take you {{ states.sensor.time_to_work.attributes.duration_in_traffic }} to get to work.
 
-{% set secondsTillHoliday = (as_timestamp(strptime(states("sensor.next_holiday"), "%d/%m/%Y")) - as_timestamp(now())) %}
-{% set secondsInDay = (60 * 60 * 24) %}
+{%- if(states("sensor.next_holiday")|int) > 0 %}
+{% set secondsTillHoliday = (as_timestamp(strptime((states("sensor.next_holiday")|int), "%d/%m/%Y")) - as_timestamp(now())) %}
+{% else %}
+{% set secondsTillHoliday = 999999 %}
+{% endif -%}
+
+{%- set secondsInDay = (60 * 60 * 24) -%}
 
 Today, the weather is {{ states('weather.dark_sky') }}, with a high of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|max }}°C and a low of {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|min }}°C.
 It is {{ states.climate.heating.attributes.current_temperature }}°C inside the house.
-{% if is_state("sensor.bin_days", "unavailable") == false and state_attr('sensor.bin_days', 'date') != None and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
+{%- if is_state("sensor.bin_days", "unavailable") == false and state_attr('sensor.bin_days', 'date') != None and (as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - as_timestamp(now())) < (60 * 60 * 12) %}
 Make sure you have put the {{ states.sensor.bin_days.attributes.bins }} out, it is about to be collected.
-{% endif %}
-{% if states.sensor.pay_day.attributes.daysRemaining == 0 %}
+{% endif -%}
+{%- if states.sensor.pay_day.attributes.daysRemaining == 0 %}
 It's pay day, hooray!
 {% elif (states.sensor.pay_day.attributes.daysRemaining <= 3) and (states.sensor.pay_day.attributes.daysRemaining > 0) %}
 It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay day!
-{% endif %}
+{% endif -%}
 
-{% if secondsTillHoliday < (secondsInDay * 7) %}
+{%- if secondsTillHoliday < (secondsInDay * 7) %}
 Woo! You have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
-{% endif %}
+{% endif -%}
 
-{% if state_attr('sensor.ff1_stats', 'data') %}
-{% set raceDeadlineDay = (states.sensor.ff1_stats.attributes.data.next.date - as_timestamp(now())) < secondsInDay %}
+{%- if state_attr('sensor.ff1_stats', 'data') %}
+{% set raceDeadlineDay = (states.sensor.ff1_stats.attributes.data.next.date - as_timestamp(now())) < secondsInDay -%}
 {%- if raceDeadlineDay and states.sensor.ff1_stats.attributes.data.next.date > (as_timestamp(now()) - secondsInDay) %}
 Yesterday was the predictions deadline for the {{ states.sensor.ff1_stats.attributes.data.next.name }}, {{ states.sensor.ff1_stats.attributes.data.next.percentPredicted }}% of users placed predictions.
-{%- elif raceDeadlineDay %}
+{%- elif raceDeadlineDay -%}
 Today is the deadline for predictions for the {{ states.sensor.ff1_stats.attributes.data.next.name }}, {{ states.sensor.ff1_stats.attributes.data.next.percentPredicted }}% of users have placed predictions.
 {% endif -%}
-{% endif %}
+{% endif -%}
 
 Have a great day.
