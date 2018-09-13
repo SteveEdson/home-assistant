@@ -137,3 +137,9 @@
       arg: /
     - type: memory_free
     - type: load_5m
+
+- platform: template
+    sensors:
+      race_deadline_day:
+        friendly_name: "Race Deadline Day"
+        value_template: "{{ ((states.sensor.ff1_stats.attributes.data.next.predictionDeadline - as_timestamp(now())) < (60 * 60 * 24)) and states.sensor.ff1_stats.attributes.data.next.predictionDeadline > as_timestamp(now()) }}"
