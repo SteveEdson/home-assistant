@@ -91,7 +91,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: rotate
   condition:
     condition: template
@@ -104,7 +104,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: rotate
   condition:
     condition: template
@@ -117,7 +117,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: flip90
   action:
     - service: scene.turn_on
@@ -128,7 +128,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: flip180
   action:
     - service: scene.turn_on
@@ -139,7 +139,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: shake_air
   action:
     - service: light.toggle
@@ -151,7 +151,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
+      entity_id: binary_sensor.xiaomi_cube
       action_type: tap_twice 
   action:
     - service_template: >
