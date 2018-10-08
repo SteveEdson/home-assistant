@@ -97,7 +97,7 @@ work:
 #     - group.all_automations
 #     - group.all_scripts    
 
-Devices:
+People:
   - device_tracker.oneplus_3
   - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
@@ -105,6 +105,7 @@ Devices:
   - device_tracker.edsonmacbook
   - device_tracker.oneplus5t
   - device_tracker.oneplus_6
+  - binary_sensor.sophie_arrived_home
 
 Computers:
   - device_tracker.desktopkvl6s86
