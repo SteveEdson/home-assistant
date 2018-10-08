@@ -146,3 +146,6 @@ sensor.illumination_7811dcb25e74:
 
 sensor.hive_hub_status:
   hidden: true
+  
+sensor.home_eta:
+  hidden: true
