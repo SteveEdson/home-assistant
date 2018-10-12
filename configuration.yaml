@@ -47,7 +47,7 @@ dialogflow:
 intent_script:
   GetTemperature:
     speech:
-      text: The temperature at home is 38 degrees
+      text:  The temperature at home is {{ state_attr('climate.heating', 'current_temperature') }}°c
 
 binary_sensor:
   - platform: digital_ocean
