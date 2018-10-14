@@ -50,7 +50,7 @@ intent_script:
       text: The temperature at home is {{ state_attr('climate.heating', 'current_temperature') }}°c
   GetPredictionStats:
     speech:
-      text: {{ state_attr('sensor.ff1_stats', 'data').next.percentPredicted }}% of users have predicted for the {{ state_attr('sensor.ff1_stats', 'data').next.name }} 
+      text: "{{ state_attr('sensor.ff1_stats', 'data').next.percentPredicted }}% of users have predicted for the {{ state_attr('sensor.ff1_stats', 'data').next.name }}"
 
 binary_sensor:
   - platform: digital_ocean
