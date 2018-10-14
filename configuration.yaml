@@ -51,6 +51,9 @@ intent_script:
   GetPredictionStats:
     speech:
       text: "{{ state_attr('sensor.ff1_stats', 'data').next.percentPredicted }}% of users have predicted for the {{ state_attr('sensor.ff1_stats', 'data').next.name }}"
+  GetPayDay:
+    speech:
+      text: "Pay day is {{ states('sensor.pay_day') }}"
 
 binary_sensor:
   - platform: digital_ocean
