@@ -22,3 +22,5 @@ deps/
 google_calendars.yaml
 .storage/
 .google.token
+.env
+.homekit.state

@@ -5,17 +5,24 @@ services:
       - mosquitto
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
+    networks:
+      - web
+    ports:
+      - 8123:8123
     volumes:
       - /home/steve/repos/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
       - /home/steve/repos/home-assistant/resources:/local
     restart: always
-    network_mode: host
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8123"]
       interval: 1m30s
       timeout: 10s
       retries: 3        
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:$HA_HOSTNAME"
+      - "traefik.port=8123"
     logging:
       driver: "json-file"
       options:
@@ -41,3 +48,7 @@ services:
 
 volumes:
   mosquitto_data:
+
+networks:
+  web:
+    external: true
