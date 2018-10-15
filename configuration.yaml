@@ -251,9 +251,10 @@ zone:
 
 xiaomi_aqara:
   discovery_retry: 5
-  interface: '192.168.1.1'
   gateways:
     - key: !secret xiaomi_gateway
+      host: '192.168.1.54'
+      mac: '78:11:DC:B2:5E:74'
 
 alarm_control_panel:
   - platform: manual
