@@ -23,13 +23,13 @@ google:
 #     - entity_id: camera.mjpeg_camera
 
 # Checks for available updates
-updater:
+# updater:
 
 # Discover some devices automatically
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# conversation:
 
 # Enables support for tracking state changes over time.
 history:
