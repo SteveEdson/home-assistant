@@ -254,6 +254,7 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway
       host: '192.168.1.54'
+      mac: '78:11:DC:B2:5E:74'
 
 alarm_control_panel:
   - platform: manual
