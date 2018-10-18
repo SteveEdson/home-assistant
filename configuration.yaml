@@ -281,3 +281,6 @@ influxdb:
   host: influxdb
   port: 8086
   
+duckdns:
+  domain: !secret duck_dns_domain
+  access_token: !secret duck_dns_token
