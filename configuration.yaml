@@ -276,3 +276,7 @@ counter:
 #      - alarm_control_panel
 #      - light
 #      - switch
+
+duckdns:
+  domain: !secret duck_dns_domain
+  access_token: !secret duck_dns_token
