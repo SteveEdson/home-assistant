@@ -143,14 +143,14 @@ media_player:
     host: 192.168.1.115
     mac: !secret samsung_tv_mac
 
-device_tracker:
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: !secret router_username
-    password: !secret router_password
-    interval_seconds: 10
-    consider_home: 180
-    track_new_devices: no
+# device_tracker:
+#   - platform: asuswrt
+#     host: 192.168.1.1
+#     username: !secret router_username
+#     password: !secret router_password
+#     interval_seconds: 10
+#     consider_home: 180
+#     track_new_devices: no
 
 switch: !include switches.yaml
 
