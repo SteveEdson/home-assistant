@@ -280,6 +280,8 @@ counter:
 influxdb:
   host: influxdb
   port: 8086
+  username: !secret influx_username
+  password: !secret influx_password  
   
 duckdns:
   domain: !secret duck_dns_domain
