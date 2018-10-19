@@ -11,6 +11,7 @@ services:
       - 8123:8123
     external_links:
       - web_functions
+      - web_broadcast
     volumes:
       - /home/steve/repos/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
