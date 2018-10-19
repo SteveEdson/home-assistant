@@ -9,6 +9,8 @@ services:
       - web
     ports:
       - 8123:8123
+    link:
+      - functions
     volumes:
       - /home/steve/repos/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
