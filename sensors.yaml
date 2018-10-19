@@ -18,11 +18,8 @@
     - ping
     - download
     - upload
-  minute: 30
   hour:
-    - 0
     - 6
-    - 12
     - 18
 
 - platform: darksky
