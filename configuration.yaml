@@ -200,7 +200,7 @@ group: !include groups.yaml
 scene: !include scenes.yaml
     
 google_assistant:
-  project_id: home-assistant-184009
+  project_id: edson-home
   api_key: !secret google_assistant_api_key
   exposed_domains:
     - switch
