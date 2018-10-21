@@ -278,7 +278,7 @@ counter:
 #      - switch
 
 influxdb:
-  host: influxdb
+  host: !secret influx_host
   port: 8086
   username: !secret influx_username
   password: !secret influx_password  
