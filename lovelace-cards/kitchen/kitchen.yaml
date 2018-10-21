@@ -8,5 +8,6 @@ entities:
   - light.kitchen_table
   - light.cupboard
   - media_player.kitchen_home
+  - binary_sensor.motion_sensor_158d0001643c27
 image: !secret photos_kitchen
 entity: group.kitchen_lights

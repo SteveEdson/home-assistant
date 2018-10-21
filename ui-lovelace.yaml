@@ -9,6 +9,10 @@ views:
     id: kitchen
     title: Kitchen
     cards: !include_dir_list lovelace-cards/kitchen
+  - icon: mdi:sofa
+    id: lounge
+    title: Lounge
+    cards: !include_dir_list lovelace-cards/lounge  
   - icon: mdi:laptop
     id: office
     title: Office
