@@ -204,6 +204,7 @@ google_assistant:
   api_key: !secret google_assistant_api_key
   exposed_domains:
     - switch
+    - light
     - climate
   entity_config:
     light.cupboard:
