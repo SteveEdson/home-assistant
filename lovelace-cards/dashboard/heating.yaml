@@ -1,0 +1,5 @@
+type: sensor
+entity: sensor.house_temperature
+name: Heating
+height: 75
+line_color: "#3498db"
