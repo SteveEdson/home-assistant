@@ -264,11 +264,6 @@ alarm_control_panel:
       pending_time: 0
       delay_time: 0
 
-counter:
-  door_opened:
-    initial: 0
-    step: 1
-
 #homekit:
 #  filter:
 #    include_domains:

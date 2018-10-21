@@ -1,0 +1,7 @@
+type: picture-glance
+title: Bedroom
+entities:
+  - light.bedroom_light
+  - media_player.bedroom_tv
+image: !secret photos_bedroom
+entity: group.bedroom
