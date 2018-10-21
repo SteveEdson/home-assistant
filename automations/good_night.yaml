@@ -1,0 +1,8 @@
+- alias: IFTTT Turn everything off
+  trigger:
+    platform: event
+    event_type: ifttt_webhook_received
+    event_data:
+      action: good_night
+  action:
+    service: script.good_night
