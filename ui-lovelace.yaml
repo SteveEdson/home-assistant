@@ -5,6 +5,10 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
     cards: !include_dir_list lovelace-cards/dashboard
+  - icon: mdi:kettle
+    id: kitchen
+    title: Kitchen
+    cards: !include_dir_list lovelace-cards/kitchen
   - icon: mdi:laptop
     id: office
     title: Office
