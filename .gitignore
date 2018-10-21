@@ -24,3 +24,4 @@ google_calendars.yaml
 .google.token
 .env
 .homekit.state
+.spotify-token-cache
