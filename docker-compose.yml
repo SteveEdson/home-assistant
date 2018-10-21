@@ -51,6 +51,7 @@ services:
   db:
     image: mariadb
     restart: always
+    env_file: .env
 
 volumes:
   mosquitto_data:
