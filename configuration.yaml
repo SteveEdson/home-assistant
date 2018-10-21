@@ -252,7 +252,7 @@ zone:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - key: !secret xiaomi_gateway'
+    - key: !secret xiaomi_gateway
       mac: '78:11:DC:B2:5E:74'
 
 alarm_control_panel:
