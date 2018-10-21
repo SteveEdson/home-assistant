@@ -1,0 +1,5 @@
+type: sensor
+entity: sensor.time_to_home
+name: Time to Home
+height: 75
+line_color: "#3498db"
