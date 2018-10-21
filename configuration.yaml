@@ -285,3 +285,7 @@ influxdb:
 duckdns:
   domain: !secret duck_dns_domain
   access_token: !secret duck_dns_token
+
+recorder:
+  purge_keep_days: 10
+  db_url: !secret db_url
