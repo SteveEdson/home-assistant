@@ -3,6 +3,7 @@ services:
   homeassistant:
     depends_on: 
       - mosquitto
+      - db
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
     ports:
@@ -37,6 +38,7 @@ services:
       - AUTOHEAL_CONTAINER_LABEL=all
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
   mosquitto:
     restart: always
     ports:
@@ -45,6 +47,10 @@ services:
     image: toke/mosquitto
     volumes:
       - 'mosquitto_data:/mqtt/data'
+
+  db:
+    image: mariadb
+    restart: always
 
 volumes:
   mosquitto_data:
