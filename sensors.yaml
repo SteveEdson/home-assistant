@@ -29,12 +29,12 @@
     - minutely_summary
   update_interval: '01:00'
 
-- platform: command_line
-  name: CPU Temperature
-  command: "sensors | grep -Po \"\\d*\\.\\d*\" | head -1"
-  # If errors occur, remove degree symbol below
-  unit_of_measurement: "°C"
-  value_template: '{{ value | float | round(2) }}'
+#- platform: command_line
+#  name: CPU Temperature
+#  command: "sensors | grep -Po \"\\d*\\.\\d*\" | head -1"
+#  # If errors occur, remove degree symbol below
+#  unit_of_measurement: "°C"
+#  value_template: '{{ value | float | round(2) }}'
 
 - platform: whois
   domain: steveedson.co.uk
