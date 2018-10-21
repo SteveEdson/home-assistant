@@ -17,3 +17,7 @@ views:
     id: office
     title: Office
     cards: !include_dir_list lovelace-cards/office
+  - icon: mdi:music-box
+    id: media
+    title: Media
+    cards: !include_dir_list lovelace-cards/media
