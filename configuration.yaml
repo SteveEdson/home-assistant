@@ -208,12 +208,16 @@ google_assistant:
     - climate
   entity_config:
     light.cupboard:
-       name: Cupboard lights
-       aliases:
+      name: Cupboard lights
+      aliases:
         - Kitchen Counter Lights
         - Coloured Lights
-       expose: true
-    
+      expose: true
+    light.bathroom_lights:
+      expose: false
+    light.kitchen_lights:
+      expose: false
+
 #calendar:
 #  - platform: todoist
 #    token: !secret todoist_api_token
