@@ -1,5 +1,0 @@
-type: sensor
-entity: sensor.time_to_work
-name: Time to Work
-height: 75
-line_color: "#3498db"

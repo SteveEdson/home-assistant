@@ -1,9 +1,0 @@
-type: entity-filter
-entities:
-  - device_tracker.oneplus5t
-  - device_tracker.oneplus_6
-state_filter:
-  - home
-card:
-  type: glance
-  title: People at home

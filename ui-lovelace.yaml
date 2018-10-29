@@ -4,20 +4,281 @@ views:
     id: home
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
-    cards: !include_dir_list lovelace-cards/dashboard
+    cards:
+      - type: picture-glance
+        title: Bedroom
+        entities:
+          - light.bedroom_light
+          - media_player.bedroom_tv
+        image: !secret photos_bedroom
+        entity: group.bedroom
+      - type: picture-elements
+        title: Downstairs
+        image: https://steveedson.co.uk/images/floorplan-downstairs.png
+        elements:
+          - type: service-button
+            title: Lights On
+            style:
+              top: 98%
+              right: 18%
+            service: light.turn_on
+            service_data:
+              entity_id: group.all_lights
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 98%
+              right: 0
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: state-icon
+            entity: light.kitchen_light_1
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 34%
+          - type: state-icon
+            entity: light.kitchen_light_2
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 39%
+          - type: state-icon
+            entity: light.kitchen_light_3
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 44%
+          - type: state-icon
+            entity: light.kitchen_light_4
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 49%
+          - type: state-icon
+            entity: binary_sensor.motion_sensor_158d0001643c27
+            style:
+              top: 15%
+              left: 36.6%
+          - type: state-icon
+            entity: light.kitchen_table
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 73%
+          - type: state-icon
+            entity: light.twigs
+            tap_action: toggle
+            style:
+              top: 84%
+              left: 14%
+          - type: state-icon
+            entity: switch.my_smart_plug
+            tap_action: toggle
+            style:
+              top: 51%
+              left: 35%
+          - type: state-icon
+            entity: light.corner_lamp
+            tap_action: toggle
+            style:
+              top: 58%
+              left: 65%
+          - type: state-icon
+            entity: light.left_lamp
+            tap_action: toggle
+            style:
+              top: 49%
+              left: 17%
+          - type: state-icon
+            entity: media_player.samsung_tv_remote
+            style:
+              top: 89.5%
+              left: 23%
+          - type: state-icon
+            entity: light.porch
+            tap_action: toggle
+            style:
+              top: 92%
+              left: 78%
+          - type: state-icon
+            entity: binary_sensor.door_window_sensor_158d0002253f18
+            style:
+              top: 96%
+              left: 78%
+      - type: sensor
+        entity: sensor.house_temperature
+        name: Heating
+        height: 75
+        line_color: "#3498db"
+      - type: thermostat
+        entity: climate.heating
+      - type: picture-glance
+        title: Kitchen
+        entities:
+          - light.kitchen_light_1
+          - light.kitchen_light_2
+          - light.kitchen_light_3
+          - light.kitchen_light_4
+          - light.kitchen_table
+          - light.cupboard
+          - media_player.kitchen_home
+          - binary_sensor.motion_sensor_158d0001643c27
+        image: !secret photos_kitchen
+        entity: group.kitchen_lights
+      - type: picture-glance
+        title: Lounge
+        entities:
+          - light.twigs
+          - light.corner_lamp
+          - light.left_lamp
+          - switch.my_smart_plug
+          - media_player.samsung_tv_remote
+        image: !secret photos_lounge
+        entity: group.lounge_lights
+      - type: picture-glance
+        title: Office
+        entities:
+          - light.office
+          - media_player.office_speakers
+          - switch.aegis
+        image: !secret photos_office
+        entity: group.office
+      - type: entity-filter
+        entities:
+          - device_tracker.oneplus5t
+          - device_tracker.oneplus_6
+        state_filter:
+          - home
+        card:
+          type: glance
+          title: People at home
+      - type: sensor
+        entity: sensor.time_to_home
+        name: Time to Home
+        height: 75
+        line_color: "#3498db"
+      - type: sensor
+        entity: sensor.time_to_work
+        name: Time to Work
+        height: 75
+        line_color: "#3498db"
+      - type: picture-elements
+        title: Upstairs
+        image: https://steveedson.co.uk/images/floorplan-upstairs.png
+        elements:
+          - type: service-button
+            title: Lights On
+            style:
+              top: 98%
+              right: 18%
+            service: light.turn_on
+            service_data:
+              entity_id: group.all_lights
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 98%
+              right: 0
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: state-icon
+            entity: light.bathroom_light_1
+            tap_action: toggle
+            style:
+              top: 84.5%
+              left: 65%
+          - type: state-icon
+            entity: light.bathroom_light_2
+            tap_action: toggle
+            style:
+              top: 84.5%
+              left: 69%
+          - type: state-icon
+            entity: light.bathroom_light_3
+            tap_action: toggle
+            style:
+              top: 84.5%
+              left: 73%
+          - type: state-icon
+            entity: light.bedroom_light
+            tap_action: toggle
+            style:
+              top: 35%
+              left: 36%
+          - type: state-icon
+            entity: light.landing_light
+            tap_action: toggle
+            style:
+              top: 45%
+              left: 63%
+          - type: state-icon
+            entity: light.office
+            tap_action: toggle
+            style:
+              top: 90.5%
+              left: 22%
+          - type: state-icon
+            entity: switch.aegis
+            tap_action: toggle
+            style:
+              top: 90.5%
+              left: 51%
+      - type: weather-forecast
+        entity: weather.dark_sky
+
   - icon: mdi:kettle
     id: kitchen
     title: Kitchen
-    cards: !include_dir_list lovelace-cards/kitchen
+    cards: 
+      - type: glance
+        title: Kitchen
+        entities:
+          - light.kitchen_light_1
+          - light.kitchen_light_2
+          - light.kitchen_light_3
+          - light.kitchen_light_4
+          - light.kitchen_table
+          - light.cupboard
+          - media_player.kitchen_home
+          - binary_sensor.motion_sensor_158d0001643c27
+      - type: media-control
+        entity: media_player.kitchen_home
+
   - icon: mdi:sofa
     id: lounge
     title: Lounge
-    cards: !include_dir_list lovelace-cards/lounge  
+    cards: 
+      - type: glance
+        title: Lounge
+        entities:
+          - light.twigs
+          - light.corner_lamp
+          - light.left_lamp
+          - switch.my_smart_plug
+          - media_player.lounge_tv
+
   - icon: mdi:laptop
     id: office
     title: Office
-    cards: !include_dir_list lovelace-cards/office
+    cards:
+      - type: glance
+        title: Office
+        entities:
+          - light.office
+          - switch.aegis
+
   - icon: mdi:music-box
     id: media
     title: Media
-    cards: !include_dir_list lovelace-cards/media
+    cards:
+      - type: media-control
+        entity: media_player.kitchen_home
+      - type: media-control
+        entity: media_player.lounge
+      - type: media-control
+        entity: media_player.lounge_tv
+      - type: media-control
+        entity: media_player.spotify

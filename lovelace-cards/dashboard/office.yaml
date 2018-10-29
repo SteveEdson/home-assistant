@@ -1,8 +1,0 @@
-type: picture-glance
-title: Office
-entities:
-  - light.office
-  - media_player.office_speakers
-  - switch.aegis
-image: !secret photos_office
-entity: group.office

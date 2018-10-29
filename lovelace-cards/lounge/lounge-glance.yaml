@@ -1,8 +1,0 @@
-type: glance
-title: Lounge
-entities:
-  - light.twigs
-  - light.corner_lamp
-  - light.left_lamp
-  - switch.my_smart_plug
-  - media_player.lounge_tv
