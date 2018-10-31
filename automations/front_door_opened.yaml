@@ -23,20 +23,10 @@
       data:
         entity_id: group.all_lights
         flash: short
-    - delay:
-        seconds: 5
     - service: light.turn_on
       data:
         entity_id: group.all_lights
         flash: short
-    - delay:
-        seconds: 5
-    - service: light.turn_off
-      data:
-        entity_id: group.all_lights
-        transition: 5
-    - delay:
-        seconds: 5
     - service: light.turn_on
       data:
         entity_id: group.hallway
