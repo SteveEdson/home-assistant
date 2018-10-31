@@ -4,6 +4,31 @@
       entity_id: binary_sensor.door_window_sensor_158d0002253f18 # front door
       to: 'on'
   action:
-    service: counter.increment
-    data:
-      entity_id: counter.door_opened
+    - service: counter.increment
+      data:
+        entity_id: counter.door_opened
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        flash: short
+    - delay:
+        seconds: 5
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        flash: short
+    - delay:
+        seconds: 5
+    - service: light.turn_off
+      data:
+        entity_id: group.all_lights
+        transition: 5
+    - delay:
+        seconds: 5
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway
+        brightness_pct: 100

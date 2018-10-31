@@ -10,7 +10,6 @@ phue.conf
 plex.conf
 .uuid
 .HA_VERSION
-*.mp3
 *.bak
 config.tar.gz
 known_devices.yaml
