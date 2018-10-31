@@ -32,3 +32,12 @@
       data:
         entity_id: group.hallway
         brightness_pct: 100
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.downstairs
+        volume_level: 0.5
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.downstairs
+        media_content_id: !secret halloween_sound_url
+        media_content_type: music
