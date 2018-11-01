@@ -35,3 +35,6 @@
       data:
         entity_id: group.hallway
         brightness_pct: 100
+  condition:
+  condition: template
+  value_template: {{ as_timestamp(now()) | timestamp_custom("%d/%m", True) == '31/10' }}
