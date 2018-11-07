@@ -23,7 +23,7 @@ google:
 #     - entity_id: camera.mjpeg_camera
 
 # Checks for available updates
-# updater:
+updater:
 
 # Discover some devices automatically
 discovery:
