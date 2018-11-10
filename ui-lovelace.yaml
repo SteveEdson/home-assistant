@@ -113,8 +113,8 @@ views:
         id: house_temperature
         entity: sensor.house_temperature
         name: Heating
-        height: 75
-        line_color: "#3498db"
+        height: 125
+        line_color: '#c23b22'
       - type: thermostat
         id: house_heating
         entity: climate.heating
@@ -244,7 +244,7 @@ views:
   - icon: mdi:kettle
     id: kitchen
     title: Kitchen
-    cards: 
+    cards:
       - type: glance
         id: kitchen_summary
         title: Kitchen
@@ -264,7 +264,7 @@ views:
   - icon: mdi:sofa
     id: lounge
     title: Lounge
-    cards: 
+    cards:
       - type: glance
         id: lounge_summary
         title: Lounge
