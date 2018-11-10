@@ -6,6 +6,7 @@ views:
     title: Home
     cards:
       - type: picture-glance
+        id: bedroom_summary
         title: Bedroom
         entities:
           - light.bedroom_light
@@ -13,6 +14,7 @@ views:
         image: !secret photos_bedroom
         entity: group.bedroom
       - type: picture-elements
+        id: downstairs_floorplan
         title: Downstairs
         image: https://steveedson.co.uk/images/floorplan-downstairs.png
         elements:
@@ -108,13 +110,16 @@ views:
               top: 96%
               left: 78%
       - type: sensor
+        id: house_temperature
         entity: sensor.house_temperature
         name: Heating
         height: 75
         line_color: "#3498db"
       - type: thermostat
+        id: house_heating
         entity: climate.heating
       - type: picture-glance
+        id: kitchen_summary
         title: Kitchen
         entities:
           - light.kitchen_light_1
@@ -128,6 +133,7 @@ views:
         image: !secret photos_kitchen
         entity: group.kitchen_lights
       - type: picture-glance
+        id: lounge_summary
         title: Lounge
         entities:
           - light.twigs
@@ -138,6 +144,7 @@ views:
         image: !secret photos_lounge
         entity: group.lounge_lights
       - type: picture-glance
+        id: office_glance
         title: Office
         entities:
           - light.office
@@ -146,6 +153,7 @@ views:
         image: !secret photos_office
         entity: group.office
       - type: entity-filter
+        id: devices
         entities:
           - device_tracker.oneplus5t
           - device_tracker.oneplus_6
@@ -155,16 +163,19 @@ views:
           type: glance
           title: People at home
       - type: sensor
+        id: time_to_home
         entity: sensor.time_to_home
         name: Time to Home
         height: 75
         line_color: "#3498db"
       - type: sensor
+        id: time_to_work
         entity: sensor.time_to_work
         name: Time to Work
         height: 75
         line_color: "#3498db"
       - type: picture-elements
+        id: upstairs_floorplan
         title: Upstairs
         image: https://steveedson.co.uk/images/floorplan-upstairs.png
         elements:
@@ -227,6 +238,7 @@ views:
               top: 90.5%
               left: 51%
       - type: weather-forecast
+        id: weather_forecast
         entity: weather.dark_sky
 
   - icon: mdi:kettle
@@ -234,6 +246,7 @@ views:
     title: Kitchen
     cards: 
       - type: glance
+        id: kitchen_summary
         title: Kitchen
         entities:
           - light.kitchen_light_1
@@ -245,6 +258,7 @@ views:
           - media_player.kitchen_home
           - binary_sensor.motion_sensor_158d0001643c27
       - type: media-control
+        id: kitchen_media
         entity: media_player.kitchen_home
 
   - icon: mdi:sofa
@@ -252,6 +266,7 @@ views:
     title: Lounge
     cards: 
       - type: glance
+        id: lounge_summary
         title: Lounge
         entities:
           - light.twigs
@@ -266,6 +281,7 @@ views:
     cards:
       - type: glance
         title: Office
+        id: office_summary
         entities:
           - light.office
           - switch.aegis
