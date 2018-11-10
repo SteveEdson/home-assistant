@@ -10,7 +10,7 @@ views:
         entities:
           - light.bedroom_light
           - media_player.bedroom_tv
-        #image: !secret photos_bedroom
+        image: !secret photos_bedroom
         entity: group.bedroom
       - type: picture-elements
         title: Downstairs
@@ -125,7 +125,7 @@ views:
           - light.cupboard
           - media_player.kitchen_home
           - binary_sensor.motion_sensor_158d0001643c27
-        #image: !secret photos_kitchen
+        image: !secret photos_kitchen
         entity: group.kitchen_lights
       - type: picture-glance
         title: Lounge
@@ -135,7 +135,7 @@ views:
           - light.left_lamp
           - switch.my_smart_plug
           - media_player.samsung_tv_remote
-        #image: !secret photos_lounge
+        image: !secret photos_lounge
         entity: group.lounge_lights
       - type: picture-glance
         title: Office
@@ -143,7 +143,7 @@ views:
           - light.office
           - media_player.office_speakers
           - switch.aegis
-        #image: !secret photos_office
+        image: !secret photos_office
         entity: group.office
       - type: entity-filter
         entities:
