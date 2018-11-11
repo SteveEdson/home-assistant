@@ -145,3 +145,6 @@
       friendly_name: "House Temperature"
       unit_of_measurement: 'degrees'
       value_template: "{{ float(states.climate.heating.attributes.current_temperature) }}"
+
+- platform: version
+  source: docker
