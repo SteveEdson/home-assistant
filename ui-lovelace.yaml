@@ -133,7 +133,7 @@ views:
         image: !secret photos_kitchen
         entity: group.kitchen_lights
       - type: picture-glance
-        id: lounge_summary
+        id: lounge_summary_glance
         title: Lounge
         entities:
           - light.twigs
