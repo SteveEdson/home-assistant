@@ -119,7 +119,7 @@ views:
         id: house_heating
         entity: climate.heating
       - type: picture-glance
-        id: kitchen_summary
+        id: kitchen_glance
         title: Kitchen
         entities:
           - light.kitchen_light_1
