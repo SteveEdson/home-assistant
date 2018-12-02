@@ -89,7 +89,7 @@
 - alias: Cube volume up
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: rotate
@@ -102,7 +102,7 @@
 - alias: Cube volume down
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: rotate
@@ -115,7 +115,7 @@
 - alias: Cube flip90
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: flip90
@@ -126,7 +126,7 @@
 - alias: Cube flip180
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: flip180
@@ -137,7 +137,7 @@
 - alias: Cube volume
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: shake_air
@@ -149,7 +149,7 @@
 - alias: Cube Tap Twice
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.xiaomi_cube
       action_type: tap_twice 
