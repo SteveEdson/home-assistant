@@ -155,6 +155,11 @@ device_tracker:
     consider_home: 180
     track_new_devices: no
 
+asuswrt:
+    host: 192.168.1.1
+    username: !secret router_username
+    password: !secret router_password
+
 switch: !include switches.yaml
 
 automation: !include_dir_merge_list automations/
