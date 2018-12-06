@@ -134,6 +134,16 @@
     - service: scene.turn_on
       entity_id: scene.deep_blue
 
+- alias: Cube swing
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.cube_action
+    event_data:
+      entity_id: binary_sensor.xiaomi_cube
+      action_type: swing
+  action:
+    - service: script.good_night 
+
 - alias: Cube volume
   trigger:
     platform: event
