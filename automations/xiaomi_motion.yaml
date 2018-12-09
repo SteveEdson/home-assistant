@@ -120,8 +120,8 @@
       entity_id: binary_sensor.xiaomi_cube
       action_type: flip90
   action:
-    - service: scene.turn_on
-      entity_id: scene.bright
+    - service: input_select.select_next
+      entity_id: input_select.active_scene
 
 - alias: Cube flip180
   trigger:
@@ -132,7 +132,7 @@
       action_type: flip180
   action:
     - service: scene.turn_on
-      entity_id: scene.deep_blue
+      entity_id: scene.ocean
 
 - alias: Cube swing
   trigger:
@@ -180,4 +180,4 @@
          media_player.lounge
          {% else %}
           media_player.samsung_tv
-         {% endif %}
+         {% endif %}🚫
