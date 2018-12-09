@@ -8,7 +8,7 @@ http: !include http.yaml
 # Enables the frontend
 frontend: !include frontend.yaml
 
-input_select: !include inputs/input_select.yaml
+input_select: !include_dir_named inputs
 # input_slider: !include inputs/input_slider.yaml
 
 google:

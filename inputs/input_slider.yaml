@@ -1,5 +1,0 @@
-volume:
-  name: Volume
-  initial: 50
-  min: 0
-  max: 100
