@@ -22,7 +22,32 @@
         
     switch.my_smart_plug:
       state: on
+    
+- name: Ocean
+  entities:
+    light.corner_lamp:
+      state: on
+      rgb_color:
+        - 188
+        - 83
+        - 255
+      brightness_pct: 100
+    
+    light.left_lamp:
+      state: on
+      rgb_color: 
+        - 77
+        - 247
+        - 255
+      brightness_pct: 100
       
+    light.twigs:
+      state: on
+      brightness_pct: 100
+        
+    switch.my_smart_plug:
+      state: on
+
 - name: Bright
   entities:
     light.corner_lamp:
