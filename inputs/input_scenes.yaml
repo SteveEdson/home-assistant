@@ -1,0 +1,8 @@
+input_select:
+  scenes:
+    name: Active Scene
+    options:
+      - ocean
+      - bright
+      - deep_blue
+    initial: bright
