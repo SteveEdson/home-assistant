@@ -180,4 +180,4 @@
          media_player.lounge
          {% else %}
           media_player.samsung_tv
-         {% endif %}🚫
+         {% endif %}
