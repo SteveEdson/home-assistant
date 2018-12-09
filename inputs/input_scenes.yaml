@@ -1,8 +1,7 @@
-- active_scene:
-    name: Active Scene
-    options:
-      - ocean
-      - bright
-      - deep_blue
-    initial: bright
-    icon: mdi:ceiling-light
+name: Active Scene
+options:
+  - ocean
+  - bright
+  - deep_blue
+initial: bright
+icon: mdi:ceiling-light
