@@ -1,4 +1,4 @@
-scenes:
+active_scene:
   name: Active Scene
   options:
     - ocean
