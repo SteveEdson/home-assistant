@@ -121,7 +121,7 @@
       action_type: flip90
   action:
     - service: input_select.select_next
-      entity_id: input_select.active_scene
+      entity_id: input_select.input_scenes
 
 - alias: Cube flip180
   trigger:
