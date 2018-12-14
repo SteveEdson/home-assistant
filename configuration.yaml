@@ -2,6 +2,9 @@ homeassistant: !include home_assistant.yaml
 
 http: !include http.yaml
 
+lovelace:
+  mode: yaml
+
 # Show links to resources in log and frontend
 #introduction:
 
