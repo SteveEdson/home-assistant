@@ -123,8 +123,9 @@ light:
       - light.kitchen_light_3
       - light.kitchen_light_4
       - light.kitchen_table
-  - platform: mqtt_json
+  - platform: mqtt
     name: Cupboard
+    schema: json
     command_topic: !secret anavi_channel
     brightness: true
     rgb: true
