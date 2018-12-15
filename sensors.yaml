@@ -148,3 +148,9 @@
 
 - platform: version
   source: docker
+
+- platform: mold_indicator
+  indoor_temp_sensor: sensor.temperature_158d00027265db
+  indoor_humidity_sensor: sensor.humidity_158d00027265db
+  outdoor_temp_sensor: sensor.outside_temperature
+  calibration_factor: 2.0
