@@ -53,6 +53,7 @@
   api_key: !secret google_assistant_api_key
   origin: !secret home_address
   destination: !secret work_address
+  scan_interval: 3600
 
 - platform: google_travel_time
   name: Time to Home
@@ -148,3 +149,6 @@
 
 - platform: version
   source: docker
+
+- platform: haveibeenpwned
+  email: !secret breached_emails
