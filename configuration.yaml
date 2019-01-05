@@ -132,6 +132,10 @@ light:
     retain: true
     effect: true
     brightness_scale: 4095
+  - platform: yeelight
+    devices:
+      192.168.1.219:
+        name: Bedroom
 
 hue:
   bridges:
