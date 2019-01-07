@@ -135,6 +135,7 @@ Office Lights:
 
 Bedroom Lights:
   - light.bedroom_light
+  - light.bedside
   
 Kitchen Lights:
   - light.kitchen_table
