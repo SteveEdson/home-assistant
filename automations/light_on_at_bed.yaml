@@ -1,13 +1,9 @@
-- alias: Lights off at night
+- alias: Light on at bedtime
   action:
   - data:
-      entity_id: group.all_lights
-    service: light.turn_off
-  - data:
-      entity_id: switch.my_smart_plug
-    service: switch.turn_off
+      entity_id: light bedside
+    service: light.turn_on
   condition: []
-  id: '1509874606449'
   trigger:
     platform: time
-    at: '00:30:00'
+    at: '22:30:00'
