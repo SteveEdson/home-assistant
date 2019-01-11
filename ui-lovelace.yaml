@@ -237,6 +237,12 @@ views:
             style:
               top: 90.5%
               left: 51%
+          - type: state-icon
+            entity: light.bedside
+            tap_action: toggle
+            style:
+              top: 17%
+              left: 24%
       - type: weather-forecast
         id: weather_forecast
         entity: weather.dark_sky
