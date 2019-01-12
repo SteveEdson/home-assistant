@@ -288,7 +288,7 @@ Hive:
   - sensor.hive_hub_status
 
 Websites:
-  - sensor.steveedsoncouk
+  - sensor.steveedson_co_uk
   - sensor.steveedson_co_uk_ssl
   - sensor.fantasyformula1couk
   - sensor.fantasyformula1_co_uk_ssl
