@@ -129,6 +129,7 @@ Hallway:
   - binary_sensor.door_window_sensor_158d0002253f18
   - sensor.illumination_7811dcb25e74
   - light.porch 
+  - sensor.house_temperature
   
 Office Lights:
   - light.office
@@ -163,6 +164,7 @@ Home Assistant:
   - sensor.disk_free
   - sensor.load_5m
   - sensor.memory_free
+  - sensor.latest_version
 
 Xiaomi:
   - binary_sensor.motion_sensor_158d0002234460
@@ -251,7 +253,7 @@ Network Stats:
   - sensor.asuswrt_download_speed
   - sensor.asuswrt_upload
   - sensor.asuswrt_upload_speed
-  - binary_sensor.do1
+  - binary_sensor.do_1
   - sensor.rtac68u_bytes_received
   - sensor.rtac68u_bytes_sent
   - sensor.rtac68u_kbytesec_received
