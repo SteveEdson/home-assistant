@@ -18,6 +18,7 @@
       data:
         entity_id: group.kitchen_lights
         brightness_pct: 100 
+        rgb_color: 255,0,255
 
 - alias: kitchen led motion
   trigger:
