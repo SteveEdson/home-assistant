@@ -150,5 +150,5 @@
 - platform: version
   source: docker
 
-- platform: haveibeenpwned
-  email: !secret breached_emails
+# - platform: haveibeenpwned
+#   email: !secret breached_emails
