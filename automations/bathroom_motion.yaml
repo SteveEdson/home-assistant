@@ -14,7 +14,7 @@
        before: sunrise
        before_offset: "1:00:00"
      - condition: numeric_state
-       state: sensor.illumination_7811dcb25e74
+       entity_id: sensor.illumination_7811dcb25e74
        below: 250
   action:
     - service: light.turn_on
