@@ -287,14 +287,13 @@ Hive:
 
 Websites:
   - sensor.steveedsoncouk
-  - sensor.steveedsoncouk_ssl
+  - sensor.steveedson_co_uk_ssl
   - sensor.fantasyformula1couk
   - sensor.fantasyformula1_co_uk_ssl
   - sensor.home_assistant
   - sensor.home_assistant_ssl
   - sensor.ff1_stats
   - sensor.race_deadline_day
-  - 
 
 # Travel Time:
 #   - sensor.time_to_work
