@@ -15,7 +15,7 @@
         before_offset: "1:00:00"
       - condition: numeric_state
         entity_id: sensor.illumination_7811dcb25e74
-        below: 250  
+        below: 700  
   action:
     - service: light.turn_on
       data:
