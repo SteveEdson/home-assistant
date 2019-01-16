@@ -33,7 +33,10 @@
       data:
         entity_id: light.cupboard
         brightness_pct: 100
-        rgb_color: 255,0,255
+        rgb_color: 
+          - 255
+          - 0
+          - 255
 
 - alias: Kitchen cupboard no motion 4 mins
   trigger:
