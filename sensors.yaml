@@ -140,7 +140,7 @@
   sensors:
     race_deadline_day:
       friendly_name: "Race Deadline Day"
-      value_template: "{{ ((states.sensor.ff1_stats.attributes.data.next.predictionDeadline - as_timestamp(now())) < (60 * 60 * 24)) and states.sensor.ff1_stats.attributes.data.next.predictionDeadline > as_timestamp(now()) }}"
+      value_template: "{{ ((states.sensor.ff1_stats.attributes.data.next and states.sensor.ff1_stats.attributes.data.next.predictionDeadline - as_timestamp(now())) < (60 * 60 * 24)) and states.sensor.ff1_stats.attributes.data.next.predictionDeadline > as_timestamp(now()) }}"
 
     house_temperature:
       friendly_name: "House Temperature"
