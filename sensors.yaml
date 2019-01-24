@@ -53,13 +53,14 @@
   api_key: !secret google_assistant_api_key
   origin: !secret home_address
   destination: !secret work_address
-  scan_interval: 3600
+  scan_interval: 1800
 
 - platform: google_travel_time
   name: Time to Home
   api_key: !secret google_assistant_api_key
   origin: !secret work_address
   destination: !secret home_address
+  scan_interval: 1800
   
 - platform: cert_expiry
   name: SteveEdson.co.uk SSL 
