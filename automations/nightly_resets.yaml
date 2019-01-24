@@ -1,7 +1,7 @@
 - id: nightly_resets
   alias: 'Nightly Resets'
   trigger:
-    platform: time
+    platform: time_pattern
     hours: 03
     minutes: 00
     seconds: 00
