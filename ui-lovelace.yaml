@@ -299,6 +299,8 @@ views:
       - type: media-control
         entity: media_player.kitchen_home
       - type: media-control
+        entity: media_player.kitchen_display
+      - type: media-control
         entity: media_player.lounge
       - type: media-control
         entity: media_player.lounge_tv
