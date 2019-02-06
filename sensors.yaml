@@ -77,21 +77,21 @@
 - platform: rest
   resource: !secret google_holiday_sheet
   name: Holiday allowance remaining this year
-  value_template: '{{ value_json.feed.entry[0]["gsx$allowanceremaining"]["$t"] }}'
+  value_template: '{{ value_json.feed.entry[1]["gsx$allowanceremaining"]["$t"] }}'
   unit_of_measurement: days
   scan_interval: 7200
 
 - platform: rest
   resource: !secret google_holiday_sheet
   name: Holiday's not yet taken
-  value_template: '{{ value_json.feed.entry[0]["gsx$futureholidays"]["$t"] }}'
+  value_template: '{{ value_json.feed.entry[1]["gsx$futureholidays"]["$t"] }}'
   unit_of_measurement: days
   scan_interval: 7200
 
 - platform: rest
   resource: !secret google_holiday_sheet
   name: Next Holiday
-  value_template: '{{ value_json.feed.entry[0]["gsx$nextholiday"]["$t"] }}'
+  value_template: '{{ value_json.feed.entry[1]["gsx$nextholiday"]["$t"] }}'
   scan_interval: 7200
 
 - platform: rest
