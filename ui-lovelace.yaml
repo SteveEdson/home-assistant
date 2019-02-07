@@ -12,13 +12,13 @@ views:
     cards:
       - type: custom:auto-entities
         card:
+          id: bedroom_summary
           type: picture-glance
-        id: bedroom_summary
-        title: Bedroom
+          title: Bedroom
+          image: !secret photos_bedroom
         filter:
           include:
             - entity_id: "/*bedroom*/"
-        image: !secret photos_bedroom
       - type: picture-elements
         id: downstairs_floorplan
         title: Downstairs
