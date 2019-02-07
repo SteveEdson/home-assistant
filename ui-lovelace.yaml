@@ -18,7 +18,7 @@ views:
           image: !secret photos_bedroom
         filter:
           include:
-            - entity_id: "/*bedroom*/"
+            - entity_id: "*bedroom*"
       - type: picture-elements
         id: downstairs_floorplan
         title: Downstairs
