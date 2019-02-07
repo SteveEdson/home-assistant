@@ -16,6 +16,7 @@ views:
           type: picture-glance
           title: Bedroom
           image: !secret photos_bedroom
+          entity: group.bedroom
         filter:
           include:
             - entity_id: "*bedroom*"
@@ -115,40 +116,36 @@ views:
             style:
               top: 96%
               left: 78%
-      - type: sensor
-        id: house_temperature
-        entity: sensor.house_temperature
-        name: Heating
-        height: 125
-        line_color: '#c23b22'
       - type: thermostat
         id: house_heating
         entity: climate.heating
-      - type: picture-glance
-        id: kitchen_glance
-        title: Kitchen
-        entities:
-          - light.kitchen_light_1
-          - light.kitchen_light_2
-          - light.kitchen_light_3
-          - light.kitchen_light_4
-          - light.kitchen_table
-          - light.cupboard
-          - media_player.kitchen_home
-          - binary_sensor.motion_sensor_158d0001643c27
-        image: !secret photos_kitchen
-        entity: group.kitchen_lights
-      - type: picture-glance
-        id: lounge_summary_glance
-        title: Lounge
-        entities:
-          - light.twigs
-          - light.corner_lamp
-          - light.left_lamp
-          - switch.my_smart_plug
-          - media_player.samsung_tv_remote
-        image: !secret photos_lounge
-        entity: group.lounge_lights
+      - type: custom:auto-entities
+        filter:
+          include:
+            - entity_id: "*kitchen*"
+            - entity_id: "binary_sensor.motion_sensor_158d0001643c27"
+            - entity_id: "light.cupboard"
+        card:
+          type: picture-glance
+          id: kitchen_glance
+          title: Kitchen
+          image: !secret photos_kitchen
+          entity: group.kitchen_lights
+      - type: custom:auto-entities
+        filter:
+          include:
+            - entity_id: "*lounge*"
+            - entity_id: "light.twigs"
+            - entity_id: "light.corner_lamp"
+            - entity_id: "light.left_lamp"
+            - entity_id: "switch.my_smart_plug"
+            - entity_id: "media_player.samsung_tv_remote"
+        card:
+          id: lounge_summary_glance
+          title: Lounge
+          type: picture-glance
+          image: !secret photos_lounge
+          entity: group.lounge_lights
       - type: picture-glance
         id: office_glance
         title: Office
