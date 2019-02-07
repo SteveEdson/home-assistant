@@ -140,6 +140,8 @@ views:
             - entity_id: "light.left_lamp"
             - entity_id: "switch.my_smart_plug"
             - entity_id: "media_player.samsung_tv_remote"
+          exclude:
+            - entity_id: "*automation*"
         card:
           id: lounge_summary_glance
           title: Lounge
