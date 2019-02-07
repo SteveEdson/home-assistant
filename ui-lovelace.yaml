@@ -1,18 +1,24 @@
 title: Edson Home
+resources:
+  - url: /local/custom_ui/card-tools.js?v=1
+    type: js
+  - url: /local/custom_ui/auto-entities.js?v=1
+    type: js
 views:
   - icon: mdi:home-assistant
     id: home
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
     cards:
-      - type: picture-glance
+      - type: custom:auto-entities
+        card:
+          type: picture-glance
         id: bedroom_summary
         title: Bedroom
-        entities:
-          - light.bedroom_light
-          - media_player.bedroom_tv
+        filter:
+          include:
+            - entity_id: "/*bedroom*/"
         image: !secret photos_bedroom
-        entity: group.bedroom
       - type: picture-elements
         id: downstairs_floorplan
         title: Downstairs
