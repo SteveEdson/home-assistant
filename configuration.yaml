@@ -5,6 +5,8 @@ http: !include http.yaml
 lovelace:
   mode: yaml
 
+system_health:
+
 # Show links to resources in log and frontend
 #introduction:
 
@@ -201,7 +203,7 @@ ifttt:
   key: !secret ifttt_key
 
 script: !include_dir_named scripts
-  
+
 digital_ocean:
   access_token: !secret digital_ocean_key
 
@@ -211,7 +213,7 @@ logger:
 group: !include groups.yaml
 
 scene: !include scenes.yaml
-    
+
 google_assistant:
   project_id: edson-home
   api_key: !secret google_assistant_api_key
@@ -240,7 +242,7 @@ google_assistant:
 #      - name: 'Due This Week'
 #        due_date_days: 7
 
-weather: 
+weather:
  - platform: darksky
    api_key: !secret darksky_api_key
 
@@ -297,8 +299,8 @@ influxdb:
   host: !secret influx_host
   port: 443
   username: !secret influx_username
-  password: !secret influx_password  
-  
+  password: !secret influx_password
+
 duckdns:
   domain: !secret duck_dns_domain
   access_token: !secret duck_dns_token
