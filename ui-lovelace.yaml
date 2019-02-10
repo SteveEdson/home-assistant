@@ -20,6 +20,9 @@ views:
         filter:
           include:
             - entity_id: "*bedroom*"
+          exclude:
+            - entity_id: "*automation*"
+            - entity_id: "*group*"
       - type: picture-elements
         id: downstairs_floorplan
         title: Downstairs
@@ -125,6 +128,9 @@ views:
             - entity_id: "*kitchen*"
             - entity_id: "binary_sensor.motion_sensor_158d0001643c27"
             - entity_id: "light.cupboard"
+          exclude:
+            - entity_id: "*automation*"
+            - entity_id: "*group*"
         card:
           type: picture-glance
           id: kitchen_glance
@@ -142,6 +148,7 @@ views:
             - entity_id: "media_player.samsung_tv_remote"
           exclude:
             - entity_id: "*automation*"
+            - entity_id: "*group*"
         card:
           id: lounge_summary_glance
           title: Lounge
