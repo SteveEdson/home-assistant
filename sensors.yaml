@@ -119,7 +119,7 @@
 - platform: rest
   resource: !secret pay_day_api
   name: Pay Day
-  value_template: '{{ value_json.daysRemaining }}'
+  value_template: 'in {{ value_json.daysRemaining }} day{% if value_json.daysRemaining != 1 %}s{% endif %}'
   json_attributes:
     - payday
     - unix
