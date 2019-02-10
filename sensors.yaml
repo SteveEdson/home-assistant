@@ -119,13 +119,10 @@
 - platform: rest
   resource: !secret pay_day_api
   name: Pay Day
-  value_template: '{{ value_json.fromNow }}'
+  value_template: '{{ value_json.daysRemaining }}'
   json_attributes:
     - payday
-    - fromNow
-    - formatted
     - unix
-    - status
     - daysRemaining
     - isToday
   scan_interval: 7200
