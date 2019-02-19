@@ -119,10 +119,13 @@
 - platform: rest
   resource: !secret pay_day_api
   name: Pay Day
-  value_template: 'in {{ value_json.daysRemaining }} day{% if value_json.daysRemaining != 1 %}s{% endif %}'
+  value_template: '{{ value_json.fromNow }}'
   json_attributes:
     - payday
+    - fromNow
+    - formatted
     - unix
+    - status
     - daysRemaining
     - isToday
   scan_interval: 7200
@@ -156,7 +159,7 @@
   password: !secret track17password
 
 - platform: monzo
-  client_id: 'oauth2client_00009fzz3EpgyNLTaObkRd'
-  client_secret: 'user_000098Yi5TdERwIKG6fDJR'
+  client_id: !secret monzo_client_id
+  client_secret: !secret monzo_secret
   name: 'Monzo'
   current_account: true # only if you the current account
