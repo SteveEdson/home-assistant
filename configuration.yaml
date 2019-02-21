@@ -309,4 +309,4 @@ recorder:
   purge_keep_days: 10
   db_url: !secret db_url
 
-person: !include people.yml
+person: !include people.yaml
