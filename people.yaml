@@ -1,1 +1,6 @@
-# Example
+- name: Steve Edson
+  id: steveedson
+  device_trackers:
+    - device_tracker.edsonmacbook
+    - device_tracker.oneplus5t
+    - device_tracker.stevesmbp
