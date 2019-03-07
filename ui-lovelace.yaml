@@ -1,8 +1,8 @@
 title: Edson Home
 resources:
-  - url: /local/custom_ui/card-tools.js?v=1
+  - url: /local/custom_ui/card-tools.js?v=2
     type: js
-  - url: /local/custom_ui/auto-entities.js?v=1
+  - url: /local/custom_ui/auto-entities.js?v=2
     type: js
 views:
   - icon: mdi:home-assistant
