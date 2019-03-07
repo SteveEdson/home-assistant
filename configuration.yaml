@@ -310,3 +310,5 @@ recorder:
   db_url: !secret db_url
 
 person: !include people.yaml
+
+tplink:
