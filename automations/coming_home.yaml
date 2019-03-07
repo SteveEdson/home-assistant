@@ -16,7 +16,7 @@
           - thu
           - fri
       - condition: state
-        entity_id: group.devices
+        entity_id: group.all_devices
         state: not_home
       - condition: template
         value_template: '{{ states.climate.heating.attributes.current_temperature <= 17 }}'
