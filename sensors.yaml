@@ -157,9 +157,3 @@
 - platform: seventeentrack
   username: !secret track17email
   password: !secret track17password
-
-- platform: monzo
-  client_id: !secret monzo_client_id
-  client_secret: !secret monzo_secret
-  name: 'Monzo'
-  current_account: true # only if you the current account
