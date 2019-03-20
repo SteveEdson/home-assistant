@@ -61,12 +61,12 @@
   origin: !secret work_address
   destination: !secret home_address
   scan_interval: 1800
-  
+
 - platform: cert_expiry
-  name: SteveEdson.co.uk SSL 
+  name: SteveEdson.co.uk SSL
   host: steveedson.co.uk
- 
-- platform: cert_expiry 
+
+- platform: cert_expiry
   host: fantasyformula1.co.uk
   name: FantasyFormula1.co.uk SSL
 
@@ -147,6 +147,9 @@
       friendly_name: "House Temperature"
       unit_of_measurement: '°C'
       value_template: "{{ float(states.climate.heating.attributes.current_temperature) }}"
+
+- platform: version
+  source: local
 
 - platform: version
   source: docker

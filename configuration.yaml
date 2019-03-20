@@ -69,6 +69,9 @@ binary_sensor:
       ha_domain_due:
         value_template: "{{ (states('sensor.home_assistant')|int) < 30 }}"
         friendly_name: 'Home Assistant domain due for renewal'
+      ha_latest_version:
+        value_template: "{{ states.sensor.current_version == states.sensor.latest_version }}"
+        friendly_name: 'Home Assistant Latest Version'
   - platform: workday
     country: UK
   - platform: bayesian
@@ -182,6 +185,21 @@ alert:
     state: 'on'
     repeat:
       - 60 # 60 minutes
+      - 1440 # 1 day
+      - 2880 # every 2 days
+    can_acknowledge: True
+    skip_first: True
+    notifiers:
+      - html5
+  homeassistant_version:
+    name: Home Assistant update available
+    done_message: A new version of home assistant is available
+    entity_id: binary_sensor.ha_latest_version
+    state: 'off'
+    repeat:
+      - 60 # 60 minutes
+      - 1440 # 1 day
+      - 1440 # 1 day
       - 1440 # 1 day
       - 2880 # every 2 days
     can_acknowledge: True

@@ -53,7 +53,7 @@ lounge:
     - binary_sensor.living_room_nest_protect_online
     - sensor.living_room_nest_protect_smoke_status
     - group.lounge_protect
-    
+
 bedroom:
   view: yes
   icon: mdi:hotel
@@ -95,7 +95,7 @@ work:
 #   view: yes
 #   entities:
 #     - group.all_automations
-#     - group.all_scripts    
+#     - group.all_scripts
 
 People:
   - device_tracker.oneplus_3
@@ -110,7 +110,7 @@ People:
 Computers:
   - device_tracker.desktopkvl6s86
   - switch.aegis
-  
+
 Lounge Protect:
   - sensor.living_room_nest_protect_battery_health
   - sensor.living_room_nest_protect_co_status
@@ -123,21 +123,21 @@ Lounge Lights:
   - light.twigs
   - light.corner_lamp
   - switch.my_smart_plug
- 
+
 Hallway:
   - light.landing_light
   - binary_sensor.door_window_sensor_158d0002253f18
   - sensor.illumination_7811dcb25e74
-  - light.porch 
+  - light.porch
   - sensor.house_temperature
-  
+
 Office Lights:
   - light.office
 
 Bedroom Lights:
   - light.bedroom_light
   - light.bedside
-  
+
 Kitchen Lights:
   - light.kitchen_table
   - light.kitchen_light_1
@@ -155,7 +155,7 @@ Television:
   - input_select.channel
   - script.playpause
   - script.record
-  
+
 Events:
   - sensor.bin_days
 
@@ -165,6 +165,7 @@ Home Assistant:
   - sensor.load_5m
   - sensor.memory_free
   - sensor.latest_version
+  - sensor.current_version
 
 Xiaomi:
   - binary_sensor.motion_sensor_158d0002234460
@@ -195,13 +196,13 @@ Upstairs Protect:
   - binary_sensor.upstairs_nest_protect_online
   - sensor.upstairs_nest_protect_smoke_status
   - sensor.upstairs_nest_protect_color_status
-  
+
 Health:
   - sensor.weight
   - sensor.charge_2_battery
   - sensor.resting_heart_rate
   - sensor.steps
-  
+
 Uber:
   - sensor.uberassist_price
   - sensor.uberassist_time
@@ -225,18 +226,18 @@ Lounge Media:
   - media_player.samsung_tv_remote
   - media_player.lounge_tv
   - media_player.lounge
-  
+
 Bedroom Media:
   - media_player.bedroom_tv
   - media_player.bedroom_speaker
-  
+
 TV Channels:
   - automation.bbc_one
   - automation.bbc_two
   - automation.itv
   - automation.channel_4
   - automation.sky_1
-  
+
 Network Stats:
   - sensor.speedtest_download
   - sensor.speedtest_ping
