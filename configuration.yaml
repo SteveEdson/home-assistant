@@ -330,3 +330,5 @@ recorder:
 person: !include people.yaml
 
 tplink:
+
+stream:
