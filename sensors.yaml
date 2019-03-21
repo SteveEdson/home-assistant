@@ -27,7 +27,7 @@
   monitored_conditions:
     - summary
     - minutely_summary
-  update_interval: '01:00'
+  scan_interval: '01:00'
 
 #- platform: command_line
 #  name: CPU Temperature

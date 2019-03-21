@@ -156,7 +156,6 @@ media_player:
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
   - platform: plex
-    ssl: true
 
 device_tracker:
   - platform: asuswrt
