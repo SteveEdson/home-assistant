@@ -314,6 +314,7 @@ alarm_control_panel:
 influxdb:
   host: !secret influx_host
   port: 443
+  ssl: true
   username: !secret influx_username
   password: !secret influx_password
 
