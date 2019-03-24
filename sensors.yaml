@@ -107,7 +107,7 @@
   name: Bin days
   value_template: >
     {% if value_json.success %}
-    {% set numSeconds = (as_timestamp(strptime(value_json[0].date, "%d/%m/%Y")) | float) - (as_timestamp(now()) | float) %}{{ value_json[0].bins }} in {{ (numSeconds / 60 / 60 / 24) | round }} days
+    {% set numSeconds = (as_timestamp(strptime(value_json.data[0].date, "%d/%m/%Y")) | float) - (as_timestamp(now()) | float) %}{{ value_json.data[0].bins }} in {{ (numSeconds / 60 / 60 / 24) | round }} days
     {% else %}
     Bin data not available
     {% endif %}
