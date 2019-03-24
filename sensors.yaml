@@ -116,7 +116,6 @@
     - bins
     - image
   scan_interval: 7200
-  icon_color: rgb(51,25,0)
 
 - platform: rest
   resource: !secret pay_day_api
