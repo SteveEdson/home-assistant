@@ -13,7 +13,7 @@
 #- platform: pi_hole
 #  host: 192.168.1.120
 
-- platform: speedtest
+- platform: speedtestdotnet
   monitored_conditions:
     - ping
     - download
