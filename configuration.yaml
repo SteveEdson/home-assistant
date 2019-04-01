@@ -331,3 +331,6 @@ person: !include people.yaml
 tplink:
 
 stream:
+
+prometheus:
+  namespace: ha
