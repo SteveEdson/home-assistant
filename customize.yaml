@@ -1,148 +1,98 @@
 script.good_night:
   icon: mdi:sleep
-
 script.optical1:
   icon: mdi:television
-
 script.optical2:
   icon: mdi:google-chrome
-  
 script.power_toggle:
   icon: mdi:speaker
-  
 automation.bbc_one:
   icon: mdi:numeric-1-box
-
 automation.bbc_two:
   icon: mdi:numeric-2-box
-  
 automation.itv:
   icon: mdi:numeric-3-box
-
 automation.channel_4:
   icon: mdi:numeric-4-box
-  
 automation.sky_1:
   icon: mdi:satellite-variant
-
 automation.chromecast_input_when_playing:
   icon: mdi:music-note
-  
 automation.tv_audio_input_when_not_playing:
   icon: mdi:music-note-off
-
 automation.light_theme_in_day:
   icon: mdi:weather-sunny
-  
 automation.dark_theme_at_night:
   icon: mdi:theme-light-dark
-  
 automation.lights_sync_off:
   hidden: true
-  
 automation.lights_sync_on:
   hidden: true
-
 automation.lights_off_at_night:
   icon: mdi:weather-night
-  
 automation.lights_on_at_sunset:
   icon: mdi:weather-sunset-down
-  
 scene.deep_blue:
   icon: mdi:anchor
-
 group.tv_channels:
   hidden: true
-  
-#switch.my_smart_plug:
-#  icon: mdi:pine-tree
-#  friendly_name: Christmas Tree
-
 script.boost_heating:
   icon: mdi:thermometer-lines
-
 sensor.fantasyformula1couk:
   icon: mdi:flag-checkered
-
 sensor.steveedsoncouk:
   icon: mdi:account
-
 script.heating_confirmed_notification:
   hidden: true
-
 script.send_heating_notification:
   hidden: true
-
 group.default_view:
   icon: mdi:home
-
 script.morning_notification:
   icon: mdi:weather-sunset-up
-
 group.work:
   entity_picture: https://jaywing.com/favicon.ico
-
 group.jaywing:
   entity_picture: https://jaywing.com/favicon.ico
-  
 sensor.holiday_allowance_remaining_this_year:
   icon: mdi:airplane
-
 sensor.holidays_not_yet_taken:
   icon: mdi:calendar
-
 sensor.time_to_work:
   icon: mdi:navigation
-
 sensor.time_to_home:
   icon: mdi:navigation
-
-#group.all_automations:
-#  hidden: false
-#
-#group.all_scripts:
-#  hidden: false
-
 binary_sensor.ha_domain_due:
   hidden: true
-
 script.bin_notification:
   icon: mdi:delete
-
 binary_sensor.workday_sensor:
   hidden: true
-
 light.gateway_light_7811dcb25e74:
   friendly_name: Gateway Light
   icon: mdi:google-circles-extended
-
 binary_sensor.motion_sensor_158d0002234460:
   friendly_name: Bathroom Motion Sensor
   icon: mdi:hot-tub
-
 binary_sensor.motion_sensor_158d0001643c27:
   friendly_name: Kitchen Motion Sensor
   icon: mdi:fridge
-
 binary_sensor.xiaomi_cube:
   friendly_name: Magic Cube
   icon: mdi:cube-send
-
 binary_sensor.door_window_sensor_158d0002253f18:
   friendly_name: Front Door Sensor
   icon: mdi:door
-
 binary_sensor.switch_158d0001f354ea:
   friendly_name: Lights Switch
   icon: mdi:flash-circle
-
 sensor.illumination_7811dcb25e74:
   friendly_name: Hallway Illumination
   icon: mdi:brightness-6
-
 sensor.hive_hub_status:
   hidden: true
-  
 sensor.home_eta:
   hidden: true
+sensor.bin_days:
+  icon: mdi:delete
+  icon_color: '#6ee86e'
