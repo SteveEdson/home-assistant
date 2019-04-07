@@ -48,6 +48,12 @@ services:
     volumes:
       - 'mosquitto_data:/mqtt/data'
 
+  test:
+    image: mwendler/wget
+    command: http://192.168.1.60:5000/broadcast_message?message=this%20is%20only%20a%20test
+    labels:
+      - 'cron.schedule="*/1 * * * * "'
+
   db:
     image: mariadb
     restart: always
