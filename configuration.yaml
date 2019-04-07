@@ -311,12 +311,12 @@ alarm_control_panel:
 #      - light
 #      - switch
 
-influxdb:
-  host: !secret influx_host
-  port: 443
-  ssl: true
-  username: !secret influx_username
-  password: !secret influx_password
+#influxdb:
+#  host: !secret influx_host
+#  port: 443
+#  ssl: true
+#  username: !secret influx_username
+#  password: !secret influx_password
 
 duckdns:
   domain: !secret duck_dns_domain

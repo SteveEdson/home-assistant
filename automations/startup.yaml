@@ -1,12 +1,12 @@
-- alias: 'Home Assistant Started'
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: notify.html5
-      data:
-        message: 'Home assistant has started'
-    - service: notify.google_assistant_broadcast
-      data:
-        message: "Home assistant is back online"
+#- alias: 'Home Assistant Started'
+#  trigger:
+#    - platform: homeassistant
+#      event: start
+#  action:
+#    - service: notify.html5
+#      data:
+#        message: 'Home assistant has started'
+#    - service: notify.google_assistant_broadcast
+#      data:
+#        message: "Home assistant is back online"
       
