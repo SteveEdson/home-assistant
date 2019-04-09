@@ -111,7 +111,7 @@
 - platform: rest
   resource: !secret pay_day_api
   name: Pay Day
-  value_template: '{{ value_json.daysRemaining }}'
+  value_template: '{{ value_json.daysRemaining }} days remaining'
   json_attributes:
     - daysRemaining
     - isToday
