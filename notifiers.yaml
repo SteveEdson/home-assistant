@@ -2,11 +2,12 @@
   platform: pushover
   api_key: !secret pushover_api_key
   user_key: !secret pushover_user_key
-  
+
 - name: HTML5
   platform: html5
-  gcm_api_key: !secret gcm_api_key
-  gcm_sender_id: !secret gcm_sender_id
+  vapid_pub_key: !secret vapid_pub_key
+  vapid_prv_key: !secret vapid_prv_key
+  vapid_email: !secret google_agent_user_id
 
 - name: Google Assistant Broadcast
   platform: rest
