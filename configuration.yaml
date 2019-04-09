@@ -334,3 +334,11 @@ stream:
 
 prometheus:
   namespace: ha
+
+speedtestdotnet:
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  scan_interval:
+    minutes: 30

@@ -13,15 +13,6 @@
 #- platform: pi_hole
 #  host: 192.168.1.120
 
-- platform: speedtestdotnet
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-  hour:
-    - 6
-    - 18
-
 - platform: darksky
   api_key: !secret darksky_api_key
   monitored_conditions:
