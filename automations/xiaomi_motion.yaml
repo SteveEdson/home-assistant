@@ -15,12 +15,12 @@
         before_offset: "1:00:00"
       - condition: numeric_state
         entity_id: sensor.illumination_7811dcb25e74
-        below: 700  
+        below: 700
   action:
     - service: light.turn_on
       data:
         entity_id: group.kitchen_lights
-        brightness_pct: 100 
+        brightness_pct: 100
 
 - alias: kitchen led motion
   trigger:
@@ -33,7 +33,7 @@
       data:
         entity_id: light.cupboard
         brightness_pct: 100
-        rgb_color: 
+        rgb_color:
           - 255
           - 0
           - 255
@@ -98,7 +98,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: rotate
   condition:
     condition: template
@@ -111,7 +111,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: rotate
   condition:
     condition: template
@@ -124,7 +124,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: flip90
   action:
     - service: input_select.select_next
@@ -135,7 +135,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: flip180
   action:
     - service: scene.turn_on
@@ -146,17 +146,17 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: swing
   action:
-    - service: script.good_night 
+    - service: script.good_night
 
 - alias: Cube volume
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
+      entity_id: binary_sensor.cube_158d0001041dc7
       action_type: shake_air
   action:
     - service: light.toggle
@@ -168,8 +168,8 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.xiaomi_cube
-      action_type: tap_twice 
+      entity_id: binary_sensor.cube_158d0001041dc7
+      action_type: tap_twice
   action:
     - service_template: >
          {% if is_state('media_player.lounge_tv', 'on') %}
