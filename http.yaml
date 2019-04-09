@@ -6,4 +6,4 @@
 base_url: !secret base_url
 use_x_forwarded_for: true
 trusted_proxies:
-  - 172.18.0.10
+  - 172.20.0.4
