@@ -9,9 +9,9 @@ services:
     ports:
       - 8123:8123
     volumes:
-      - /home/rancher/repos/home-assistant:/config
+      - ./:/config
       - /etc/localtime:/etc/localtime:ro
-      - /home/rancher/repos/home-assistant/resources:/local
+      - ./resources:/local
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8123"]
