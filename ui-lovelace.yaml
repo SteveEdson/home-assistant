@@ -125,6 +125,17 @@ views:
       - type: custom:auto-entities
         filter:
           include:
+            - entity_id: "*office*"
+            - entity_id: "switch.aegis"
+        card:
+          type: picture-glance
+          id: office_glance
+          title: Office
+          image: !secret photos_office
+          entity: group.office_lights
+      - type: custom:auto-entities
+        filter:
+          include:
             - entity_id: "*kitchen*"
             - entity_id: "binary_sensor.motion_sensor_158d0001643c27"
             - entity_id: "light.cupboard"
