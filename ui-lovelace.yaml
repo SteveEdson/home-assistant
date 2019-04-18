@@ -127,6 +127,9 @@ views:
           include:
             - entity_id: "*office*"
             - entity_id: "switch.aegis"
+          exclude:
+            - entity_id: "*automation*"
+            - entity_id: "*group*"
         card:
           type: picture-glance
           id: office_glance
