@@ -16,6 +16,9 @@
       - condition: numeric_state
         entity_id: sensor.illumination_7811dcb25e74
         below: 700
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'on'
   action:
     - service: light.turn_on
       data:
