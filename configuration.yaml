@@ -16,6 +16,12 @@ frontend: !include frontend.yaml
 input_select: !include_dir_named inputs
 # input_slider: !include inputs/input_slider.yaml
 
+input_boolean:
+  guest_mode:
+    name: Guest mode
+    initial: off
+    icon: mdi:home-account
+
 google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
