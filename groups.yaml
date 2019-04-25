@@ -271,16 +271,6 @@ Security:
 Hive:
   - climate.heating
   - climate.hot_water
-  - sensor.hub_status
-  - sensor.hive_current_temperature
-  - sensor.hive_heating_boost
-  - sensor.hive_heating_mode
-  - sensor.hive_heating_state
-  - sensor.hive_hot_water_boost
-  - sensor.hive_hot_water_mode
-  - sensor.hive_hot_water_state
-  - sensor.hive_target_temperature
-  - sensor.hive_thermostat_battery_level
   - sensor.hive_hub_status
 
 Websites:
