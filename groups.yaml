@@ -250,14 +250,14 @@ Network Stats:
 #  - sensor.asuswrt_upload
 #  - sensor.asuswrt_upload_speed
   - binary_sensor.do_1
-  - sensor.rtac68u_bytes_received
-  - sensor.rtac68u_bytes_sent
-  - sensor.rtac68u_kbytesec_received
-  - sensor.rtac68u_kbytesec_sent
-  - sensor.rtac68u_packets_received
-  - sensor.rtac68u_packets_sent
-  - sensor.rtac68u_packetssec_received
-  - sensor.rtac68u_packetssec_sent
+  - sensor.rt_ac68u_bytes_received
+  - sensor.rt_ac68u_bytes_sent
+  - sensor.rt_ac68u_kbytesec_received
+  - sensor.rt_ac68u_kbytesec_sent
+  - sensor.rt_ac68u_packets_received
+  - sensor.rt_ac68u_packets_sent
+  - sensor.rt_ac68u_packetssec_received
+  - sensor.rt_ac68u_packetssec_sent
 
 Weather:
   - sun.sun
