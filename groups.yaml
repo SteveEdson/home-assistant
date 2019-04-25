@@ -108,7 +108,7 @@ People:
   - binary_sensor.sophie_arrived_home
 
 Computers:
-  - device_tracker.desktopkvl6s86
+#  - device_tracker.desktopkvl6s86
   - switch.aegis
 
 Lounge Protect:
@@ -154,16 +154,10 @@ Bathroom Lights:
   - light.bathroom_light_2
   - light.bathroom_light_3
 
-Television:
-  - input_select.channel
-  - script.playpause
-  - script.record
-
 Events:
   - sensor.bin_days
 
 Home Assistant:
-  - sensor.cpu_temperature
   - sensor.disk_free
   - sensor.load_5m
   - sensor.memory_free
@@ -175,7 +169,7 @@ Xiaomi:
   - binary_sensor.motion_sensor_158d0001643c27
   - binary_sensor.door_window_sensor_158d0002253f18
   - binary_sensor.switch_158d0001f354ea
-  - binary_sensor.xiaomi_cube
+  - binary_sensor.cube_158d0001041dc7
   - sensor.illumination_7811dcb25e74
 
 Jaywing:
@@ -245,18 +239,18 @@ Network Stats:
   - sensor.speedtest_download
   - sensor.speedtest_ping
   - sensor.speedtest_upload
-  - sensor.pihole_ads_blocked_today
-  - sensor.pihole_ads_percentage_blocked_today
-  - sensor.pihole_dns_queries_cached
-  - sensor.pihole_dns_queries_forwarded
-  - sensor.pihole_dns_queries_today
-  - sensor.pihole_dns_unique_clients
-  - sensor.pihole_dns_unique_domains
-  - sensor.pihole_domains_blocked
-  - sensor.asuswrt_download
-  - sensor.asuswrt_download_speed
-  - sensor.asuswrt_upload
-  - sensor.asuswrt_upload_speed
+#  - sensor.pihole_ads_blocked_today
+#  - sensor.pihole_ads_percentage_blocked_today
+#  - sensor.pihole_dns_queries_cached
+#  - sensor.pihole_dns_queries_forwarded
+#  - sensor.pihole_dns_queries_today
+#  - sensor.pihole_dns_unique_clients
+#  - sensor.pihole_dns_unique_domains
+#  - sensor.pihole_domains_blocked
+#  - sensor.asuswrt_download
+#  - sensor.asuswrt_download_speed
+#  - sensor.asuswrt_upload
+#  - sensor.asuswrt_upload_speed
   - binary_sensor.do_1
   - sensor.rtac68u_bytes_received
   - sensor.rtac68u_bytes_sent
