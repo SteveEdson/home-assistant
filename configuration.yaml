@@ -171,7 +171,7 @@ device_tracker:
     password: !secret router_password
     interval_seconds: 10
     consider_home: 180
-    track_new_devices: no
+    track_new_devices: yes
 
 asuswrt:
     host: 192.168.1.1
