@@ -8,15 +8,8 @@
   condition:
     condition: and
     conditions:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-     # - condition: state
-     #   entity_id: group.devices
-     #   state: "home"
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: "on"
   action:
     service: script.morning_notification
