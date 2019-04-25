@@ -198,15 +198,15 @@ Upstairs Protect:
 #  - sensor.resting_heart_rate
 #  - sensor.steps
 
-Uber:
-  - sensor.uberassist_price
-  - sensor.uberassist_time
-  - sensor.uberexec_price
-  - sensor.uberexec_time
-  - sensor.uberx_price
-  - sensor.uberx_time
-  - sensor.uberxl_price
-  - sensor.uberxl_time
+#Uber:
+#  - sensor.uberassist_price
+#  - sensor.uberassist_time
+#  - sensor.uberexec_price
+#  - sensor.uberexec_time
+#  - sensor.uberx_price
+#  - sensor.uberx_time
+#  - sensor.uberxl_price
+#  - sensor.uberxl_time
 
 Steam:
   - sensor.steam_76561198059721761
