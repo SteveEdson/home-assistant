@@ -268,7 +268,7 @@ weather:
  - platform: darksky
    api_key: !secret darksky_api_key
 
-#history_graph:
+history_graph:
   #travel_time:
   #  name: Travel Time
   #  hours_to_show: 72
@@ -277,14 +277,14 @@ weather:
    #   - sensor.time_to_home
   #    - sensor.time_to_work
 
- # temperatures:
-  #   name: Temperature
-  #    hours_to_show: 168
-  #    refresh: 60
-   #   entities:
-   #     - sensor.hive_current_temperature
-   #     - sensor.dark_sky_apparent_temperature
-
+  temperatures:
+     name: Temperature
+      hours_to_show: 168
+      refresh: 15
+      entities:
+        - sensor.house_temperature
+        - sensor.landing_sensor_temperature
+        - sensor.outside_temperature
 
 media_extractor:
 
