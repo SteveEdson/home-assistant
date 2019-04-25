@@ -98,8 +98,6 @@ work:
 #     - group.all_scripts
 
 People:
-  - device_tracker.oneplus_3
-  - device_tracker.android9cbeeb67e498559e
   - device_tracker.stevesmbp
   - device_tracker.stevegps
   - device_tracker.edsonmacbook
