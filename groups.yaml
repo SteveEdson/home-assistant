@@ -130,6 +130,9 @@ Hallway:
   - sensor.illumination_7811dcb25e74
   - light.porch
   - sensor.house_temperature
+  - sensor.landing_sensor_light_level
+  - sensor.landing_sensor_temperature
+  - binary_sensor.landing_sensor_motion
 
 Office Lights:
   - light.office
