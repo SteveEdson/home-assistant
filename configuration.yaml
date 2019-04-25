@@ -280,12 +280,12 @@ history_graph:
 
   temperatures:
      name: Temperature
-      hours_to_show: 168
-      refresh: 15
-      entities:
-        - sensor.house_temperature
-        - sensor.landing_sensor_temperature
-        - sensor.outside_temperature
+     hours_to_show: 168
+     refresh: 15
+     entities:
+       - sensor.house_temperature
+       - sensor.landing_sensor_temperature
+       - sensor.outside_temperature
 
 media_extractor:
 
