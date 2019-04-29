@@ -24,3 +24,4 @@ google_calendars.yaml
 .env
 .homekit.state
 .spotify-token-cache
+.ps4-games.json
