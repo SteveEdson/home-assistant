@@ -356,4 +356,4 @@ speedtestdotnet:
     - download
     - upload
   scan_interval:
-    minutes: 30
+    hours: 3
