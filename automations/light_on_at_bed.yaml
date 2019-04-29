@@ -1,7 +1,7 @@
 - alias: Light on at bedtime
   action:
   - data:
-      entity_id: light.bedside
+      entity_id: light.yeelight_bslamp1_7c49eb28d971
     service: light.turn_on
   condition: []
   trigger:
