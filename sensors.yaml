@@ -143,6 +143,9 @@
 - platform: version
   source: docker
 
+- platform: season
+  type: astronomical
+
 # - platform: haveibeenpwned
 #   email: !secret breached_emails
 
