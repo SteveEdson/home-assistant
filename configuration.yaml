@@ -80,20 +80,20 @@ binary_sensor:
         friendly_name: 'Home Assistant Latest Version'
   - platform: workday
     country: UK
-  - platform: bayesian
-    name: Sophie arrived home
-    prior: 0.1
-    observations:
-      - entity_id: 'device_tracker.oneplus_6'
-        prob_given_true: 0.7
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'home'
-      - entity_id: 'binary_sensor.door_window_sensor_158d0002253f18'
-        platform: 'state'
-        to_state: 'on'
-        prob_given_true: 0.6
-        prob_given_false: 0.2
+#  - platform: bayesian
+#    name: Sophie arrived home
+#    prior: 0.1
+#    observations:
+#      - entity_id: 'device_tracker.oneplus_6'
+#        prob_given_true: 0.7
+#        prob_given_false: 0.2
+#        platform: 'state'
+#        to_state: 'home'
+#      - entity_id: 'binary_sensor.door_window_sensor_158d0002253f18'
+#        platform: 'state'
+#        to_state: 'on'
+#        prob_given_true: 0.6
+#        prob_given_false: 0.2
 
 # Weather Prediction
 sensor: !include sensors.yaml
