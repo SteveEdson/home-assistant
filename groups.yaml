@@ -132,7 +132,7 @@ Office Lights:
 
 Bedroom Lights:
   - light.bedroom_light
-  - light.bedside
+  - light.yeelight_bslamp1_7c49eb28d971
 
 Kitchen Lights:
   - light.kitchen_table

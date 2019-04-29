@@ -96,3 +96,5 @@ sensor.home_eta:
 sensor.bin_days:
   icon: mdi:delete
   icon_color: '#6ee86e'
+light.yeelight_bslamp1_7c49eb28d971:
+  friendly_name: Bedside Light
