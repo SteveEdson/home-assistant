@@ -1,0 +1,12 @@
+ - id: welcome_home
+   alias: Welcome Home
+   trigger:
+     - platform: state
+       entity_id: person.steve_edson
+       from: 'not_home'
+       to: 'home'
+   action:
+     - service: notify.google_assistant_broadcast
+       data_template:
+         message: Welcome home Steve!
+     - service: notify.home_alerts
