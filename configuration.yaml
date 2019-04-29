@@ -119,9 +119,9 @@ device_tracker:
     track_new_devices: yes
 
 asuswrt:
-    host: 192.168.1.1
-    username: !secret router_username
-    password: !secret router_password
+  host: 192.168.1.1
+  username: !secret router_username
+  password: !secret router_password
 
 switch: !include switches.yaml
 
