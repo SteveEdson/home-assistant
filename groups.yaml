@@ -98,11 +98,6 @@ work:
 #     - group.all_scripts
 
 People:
-  - device_tracker.stevesmbp
-  - device_tracker.edsonmacbook
-  - device_tracker.oneplus5t
-  - device_tracker.oneplus_6
-  - binary_sensor.sophie_arrived_home
   - person.steve_edson
 
 Computers:
