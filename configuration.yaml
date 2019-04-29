@@ -66,36 +66,8 @@ intent_script:
     speech:
       text: "Pay day is {{ states('sensor.pay_day') }}"
 
-binary_sensor:
-  - platform: digital_ocean
-    droplets:
-      - 'do-1'
-  - platform: template
-    sensors:
-      ha_domain_due:
-        value_template: "{{ (states('sensor.home_assistant')|int) < 30 }}"
-        friendly_name: 'Home Assistant domain due for renewal'
-      ha_latest_version:
-        value_template: "{{ states('sensor.current_version') == states('sensor.latest_version') }}"
-        friendly_name: 'Home Assistant Latest Version'
-  - platform: workday
-    country: UK
-#  - platform: bayesian
-#    name: Sophie arrived home
-#    prior: 0.1
-#    observations:
-#      - entity_id: 'device_tracker.oneplus_6'
-#        prob_given_true: 0.7
-#        prob_given_false: 0.2
-#        platform: 'state'
-#        to_state: 'home'
-#      - entity_id: 'binary_sensor.door_window_sensor_158d0002253f18'
-#        platform: 'state'
-#        to_state: 'on'
-#        prob_given_true: 0.6
-#        prob_given_false: 0.2
+binary_sensor: !include_dir_merge_list binary_sensors/
 
-# Weather Prediction
 sensor: !include_dir_merge_list sensors/
 
 camera: !include cameras.yaml
@@ -215,13 +187,13 @@ weather:
    api_key: !secret darksky_api_key
 
 history_graph:
-  #travel_time:
-  #  name: Travel Time
-  #  hours_to_show: 72
-  #  refresh: 60
-  #  entities:
-   #   - sensor.time_to_home
-  #    - sensor.time_to_work
+  travel_time:
+    name: Travel Time
+    hours_to_show: 72
+    refresh: 60
+    entities:
+      - sensor.time_to_home
+      - sensor.time_to_work
 
   games:
     name: Games Played
@@ -263,20 +235,6 @@ alarm_control_panel:
     armed_home:
       pending_time: 0
       delay_time: 0
-
-#homekit:
-#  filter:
-#    include_domains:
-#      - alarm_control_panel
-#      - light
-#      - switch
-
-#influxdb:
-#  host: !secret influx_host
-#  port: 443
-#  ssl: true
-#  username: !secret influx_username
-#  password: !secret influx_password
 
 duckdns:
   domain: !secret duck_dns_domain
