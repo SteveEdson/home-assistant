@@ -1,0 +1,10 @@
+- platform: template
+  sensors:
+    race_deadline_day:
+      friendly_name: "Race Deadline Day"
+      value_template: "{{ False }}"
+
+    house_temperature:
+      friendly_name: "House Temperature"
+      unit_of_measurement: '°C'
+      value_template: "{{ float(states.climate.heating.attributes.current_temperature) }}"

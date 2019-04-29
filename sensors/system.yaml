@@ -1,0 +1,12 @@
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /
+    - type: memory_free
+    - type: load_5m
+
+- platform: version
+  source: local
+
+- platform: version
+  source: docker

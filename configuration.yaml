@@ -96,7 +96,7 @@ binary_sensor:
 #        prob_given_false: 0.2
 
 # Weather Prediction
-sensor: !include sensors.yaml
+sensor: !include_dir_merge_list sensors/
 
 camera: !include cameras.yaml
 
