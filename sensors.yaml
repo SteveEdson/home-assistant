@@ -146,6 +146,6 @@
 # - platform: haveibeenpwned
 #   email: !secret breached_emails
 
-- platform: seventeentrack
-  username: !secret track17email
-  password: !secret track17password
+#- platform: seventeentrack
+#  username: !secret track17email
+#  password: !secret track17password
