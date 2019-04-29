@@ -120,34 +120,7 @@ mqtt:
   client_id: home-assistant
   port: 1883
 
-light:
-  - platform: group
-    name: Bathroom Lights
-    entities:
-      - light.bathroom_light_1
-      - light.bathroom_light_2
-      - light.bathroom_light_3
-  - platform: group
-    name: Kitchen Lights
-    entities:
-      - light.kitchen_light_1
-      - light.kitchen_light_2
-      - light.kitchen_light_3
-      - light.kitchen_light_4
-      - light.kitchen_table
-  - platform: mqtt
-    name: Cupboard
-    schema: json
-    command_topic: !secret anavi_channel
-    brightness: true
-    rgb: true
-    retain: true
-    effect: true
-    brightness_scale: 4095
-  - platform: yeelight
-    devices:
-      192.168.1.219:
-        name: Bedside
+light: !include lights.yaml
 
 hue:
   bridges:
