@@ -103,6 +103,7 @@ People:
   - device_tracker.oneplus5t
   - device_tracker.oneplus_6
   - binary_sensor.sophie_arrived_home
+  - person.steve_edson
 
 Computers:
 #  - device_tracker.desktopkvl6s86
