@@ -155,35 +155,7 @@ switch: !include switches.yaml
 
 automation: !include_dir_merge_list automations/
 
-alert:
-  homeassistant_domain_renewal:
-    name: Home Assistant domain due for renewal
-    done_message: Home Assistant domain has been renewed
-    entity_id: binary_sensor.ha_domain_due
-    state: 'on'
-    repeat:
-      - 60 # 60 minutes
-      - 1440 # 1 day
-      - 2880 # every 2 days
-    can_acknowledge: True
-    skip_first: True
-    notifiers:
-      - html5
-  homeassistant_version:
-    name: Home Assistant update available
-    done_message: A new version of home assistant is available
-    entity_id: binary_sensor.ha_latest_version
-    state: 'off'
-    repeat:
-      - 60 # 60 minutes
-      - 1440 # 1 day
-      - 1440 # 1 day
-      - 1440 # 1 day
-      - 2880 # every 2 days
-    can_acknowledge: True
-    skip_first: True
-    notifiers:
-      - html5
+alert: !include alerts.yaml
 
 notify: !include notifiers.yaml
 
