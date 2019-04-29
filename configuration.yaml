@@ -278,6 +278,14 @@ history_graph:
    #   - sensor.time_to_home
   #    - sensor.time_to_work
 
+  games:
+    name: Games Played
+    hours_to_show: 168
+    refresh: 30
+    entities:
+      - sensor.steam_76561198059721761
+      - media_player.playstation_4
+
   temperatures:
      name: Temperature
      hours_to_show: 168
