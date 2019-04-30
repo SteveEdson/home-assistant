@@ -44,7 +44,7 @@ Today is the deadline for predictions for the {{ states.sensor.ff1_stats.attribu
 {% endif -%}
 {% endif -%}
 
-{%- if not states.sensor.ha_latest_version %}
+{%- if states('binary_sensor.ha_latest_version') == 'off' %}
 There is a new version of Home Assistant available.
 {% endif -%}
 
