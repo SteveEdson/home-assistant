@@ -6,6 +6,9 @@
        from: 'not_home'
        to: 'home'
    action:
+     - delay:
+         minutes: 1
+         seconds: 30
      - service: notify.google_assistant_broadcast
        data_template:
          message: Welcome home Steve!
