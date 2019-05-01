@@ -15,7 +15,13 @@
 - platform: rest
   resource: !secret google_holiday_sheet
   name: Next Holiday
-  value_template: '{{ value_json.feed.entry[0]["gsx$nextholiday"]["$t"] }}'
+  value_template: '{{ value_json["Next Holiday"] }}'
+  json_attributes:
+    - "Holiday Year"
+    - "Allowance"
+    - "Days booked"
+    - "Allowance remaining"
+    - "Days Till Next Holiday"
   scan_interval: 7200
 
 - platform: rest
