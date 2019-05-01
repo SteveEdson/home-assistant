@@ -167,8 +167,6 @@ Xiaomi:
 
 Jaywing:
   - sensor.pay_day
-  - sensor.holiday_allowance_remaining_this_year
-  - sensor.holiday_s_not_yet_taken
   - sensor.next_holiday
   - sensor.time_to_work
   - sensor.time_to_home
