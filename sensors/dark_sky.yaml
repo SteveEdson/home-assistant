@@ -2,5 +2,13 @@
   api_key: !secret darksky_api_key
   monitored_conditions:
     - summary
+    - icon
+    - daily_summary
+    - hourly_summary
     - minutely_summary
+    - apparent_temperature
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - sunset_time
+  units: uk2
   scan_interval: '01:00'
