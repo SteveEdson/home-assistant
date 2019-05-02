@@ -277,6 +277,9 @@ Websites:
   - sensor.ff1_stats
   - sensor.race_deadline_day
 
+System:
+  - binary_sensor.ha_latest_version
+
 # Travel Time:
 #   - sensor.time_to_work
 #   - sensor.time_to_home
