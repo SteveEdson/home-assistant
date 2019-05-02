@@ -4,3 +4,13 @@
     - device_tracker.edsonmacbook
     - device_tracker.oneplus5t
     - device_tracker.stevesmbp
+
+- name: Sophie
+  id: sophie
+  device_trackers:
+    - device_tracker.oneplus_6
+
+- name: Darren
+  id: darren
+  device_trackers:
+    - device_tracker.oneplus_3
