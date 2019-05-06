@@ -753,20 +753,26 @@ views:
     badges:
       - binary_sensor.motion_sensor_158d0001643c27
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
-          - type: light
-            entity: light.kitchen_light_1
-          - type: light
-            entity: light.kitchen_light_2
-          - type: light
-            entity: light.kitchen_light_3
-          - type: light
-            entity: light.kitchen_light_4
-          - type: light
-            entity: light.kitchen_lights
-          - type: light
-            entity: light.cupboard
+          - type: horizontal-stack
+            cards:
+            - type: light
+              entity: light.kitchen_light_1
+            - type: light
+              entity: light.kitchen_light_2
+          - type: horizontal-stack
+            cards:
+            - type: light
+              entity: light.kitchen_light_3
+            - type: light
+              entity: light.kitchen_light_4
+          - type: horizontal-stack
+            cards:
+            - type: light
+              entity: light.kitchen_lights
+            - type: light
+              entity: light.cupboard
       - type: entities
         entities:
           - light.kitchen_table
