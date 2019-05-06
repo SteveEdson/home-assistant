@@ -3,7 +3,7 @@ homeassistant: !include home_assistant.yaml
 http: !include http.yaml
 
 lovelace:
-#  mode: yaml
+ mode: yaml
 
 system_health:
 
