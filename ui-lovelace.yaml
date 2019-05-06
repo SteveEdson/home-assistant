@@ -7,6 +7,106 @@ resources:
   - url: /local/custom_ui/bar-card.js?v=2
     type: js
 views:
+  - icon: mdi:floor-plan
+    id: floorplan
+    panel: true
+    cards:
+      - type: picture-elements
+        id: downstairs_floorplan
+        title: Downstairs
+        image: https://steveedson.co.uk/images/floorplan-downstairs.png
+        elements:
+          - type: service-button
+            title: Lights On
+            style:
+              top: 98%
+              right: 18%
+            service: light.turn_on
+            service_data:
+              entity_id: group.all_lights
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 98%
+              right: 0
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: state-icon
+            entity: light.kitchen_light_1
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 34%
+          - type: state-icon
+            entity: light.kitchen_light_2
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 39%
+          - type: state-icon
+            entity: light.kitchen_light_3
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 44%
+          - type: state-icon
+            entity: light.kitchen_light_4
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 49%
+          - type: state-icon
+            entity: binary_sensor.motion_sensor_158d0001643c27
+            style:
+              top: 15%
+              left: 36.6%
+          - type: state-icon
+            entity: light.kitchen_table
+            tap_action: toggle
+            style:
+              top: 28%
+              left: 73%
+          - type: state-icon
+            entity: light.twigs
+            tap_action: toggle
+            style:
+              top: 84%
+              left: 14%
+          - type: state-icon
+            entity: switch.my_smart_plug
+            tap_action: toggle
+            style:
+              top: 51%
+              left: 35%
+          - type: state-icon
+            entity: light.corner_lamp
+            tap_action: toggle
+            style:
+              top: 58%
+              left: 65%
+          - type: state-icon
+            entity: light.left_lamp
+            tap_action: toggle
+            style:
+              top: 49%
+              left: 17%
+          - type: state-icon
+            entity: media_player.samsung_tv_remote
+            style:
+              top: 89.5%
+              left: 23%
+          - type: state-icon
+            entity: light.porch
+            tap_action: toggle
+            style:
+              top: 92%
+              left: 78%
+          - type: state-icon
+            entity: binary_sensor.door_window_sensor_158d0002253f18
+            style:
+              top: 96%
+              left: 78%
   - icon: mdi:home-assistant
     id: home
     # Name of the view. Will be used as the tooltip for tab icon
