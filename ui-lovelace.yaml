@@ -441,14 +441,14 @@ views:
           - sensor.home_eta
           - binary_sensor.home_away
         title: Jaywing
-        show_header_toggle: true
+        show_header_toggle: false
       - type: entities
         entities:
           - sensor.pressure_158d00027265db
           - sensor.humidity_158d00027265db
           - sensor.temperature_158d00027265db
         title: Box Room
-        show_header_toggle: true
+        show_header_toggle: false
       - type: entities
         entities:
           - sensor.upstairs_nest_protect_battery_health
@@ -457,12 +457,12 @@ views:
           - sensor.upstairs_nest_protect_smoke_status
           - sensor.upstairs_nest_protect_color_status
         title: Upstairs Protect
-        show_header_toggle: true
+        show_header_toggle: false
       - type: entities
         entities:
           - sensor.steam_76561198059721761
         title: Steam
-        show_header_toggle: true
+        show_header_toggle: false
       - type: media-control
         entity: media_player.kitchen_home
       - type: media-control
