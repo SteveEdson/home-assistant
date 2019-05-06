@@ -4,6 +4,8 @@ resources:
     type: js
   - url: /local/custom_ui/auto-entities.js?v=2
     type: js
+  - url: /local/custom_ui/bar-card.js?v=2
+    type: js
 views:
   - icon: mdi:home-assistant
     id: home
