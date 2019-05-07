@@ -11,7 +11,7 @@ views:
     id: floorplan
     panel: true
     cards:
-      - type: horizonal-stack
+      - type: horizontal-stack
         cards:
           - type: picture-elements
             id: downstairs_floorplan
