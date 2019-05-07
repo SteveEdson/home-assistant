@@ -1,0 +1,11 @@
+- alias: Price Changes
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.price_trackers
+    # Optional
+    value_template: '{{ state.attributes.currys }}'
+    # At least one of the following required
+    below: 379
+  action:
+    service: switch.turn_on
+    entity_id: switch.exterior_lighting

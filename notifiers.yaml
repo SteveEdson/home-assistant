@@ -22,5 +22,6 @@
 - name: Home Alerts
   platform: group
   services:
-    - service: html5
     - service: google_assistant_broadcast
+    - service: home_assistant
+
