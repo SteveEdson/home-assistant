@@ -49,4 +49,4 @@
   name: Price Trackers
   value_template: '{{ value_json.currys }}'
   json_attributes: !secret product_keys
-  scan_interval: 7200
+  scan_interval: 3600
