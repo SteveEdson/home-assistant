@@ -11,7 +11,9 @@ homeassistant_domain_renewal:
   skip_first: True
   notifiers:
     - html5
-    -
+    - home_assistant
+    - google_assistant_broadcast
+
 homeassistant_version:
   name: Home Assistant update available
   done_message: A new version of home assistant is available
@@ -27,3 +29,5 @@ homeassistant_version:
   skip_first: True
   notifiers:
     - html5
+    - home_assistant
+    - google_assistant_broadcast
