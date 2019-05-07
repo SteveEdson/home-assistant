@@ -43,3 +43,10 @@
     - payday
     - unix
   scan_interval: 7200
+
+- platform: rest
+  resource: !secret products_url
+  name: Price Trackers
+  value_template: '{{ value_json.currys }}'
+  json_attributes: !secret product_keys
+  scan_interval: 7200
