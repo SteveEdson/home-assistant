@@ -1,6 +1,6 @@
 alias: Send Heating Notification
 sequence:
-  - service: notify.html5
+  - service: notify.home_assistant
     data:
       title: "Turn the heating on?"
       message: Turn the heating on? The house is currently {{ states.climate.heating.attributes.current_temperature }}°c
