@@ -7,5 +7,7 @@
     # At least one of the following required
     below: 379
   action:
-    service: switch.turn_on
-    entity_id: switch.exterior_lighting
+    service: notify.home_alerts
+    data:
+      title: "Price Changes"
+      message: "Price has changed to £{{ states.sensor.price_trackers.attributes.currys }}"
