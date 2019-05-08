@@ -1,13 +1,41 @@
-- alias: Price Changes
+- alias: Price Changes Currys
   trigger:
     platform: numeric_state
     entity_id: sensor.price_trackers
     # Optional
     value_template: '{{ state.attributes.currys }}'
     # At least one of the following required
-    below: 379
+    below: 299
   action:
     service: notify.home_alerts
     data:
-      title: "Price Changes"
+      title: "Price Changes - Currys"
       message: "Price has changed to £{{ states.sensor.price_trackers.attributes.currys }}"
+
+- alias: Price Changes Argos
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.price_trackers
+    # Optional
+    value_template: '{{ state.attributes.argos }}'
+    # At least one of the following required
+    below: 299
+  action:
+    service: notify.home_alerts
+    data:
+      title: "Price Changes - Argos"
+      message: "Price has changed to £{{ states.sensor.price_trackers.attributes.argos }}"
+
+- alias: Price Changes JL
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.price_trackers
+    # Optional
+    value_template: '{{ state.attributes.johnLewis }}'
+    # At least one of the following required
+    below: 299
+  action:
+    service: notify.home_alerts
+    data:
+      title: "Price Changes - John Lewis"
+      message: "Price has changed to £{{ states.sensor.price_trackers.attributes.johnLewis }}"
