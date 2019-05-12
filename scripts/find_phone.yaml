@@ -1,0 +1,3 @@
+alias: Find my phone
+sequence:
+  - service: rest_command.find_phone
