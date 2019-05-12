@@ -261,3 +261,7 @@ speedtestdotnet:
     - upload
   scan_interval:
     hours: 3
+
+rest_command:
+  find_phone:
+    url: 'http://192.168.1.60:5000/command?message=Find my phone'
