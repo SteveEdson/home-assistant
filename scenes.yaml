@@ -1,3 +1,17 @@
+- name: Lounge Lights Off
+  entities:
+    light.corner_lamp:
+      state: off
+    
+    light.left_lamp:
+      state: off
+      
+    light.twigs:
+      state: off
+        
+    switch.my_smart_plug:
+      state: off
+
 - name: Deep Blue
   entities:
     light.corner_lamp:
