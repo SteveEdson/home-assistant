@@ -6,6 +6,9 @@
     - service: notify.home_assistant
       data:
         message: 'Home assistant has started'
+    - event: tileboard
+      event_data:
+        command: refresh
 #    - service: notify.google_assistant_broadcast
 #      data:
 #        message: "Home assistant is back online"
