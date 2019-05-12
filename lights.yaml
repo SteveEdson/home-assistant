@@ -14,6 +14,13 @@
     - light.kitchen_light_4
     - light.kitchen_table
 
+- platform: group
+  name: Hall Lights
+  entities:
+    - light.landing_light
+    - light.porch
+    - light.gateway_light_7811dcb25e74
+
 - platform: mqtt
   name: Cupboard
   schema: json
