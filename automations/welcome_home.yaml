@@ -11,5 +11,6 @@
        data_template:
          message: Welcome home Steve!
      - service: notify.home_alerts
+     - delay: "00:00:15"
      - service: script.play_music
      
