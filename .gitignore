@@ -26,3 +26,4 @@ google_calendars.yaml
 .spotify-token-cache
 .ps4-games.json
 package-lock.json
+tts/
