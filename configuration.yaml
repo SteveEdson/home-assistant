@@ -265,3 +265,17 @@ speedtestdotnet:
 rest_command:
   find_phone:
     url: 'http://192.168.1.60:5000/command?message=Find my phone'
+
+
+plant:
+  sunflower:
+    sensors:
+      moisture: sensor.xiaomi_miflora_moisture
+      battery: sensor.xiaomi_miflora_battery_level
+      temperature: sensor.xiaomi_miflora_temperature
+      conductivity: sensor.xiaomi_miflora_soil_conductivity
+      brightness: sensor.xiaomi_miflora_illuminance
+    min_moisture: 20
+    max_moisture: 20
+    min_temperature: 8
+    max_temperature: 35
