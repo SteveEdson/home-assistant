@@ -276,6 +276,6 @@ plant:
       conductivity: sensor.xiaomi_miflora_soil_conductivity
       brightness: sensor.xiaomi_miflora_illuminance
     min_moisture: 20
-    max_moisture: 20
+    max_moisture: 65
     min_temperature: 8
     max_temperature: 35
