@@ -4,8 +4,8 @@ sequence:
     data:
       title: "Good morning"
       message: !include ../daily_summary.yaml
-      data:
-        tag: "good-morning"
+      #data:
+      #  tag: "good-morning"
 
   - service: media_player.volume_set
     data:       
