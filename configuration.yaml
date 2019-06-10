@@ -40,6 +40,10 @@ updater:
 # Discover some devices automatically
 discovery:
 
+ssdp:
+
+zeroconf:
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 # conversation:
 
