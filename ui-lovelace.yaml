@@ -35,25 +35,29 @@ views:
                   entity_id: group.all_lights
               - type: state-icon
                 entity: light.kitchen_light_1
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 28%
                   left: 34%
               - type: state-icon
                 entity: light.kitchen_light_2
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 28%
                   left: 39%
               - type: state-icon
                 entity: light.kitchen_light_3
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 28%
                   left: 44%
               - type: state-icon
                 entity: light.kitchen_light_4
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 28%
                   left: 49%
@@ -64,31 +68,36 @@ views:
                   left: 36.6%
               - type: state-icon
                 entity: light.kitchen_table
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 28%
                   left: 73%
               - type: state-icon
                 entity: light.twigs
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 84%
                   left: 14%
               - type: state-icon
                 entity: switch.my_smart_plug
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 51%
                   left: 35%
               - type: state-icon
                 entity: light.corner_lamp
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 58%
                   left: 65%
               - type: state-icon
                 entity: light.left_lamp
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 49%
                   left: 17%
@@ -99,7 +108,8 @@ views:
                   left: 23%
               - type: state-icon
                 entity: light.porch
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 92%
                   left: 78%
@@ -130,49 +140,57 @@ views:
                   entity_id: group.all_lights
               - type: state-icon
                 entity: light.bathroom_light_1
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 84.5%
                   left: 65%
               - type: state-icon
                 entity: light.bathroom_light_2
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 84.5%
                   left: 69%
               - type: state-icon
                 entity: light.bathroom_light_3
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 84.5%
                   left: 73%
               - type: state-icon
                 entity: light.bedroom_light
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 35%
                   left: 36%
               - type: state-icon
                 entity: light.landing_light
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 45%
                   left: 63%
               - type: state-icon
                 entity: light.office
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 90.5%
                   left: 22%
               - type: state-icon
                 entity: switch.aegis
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 90.5%
                   left: 51%
               - type: state-icon
                 entity: light.bedside
-                tap_action: toggle
+                tap_action: 
+                  action: toggle
                 style:
                   top: 17%
                   left: 24%
@@ -217,25 +235,29 @@ views:
               entity_id: group.all_lights
           - type: state-icon
             entity: light.kitchen_light_1
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 28%
               left: 34%
           - type: state-icon
             entity: light.kitchen_light_2
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 28%
               left: 39%
           - type: state-icon
             entity: light.kitchen_light_3
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 28%
               left: 44%
           - type: state-icon
             entity: light.kitchen_light_4
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 28%
               left: 49%
@@ -246,31 +268,36 @@ views:
               left: 36.6%
           - type: state-icon
             entity: light.kitchen_table
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 28%
               left: 73%
           - type: state-icon
             entity: light.twigs
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 84%
               left: 14%
           - type: state-icon
             entity: switch.my_smart_plug
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 51%
               left: 35%
           - type: state-icon
             entity: light.corner_lamp
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 58%
               left: 65%
           - type: state-icon
             entity: light.left_lamp
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 49%
               left: 17%
@@ -281,7 +308,8 @@ views:
               left: 23%
           - type: state-icon
             entity: light.porch
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 92%
               left: 78%
@@ -394,49 +422,57 @@ views:
               entity_id: group.all_lights
           - type: state-icon
             entity: light.bathroom_light_1
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 84.5%
               left: 65%
           - type: state-icon
             entity: light.bathroom_light_2
-            tap_action: toggle
+            tap_action:
+              action: toggle
             style:
               top: 84.5%
               left: 69%
           - type: state-icon
             entity: light.bathroom_light_3
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 84.5%
               left: 73%
           - type: state-icon
             entity: light.bedroom_light
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 35%
               left: 36%
           - type: state-icon
             entity: light.landing_light
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 45%
               left: 63%
           - type: state-icon
             entity: light.office
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 90.5%
               left: 22%
           - type: state-icon
             entity: switch.aegis
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 90.5%
               left: 51%
           - type: state-icon
             entity: light.bedside
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             style:
               top: 17%
               left: 24%
