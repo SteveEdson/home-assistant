@@ -35,3 +35,13 @@
   devices:
     192.168.1.219:
       name: Bedside
+      model: bslamp1
+      save_on_change: true
+  custom_effects:
+    - name: 'Fire Flicker'
+      flow_params:
+        count: 0
+        transitions:
+          - TemperatureTransition: [1900, 1000, 80]
+          - TemperatureTransition: [1900, 2000, 60]
+          - SleepTransition:       [1000]
