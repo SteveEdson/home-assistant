@@ -285,3 +285,6 @@ plant:
     max_moisture: 65
     min_temperature: 8
     max_temperature: 35
+
+climate:
+  - platform: netatmo
