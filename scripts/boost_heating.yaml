@@ -1,7 +1,7 @@
-alias: Boost Heating
-sequence:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.hive_heating
-        temperature: 19.5
-    - service: script.heating_confirmed_notification
+# alias: Boost Heating
+# sequence:
+#     - service: climate.set_temperature
+#       data:
+#         entity_id: climate.hive_heating
+#         temperature: 19.5
+#     - service: script.heating_confirmed_notification

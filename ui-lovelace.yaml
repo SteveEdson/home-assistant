@@ -714,11 +714,11 @@ views:
         show_header_toggle: true
       - type: alarm-panel
         entity: alarm_control_panel.house_alarm
-      - type: entities
-        entities:
-          - sensor.hive_hub_status
-        title: Hive
-        show_header_toggle: true
+      # - type: entities
+      #   entities:
+      #     - sensor.hive_hub_status
+      #   title: Hive
+      #   show_header_toggle: true
       - type: thermostat
         entity: climate.heating
       - type: thermostat
