@@ -19,7 +19,7 @@
         entity_id: group.all_devices
         state: not_home
       - condition: template
-        value_template: '{{ states.climate.heating.attributes.current_temperature <= 17 }}'
+        value_template: '{{ states.climate.netatmo_my_room.attributes.current_temperature <= 17 }}'
   action:
     service: script.send_heating_notification
 

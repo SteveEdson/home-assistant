@@ -3,6 +3,6 @@ sequence:
   - service: notify.home_assistant
     data:
       title: "Heating has been set to 19.5°c"
-      message: The house is currently {{ states.climate.heating.attributes.current_temperature }}°c
+      message: The house is currently {{ states.climate.netatmo_my_room.attributes.current_temperature }}°c
       data:
         tag: "coming-home-notification"

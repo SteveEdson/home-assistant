@@ -7,4 +7,4 @@
     house_temperature:
       friendly_name: "House Temperature"
       unit_of_measurement: '°C'
-      value_template: "{{ float(states.climate.heating.attributes.current_temperature) }}"
+      value_template: "{{ float(states.climate.netatmo_my_room.attributes.current_temperature) }}"
