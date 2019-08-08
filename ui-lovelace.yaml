@@ -721,8 +721,6 @@ views:
       #   show_header_toggle: true
       - type: thermostat
         entity: climate.netatmo_heating
-      - type: thermostat
-        entity: climate.hot_water
       - type: entities
         entities:
           - sensor.steveedson_co_uk
