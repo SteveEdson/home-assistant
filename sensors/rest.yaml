@@ -50,3 +50,9 @@
   value_template: '{{ value_json.currys }}'
   json_attributes: !secret product_keys
   scan_interval: 3600
+
+- platform: rest
+  resource: !secret bus_url
+  name: Next Bus To Work
+  value_template: '{{ value_json.toWork[0].line_name }} - {{ value_json.toWork[0].departure_time }} ({{ value_json.toWork[0].duration }})'
+  scan_interval: 900
