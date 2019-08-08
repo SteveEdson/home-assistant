@@ -320,7 +320,7 @@ views:
               left: 78%
       - type: thermostat
         id: house_heating
-        entity: climate.netatmo_my_room
+        entity: climate.netatmo_heating
       - type: custom:auto-entities
         filter:
           include:
@@ -720,7 +720,7 @@ views:
       #   title: Hive
       #   show_header_toggle: true
       - type: thermostat
-        entity: climate.netatmo_my_room
+        entity: climate.netatmo_heating
       - type: thermostat
         entity: climate.hot_water
       - type: entities
