@@ -54,5 +54,5 @@
 - platform: rest
   resource: !secret bus_url
   name: Next Bus To Work
-  value_template: '{{ value_json.toWork.data[0].line_name }} - {{ value_json.toWork.data[0].departure_time }} ({{ value_json.toWork.data[0].duration }})'
+  value_template: '{{ value_json.toWork[0].line }} - {{ value_json.toWork[0].best_departure_estimate }}'
   scan_interval: 900
