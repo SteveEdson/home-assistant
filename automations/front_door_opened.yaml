@@ -1,40 +1,61 @@
-- alias: 'Front door opened'
+# - alias: 'Front door opened'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.door_window_sensor_158d0002253f18 # front door
+#       to: 'on'
+#   action:
+#     - service: media_player.volume_set
+#       data:
+#         entity_id: media_player.downstairs
+#         volume_level: 0.7
+#     - service: media_player.play_media
+#       data:
+#         entity_id: media_player.downstairs
+#         media_content_id: !secret halloween_sound_url
+#         media_content_type: music
+#     - service: counter.increment
+#       data:
+#         entity_id: counter.door_opened
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.all_lights
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.all_lights
+#         flash: short
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.all_lights
+#         flash: short
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.hallway
+#         brightness_pct: 100
+#     - service: group.lounge_lights
+#       data:
+#         entity_id: group.hallway
+#         brightness_pct: 100
+#   condition:
+#     condition: template
+#     value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
+
+
+- alias: 'Cupboard door opened'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d0002253f18 # front door
       to: 'on'
   action:
-    - service: media_player.volume_set
+  - service: light.turn_on
       data:
-        entity_id: media_player.downstairs
-        volume_level: 0.7
-    - service: media_player.play_media
+        entity_id: light.cupboard_light
+
+- alias: 'Cupboard door closed'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0002253f18 # front door
+      to: 'off'
+  action:
+  - service: light.turn_off
       data:
-        entity_id: media_player.downstairs
-        media_content_id: !secret halloween_sound_url
-        media_content_type: music
-    - service: counter.increment
-      data:
-        entity_id: counter.door_opened
-    - service: light.turn_on
-      data:
-        entity_id: group.all_lights
-    - service: light.turn_on
-      data:
-        entity_id: group.all_lights
-        flash: short
-    - service: light.turn_on
-      data:
-        entity_id: group.all_lights
-        flash: short
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway
-        brightness_pct: 100
-    - service: group.lounge_lights
-      data:
-        entity_id: group.hallway
-        brightness_pct: 100
-  condition:
-    condition: template
-    value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
+        entity_id: light.cupboard_light
