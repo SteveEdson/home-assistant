@@ -753,7 +753,8 @@ views:
           - automation.notification_action_turn_heating_on
           - automation.light_theme_in_day
           - automation.cube_flip180
-          - automation.front_door_opened
+          - automation.cupboard_door_opened
+          - automation.cupboard_door_closed
           - automation.bbc_one
           - automation.cube_swing
           - automation.notification_action_disarm_alarm
