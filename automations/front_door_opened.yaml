@@ -47,8 +47,8 @@
       to: 'on'
   action:
   - service: light.turn_on
-      data:
-        entity_id: light.cupboard_light
+    data:
+      entity_id: light.cupboard_light
 
 - alias: 'Cupboard door closed'
   trigger:
@@ -57,5 +57,5 @@
       to: 'off'
   action:
   - service: light.turn_off
-      data:
-        entity_id: light.cupboard_light
+    data:
+      entity_id: light.cupboard_light
