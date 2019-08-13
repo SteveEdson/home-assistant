@@ -93,9 +93,11 @@ config:
 mqtt:
   discovery: true
   discovery_prefix: homeassistant
-  broker: 127.0.0.1
+  broker: !secret mqtt_address
+  username: !secret mqtt_username
+  password: !secret mqtt_password
   client_id: home-assistant
-  port: 1883
+  port: 443
 
 light: !include lights.yaml
 
