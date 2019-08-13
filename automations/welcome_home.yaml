@@ -1,16 +1,20 @@
  - id: welcome_home
    alias: Welcome Home
    trigger:
-     - platform: state
-       entity_id: person.steve_edson
-       from: 'not_home'
-       to: 'home'
+    - platform: state
+      entity_id: person.steve_edson
+      from: 'not_home'
+      to: 'home'
+   condition:
+    - condition: time
+      before: '21:00:00'
+      after: '08:00:00' 
    action:
-     - delay: "00:01:00"
-     - service: notify.google_assistant_broadcast
-       data_template:
-         message: Welcome home Steve!
-     - service: notify.home_alerts
-     - delay: "00:00:15"
-     - service: script.play_music
+    - delay: "00:01:00"
+    - service: notify.google_assistant_broadcast
+      data_template:
+        message: Welcome home Steve!
+    - service: notify.home_alerts
+    - delay: "00:00:15"
+    - service: script.play_music
      
