@@ -15,7 +15,7 @@ views:
         cards:
           - type: picture-elements
             id: downstairs_floorplan
-            image: https://steveedson.co.uk/images/floorplan-downstairs.png
+            image: !secret floorplan_downstairs
             elements:
               - type: service-button
                 title: Lights On
@@ -120,7 +120,7 @@ views:
                   left: 78%
           - type: picture-elements
             id: upstairs_floorplan
-            image: https://steveedson.co.uk/images/floorplan-upstairs.png
+            image: !secret floorplan_upstairs
             elements:
               - type: service-button
                 title: Lights On
