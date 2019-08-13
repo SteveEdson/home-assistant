@@ -21,15 +21,15 @@
     - light.porch
     - light.gateway_light_7811dcb25e74
 
-- platform: mqtt
-  name: Cupboard
-  schema: json
-  command_topic: !secret anavi_channel
-  brightness: true
-  rgb: true
-  retain: true
-  effect: true
-  brightness_scale: 4095
+# - platform: mqtt
+#   name: Cupboard
+#   schema: json
+#   command_topic: !secret anavi_channel
+#   brightness: true
+#   rgb: true
+#   retain: true
+#   effect: true
+#   brightness_scale: 4095
 
 - platform: yeelight
   devices:
