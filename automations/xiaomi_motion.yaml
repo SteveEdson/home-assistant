@@ -1,97 +1,97 @@
-- alias: kitchen motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001643c27
-    from: 'off'
-    to: 'on'
-  condition:
-    condition: or
-    conditions:
-      - condition: sun # within 20 minutes before sunset
-        after: sunset
-        after_offset: "-1:00:00"
-      - condition: sun # within 1 hour after sunrise
-        before: sunrise
-        before_offset: "1:00:00"
-      - condition: numeric_state
-        entity_id: sensor.illumination_7811dcb25e74
-        below: 700
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'on'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.kitchen_lights
-        brightness_pct: 100
+# - alias: kitchen motion
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001643c27
+#     from: 'off'
+#     to: 'on'
+#   condition:
+#     condition: or
+#     conditions:
+#       - condition: sun # within 20 minutes before sunset
+#         after: sunset
+#         after_offset: "-1:00:00"
+#       - condition: sun # within 1 hour after sunrise
+#         before: sunrise
+#         before_offset: "1:00:00"
+#       - condition: numeric_state
+#         entity_id: sensor.illumination_7811dcb25e74
+#         below: 700
+#       - condition: state
+#         entity_id: input_boolean.guest_mode
+#         state: 'on'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.kitchen_lights
+#         brightness_pct: 100
 
-- alias: kitchen led motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001643c27
-    from: 'off'
-    to: 'on'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.cupboard
-        brightness_pct: 100
-        hs_color: [300,100]
+# - alias: kitchen led motion
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001643c27
+#     from: 'off'
+#     to: 'on'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.cupboard
+#         brightness_pct: 100
+#         hs_color: [300,100]
 
-- alias: Kitchen cupboard no motion 4 mins
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001643c27
-    from: 'on'
-    to: 'off'
-    for:
-      minutes: 4
-  condition:
-    condition: state # after 20 mins before sunset
-    entity_id: light.kitchen_table
-    state: 'off'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.cupboard
+# - alias: Kitchen cupboard no motion 4 mins
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001643c27
+#     from: 'on'
+#     to: 'off'
+#     for:
+#       minutes: 4
+#   condition:
+#     condition: state # after 20 mins before sunset
+#     entity_id: light.kitchen_table
+#     state: 'off'
+#   action:
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.cupboard
 
 
-# Dim the lights after no motion
-- alias: Kitchen no motion 5 mins
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001643c27
-    from: 'on'
-    to: 'off'
-    for:
-      minutes: 5
-  condition:
-    condition: state
-    entity_id: group.kitchen_lights
-    state: 'on'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.kitchen_lights
-        brightness_pct: 25
+# # Dim the lights after no motion
+# - alias: Kitchen no motion 5 mins
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001643c27
+#     from: 'on'
+#     to: 'off'
+#     for:
+#       minutes: 5
+#   condition:
+#     condition: state
+#     entity_id: group.kitchen_lights
+#     state: 'on'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.kitchen_lights
+#         brightness_pct: 25
 
-#Turn off kitchen light with no motion for 15 mins
-- alias: Kitchen no motion 10 mins
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001643c27
-    from: 'on'
-    to: 'off'
-    for:
-      minutes: 10
-  condition:
-    condition: state
-    entity_id: group.kitchen_lights
-    state: 'on'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: group.kitchen_lights
+# #Turn off kitchen light with no motion for 15 mins
+# - alias: Kitchen no motion 10 mins
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001643c27
+#     from: 'on'
+#     to: 'off'
+#     for:
+#       minutes: 10
+#   condition:
+#     condition: state
+#     entity_id: group.kitchen_lights
+#     state: 'on'
+#   action:
+#     - service: light.turn_off
+#       data:
+#         entity_id: group.kitchen_lights
 
 - alias: Cube volume up
   trigger:
