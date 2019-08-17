@@ -177,8 +177,8 @@ google_assistant:
         - Kitchen Counter Lights
         - Coloured Lights
       expose: true
-    light.bathroom_lights:
-      expose: false
+    # light.bathroom_lights:
+    #   expose: false
     light.kitchen_lights:
       expose: false
 

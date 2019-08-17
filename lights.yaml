@@ -1,17 +1,17 @@
-- platform: group
-  name: Bathroom Lights
-  entities:
-    - light.bathroom_light_1
-    - light.bathroom_light_2
-    - light.bathroom_light_3
+# - platform: group
+#   name: Bathroom Lights
+#   entities:
+#     - light.bathroom_light_1
+#     - light.bathroom_light_2
+#     - light.bathroom_light_3
 
 - platform: group
   name: Kitchen Lights
   entities:
-    - light.kitchen_light_1
-    - light.kitchen_light_2
-    - light.kitchen_light_3
-    - light.kitchen_light_4
+    # - light.kitchen_light_1
+    # - light.kitchen_light_2
+    # - light.kitchen_light_3
+    # - light.kitchen_light_4
     - light.kitchen_table
 
 - platform: group
@@ -30,6 +30,17 @@
 #   retain: true
 #   effect: true
 #   brightness_scale: 4095
+
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_light_1
+    - light.bedroom_light_2
+    - light.bedroom_light_3
+    - light.bedroom_light_4
+    - light.bedroom_light_5
+    - light.bedroom_light_6
+
 
 - platform: yeelight
   devices:

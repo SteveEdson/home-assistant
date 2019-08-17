@@ -8,7 +8,7 @@ lights:
     - group.kitchen_lights
     - group.bedroom_lights
     - group.hallway
-    - group.bathroom_lights
+    # - group.bathroom_lights
     - group.all_lights
 
 media_players:
@@ -133,21 +133,21 @@ Office Lights:
   - light.office
 
 Bedroom Lights:
-  - light.bedroom_light
+  - light.bedroom_lights
   - light.yeelight_bslamp1_7c49eb28d971
 
 Kitchen Lights:
   - light.kitchen_table
-  - light.kitchen_light_1
-  - light.kitchen_light_2
-  - light.kitchen_light_3
-  - light.kitchen_light_4
+  # - light.kitchen_light_1
+  # - light.kitchen_light_2
+  # - light.kitchen_light_3
+  # - light.kitchen_light_4
   - light.cupboard
 
-Bathroom Lights:
-  - light.bathroom_light_1
-  - light.bathroom_light_2
-  - light.bathroom_light_3
+# Bathroom Lights:
+#   - light.bathroom_light_1
+#   - light.bathroom_light_2
+#   - light.bathroom_light_3
 
 Events:
   - sensor.bin_days
