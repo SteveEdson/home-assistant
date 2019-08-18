@@ -80,3 +80,40 @@
         
     switch.my_smart_plug:
       state: on      
+
+- name: Bedroom Off
+  entities:
+    group.bedroom_lights:
+      state: off
+    
+    light.yeelight_bslamp1_7c49eb28d971:
+      state: off
+  
+- name: Bedroom Bedside
+  entities:
+    group.bedroom_lights:
+      state: off
+    
+    light.yeelight_bslamp1_7c49eb28d971:
+      state: on
+      brightness_pct: 100
+  
+- name: Bedroom Main Lights
+  entities:
+    group.bedroom_lights:
+      state: on
+      brightness_pct: 100
+    
+    light.yeelight_bslamp1_7c49eb28d971:
+      state: off
+  
+- name: Bedroom All Lights
+  entities:
+    group.bedroom_lights:
+      state: on
+      brightness_pct: 100
+    
+    light.yeelight_bslamp1_7c49eb28d971:
+      state: on
+      brightness_pct: 100
+  

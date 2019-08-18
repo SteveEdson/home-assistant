@@ -1,0 +1,8 @@
+name: Active Bedroom Scene
+options:
+  - bedroom_off
+  - bedroom_bedside
+  - bedroom_main_lights
+  - bedroom_all_lights
+initial: bedroom_off
+icon: mdi:bed
