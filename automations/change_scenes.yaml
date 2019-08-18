@@ -1,7 +1,9 @@
 - alias: Lounge Scenes
   trigger:
-    platform: state
-    entity_id: input_select.input_scenes
+    - platform: state
+      entity_id: input_select.input_scenes
+    - platform: state
+      entity_id: input_select.input_bedroom_scenes
   action:
     service: scene.turn_on
     data_template:
