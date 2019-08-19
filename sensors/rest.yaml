@@ -53,6 +53,6 @@
 
 - platform: rest
   resource: !secret bus_url
-  name: Next Bus To Work
+  name: Next Bus To Town
   value_template: '{{ value_json.toWork[0].line }} - {{ value_json.toWork[0].best_departure_estimate }}'
   scan_interval: 900
