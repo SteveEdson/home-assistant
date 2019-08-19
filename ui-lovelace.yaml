@@ -850,7 +850,8 @@ views:
     cards:
       - type: custom:mini-graph-card
         entities:
-          - climate.netatmo_heating
+          - sensor.house_temperature
+          - sensor.dark_sky_apparent_temperature
       - type: media-control
         entity: media_player.kitchen_home
       - type: media-control
