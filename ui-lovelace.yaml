@@ -6,6 +6,8 @@ resources:
     type: js
   - url: /local/custom_ui/bar-card.js?v=2
     type: js
+  - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.5.0
+    type: module
 views:
   - icon: mdi:floor-plan
     id: floorplan
