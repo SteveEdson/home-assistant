@@ -839,3 +839,11 @@ views:
       - type: media-control
         entity: media_player.spotify
 
+  - icon: mdi:fridge-outline
+    id: kitchen
+    title: Kitchen
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+          - climate.netatmo_heating
+        
