@@ -836,7 +836,7 @@ views:
       - type: media-control
         entity: media_player.kitchen_display
       - type: media-control
-        entity: media_player.kitchen_max
+        entity: media_player.kitchen_speaker
       - type: media-control
         entity: media_player.lounge
       - type: media-control
@@ -854,7 +854,7 @@ views:
       - type: media-control
         entity: media_player.kitchen_home
       - type: media-control
-        entity: media_player.kitchen_max
+        entity: media_player.kitchen_speaker
 
       - type: custom:mini-media-player
         entity: media_player.downstairs
