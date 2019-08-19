@@ -8,6 +8,9 @@ resources:
     type: js
   - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.5.0
     type: module
+  - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
+    type: module
+
 views:
   - path: default_view
     title: Home
@@ -833,17 +836,31 @@ views:
       - type: media-control
         entity: media_player.kitchen_display
       - type: media-control
+        entity: media_player.kitchen_max
+      - type: media-control
         entity: media_player.lounge
       - type: media-control
         entity: media_player.lounge_tv
       - type: media-control
         entity: media_player.spotify
 
-  - icon: mdi:fridge-outline
-    id: kitchen
+  - id: kitchen
+    icon: mdi:fridge-outline
     title: Kitchen
     cards:
       - type: custom:mini-graph-card
         entities:
           - climate.netatmo_heating
-        
+      - type: media-control
+        entity: media_player.kitchen_home
+      - type: media-control
+        entity: media_player.kitchen_max
+
+      - type: custom:mini-media-player
+        entity: media_player.downstairs
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
