@@ -68,15 +68,27 @@ intent_script:
     speech:
       text: "{{ state_attr('sensor.ff1_stats', 'data').next.percentPredicted }}% of users have predicted for the {{ state_attr('sensor.ff1_stats', 'data').next.name }}"
   GetPayDay:
+    card:
+      type: simple
+      title: Pay Day
+      content: "{{ states('sensor.pay_day') }}"
     speech:
       text: "Pay day is {{ states('sensor.pay_day') }}"
-  NextBusToTown:
+  GetNextBusToTown:
     speech:
       text: "The next bus to town will be the {{ states('sensor.next_bus_to_town') }}"
     card:
       type: simple
       title: Next Bus
       content: "The next bus to town will be the {{ states('sensor.next_bus_to_town') }}"
+  GetHotTubTemp:
+    speech:
+      text: "The hot tub is currently unknown °c"
+    card:
+      type: simple
+      title: Hot Tub
+      content: "The hot tub is currently unknown °c"
+
 
 binary_sensor: !include_dir_merge_list binary_sensors/
 
