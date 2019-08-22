@@ -70,6 +70,13 @@ intent_script:
   GetPayDay:
     speech:
       text: "Pay day is {{ states('sensor.pay_day') }}"
+  NextBusToTown:
+    speech:
+      text: "The next bus to town will be the {{ states('sensor.next_bus_to_town') }}"
+    card:
+      type: simple
+      title: Next Bus
+      content: "The next bus to town will be the {{ states('sensor.next_bus_to_town') }}"
 
 binary_sensor: !include_dir_merge_list binary_sensors/
 
