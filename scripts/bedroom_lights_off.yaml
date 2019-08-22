@@ -4,29 +4,29 @@ sequence:
     data:
       entity_id: light.bedroom_light_1
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_off
     data:
       entity_id: light.bedroom_light_2
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_off
     data:
       entity_id: light.bedroom_light_3
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_off
     data:
       entity_id: light.bedroom_light_4
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_off
     data:
       entity_id: light.bedroom_light_5
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_off
     data:
       entity_id: light.bedroom_light_6
   - delay:
-      milliseconds: 100
+      milliseconds: 50

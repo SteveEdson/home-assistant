@@ -5,34 +5,34 @@ sequence:
       entity_id: light.bedroom_light_1
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_on
     data:
       entity_id: light.bedroom_light_2
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_on
     data:
       entity_id: light.bedroom_light_3
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_on
     data:
       entity_id: light.bedroom_light_4
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_on
     data:
       entity_id: light.bedroom_light_5
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
   - service: light.turn_on
     data:
       entity_id: light.bedroom_light_6
       brightness_pct: 100
   - delay:
-      milliseconds: 100
+      milliseconds: 50
