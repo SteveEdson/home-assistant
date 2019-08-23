@@ -8,13 +8,13 @@
    condition:
     - condition: time
       before: '21:00:00'
-      after: '08:00:00' 
+      after: '08:00:00'
    action:
     - delay: "00:01:00"
     - service: notify.google_assistant_broadcast
       data_template:
-        message: Welcome home Steve!
-    - service: notify.home_alerts
+        message: 'Welcome home Steve! {% if as_timestamp(now()) > as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - (60 * 60 * 24) %}Dont forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow.{% endif %}'
+#    - service: notify.home_alerts
     - delay: "00:00:15"
     - service: script.play_music
-     
+
