@@ -1,0 +1,40 @@
+esphome:
+  name: esp32
+  platform: ESP32
+  board: esp-wrover-kit
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret ha_password
+
+ota:
+  password: !secret ha_password
+
+esp32_ble_tracker:
+  scan_interval: 300s
+
+binary_sensor:
+  - platform: esp32_ble_tracker
+    mac_address: 94:65:2d:c9:49:37
+    name: "ESP32 BLE Tracker Google Home"
+
+sensor:
+  - platform: xiaomi_miflora
+    mac_address: C4:7C:8D:6A:71:90
+    temperature:
+      name: "Xiaomi MiFlora Temperature"
+    moisture:
+      name: "Xiaomi MiFlora Moisture"
+    illuminance:
+      name: "Xiaomi MiFlora Illuminance"
+    conductivity:
+      name: "Xiaomi MiFlora Soil Conductivity"
+    battery_level:
+      name: "Xiaomi MiFlora Battery Level"
