@@ -29,3 +29,7 @@ GetHotTubTemp:
     type: simple
     title: Hot Tub
     content: "The hot tub is currently unknown °c"
+
+GetNextBin:
+  speech:
+    text: "The next bin to go out will be the {{ states('sensor.bin_days') }}"
