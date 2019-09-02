@@ -49,6 +49,7 @@
   - service: light.turn_on
     data:
       entity_id: light.cupboard_light
+      brightness_pct: 100
 
 - alias: 'Cupboard door closed'
   trigger:
