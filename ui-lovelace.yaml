@@ -670,6 +670,7 @@ views:
       - type: thermostat
         id: house_heating
         entity: climate.netatmo_heating
+        name: Heating
       - type: custom:auto-entities
         filter:
           include:
