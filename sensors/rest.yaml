@@ -46,8 +46,8 @@
 
 - platform: rest
   resource: !secret products_url
-  name: Price Trackers
-  value_template: '{{ value_json.currys }}'
+  name: Monitor
+  value_template: '{{ value_json.ebuyerMonitor.price }}'
   json_attributes: !secret product_keys
   scan_interval: 3600
 
