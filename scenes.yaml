@@ -9,8 +9,8 @@
     light.twigs:
       state: off
         
-    switch.my_smart_plug:
-      state: off
+    # switch.my_smart_plug:
+    #   state: off
 
 - name: Deep Blue
   entities:
@@ -34,8 +34,8 @@
       state: on
       brightness_pct: 100
         
-    switch.my_smart_plug:
-      state: on
+    # switch.my_smart_plug:
+    #   state: on
     
 - name: Ocean
   entities:
@@ -59,8 +59,8 @@
       state: on
       brightness_pct: 100
         
-    switch.my_smart_plug:
-      state: on
+    # switch.my_smart_plug:
+    #   state: on
 
 - name: Bright
   entities:
@@ -78,8 +78,8 @@
       state: on
       brightness_pct: 100
         
-    switch.my_smart_plug:
-      state: on      
+    # switch.my_smart_plug:
+    #   state: on      
 
 - name: Bedroom Off
   entities:

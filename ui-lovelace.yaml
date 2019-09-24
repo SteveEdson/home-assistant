@@ -44,7 +44,6 @@ views:
           - light.left_lamp
           - light.twigs
           - light.corner_lamp
-          - switch.my_smart_plug
         title: Lounge Lights
         show_header_toggle: true
       - type: entities
@@ -429,13 +428,6 @@ views:
                   top: 84%
                   left: 14%
               - type: state-icon
-                entity: switch.my_smart_plug
-                tap_action:
-                  action: toggle
-                style:
-                  top: 51%
-                  left: 35%
-              - type: state-icon
                 entity: light.corner_lamp
                 tap_action:
                   action: toggle
@@ -630,13 +622,6 @@ views:
               top: 84%
               left: 14%
           - type: state-icon
-            entity: switch.my_smart_plug
-            tap_action:
-              action: toggle
-            style:
-              top: 51%
-              left: 35%
-          - type: state-icon
             entity: light.corner_lamp
             tap_action:
               action: toggle
@@ -707,7 +692,6 @@ views:
             - entity_id: "light.twigs"
             - entity_id: "light.corner_lamp"
             - entity_id: "light.left_lamp"
-            - entity_id: "switch.my_smart_plug"
             - entity_id: "media_player.samsung_tv_remote"
           exclude:
             - entity_id: "*automation*"

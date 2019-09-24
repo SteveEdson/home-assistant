@@ -45,8 +45,6 @@ lounge:
     - media_player.lounge_speakers
     - media_player.lounge_tv
     - group.lounge_lights
-    - switch.my_smart_plug
-    - switch.my_smart_plug
     - camera.mjpeg_camera
     - sensor.living_room_nest_protect_battery_health
     - sensor.living_room_nest_protect_co_status
@@ -117,7 +115,6 @@ Lounge Lights:
   - light.left_lamp
   - light.twigs
   - light.corner_lamp
-  - switch.my_smart_plug
 
 Hallway:
   - light.landing_light
