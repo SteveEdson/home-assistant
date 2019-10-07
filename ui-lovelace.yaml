@@ -354,6 +354,14 @@ views:
       - type: weather-forecast
         entity: weather.dark_sky
 
+  - icon: mdi:office-building
+    id: homeoffice
+    cards:
+      - type: light
+        entity: light.office
+      - type: thermostat
+        entity: climate.home_office
+
   - icon: mdi:floor-plan
     id: floorplan
     panel: true
