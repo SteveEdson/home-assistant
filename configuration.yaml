@@ -288,7 +288,7 @@ climate:
     target_sensor: sensor.temperature_158d00027265db
     ac_mode: false
     max_temp: 20
-    min_temp: 7
+    min_temp: 17.5
     away_temp: 8
     min_cycle_duration:
       seconds: 30
