@@ -7,4 +7,5 @@ install:
 # command to run tests
 script:
   - mv secrets.example.yaml secrets.yaml
+  - sed -i '/stream:/d' ./configuration.yaml
   - hass --script check_config -c .
