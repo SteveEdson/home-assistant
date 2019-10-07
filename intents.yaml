@@ -30,6 +30,14 @@ GetHotTubTemp:
     title: Hot Tub
     content: "The hot tub is currently unknown °c"
 
+GetOfficeTemp:
+  speech:
+    text: "The office is currently {{ states('climate.home_office') }} °c"
+  card:
+    type: simple
+    title: Office Temperature
+    content: "The office is currently {{ states('climate.home_office') }} °c"
+
 GetNextBin:
   speech:
     text: "The next bin to go out will be the {{ states('sensor.bin_days') }}"
