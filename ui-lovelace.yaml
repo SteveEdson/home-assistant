@@ -362,9 +362,9 @@ views:
         icon: mdi:spotify
         artwork: cover
         hide:
-          volume: true
+          volume: false
           source: true
-          power_state: false
+          power_state: true
       - type: light
         entity: light.office
       - type: thermostat
