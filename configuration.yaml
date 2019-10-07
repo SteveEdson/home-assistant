@@ -294,4 +294,4 @@ climate:
       seconds: 30
     keep_alive:
       minutes: 3
-    initial_hvac_mode: "off"
+    initial_hvac_mode: "heat"
