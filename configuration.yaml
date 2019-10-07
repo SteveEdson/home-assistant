@@ -289,7 +289,7 @@ climate:
     ac_mode: false
     max_temp: 23
     min_temp: 7
-    away_temp: 15
+    away_temp: 8
     min_cycle_duration:
       seconds: 30
     keep_alive:

@@ -357,8 +357,6 @@ views:
   - icon: mdi:office-building
     id: homeoffice
     cards:
-      - type: light
-        entity: light.office
       - type: custom:mini-media-player
         entity: media_player.home_office_speaker
         icon: mdi:spotify
@@ -367,6 +365,8 @@ views:
           volume: true
           source: true
           power_state: false
+      - type: light
+        entity: light.office
       - type: thermostat
         entity: climate.home_office
 
