@@ -45,13 +45,6 @@
   scan_interval: 7200
 
 - platform: rest
-  resource: !secret products_url
-  name: Monitor
-  value_template: '{{ value_json.ebuyerMonitor.price }}'
-  json_attributes: !secret product_keys
-  scan_interval: 3600
-
-- platform: rest
   resource: !secret bus_url
   name: Next Bus To Town
   value_template: '{{ value_json.toWork[0].line }} - {{ value_json.toWork[0].best_departure_estimate }}'
