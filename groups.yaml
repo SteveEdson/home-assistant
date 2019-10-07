@@ -172,7 +172,7 @@ Jaywing:
   - sensor.home_eta
   - binary_sensor.home_away
 
-Box Room:
+Home Office:
   - sensor.pressure_158d00027265db
   - sensor.humidity_158d00027265db
   - sensor.temperature_158d00027265db
@@ -265,7 +265,7 @@ Weather:
 
 Security:
   - alarm_control_panel.house_alarm
-  
+
 Websites:
   - sensor.steveedson_co_uk
   - sensor.steveedson_co_uk_ssl

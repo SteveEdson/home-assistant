@@ -125,7 +125,7 @@ views:
           - sensor.pressure_158d00027265db
           - sensor.humidity_158d00027265db
           - sensor.temperature_158d00027265db
-        title: Box Room
+        title: Home Office
         show_header_toggle: false
       - type: entities
         entities:
