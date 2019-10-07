@@ -359,6 +359,14 @@ views:
     cards:
       - type: light
         entity: light.office
+      - type: custom:mini-media-player
+        entity: media_player.home_office_speaker
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
       - type: thermostat
         entity: climate.home_office
 
