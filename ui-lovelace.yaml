@@ -365,6 +365,13 @@ views:
           volume: false
           source: true
           power_state: true
+        shortcuts:
+          columns: 4 # Max buttons per row
+          buttons:
+            # Start predefined playlist
+            - icon: mdi:radio
+              type: script
+              id: script.play_radio_1_in_office
       - type: light
         entity: light.office
       - type: thermostat
