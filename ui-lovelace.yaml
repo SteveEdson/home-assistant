@@ -371,7 +371,7 @@ views:
             # Start predefined playlist
             - icon: mdi:radio
               type: script
-              id: script.play_radio_1_in_office
+              id: script.play_radio_in_office
       - type: light
         entity: light.office
       - type: thermostat
