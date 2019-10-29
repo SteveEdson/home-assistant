@@ -25,3 +25,6 @@
     - service: google_assistant_broadcast
     - service: home_assistant
 
+- platform: nfandroidtv
+  name: Bedroom TV
+  host: 192.168.1.234
