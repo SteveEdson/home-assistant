@@ -30,4 +30,3 @@ homeassistant_version:
   notifiers:
     - html5
     - home_assistant
-    - google_assistant_broadcast
