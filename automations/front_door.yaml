@@ -13,6 +13,10 @@
          entity_id: media_player.downstairs
          media_content_id: !secret halloween_sound_url
          media_content_type: music
+     - service: yeelight.set_mode
+       data:
+         entity_id: light.yeelight_bslamp1_7c49eb28d971
+         mode: rgb
      - service: light.turn_on
        data:
          entity_id: group.all_lights
