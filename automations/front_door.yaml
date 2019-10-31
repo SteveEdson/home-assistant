@@ -28,7 +28,7 @@
      - service: light.turn_on
        data:
          entity_id: group.all_lights
-         flash: short
+         flash: long
      - service: light.turn_on
        data:
          entity_id: group.hallway
