@@ -336,21 +336,17 @@ views:
         entities:
           - script.bin_notification
           - script.pause_sky
-          - script.surround_sound_vol_up
+#          - script.surround_sound_vol_up
+#          - script.surround_sound_vol_down
           - script.morning_notification
           - script.race_start
           - script.optical2
           - script.boost_heating
           - script.optical1
           - script.power_toggle
-          - script.surround_sound_vol_down
           - script.turn_tv_on_to_channel
           - script.good_night
         title: Script
-      - type: entities
-        entities:
-          - switch.surround_sound
-        title: Switch
       - type: weather-forecast
         entity: weather.dark_sky
 

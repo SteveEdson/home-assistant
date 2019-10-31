@@ -2,15 +2,15 @@
   mac_address: !secret pc_mac
   name: Aegis
   host: 192.168.1.11
-  
-- platform: broadlink
-  host: 192.168.1.168
-  mac: !secret broadlink_mac
-  friendly_name: 'Broadlink'
-  timeout: 15
-  type: 'rm_mini'
-  switches:
-    surround_sound:
-      friendly_name: Surround Sound
-      command_on: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
-      command_off: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
+
+#- platform: broadlink
+#  host: 192.168.1.168
+#  mac: !secret broadlink_mac
+#  friendly_name: 'Broadlink'
+#  timeout: 15
+#  type: 'rm_mini'
+#  switches:
+#    surround_sound:
+#      friendly_name: Surround Sound
+#      command_on: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
+#      command_off: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='

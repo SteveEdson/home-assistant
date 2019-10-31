@@ -93,31 +93,31 @@
 #       data:
 #         entity_id: group.kitchen_lights
 
-- alias: Cube volume up
-  trigger:
-    platform: event
-    event_type: xiaomi_aqara.cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
-      action_type: rotate
-  condition:
-    condition: template
-    value_template: "{{ (trigger.event.data.action_value|float) > 0 }}"
-  action:
-    - service: script.surround_sound_vol_up
+#- alias: Cube volume up
+#  trigger:
+#    platform: event
+#    event_type: xiaomi_aqara.cube_action
+#    event_data:
+#      entity_id: binary_sensor.cube_158d0001041dc7
+#      action_type: rotate
+#  condition:
+#    condition: template
+#    value_template: "{{ (trigger.event.data.action_value|float) > 0 }}"
+#  action:
+#    - service: script.surround_sound_vol_up
 
-- alias: Cube volume down
-  trigger:
-    platform: event
-    event_type: xiaomi_aqara.cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d0001041dc7
-      action_type: rotate
-  condition:
-    condition: template
-    value_template: "{{ (trigger.event.data.action_value|float) < 0 }}"
-  action:
-    - service: script.surround_sound_vol_down
+#- alias: Cube volume down
+#  trigger:
+#    platform: event
+#    event_type: xiaomi_aqara.cube_action
+#    event_data:
+#      entity_id: binary_sensor.cube_158d0001041dc7
+#      action_type: rotate
+#  condition:
+#    condition: template
+#    value_template: "{{ (trigger.event.data.action_value|float) < 0 }}"
+#  action:
+#    - service: script.surround_sound_vol_down
 
 - alias: Cube flip90
   trigger:
