@@ -340,9 +340,9 @@ views:
 #          - script.surround_sound_vol_down
           - script.morning_notification
           - script.race_start
-          - script.optical2
+#          - script.optical1
+#          - script.optical2
           - script.boost_heating
-          - script.optical1
           - script.power_toggle
           - script.turn_tv_on_to_channel
           - script.good_night
