@@ -28,9 +28,9 @@
        data:
          entity_id: group.hallway
          brightness_pct: 100
-     - service: group.lounge_lights
+     - service: light.turn_on
        data:
-         entity_id: group.hallway
+         entity_id: group.lounge_lights
          brightness_pct: 100
    condition:
      condition: template
