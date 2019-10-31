@@ -1,6 +1,6 @@
-alias: Optical Channel 1
-sequence:
-  - service: switch.broadlink_send_packet_192_168_1_168
-    data:
-      packet: 
-          - 'JgBwAAABKZMUEBMTEhMUNhITFBAVERITFDYSNxM4ExEVNhM2EjgTNxQ2EhMUERUQEjgTEhITEhMTEhI4FDYSOBITFDYSNxM4FAAFHwABJ0oVAAxYAAEpSBMADFkAAShJFAAMWQABJ0oTAAxZAAEpSRQADQUAAAAAAAAAAA=='
+#alias: Optical Channel 1
+#sequence:
+#  - service: switch.broadlink_send_packet_192_168_1_168
+#    data:
+#      packet:
+#          - 'JgBwAAABKZMUEBMTEhMUNhITFBAVERITFDYSNxM4ExEVNhM2EjgTNxQ2EhMUERUQEjgTEhITEhMTEhI4FDYSOBITFDYSNxM4FAAFHwABJ0oVAAxYAAEpSBMADFkAAShJFAAMWQABJ0oTAAxZAAEpSRQADQUAAAAAAAAAAA=='

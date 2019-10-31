@@ -1,6 +1,6 @@
-alias: Turn Surround Sound Down
-sequence:
-  - service: switch.broadlink_send_packet_192_168_1_168
-    data:
-      packet: 
-        - "JgBIAAABJ5AUERISFBEUNRQRExEUERQQFDYTNhQ1FBETNhQ1FDUUNhMRFDUUNhM2FBAUERQRExEUNRQRFBETERQ1FDYTNhQ1FAANBQ"
+#alias: Turn Surround Sound Down
+#sequence:
+#  - service: switch.broadlink_send_packet_192_168_1_168
+#    data:
+#      packet:
+#        - "JgBIAAABJ5AUERISFBEUNRQRExEUERQQFDYTNhQ1FBETNhQ1FDUUNhMRFDUUNhM2FBAUERQRExEUNRQRFBETERQ1FDYTNhQ1FAANBQ"
