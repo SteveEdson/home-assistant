@@ -254,8 +254,8 @@ tplink:
 
 stream:
 
-prometheus:
-  namespace: ha
+#prometheus:
+#  namespace: ha
 
 speedtestdotnet:
   monitored_conditions:
