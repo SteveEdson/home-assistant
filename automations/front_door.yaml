@@ -13,9 +13,6 @@
          entity_id: media_player.downstairs
          media_content_id: !secret halloween_sound_url
          media_content_type: music
-     - service: counter.increment
-       data:
-         entity_id: counter.door_opened
      - service: light.turn_on
        data:
          entity_id: group.all_lights
