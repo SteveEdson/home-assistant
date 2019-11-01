@@ -1,3 +1,7 @@
 # - platform: ffmpeg
 #   name: DaFang3
 #   input: -rtsp_transport tcp -i rtsp://192.168.1.61:8554/unicast
+
+- platform: generic
+  stream_source: rtsp://192.168.1.60:7447/5dbcb0fe36803e7a79421ca2_0
+  name: G3 Flex
