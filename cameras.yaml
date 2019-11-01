@@ -3,5 +3,6 @@
 #   input: -rtsp_transport tcp -i rtsp://192.168.1.61:8554/unicast
 
 - platform: generic
+  still_image_source: https://192.168.1.20/snap.jpeg
   stream_source: rtsp://192.168.1.60:7447/5dbcb0fe36803e7a79421ca2_0
   name: G3 Flex
