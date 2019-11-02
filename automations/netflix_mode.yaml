@@ -1,0 +1,8 @@
+ - alias: Netflix Mode
+   trigger:
+     - platform: template
+       value_template: {{ is_state_attr('media_player.lounge_tv', 'app_name', 'Netflix') }}
+   action:
+     - service: scene.turn_on
+       data:
+         entity_id: scene.ocean
