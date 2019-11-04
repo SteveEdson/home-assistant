@@ -851,6 +851,21 @@ views:
       - type: custom:slider-entity-row
         entity: light.yeelight_bslamp1_7c49eb28d971
         toggle: true
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_speaker
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: false
+          source: true
+          power_state: true
+#        shortcuts:
+#          columns: 4 # Max buttons per row
+#          buttons:
+#            # Start predefined playlist
+#            - icon: mdi:radio
+#              type: script
+#              id: script.play_radio_in_office
 
   - id: Unused
     title: Unused
