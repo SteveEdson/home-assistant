@@ -844,26 +844,34 @@ views:
         camera_image: camera.g3_flex
       - type: custom:slider-entity-row
         entity: light.bedroom_light_1
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_2
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_3
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_4
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_5
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_6
+        toggle: true
       - type: custom:slider-entity-row
-        entity: light.bedroom_light_6
-      - type: custom:slider-entity-row
-        entity: light.bedroom_light_lr
+        entity: light.bedroom_light_lb
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_lt
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_rb
+        toggle: true
       - type: custom:slider-entity-row
         entity: light.bedroom_light_rt
+        toggle: true
 
   - id: Unused
     title: Unused
