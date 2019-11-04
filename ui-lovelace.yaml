@@ -840,6 +840,7 @@ views:
       - type: picture-glance
         title: Camera
         camera_image: camera.g3_flex
+        camera_view: live
         entities:
           - person.steve_edson
       - type: vertical-stack
