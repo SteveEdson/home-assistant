@@ -15,7 +15,7 @@
 #   brightness_scale: 4095
 
 - platform: group
-  name: Bedroom Lights
+  name: Bedroom Spotlights
   entities:
     - light.bedroom_light_1
     - light.bedroom_light_2
@@ -24,6 +24,19 @@
     - light.bedroom_light_5
     - light.bedroom_light_6
 
+- platform: group
+  name: Bedroom Reading Lights
+  entities:
+    - light.bedroom_light_lt
+    - light.bedroom_light_lb
+    - light.bedroom_light_rt
+    - light.bedroom_light_rb
+
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_spotlights
+    - light.bedroom_reading_lights
 
 - platform: yeelight
   devices:
