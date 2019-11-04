@@ -4,5 +4,5 @@
 
 - platform: generic
   still_image_url: https://192.168.1.20/snap.jpeg
-  stream_source: rtsp://192.168.1.60:7447/5dbcb0fe36803e7a79421ca2_0
+  stream_source: rtsp://192.168.1.60:7447/5dc03ee469841dcafac57050_0
   name: G3 Flex
