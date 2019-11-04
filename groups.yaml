@@ -8,7 +8,6 @@ lights:
     - group.kitchen_lights
     - group.bedroom_lights
     - group.hallway
-    # - group.bathroom_lights
     - group.all_lights
 
 media_players:
@@ -60,14 +59,6 @@ bedroom:
     - group.bedroom_lights
     - media_player.bedroom_tv
     - media_player.bedroom_speaker
-
-bathroom:
-  view: yes
-  icon: mdi:hot-tub
-  name: Bathroom
-  entities:
-    - group.bathroom_lights
-    - binary_sensor.motion_sensor_158d0002234460
 
 office:
   view: yes
@@ -139,11 +130,6 @@ Kitchen Lights:
   # - light.kitchen_light_3
   # - light.kitchen_light_4
   - light.cupboard
-
-# Bathroom Lights:
-#   - light.bathroom_light_1
-#   - light.bathroom_light_2
-#   - light.bathroom_light_3
 
 Events:
   - sensor.bin_days

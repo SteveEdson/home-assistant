@@ -80,13 +80,6 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
-          - light.bathroom_light_1
-          - light.bathroom_light_2
-          - light.bathroom_light_3
-        title: Bathroom Lights
-        show_header_toggle: true
-      - type: entities
-        entities:
           - sensor.bin_days
         title: Events
         show_header_toggle: true
@@ -307,12 +300,6 @@ views:
           - input_select.input_select
           - input_select.input_scenes
         title: Input select
-      - type: entities
-        entities:
-          - light.kitchen_lights
-          - light.bathroom_lights
-          - light.gateway_light_7811dcb25e74
-        title: Light
       - type: media-control
         entity: media_player.spotify
       - type: media-control
@@ -496,27 +483,6 @@ views:
                 service: light.turn_off
                 service_data:
                   entity_id: group.all_lights
-              - type: state-icon
-                entity: light.bathroom_light_1
-                tap_action:
-                  action: toggle
-                style:
-                  top: 84.5%
-                  left: 65%
-              - type: state-icon
-                entity: light.bathroom_light_2
-                tap_action:
-                  action: toggle
-                style:
-                  top: 84.5%
-                  left: 69%
-              - type: state-icon
-                entity: light.bathroom_light_3
-                tap_action:
-                  action: toggle
-                style:
-                  top: 84.5%
-                  left: 73%
               - type: state-icon
                 entity: light.bedroom_light
                 tap_action:
@@ -765,27 +731,6 @@ views:
             service: light.turn_off
             service_data:
               entity_id: group.all_lights
-          - type: state-icon
-            entity: light.bathroom_light_1
-            tap_action:
-              action: toggle
-            style:
-              top: 84.5%
-              left: 65%
-          - type: state-icon
-            entity: light.bathroom_light_2
-            tap_action:
-              action: toggle
-            style:
-              top: 84.5%
-              left: 69%
-          - type: state-icon
-            entity: light.bathroom_light_3
-            tap_action:
-              action: toggle
-            style:
-              top: 84.5%
-              left: 73%
           - type: state-icon
             entity: light.bedroom_light
             tap_action:
