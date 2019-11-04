@@ -839,18 +839,20 @@ views:
     cards:
       - type: picture-glance
         title: Camera
+        camera_image: camera.g3_flex
         entities:
           - person.steve_edson
-        camera_image: camera.g3_flex
-      - type: custom:slider-entity-row
-        entity: light.bedroom_spotlights
-        toggle: true
-      - type: custom:slider-entity-row
-        entity: light.bedroom_reading_lights
-        toggle: true
-      - type: custom:slider-entity-row
-        entity: light.yeelight_bslamp1_7c49eb28d971
-        toggle: true
+      - type: vertical-stack
+        cards:
+          - type: custom:slider-entity-row
+            entity: light.bedroom_spotlights
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.bedroom_reading_lights
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.yeelight_bslamp1_7c49eb28d971
+            toggle: true
       - type: custom:mini-media-player
         entity: media_player.bedroom_speaker
         icon: mdi:spotify
