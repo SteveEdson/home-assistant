@@ -831,9 +831,10 @@ views:
         entity: weather.dark_sky
         name: "at home"
         backdrop: true
+# todo: add buses, hot tub temp eventually,
 
   - id: bedroom
-    icon: mdi:bed
+    icon: mdi:hotel
     title: Bedroom
     cards:
       - type: picture-glance
@@ -843,6 +844,26 @@ views:
         camera_image: camera.g3_flex
       - type: custom:slider-entity-row
         entity: light.bedroom_light_1
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_2
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_3
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_4
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_5
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_6
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_6
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_lr
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_lt
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_rb
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_rt
 
   - id: Unused
     title: Unused
