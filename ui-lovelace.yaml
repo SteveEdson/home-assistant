@@ -777,10 +777,6 @@ views:
         entities:
           - sensor.house_temperature
           - sensor.dark_sky_apparent_temperature
-      - type: media-control
-        entity: media_player.kitchen_home
-      - type: media-control
-        entity: media_player.kitchen_speaker
 
       - type: custom:mini-media-player
         entity: media_player.downstairs
@@ -791,8 +787,34 @@ views:
           source: true
           power_state: false
 
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_max
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
+
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_display
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
+
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_tv
+        icon: mdi:tv
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
+
   - id: Unused
-    icon: mdi:fridge-outline
     title: Unused
     cards:
       - type: custom:unused-card
