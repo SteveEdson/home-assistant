@@ -770,7 +770,7 @@ views:
         entity: media_player.spotify
 
   - id: kitchen
-    icon: mdi:fridge-outline
+    icon: mdi:kettle
     title: Kitchen
     cards:
       - type: custom:mini-graph-card
@@ -813,6 +813,17 @@ views:
           volume: true
           source: true
           power_state: false
+
+  - id: outside
+    icon: mdi:tree
+    title: Outside
+    cards:
+      - type: picture-glance
+        title: Camera
+#        entities:
+#          - switch.decorative_lights
+#          - light.ceiling_lights
+        camera_image: camera.g3_flex
 
   - id: Unused
     title: Unused
