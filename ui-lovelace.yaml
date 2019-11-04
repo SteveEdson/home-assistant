@@ -765,7 +765,7 @@ views:
       - type: media-control
         entity: media_player.kitchen_display
       - type: media-control
-        entity: media_player.kitchen_speaker
+        entity: media_player.kitchen_max
       - type: media-control
         entity: media_player.lounge
       - type: media-control
@@ -782,32 +782,34 @@ views:
           - sensor.house_temperature
           - sensor.dark_sky_apparent_temperature
 
-      - type: custom:mini-media-player
-        entity: media_player.downstairs
-        icon: mdi:spotify
-        artwork: cover
-        hide:
-          volume: true
-          source: true
-          power_state: false
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-media-player
+            entity: media_player.downstairs
+            icon: mdi:spotify
+            artwork: cover
+            hide:
+              volume: true
+              source: true
+              power_state: false
 
-      - type: custom:mini-media-player
-        entity: media_player.kitchen_max
-        icon: mdi:spotify
-        artwork: cover
-        hide:
-          volume: true
-          source: true
-          power_state: false
+          - type: custom:mini-media-player
+            entity: media_player.kitchen_max
+            icon: mdi:spotify
+            artwork: cover
+            hide:
+              volume: true
+              source: true
+              power_state: false
 
-      - type: custom:mini-media-player
-        entity: media_player.kitchen_display
-        icon: mdi:spotify
-        artwork: cover
-        hide:
-          volume: true
-          source: true
-          power_state: false
+          - type: custom:mini-media-player
+            entity: media_player.kitchen_display
+            icon: mdi:spotify
+            artwork: cover
+            hide:
+              volume: true
+              source: true
+              power_state: false
 
       - type: custom:mini-media-player
         entity: media_player.kitchen_tv
