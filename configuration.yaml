@@ -298,3 +298,7 @@ climate:
     keep_alive:
       minutes: 3
     initial_hvac_mode: "heat"
+
+timer:
+  bedroom_sleep_timer:
+    duration: '00:30:00'
