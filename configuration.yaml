@@ -108,7 +108,7 @@ media_player:
     client_secret: !secret spotify_client_secret
   - platform: plex
   - platform: androidtv
-    name: Bedroom TV
+    name: Bedroom Android TV
     host: 192.168.1.234
 
 device_tracker:
