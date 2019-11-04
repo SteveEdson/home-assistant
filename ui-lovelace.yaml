@@ -848,6 +848,9 @@ views:
       - type: custom:slider-entity-row
         entity: light.bedroom_reading_lights
         toggle: true
+      - type: custom:slider-entity-row
+        entity: light.yeelight_bslamp1_7c49eb28d971
+        toggle: true
 
   - id: Unused
     title: Unused
