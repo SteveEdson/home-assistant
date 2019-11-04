@@ -10,7 +10,7 @@ resources:
     type: module
   - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
     type: module
-  - url: /local/custom_ui/unused-card.js?v=0.1
+  - url: /local/custom_ui/unused-card.js?v=0.2
     type: module
 
 views:
