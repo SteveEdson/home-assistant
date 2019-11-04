@@ -48,7 +48,6 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
-          - light.landing_light
           - binary_sensor.door_window_sensor_158d0002253f18
           - sensor.illumination_7811dcb25e74
           - light.porch
@@ -526,13 +525,6 @@ views:
                   top: 35%
                   left: 36%
               - type: state-icon
-                entity: light.landing_light
-                tap_action:
-                  action: toggle
-                style:
-                  top: 45%
-                  left: 63%
-              - type: state-icon
                 entity: light.office
                 tap_action:
                   action: toggle
@@ -801,13 +793,6 @@ views:
             style:
               top: 35%
               left: 36%
-          - type: state-icon
-            entity: light.landing_light
-            tap_action:
-              action: toggle
-            style:
-              top: 45%
-              left: 63%
           - type: state-icon
             entity: light.office
             tap_action:

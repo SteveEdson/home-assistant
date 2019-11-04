@@ -17,7 +17,6 @@
 - platform: group
   name: Hall Lights
   entities:
-    - light.landing_light
     - light.porch
     - light.gateway_light_7811dcb25e74
 
