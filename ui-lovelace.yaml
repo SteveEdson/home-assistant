@@ -820,9 +820,8 @@ views:
     cards:
       - type: picture-glance
         title: Camera
-#        entities:
-#          - switch.decorative_lights
-#          - light.ceiling_lights
+        entities:
+          - person.steve_edson
         camera_image: camera.g3_flex
 
   - id: Unused
