@@ -824,6 +824,10 @@ views:
     icon: mdi:tree
     title: Outside
     cards:
+      - type: entities
+        entities:
+          - sensor.bin_days
+          - sensor.next_bus_to_town
       - type: picture-glance
         title: Camera
         entities:
@@ -839,12 +843,6 @@ views:
     icon: mdi:hotel
     title: Bedroom
     cards:
-      - type: picture-glance
-        title: Camera
-        camera_image: camera.g3_flex
-        camera_view: live
-        entities:
-          - person.steve_edson
       - type: vertical-stack
         cards:
           - type: custom:slider-entity-row
