@@ -825,6 +825,10 @@ views:
         entities:
           - person.steve_edson
         camera_image: camera.g3_flex
+      - type: custom:simple-weather-card
+        entity: weather.dark_sky
+        name: "at home"
+        backdrop: true
 
   - id: bedroom
     icon: mdi:bed
