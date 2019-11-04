@@ -165,6 +165,7 @@ google_assistant:
     - switch
     - light
     - climate
+    - camera
   entity_config:
     light.cupboard:
       name: Cupboard lights
@@ -172,8 +173,6 @@ google_assistant:
         - Kitchen Counter Lights
         - Coloured Lights
       expose: true
-    light.kitchen_lights:
-      expose: false
 
 #calendar:
 #  - platform: todoist

@@ -70,16 +70,6 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
-          - light.kitchen_table
-          - light.kitchen_light_1
-          - light.kitchen_light_2
-          - light.kitchen_light_3
-          - light.kitchen_light_4
-          - light.cupboard
-        title: Kitchen Lights
-        show_header_toggle: true
-      - type: entities
-        entities:
           - sensor.bin_days
         title: Events
         show_header_toggle: true
@@ -247,7 +237,6 @@ views:
           - automation.kitchen_led_motion
           - automation.bathroom_no_motion_3_mins
           - automation.nightly_resets
-          - automation.kitchen_cupboard_no_motion_4_mins
           - automation.xiaoma_switch_double_click
           - automation.race_time
           - automation.kitchen_no_motion_5_mins

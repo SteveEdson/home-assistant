@@ -1,13 +1,4 @@
 - platform: group
-  name: Kitchen Lights
-  entities:
-    # - light.kitchen_light_1
-    # - light.kitchen_light_2
-    # - light.kitchen_light_3
-    # - light.kitchen_light_4
-    - light.kitchen_table
-
-- platform: group
   name: Hall Lights
   entities:
     - light.porch

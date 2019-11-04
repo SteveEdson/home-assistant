@@ -5,7 +5,6 @@ lights:
   entities:
     - group.lounge_lights
     - group.office_lights
-    - group.kitchen_lights
     - group.bedroom_lights
     - group.hallway
     - group.all_lights
@@ -124,7 +123,6 @@ Bedroom Lights:
   - light.yeelight_bslamp1_7c49eb28d971
 
 Kitchen Lights:
-  - light.kitchen_table
   # - light.kitchen_light_1
   # - light.kitchen_light_2
   # - light.kitchen_light_3
