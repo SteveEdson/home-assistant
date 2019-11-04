@@ -13,7 +13,9 @@ resources:
   - url: /local/custom_ui/unused-card.js?v=0.2
     type: module
   - url: /local/custom_ui/simple-weather-card-bundle.js?v=0.5.0
-      type: module
+    type: module
+  - url: /local/custom_ui/slider-entity-row.js?v=8
+    type: module
 
 views:
   - path: default_view
@@ -839,6 +841,8 @@ views:
         entities:
           - person.steve_edson
         camera_image: camera.g3_flex
+      - type: custom:slider-entity-row
+        entity: light.bedroom_light_1
 
   - id: Unused
     title: Unused
