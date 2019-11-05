@@ -777,6 +777,10 @@ views:
     icon: mdi:kettle
     title: Kitchen
     cards:
+      - type: entities
+        entities:
+          - sensor.bin_days
+        
       - type: custom:mini-graph-card
         entities:
           - sensor.house_temperature
