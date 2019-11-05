@@ -460,54 +460,8 @@ views:
                 style:
                   top: 96%
                   left: 78%
-          - type: picture-elements
-            id: upstairs_floorplan
-            image: !secret floorplan_upstairs
-            elements:
-              - type: service-button
-                title: Lights On
-                style:
-                  top: 98%
-                  right: 18%
-                service: light.turn_on
-                service_data:
-                  entity_id: group.all_lights
-              - type: service-button
-                title: Lights Off
-                style:
-                  top: 98%
-                  right: 0
-                service: light.turn_off
-                service_data:
-                  entity_id: group.all_lights
-              - type: state-icon
-                entity: light.bedroom_light
-                tap_action:
-                  action: toggle
-                style:
-                  top: 35%
-                  left: 36%
-              - type: state-icon
-                entity: light.office
-                tap_action:
-                  action: toggle
-                style:
-                  top: 90.5%
-                  left: 22%
-              - type: state-icon
-                entity: switch.aegis
-                tap_action:
-                  action: toggle
-                style:
-                  top: 90.5%
-                  left: 51%
-              - type: state-icon
-                entity: light.bedside
-                tap_action:
-                  action: toggle
-                style:
-                  top: 17%
-                  left: 24%
+
+      - type: custom:plan-coordinates
 
   - icon: mdi:home-assistant
     id: home
