@@ -855,13 +855,13 @@ views:
             entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
       - type: custom:mini-media-player
-          entity: media_player.bedroom_android_tv
-          icon: mdi:tv
-          artwork: cover
-          hide:
-            volume: false
-            source: false
-            power_state: false
+        entity: media_player.bedroom_android_tv
+        icon: mdi:tv
+        artwork: cover
+        hide:
+          volume: false
+          source: false
+          power_state: false
       - type: custom:mini-media-player
         entity: media_player.bedroom_speaker
         icon: mdi:spotify
