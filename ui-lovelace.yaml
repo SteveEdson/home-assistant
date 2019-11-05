@@ -813,7 +813,7 @@ views:
 
       - type: custom:mini-media-player
         entity: media_player.kitchen_tv
-        icon: mdi:tv
+        icon: mdi:television
         artwork: cover
         hide:
           volume: true
@@ -844,6 +844,7 @@ views:
     title: Bedroom
     cards:
       - type: entities
+        show_header_toggle: true
         entities:
           - type: custom:slider-entity-row
             entity: light.bedroom_spotlights
