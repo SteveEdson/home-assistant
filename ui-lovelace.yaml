@@ -856,7 +856,7 @@ views:
             toggle: true
       - type: custom:mini-media-player
         entity: media_player.bedroom_android_tv
-        icon: mdi:tv
+        icon: mdi:television
         artwork: cover
         hide:
           volume: false
