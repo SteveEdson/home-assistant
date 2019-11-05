@@ -16,6 +16,8 @@ resources:
     type: module
   - url: /local/custom_ui/slider-entity-row.js?v=8
     type: module
+  - url: /local/custom_ui/gui-sandbox.js
+    type: module
 
 views:
   - path: default_view
@@ -780,7 +782,7 @@ views:
       - type: entities
         entities:
           - sensor.bin_days
-        
+
       - type: custom:mini-graph-card
         entities:
           - sensor.house_temperature
@@ -886,3 +888,4 @@ views:
     title: Unused
     cards:
       - type: custom:unused-card
+      - type: custom:gui-sandbox
