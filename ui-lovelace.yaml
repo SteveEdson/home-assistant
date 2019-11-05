@@ -461,7 +461,7 @@ views:
                   top: 96%
                   left: 78%
 
-      - type: custom:plan-coordinates
+          - type: custom:plan-coordinates
 
   - icon: mdi:home-assistant
     id: home
