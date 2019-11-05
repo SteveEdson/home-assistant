@@ -843,8 +843,8 @@ views:
     icon: mdi:hotel
     title: Bedroom
     cards:
-      - type: vertical-stack
-        cards:
+      - type: entities
+        entities:
           - type: custom:slider-entity-row
             entity: light.bedroom_spotlights
             toggle: true
