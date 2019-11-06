@@ -715,7 +715,7 @@ views:
         entity: weather.dark_sky
 
   - icon: mdi:music-box
-    id: media
+    path: media
     title: Media
     cards:
       - type: media-control
@@ -731,17 +731,17 @@ views:
       - type: media-control
         entity: media_player.spotify
 
-  - id: lounge
-    icon: mdi:sofa
+  - icon: mdi:sofa
     title: Lounge
+    path: lounge
     cards:
       - type: plant-status
         entity: plant.sunflower
         name: Lounge Plant
 
-  - id: kitchen
-    icon: mdi:kettle
+  - icon: mdi:kettle
     title: Kitchen
+    path: kitchen
     cards:
       - type: entities
         entities:
@@ -797,7 +797,7 @@ views:
           source: true
           power_state: false
 
-  - id: outside
+  - path: outside
     icon: mdi:tree
     title: Outside
     cards:
@@ -816,7 +816,7 @@ views:
         backdrop: true
 # todo: add buses, hot tub temp eventually,
 
-  - id: bedroom
+  - path: bedroom
     icon: mdi:hotel
     title: Bedroom
     cards:
@@ -855,7 +855,7 @@ views:
 #              type: script
 #              id: script.play_radio_in_office
 
-  - id: Unused
+  - path: Unused
     title: Unused
     cards:
       - type: custom:gui-sandbox
