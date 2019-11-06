@@ -759,7 +759,7 @@ views:
             icon: mdi:spotify
             artwork: cover
             hide:
-              volume: true
+              volume: false
               source: true
               power_state: false
             shortcuts:
