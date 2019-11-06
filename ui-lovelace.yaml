@@ -762,6 +762,13 @@ views:
               volume: true
               source: true
               power_state: false
+            shortcuts:
+              columns: 4 # Max buttons per row
+              buttons:
+                # Start predefined playlist
+                - icon: mdi:radio
+                  type: script
+                  id: script.play_radio_in_kitchen
 
           - type: custom:mini-media-player
             entity: media_player.kitchen_max
