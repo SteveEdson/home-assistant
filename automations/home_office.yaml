@@ -1,34 +1,34 @@
-- id: enable_heating
-  alias: 'Enable heating in the morning'
-  trigger:
-    platform: time_pattern
-    hours: 06
-    minutes: 55
-    seconds: 0
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: "on"
-  action:
-    service: climate.set_preset_mode
-    data:
-      entity_id: climate.home_office
-      preset_mode: "none"
+#- id: enable_heating
+#  alias: 'Enable heating in the morning'
+#  trigger:
+#    platform: time_pattern
+#    hours: 06
+#    minutes: 55
+#    seconds: 0
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: binary_sensor.workday_sensor
+#        state: "on"
+#  action:
+#    service: climate.set_preset_mode
+#    data:
+#      entity_id: climate.home_office
+#      preset_mode: "none"
 
-- id: disable_heating
-  alias: 'Disable heating at the end of the day'
-  trigger:
-    platform: time_pattern
-    hours: 17
-    minutes: 45
-    seconds: 0
-  action:
-    service: climate.set_preset_mode
-    data:
-      entity_id: climate.home_office
-      preset_mode: "away"
+#- id: disable_heating
+#  alias: 'Disable heating at the end of the day'
+#  trigger:
+#    platform: time_pattern
+#    hours: 17
+#    minutes: 45
+#    seconds: 0
+#  action:
+#    service: climate.set_preset_mode
+#    data:
+#      entity_id: climate.home_office
+#      preset_mode: "away"
 
 - id: turn_office_light_off
   alias: 'Turn office light off'
@@ -42,27 +42,38 @@
     data:
       entity_id: light.office
 
-- id: office_door_opened
-  alias: 'Office door opened'
+#- id: office_door_opened
+#  alias: 'Office door opened'
+#  trigger:
+#    - platform: state
+#      entity_id: binary_sensor.door_window_sensor_158d0003589af9
+#      to: 'on'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: time
+#        after: '08:30:00'
+#        before: '17:45:00'
+#      - condition: state
+#        entity_id: binary_sensor.workday_sensor
+#        state: "on"
+#  action:
+#    - service: climate.set_preset_mode
+#      data:
+#        entity_id: climate.home_office
+#        preset_mode: "none"
+#    - service: climate.set_hvac_mode
+#      data:
+#        entity_id: climate.home_office
+#        hvac_mode: heat
+
+- id: office_door_opened_alert
+  alias: 'Office door opened alert'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d0003589af9
       to: 'on'
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '09:00:00'
-        before: '17:30:00'
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: "on"
   action:
-    - service: climate.set_preset_mode
+    - service: notify.home_alerts
       data:
-        entity_id: climate.home_office
-        preset_mode: "none"
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.home_office
-        hvac_mode: heat
+        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
