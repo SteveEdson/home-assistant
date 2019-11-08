@@ -299,3 +299,9 @@ climate:
 timer:
   bedroom_sleep_timer:
     duration: '00:30:00'
+
+telegram_bot:
+  - platform: webhooks
+    api_key: !secret telegram_secret
+    parse_mode: html
+    allowed_chat_ids: !secret telegram_chats
