@@ -1,42 +1,53 @@
- - alias: 'Front door opened'
-   trigger:
-     - platform: state
-       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e # front door
-       to: 'on'
-   action:
-     - service: media_player.volume_set
-       data:
-         entity_id: media_player.downstairs
-         volume_level: 0.7
-     - service: media_player.play_media
-       data:
-         entity_id: media_player.downstairs
-         media_content_id: !secret halloween_sound_url
-         media_content_type: music
-     - service: yeelight.set_mode
-       data:
-         entity_id: light.yeelight_bslamp1_7c49eb28d971
-         mode: rgb
-     - service: light.turn_on
-       data:
-         entity_id: group.all_lights
-         brightness_pct: 100
-     - service: light.turn_on
-       data:
-         entity_id: group.all_lights
-         flash: short
-     - service: light.turn_on
-       data:
-         entity_id: group.all_lights
-         flash: long
-     - service: light.turn_on
-       data:
-         entity_id: group.hallway
-         brightness_pct: 100
-     - service: light.turn_on
-       data:
-         entity_id: group.lounge_lights
-         brightness_pct: 100
-   condition:
-     condition: template
-     value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
+- alias: 'Front door opened'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e # front door
+      to: 'on'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.downstairs
+        volume_level: 0.7
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.downstairs
+        media_content_id: !secret halloween_sound_url
+        media_content_type: music
+    - service: yeelight.set_mode
+      data:
+        entity_id: light.yeelight_bslamp1_7c49eb28d971
+        mode: rgb
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        brightness_pct: 100
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        flash: long
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway
+        brightness_pct: 100
+    - service: light.turn_on
+      data:
+        entity_id: group.lounge_lights
+        brightness_pct: 100
+  condition:
+    condition: template
+    value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
+    
+- id: front_door_opened_alert
+  alias: 'Front door opened alert'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+      to: 'on'
+  action:
+    - service: notify.home_alerts
+      data:
+        message: "Front door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
