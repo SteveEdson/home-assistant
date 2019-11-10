@@ -765,6 +765,7 @@ views:
             entity: scene.ocean
           - type: entity-button
             entity: scene.lounge_lights_off
+            name: Lights Off
 
       - type: entities
         entities:
