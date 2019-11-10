@@ -768,6 +768,15 @@ views:
             entity: light.corner_lamp
             toggle: true
 
+      - type: custom:mini-media-player
+        entity: media_player.playstation_4
+        icon: mdi:playstation
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: false
+
   - icon: mdi:kettle
     title: Kitchen
     path: kitchen
