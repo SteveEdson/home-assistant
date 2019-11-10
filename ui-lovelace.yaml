@@ -755,30 +755,27 @@ views:
               source: true
               power_state: false
 
-      - type: horizontal-stack
-        cards:
-          - type: entity-button
-            entity: scene.bright
+      - type: glance
+        entities:
+          - entity: scene.bright
             tap_action:
               action: call-service
               service: scene.turn_on
               scene: scene.bright
-          - type: entity-button
-            entity: scene.deep_blue
+
+          - entity: scene.deep_blue
             tap_action:
               action: call-service
               service: scene.turn_on
               scene: scene.deep_blue
 
-          - type: entity-button
-            entity: scene.ocean
+          - entity: scene.ocean
             tap_action:
               action: call-service
               service: scene.turn_on
               scene: scene.ocean
 
-          - type: entity-button
-            entity: scene.lounge_lights_off
+          - entity: scene.lounge_lights_off
             name: Lights Off
             tap_action:
               action: call-service
