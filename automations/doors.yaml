@@ -40,7 +40,7 @@
   condition:
     condition: template
     value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
-    
+
 - id: front_door_opened_alert
   alias: 'Front door opened alert'
   trigger:
@@ -51,3 +51,14 @@
     - service: notify.home_alerts
       data:
         message: "Front door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+
+- id: kitchen_door_opened_alert
+  alias: 'Kitchen doors opened alert'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00035c0c9a
+      to: 'on'
+  action:
+    - service: notify.home_alerts
+      data:
+        message: "Bi-fold door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
