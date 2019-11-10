@@ -34,6 +34,10 @@ automation.lights_on_at_sunset:
   icon: mdi:weather-sunset-down
 scene.deep_blue:
   icon: mdi:anchor
+scene.bright:
+  icon: mdi:sunglasses
+scene.ocean:
+  icon: mdi:waves
 group.tv_channels:
   hidden: true
 script.boost_heating:
