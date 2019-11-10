@@ -902,7 +902,7 @@ views:
                 entity_id: scene.bedroom_steve_reading
 
           - entity: scene.bedroom_off
-            name: Off
+            name: "Off"
             tap_action:
               action: call-service
               service: scene.turn_on
