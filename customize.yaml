@@ -38,6 +38,12 @@ scene.bright:
   icon: mdi:sunglasses
 scene.ocean:
   icon: mdi:waves
+scene.bedroom_reading:
+  icon: mdi:book-open-page-variant
+scene.bedroom_steve_reading:
+  icon: mdi:book
+scene.bedroom_off:
+  icon: mdi:sleep
 scene.lounge_lights_off:
   icon: mdi:weather-night
 group.tv_channels:
