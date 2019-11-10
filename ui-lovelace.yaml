@@ -759,13 +759,31 @@ views:
         cards:
           - type: entity-button
             entity: scene.bright
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              scene: scene.bright
           - type: entity-button
             entity: scene.deep_blue
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              scene: scene.deep_blue
+
           - type: entity-button
             entity: scene.ocean
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              scene: scene.ocean
+
           - type: entity-button
             entity: scene.lounge_lights_off
             name: Lights Off
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              scene: scene.lounge_lights_off
 
       - type: entities
         entities:
