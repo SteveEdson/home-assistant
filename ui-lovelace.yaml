@@ -886,6 +886,7 @@ views:
         columns: 3
         entities:
           - entity: scene.bedroom_reading
+            name: Reading
             tap_action:
               action: call-service
               service: scene.turn_on
@@ -893,6 +894,7 @@ views:
                 entity_id: scene.bedroom_reading
 
           - entity: scene.bedroom_steve_reading
+            name: Steve Reading
             tap_action:
               action: call-service
               service: scene.turn_on
@@ -900,6 +902,7 @@ views:
                 entity_id: scene.bedroom_steve_reading
 
           - entity: scene.bedroom_off
+            name: Off
             tap_action:
               action: call-service
               service: scene.turn_on
