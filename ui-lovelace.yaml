@@ -744,6 +744,18 @@ views:
           source: true
           power_state: false
 
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: scene.bright
+          - type: entity-button
+            entity: scene.deep_blue
+          - type: entity-button
+            entity: scene.ocean
+          - type: entity-button
+            entity: scene.lounge_lights_off
+
+
       - type: entities
         entities:
           - type: custom:slider-entity-row
