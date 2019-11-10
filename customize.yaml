@@ -38,6 +38,8 @@ scene.bright:
   icon: mdi:sunglasses
 scene.ocean:
   icon: mdi:waves
+scene.lounge_lights_off:
+  icon: mdi:weather-night
 group.tv_channels:
   hidden: true
 script.boost_heating:
