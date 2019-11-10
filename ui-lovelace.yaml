@@ -754,6 +754,7 @@ views:
               volume: true
               source: true
               power_state: false
+              controls: true
 
       - type: glance
         show_state: false
