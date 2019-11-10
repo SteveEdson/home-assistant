@@ -761,26 +761,30 @@ views:
             tap_action:
               action: call-service
               service: scene.turn_on
-              scene: scene.bright
+              service_data:
+                entity_id: scene.bright
 
           - entity: scene.deep_blue
             tap_action:
               action: call-service
               service: scene.turn_on
-              scene: scene.deep_blue
+              service_data:
+                entity_id: scene.deep_blue
 
           - entity: scene.ocean
             tap_action:
               action: call-service
               service: scene.turn_on
-              scene: scene.ocean
+              service_data:
+                entity_id: scene.ocean
 
           - entity: scene.lounge_lights_off
             name: Lights Off
             tap_action:
               action: call-service
               service: scene.turn_on
-              scene: scene.lounge_lights_off
+              service_data:
+                entity_id: scene.lounge_lights_off
 
       - type: entities
         entities:
