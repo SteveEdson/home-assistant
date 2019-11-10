@@ -8,12 +8,12 @@ sequence:
       #  tag: "good-morning"
 
   - service: media_player.volume_set
-    data:       
+    data:
       entity_id: media_player.bedroom_speaker
       volume_level: 0.30
   - service: media_player.volume_set
-    data:       
-      entity_id: media_player.kitchen_home
+    data:
+      entity_id: media_player.kitchen_display
       volume_level: 0.35
   - service: notify.google_assistant_broadcast
     data_template:

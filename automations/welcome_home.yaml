@@ -14,7 +14,3 @@
     - service: notify.google_assistant_broadcast
       data_template:
         message: 'Welcome home Steve! {% if as_timestamp(now()) > as_timestamp(strptime(states.sensor.bin_days.attributes.date, "%d/%m/%Y")) - (60 * 60 * 24) %}Dont forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow.{% endif %}'
-#    - service: notify.home_alerts
-    - delay: "00:00:15"
-    - service: script.play_music
-

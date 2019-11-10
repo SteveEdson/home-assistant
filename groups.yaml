@@ -24,7 +24,6 @@ kitchen:
   icon: mdi:kettle
   name: Kitchen
   entities:
-    - media_player.kitchen_home
     - group.kitchen_lights
     - binary_sensor.motion_sensor_158d0001643c27
 
@@ -185,9 +184,6 @@ Upstairs Protect:
 
 Steam:
   - sensor.steam_76561198059721761
-
-Kitchen Media:
-  - media_player.kitchen_home
 
 Office Media:
   - media_player.office_speakers
