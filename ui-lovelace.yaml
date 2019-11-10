@@ -744,6 +744,18 @@ views:
           source: true
           power_state: false
 
+      - type: entities
+        entities:
+          - type: custom:slider-entity-row
+            entity: light.left_lamp
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.twigs
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.corner_lamp
+            toggle: true
+
   - icon: mdi:kettle
     title: Kitchen
     path: kitchen
