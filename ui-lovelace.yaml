@@ -735,14 +735,25 @@ views:
         entity: plant.sunflower
         name: Lounge Plant
 
-      - type: custom:mini-media-player
-        entity: media_player.lounge_tv
-        icon: mdi:television
-        artwork: cover
-        hide:
-          volume: false
-          source: true
-          power_state: false
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-media-player
+            entity: media_player.lounge_tv
+            icon: mdi:television
+            artwork: cover
+            hide:
+              volume: false
+              source: true
+              power_state: false
+
+          - type: custom:mini-media-player
+            entity: media_player.playstation_4
+            icon: mdi:playstation
+            artwork: cover
+            hide:
+              volume: true
+              source: true
+              power_state: false
 
       - type: horizontal-stack
         cards:
@@ -755,7 +766,6 @@ views:
           - type: entity-button
             entity: scene.lounge_lights_off
 
-
       - type: entities
         entities:
           - type: custom:slider-entity-row
@@ -767,15 +777,6 @@ views:
           - type: custom:slider-entity-row
             entity: light.corner_lamp
             toggle: true
-
-      - type: custom:mini-media-player
-        entity: media_player.playstation_4
-        icon: mdi:playstation
-        artwork: cover
-        hide:
-          volume: true
-          source: true
-          power_state: false
 
   - icon: mdi:kettle
     title: Kitchen
