@@ -2,13 +2,13 @@
   entities:
     light.corner_lamp:
       state: off
-    
+
     light.left_lamp:
       state: off
-      
+
     light.twigs:
       state: off
-        
+
     # switch.my_smart_plug:
     #   state: off
 
@@ -21,22 +21,22 @@
         - 97
         - 45
       brightness_pct: 100
-    
+
     light.left_lamp:
       state: on
-      rgb_color: 
+      rgb_color:
         - 103
         - 55
         - 255
       brightness_pct: 100
-      
+
     light.twigs:
       state: on
       brightness_pct: 100
-        
+
     # switch.my_smart_plug:
     #   state: on
-    
+
 - name: Ocean
   entities:
     light.corner_lamp:
@@ -46,19 +46,19 @@
         - 83
         - 255
       brightness_pct: 100
-    
+
     light.left_lamp:
       state: on
-      rgb_color: 
+      rgb_color:
         - 77
         - 247
         - 255
       brightness_pct: 100
-      
+
     light.twigs:
       state: on
       brightness_pct: 100
-        
+
     # switch.my_smart_plug:
     #   state: on
 
@@ -68,52 +68,78 @@
       state: on
       color_temp: 350
       brightness_pct: 100
-    
+
     light.left_lamp:
       state: on
       color_temp: 350
       brightness_pct: 100
-      
+
     light.twigs:
       state: on
       brightness_pct: 100
-        
+
     # switch.my_smart_plug:
-    #   state: on      
+    #   state: on
 
 - name: Bedroom Off
   entities:
     group.bedroom_lights:
       state: off
-    
+
     light.yeelight_bslamp1_7c49eb28d971:
       state: off
-  
+
 - name: Bedroom Bedside
   entities:
     group.bedroom_lights:
       state: off
-    
+
     light.yeelight_bslamp1_7c49eb28d971:
       state: on
       brightness_pct: 100
-  
+
 - name: Bedroom Main Lights
   entities:
     group.bedroom_lights:
       state: on
       brightness_pct: 100
-    
+
     light.yeelight_bslamp1_7c49eb28d971:
       state: off
-  
+
 - name: Bedroom All Lights
   entities:
     group.bedroom_lights:
       state: on
       brightness_pct: 100
-    
+
     light.yeelight_bslamp1_7c49eb28d971:
       state: on
       brightness_pct: 100
-  
+
+- name: Bedroom Steve Reading
+  entities:
+    light.bedroom_light_rb:
+      state: on
+      brightness_pct: 40
+
+    light.bedroom_light_rt:
+      state: off
+
+    light.bedroom_light_lt:
+      state: off
+
+    light.bedroom_light_lb:
+      state: off
+
+    light.bedroom_lights:
+      state: off
+
+- name: Bedroom Reading
+  entities:
+    light.bedroom_reading_lights:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_lights:
+      state: off
