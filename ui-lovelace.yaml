@@ -737,7 +737,7 @@ views:
       - type: thermostat
         entity: climate.netatmo_heating
 
-  - icon: mdi:home-assistant
+  - icon: mdi:stairs
     path: hallway
     # Name of the view. Will be used as the tooltip for tab icon
     title: Hallway
