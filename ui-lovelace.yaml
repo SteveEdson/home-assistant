@@ -737,6 +737,20 @@ views:
       - type: thermostat
         entity: climate.netatmo_heating
 
+  - icon: mdi:home-assistant
+    path: hallway
+    # Name of the view. Will be used as the tooltip for tab icon
+    title: Hallway
+    cards:
+      - type: entities
+        entities:
+          - sensor.living_room_nest_protect_battery_health
+          - sensor.living_room_nest_protect_co_status
+          - binary_sensor.living_room_nest_protect_online
+          - sensor.living_room_nest_protect_smoke_status
+          - sensor.living_room_nest_protect_color_status
+        title: Lounge Protect
+
   - icon: mdi:sofa
     title: Lounge
     path: lounge
