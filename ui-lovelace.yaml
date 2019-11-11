@@ -740,6 +740,8 @@ views:
 
   - icon: mdi:stairs
     path: hallway
+    badges:
+      - binary_sensor.door_window_sensor_158d00035c0b6e
     # Name of the view. Will be used as the tooltip for tab icon
     title: Hallway
     cards:
@@ -828,6 +830,8 @@ views:
   - icon: mdi:kettle
     title: Kitchen
     path: kitchen
+    badges:
+      - binary_sensor.door_window_sensor_158d00035c0c9a
     cards:
       - type: entities
         entities:
