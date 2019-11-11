@@ -736,6 +736,7 @@ views:
         entity: alarm_control_panel.house_alarm
       - type: thermostat
         entity: climate.netatmo_heating
+        name: Heating
 
   - icon: mdi:stairs
     path: hallway
