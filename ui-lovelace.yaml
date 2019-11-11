@@ -759,27 +759,27 @@ views:
           - type: state-icon
             entity: sensor.living_room_nest_protect_battery_health
             style:
-              top: 49%
+              top: 50%
               left: 30%
           - type: state-icon
             entity: sensor.living_room_nest_protect_co_status
             style:
-              top: 49%
+              top: 50%
               left: 40%
           - type: state-icon
             entity: binary_sensor.living_room_nest_protect_online
             style:
-              top: 49%
+              top: 50%
               left: 50%
           - type: state-icon
             entity: sensor.living_room_nest_protect_smoke_status
             style:
-              top: 49%
+              top: 50%
               left: 60%
           - type: state-icon
             entity: sensor.living_room_nest_protect_color_status
             style:
-              top: 49%
+              top: 50%
               left: 70%
 
   - icon: mdi:sofa
