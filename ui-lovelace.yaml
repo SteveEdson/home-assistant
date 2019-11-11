@@ -732,6 +732,8 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
     cards:
+      - type: alarm-panel
+        entity: alarm_control_panel.house_alarm
       - type: thermostat
         entity: climate.netatmo_heating
 
