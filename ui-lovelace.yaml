@@ -753,6 +753,34 @@ views:
           - sensor.living_room_nest_protect_smoke_status
           - sensor.living_room_nest_protect_color_status
         title: Lounge Protect
+      - type: picture-elements
+        image: /local/nest.jpg
+        elements:
+          - type: state-icon
+            entity: sensor.living_room_nest_protect_battery_health
+            style:
+              top: 47%
+              left: 20%
+          - type: state-icon
+            entity: sensor.living_room_nest_protect_co_status
+            style:
+              top: 47%
+              left: 30%
+          - type: state-icon
+            entity: binary_sensor.living_room_nest_protect_online
+            style:
+              top: 47%
+              left: 40%
+          - type: state-icon
+            entity: sensor.living_room_nest_protect_smoke_status
+            style:
+              top: 47%
+              left: 50%
+          - type: state-icon
+            entity: sensor.living_room_nest_protect_color_status
+            style:
+              top: 47%
+              left: 60%
 
   - icon: mdi:sofa
     title: Lounge
