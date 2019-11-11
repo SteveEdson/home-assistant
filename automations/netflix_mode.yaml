@@ -1,7 +1,7 @@
 - alias: Netflix Mode
   trigger:
     - platform: template
-      value_template: "{{ is_state_attr('media_player.lounge_tv', 'app_name', 'Netflix') or is_state_attr('media_player.lounge_tv', 'app_name', 'BBC iPlayer') }}"
+      value_template: "{{ is_state_attr('media_player.lounge_tv', 'app_name', 'Netflix') or is_state_attr('media_player.lounge_tv', 'app_name', 'BBC iPlayer') }} or {{ is_state_attr('media_player.lounge_tv', 'app_name', 'Airflow')"
   action:
     - service: scene.turn_on
       data:
