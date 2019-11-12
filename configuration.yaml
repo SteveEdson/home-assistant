@@ -305,3 +305,9 @@ telegram_bot:
     api_key: !secret telegram_secret
     parse_mode: html
     allowed_chat_ids: !secret telegram_chats
+
+panel_iframe:
+  router:
+    title: 'Router'
+    icon: mdi:router-wireless
+    url: 'http://192.168.1.1'
