@@ -915,6 +915,10 @@ views:
           source: true
           power_state: false
 
+      - type: thermostat
+        entity: climate.netatmo_heating
+        name: Heating
+
   - path: outside
     icon: mdi:tree
     title: Outside
