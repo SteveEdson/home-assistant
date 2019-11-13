@@ -20,6 +20,8 @@ resources:
     type: module
   - url: /local/custom_ui/plan-coordinates.js
     type: module
+  - url: /local/custom_ui/xiaomi-vacuum-card.js?v=2.3.2
+    type: js
 
 views:
   - path: default_view
@@ -861,6 +863,12 @@ views:
     badges:
       - binary_sensor.door_window_sensor_158d00035c0c9a
     cards:
+      - type: custom:xiaomi-vacuum-card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        image: /local/vacuum.png
+        name: false
+        buttons: true
+
       - type: entities
         entities:
           - sensor.bin_days
