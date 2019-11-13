@@ -310,7 +310,7 @@ panel_iframe:
   router:
     title: 'Router'
     icon: mdi:router-wireless
-    url: 'http://192.168.1.1'
+    url: !secret router_url
 
 vacuum:
   - platform: xiaomi_miio
