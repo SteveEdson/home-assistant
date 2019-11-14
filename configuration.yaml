@@ -306,11 +306,7 @@ telegram_bot:
     parse_mode: html
     allowed_chat_ids: !secret telegram_chats
 
-panel_iframe:
-  router:
-    title: 'Router'
-    icon: mdi:router-wireless
-    url: !secret router_url
+panel_iframe: !secret panels
 
 vacuum:
   - platform: xiaomi_miio
