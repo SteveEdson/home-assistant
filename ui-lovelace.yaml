@@ -1007,7 +1007,6 @@ views:
       - type: thermostat
         entity: climate.home_office
 
-
   - icon: mdi:music-box
     path: media
     title: Media
@@ -1018,6 +1017,8 @@ views:
         filter:
           include:
             - domain: media_player
+              options:
+                type: custom:auto-entities
 
   - path: Unused
     title: Unused
