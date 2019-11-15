@@ -1011,13 +1011,14 @@ views:
     path: media
     title: Media
     cards:
-      - card:
+      - type: custom:mini-media-player
+        card:
           type: media-control
         filter:
           include:
             - domain: media_player
               options:
-                type: custom:auto-entities
+                type: custom:mini-media-player
 
   - path: Unused
     title: Unused
