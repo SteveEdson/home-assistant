@@ -440,256 +440,256 @@ views:
 #
 #          - type: custom:plan-coordinates
 
-  - icon: mdi:home-assistant
-    id: home
-    # Name of the view. Will be used as the tooltip for tab icon
-    title: Home
-    cards:
-      - type: custom:auto-entities
-        card:
-          id: bedroom_summary
-          type: picture-glance
-          title: Bedroom
-          image: !secret photos_bedroom
-          entity: group.bedroom
-        filter:
-          include:
-            - entity_id: "*bedroom*"
-          exclude:
-            - entity_id: "*automation*"
-            - entity_id: "*group*"
-      - type: picture-elements
-        id: downstairs_floorplan
-        title: Downstairs
-        image: https://steveedson.co.uk/images/floorplan-downstairs.png
-        elements:
-          - type: service-button
-            title: Lights On
-            style:
-              top: 98%
-              right: 18%
-            service: light.turn_on
-            service_data:
-              entity_id: group.all_lights
-          - type: service-button
-            title: Lights Off
-            style:
-              top: 98%
-              right: 0
-            service: light.turn_off
-            service_data:
-              entity_id: group.all_lights
-          - type: state-icon
-            entity: light.kitchen_light_1
-            tap_action:
-              action: toggle
-            style:
-              top: 28%
-              left: 34%
-          - type: state-icon
-            entity: light.kitchen_light_2
-            tap_action:
-              action: toggle
-            style:
-              top: 28%
-              left: 39%
-          - type: state-icon
-            entity: light.kitchen_light_3
-            tap_action:
-              action: toggle
-            style:
-              top: 28%
-              left: 44%
-          - type: state-icon
-            entity: light.kitchen_light_4
-            tap_action:
-              action: toggle
-            style:
-              top: 28%
-              left: 49%
-          - type: state-icon
-            entity: binary_sensor.motion_sensor_158d0001643c27
-            style:
-              top: 15%
-              left: 36.6%
-          - type: state-icon
-            entity: light.kitchen_table
-            tap_action:
-              action: toggle
-            style:
-              top: 28%
-              left: 73%
-          - type: state-icon
-            entity: light.twigs
-            tap_action:
-              action: toggle
-            style:
-              top: 84%
-              left: 14%
-          - type: state-icon
-            entity: light.corner_lamp
-            tap_action:
-              action: toggle
-            style:
-              top: 58%
-              left: 65%
-          - type: state-icon
-            entity: light.left_lamp
-            tap_action:
-              action: toggle
-            style:
-              top: 49%
-              left: 17%
-          - type: state-icon
-            entity: media_player.samsung_tv_remote
-            style:
-              top: 89.5%
-              left: 23%
-          - type: state-icon
-            entity: light.porch
-            tap_action:
-              action: toggle
-            style:
-              top: 92%
-              left: 78%
-          - type: state-icon
-            entity: binary_sensor.door_window_sensor_158d0002253f18
-            style:
-              top: 96%
-              left: 78%
-      - type: thermostat
-        id: house_heating
-        entity: climate.netatmo_heating
-        name: Heating
-      - type: custom:auto-entities
-        filter:
-          include:
-            - entity_id: "*office*"
-            - entity_id: "switch.aegis"
-          exclude:
-            - entity_id: "*automation*"
-            - entity_id: "*group*"
-        card:
-          type: picture-glance
-          id: office_glance
-          title: Office
-          image: !secret photos_office
-          entity: group.office_lights
-      - type: custom:auto-entities
-        filter:
-          include:
-            - entity_id: "*kitchen*"
-            - entity_id: "binary_sensor.motion_sensor_158d0001643c27"
-            - entity_id: "light.cupboard"
-          exclude:
-            - entity_id: "*automation*"
-            - entity_id: "*group*"
-        card:
-          type: picture-glance
-          id: kitchen_glance
-          title: Kitchen
-          image: !secret photos_kitchen
-          entity: group.kitchen_lights
-      - type: custom:auto-entities
-        filter:
-          include:
-            - entity_id: "*lounge*"
-            - entity_id: "light.twigs"
-            - entity_id: "light.corner_lamp"
-            - entity_id: "light.left_lamp"
-            - entity_id: "media_player.samsung_tv_remote"
-          exclude:
-            - entity_id: "*automation*"
-            - entity_id: "*group*"
-        card:
-          id: lounge_summary_glance
-          title: Lounge
-          type: picture-glance
-          image: !secret photos_lounge
-          entity: group.lounge_lights
-      - type: picture-glance
-        id: office_glance
-        title: Office
-        entities:
-          - light.office
-          - media_player.office_speakers
-          - switch.aegis
-        image: !secret photos_office
-        entity: group.office
-      - type: entity-filter
-        id: devices
-        entities:
-          - device_tracker.oneplus5t
-          - device_tracker.oneplus_6
-        state_filter:
-          - home
-        card:
-          type: glance
-          title: People at home
-      - type: sensor
-        id: time_to_home
-        entity: sensor.time_to_home
-        name: Time to Home
-        height: 75
-        line_color: "#3498db"
-      - type: sensor
-        id: time_to_work
-        entity: sensor.time_to_work
-        name: Time to Work
-        height: 75
-        line_color: "#3498db"
-      - type: picture-elements
-        id: upstairs_floorplan
-        title: Upstairs
-        image: https://steveedson.co.uk/images/floorplan-upstairs.png
-        elements:
-          - type: service-button
-            title: Lights On
-            style:
-              top: 98%
-              right: 18%
-            service: light.turn_on
-            service_data:
-              entity_id: group.all_lights
-          - type: service-button
-            title: Lights Off
-            style:
-              top: 98%
-              right: 0
-            service: light.turn_off
-            service_data:
-              entity_id: group.all_lights
-          - type: state-icon
-            entity: light.bedroom_light
-            tap_action:
-              action: toggle
-            style:
-              top: 35%
-              left: 36%
-          - type: state-icon
-            entity: light.office
-            tap_action:
-              action: toggle
-            style:
-              top: 90.5%
-              left: 22%
-          - type: state-icon
-            entity: switch.aegis
-            tap_action:
-              action: toggle
-            style:
-              top: 90.5%
-              left: 51%
-          - type: state-icon
-            entity: light.bedside
-            tap_action:
-              action: toggle
-            style:
-              top: 17%
-              left: 24%
-      - type: weather-forecast
-        id: weather_forecast
-        entity: weather.dark_sky
+#  - icon: mdi:home-assistant
+#    id: home
+#    # Name of the view. Will be used as the tooltip for tab icon
+#    title: Home
+#    cards:
+#      - type: custom:auto-entities
+#        card:
+#          id: bedroom_summary
+#          type: picture-glance
+#          title: Bedroom
+#          image: !secret photos_bedroom
+#          entity: group.bedroom
+#        filter:
+#          include:
+#            - entity_id: "*bedroom*"
+#          exclude:
+#            - entity_id: "*automation*"
+#            - entity_id: "*group*"
+#      - type: picture-elements
+#        id: downstairs_floorplan
+#        title: Downstairs
+#        image: https://steveedson.co.uk/images/floorplan-downstairs.png
+#        elements:
+#          - type: service-button
+#            title: Lights On
+#            style:
+#              top: 98%
+#              right: 18%
+#            service: light.turn_on
+#            service_data:
+#              entity_id: group.all_lights
+#          - type: service-button
+#            title: Lights Off
+#            style:
+#              top: 98%
+#              right: 0
+#            service: light.turn_off
+#            service_data:
+#              entity_id: group.all_lights
+#          - type: state-icon
+#            entity: light.kitchen_light_1
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 28%
+#              left: 34%
+#          - type: state-icon
+#            entity: light.kitchen_light_2
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 28%
+#              left: 39%
+#          - type: state-icon
+#            entity: light.kitchen_light_3
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 28%
+#              left: 44%
+#          - type: state-icon
+#            entity: light.kitchen_light_4
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 28%
+#              left: 49%
+#          - type: state-icon
+#            entity: binary_sensor.motion_sensor_158d0001643c27
+#            style:
+#              top: 15%
+#              left: 36.6%
+#          - type: state-icon
+#            entity: light.kitchen_table
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 28%
+#              left: 73%
+#          - type: state-icon
+#            entity: light.twigs
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 84%
+#              left: 14%
+#          - type: state-icon
+#            entity: light.corner_lamp
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 58%
+#              left: 65%
+#          - type: state-icon
+#            entity: light.left_lamp
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 49%
+#              left: 17%
+#          - type: state-icon
+#            entity: media_player.samsung_tv_remote
+#            style:
+#              top: 89.5%
+#              left: 23%
+#          - type: state-icon
+#            entity: light.porch
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 92%
+#              left: 78%
+#          - type: state-icon
+#            entity: binary_sensor.door_window_sensor_158d0002253f18
+#            style:
+#              top: 96%
+#              left: 78%
+#      - type: thermostat
+#        id: house_heating
+#        entity: climate.netatmo_heating
+#        name: Heating
+#      - type: custom:auto-entities
+#        filter:
+#          include:
+#            - entity_id: "*office*"
+#            - entity_id: "switch.aegis"
+#          exclude:
+#            - entity_id: "*automation*"
+#            - entity_id: "*group*"
+#        card:
+#          type: picture-glance
+#          id: office_glance
+#          title: Office
+#          image: !secret photos_office
+#          entity: group.office_lights
+#      - type: custom:auto-entities
+#        filter:
+#          include:
+#            - entity_id: "*kitchen*"
+#            - entity_id: "binary_sensor.motion_sensor_158d0001643c27"
+#            - entity_id: "light.cupboard"
+#          exclude:
+#            - entity_id: "*automation*"
+#            - entity_id: "*group*"
+#        card:
+#          type: picture-glance
+#          id: kitchen_glance
+#          title: Kitchen
+#          image: !secret photos_kitchen
+#          entity: group.kitchen_lights
+#      - type: custom:auto-entities
+#        filter:
+#          include:
+#            - entity_id: "*lounge*"
+#            - entity_id: "light.twigs"
+#            - entity_id: "light.corner_lamp"
+#            - entity_id: "light.left_lamp"
+#            - entity_id: "media_player.samsung_tv_remote"
+#          exclude:
+#            - entity_id: "*automation*"
+#            - entity_id: "*group*"
+#        card:
+#          id: lounge_summary_glance
+#          title: Lounge
+#          type: picture-glance
+#          image: !secret photos_lounge
+#          entity: group.lounge_lights
+#      - type: picture-glance
+#        id: office_glance
+#        title: Office
+#        entities:
+#          - light.office
+#          - media_player.office_speakers
+#          - switch.aegis
+#        image: !secret photos_office
+#        entity: group.office
+#      - type: entity-filter
+#        id: devices
+#        entities:
+#          - device_tracker.oneplus5t
+#          - device_tracker.oneplus_6
+#        state_filter:
+#          - home
+#        card:
+#          type: glance
+#          title: People at home
+#      - type: sensor
+#        id: time_to_home
+#        entity: sensor.time_to_home
+#        name: Time to Home
+#        height: 75
+#        line_color: "#3498db"
+#      - type: sensor
+#        id: time_to_work
+#        entity: sensor.time_to_work
+#        name: Time to Work
+#        height: 75
+#        line_color: "#3498db"
+#      - type: picture-elements
+#        id: upstairs_floorplan
+#        title: Upstairs
+#        image: https://steveedson.co.uk/images/floorplan-upstairs.png
+#        elements:
+#          - type: service-button
+#            title: Lights On
+#            style:
+#              top: 98%
+#              right: 18%
+#            service: light.turn_on
+#            service_data:
+#              entity_id: group.all_lights
+#          - type: service-button
+#            title: Lights Off
+#            style:
+#              top: 98%
+#              right: 0
+#            service: light.turn_off
+#            service_data:
+#              entity_id: group.all_lights
+#          - type: state-icon
+#            entity: light.bedroom_light
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 35%
+#              left: 36%
+#          - type: state-icon
+#            entity: light.office
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 90.5%
+#              left: 22%
+#          - type: state-icon
+#            entity: switch.aegis
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 90.5%
+#              left: 51%
+#          - type: state-icon
+#            entity: light.bedside
+#            tap_action:
+#              action: toggle
+#            style:
+#              top: 17%
+#              left: 24%
+#      - type: weather-forecast
+#        id: weather_forecast
+#        entity: weather.dark_sky
 
   - icon: mdi:music-box
     path: media
