@@ -749,6 +749,7 @@ views:
     cards:
       - type: entities
         entities:
+          - light.shelly_a
           - sensor.living_room_nest_protect_battery_health
           - sensor.living_room_nest_protect_co_status
           - binary_sensor.living_room_nest_protect_online
@@ -868,6 +869,13 @@ views:
         image: /local/vacuum.png
         name: false
         buttons: true
+
+      - type: entities
+        entities:
+          - light.shelly_b
+          - light.shelly_c
+        title: Lights
+        show_header_toggle: true
 
       - type: entities
         entities:
