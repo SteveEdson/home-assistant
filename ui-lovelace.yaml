@@ -333,135 +333,112 @@ views:
       - type: weather-forecast
         entity: weather.dark_sky
 
-  - icon: mdi:office-building
-    id: homeoffice
-    cards:
-      - type: custom:mini-media-player
-        entity: media_player.home_office_speaker
-        icon: mdi:spotify
-        artwork: cover
-        hide:
-          volume: false
-          source: true
-          power_state: true
-        shortcuts:
-          columns: 4 # Max buttons per row
-          buttons:
-            # Start predefined playlist
-            - icon: mdi:radio
-              type: script
-              id: script.play_radio_in_office
-      - type: light
-        entity: light.office
-      - type: thermostat
-        entity: climate.home_office
-
-  - icon: mdi:floor-plan
-    id: floorplan
-    panel: true
-    cards:
-      - type: horizontal-stack
-        cards:
-          - type: picture-elements
-            id: downstairs_floorplan
-            image: !secret floorplan_downstairs
-            elements:
-              - type: service-button
-                title: Lights On
-                style:
-                  top: 98%
-                  right: 18%
-                service: light.turn_on
-                service_data:
-                  entity_id: group.all_lights
-              - type: service-button
-                title: Lights Off
-                style:
-                  top: 98%
-                  right: 0
-                service: light.turn_off
-                service_data:
-                  entity_id: group.all_lights
-              - type: state-icon
-                entity: light.kitchen_light_1
-                tap_action:
-                  action: toggle
-                style:
-                  top: 28%
-                  left: 34%
-              - type: state-icon
-                entity: light.kitchen_light_2
-                tap_action:
-                  action: toggle
-                style:
-                  top: 28%
-                  left: 39%
-              - type: state-icon
-                entity: light.kitchen_light_3
-                tap_action:
-                  action: toggle
-                style:
-                  top: 28%
-                  left: 44%
-              - type: state-icon
-                entity: light.kitchen_light_4
-                tap_action:
-                  action: toggle
-                style:
-                  top: 28%
-                  left: 49%
-              - type: state-icon
-                entity: binary_sensor.motion_sensor_158d0001643c27
-                style:
-                  top: 15%
-                  left: 36.6%
-              - type: state-icon
-                entity: light.kitchen_table
-                tap_action:
-                  action: toggle
-                style:
-                  top: 28%
-                  left: 73%
-              - type: state-icon
-                entity: light.twigs
-                tap_action:
-                  action: toggle
-                style:
-                  top: 84%
-                  left: 14%
-              - type: state-icon
-                entity: light.corner_lamp
-                tap_action:
-                  action: toggle
-                style:
-                  top: 58%
-                  left: 65%
-              - type: state-icon
-                entity: light.left_lamp
-                tap_action:
-                  action: toggle
-                style:
-                  top: 49%
-                  left: 17%
-              - type: state-icon
-                entity: media_player.samsung_tv_remote
-                style:
-                  top: 89.5%
-                  left: 23%
-              - type: state-icon
-                entity: light.porch
-                tap_action:
-                  action: toggle
-                style:
-                  top: 92%
-                  left: 78%
-              - type: state-icon
-                entity: binary_sensor.door_window_sensor_158d0002253f18
-                style:
-                  top: 96%
-                  left: 78%
-
-          - type: custom:plan-coordinates
+#  - icon: mdi:floor-plan
+#    id: floorplan
+#    panel: true
+#    cards:
+#      - type: horizontal-stack
+#        cards:
+#          - type: picture-elements
+#            id: downstairs_floorplan
+#            image: !secret floorplan_downstairs
+#            elements:
+#              - type: service-button
+#                title: Lights On
+#                style:
+#                  top: 98%
+#                  right: 18%
+#                service: light.turn_on
+#                service_data:
+#                  entity_id: group.all_lights
+#              - type: service-button
+#                title: Lights Off
+#                style:
+#                  top: 98%
+#                  right: 0
+#                service: light.turn_off
+#                service_data:
+#                  entity_id: group.all_lights
+#              - type: state-icon
+#                entity: light.kitchen_light_1
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 28%
+#                  left: 34%
+#              - type: state-icon
+#                entity: light.kitchen_light_2
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 28%
+#                  left: 39%
+#              - type: state-icon
+#                entity: light.kitchen_light_3
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 28%
+#                  left: 44%
+#              - type: state-icon
+#                entity: light.kitchen_light_4
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 28%
+#                  left: 49%
+#              - type: state-icon
+#                entity: binary_sensor.motion_sensor_158d0001643c27
+#                style:
+#                  top: 15%
+#                  left: 36.6%
+#              - type: state-icon
+#                entity: light.kitchen_table
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 28%
+#                  left: 73%
+#              - type: state-icon
+#                entity: light.twigs
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 84%
+#                  left: 14%
+#              - type: state-icon
+#                entity: light.corner_lamp
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 58%
+#                  left: 65%
+#              - type: state-icon
+#                entity: light.left_lamp
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 49%
+#                  left: 17%
+#              - type: state-icon
+#                entity: media_player.samsung_tv_remote
+#                style:
+#                  top: 89.5%
+#                  left: 23%
+#              - type: state-icon
+#                entity: light.porch
+#                tap_action:
+#                  action: toggle
+#                style:
+#                  top: 92%
+#                  left: 78%
+#              - type: state-icon
+#                entity: binary_sensor.door_window_sensor_158d0002253f18
+#                style:
+#                  top: 96%
+#                  left: 78%
+#
+#          - type: custom:plan-coordinates
 
   - icon: mdi:home-assistant
     id: home
@@ -1021,6 +998,29 @@ views:
 #            - icon: mdi:radio
 #              type: script
 #              id: script.play_radio_in_office
+
+  - icon: mdi:office-building
+    path: homeoffice
+    cards:
+      - type: custom:mini-media-player
+        entity: media_player.home_office_speaker
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          volume: false
+          source: true
+          power_state: true
+        shortcuts:
+          columns: 4 # Max buttons per row
+          buttons:
+            # Start predefined playlist
+            - icon: mdi:radio
+              type: script
+              id: script.play_radio_in_office
+      - type: light
+        entity: light.office
+      - type: thermostat
+        entity: climate.home_office
 
   - path: Unused
     title: Unused
