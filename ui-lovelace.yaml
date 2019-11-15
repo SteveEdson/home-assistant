@@ -1013,7 +1013,8 @@ views:
     title: Media
     cards:
       - type: custom:auto-entities
-        card: media-control
+        card:
+          type: media-control
         filter:
           include:
             - domain: media_player
