@@ -4,4 +4,7 @@
 #ssl_certificate: /ssl/fullchain.pem
 #ssl_key: /ssl/privkey.pem
 base_url: !secret base_url
-use_x_forwarded_for: true
+#use_x_forwarded_for: true
+#trusted_proxies:
+#  - 172.18.0.0/24
+#  - 10.0.0.200/24
