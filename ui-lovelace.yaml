@@ -747,9 +747,10 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     title: Hallway
     cards:
+      - type: light
+        entity: light.shelly_a
       - type: entities
         entities:
-          - light.shelly_a
           - sensor.living_room_nest_protect_battery_health
           - sensor.living_room_nest_protect_co_status
           - binary_sensor.living_room_nest_protect_online
