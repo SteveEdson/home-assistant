@@ -38,6 +38,12 @@
     - light.bedroom_spotlights
     - light.bedroom_reading_lights
 
+- platform: group
+  name: Kitchen Lights
+  entities:
+    - light.shelly_b
+    - light.shelly_c
+
 - platform: yeelight
   devices:
     192.168.1.219:
