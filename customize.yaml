@@ -110,5 +110,7 @@ light.yeelight_bslamp1_7c49eb28d971:
   friendly_name: Bedside Light
 sensor.living_room_nest_protect_battery_health:
   icon: mdi:battery
-
+light.shelly_a:
+  icon: mdi:lightbulb-group
+  friendly_name: Hallway
 
