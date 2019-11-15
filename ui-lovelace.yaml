@@ -1011,8 +1011,7 @@ views:
     path: media
     title: Media
     cards:
-      - type: custom:auto-entities
-        card:
+      - card:
           type: media-control
         filter:
           include:
