@@ -5,7 +5,7 @@
     hours: 03
     minutes: 00
     seconds: 00
-  action:
-    service: counter.reset
-    data:
-      entity_id: counter.door_opened
+#  action:
+#    service: counter.reset
+#    data:
+#      entity_id: counter.door_opened
