@@ -2,7 +2,7 @@ title: Edson Home
 resources:
   - url: /local/custom_ui/card-tools.js?v=2
     type: js
-  - url: /local/custom_ui/auto-entities.js?v=2
+  - url: /local/custom_ui/auto-entities.js?v=1.5
     type: js
   - url: /local/custom_ui/bar-card.js?v=2
     type: js
@@ -691,21 +691,6 @@ views:
 #        id: weather_forecast
 #        entity: weather.dark_sky
 
-  - icon: mdi:music-box
-    path: media
-    title: Media
-    cards:
-      - type: media-control
-        entity: media_player.kitchen_display
-      - type: media-control
-        entity: media_player.kitchen_max
-      - type: media-control
-        entity: media_player.lounge
-      - type: media-control
-        entity: media_player.lounge_tv
-      - type: media-control
-        entity: media_player.spotify
-
   - icon: mdi:home-assistant
     path: home
     # Name of the view. Will be used as the tooltip for tab icon
@@ -1021,6 +1006,17 @@ views:
         entity: light.office
       - type: thermostat
         entity: climate.home_office
+
+
+  - icon: mdi:music-box
+    path: media
+    title: Media
+    cards:
+      - type: custom:auto-entities
+        card: media-control
+        filter:
+          include:
+            - domain: media_player
 
   - path: Unused
     title: Unused
