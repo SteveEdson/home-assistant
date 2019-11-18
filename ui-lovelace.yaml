@@ -81,6 +81,9 @@ views:
               left: 70%
       - type: entity-button
         entity: script.find_phone
+        tap_action:
+          action: call-service
+          service: script.find_phone
 
   - icon: mdi:sofa
     title: Lounge
