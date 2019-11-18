@@ -1,12 +1,5 @@
 alias: Send morning notification
 sequence:
-  - service: notify.home_assistant
-    data:
-      title: "Good morning"
-      message: !include ../daily_summary.yaml
-      #data:
-      #  tag: "good-morning"
-
   - service: media_player.volume_set
     data:
       entity_id: media_player.bedroom_speaker
@@ -15,6 +8,6 @@ sequence:
     data:
       entity_id: media_player.kitchen_display
       volume_level: 0.35
-  - service: notify.google_assistant_broadcast
+  - service: notify.home_alerts
     data_template:
       message: !include ../daily_summary.yaml
