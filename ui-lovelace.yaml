@@ -36,6 +36,11 @@ views:
       - type: thermostat
         entity: climate.netatmo_heating
         name: Heating
+      - type: map
+        aspect_ratio: 16:9
+        default_zoom: 8
+        entities:
+          - device_tracker.steveedson_oneplus5t
 
   - icon: mdi:stairs
     path: hallway
