@@ -1,8 +1,7 @@
 version: '3'
 services:
   homeassistant:
-    depends_on: 
-      - mosquitto
+    depends_on:
       - db
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
@@ -17,7 +16,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8123"]
       interval: 1m30s
       timeout: 10s
-      retries: 3        
+      retries: 3
     labels:
       - "traefik.enable=false"
       - "traefik.frontend.rule=Host:$HA_HOSTNAME"
@@ -30,7 +29,7 @@ services:
     network_mode: host
 
   autoheal:
-    depends_on: 
+    depends_on:
       - homeassistant
     restart: always
     image: willfarrell/autoheal
@@ -39,14 +38,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  mosquitto:
-    restart: always
-    ports:
-      - '1883:1883'
-      - '9002:9001'
-    image: toke/mosquitto
-    volumes:
-      - 'mosquitto_data:/mqtt/data'
+#  mosquitto:
+#    restart: always
+#    ports:
+#      - '1883:1883'
+#      - '9002:9001'
+#    image: toke/mosquitto
+#    volumes:
+#      - 'mosquitto_data:/mqtt/data'
 
 #  test:
 #    image: mwendler/wget
