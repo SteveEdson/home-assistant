@@ -711,14 +711,6 @@ views:
     cards:
       - type: light
         entity: light.shelly_a
-      - type: entities
-        entities:
-          - sensor.living_room_nest_protect_battery_health
-          - sensor.living_room_nest_protect_co_status
-          - binary_sensor.living_room_nest_protect_online
-          - sensor.living_room_nest_protect_smoke_status
-          - sensor.living_room_nest_protect_color_status
-        title: Lounge Protect
       - type: picture-elements
         image: /local/nest.jpg
         elements:
@@ -747,6 +739,8 @@ views:
             style:
               top: 50%
               left: 70%
+      - type: entity-button
+        entity: script.find_phone
 
   - icon: mdi:sofa
     title: Lounge
