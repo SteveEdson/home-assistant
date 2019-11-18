@@ -313,3 +313,4 @@ vacuum:
     token: !secret roborock_token
 
 owntracks:
+  max_gps_accuracy: 200
