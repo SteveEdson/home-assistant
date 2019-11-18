@@ -1019,8 +1019,10 @@ views:
   - icon: mdi:music-box
     path: media
     title: Media
+    panel: true
     cards:
       - type: custom:auto-entities
+        min_columns: 3
         filter:
           include:
             - domain: media_player
