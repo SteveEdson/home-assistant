@@ -1,11 +1,5 @@
 alias: Send bin notification
 sequence:
-  - service: notify.home_assistant
-    data:
-      title: "Take out the bin"
-      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow."
-      data:
-        tag: "bin-reminder"
   - service: media_player.volume_set
     data:
       entity_id: media_player.entire_house

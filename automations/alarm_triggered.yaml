@@ -4,7 +4,7 @@
       entity_id: alarm_control_panel.house_alarm
       to: 'triggered'
   action:
-    - service: notify.home_assistant
+    - service: notify.home_alerts
       data_template:
         message: 'The house alarm has been triggered - {{now().strftime("%H:%M on %w %b" )}}'
         data:

@@ -1,6 +1,6 @@
 alias: Ask to watch F1
 sequence:
-  - service: notify.home_assistant
+  - service: notify.home_alerts
     data:
       title: "{{ states.calendar.f1_calendar_2018.attributes.message }} is about to start"
       message: "Watch the race in {{ states.calendar.f1_calendar_2018.attributes.location }}?"

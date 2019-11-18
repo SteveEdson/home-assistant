@@ -1,6 +1,6 @@
 alias: Send Heating Confirmation
 sequence:
-  - service: notify.home_assistant
+  - service: notify.home_alerts
     data:
       title: "Heating has been set to 19.5°c"
       message: The house is currently {{ states.climate.netatmo_heating.attributes.current_temperature }}°c
