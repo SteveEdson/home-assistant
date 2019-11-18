@@ -39,11 +39,6 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
-          - switch.aegis
-        title: Computers
-        show_header_toggle: true
-      - type: entities
-        entities:
           - sensor.living_room_nest_protect_battery_health
           - sensor.living_room_nest_protect_co_status
           - binary_sensor.living_room_nest_protect_online
@@ -84,15 +79,6 @@ views:
         entities:
           - sensor.bin_days
         title: Events
-        show_header_toggle: true
-      - type: entities
-        entities:
-          - sensor.disk_free
-          - sensor.load_5m
-          - sensor.memory_free
-          - sensor.latest_version
-          - sensor.current_version
-        title: Home Assistant
         show_header_toggle: true
       - type: entities
         entities:
@@ -147,22 +133,7 @@ views:
         entity: media_player.bedroom_tv
       - type: media-control
         entity: media_player.bedroom_speaker
-      - type: entities
-        entities:
-          - sensor.speedtest_download
-          - sensor.speedtest_ping
-          - sensor.speedtest_upload
-          - binary_sensor.do_1
-          - sensor.rt_ac68u_bytes_received
-          - sensor.rt_ac68u_bytes_sent
-          - sensor.rt_ac68u_kbyte_sec_received
-          - sensor.rt_ac68u_kbyte_sec_sent
-          - sensor.rt_ac68u_packets_received
-          - sensor.rt_ac68u_packets_sent
-          - sensor.rt_ac68u_packets_sec_received
-          - sensor.rt_ac68u_packets_sec_sent
-        title: Network Stats
-        show_header_toggle: true
+
       - type: entities
         entities:
           - sun.sun
@@ -1034,8 +1005,44 @@ views:
         card:
           type: custom:layout-card
 
+  - path: office
+    title: Office
+    icon: mdi:google-controller
+    cards:
+      - type: entity-button
+        entity: switch.aegis
+
   - path: Unused
     title: Unused
     cards:
       - type: custom:gui-sandbox
       - type: custom:unused-card
+
+  - path: system
+    title: System
+    cards:
+      - type: entities
+        entities:
+          - sensor.speedtest_download
+          - sensor.speedtest_ping
+          - sensor.speedtest_upload
+          - binary_sensor.do_1
+          - sensor.rt_ac68u_bytes_received
+          - sensor.rt_ac68u_bytes_sent
+          - sensor.rt_ac68u_kbyte_sec_received
+          - sensor.rt_ac68u_kbyte_sec_sent
+          - sensor.rt_ac68u_packets_received
+          - sensor.rt_ac68u_packets_sent
+          - sensor.rt_ac68u_packets_sec_received
+          - sensor.rt_ac68u_packets_sec_sent
+        title: Network Stats
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.disk_free
+          - sensor.load_5m
+          - sensor.memory_free
+          - sensor.latest_version
+          - sensor.current_version
+        title: Home Assistant
+        show_header_toggle: true
