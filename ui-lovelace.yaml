@@ -821,6 +821,19 @@ views:
             entity: light.corner_lamp
             toggle: true
 
+  - icon: mdi:toggle-switch
+    title: Active Devices
+    path: active
+    cards:
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: Active Devices
+        filter:
+          include:
+            - state: "on"
+            - domain: /media_player|light/
+
   - icon: mdi:kettle
     title: Kitchen
     path: kitchen
