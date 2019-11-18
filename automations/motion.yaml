@@ -1,10 +1,6 @@
  - alias: Kitchen motion
    trigger:
      - platform: state
-       entity_id: binary_sensor.motion_sensor_158d0002234460
-       from: 'off'
-       to: 'on'
-     - platform: state
        entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
        from: 'off'
        to: 'on'
@@ -71,3 +67,29 @@
      - service: light.turn_off
        data:
          entity_id: light.shelly_c
+
+ - alias: Hallway motion
+   trigger:
+     - platform: state
+       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+       from: 'off'
+       to: 'on'
+   condition:
+     condition : or
+     conditions:
+       - condition: sun # after 20 mins before sunset
+         after: sunset
+         after_offset: "-1:00:00"
+       - condition: sun # before 1 hour after sunrise
+         before: sunrise
+         before_offset: "1:00:00"
+       #- condition: numeric_state
+       #    entity_id: sensor.illumination_7811dcb25e74
+       #    below: 700
+       - condition: state
+         entity_id: input_boolean.guest_mode
+         state: 'on'
+   action:
+     - service: light.turn_on
+       data:
+         entity_id: light.shelly_a
