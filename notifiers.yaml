@@ -1,4 +1,4 @@
-- name: Home Assistant
+- name: Pushover
   platform: pushover
   api_key: !secret pushover_api_key
   user_key: !secret pushover_user_key
@@ -19,12 +19,17 @@
   resource: !secret home_assistant_google_command
   timeout: 30
 
+- name: Telegram 
+  platform: telegram 
+  chat_id: 1064102594
+
 - name: Home Alerts
   platform: group
   services:
     - service: google_assistant_broadcast
-    - service: home_assistant
+    - service: pushover
+    - service: telegram
 
-- platform: nfandroidtv
-  name: Bedroom TV
-  host: 192.168.1.234
+#- platform: nfandroidtv
+#  name: Bedroom TV
+#  host: 192.168.1.234
