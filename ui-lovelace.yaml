@@ -22,6 +22,8 @@ resources:
     type: module
   - url: /local/custom_ui/xiaomi-vacuum-card.js?v=2.3.2
     type: js
+  - url: /local/custom_ui/layout-card.js
+    type: module
 
 views:
   - path: default_view
@@ -1018,14 +1020,17 @@ views:
     path: media
     title: Media
     cards:
-      - type: custom:mini-media-player
-        card:
-          type: media-control
+      - type: custom:auto-entities
         filter:
           include:
             - domain: media_player
               options:
-                type: custom:mini-media-player
+                type: custom:mini-media-player # Make sure to specify a card type for every filter
+        sort:
+          method: name
+          ignore_case: true
+        card:
+          type: custom:layout-card
 
   - path: Unused
     title: Unused
