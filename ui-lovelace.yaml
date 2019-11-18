@@ -116,11 +116,6 @@ views:
           - sensor.upstairs_nest_protect_color_status
         title: Upstairs Protect
         show_header_toggle: false
-      - type: entities
-        entities:
-          - sensor.steam_76561198059721761
-        title: Steam
-        show_header_toggle: false
       - type: media-control
         entity: media_player.office_speakers
       - type: media-control
@@ -1011,6 +1006,11 @@ views:
     cards:
       - type: entity-button
         entity: switch.aegis
+      - type: entities
+        entities:
+          - sensor.steam_76561198059721761
+        title: Steam
+        show_header_toggle: false
 
   - path: Unused
     title: Unused
