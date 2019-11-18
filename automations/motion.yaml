@@ -1,4 +1,4 @@
- - alias: Hallway motion
+ - alias: Kitchen motion
    trigger:
      - platform: state
        entity_id: binary_sensor.motion_sensor_158d0002234460
@@ -56,7 +56,7 @@
 #         brightness_pct: 25
 
 # Turn off kitchen light with no motion for 3 mins
- - alias: Hallway no motion 3 mins
+ - alias: Kitchen no motion 3 mins
    trigger:
      platform: state
      entity_id: binary_sensor.motion_sensor_158d0002234460
