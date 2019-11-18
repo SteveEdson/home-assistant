@@ -64,10 +64,6 @@
      to: 'off'
      for:
        minutes: 5
-   condition:
-     condition: state
-     entity_id: group.bathroom_lights
-     state: 'on'
    action:
      - service: light.turn_off
        data:
