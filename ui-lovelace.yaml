@@ -38,7 +38,7 @@ views:
         name: Heating
       - type: map
         aspect_ratio: 16:9
-        default_zoom: 12
+        default_zoom: 14
         entities:
           - device_tracker.steveedson_oneplus5t
 
