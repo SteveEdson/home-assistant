@@ -113,4 +113,5 @@ sensor.living_room_nest_protect_battery_health:
 light.shelly_a:
   icon: mdi:vanity-light
   friendly_name: Hallway
-
+script.find_phone:
+  icon: mdi:cellphone-wireless
