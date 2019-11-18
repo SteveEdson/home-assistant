@@ -1022,7 +1022,7 @@ views:
     panel: true
     cards:
       - type: custom:auto-entities
-        min_columns: 3
+        max_columns: 3
         filter:
           include:
             - domain: media_player
