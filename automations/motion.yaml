@@ -26,7 +26,10 @@
    action:
      - service: light.turn_on
        data:
-         entity_id: light.shelly_a
+         entity_id: light.shelly_b
+     - service: light.turn_on
+       data:
+         entity_id: light.shelly_c
 
 # # Dim the lights after no motion
 # - alias: Bathroom no motion 2 min
@@ -60,7 +63,7 @@
      from: 'on'
      to: 'off'
      for:
-       minutes: 3
+       minutes: 5
    condition:
      condition: state
      entity_id: group.bathroom_lights
@@ -68,4 +71,7 @@
    action:
      - service: light.turn_off
        data:
-         entity_id: light.shelly_a
+         entity_id: light.shelly_b
+     - service: light.turn_off
+       data:
+         entity_id: light.shelly_c
