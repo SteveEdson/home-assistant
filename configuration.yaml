@@ -89,6 +89,7 @@ mqtt:
   password: !secret mqtt_password
   client_id: home-assistant
   port: 443
+  certificate: /etc/ssl/certs/ca-cert-ISRG_Root_X1.pem
 
 light: !include lights.yaml
 
