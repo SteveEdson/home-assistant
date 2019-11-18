@@ -117,3 +117,5 @@ script.find_phone:
   icon: mdi:cellphone-wireless
 switch.aegis:
   icon: mdi:desktop-tower
+sensor.next_bus_to_town:
+  icon: mdi:bus-clock
