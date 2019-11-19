@@ -114,7 +114,7 @@ views:
               power_state: false
               controls: true
 
-      - type: light
+      - type: entity-button
         entity: switch.32002710bcddc226b4b0
 
       - type: glance
