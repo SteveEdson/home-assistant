@@ -319,3 +319,4 @@ tuya:
   username: !secret phone_number
   password: !secret tuya_pass
   country_code: "44"
+  platform: smart_life
