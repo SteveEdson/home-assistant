@@ -169,7 +169,7 @@ views:
         filter:
           include:
             - state: "on"
-              domain: /media_player|light/
+              domain: /media_player|light|switch/
 
   - icon: mdi:kettle
     title: Kitchen
