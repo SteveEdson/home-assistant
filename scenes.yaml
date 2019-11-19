@@ -143,3 +143,29 @@
 
     light.bedroom_lights:
       state: off
+
+- name: Table Pink and Blue
+  entities:
+    light.table_light_1:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 255
+        - 43
+        - 52
+
+    light.table_light_2:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 241
+        - 80
+        - 255
+
+    light.table_light_3:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 63
+        - 79
+        - 255
