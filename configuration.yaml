@@ -314,3 +314,8 @@ vacuum:
 
 owntracks:
   max_gps_accuracy: 200
+
+tuya:
+  username: !secret phone_number
+  password: !secret tuya_pass
+  country_code: "44"
