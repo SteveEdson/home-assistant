@@ -151,15 +151,15 @@ views:
 
       - type: entities
         entities:
-          - type: custom:slider-entity-row
-            entity: light.left_lamp
-            toggle: true
+#          - type: custom:slider-entity-row
+#            entity: light.left_lamp
+#            toggle: true
           - type: custom:slider-entity-row
             entity: light.twigs
             toggle: true
-          - type: custom:slider-entity-row
-            entity: light.corner_lamp
-            toggle: true
+#          - type: custom:slider-entity-row
+#            entity: light.corner_lamp
+#            toggle: true
 
   - icon: mdi:toggle-switch
     title: Active Devices
@@ -192,6 +192,24 @@ views:
           - light.shelly_c
         title: Lights
         show_header_toggle: true
+
+      - type: entities
+        entities:
+          - light.table_light_1
+          - light.table_light_2
+          - light.table_light_3
+        title: Table Lights
+        show_header_toggle: true
+
+      - type: glance
+        show_state: false
+        entities:
+        - entity: scene.ocean
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.ocean
 
       - type: entities
         entities:
@@ -355,8 +373,6 @@ views:
             - icon: mdi:radio
               type: script
               id: script.play_radio_in_office
-      - type: light
-        entity: light.office
       - type: thermostat
         entity: climate.home_office
 

@@ -29,19 +29,6 @@
 #    data:
 #      entity_id: climate.home_office
 #      preset_mode: "away"
-
-- id: turn_office_light_off
-  alias: 'Turn office light off'
-  trigger:
-    platform: time_pattern
-    hours: 17
-    minutes: 30
-    seconds: 0
-  action:
-    service: light.turn_off
-    data:
-      entity_id: light.office
-
 #- id: office_door_opened
 #  alias: 'Office door opened'
 #  trigger:

@@ -1,10 +1,10 @@
 - name: Lounge Lights Off
   entities:
-    light.corner_lamp:
-      state: off
+#    light.corner_lamp:
+#      state: off
 
-    light.left_lamp:
-      state: off
+#    light.left_lamp:
+#      state: off
 
     light.twigs:
       state: off
@@ -14,21 +14,21 @@
 
 - name: Deep Blue
   entities:
-    light.corner_lamp:
-      state: on
-      rgb_color:
-        - 255
-        - 97
-        - 45
-      brightness_pct: 100
+#    light.corner_lamp:
+#      state: on
+#      rgb_color:
+#        - 255
+#        - 97
+#        - 45
+#      brightness_pct: 100
 
-    light.left_lamp:
-      state: on
-      rgb_color:
-        - 103
-        - 55
-        - 255
-      brightness_pct: 100
+#    light.left_lamp:
+#      state: on
+#      rgb_color:
+#        - 103
+#        - 55
+#        - 255
+#      brightness_pct: 100
 
     light.twigs:
       state: on
@@ -39,21 +39,21 @@
 
 - name: Ocean
   entities:
-    light.corner_lamp:
-      state: on
-      rgb_color:
-        - 188
-        - 83
-        - 255
-      brightness_pct: 100
+#    light.corner_lamp:
+#      state: on
+#      rgb_color:
+#        - 188
+#        - 83
+#        - 255
+#      brightness_pct: 100
 
-    light.left_lamp:
-      state: on
-      rgb_color:
-        - 77
-        - 247
-        - 255
-      brightness_pct: 100
+#    light.left_lamp:
+#      state: on
+#      rgb_color:
+#        - 77
+#        - 247
+#        - 255
+#      brightness_pct: 100
 
     light.twigs:
       state: on
@@ -64,15 +64,15 @@
 
 - name: Bright
   entities:
-    light.corner_lamp:
-      state: on
-      color_temp: 350
-      brightness_pct: 100
+#    light.corner_lamp:
+#      state: on
+#      color_temp: 350
+#      brightness_pct: 100
 
-    light.left_lamp:
-      state: on
-      color_temp: 350
-      brightness_pct: 100
+#    light.left_lamp:
+#      state: on
+#      color_temp: 350
+#      brightness_pct: 100
 
     light.twigs:
       state: on

@@ -63,7 +63,6 @@ office:
   icon: mdi:desktop-tower
   name: Office
   entities:
-    - light.office
     - switch.aegis
     - media_player.office_speakers
     - group.network_stats
@@ -101,9 +100,7 @@ Lounge Protect:
   - sensor.living_room_nest_protect_color_status
 
 Lounge Lights:
-  - light.left_lamp
   - light.twigs
-  - light.corner_lamp
 
 Hallway:
   - binary_sensor.door_window_sensor_158d0002253f18
@@ -113,9 +110,6 @@ Hallway:
   - sensor.landing_sensor_light_level
   - sensor.landing_sensor_temperature
   - binary_sensor.landing_sensor_motion
-
-Office Lights:
-  - light.office
 
 Bedroom Lights:
   - light.bedroom_lights
