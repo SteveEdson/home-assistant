@@ -119,3 +119,6 @@ switch.aegis:
   icon: mdi:desktop-tower
 sensor.next_bus_to_town:
   icon: mdi:bus-clock
+switch.32002710bcddc226b4b0:
+  icon: mdi:toy-brick
+  friendly_name: Mini Light
