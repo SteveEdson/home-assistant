@@ -169,3 +169,29 @@
         - 63
         - 79
         - 255
+
+- name: Table Bright
+  entities:
+    light.table_light_1:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 255
+        - 255
+        - 255
+
+    light.table_light_2:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 255
+        - 255
+        - 255
+
+    light.table_light_3:
+      brightness_pct: 100
+      state: on
+      rgb_color:
+        - 255
+        - 255
+        - 255
