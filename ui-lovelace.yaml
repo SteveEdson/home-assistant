@@ -495,6 +495,31 @@ views:
             - entity_id: "*_humidity"
             - entity_id: "*_pressure"
             - entity_id: "*_battery"
+              -
+      - type: custom:auto-entities
+        show_empty: false
+        card:
+          type: custom:bar-card
+          attribute: battery_level
+          unit_of_measurement: "%"
+          severity:
+            - value: 50
+              color: '#bf4040'
+            - value: 75
+              color: '#bf9540'
+            - value: 100
+              color: '#40bf40'
+          title_position: inside
+          padding: 2px
+          columns: 2
+        filter:
+          include:
+            - attributes:
+                battery_level: "<=100"
+          exclude:
+            - entity_id: "*_humidity"
+            - entity_id: "*_pressure"
+            - entity_id: "*_battery"
 
   - path: printing
     title: Printing
