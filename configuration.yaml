@@ -320,3 +320,7 @@ tuya:
   password: !secret tuya_pass
   country_code: "44"
   platform: smart_life
+
+octoprint:
+  host: octopi
+  api_key: !secret octoprint_api
