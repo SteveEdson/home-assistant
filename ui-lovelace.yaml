@@ -1,4 +1,4 @@
-title: Edson Home
+gptitle: Edson Home
 resources:
   - url: /local/custom_ui/card-tools.js?v=2
     type: js
@@ -495,7 +495,7 @@ views:
             - entity_id: "*_humidity"
             - entity_id: "*_pressure"
             - entity_id: "*_battery"
-              -
+
       - type: custom:auto-entities
         show_empty: false
         card:
