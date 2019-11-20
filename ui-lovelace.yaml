@@ -449,6 +449,7 @@ views:
         title: Home Assistant
         show_header_toggle: true
       - type: custom:auto-entities
+        unique: true
         show_empty: false
         card:
           type: custom:bar-card
@@ -473,6 +474,7 @@ views:
 
       - type: custom:auto-entities
         show_empty: false
+        unique: true
         card:
           type: custom:bar-card
           attribute: battery
@@ -497,6 +499,7 @@ views:
             - entity_id: "*_battery"
 
       - type: custom:auto-entities
+        unique: true
         show_empty: false
         card:
           type: custom:bar-card
