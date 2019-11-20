@@ -24,6 +24,8 @@ resources:
     type: js
   - url: /local/custom_ui/layout-card.js
     type: module
+  - url: /local/custom_ui/bignumber-card.js
+    type: module
 
 views:
   - icon: mdi:home-assistant
@@ -449,6 +451,7 @@ views:
 
   - path: printing
     title: Printing
+    icon: mdi:printer-3d-nozzle
     cards:
       - type: picture-entity
         entity: camera.printcam
@@ -460,19 +463,19 @@ views:
         cards:
           - type: gauge
             title: Bed Temp
-            entity: sensor.bed
+            entity: sensor.octoprint_actual_bed_temp
             unit_of_measurement: °C
             min: 0
-            max: 150
+            max: 80
             severity:
-              red: 120
+              red: 70
               amber: 0
               green: 60
             #scale: '50px'
 
           - type: gauge
             title: Hot End Temp
-            entity: sensor.hotend
+            entity: sensor.octoprint_actual_tool0_temp
             unit_of_measurement: °C
             min: 0
             max: 260
@@ -486,7 +489,7 @@ views:
         cards:
           - type: gauge
             title: Bed Target
-            entity: sensor.bed_target
+            entity: sensor.octoprint_target_bed_temp
             unit_of_measurement: °C
             min: 0
             max: 150
@@ -498,7 +501,7 @@ views:
 
           - type: gauge
             title: Hot End Target
-            entity: sensor.hotend_target
+            entity: sensor.octoprint_target_tool0_temp
             unit_of_measurement: °C
             min: 0
             max: 260
