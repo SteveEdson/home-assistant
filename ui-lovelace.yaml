@@ -448,6 +448,51 @@ views:
           - sensor.current_version
         title: Home Assistant
         show_header_toggle: true
+      - type: custom:auto-entities
+        card:
+          type: custom:bar-card
+          severity:
+            - value: 50
+              color: '#bf4040'
+            - value: 75
+              color: '#bf9540'
+            - value: 100
+              color: '#40bf40'
+          title_position: inside
+          columns: 3
+          padding: 2px
+          align: left
+          title_style:
+            font-size: 16px
+          value_style:
+            font-size: 8px
+        filter:
+          include:
+            - entity_id: "*_battery"
+
+      - type: custom:auto-entities
+        card:
+          type: custom:bar-card
+          attribute: battery
+          unit_of_measurement: "%"
+          severity:
+            - value: 50
+              color: '#bf4040'
+            - value: 75
+              color: '#bf9540'
+            - value: 100
+              color: '#40bf40'
+          title_position: inside
+          padding: 2px
+          columns: 2
+        filter:
+          include:
+            - attributes:
+                battery: "<=100"
+          exclude:
+            - entity_id: "*_humidity"
+            - entity_id: "*_pressure"
+            - entity_id: "*_battery"
 
   - path: printing
     title: Printing
