@@ -537,10 +537,12 @@ views:
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
+            hours_to_show: 2
             entities:
               - sensor.octoprint_actual_bed_temp
               - sensor.octoprint_target_bed_temp
           - type: custom:mini-graph-card
+            hours_to_show: 2
             entities:
               - sensor.octoprint_actual_tool0_temp
               - sensor.octoprint_target_tool0_temp
