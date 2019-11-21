@@ -26,6 +26,8 @@ resources:
     type: module
   - url: /local/custom_ui/bignumber-card.js
     type: module
+  - url: /local/custom_ui/simple-thermostat.js?v=0.31
+    type: module
 
 views:
   - icon: mdi:home-assistant
@@ -36,6 +38,9 @@ views:
       - type: alarm-panel
         entity: alarm_control_panel.house_alarm
       - type: thermostat
+        entity: climate.netatmo_heating
+        name: Heating
+      - type: custom:simple-thermostat
         entity: climate.netatmo_heating
         name: Heating
       - type: map
