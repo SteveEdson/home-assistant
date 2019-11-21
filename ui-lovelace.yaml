@@ -540,7 +540,8 @@ views:
             hours_to_show: 2
             entities:
               - sensor.octoprint_actual_bed_temp
-              - sensor.octoprint_target_bed_temp
+              - entity: sensor.octoprint_target_bed_temp
+                fixed_value: true
           - type: custom:mini-graph-card
             hours_to_show: 2
             entities:
