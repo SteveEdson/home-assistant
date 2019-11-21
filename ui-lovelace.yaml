@@ -388,6 +388,9 @@ views:
               id: script.play_radio_in_office
       - type: thermostat
         entity: climate.home_office
+      - type: custom:simple-thermostat
+        entity: climate.home_office
+        name: Heating
 
   - icon: mdi:music-box
     path: media
