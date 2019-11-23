@@ -45,8 +45,8 @@
   trigger:
     platform: state
     entity_id: group.all_devices
-    to: 'not_home'
     from: 'home'
+    to: 'not_home'
     for:
       minutes: 10
   action:
@@ -60,8 +60,8 @@
   trigger:
     platform: state
     entity_id: group.all_devices
-    to: 'home'
     from: 'not_home'
+    to: 'home'
   action:
     service: alarm_control_panel.alarm_disarm
     data:
