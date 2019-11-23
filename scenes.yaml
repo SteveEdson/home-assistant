@@ -144,6 +144,25 @@
     light.bedroom_lights:
       state: off
 
+- name: Bedroom Sophie Reading
+  id: bedroom_sophie_reading
+  entities:
+    light.bedroom_light_lb:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_light_rt:
+      state: off
+
+    light.bedroom_light_lt:
+      state: off
+
+    light.bedroom_light_rb:
+      state: off
+
+    light.bedroom_lights:
+      state: off
+
 - name: Bedroom Reading
   id: bedroom_reading
   entities:

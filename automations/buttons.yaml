@@ -1,0 +1,33 @@
+- alias: Sophie Button Single
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00035a259e
+      click_type: single
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.bedroom_lights
+
+- alias: Sophie Button Double
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00035a259e
+      click_type: double
+  action:
+    service: script.good_night
+
+- alias: Sophie Button Hold
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00035a259e
+      click_type: long_click_press
+  action:
+    service: scene.turn_on
+    data:
+      entity_id: scene.bedroom_sophie_reading
