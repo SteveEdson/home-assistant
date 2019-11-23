@@ -21,7 +21,8 @@
       state: armed_away
   action:
     service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.house_alarm
+    data:
+      entity_id: alarm_control_panel.house_alarm
 
 - alias: 'Trigger alarm while armed home'
   trigger:
@@ -37,7 +38,8 @@
       state: armed_home
   action:
     service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.house_alarm
+    data:
+      entity_id: alarm_control_panel.house_alarm
 
 #arm the alarm after leaving
 - id: alarm_on_depart
