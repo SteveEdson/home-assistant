@@ -9,7 +9,7 @@
   action:
     service: scene.turn_on
     data:
-      scene.bedroom_all_lights
+      entity_id: scene.bedroom_all_lights
 
 - alias: Sophie Button Double
   trigger:
