@@ -1,10 +1,56 @@
- - alias: Kitchen motion
-   trigger:
-     - platform: state
-       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
-       from: 'off'
-       to: 'on'
-   condition:
+- alias: Kitchen motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0002234460
+      from: 'off'
+      to: 'on'
+  condition:
+  condition : or
+  conditions:
+    - condition: sun # after 20 mins before sunset
+      after: sunset
+      after_offset: "-1:00:00"
+    - condition: sun # before 1 hour after sunrise
+      before: sunrise
+      before_offset: "1:00:00"
+    #- condition: numeric_state
+  #    entity_id: sensor.illumination_7811dcb25e74
+  #    below: 700
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.shelly_b
+    - service: light.turn_on
+      data:
+        entity_id: light.shelly_c
+
+# Turn off kitchen light with no motion for 3 mins
+- alias: Kitchen no motion 5 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002234460
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.shelly_b
+    - service: light.turn_off
+      data:
+        entity_id: light.shelly_c
+
+- alias: Hallway motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+      from: 'off'
+      to: 'on'
+  condition:
     condition : or
     conditions:
       - condition: sun # after 20 mins before sunset
@@ -14,82 +60,12 @@
         before: sunrise
         before_offset: "1:00:00"
       #- condition: numeric_state
-    #    entity_id: sensor.illumination_7811dcb25e74
-    #    below: 700
+      #    entity_id: sensor.illumination_7811dcb25e74
+      #    below: 700
       - condition: state
         entity_id: input_boolean.guest_mode
         state: 'on'
-   action:
-     - service: light.turn_on
-       data:
-         entity_id: light.shelly_b
-     - service: light.turn_on
-       data:
-         entity_id: light.shelly_c
-
-# # Dim the lights after no motion
-# - alias: Bathroom no motion 2 min
-#   trigger:
-#     platform: state
-#     entity_id: binary_sensor.motion_sensor_158d0002234460
-#     from: 'on'
-#     to: 'off'
-#     for:
-#       minutes: 2
-#   condition:
-#     condition: and
-#     conditions:
-#       - condition: state
-#         entity_id: group.bathroom_lights
-#         state: 'on'
-#       - condition: state # Only dim lights when guest mode is disabled
-#         entity_id: input_boolean.guest_mode
-#         state: 'off'
-#   action:
-#     - service: light.turn_on
-#       data:
-#         entity_id: group.bathroom_lights
-#         brightness_pct: 25
-
-# Turn off kitchen light with no motion for 3 mins
- - alias: Kitchen no motion 3 mins
-   trigger:
-     platform: state
-     entity_id: binary_sensor.motion_sensor_158d0002234460
-     from: 'on'
-     to: 'off'
-     for:
-       minutes: 5
-   action:
-     - service: light.turn_off
-       data:
-         entity_id: light.shelly_b
-     - service: light.turn_off
-       data:
-         entity_id: light.shelly_c
-
- - alias: Hallway motion
-   trigger:
-     - platform: state
-       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
-       from: 'off'
-       to: 'on'
-   condition:
-     condition : or
-     conditions:
-       - condition: sun # after 20 mins before sunset
-         after: sunset
-         after_offset: "-1:00:00"
-       - condition: sun # before 1 hour after sunrise
-         before: sunrise
-         before_offset: "1:00:00"
-       #- condition: numeric_state
-       #    entity_id: sensor.illumination_7811dcb25e74
-       #    below: 700
-       - condition: state
-         entity_id: input_boolean.guest_mode
-         state: 'on'
-   action:
-     - service: light.turn_on
-       data:
-         entity_id: light.shelly_a
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.shelly_a
