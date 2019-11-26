@@ -12,3 +12,5 @@
   name: OctoPrint 
   still_image_url: !secret octo_cam_still 
   mjpeg_url: !secret octo_cam_stream
+  username: !secret router_username
+  password: !secret router_password
