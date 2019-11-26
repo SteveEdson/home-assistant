@@ -6,3 +6,9 @@
   still_image_url: http://192.168.1.96/snap.jpeg
   stream_source: rtsp://192.168.1.60:7447/5dc03ee469841dcafac57050_0
   name: G3 Flex
+
+
+- platform: mjpeg 
+  name: OctoPrint 
+  still_image_url: !secret octo_cam_still 
+  mjpeg_url: !secret octo_cam_stream
