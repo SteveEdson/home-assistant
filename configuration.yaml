@@ -16,6 +16,15 @@ frontend: !include frontend.yaml
 input_select: !include_dir_named inputs
 # input_slider: !include inputs/input_slider.yaml
 
+input_number:
+  servo_control:
+    name: Servo Control
+    initial: 0
+    min: -100
+    max: 100
+    step: 1
+    mode: slider
+
 input_boolean:
   guest_mode:
     name: Guest mode
