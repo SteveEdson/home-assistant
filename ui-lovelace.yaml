@@ -537,10 +537,12 @@ views:
     icon: mdi:printer-3d-nozzle
     cards:
       - type: picture-entity
-        entity: camera.printcam
+        entity: camera.octoprint
         name: printcam
         show_state: false
-        tap_action: more-info
+        camera_view: live
+        tap_action:
+          action: more-info
 
       - type: horizontal-stack
         cards:
