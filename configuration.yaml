@@ -93,6 +93,8 @@ image_processing:
       top: 0.06
     labels:
       - car
+      - cat
+      - dog
       - truck
       - person
     source:
