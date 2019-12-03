@@ -107,17 +107,42 @@
 - name: Bedroom Main Lights
   id: bedroom_main_lights
   entities:
-    group.bedroom_lights:
+    light.bedroom_light_lb:
+      state: off
+
+    light.bedroom_light_rt:
+      state: off
+
+    light.bedroom_light_lt:
+      state: off
+
+    light.bedroom_light_rb:
+      state: off
+
+    light.bedroom_lights:
       state: on
       brightness_pct: 100
-
-    light.yeelight_bslamp1_7c49eb28d971:
-      state: off
 
 - name: Bedroom All Lights
   id: bedroom_all_lights
   entities:
-    group.bedroom_lights:
+    light.bedroom_light_lb:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_light_rt:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_light_lt:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_light_rb:
+      state: on
+      brightness_pct: 100
+
+    light.bedroom_lights:
       state: on
       brightness_pct: 100
 
