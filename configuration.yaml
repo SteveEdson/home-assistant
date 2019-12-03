@@ -89,8 +89,8 @@ image_processing:
       - "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
     confidence: 50
     area:
-      # Exclude top 10% of image
-      top: 0.05
+      # Exclude top 6% of image
+      top: 0.06
     labels:
       - car
       - truck
@@ -221,6 +221,9 @@ google_assistant:
 #        due_date_days: 0
 #      - name: 'Due This Week'
 #        due_date_days: 7
+
+shell_commands:
+  generate_gif: 'convert -delay 100 -loop 0 /config/www/g3_flex_2*.jpg /config/www/g3_flex.gif'
 
 weather:
  - platform: darksky
