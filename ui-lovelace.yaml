@@ -37,6 +37,12 @@ views:
     cards:
       - type: alarm-panel
         entity: alarm_control_panel.house_alarm
+      - type: picture-glance
+        title: Camera
+        entities:
+          - person.steve_edson
+        camera_image: camera.g3_flex
+        camera_view: live
       - type: thermostat
         entity: climate.netatmo_heating
         name: Heating
@@ -295,9 +301,11 @@ views:
           - sensor.next_bus_to_town
       - type: picture-glance
         title: Camera
+
         entities:
           - person.steve_edson
         camera_image: camera.g3_flex
+        camera_view: live
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: "at home"
