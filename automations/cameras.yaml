@@ -6,7 +6,7 @@
         - binary_sensor.ffmpeg_motion
   action:
     - service: image_processing.scan
-      entity_id: camera.g3_flex
+      entity_id: image_processing.doods_g3_flex
 
 # When something is detected on the camera, send an alert
 - alias: Detected Camera
