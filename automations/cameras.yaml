@@ -20,7 +20,9 @@
       data_template:
         file: /config/www/g3_flex_latest.jpg
         caption: >-
-          {%- for match in states.image_processing.doods_g3_flex.attributes.matches %}
-          {{ match }} ({{ states.image_processing.doods_g3_flex.attributes.matches[match][0].score | round }}%)
+          {%- for entity in states.image_processing.doods_g3_flex.attributes.matches %}
+            {%- for match in states.image_processing.doods_g3_flex.attributes.matches[entity] %}
+              {{ entity }} ({{ match.score | round }}%)
+            {% endfor -%}
           {% endfor -%}
 
