@@ -106,11 +106,6 @@ image_processing:
       - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
     model:
       graph: /config/tensorflow/frozen_inference_graph.pb
-      categories:
-        - dog
-        - cat
-        - car
-        - person
 
 # Text to speech
 tts:
