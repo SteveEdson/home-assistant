@@ -51,6 +51,10 @@
     - service: notify.telegram
       data:
         message: "Front door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+    - service: camera.play_stream
+      data:
+        entity_id: camera.g3_flex
+        media_player: media_player.kitchen_display
 
 - id: kitchen_door_opened_alert
   alias: 'Kitchen doors opened alert'
