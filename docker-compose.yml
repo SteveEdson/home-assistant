@@ -3,6 +3,7 @@ services:
   homeassistant:
     depends_on:
       - db
+      - doods
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
     ports:
@@ -27,6 +28,13 @@ services:
           max-size: "100k"
           max-file: "20"
     network_mode: host
+
+  doods:
+    ports:
+        - '8088:8080'
+    image: 'snowzach/doods:latest'
+    network_mode: host
+    restart: always
 
   autoheal:
     depends_on:

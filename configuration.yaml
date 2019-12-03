@@ -77,6 +77,13 @@ sensor: !include_dir_merge_list sensors/
 
 camera: !include cameras.yaml
 
+image_processing:
+  - platform: doods
+    url: "http://192.168.1.60:8088"
+    detector: default
+    source:
+      - entity_id: camera.g3_flex
+
 # Text to speech
 tts:
   - platform: google_translate
