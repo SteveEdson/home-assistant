@@ -222,7 +222,7 @@ google_assistant:
 #      - name: 'Due This Week'
 #        due_date_days: 7
 
-shell_commands:
+shell_command:
   generate_gif: 'convert -delay 100 -loop 0 /config/www/g3_flex_2*.jpg /config/www/g3_flex.gif'
 
 weather:
