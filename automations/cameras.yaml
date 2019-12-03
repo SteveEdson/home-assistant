@@ -1,0 +1,8 @@
+- alias: Doods scanning
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.ffmpeg_motion
+  action:
+    - service: image_processing.scan
+      entity_id: camera.g3_flex
