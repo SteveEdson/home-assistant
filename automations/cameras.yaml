@@ -1,3 +1,4 @@
+# When motion is detected, trigger an image scan
 - alias: Doods scanning
   trigger:
     - platform: state
@@ -6,7 +7,20 @@
   action:
     - service: image_processing.scan
       entity_id: camera.g3_flex
+
+# When something is detected on the camera, send an alert
+- alias: Detected Camera
+  trigger:
+    platform: numeric_state
+    entity_id: image_processing.doods_g3_flex
+    # Optional
+    value_template: "{{ state.attributes.total_matches }}"
+  action:
     - service: telegram_bot.send_photo
-      data:
+      data_template:
         file: /config/www/g3_flex_latest.jpg
-        caption: "Front door"
+        caption: >-
+          {%- for match in states.image_processing.doods_g3_flex.attributes.matches %}
+          {{ match }} ({{ states.image_processing.doods_g3_flex.attributes.matches[match][0].score | round }}%)
+          {% endfor -%}
+
