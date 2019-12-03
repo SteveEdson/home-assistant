@@ -127,11 +127,15 @@ views:
               power_state: false
               controls: true
 
-      - type: entity-button
-        entity: switch.32002710bcddc226b4b0
-
-      - type: entity-button
-        entity: switch.bff5c4bbd438ed9847uxkj
+      - type: glance
+        entities:
+          - entity: switch.32002710bcddc226b4b0
+            tap_action:
+              action: toggle
+          - entity: switch.bff5c4bbd438ed9847uxkj
+            tap_action:
+              action: toggle
+        show_state: false
 
       - type: glance
         show_state: false
