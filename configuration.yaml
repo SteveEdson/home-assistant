@@ -99,15 +99,15 @@ image_processing:
       - person
     source:
       - entity_id: camera.g3_flex
-  - platform: tensorflow
-    scan_interval: 604800
-    source:
-      - entity_id: camera.g3_flex
-    file_out:
-      - "/config/www/{{ camera_entity.split('.')[1] }}_tf_latest.jpg"
-      - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
-    model:
-      graph: /config/tensorflow/frozen_inference_graph.pb
+  # - platform: tensorflow
+  #   scan_interval: 604800
+  #   source:
+  #     - entity_id: camera.g3_flex
+  #   file_out:
+  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_latest.jpg"
+  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
+  #   model:
+  #     graph: /config/tensorflow/frozen_inference_graph.pb
 
 # Text to speech
 tts:
