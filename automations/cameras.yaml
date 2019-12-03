@@ -6,3 +6,7 @@
   action:
     - service: image_processing.scan
       entity_id: camera.g3_flex
+    - service: telegram_bot.send_photo
+      data:
+        file: /config/www/g3_flex_latest.jpg
+        caption: "Front door"
