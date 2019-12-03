@@ -27,3 +27,4 @@ google_calendars.yaml
 .ps4-games.json
 package-lock.json
 tts/
+.DS_Store
