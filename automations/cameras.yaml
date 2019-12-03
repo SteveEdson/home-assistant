@@ -11,10 +11,8 @@
 # When something is detected on the camera, send an alert
 - alias: Detected Camera
   trigger:
-    platform: numeric_state
-    entity_id: image_processing.doods_g3_flex
-    # Optional
-    value_template: "{{ state.attributes.total_matches }}"
+    platform: template
+    value_template: "{{ states.image_processing.doods_g3_flex.attributes.total_matches }}"
   action:
     - service: telegram_bot.send_photo
       data_template:
