@@ -122,3 +122,6 @@ sensor.next_bus_to_town:
 switch.32002710bcddc226b4b0:
   icon: mdi:car-side
   friendly_name: Mini Light
+switch.bff5c4bbd438ed9847uxkj:
+  icon: mdi:pine-tree
+  friendly_name: Christmas Tree
