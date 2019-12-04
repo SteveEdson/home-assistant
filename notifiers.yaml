@@ -19,9 +19,9 @@
   resource: !secret home_assistant_google_command
   timeout: 30
 
-- name: Telegram 
-  platform: telegram 
-  chat_id: 1064102594
+- name: Telegram
+  platform: telegram
+  chat_id: 361979403
 
 - name: Home Alerts
   platform: group
