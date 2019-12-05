@@ -1,13 +1,18 @@
 - alias: Lights off at night
-  action:
-  - data:
-      entity_id: group.all_lights
-    service: light.turn_off
-  # - data:
-  #     entity_id: switch.my_smart_plug
-  #   service: switch.turn_off
-  condition: []
   id: '1509874606449'
   trigger:
     platform: time
     at: '00:30:00'
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: group.all_lights
+  - service: switch.turn_off
+    data:
+      entity_id: switch.bf0b57d12c6b4b8272vkpj
+  - service: switch.turn_off
+    data:
+      entity_id: switch.32002710bcddc226b4b0
+  - service: switch.turn_off
+    data:
+      entity_id: switch.bff5c4bbd438ed9847uxkj
