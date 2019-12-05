@@ -101,8 +101,6 @@ Lounge Protect:
 
 Lounge Lights:
   - light.twigs
-  - switch.32002710bcddc226b4b0
-  - switch.bff5c4bbd438ed9847uxkj
 
 Hallway:
   - binary_sensor.door_window_sensor_158d0002253f18
