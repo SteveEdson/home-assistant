@@ -98,7 +98,7 @@ image_processing:
       - truck
       - person
     source:
-      - entity_id: camera.g3_flex
+      - entity_id: camera.g3_flex_low_res
   # - platform: tensorflow
   #   scan_interval: 604800
   #   source:

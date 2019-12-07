@@ -57,7 +57,7 @@
         media_player: media_player.kitchen_display
     - service: camera.record
       data:
-        entity_id: camera.g3_flex
+        entity_id: camera.g3_flex_low_res
         filename: /config/www/camera-latest.mp4
         lookback: 5
         duration: 5
