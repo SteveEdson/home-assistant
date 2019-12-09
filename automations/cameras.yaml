@@ -12,7 +12,7 @@
 - alias: Detected Camera
   trigger:
     platform: template
-    value_template: "{{ states.image_processing.doods_g3_flex.attributes.total_matches }}"
+    value_template: "{% if states.image_processing.doods_g3_flex %}{{ states.image_processing.doods_g3_flex }}{% else %}0{% endif %}"
   action:
     - service: telegram_bot.send_photo
       data_template:
