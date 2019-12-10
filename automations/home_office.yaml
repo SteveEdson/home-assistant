@@ -54,13 +54,4 @@
 #        entity_id: climate.home_office
 #        hvac_mode: heat
 
-- id: office_door_opened_alert
-  alias: 'Office door opened alert'
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0003589af9
-      to: 'on'
-  action:
-    - service: notify.home_alerts
-      data:
-        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+

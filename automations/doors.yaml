@@ -68,6 +68,29 @@
         file: /config/www/camera-latest.mp4
         caption: Front door
 
+- id: office_door_opened_alert
+  alias: 'Office door opened alert'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0003589af9
+      to: 'on'
+  action:
+    - service: notify.home_alerts
+      data:
+        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+    - service: camera.record
+      data:
+        entity_id: camera.g3_flex_low_res
+        filename: /config/www/camera-latest.mp4
+        lookback: 5
+        duration: 5
+    - delay:
+        seconds: 15
+    - service: telegram_bot.send_video
+      data:
+        file: /config/www/camera-latest.mp4
+        caption: Front door
+
 - id: kitchen_door_opened_alert
   alias: 'Kitchen doors opened alert'
   trigger:
