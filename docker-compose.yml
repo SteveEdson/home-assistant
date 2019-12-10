@@ -7,7 +7,6 @@ services:
     container_name: home-assistant
     build:
       context: .
-      image: homeassistant
     ports:
       - 8123:8123
     volumes:
