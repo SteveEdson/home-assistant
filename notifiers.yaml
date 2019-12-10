@@ -21,7 +21,7 @@
 
 - name: Telegram
   platform: telegram
-  chat_id: 1064102594
+  chat_id: "-361979403"
 
 - name: Home Alerts
   platform: group
