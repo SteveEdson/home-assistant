@@ -5,8 +5,7 @@ services:
       - db
       - doods
     container_name: home-assistant
-    build:
-      context: .
+    image: homeassistant/home-assistant:latest
     ports:
       - 8123:8123
     volumes:
