@@ -1,0 +1,21 @@
+alias: Door Bell Triggered
+sequence:
+  - service: notify.telegram
+    data:
+      message: "Door bell pressed at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+  - service: camera.play_stream
+    data:
+      entity_id: camera.g3_flex
+      media_player: media_player.kitchen_display
+  - service: camera.record
+    data:
+      entity_id: camera.g3_flex_low_res
+      filename: /config/www/camera-latest.mp4
+      lookback: 7
+      duration: 3
+  - delay:
+      seconds: 15
+  - service: telegram_bot.send_video
+    data:
+      file: /config/www/camera-latest.mp4
+      caption: Door bell pressed
