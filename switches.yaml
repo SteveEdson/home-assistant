@@ -1,5 +1,5 @@
 - platform: wake_on_lan
-  mac_address: !secret pc_mac
+  mac: !secret pc_mac
   name: Aegis
   host: 192.168.1.125
 
