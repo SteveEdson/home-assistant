@@ -3,7 +3,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.telegram
+    - service: telegram.send_message
       data:
         message: 'Home assistant has started'
     - event: tileboard

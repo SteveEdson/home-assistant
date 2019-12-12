@@ -1,8 +1,6 @@
 alias: Send Heating Confirmation
 sequence:
-  - service: notify.home_alerts
+  - service: telegram.send_message
     data:
       title: "Heating has been set to 19.5°c"
       message: The house is currently {{ states.climate.netatmo_heating.attributes.current_temperature }}°c
-      data:
-        tag: "coming-home-notification"

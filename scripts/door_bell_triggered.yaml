@@ -1,6 +1,6 @@
 alias: Door Bell Triggered
 sequence:
-  - service: notify.telegram
+  - service: telegram.send_message
     data:
       message: "Door bell pressed at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
   - service: camera.play_stream
