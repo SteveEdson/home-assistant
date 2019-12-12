@@ -75,7 +75,10 @@
       entity_id: binary_sensor.door_window_sensor_158d0003589af9
       to: 'on'
   action:
-    - service: notify.home_alerts
+    - service: telegram_bot.send_message
+      data:
+        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+    - service: notify.google_assistant_broadcast
       data:
         message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
     - service: camera.record
@@ -89,7 +92,7 @@
     - service: telegram_bot.send_video
       data:
         file: /config/www/camera-latest.mp4
-        caption: Front door
+        caption: Office door opened
 
 - id: kitchen_door_opened_alert
   alias: 'Kitchen doors opened alert'
