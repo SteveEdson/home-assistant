@@ -1,6 +1,6 @@
 alias: Send Heating Notification
 sequence:
-  - service: telegram.send_message
+  - service: telegram_bot.send_message
     data:
       title: "Turn the heating on?"
       message: Turn the heating on? The house is currently {{ states.climate.netatmo_heating.attributes.current_temperature }}°c
