@@ -118,6 +118,15 @@ views:
               power_state: false
 
           - type: custom:mini-media-player
+            entity: media_player.samsung_lounge_tv
+            icon: mdi:television
+            artwork: cover
+            hide:
+              volume: true
+              source: true
+              power_state: false
+
+          - type: custom:mini-media-player
             entity: media_player.playstation_4
             icon: mdi:playstation
             artwork: cover
