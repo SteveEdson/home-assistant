@@ -351,6 +351,21 @@ views:
               service_data:
                 entity_id: scene.bedroom_reading
 
+
+          - name: Sleep Timer
+            entity: timer.bedroom_sleep_timer
+            icon: 'mdi:sleep'
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+              entity_id: timer.bedroom_sleep_timer
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+
+
           - entity: scene.bedroom_steve_reading
             name: Steve Reading
             tap_action:
@@ -379,7 +394,7 @@ views:
             entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
       - type: custom:mini-media-player
-        entity: media_player.bedroom_android_tv
+        entity: media_player.bedroom_tv
         icon: mdi:television
         artwork: cover
         hide:
