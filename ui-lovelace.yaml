@@ -411,6 +411,13 @@ views:
             - icon: mdi:radio
               type: script
               id: script.play_radio_in_office
+      - type: custom:mini-media-player
+        entity: media_player.home_office_tv
+        artwork: cover
+        hide:
+          volume: true
+          source: true
+          power_state: true
       - type: thermostat
         entity: climate.home_office
       - type: custom:simple-thermostat
