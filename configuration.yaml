@@ -150,6 +150,7 @@ media_player:
   - platform: plex
   - platform: samsungtv
     host: 192.168.1.219
+    mac: !secret samsung_bedroom_tv_mac
 
 device_tracker:
   - platform: asuswrt
