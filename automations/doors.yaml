@@ -51,10 +51,6 @@
     - service: telegram_bot.send_message
       data:
         message: "Front door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
-    - service: camera.play_stream
-      data:
-        entity_id: camera.g3_flex
-        media_player: media_player.kitchen_display
     - service: camera.record
       data:
         entity_id: camera.g3_flex_low_res
@@ -67,6 +63,21 @@
       data:
         file: /config/www/camera-latest.mp4
         caption: Front door
+
+- id: front_door_opened_show_display
+  alias: 'Front door opened show display'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+      to: 'on'
+  condition:
+    - condition: template
+      value_template: '{{ states("media_player.downstairs") != "playing" }}'
+  action:
+    - service: camera.play_stream
+      data:
+        entity_id: camera.g3_flex
+        media_player: media_player.kitchen_display
 
 - id: office_door_opened_alert
   alias: 'Office door opened alert'
