@@ -205,7 +205,9 @@ views:
         filter:
           include:
             - state: "on"
-              domain: /media_player|light|switch/
+              domain: /light|switch/
+            - state: "playing"
+              domain: /media_player/
           exclude:
             - entity_id: "*doorbell*"
 
