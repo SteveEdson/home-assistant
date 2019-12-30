@@ -368,7 +368,6 @@ views:
             show_icon: true
             show_name: true
 
-
           - entity: scene.bedroom_steve_reading
             name: Steve Reading
             tap_action:

@@ -20,3 +20,18 @@
       data: 
         file: /config/www/camera-snapshot.jpg
         caption: Doorbell
+
+- alias: "Doorbell Office Notification"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doorbell_button_2
+    to: 'on'
+  condition:
+    condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_notifications', 'last_triggered') | default(0)) | int > 5)}}"
+  action:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.kitchen_tv
+        media_content_id: !secret doorbell_mp3
+        media_content_type: music
