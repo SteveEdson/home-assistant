@@ -46,6 +46,6 @@
   action:
     - service: media_player.play_media
       data:
-        entity_id: media_player.kitchen_tv
+        entity_id: media_player.home_office_speaker
         media_content_id: !secret doorbell_mp3
         media_content_type: music
