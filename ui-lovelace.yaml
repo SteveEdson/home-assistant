@@ -49,11 +49,18 @@ views:
       - type: custom:simple-thermostat
         entity: climate.netatmo_heating
         name: Heating
-      - type: map
-        aspect_ratio: 16:9
-        default_zoom: 16
+      - type: entities
+        title: Doorbell
         entities:
-          - device_tracker.steveedson_oneplus5t
+          - entity: switch.doorbell_chime_active
+            name: Chime Active?
+          - entity: switch.doorbell_chime
+            name: Manual Press
+#      - type: map
+#        aspect_ratio: 16:9
+#        default_zoom: 16
+#        entities:
+#          - device_tracker.steveedson_oneplus5t
 
   - icon: mdi:stairs
     path: hallway
