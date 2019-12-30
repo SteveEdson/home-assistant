@@ -27,8 +27,12 @@
     entity_id: binary_sensor.doorbell_button_2
     to: 'on'
   condition:
-    condition: template
-    value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_camera', 'last_triggered') | default(0)) | int > 5)}}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_camera', 'last_triggered') | default(0)) | int > 5)}}"
+      - condition: template
+        value_template: '{{ states("media_player.downstairs") != "playing" }}'
   action:
     - service: camera.play_stream
       data:
