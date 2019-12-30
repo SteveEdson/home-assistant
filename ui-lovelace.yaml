@@ -206,6 +206,8 @@ views:
           include:
             - state: "on"
               domain: /media_player|light|switch/
+          exclude:
+            - entity_id: "*doorbell*"
 
   - icon: mdi:kettle
     title: Kitchen
