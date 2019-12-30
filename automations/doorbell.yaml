@@ -39,6 +39,24 @@
         entity_id: camera.g3_flex
         media_player: media_player.kitchen_display
 
+- alias: "Doorbell Music Alert"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doorbell_button_2
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_music_alert', 'last_triggered') | default(0)) | int > 5)}}"
+      - condition: template
+        value_template: '{{ states("media_player.downstairs") == "playing" }}'
+  action:
+    - service: notify.google_assistant_broadcast
+      data_template:
+        message: "There is someone at the door"
+
+
 - alias: "Doorbell Office Notification"
   trigger:
     platform: state
