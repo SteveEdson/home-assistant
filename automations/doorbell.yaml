@@ -48,8 +48,16 @@
     condition: template
     value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_office_notification', 'last_triggered') | default(0)) | int > 5)}}"
   action:
+    - service: scene.create
+      data:
+        scene_id: homeoffice_snapshot
+        snapshot_entities:
+          - media_player.home_office_speaker
     - service: media_player.play_media
       data:
         entity_id: media_player.home_office_speaker
         media_content_id: !secret doorbell_mp3
         media_content_type: music
+    - service: scene.turn_on
+      data:
+        entity_id: scene.homeoffice_snapshot
