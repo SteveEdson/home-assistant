@@ -1,0 +1,4 @@
+- platform: scrape
+  name: PN61 Status
+  resource: https://www.scan.co.uk/products/asus-pn61-bb5008md-barebone-pc-kit-i5-8265u-2-x-so-dimm-ddr4-m2-ssd-slot-25-bay-intel-uhd-graphics-6
+  select: ".buyPanel .stockStatus"
