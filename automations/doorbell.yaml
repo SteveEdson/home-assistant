@@ -49,8 +49,13 @@
     conditions:
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_music_alert', 'last_triggered') | default(0)) | int > 5)}}"
-      - condition: template
-        value_template: '{{ states("media_player.downstairs") == "playing" }}'
+      - condition: or
+        conditions:
+        - condition: template
+          value_template: '{{ states("media_player.downstairs") == "playing" }}'
+        - condition: state
+          entity_id: 'switch.doorbell_chime_active'
+          state: 'off'
   action:
     - service: notify.google_assistant_broadcast
       data_template:
