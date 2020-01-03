@@ -4,5 +4,5 @@
     entity_id: sensor.pn61_status
   action:
     - service: telegram_bot.send_message
-      data:
+      data_template:
         message: "PN61 Stock Status {{ trigger.to_state.state }}"
