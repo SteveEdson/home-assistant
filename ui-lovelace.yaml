@@ -387,6 +387,14 @@ views:
               service_data:
                 entity_id: scene.bedroom_steve_reading
 
+          - entity: scene.bedroom_sophie_reading
+            name: Steve Reading
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.bedroom_steve_reading
+
           - entity: scene.bedroom_off
             name: "Off"
             tap_action:
