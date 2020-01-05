@@ -7,7 +7,7 @@
     - condition: template
       value_template: >
         {% set n = now() %}
-        {{ (n.month == 12 and 1 <= n.day <= 31) or (n.month == 1 and 1 <= n.day <= 6) }}
+        {{ (n.month == 12 and 1 <= n.day <= 31) or (n.month == 1 and 1 <= n.day < 6) }}
   action:
     - service: switch.turn_on
       data:
