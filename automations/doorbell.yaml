@@ -4,8 +4,12 @@
     entity_id: binary_sensor.doorbell_button_2
     to: 'on'
   condition:
-    condition: template
-    value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_notifications', 'last_triggered') | default(0)) | int > 5)}}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_notifications', 'last_triggered') | default(0)) | int > 5)}}"
+      - condition: template
+        value_template: "{{ (now().strftime('%Y-%m-%d')) != '2020-02-08' }}"
   action:
     - service: telegram_bot.send_message
       data:
