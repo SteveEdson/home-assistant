@@ -1,4 +1,4 @@
-- alias: 'Front door opened'
+- alias: 'Front door opened on Halloween'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e # front door
@@ -47,6 +47,13 @@
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
       to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.front_door_opened_alert', 'last_triggered') | default(0)) | int > 5)}}"
+      - condition: template
+        value_template: "{{ (now().strftime('%Y-%m-%d')) != '2020-02-08' }}"
   action:
     - service: telegram_bot.send_message
       data:
