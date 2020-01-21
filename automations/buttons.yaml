@@ -58,15 +58,34 @@
   action:
     service: script.good_night
 
-- alias: Kitchen Button Hold
+- alias: Kitchen Button Hold Not Playing
   trigger:
     platform: event
     event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0002fbe926
       click_type: long_click_press
+  condition:
+    condition: template
+    value_template: '{{ states("media_player.downstairs") != "playing" }}'
   action:
     service: script.play_radio_in_kitchen
+
+- alias: Kitchen Button Hold When Playing
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d0002fbe926
+      click_type: long_click_press
+  condition:
+    condition: template
+    value_template: '{{ states("media_player.downstairs") == "playing" }}'
+  action:
+    service: media_player.media_stop
+    data:
+      entity_id: media_player.downstairs
+
 # KITCHEN BUTTON END
 
 # STEVE BUTTON
