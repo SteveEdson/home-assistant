@@ -230,6 +230,9 @@ views:
 
       - type: custom:plan-coordinates
 
+      - type: picture-elements
+        image: /local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg
+
       - type: custom:xiaomi-vacuum-map-card
         entity: vacuum.xiaomi_vacuum_cleaner
         map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'

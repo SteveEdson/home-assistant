@@ -37,7 +37,7 @@ class PlanCoordinates extends HTMLElement {
                 this.style.display = 'block';
                 const percentX = Math.ceil((el.clientX - el.path[0].x) * 100 / el.path[0].width);
                 const percentY = Math.ceil((el.clientY - el.path[0].y) * 100 / el.path[0].height);
-                content.innerHTML = `left: ${percentX}%<br/>top: ${percentY}%`;
+                content.innerHTML = `left: ${percentX}%<br/>top: ${percentY}%<br />left: ${el.clientX - el.path[0].x}px<br />right: ${el.clientY - el.path[0].y}`;
             }
         });
         document.addEventListener('scroll', el => {
