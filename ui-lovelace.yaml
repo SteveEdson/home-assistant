@@ -28,6 +28,10 @@ resources:
     type: module
   - url: /local/custom_ui/simple-thermostat.js?v=0.31
     type: module
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/swipe-card/swipe-card.js
+    type: module
+  - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js
+    type: module
 
 views:
   - icon: mdi:home-assistant
@@ -51,6 +55,7 @@ views:
         name: Heating
       - type: entities
         title: Doorbell
+        show_header_toggle: false
         entities:
           - entity: switch.doorbell_chime_active
             name: Chime Active?
@@ -222,6 +227,10 @@ views:
         image: /local/vacuum.png
         name: false
         buttons: true
+
+      - type: custom:xiaomi-vacuum-map-card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'
 
       - type: entities
         entities:
