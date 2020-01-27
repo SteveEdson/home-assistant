@@ -115,9 +115,6 @@
       to: 'off'
       for:
         minutes: 10
-  condition:
-    condition : or
-    conditions:
   action:
     - service: light.turn_off
       data:
