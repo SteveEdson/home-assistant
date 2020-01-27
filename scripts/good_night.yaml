@@ -18,4 +18,6 @@ sequence:
   #     entity_id: switch.my_smart_plug
   - service: media_player.turn_off 
     data: 
-      entity_id: media_player.samsung_tv_remote
+      entity_id:
+        - media_player.samsung_tv_remote
+        - media_player.downstairs
