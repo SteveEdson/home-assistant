@@ -18,7 +18,7 @@ resources:
     type: module
   - url: /local/custom_ui/gui-sandbox.js
     type: module
-  - url: /local/custom_ui/plan-coordinates.js
+  - url: /local/custom_ui/plan-coordinates.js?v=2
     type: module
   - url: /local/custom_ui/xiaomi-vacuum-card.js?v=2.3.2
     type: js
