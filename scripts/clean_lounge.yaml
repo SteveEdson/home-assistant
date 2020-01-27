@@ -1,0 +1,7 @@
+alias: Clean Lounge
+sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 3
+      zone: [[24977,19473,31527,23173]]

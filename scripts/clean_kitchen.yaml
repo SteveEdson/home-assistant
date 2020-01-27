@@ -1,0 +1,7 @@
+alias: Clean Kitchen
+sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 3
+      zone: [[23199,24008,29749,28808], [29654,26405,31454,28355]]
