@@ -235,20 +235,20 @@ views:
         default_mode: predefined_zones
         calibration_points:
           - vacuum:
-              x: 25534
-              y: 25188
+              x: 25550
+              y: 25250
             map:
               x: 609
               y: 491
           - vacuum:
-              x: 28484
-              y: 26488
+              x: 28550
+              y: 26450
             map:
               x: 835
               y: 395
           - vacuum:
-              x: 29680
-              y: 26896
+              x: 29650
+              y: 26850
             map:
               x: 921
               y: 363
