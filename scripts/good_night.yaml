@@ -3,7 +3,7 @@ sequence:
   # Turn off all lights
   - service: light.turn_off
     data:
-      entity_id: group.all_lights
+      entity_id: all
       transition: 2
   # - service: switch.turn_off
   #   data:
