@@ -231,6 +231,25 @@ views:
       - type: custom:xiaomi-vacuum-map-card
         entity: vacuum.xiaomi_vacuum_cleaner
         map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'
+        calibration_points:
+          - vacuum:
+              x: 25534
+              y: 25188
+            map:
+              x: 609
+              y: 480
+          - vacuum:
+              x: 28484
+              y: 26488
+            map:
+              x: 835
+              y: 576
+          - vacuum:
+              x: 29680
+              y: 26488
+            map:
+              x: 921
+              y: 608
 
       - type: entities
         entities:
