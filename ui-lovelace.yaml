@@ -228,17 +228,6 @@ views:
         name: false
         buttons: true
 
-      - type: custom:plan-coordinates
-
-      - type: picture-elements
-        image: /local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg
-        elements:
-          - type: state-icon
-            entity: sensor.living_room_nest_protect_battery_health
-            style:
-              top: 0%
-              left: 0%
-
       - type: custom:xiaomi-vacuum-map-card
         entity: vacuum.xiaomi_vacuum_cleaner
         map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'
@@ -261,6 +250,9 @@ views:
             map:
               x: 921
               y: 363
+        zones:
+          - [[23199,24008,29749,28808]]
+          - [[29654,26405,31454,28355]]
 
       - type: entities
         entities:
