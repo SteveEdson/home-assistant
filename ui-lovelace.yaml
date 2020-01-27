@@ -248,19 +248,19 @@ views:
               y: 25188
             map:
               x: 609
-              y: 480
+              y: 491
           - vacuum:
               x: 28484
               y: 26488
             map:
               x: 835
-              y: 576
+              y: 395
           - vacuum:
               x: 29680
               y: 26896
             map:
               x: 921
-              y: 608
+              y: 363
 
       - type: entities
         entities:
