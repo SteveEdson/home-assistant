@@ -4,7 +4,7 @@ sequence:
   - service: light.turn_off
     data:
       entity_id: all
-      transition: 2
+      # transition: 2
   - service: switch.turn_off
     data:
       entity_id:
