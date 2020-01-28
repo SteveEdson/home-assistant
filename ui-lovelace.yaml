@@ -399,7 +399,6 @@ views:
               service_data:
                 entity_id: scene.bedroom_reading
 
-
           - name: Sleep Timer
             entity: timer.bedroom_sleep_timer
             icon: 'mdi:sleep'
@@ -448,6 +447,7 @@ views:
           - type: custom:slider-entity-row
             entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
+          - light.shelly_e
       - type: custom:mini-media-player
         entity: media_player.bedroom_tv
         icon: mdi:television
