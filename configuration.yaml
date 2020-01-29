@@ -361,6 +361,8 @@ vacuum:
 owntracks:
   max_gps_accuracy: 200
 
+mobile_app:
+
 tuya:
   username: !secret phone_number
   password: !secret tuya_pass
