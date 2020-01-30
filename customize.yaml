@@ -113,6 +113,18 @@ sensor.living_room_nest_protect_battery_health:
 light.shelly_a:
   icon: mdi:vanity-light
   friendly_name: Hallway
+light.shelly_b:
+  icon: mdi:wall-sconce-flat
+  friendly_name: Kitchen Lights Outer
+light.shelly_c:
+  icon: mdi:wall-sconce-flat
+  friendly_name: Kitchen Lights Inner
+light.shelly_d:
+  icon: mdi:wall-sconce-flat
+  friendly_name: Bathroom Lights
+light.shelly_e:
+  icon: mdi:wall-sconce-flat
+  friendly_name: Ensuite Lights
 script.find_phone:
   icon: mdi:cellphone-wireless
 switch.aegis:
