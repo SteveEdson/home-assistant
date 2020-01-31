@@ -62,7 +62,7 @@
       data:
         entity_id: camera.g3_flex_low_res
         filename: /config/www/camera-latest.mp4
-        lookback: 5
+        lookback: 8
         duration: 5
     - delay:
         seconds: 15
