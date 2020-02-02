@@ -16,3 +16,8 @@
   name: OctoPrint
   still_image_url: !secret octo_cam_still
   mjpeg_url: !secret octo_cam_stream
+
+- platform: onvif
+  host: 192.168.1.48
+  name: 360 Camera
+  password: !secret camera360pass
