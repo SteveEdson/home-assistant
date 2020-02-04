@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "update": "apk add git && npm install && node update-check.js"
+    "update": "apk add git ssh && npm install && node update-check.js"
   },
   "repository": {
     "type": "git",
