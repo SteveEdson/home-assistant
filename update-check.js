@@ -48,18 +48,22 @@ fetchPromise.then(({ stdout }) => {
 
                 updateMessage.message = `Updated from ${refs[0]} to ${refs[1]}`;
 
-                console.log('sending', updateMessage);
+                if(process.env['PUSHOVER_USER']) {
+                    console.log('sending', updateMessage);
 
-                p.send(updateMessage, function( err, result ) {
-                    if (err) {
-                        console.error(err);
-                        throw err;
-                    }
+                    p.send(updateMessage, function (err, result) {
+                        if (err) {
+                            console.error(err);
+                            throw err;
+                        }
 
-                    console.log('pushover', result);
+                        console.log('pushover', result);
 
+                        process.exit(0);
+                    });
+                } else {
                     process.exit(0);
-                });
+                }
             });
         } else {
             console.log('up to date');
