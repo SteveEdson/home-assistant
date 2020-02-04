@@ -97,6 +97,9 @@ image_processing:
       - dog
       - truck
       - person
+      - bicycle
+      - motorcycle
+      - backpack
     source:
       - entity_id: camera.g3_flex_low_res
   # - platform: tensorflow
