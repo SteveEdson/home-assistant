@@ -11,8 +11,8 @@
 # When something is detected on the camera, send an alert
 - alias: Detected Camera
   trigger:
-    platform: template
-    value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
+    platform: state
+    entity_id: sensor.detected_objects
   action:
     - service: telegram_bot.send_photo
       data_template:
