@@ -8,3 +8,7 @@
       friendly_name: "House Temperature"
       unit_of_measurement: '°C'
       value_template: "{{ float(states.climate.netatmo_heating.attributes.current_temperature) }}"
+
+    detected_objects:
+      friendly_name: "Detected Objects"
+      value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
