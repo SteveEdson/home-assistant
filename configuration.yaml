@@ -87,10 +87,11 @@ image_processing:
     file_out:
       - "/config/www/{{ camera_entity.split('.')[1] }}_latest.jpg"
       - "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
-    confidence: 50
+    confidence: 45
     area:
-      # Exclude top 6% of image
-      top: 0.06
+      # Exclude top 7% of image
+      top: 0.07
+      left: 0.08
     labels:
       - car
       - cat
