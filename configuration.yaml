@@ -93,7 +93,7 @@ image_processing:
       top: 0.07
       left: 0.08
     labels:
-      - car
+     # - car
       - cat
       - dog
       - truck
