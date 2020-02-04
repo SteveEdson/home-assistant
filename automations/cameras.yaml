@@ -18,7 +18,7 @@
       data_template:
         file: /config/www/g3_flex_latest.jpg
         caption: >-
-          {% if states.image_processing.doods_g3_flex_low_res %}
+          {% if states.image_processing.doods_g3_flex_low_res.attributes.matches|length > 0 %}
             {%- for entity in states.image_processing.doods_g3_flex_low_res.attributes.matches %}
               {%- for match in states.image_processing.doods_g3_flex_low_res.attributes.matches[entity] %}
                 {{ entity }} ({{ match.score | round }}%)
