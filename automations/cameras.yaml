@@ -18,10 +18,11 @@
       data_template:
         file: /config/www/g3_flex_low_res_latest.jpg
         caption: >-
-          {% if states.image_processing.doods_g3_flex_low_res.attributes.matches|length > 0 %}
+          {% if states.image_processing.doods_g3_flex_low_res.attributes.matches|length > 0 -%}
+            {{- states.image_processing.doods_g3_flex_low_res.attributes.matches|length }} match{{ '' if states.image_processing.doods_g3_flex_low_res.attributes.matches|length == 1 else 'es' }}:
             {%- for entity in states.image_processing.doods_g3_flex_low_res.attributes.matches %}
-              {%- for match in states.image_processing.doods_g3_flex_low_res.attributes.matches[entity] %}
-                {{ entity }} ({{ match.score | round }}%)
+              {%- for match in states.image_processing.doods_g3_flex_low_res.attributes.matches[entity] -%}
+                {{ " " + entity }} ({{ match.score | round }}%)
               {% endfor -%}
             {% endfor -%}
           {% else %}
