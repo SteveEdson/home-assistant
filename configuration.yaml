@@ -86,8 +86,8 @@ image_processing:
     detector: default
     file_out:
       - "/config/www/{{ camera_entity.split('.')[1] }}_latest.jpg"
-      - "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
-    confidence: 45
+      #- "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
+    confidence: 55
     area:
       # Exclude top 7% of image
       top: 0.07
