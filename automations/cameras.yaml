@@ -13,9 +13,6 @@
   trigger:
     platform: state
     entity_id: sensor.detected_objects
-  condition:
-    - condition: template
-      value_template: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length > 0 }}
   action:
     - service: telegram_bot.send_photo
       data_template:
