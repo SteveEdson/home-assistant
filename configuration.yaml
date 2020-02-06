@@ -185,10 +185,8 @@ nest:
   client_secret: !secret nest_client_secret
 
 netatmo:
-  api_key: !secret netatmo_client_id
-  secret_key: !secret netatmo_client_secret
-  username: !secret netatmo_username
-  password: !secret netatmo_password
+  client_id: !secret netatmo_client_id
+  client_secret: !secret netatmo_client_secret
 
 ifttt:
   key: !secret ifttt_key
