@@ -22,6 +22,7 @@
   "dependencies": {
     "child-process-promise": "^2.2.1",
     "nodegit": "^0.26.4",
-    "pushover-notifications": "^1.0.0"
+    "pushover-notifications": "^1.0.0",
+    "simple-git": "^1.131.0"
   }
 }
