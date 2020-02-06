@@ -1,6 +1,6 @@
 gptitle: Edson Home
 resources:
-  - url: /local/custom_ui/card-tools.js?v=2
+  - url: /local/custom_ui/card-tools.js?v=2.1
     type: js
   - url: /local/custom_ui/auto-entities.js?v=1.5
     type: js
