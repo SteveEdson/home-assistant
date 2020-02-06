@@ -46,6 +46,8 @@ async function checkUpdates() {
         } else {
             process.exit(0);
         }
+    } else {
+        console.log('No changes');
     }
 }
 
