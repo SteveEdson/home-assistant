@@ -55,4 +55,5 @@ async function checkUpdates() {
     }
 }
 
+console.log('Checking for updates...');
 checkUpdates();
