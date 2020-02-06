@@ -149,6 +149,9 @@ media_player:
     host: 192.168.1.115
     mac: !secret samsung_tv_mac
     name: Samsung Lounge TV
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
   - platform: plex
   - platform: samsungtv
     host: 192.168.1.219
