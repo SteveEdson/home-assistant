@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const git = require('simple-git/promise')();
-const path = require('path');
 const Push = require('pushover-notifications');
 const exec = require('child-process-promise').exec;
 
