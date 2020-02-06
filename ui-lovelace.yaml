@@ -47,9 +47,9 @@ views:
           - person.steve_edson
         camera_image: camera.g3_flex
         camera_view: live
-      - type: thermostat
-        entity: climate.netatmo_heating
-        name: Heating
+      # - type: thermostat
+      #   entity: climate.netatmo_heating
+      #   name: Heating
       - type: custom:simple-thermostat
         entity: climate.netatmo_heating
         name: Heating
