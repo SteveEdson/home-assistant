@@ -149,9 +149,6 @@ media_player:
     host: 192.168.1.115
     mac: !secret samsung_tv_mac
     name: Samsung Lounge TV
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
   - platform: plex
   - platform: samsungtv
     host: 192.168.1.219
@@ -234,32 +231,6 @@ shell_command:
 weather:
  - platform: darksky
    api_key: !secret darksky_api_key
-
-history_graph:
-  travel_time:
-    name: Travel Time
-    hours_to_show: 72
-    refresh: 60
-    entities:
-      - sensor.time_to_home
-      - sensor.time_to_work
-
-  games:
-    name: Games Played
-    hours_to_show: 168
-    refresh: 30
-    entities:
-      - sensor.steam_76561198059721761
-      - media_player.playstation_4
-
-  temperatures:
-     name: Temperature
-     hours_to_show: 168
-     refresh: 15
-     entities:
-       - sensor.house_temperature
-       - sensor.landing_sensor_temperature
-       - sensor.outside_temperature
 
 media_extractor:
 

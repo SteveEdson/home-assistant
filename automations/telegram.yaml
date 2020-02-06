@@ -1,5 +1,4 @@
 - alias: 'Telegram Heating On'
-  hide_entity: true
   trigger:
     platform: event
     event_type: telegram_callback
