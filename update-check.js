@@ -30,7 +30,7 @@ async function checkUpdates() {
             cwd: __dirname
         });
 
-        console.log('stdout', stdout);
+        console.log(stdout);
 
         if(process.env['PUSHOVER_USER']) {
             updateMessage.message = 'Updated Home Assistant: ' + JSON.stringify(update.summary);
