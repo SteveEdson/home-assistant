@@ -24,6 +24,8 @@ async function checkUpdates() {
             return;
         }
 
+        console.log('Got changes, restarting', update);
+
         const { stdout } = await exec('./update.sh', {
             cwd: __dirname
         });
