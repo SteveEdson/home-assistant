@@ -53,6 +53,8 @@
     conditions:
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_music_alert', 'last_triggered') | default(0)) | int > 5)}}"
+      - condition: template
+        value_template: "{{ (now().strftime('%Y-%m-%d')) != '2020-02-08' }}"
       - condition: or
         conditions:
         - condition: template
@@ -64,7 +66,6 @@
     - service: notify.google_assistant_broadcast
       data_template:
         message: "There is someone at the door"
-
 
 - alias: "Doorbell Office Notification"
   trigger:
