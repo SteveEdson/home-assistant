@@ -213,6 +213,7 @@ google_assistant:
     - climate
     - camera
     - vacuum
+    - scene
   entity_config:
     light.cupboard:
       name: Cupboard lights
