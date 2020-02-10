@@ -153,7 +153,7 @@ views:
           - entity: switch.32002710bcddc226b4b0
             tap_action:
               action: toggle
-          - entity: switch.bff5c4bbd438ed9847uxkj
+          - entity: switch.bf4cadf5e3e38fddf078v2
             tap_action:
               action: toggle
         show_state: false
@@ -197,9 +197,6 @@ views:
             toggle: true
           - type: custom:slider-entity-row
             entity: light.lounge_tall_lamp
-          - entity: switch.bf4cadf5e3e38fddf078v2
-            tap_action:
-              action: toggle 
 
   - icon: mdi:toggle-switch
     title: Active Devices
