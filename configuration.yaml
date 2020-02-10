@@ -205,12 +205,14 @@ scene: !include scenes.yaml
 
 google_assistant:
   project_id: edson-home
-  api_key: !secret google_assistant_api_key
+  service_account: !include google_service_account.json
+  report_state: true
   exposed_domains:
     - switch
     - light
     - climate
     - camera
+    - vacuum
   entity_config:
     light.cupboard:
       name: Cupboard lights
