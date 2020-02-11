@@ -7,9 +7,9 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: single
   action:
-    service: scene.turn_on
+    service: ifttt.trigger
     data:
-      entity_id: scene.bedroom_all_lights
+      event: baby_button
 
 - alias: Sophie Button Double
   trigger:
@@ -29,9 +29,9 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: long_click_press
   action:
-    service: scene.turn_on
+    service: light.toggle
     data:
-      entity_id: scene.bedroom_sophie_reading
+      entity_id: group.bedroom_lights
 # SOPHIE BUTTON END
 
 # KITCHEN BUTTON
