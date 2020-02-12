@@ -4,3 +4,4 @@ use_x_forwarded_for: true
 trusted_proxies:
   - 172.17.0.1
   - 172.18.0.1
+  - 172.18.0.10
