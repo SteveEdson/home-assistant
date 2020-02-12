@@ -1,9 +1,9 @@
 - name: Steve Edson
   id: steveedson
   device_trackers:
-    - device_tracker.edsonmacbook
-    - device_tracker.oneplus5t
-    - device_tracker.stevesmbp
+    - device_tracker.oneplus7pro
+    - device_tracker.gm1910
+    - device_tracker.steves_mbp
 
 - name: Sophie
   id: sophie
