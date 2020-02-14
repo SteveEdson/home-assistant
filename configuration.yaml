@@ -148,7 +148,8 @@ media_player:
   - platform: samsungtv
     host: 192.168.1.115
     mac: !secret samsung_tv_mac
-    name:   - platform: plex
+    name: Samsung Lounge TV  
+  - platform: plex
   - platform: samsungtv
     host: 192.168.1.219
     name: Bedroom TV
