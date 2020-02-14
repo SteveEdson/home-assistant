@@ -371,12 +371,12 @@ views:
         entity: weather.dark_sky
         name: "at home"
         backdrop: true
-      - type: glance
-        entities:
-          - entity: switch.bf5bde9e7cf9134ab6kmf7
-            tap_action:
-              action: toggle
-        show_state: false
+#      - type: glance
+#        entities:
+#          - entity: switch.bf5bde9e7cf9134ab6kmf7
+#            tap_action:
+#              action: toggle
+#        show_state: false
 # todo: add hot tub temp eventually
 
   - path: bedroom
