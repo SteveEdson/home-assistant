@@ -155,6 +155,10 @@ media_player:
     name: Bedroom TV
     mac: !secret samsung_bedroom_tv_mac
 
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
 device_tracker:
   - platform: asuswrt
     host: 192.168.1.1
