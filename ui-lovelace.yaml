@@ -434,6 +434,14 @@ views:
 
       - type: entities
         entities:
+          - switch.bedroom_tv
+          - sensor.bedroom_tv_media_input_source
+          - sensor.bedroom_tv_media_playback_status
+          - sensor.bedroom_tv_tv_channel
+          - sensor.bedroom_tv_volume
+
+      - type: entities
+        entities:
           - type: custom:slider-entity-row
             entity: light.bedroom_spotlights
             toggle: true
