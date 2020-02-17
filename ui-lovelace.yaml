@@ -464,6 +464,13 @@ views:
       - type: glance
         entities:
           - entity: timer.bedroom_sleep_timer
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: timer.bedroom_sleep_timer
+            hold_action:
+              action: more-info
         title: TV Sleep Timer
         show_name: false
         show_state: true
