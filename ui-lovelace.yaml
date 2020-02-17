@@ -400,7 +400,7 @@ views:
             icon: 'mdi:sleep'
             tap_action:
               action: call-service
-              service: script.turn_on
+              service: timer.start
               service_data:
                 entity_id: timer.bedroom_sleep_timer
             hold_action:
@@ -466,7 +466,7 @@ views:
           - entity: timer.bedroom_sleep_timer
             tap_action:
               action: call-service
-              service: script.turn_on
+              service: timer.start
               service_data:
                 entity_id: timer.bedroom_sleep_timer
             hold_action:
