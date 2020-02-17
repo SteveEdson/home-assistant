@@ -402,7 +402,7 @@ views:
               action: call-service
               service: script.turn_on
               service_data:
-              entity_id: timer.bedroom_sleep_timer
+                entity_id: timer.bedroom_sleep_timer
             hold_action:
               action: more-info
             show_icon: true
@@ -460,6 +460,15 @@ views:
           volume: false
           source: false
           power_state: false
+
+      - type: glance
+        entities:
+          - entity: timer.bedroom_sleep_timer
+        title: TV Sleep Timer
+        show_name: false
+        show_state: true
+        show_icon: true
+
       - type: custom:mini-media-player
         entity: media_player.bedroom_speaker
         icon: mdi:spotify
