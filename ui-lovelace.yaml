@@ -214,6 +214,7 @@ views:
               domain: /media_player/
           exclude:
             - entity_id: "*doorbell*"
+            - entity_id: "media_player.bedroom_tv"
 
   - icon: mdi:kettle
     title: Kitchen
