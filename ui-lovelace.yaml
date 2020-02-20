@@ -396,19 +396,6 @@ views:
               service_data:
                 entity_id: scene.bedroom_reading
 
-          - name: Sleep Timer
-            entity: timer.bedroom_sleep_timer
-            icon: 'mdi:sleep'
-            tap_action:
-              action: call-service
-              service: timer.start
-              service_data:
-                entity_id: timer.bedroom_sleep_timer
-            hold_action:
-              action: more-info
-            show_icon: true
-            show_name: true
-
           - entity: scene.bedroom_steve_reading
             name: Steve Reading
             tap_action:
@@ -440,6 +427,49 @@ views:
           - sensor.bedroom_tv_media_playback_status
           - sensor.bedroom_tv_tv_channel
           - sensor.bedroom_tv_volume
+
+      - type: glance
+        show_state: false
+        columns: 3
+        entities:
+          - name: Sleep Timer 30m
+            entity: timer.bedroom_sleep_timer
+            icon: 'mdi:sleep'
+            tap_action:
+              action: call-service
+              service: timer.start
+              service_data:
+                entity_id: timer.bedroom_sleep_timer
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+          - name: Sleep Timer 45m
+            entity: timer.bedroom_sleep_timer
+            icon: 'mdi:sleep'
+            tap_action:
+              action: call-service
+              service: timer.start
+              service_data:
+                entity_id: timer.bedroom_sleep_timer
+                duration: 45m
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+          - name: Sleep Timer 60m
+            entity: timer.bedroom_sleep_timer
+            icon: 'mdi:sleep'
+            tap_action:
+              action: call-service
+              service: timer.start
+              service_data:
+                entity_id: timer.bedroom_sleep_timer
+                duration: 60m
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
 
       - type: entities
         entities:
