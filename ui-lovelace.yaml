@@ -440,6 +440,7 @@ views:
               service: timer.start
               service_data:
                 entity_id: timer.bedroom_sleep_timer
+                duration: '00:30:00'
             hold_action:
               action: more-info
             show_icon: true
@@ -452,7 +453,7 @@ views:
               service: timer.start
               service_data:
                 entity_id: timer.bedroom_sleep_timer
-                duration: 45m
+                duration: '00:45:00'
             hold_action:
               action: more-info
             show_icon: true
@@ -465,7 +466,7 @@ views:
               service: timer.start
               service_data:
                 entity_id: timer.bedroom_sleep_timer
-                duration: 60m
+                duration: '00:60:00'
             hold_action:
               action: more-info
             show_icon: true
