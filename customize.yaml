@@ -86,8 +86,8 @@ light.gateway_light_7811dcb25e74:
   friendly_name: Gateway Light
   icon: mdi:google-circles-extended
 binary_sensor.motion_sensor_158d0002234460:
-  friendly_name: Bathroom Motion Sensor
-  icon: mdi:hot-tub
+  friendly_name: Kitchen Motion Sensor
+  icon: mdi:motion-sensor
 binary_sensor.motion_sensor_158d0001643c27:
   friendly_name: Kitchen Motion Sensor
   icon: mdi:fridge
