@@ -36,6 +36,9 @@
     - service: light.turn_on
       data:
         entity_id: light.shelly_c
+    - service: scene.turn_on
+      data:
+        entity_id: scene.table_pink_and_blue
 
 - alias: Kitchen motion after 2130
   trigger:
@@ -65,7 +68,7 @@
         entity_id: light.shelly_c
 
 # Turn off kitchen light with no motion for 3 mins
-- alias: Kitchen no motion 5 mins
+- alias: Kitchen no motion 10 mins
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0002234460
@@ -80,6 +83,22 @@
     - service: light.turn_off
       data:
         entity_id: light.shelly_c
+
+- alias: Kitchen no motion 45 mins
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002234460
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 45
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.table_light_1
+          - light.table_light_2
+          - light.table_light_3
 
 - alias: Hallway motion
   trigger:
