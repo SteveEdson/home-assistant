@@ -88,9 +88,6 @@ light.gateway_light_7811dcb25e74:
 binary_sensor.motion_sensor_158d0002234460:
   friendly_name: Kitchen Motion Sensor
   icon: mdi:motion-sensor
-binary_sensor.motion_sensor_158d0001643c27:
-  friendly_name: Kitchen Motion Sensor
-  icon: mdi:fridge
 binary_sensor.xiaomi_cube:
   friendly_name: Magic Cube
   icon: mdi:cube-send
