@@ -396,7 +396,7 @@ views:
     cards:
       - type: glance
         show_state: false
-        columns: 3
+        columns: 2
         entities:
           - entity: scene.bedroom_reading
             name: Reading
