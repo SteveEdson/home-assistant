@@ -5,3 +5,4 @@ sequence:
       entity_id: "media_player.downstairs"
       media_content_id: "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8"
       media_content_type: "music"
+      title: HA Test
