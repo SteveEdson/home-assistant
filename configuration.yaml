@@ -215,13 +215,13 @@ google_assistant:
     - camera
     - vacuum
     - scene
-  entity_config:
-    light.cupboard:
-      name: Cupboard lights
-      aliases:
-        - Kitchen Counter Lights
-        - Coloured Lights
-      expose: true
+#  entity_config:
+#    light.cupboard:
+#      name: Cupboard lights
+#      aliases:
+#        - Kitchen Counter Lights
+#        - Coloured Lights
+#      expose: true
 
 #calendar:
 #  - platform: todoist
