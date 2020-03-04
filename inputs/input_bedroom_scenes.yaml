@@ -3,7 +3,7 @@ options:
   - bedroom_off
   - bedroom_steve_reading
   - bedroom_sophie_reading
-  - bedroom_main_lights
-  - bedroom_all_lights
+ # - bedroom_main_lights
+#  - bedroom_all_lights
 initial: bedroom_off
 icon: mdi:bed
