@@ -15,7 +15,4 @@
       entity_id: switch.32002710bcddc226b4b0
   - service: switch.turn_off
     data:
-      entity_id: switch.bff5c4bbd438ed9847uxkj
-  - service: switch.turn_off
-    data:
       entity_id: switch.bf4cadf5e3e38fddf078v2
