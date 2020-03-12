@@ -275,6 +275,13 @@ views:
         show_header_toggle: true
 
       - type: entities
+        title: Motion Controls
+        entities:
+          - entity: automation.kitchen_motion
+          - entity: automation.kitchen_motion_after_2130
+        show_header_toggle: true
+
+      - type: entities
         entities:
           - light.table_light_1
           - light.table_light_2
