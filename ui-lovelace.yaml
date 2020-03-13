@@ -142,10 +142,11 @@ views:
             tap_action:
               action: call-service
               service: script.turn_on
-                service_data:
-                  entity_id: script.log_feed
-                  data:
-                    bottle_size: 1
+              service_data:
+                entity_id: script.log_feed
+                data:
+                  bottle_size: 1
+                  time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
@@ -155,10 +156,11 @@ views:
             tap_action:
               action: call-service
               service: script.turn_on
-                service_data:
-                  entity_id: script.log_feed
-                  data:
-                    bottle_size: 2
+              service_data:
+                entity_id: script.log_feed
+                data:
+                  bottle_size: 2
+                  time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
@@ -168,10 +170,11 @@ views:
             tap_action:
               action: call-service
               service: script.turn_on
-                service_data:
-                  entity_id: script.log_feed
-                  data:
-                    bottle_size: 3
+              service_data:
+                entity_id: script.log_feed
+                data:
+                  bottle_size: 3
+                  time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
