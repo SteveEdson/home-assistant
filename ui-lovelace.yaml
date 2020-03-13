@@ -138,7 +138,7 @@ views:
         cards:
           - entity: script.log_feed
             name: Log 1oz Bottle
-            icon: numeric-1-circle
+            icon: numeric-1
             type: button
             tap_action:
               action: call-service
@@ -150,7 +150,7 @@ views:
             state_color: true
           - entity: script.log_feed
             name: Log 2oz Bottle
-            icon: numeric-2-circle
+            icon: numeric-2
             type: button
             tap_action:
               action: call-service
@@ -162,7 +162,7 @@ views:
             state_color: true
           - entity: script.log_feed
             name: Log 3oz Bottle
-            icon: numeric-3-circle
+            icon: numeric-3
             type: button
             tap_action:
               action: call-service
@@ -174,7 +174,7 @@ views:
             state_color: true
           - entity: script.log_feed
             name: Log 4oz Bottle
-            icon: numeric-4-circle
+            icon: numeric-4
             type: button
             tap_action:
               action: call-service
