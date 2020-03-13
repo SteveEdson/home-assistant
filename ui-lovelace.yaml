@@ -130,8 +130,51 @@ views:
         hours_to_show: 6
         title: Bottle History
         refresh_interval: 60
-
-
+      - type: entities
+        entities:
+          - entity: script.bottle_warmer_on
+        show_header_toggle: false
+      - type: horizontal-stack
+        cards:
+          - entity: script.log_feed
+            name: Log 1oz Bottle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.turn_on
+                service_data:
+                  entity_id: script.log_feed
+                  data:
+                    bottle_size: 1
+            show_icon: true
+            show_name: true
+            state_color: true
+          - entity: script.log_feed
+            name: Log 2oz Bottle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.turn_on
+                service_data:
+                  entity_id: script.log_feed
+                  data:
+                    bottle_size: 2
+            show_icon: true
+            show_name: true
+            state_color: true
+          - entity: script.log_feed
+            name: Log 3oz Bottle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.turn_on
+                service_data:
+                  entity_id: script.log_feed
+                  data:
+                    bottle_size: 3
+            show_icon: true
+            show_name: true
+            state_color: true
 
   - icon: mdi:sofa
     title: Lounge
