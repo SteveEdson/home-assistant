@@ -120,6 +120,19 @@ views:
           action: call-service
           service: script.find_phone
 
+  - icon: mdi:baby-face-outline
+    title: Nursery
+    path: nursery
+    cards:
+      - type: history-graph
+        entities:
+          - entity: switch.bff5c4bbd438ed9847uxkj
+        hours_to_show: 6
+        title: Bottle History
+        refresh_interval: 60
+
+
+
   - icon: mdi:sofa
     title: Lounge
     path: lounge
