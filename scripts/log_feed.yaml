@@ -4,4 +4,4 @@ sequence:
     data_template:
       event: baby_feed
       value1: "{{ bottle_size }}"
-      value2: "{{ time }}"
+      value2: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"

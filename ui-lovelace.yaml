@@ -144,7 +144,6 @@ views:
               service: script.log_feed
               service_data:
                 bottle_size: 1
-                time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
@@ -156,7 +155,6 @@ views:
               service: script.log_feed
               service_data:
                 bottle_size: 2
-                time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
@@ -168,7 +166,6 @@ views:
               service: script.log_feed
               service_data:
                 bottle_size: 3
-                time: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"
             show_icon: true
             show_name: true
             state_color: true
