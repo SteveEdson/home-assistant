@@ -169,6 +169,17 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+          - entity: script.log_feed
+            name: Log 4oz Bottle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.log_feed
+              service_data:
+                bottle_size: 4
+            show_icon: true
+            show_name: true
+            state_color: true
 
   - icon: mdi:sofa
     title: Lounge
