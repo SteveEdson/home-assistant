@@ -106,7 +106,7 @@ sensor.bin_days:
   icon: mdi:delete
   icon_color: '#6ee86e'
 light.yeelight_bslamp1_7c49eb28d971:
-  friendly_name: Bedside Light
+  friendly_name: Nursery Light
 sensor.living_room_nest_protect_battery_health:
   icon: mdi:battery
 light.shelly_a:
