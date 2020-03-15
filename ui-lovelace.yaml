@@ -124,6 +124,9 @@ views:
     title: Nursery
     path: nursery
     cards:
+      - type: custom:slider-entity-row
+        entity: light.yeelight_bslamp1_7c49eb28d971
+        toggle: true
       - type: history-graph
         entities:
           - entity: switch.bff5c4bbd438ed9847uxkj
@@ -557,9 +560,6 @@ views:
             toggle: true
           - type: custom:slider-entity-row
             entity: light.bedroom_reading_lights
-            toggle: true
-          - type: custom:slider-entity-row
-            entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
           - light.shelly_e
       - type: custom:mini-media-player
