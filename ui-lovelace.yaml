@@ -129,6 +129,7 @@ views:
           - type: custom:slider-entity-row
             entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
+          - switch.bff5c4bbd438ed9847uxkj
       - type: history-graph
         entities:
           - entity: switch.bff5c4bbd438ed9847uxkj
