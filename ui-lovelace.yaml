@@ -110,6 +110,18 @@ views:
       - type: horizontal-stack
         cards:
           - entity: script.log_feed
+            name: Log 0.5oz Bottle
+            icon: mdi:numeric-0-circle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.log_feed
+              service_data:
+                bottle_size: 0.5
+            show_icon: true
+            show_name: true
+            state_color: true 
+          - entity: script.log_feed
             name: Log 1oz Bottle
             icon: mdi:numeric-1-circle
             type: button
