@@ -1,4 +1,37 @@
-title: The Paddocks
+gptitle: Edson Home
+resources:
+  - url: /local/custom_ui/card-tools.js?v=2.1
+    type: js
+  - url: /local/custom_ui/auto-entities.js?v=1.5
+    type: js
+  - url: /local/custom_ui/bar-card.js?v=2
+    type: js
+  - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.5.0
+    type: module
+  - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
+    type: module
+  - url: /local/custom_ui/unused-card.js?v=0.2
+    type: module
+  - url: /local/custom_ui/simple-weather-card-bundle.js?v=0.5.0
+    type: module
+  - url: /local/custom_ui/slider-entity-row.js?v=8
+    type: module
+  - url: /local/custom_ui/gui-sandbox.js
+    type: module
+  - url: /local/custom_ui/plan-coordinates.js?v=2
+    type: module
+  - url: /local/custom_ui/xiaomi-vacuum-card.js?v=2.3.2
+    type: js
+  - url: /local/custom_ui/layout-card.js
+    type: module
+  - url: /local/custom_ui/bignumber-card.js
+    type: module
+  - url: /local/custom_ui/simple-thermostat.js?v=0.31
+    type: module
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/swipe-card/swipe-card.js
+    type: module
+  - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js
+    type: module
 
 views:
   - icon: mdi:home-assistant
