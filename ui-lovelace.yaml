@@ -330,7 +330,7 @@ views:
       - type: entities
         title: Motion Controls
         entities:
-          - entity: automation.kitchen_motion
+          - entity: automation.kitchen_motion_before_2130
           - entity: automation.kitchen_motion_after_2130
         show_header_toggle: true
 
