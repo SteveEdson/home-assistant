@@ -114,10 +114,10 @@ light.shelly_a:
   friendly_name: Hallway
 light.shelly_b:
   icon: mdi:wall-sconce-flat
-  friendly_name: Kitchen Lights Lower
+  friendly_name: Kitchen Lights Upper
 light.shelly_c:
   icon: mdi:wall-sconce-flat
-  friendly_name: Kitchen Lights Upper
+  friendly_name: Kitchen Lights Lower
 light.shelly_d:
   icon: mdi:wall-sconce-flat
   friendly_name: Bathroom Lights
