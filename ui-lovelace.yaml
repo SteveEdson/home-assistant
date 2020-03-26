@@ -657,7 +657,15 @@ views:
       - type: custom:mini-graph-card
         entities:
           - sensor.speedtest_ping
-
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.load_5m
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.memory_free
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.disk_free
       - type: entities
         entities:
           - binary_sensor.do_1
@@ -673,9 +681,6 @@ views:
         show_header_toggle: false
       - type: entities
         entities:
-          - sensor.disk_free
-          - sensor.load_5m
-          - sensor.memory_free
           - sensor.latest_version
           - sensor.current_version
         title: Home Assistant
