@@ -2,7 +2,7 @@ title: The Paddocks
 
 card-style: &cardstyle |
   ha-card {
-    margin: 5px 14px -5px 10px;
+    margin: 5px 14px 5px 10px;
   }
 
 
@@ -15,7 +15,7 @@ views:
       - type: markdown
         style: |
           ha-card {
-            margin: 5px 14px -5px 10px;
+            margin: 5px 14px 5px 10px;
           }
           h2 {
             font-size: 20px;
@@ -39,6 +39,7 @@ views:
         style: *cardstyle
       - type: alarm-panel
         entity: alarm_control_panel.house_alarm
+        style: *cardstyle
       - type: picture-glance
         title: Camera
         entities:
@@ -46,12 +47,14 @@ views:
           - binary_sensor.door_window_sensor_158d0002253f18
         camera_image: camera.g3_flex
         camera_view: live
+        style: *cardstyle
       # - type: thermostat
       #   entity: climate.netatmo_heating
       #   name: Heating
       - type: custom:simple-thermostat
         entity: climate.netatmo_heating
         name: Heating
+        style: *cardstyle
       - type: entities
         title: Doorbell
         show_header_toggle: false
@@ -60,6 +63,7 @@ views:
             name: Chime Active?
           - entity: switch.doorbell_chime
             name: Manual Press
+        style: *cardstyle
       - type: glance
         entities:
           - entity: script.good_night
@@ -69,6 +73,7 @@ views:
         show_state: false
         title: Quick Scripts
         columns: 2
+        style: *cardstyle
 #      - type: map
 #        aspect_ratio: 16:9
 #        default_zoom: 16
@@ -91,6 +96,7 @@ views:
           exclude:
             - entity_id: "*doorbell*"
             - entity_id: "media_player.bedroom_tv"
+        style: *cardstyle
 
   - icon: mdi:stairs
     path: hallway
@@ -101,6 +107,7 @@ views:
     cards:
       - type: light
         entity: light.shelly_a
+        style: *cardstyle
       - type: picture-elements
         image: /local/nest.jpg
         elements:
@@ -129,11 +136,13 @@ views:
             style:
               top: 50%
               left: 70%
+        style: *cardstyle
       - type: entity-button
         entity: script.find_phone
         tap_action:
           action: call-service
           service: script.find_phone
+        style: *cardstyle
 
   - icon: mdi:baby-face-outline
     title: Nursery
@@ -144,17 +153,20 @@ views:
           - type: custom:slider-entity-row
             entity: light.yeelight_bslamp1_7c49eb28d971
             toggle: true
+        style: *cardstyle
       - type: history-graph
         entities:
           - entity: switch.bff5c4bbd438ed9847uxkj
         hours_to_show: 6
         title: Bottle History
         refresh_interval: 60
+        style: *cardstyle
       - type: entities
         entities:
           - entity: script.bottle_warmer_on
           - entity: switch.bff5c4bbd438ed9847uxkj
         show_header_toggle: false
+        style: *cardstyle
       - type: horizontal-stack
         cards:
           - entity: script.log_feed
@@ -169,6 +181,7 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+            style: *cardstyle
           - entity: script.log_feed
             name: Log 1oz Bottle
             icon: mdi:numeric-1-circle
@@ -181,6 +194,7 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+            style: *cardstyle
           - entity: script.log_feed
             name: Log 2oz Bottle
             icon: mdi:numeric-2-circle
@@ -193,6 +207,7 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+            style: *cardstyle
           - entity: script.log_feed
             name: Log 3oz Bottle
             icon: mdi:numeric-3-circle
@@ -205,6 +220,7 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+            style: *cardstyle
           - entity: script.log_feed
             name: Log 4oz Bottle
             icon: mdi:numeric-4-circle
@@ -217,6 +233,7 @@ views:
             show_icon: true
             show_name: true
             state_color: true
+            style: *cardstyle
 
   - icon: mdi:sofa
     title: Lounge
@@ -225,6 +242,7 @@ views:
       - type: plant-status
         entity: plant.sunflower
         name: Lounge Plant
+        style: *cardstyle
 
       - type: vertical-stack
         cards:
@@ -236,6 +254,7 @@ views:
               volume: false
               source: true
               power_state: false
+            style: *cardstyle
 
           - type: custom:mini-media-player
             entity: media_player.samsung_lounge_tv
@@ -245,6 +264,7 @@ views:
               volume: true
               source: true
               power_state: false
+            style: *cardstyle
 
           - type: custom:mini-media-player
             entity: media_player.playstation_4
@@ -255,6 +275,7 @@ views:
               source: true
               power_state: false
               controls: true
+            style: *cardstyle
 
       - type: glance
         entities:
@@ -268,9 +289,11 @@ views:
             tap_action:
               action: toggle
         show_state: false
+        style: *cardstyle
 
       - type: glance
         show_state: false
+        style: *cardstyle
         entities:
           - entity: scene.bright
             tap_action:
@@ -302,6 +325,7 @@ views:
                 entity_id: scene.lounge_lights_off
 
       - type: entities
+        style: *cardstyle
         entities:
           - type: custom:slider-entity-row
             entity: light.twigs
@@ -320,11 +344,13 @@ views:
         image: /local/vacuum.png
         name: false
         buttons: true
+        style: *cardstyle
 
       - type: custom:xiaomi-vacuum-map-card
         entity: vacuum.xiaomi_vacuum_cleaner
         map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'
         debug: false
+        style: *cardstyle
         default_mode: predefined_zones
         calibration_points:
           - vacuum:
@@ -355,10 +381,12 @@ views:
           - light.shelly_b
           - light.shelly_c
         title: Lights
+        style: *cardstyle
         show_header_toggle: true
 
       - type: entities
         title: Motion Controls
+        style: *cardstyle
         entities:
           - entity: automation.kitchen_motion_before_2130
           - entity: automation.kitchen_motion_after_2130
@@ -370,10 +398,12 @@ views:
           - light.table_light_2
           - light.table_light_3
         title: Table Lights
+        style: *cardstyle
         show_header_toggle: true
 
       - type: glance
         show_state: false
+        style: *cardstyle
         entities:
         - entity: scene.table_pink_and_blue
           tap_action:
@@ -389,10 +419,12 @@ views:
               entity_id: scene.table_bright
 
       - type: entities
+        style: *cardstyle
         entities:
           - sensor.bin_days
 
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.house_temperature
           - sensor.dark_sky_apparent_temperature
@@ -402,6 +434,7 @@ views:
           - type: custom:mini-media-player
             entity: media_player.downstairs
             icon: mdi:spotify
+            style: *cardstyle
             artwork: cover
             hide:
               volume: false
@@ -419,6 +452,7 @@ views:
             entity: media_player.kitchen_max
             icon: mdi:spotify
             artwork: cover
+            style: *cardstyle
             hide:
               volume: true
               source: true
@@ -428,6 +462,7 @@ views:
             entity: media_player.kitchen_display
             icon: mdi:spotify
             artwork: cover
+            style: *cardstyle
             hide:
               volume: true
               source: true
@@ -437,6 +472,7 @@ views:
         entity: media_player.kitchen_tv
         icon: mdi:television
         artwork: cover
+        style: *cardstyle
         hide:
           volume: true
           source: true
@@ -445,17 +481,20 @@ views:
       - type: thermostat
         entity: climate.netatmo_heating
         name: Heating
+        style: *cardstyle
 
   - path: outside
     icon: mdi:tree
     title: Outside
     cards:
       - type: entities
+        style: *cardstyle
         entities:
           - sensor.bin_days
           - sensor.next_bus_to_town
       - type: picture-glance
         title: Camera
+        style: *cardstyle
         entities:
           - person.steve_edson
         camera_image: camera.g3_flex
@@ -464,6 +503,7 @@ views:
         entity: weather.dark_sky
         name: "at home"
         backdrop: true
+        style: *cardstyle
 #      - type: glance
 #        entities:
 #          - entity: switch.bf5bde9e7cf9134ab6kmf7
@@ -479,6 +519,7 @@ views:
       - type: glance
         show_state: false
         columns: 2
+        style: *cardstyle
         entities:
           - entity: scene.bedroom_reading
             name: Reading
@@ -513,6 +554,7 @@ views:
                 entity_id: scene.bedroom_off
 
       - type: entities
+        style: *cardstyle
         entities:
           - switch.bedroom_tv
           - sensor.bedroom_tv_media_input_source
@@ -523,6 +565,7 @@ views:
       - type: glance
         show_state: false
         columns: 3
+        style: *cardstyle
         entities:
           - name: Sleep Timer 30m
             entity: timer.bedroom_sleep_timer
@@ -565,6 +608,7 @@ views:
             show_name: true
 
       - type: entities
+        style: *cardstyle
         entities:
           - type: custom:slider-entity-row
             entity: light.bedroom_spotlights
@@ -576,6 +620,7 @@ views:
       - type: custom:mini-media-player
         entity: media_player.bedroom_tv
         icon: mdi:television
+        style: *cardstyle
         artwork: cover
         hide:
           volume: false
@@ -595,12 +640,14 @@ views:
         title: TV Sleep Timer
         show_name: false
         show_state: true
+        style: *cardstyle
         show_icon: true
 
       - type: custom:mini-media-player
         entity: media_player.bedroom_speaker
         icon: mdi:spotify
         artwork: cover
+        style: *cardstyle
         hide:
           volume: false
           source: true
@@ -620,6 +667,7 @@ views:
         entity: media_player.home_office_speaker
         icon: mdi:spotify
         artwork: cover
+        style: *cardstyle
         hide:
           volume: false
           source: true
@@ -634,15 +682,18 @@ views:
       - type: custom:mini-media-player
         entity: media_player.home_office_tv
         artwork: cover
+        style: *cardstyle
         hide:
           volume: true
           source: true
           power_state: true
       - type: thermostat
         entity: climate.home_office
+        style: *cardstyle
       - type: custom:simple-thermostat
         entity: climate.home_office
         name: Heating
+        style: *cardstyle
 
   - icon: mdi:music-box
     path: media
@@ -651,6 +702,7 @@ views:
     cards:
       - type: custom:auto-entities
         max_columns: 3
+        style: *cardstyle
         filter:
           include:
             - domain: media_player
@@ -668,10 +720,12 @@ views:
     cards:
       - type: entity-button
         entity: switch.aegis
+        style: *cardstyle
       - type: entities
         entities:
           - sensor.steam_76561198059721761
         title: Steam
+        style: *cardstyle
         show_header_toggle: false
 
   - path: system
@@ -679,22 +733,28 @@ views:
     icon: mdi:desktop-tower-monitor
     cards:
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.speedtest_download
           - sensor.speedtest_upload
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.speedtest_ping
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.load_5m
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.memory_free
       - type: custom:mini-graph-card
+        style: *cardstyle
         entities:
           - sensor.disk_free
       - type: entities
+        style: *cardstyle
         entities:
           - binary_sensor.do_1
           - sensor.rt_ac68u_bytes_received
@@ -708,12 +768,14 @@ views:
         title: Network Stats
         show_header_toggle: false
       - type: entities
+        style: *cardstyle
         entities:
           - sensor.latest_version
           - sensor.current_version
         title: Home Assistant
         show_header_toggle: false
       - type: custom:auto-entities
+        style: *cardstyle
         unique: true
         show_empty: false
         card:
@@ -740,6 +802,7 @@ views:
       - type: custom:auto-entities
         show_empty: false
         unique: true
+        style: *cardstyle
         card:
           type: custom:bar-card
           attribute: battery
@@ -764,6 +827,7 @@ views:
             - entity_id: "*_battery"
 
       - type: custom:auto-entities
+        style: *cardstyle
         unique: true
         show_empty: false
         card:
@@ -794,6 +858,7 @@ views:
     icon: mdi:printer-3d-nozzle
     cards:
       - type: picture-entity
+        style: *cardstyle
         entity: camera.octoprint
         name: printcam
         show_state: false
@@ -805,11 +870,13 @@ views:
         cards:
           - type: custom:mini-graph-card
             hours_to_show: 2
+            style: *cardstyle
             entities:
               - sensor.octoprint_actual_bed_temp
               - sensor.octoprint_target_bed_temp
           - type: custom:mini-graph-card
             hours_to_show: 2
+            style: *cardstyle
             entities:
               - sensor.octoprint_actual_tool0_temp
               - sensor.octoprint_target_tool0_temp
@@ -818,6 +885,7 @@ views:
         cards:
           - type: gauge
             title: Bed Temp
+            style: *cardstyle
             entity: sensor.octoprint_actual_bed_temp
             unit_of_measurement: °C
             min: 0
@@ -830,6 +898,7 @@ views:
 
           - type: gauge
             title: Hot End Temp
+            style: *cardstyle
             entity: sensor.octoprint_actual_tool0_temp
             unit_of_measurement: °C
             min: 0
@@ -844,6 +913,7 @@ views:
         cards:
           - type: gauge
             title: Bed Target
+            style: *cardstyle
             entity: sensor.octoprint_target_bed_temp
             unit_of_measurement: °C
             min: 0
@@ -856,6 +926,7 @@ views:
 
           - type: gauge
             title: Hot End Target
+            style: *cardstyle
             entity: sensor.octoprint_target_tool0_temp
             unit_of_measurement: °C
             min: 0
@@ -871,6 +942,7 @@ views:
         entity: sensor.octoprint_job_percentage
         scale: 30px
         from: left
+        style: *cardstyle
         min: 0
         max: 100
         severity:
@@ -885,16 +957,19 @@ views:
         cards:
           - type: sensor
             name: Elapsed
+            style: *cardstyle
             entity: sensor.octoprint_time_elapsed
             graph: none
 
           - type: sensor
             name: Remaining
+            style: *cardstyle
             entity: sensor.octoprint_time_remaining
             graph: none
 
       - type: glance
         show_header_toggle: false
+        style: *cardstyle
         column_width: calc(100% / 3)
         entities:
           - entity: binary_sensor.octoprint_printing
