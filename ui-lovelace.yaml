@@ -2,7 +2,8 @@ title: The Paddocks
 
 card-style: &cardstyle |
   ha-card {
-    margin: 5px 14px 5px 10px;
+    margin: -5px 14px 15px 14px;
+    box-shadow: var(--card-box-shadow)
   }
 
 
