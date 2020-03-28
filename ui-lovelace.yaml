@@ -6,6 +6,26 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     title: Home
     cards:
+      - type: markdown
+        style: |
+          ha-card {
+            margin: 5px 14px -5px 10px;
+          }
+          h2 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--app-header-text-color);
+          }
+        content: |
+          {% if now().hour < 5 %}
+            ## Good night
+          {% elif now().hour < 12 %}
+            ## Good morning
+          {% elif now().hour < 18 %}
+            ## Good afternoon
+          {% else %}
+            ## Have a nice evening
+          {% endif %}
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: "at home"
