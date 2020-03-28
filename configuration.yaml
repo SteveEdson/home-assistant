@@ -37,6 +37,8 @@ lovelace:
       type: module
     - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js
       type: module
+    - url: /local/custom_lovelace/card-mod.js
+      type: module
 
 
 system_health:
