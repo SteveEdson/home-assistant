@@ -1,5 +1,11 @@
 title: The Paddocks
 
+card-style: &cardstyle |
+  ha-card {
+    margin: 5px 14px -5px 10px;
+  }
+
+
 views:
   - icon: mdi:home-assistant
     path: home
@@ -30,6 +36,7 @@ views:
         entity: weather.dark_sky
         name: "at home"
         backdrop: true
+        style: *cardstyle
       - type: alarm-panel
         entity: alarm_control_panel.house_alarm
       - type: picture-glance
@@ -161,7 +168,7 @@ views:
                 bottle_size: 0.5
             show_icon: true
             show_name: true
-            state_color: true 
+            state_color: true
           - entity: script.log_feed
             name: Log 1oz Bottle
             icon: mdi:numeric-1-circle
