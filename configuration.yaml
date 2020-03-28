@@ -37,7 +37,7 @@ lovelace:
       type: module
     - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js
       type: module
-    - url: /local/custom_lovelace/card-mod.js
+    - url: /local/custom_ui/card-mod.js
       type: module
 
 
@@ -184,7 +184,7 @@ media_player:
   - platform: samsungtv
     host: 192.168.1.115
     mac: !secret samsung_tv_mac
-    name: Samsung Lounge TV  
+    name: Samsung Lounge TV
   - platform: plex
   - platform: samsungtv
     host: 192.168.1.219
