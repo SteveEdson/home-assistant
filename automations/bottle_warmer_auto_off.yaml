@@ -6,6 +6,9 @@
       for:
         minutes: 8
   action:
-    service: switch.turn_off
-    data:
-      entity_id: switch.bff5c4bbd438ed9847uxkj
+    - service: switch.turn_off
+      data:
+        entity_id: switch.bff5c4bbd438ed9847uxkj
+    - service: telegram_bot.send_message
+      data:
+        message: "Automatically turning off the bottle warmer after 8 minutes"
