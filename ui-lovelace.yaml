@@ -169,6 +169,7 @@ views:
         show_header_toggle: false
         style: *cardstyle
       - type: horizontal-stack
+        style: *cardstyle
         cards:
           - entity: script.log_feed
             name: Log 0.5oz Bottle
@@ -182,7 +183,6 @@ views:
             show_icon: true
             show_name: true
             state_color: true
-            style: *cardstyle
           - entity: script.log_feed
             name: Log 1oz Bottle
             icon: mdi:numeric-1-circle
@@ -195,7 +195,6 @@ views:
             show_icon: true
             show_name: true
             state_color: true
-            style: *cardstyle
           - entity: script.log_feed
             name: Log 2oz Bottle
             icon: mdi:numeric-2-circle
@@ -208,7 +207,6 @@ views:
             show_icon: true
             show_name: true
             state_color: true
-            style: *cardstyle
           - entity: script.log_feed
             name: Log 3oz Bottle
             icon: mdi:numeric-3-circle
@@ -221,7 +219,6 @@ views:
             show_icon: true
             show_name: true
             state_color: true
-            style: *cardstyle
           - entity: script.log_feed
             name: Log 4oz Bottle
             icon: mdi:numeric-4-circle
@@ -234,7 +231,6 @@ views:
             show_icon: true
             show_name: true
             state_color: true
-            style: *cardstyle
 
   - icon: mdi:sofa
     title: Lounge
