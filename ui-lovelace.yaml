@@ -503,6 +503,10 @@ views:
         animate: true
         entities:
           - sensor.hot_tub_temperature
+      - type: gauge
+        entity: sensor.hot_tub_temperature
+        min: 6
+        max: 42 
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: "at home"
