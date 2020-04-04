@@ -11,7 +11,7 @@ lovelace:
       type: js
     - url: /local/custom_ui/bar-card.js?v=2
       type: js
-    - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.5.0
+    - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.9.3
       type: module
     - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
       type: module
