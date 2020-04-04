@@ -499,6 +499,8 @@ views:
         camera_view: live
       - type: custom:mini-graph-card
         style: *cardstyle
+        points_per_hour: 2
+        animate: true
         entities:
           - sensor.hot_tub_temperature
       - type: custom:simple-weather-card
