@@ -10,3 +10,9 @@
 
 - platform: version
   source: docker
+  
+- platform: statistics
+  entity_id: sensor.hot_tub_temperature
+  max_age:
+    hours: 1
+    
