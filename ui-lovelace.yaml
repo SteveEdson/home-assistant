@@ -497,6 +497,10 @@ views:
           - person.steve_edson
         camera_image: camera.g3_flex
         camera_view: live
+      - type: custom:mini-graph-card
+        style: *cardstyle
+        entities:
+          - sensor.hot_tub_temperature
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: "at home"
