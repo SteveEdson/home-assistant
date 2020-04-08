@@ -830,6 +830,18 @@ views:
             - entity_id: "*_pressure"
             - entity_id: "*_battery"
 
+      - type: custom:bar-card
+        direction: up
+        stack: horizontal
+        entities:
+          - sensor.hp_officejet_pro_6230_black_ink
+          - sensor.hp_officejet_pro_6230_cyan_ink
+          - sensor.hp_officejet_pro_6230_magenta_ink
+          - sensor.hp_officejet_pro_6230_yellow_ink
+        unit_of_measurement: "%"
+        title_position: inside
+        padding: 2px
+
       - type: custom:auto-entities
         style: *cardstyle
         unique: true
