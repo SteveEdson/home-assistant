@@ -843,8 +843,6 @@ views:
           - sensor.hp_officejet_pro_6230_magenta_ink
           - sensor.hp_officejet_pro_6230_yellow_ink
         unit_of_measurement: "%"
-        title_position: inside
-        padding: 2px
 
       - type: custom:auto-entities
         style: *cardstyle
