@@ -203,18 +203,6 @@ views:
             show_name: true
             state_color: true
           - entity: script.log_feed
-            name: Log 2oz Bottle
-            icon: mdi:numeric-2-circle
-            type: button
-            tap_action:
-              action: call-service
-              service: script.log_feed
-              service_data:
-                bottle_size: 2
-            show_icon: true
-            show_name: true
-            state_color: true
-          - entity: script.log_feed
             name: Log 3oz Bottle
             icon: mdi:numeric-3-circle
             type: button
@@ -223,6 +211,18 @@ views:
               service: script.log_feed
               service_data:
                 bottle_size: 3
+            show_icon: true
+            show_name: true
+            state_color: true
+          - entity: script.log_feed
+            name: Log 3.5oz Bottle
+            icon: mdi:numeric-3-circle
+            type: button
+            tap_action:
+              action: call-service
+              service: script.log_feed
+              service_data:
+                bottle_size: 3.5
             show_icon: true
             show_name: true
             state_color: true
