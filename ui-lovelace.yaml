@@ -34,6 +34,12 @@ views:
           {% else %}
             ## Have a nice evening
           {% endif %}
+      - type: map
+          aspect_ratio: 16:9
+          entities:
+            - entity: device_tracker.oneplus_a6003
+            - entity: device_tracker.gm1910
+          hours_to_show: 3
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: "at home"
@@ -76,12 +82,6 @@ views:
         title: Quick Scripts
         columns: 2
         style: *cardstyle
-      - type: map
-        aspect_ratio: 16:9
-        entities:
-          - entity: device_tracker.oneplus_a6003
-          - entity: device_tracker.gm1910
-        hours_to_show: 3
 #      - type: map
 #        aspect_ratio: 16:9
 #        default_zoom: 16
