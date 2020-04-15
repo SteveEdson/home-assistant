@@ -9,6 +9,10 @@
       unit_of_measurement: '°C'
       value_template: "{{ float(states.climate.netatmo_heating.attributes.current_temperature) }}"
 
+    last_feed:
+      friendly_name: "Time Since Last Feed"
+      value_template: "{{ now() - states.switch.bff5c4bbd438ed9847uxkj.last_changed }}"
+
     detected_objects:
       friendly_name: "Detected Objects"
       value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
