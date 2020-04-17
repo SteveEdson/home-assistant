@@ -1,0 +1,127 @@
+path: printing
+title: Printing
+icon: mdi:printer-3d-nozzle
+cards:
+  - type: picture-entity
+    style: *cardstyle
+    entity: camera.octoprint
+    name: printcam
+    show_state: false
+    camera_view: live
+    tap_action:
+      action: more-info
+
+  - type: horizontal-stack
+    cards:
+      - type: custom:mini-graph-card
+        hours_to_show: 2
+        style: *cardstyle
+        entities:
+          - sensor.octoprint_actual_bed_temp
+          - sensor.octoprint_target_bed_temp
+      - type: custom:mini-graph-card
+        hours_to_show: 2
+        style: *cardstyle
+        entities:
+          - sensor.octoprint_actual_tool0_temp
+          - sensor.octoprint_target_tool0_temp
+
+  - type: horizontal-stack
+    cards:
+      - type: gauge
+        title: Bed Temp
+        style: *cardstyle
+        entity: sensor.octoprint_actual_bed_temp
+        unit_of_measurement: °C
+        min: 0
+        max: 80
+        severity:
+          red: 70
+          amber: 0
+          green: 60
+        #scale: '50px'
+
+      - type: gauge
+        title: Hot End Temp
+        style: *cardstyle
+        entity: sensor.octoprint_actual_tool0_temp
+        unit_of_measurement: °C
+        min: 0
+        max: 260
+        severity:
+          red: 225
+          amber: 0
+          green: 200
+        #scale: '50px'
+
+  - type: horizontal-stack
+    cards:
+      - type: gauge
+        title: Bed Target
+        style: *cardstyle
+        entity: sensor.octoprint_target_bed_temp
+        unit_of_measurement: °C
+        min: 0
+        max: 150
+        severity:
+          red: 120
+          amber: 0
+          green: 59
+        #scale: '50px'
+
+      - type: gauge
+        title: Hot End Target
+        style: *cardstyle
+        entity: sensor.octoprint_target_tool0_temp
+        unit_of_measurement: °C
+        min: 0
+        max: 260
+        severity:
+          red: 225
+          amber: 0
+          green: 199
+          #scale: '50px'
+
+  - type: custom:bignumber-card
+    title: Current Job Completion Status
+    entity: sensor.octoprint_job_percentage
+    scale: 30px
+    from: left
+    style: *cardstyle
+    min: 0
+    max: 100
+    severity:
+      - value: 20
+        style: 'var(--label-badge-red)'
+      - value: 40
+        style: 'var(--label-badge-yellow)'
+      - value: 70
+        style: 'var(--label-badge-green)'
+
+  - type: horizontal-stack
+    cards:
+      - type: sensor
+        name: Elapsed
+        style: *cardstyle
+        entity: sensor.octoprint_time_elapsed
+        graph: none
+
+      - type: sensor
+        name: Remaining
+        style: *cardstyle
+        entity: sensor.octoprint_time_remaining
+        graph: none
+
+  - type: glance
+    show_header_toggle: false
+    style: *cardstyle
+    column_width: calc(100% / 3)
+    entities:
+      - entity: binary_sensor.octoprint_printing
+        name: Printing Status
+        icon: mdi:printer-wireless
+      - entity: binary_sensor.octoprint_printing_error
+        name:  Error State
+        icon: mdi:printer-alert
+      - entity: sensor.octoprint_current_state
+        name: Current Status

@@ -1,0 +1,78 @@
+icon: mdi:home-assistant
+path: home
+# Name of the view. Will be used as the tooltip for tab icon
+title: Home
+cards:
+  - type: markdown
+    style: |
+      ha-card {
+        margin: 5px 14px 5px 10px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--app-header-text-color);
+      }
+    content: |
+      {% if now().hour < 5 %}
+        ## Good night
+      {% elif now().hour < 12 %}
+        ## Good morning
+      {% elif now().hour < 18 %}
+        ## Good afternoon
+      {% else %}
+        ## Have a nice evening
+      {% endif %}
+  - type: map
+    aspect_ratio: 16:9
+    entities:
+      - entity: device_tracker.oneplus_a6003
+      - entity: device_tracker.gm1910
+    hours_to_show: 24
+  - type: custom:simple-weather-card
+    entity: weather.dark_sky
+    name: "at home"
+    backdrop: true
+    style: *cardstyle
+  - type: alarm-panel
+    entity: alarm_control_panel.house_alarm
+    style: *cardstyle
+  - type: picture-glance
+    title: Camera
+    entities:
+      - person.steve_edson
+      - binary_sensor.door_window_sensor_158d0002253f18
+    camera_image: camera.g3_flex
+    camera_view: live
+    style: *cardstyle
+  # - type: thermostat
+  #   entity: climate.netatmo_heating
+  #   name: Heating
+  - type: custom:simple-thermostat
+    entity: climate.netatmo_heating
+    name: Heating
+    style: *cardstyle
+  - type: entities
+    title: Doorbell
+    show_header_toggle: false
+    entities:
+      - entity: switch.doorbell_chime_active
+        name: Chime Active?
+      - entity: switch.doorbell_chime
+        name: Manual Press
+    style: *cardstyle
+  - type: glance
+    entities:
+      - entity: script.good_night
+      - entity: script.find_phone
+      - entity: script.play_radio_in_kitchen
+      - entity: script.clean_kitchen
+    show_state: false
+    title: Quick Scripts
+    columns: 2
+    style: *cardstyle
+#      - type: map
+#        aspect_ratio: 16:9
+#        default_zoom: 16
+#        entities:
+#          - device_tracker.steveedson_oneplus5t

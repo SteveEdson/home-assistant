@@ -1,0 +1,45 @@
+icon: mdi:stairs
+path: hallway
+badges:
+  - binary_sensor.door_window_sensor_158d00035c0b6e
+# Name of the view. Will be used as the tooltip for tab icon
+title: Hallway
+cards:
+  - type: light
+    entity: light.shelly_a
+    style: *cardstyle
+  - type: picture-elements
+    image: /local/nest.jpg
+    elements:
+      - type: state-icon
+        entity: sensor.living_room_nest_protect_battery_health
+        style:
+          top: 50%
+          left: 30%
+      - type: state-icon
+        entity: sensor.living_room_nest_protect_co_status
+        style:
+          top: 50%
+          left: 40%
+      - type: state-icon
+        entity: binary_sensor.living_room_nest_protect_online
+        style:
+          top: 50%
+          left: 50%
+      - type: state-icon
+        entity: sensor.living_room_nest_protect_smoke_status
+        style:
+          top: 50%
+          left: 60%
+      - type: state-icon
+        entity: sensor.living_room_nest_protect_color_status
+        style:
+          top: 50%
+          left: 70%
+    style: *cardstyle
+  - type: entity-button
+    entity: script.find_phone
+    tap_action:
+      action: call-service
+      service: script.find_phone
+    style: *cardstyle

@@ -1,0 +1,13 @@
+path: office
+title: Office
+icon: mdi:google-controller
+cards:
+  - type: entity-button
+    entity: switch.aegis
+    style: *cardstyle
+  - type: entities
+    entities:
+      - sensor.steam_76561198059721761
+    title: Steam
+    style: *cardstyle
+    show_header_toggle: false

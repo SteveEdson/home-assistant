@@ -1,0 +1,133 @@
+path: system
+title: System
+icon: mdi:desktop-tower-monitor
+cards:
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    entities:
+      - sensor.speedtest_ping
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    entities:
+      - sensor.load_5m
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    entities:
+      - sensor.memory_free
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    entities:
+      - sensor.disk_free
+  - type: entities
+    style: *cardstyle
+    entities:
+      - binary_sensor.do_1
+      - sensor.rt_ac68u_bytes_received
+      - sensor.rt_ac68u_bytes_sent
+      - sensor.rt_ac68u_kbyte_sec_received
+      - sensor.rt_ac68u_kbyte_sec_sent
+      - sensor.rt_ac68u_packets_received
+      - sensor.rt_ac68u_packets_sent
+      - sensor.rt_ac68u_packets_sec_received
+      - sensor.rt_ac68u_packets_sec_sent
+    title: Network Stats
+    show_header_toggle: false
+  - type: entities
+    style: *cardstyle
+    entities:
+      - sensor.latest_version
+      - sensor.current_version
+    title: Home Assistant
+    show_header_toggle: false
+  - type: custom:auto-entities
+    style: *cardstyle
+    unique: true
+    show_empty: false
+    card:
+      type: custom:bar-card
+      severity:
+        - value: 50
+          color: '#bf4040'
+        - value: 75
+          color: '#bf9540'
+        - value: 100
+          color: '#40bf40'
+      title_position: inside
+      columns: 3
+      padding: 2px
+      align: left
+      title_style:
+        font-size: 16px
+      value_style:
+        font-size: 8px
+    filter:
+      include:
+        - entity_id: "*_battery"
+  - type: custom:auto-entities
+    show_empty: false
+    unique: true
+    style: *cardstyle
+    card:
+      type: custom:bar-card
+      attribute: battery
+      unit_of_measurement: "%"
+      severity:
+        - value: 50
+          color: '#bf4040'
+        - value: 75
+          color: '#bf9540'
+        - value: 100
+          color: '#40bf40'
+      title_position: inside
+      padding: 2px
+      columns: 2
+    filter:
+      include:
+        - attributes:
+            battery: "<=100"
+      exclude:
+        - entity_id: "*_humidity"
+        - entity_id: "*_pressure"
+        - entity_id: "*_battery"
+
+      - type: custom:bar-card
+        direction: up
+        stack: horizontal
+        entities:
+          - sensor.hp_officejet_pro_6230_black_ink
+          - sensor.hp_officejet_pro_6230_cyan_ink
+          - sensor.hp_officejet_pro_6230_magenta_ink
+          - sensor.hp_officejet_pro_6230_yellow_ink
+        unit_of_measurement: "%"
+
+      - type: custom:auto-entities
+        style: *cardstyle
+        unique: true
+        show_empty: false
+        card:
+          type: custom:bar-card
+          attribute: battery_level
+          unit_of_measurement: "%"
+          severity:
+            - value: 50
+              color: '#bf4040'
+            - value: 75
+              color: '#bf9540'
+            - value: 100
+              color: '#40bf40'
+          title_position: inside
+          padding: 2px
+          columns: 2
+        filter:
+          include:
+            - attributes:
+                battery_level: "<=100"
+          exclude:
+            - entity_id: "*_humidity"
+            - entity_id: "*_pressure"
+            - entity_id: "*_battery"

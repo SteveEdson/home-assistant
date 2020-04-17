@@ -1,0 +1,18 @@
+icon: mdi:toggle-switch
+title: Active Devices
+path: active
+cards:
+  - type: custom:auto-entities
+    card:
+      type: entities
+      title: Active Devices
+    filter:
+      include:
+        - state: "on"
+          domain: /light|switch/
+        - state: "playing"
+          domain: /media_player/
+      exclude:
+        - entity_id: "*doorbell*"
+        - entity_id: "media_player.bedroom_tv"
+    style: *cardstyle

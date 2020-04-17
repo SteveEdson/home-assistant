@@ -1,0 +1,34 @@
+icon: mdi:office-building
+path: homeoffice
+cards:
+  - type: custom:mini-media-player
+    entity: media_player.home_office_speaker
+    icon: mdi:spotify
+    artwork: cover
+    style: *cardstyle
+    hide:
+      volume: false
+      source: true
+      power_state: true
+    shortcuts:
+      columns: 4 # Max buttons per row
+      buttons:
+        # Start predefined playlist
+        - icon: mdi:radio
+          type: script
+          id: script.play_radio_in_office
+  - type: custom:mini-media-player
+    entity: media_player.home_office_tv
+    artwork: cover
+    style: *cardstyle
+    hide:
+      volume: true
+      source: true
+      power_state: true
+  - type: thermostat
+    entity: climate.home_office
+    style: *cardstyle
+  - type: custom:simple-thermostat
+    entity: climate.home_office
+    name: Heating
+    style: *cardstyle

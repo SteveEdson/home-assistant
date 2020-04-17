@@ -1,0 +1,38 @@
+path: outside
+icon: mdi:tree
+title: Outside
+cards:
+  - type: entities
+    style: *cardstyle
+    entities:
+      - sensor.bin_days
+      - sensor.next_bus_to_town
+  - type: picture-glance
+    title: Camera
+    style: *cardstyle
+    entities:
+      - person.steve_edson
+    camera_image: camera.g3_flex
+    camera_view: live
+  - type: custom:mini-graph-card
+    style: *cardstyle
+    points_per_hour: 2
+    animate: true
+    entities:
+      - sensor.hot_tub_temperature
+  - type: gauge
+    entity: sensor.hot_tub_temperature
+    min: 6
+    max: 42
+  - type: custom:simple-weather-card
+    entity: weather.dark_sky
+    name: "at home"
+    backdrop: true
+    style: *cardstyle
+#      - type: glance
+#        entities:
+#          - entity: switch.bf5bde9e7cf9134ab6kmf7
+#            tap_action:
+#              action: toggle
+#        show_state: false
+# todo: add hot tub temp eventually
