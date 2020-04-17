@@ -1,3 +1,10 @@
+card-style: &cardstyle |
+  hui-horizontal-stack-card,
+  ha-card {
+    margin: -5px 14px 15px 14px;
+    box-shadow: var(--card-box-shadow)
+  }
+
 icon: mdi:home-assistant
 path: home
 # Name of the view. Will be used as the tooltip for tab icon

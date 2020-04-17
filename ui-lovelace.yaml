@@ -1,12 +1,3 @@
 title: The Paddocks
-
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
-
 views: !include_dir_list ui-lovelace/
 
