@@ -281,7 +281,7 @@ zone:
   - name: Home
     latitude: !secret my_latitude
     longitude: !secret my_longitude
-    radius: 50
+    radius: 60
     icon: mdi:house
   - name: Work
     latitude: !secret work_lat
