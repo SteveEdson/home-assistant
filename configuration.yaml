@@ -82,7 +82,7 @@ google:
 
 # Checks for available updates
 updater:
-  reporting: false
+  reporting: true
 
 # Discover some devices automatically
 discovery:
@@ -278,11 +278,26 @@ weather:
 media_extractor:
 
 zone:
+  - name: Home
+    latitude: !secret my_latitude
+    longitude: !secret my_longitude
+    radius: 50
+    icon: mdi:house
   - name: Work
     latitude: !secret work_lat
     longitude: !secret work_long
     radius: 150
     icon: mdi:brush
+
+proximity:
+  home:
+    ignored_zones:
+      - work
+    devices:
+      - device_tracker.oneplus_a6003
+      - device_tracker.gm1910
+    tolerance: 50
+    unit_of_measurement: mi
 
 xiaomi_aqara:
   discovery_retry: 5
@@ -304,7 +319,7 @@ duckdns:
   access_token: !secret duck_dns_token
 
 recorder:
-  purge_keep_days: 21
+  purge_keep_days: 30
   db_url: !secret db_url
 
 person: !include people.yaml
