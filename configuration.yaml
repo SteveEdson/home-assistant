@@ -282,7 +282,7 @@ zone:
     latitude: !secret my_latitude
     longitude: !secret my_longitude
     radius: 60
-    icon: mdi:house
+    icon: mdi:home
   - name: Work
     latitude: !secret work_lat
     longitude: !secret work_long
