@@ -39,6 +39,8 @@ lovelace:
       type: module
     - url: /local/custom_ui/card-mod.js
       type: module
+    - url: /local/custom_ui/custom-header.js
+      type: module
 
 
 system_health:
