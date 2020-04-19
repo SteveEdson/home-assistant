@@ -137,7 +137,7 @@ cards:
     show_icon: true
 
   - type: custom:mini-media-player
-    entity: media_player.bedroom_speaker
+    entity: media_player.lenovosmartclock6903
     icon: mdi:spotify
     artwork: cover
     style: *cardstyle
