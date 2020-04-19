@@ -290,12 +290,18 @@ zone:
     icon: mdi:brush
 
 proximity:
-  home:
+  steve_home:
+    ignored_zones:
+      - work
+    devices:
+      - device_tracker.gm1910
+    tolerance: 50
+    unit_of_measurement: mi
+  sophie_home:
     ignored_zones:
       - work
     devices:
       - device_tracker.oneplus_a6003
-      - device_tracker.gm1910
     tolerance: 50
     unit_of_measurement: mi
 
