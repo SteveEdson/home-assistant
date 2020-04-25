@@ -155,7 +155,7 @@
   entities:
     light.bedroom_light_rb:
       state: on
-      brightness_pct: 100
+      brightness_pct: 20
 
     light.bedroom_light_rt:
       state: off
@@ -174,7 +174,7 @@
   entities:
     light.bedroom_light_lb:
       state: on
-      brightness_pct: 100
+      brightness_pct: 20   
 
     light.bedroom_light_rt:
       state: off
