@@ -2,7 +2,7 @@
   queries:
     - name: Bottle Warmer Last On
       query: >
-        select * from events
+        select * from homeassistant.events
         where JSON_CONTAINS(events.event_data, '"switch.bff5c4bbd438ed9847uxkj"', "$.entity_id") and
         JSON_CONTAINS(events.event_data, '"on"', "$.new_state.state")
         order by time_fired DESC
