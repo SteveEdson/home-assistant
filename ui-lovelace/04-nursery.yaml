@@ -27,6 +27,8 @@ cards:
     style: *cardstyle
   - type: entity
     entity: sensor.bottle_warmer_last_on
+  - type: entity
+    entity: sensor.predicted_next_feed
   - type: entities
     entities:
       - entity: script.bottle_warmer_on

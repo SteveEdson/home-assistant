@@ -16,3 +16,7 @@
     detected_objects:
       friendly_name: "Detected Objects"
       value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
+
+    predicted_next_feed:
+      friendly_name: "Predicted Next Feed"
+      value_template: "{{ (as_timestamp(states('sensor.bottle_warmer_last_on')) + (60 * 60 * 3.5)) | timestamp_local }}"
