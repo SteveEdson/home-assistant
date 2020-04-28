@@ -25,6 +25,8 @@ cards:
     title: Bottle History
     refresh_interval: 60
     style: *cardstyle
+  - type: entity
+    entity: sensor.bottle_warmer_last_on
   - type: entities
     entities:
       - entity: script.bottle_warmer_on
