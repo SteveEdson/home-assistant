@@ -3,8 +3,8 @@
   queries:
     - name: Bottle Warmer Last On
       query: >
-        select * from states
+        select *, CONVERTTZ(last_changed, 'UTC', 'GMT') as last_changed_local from states
         where entity_id = "switch.bff5c4bbd438ed9847uxkj" and state = "on"
-        order by last_updated DESC
+        order by last_changed DESC
         LIMIT 1
-      column: 'last_changed'
+      column: 'last_changed_local'
