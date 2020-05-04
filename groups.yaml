@@ -29,7 +29,6 @@ Hallway:
 
 Bedroom Lights:
   - light.bedroom_lights
-  - light.yeelight_bslamp1_7c49eb28d971
 
 Kitchen Lights:
   # - light.kitchen_light_1
