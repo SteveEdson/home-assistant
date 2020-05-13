@@ -35,11 +35,11 @@
     platform: time
     at: '23:00:00'
 
-- alias: Lounge Vacuum Alert
+- alias: Lounge Hallway Vacuum Alert
   action:
     - service: notify.home_alerts
       data_template:
-        message: "The vacuum will start tonight at 11pm, please tidy the lounge area"
+        message: "The vacuum will start tonight at 11pm, please tidy the lounge and hallway area"
   condition:
     condition: and
     conditions:
@@ -50,17 +50,17 @@
     platform: time
     at: '19:30:00'
 
-- alias: Lounge Vacuum
+- alias: Lounge Hallway Vacuum
   action:
     - service: notify.home_alerts
       data:
-        message: "Starting the vacuum in the lounge in 3 minutes"
+        message: "Starting the vacuum in the lounge and hallway in 3 minutes"
     - delay:
         minutes: 3
     - service: notify.home_alerts
       data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
-        zones: [[25083,19323,31833,23373]]
+        zones: [[25083,19323,31833,23373], [29684,23319,33034,25969]]
         repeats: 3
   condition:
     condition: and
@@ -68,43 +68,6 @@
       - condition: time
         weekday:
           - thu
-  trigger:
-    platform: time
-    at: '23:00:00'
-
-- alias: Hallway Vacuum Alert
-  action:
-    - service: notify.home_alerts
-      data_template:
-        message: "The vacuum will start tonight at 11pm, please tidy the lounge area"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - fri
-  trigger:
-    platform: time
-    at: '19:30:00'
-
-- alias: Hallway Vacuum
-  action:
-    - service: notify.home_alerts
-      data:
-        message: "Starting the vacuum in the hallway in 3 minutes"
-    - delay:
-        minutes: 3
-    - service: notify.home_alerts
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
-        zones: [[29684,23319,33034,25969]]
-        repeats: 3
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - fri
   trigger:
     platform: time
     at: '23:00:00'
