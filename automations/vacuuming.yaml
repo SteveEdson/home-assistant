@@ -2,7 +2,7 @@
   action:
     - service: notify.home_alerts
       data_template:
-        message: "The vacuum will start tonight at 11pm, please tidy the kitchen area"
+        message: "The vacuum will start tonight at 11pm, please tidy the kitchen"
   condition:
     condition: and
     conditions:
@@ -39,7 +39,7 @@
   action:
     - service: notify.home_alerts
       data_template:
-        message: "The vacuum will start tonight at 11pm, please tidy the lounge and hallway area"
+        message: "The vacuum will start tonight at 11pm, please tidy the lounge and hallway"
   condition:
     condition: and
     conditions:
