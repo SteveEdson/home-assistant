@@ -17,6 +17,11 @@
   action:
     - service: notify.home_alerts
       data:
+        message: "Starting the vacuum in the kitchen in 3 minutes"
+    - delay:
+        minutes: 3
+    - service: notify.home_alerts
+      data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         zones: [[23199,24008,29749,28808], [29654,26405,31454,28355]]
         repeats: 3
@@ -49,6 +54,11 @@
   action:
     - service: notify.home_alerts
       data:
+        message: "Starting the vacuum in the lounge in 3 minutes"
+    - delay:
+        minutes: 3
+    - service: notify.home_alerts
+      data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         zones: [[25083,19323,31833,23373]]
         repeats: 3
@@ -79,6 +89,11 @@
 
 - alias: Hallway Vacuum
   action:
+    - service: notify.home_alerts
+      data:
+        message: "Starting the vacuum in the hallway in 3 minutes"
+    - delay:
+        minutes: 3
     - service: notify.home_alerts
       data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
