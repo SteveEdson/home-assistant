@@ -1,22 +1,22 @@
-- platform: rest
-  resource: !secret google_holiday_sheet
-  name: Next Holiday
-  value_template: '{{ value_json["Next Holiday"] }}'
-  json_attributes:
-    - "Holiday Year"
-    - "Allowance"
-    - "Days booked"
-    - "Allowance remaining"
-    - "Days Till Next Holiday"
-  scan_interval: 7200
+# - platform: rest
+#   resource: !secret google_holiday_sheet
+#   name: Next Holiday
+#   value_template: '{{ value_json["Next Holiday"] }}'
+#   json_attributes:
+#     - "Holiday Year"
+#     - "Allowance"
+#     - "Days booked"
+#     - "Allowance remaining"
+#     - "Days Till Next Holiday"
+#   scan_interval: 7200
 
-- platform: rest
-  resource: !secret ff1_stats_url
-  name: FF1 Stats
-  value_template: '{{ value_json.data.next.name }} - {{ value_json.data.next.percentPredicted }}% Predicted'
-  json_attributes:
-    - data
-  scan_interval: 7200
+# - platform: rest
+#   resource: !secret ff1_stats_url
+#   name: FF1 Stats
+#   value_template: '{{ value_json.data.next.name }} - {{ value_json.data.next.percentPredicted }}% Predicted'
+#   json_attributes:
+#     - data
+#   scan_interval: 7200
 
 # - platform: rest
 #   resource: !secret bins_api
@@ -33,19 +33,19 @@
 #     - image
 #   scan_interval: 7200
 
-- platform: rest
-  resource: !secret pay_day_api
-  name: Pay Day
-  value_template: '{{ value_json.daysRemaining }} days remaining'
-  json_attributes:
-    - daysRemaining
-    - isToday
-    - payday
-    - unix
-  scan_interval: 7200
+# - platform: rest
+#   resource: !secret pay_day_api
+#   name: Pay Day
+#   value_template: '{{ value_json.daysRemaining }} days remaining'
+#   json_attributes:
+#     - daysRemaining
+#     - isToday
+#     - payday
+#     - unix
+#   scan_interval: 7200
 
-- platform: rest
-  resource: !secret bus_url
-  name: Next Bus To Town
-  value_template: '{{ value_json.toWork[0].line }} - {{ value_json.toWork[0].best_departure_estimate }}'
-  scan_interval: 900
+# - platform: rest
+#   resource: !secret bus_url
+#   name: Next Bus To Town
+#   value_template: '{{ value_json.toWork[0].line }} - {{ value_json.toWork[0].best_departure_estimate }}'
+#   scan_interval: 900
