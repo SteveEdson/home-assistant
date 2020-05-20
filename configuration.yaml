@@ -182,16 +182,7 @@ hue:
       allow_hue_groups: false
       allow_unreachable: true
 
-media_player:
-  - platform: samsungtv
-    host: 192.168.1.115
-    mac: !secret samsung_tv_mac
-    name: Samsung Lounge TV
-  - platform: plex
-  - platform: samsungtv
-    host: 192.168.1.219
-    name: Bedroom TV
-    mac: !secret samsung_bedroom_tv_mac
+#media_player:
 
 spotify:
   client_id: !secret spotify_client_id
@@ -402,11 +393,11 @@ owntracks:
 
 mobile_app:
 
-tuya:
-  username: !secret phone_number
-  password: !secret tuya_pass
-  country_code: "44"
-  platform: smart_life
+#tuya:
+ # username: !secret phone_number
+#  password: !secret tuya_pass
+#  country_code: "44"
+#  platform: smart_life
 
 octoprint:
   host: octopi
