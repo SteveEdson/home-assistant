@@ -319,7 +319,7 @@ alarm_control_panel:
     code: !secret alarm_code
     delay_time: 30
     armed_home:
-      pending_time: 0
+      arming_time: 0
       delay_time: 0
 
 duckdns:
