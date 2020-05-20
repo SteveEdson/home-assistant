@@ -327,6 +327,9 @@ tplink:
 
 stream:
 
+emulated_hue:
+  listen_port: 80
+
 #prometheus:
 #  namespace: ha
 
