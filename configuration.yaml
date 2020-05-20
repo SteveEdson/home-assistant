@@ -227,7 +227,7 @@ digital_ocean:
   access_token: !secret digital_ocean_key
 
 logger:
-  #default: warning
+  default: info
 
 group: !include groups.yaml
 
