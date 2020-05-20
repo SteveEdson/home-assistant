@@ -13,11 +13,11 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./resources:/local
     restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8123"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:8123"]
+    #   interval: 1m30s
+    #   timeout: 10s
+    #   retries: 3
     labels:
       - "traefik.enable=false"
       - "traefik.frontend.rule=Host:$HA_HOSTNAME"
