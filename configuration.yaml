@@ -164,15 +164,15 @@ tts:
 
 config:
 
-mqtt:
-  discovery: true
-  discovery_prefix: homeassistant
-  broker: !secret mqtt_address
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  client_id: home-assistant
-  port: 443
-  certificate: /etc/ssl/certs/ca-certificates.crt
+# mqtt:
+#   discovery: true
+#   discovery_prefix: homeassistant
+#   broker: !secret mqtt_address
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
+#   client_id: home-assistant
+#   port: 443
+#   certificate: /etc/ssl/certs/ca-certificates.crt
 
 light: !include lights.yaml
 
