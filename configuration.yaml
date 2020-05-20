@@ -164,8 +164,8 @@ tts:
 
 config:
 
-# mqtt:
-#   discovery: true
+mqtt:
+  discovery: true
 #   discovery_prefix: homeassistant
 #   broker: !secret mqtt_address
 #   username: !secret mqtt_username
