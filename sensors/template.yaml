@@ -1,8 +1,8 @@
 - platform: template
   sensors:
-    race_deadline_day:
-      friendly_name: "Race Deadline Day"
-      value_template: "{{ False }}"
+    # race_deadline_day:
+    #   friendly_name: "Race Deadline Day"
+    #   value_template: "{{ False }}"
 
     house_temperature:
       friendly_name: "House Temperature"
