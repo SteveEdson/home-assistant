@@ -39,8 +39,8 @@ lovelace:
       type: module
     - url: /local/custom_ui/card-mod.js
       type: module
-    - url: /local/custom_ui/custom-header.js
-      type: module
+      # - url: /local/custom_ui/custom-header.js
+      #   type: module
 
 
 system_health:
@@ -71,9 +71,9 @@ input_boolean:
     initial: off
     icon: mdi:home-account
 
-google:
-  client_id: !secret google_calendar_client_id
-  client_secret: !secret google_calendar_client_secret
+# google:
+#   client_id: !secret google_calendar_client_id
+#   client_secret: !secret google_calendar_client_secret
 
 # image_processing:
 #  - platform: openalpr_cloud
@@ -164,8 +164,8 @@ tts:
 
 config:
 
-# mqtt:
-#   discovery: true
+mqtt:
+  discovery: true
 #   discovery_prefix: homeassistant
 #   broker: !secret mqtt_address
 #   username: !secret mqtt_username
@@ -227,7 +227,7 @@ digital_ocean:
   access_token: !secret digital_ocean_key
 
 logger:
-  default: warning
+  default: info
 
 group: !include groups.yaml
 
@@ -327,8 +327,8 @@ tplink:
 
 stream:
 
-emulated_hue:
-  listen_port: 80
+# emulated_hue:
+#   listen_port: 80
 
 #prometheus:
 #  namespace: ha
