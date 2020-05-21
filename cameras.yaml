@@ -2,22 +2,22 @@
 #   name: DaFang3
 #   input: -rtsp_transport tcp -i rtsp://192.168.1.61:8554/unicast
 
-- platform: generic
-  still_image_url: http://192.168.1.96/snap.jpeg
-  stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_0
-  name: G3 Flex
+# - platform: generic
+#   still_image_url: http://192.168.1.96/snap.jpeg
+#   stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_0
+#   name: G3 Flex
 
-- platform: generic
-  still_image_url: http://192.168.1.96/snap.jpeg
-  stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_2
-  name: G3 Flex Low Res
+# - platform: generic
+#   still_image_url: http://192.168.1.96/snap.jpeg
+#   stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_2
+#   name: G3 Flex Low Res
 
 - platform: mjpeg
   name: OctoPrint
   still_image_url: !secret octo_cam_still
   mjpeg_url: !secret octo_cam_stream
 
-- platform: onvif
-  host: 192.168.1.48
-  name: 360 Camera
-  password: !secret camera360pass
+# - platform: onvif
+#   host: 192.168.1.48
+#   name: 360 Camera
+#   password: !secret camera360pass
