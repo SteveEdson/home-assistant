@@ -252,14 +252,14 @@ google_assistant:
 #        - Coloured Lights
 #      expose: true
 
-#calendar:
-#  - platform: todoist
-#    token: !secret todoist_api_token
-#    custom_projects:
-#      - name: 'Due Today'
-#        due_date_days: 0
-#      - name: 'Due This Week'
-#        due_date_days: 7
+calendar:
+ - platform: todoist
+   token: !secret todoist_api_token
+   custom_projects:
+     - name: 'Due Today'
+       due_date_days: 0
+     - name: 'Due This Week'
+       due_date_days: 7
 
 shell_command:
   generate_gif: 'gifsicle --loop /config/www/g3_flex_2*.jpg /config/www/g3_flex.gif'
