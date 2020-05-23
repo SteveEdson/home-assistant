@@ -7,6 +7,7 @@ services:
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
     ports:
+      - 80:80
       - 8123:8123
     volumes:
       - ./:/config
