@@ -71,9 +71,9 @@ input_boolean:
     initial: off
     icon: mdi:home-account
 
-# google:
-#   client_id: !secret google_calendar_client_id
-#   client_secret: !secret google_calendar_client_secret
+google:
+  client_id: !secret google_calendar_client_id
+  client_secret: !secret google_calendar_client_secret
 
 # image_processing:
 #  - platform: openalpr_cloud
