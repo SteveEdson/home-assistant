@@ -35,6 +35,7 @@ cards:
     entities:
       - entity: script.bottle_warmer_on
       - entity: switch.bff5c4bbd438ed9847uxkj
+      - entity: automation.bottle_warmer_auto_off
     show_header_toggle: false
     style: *cardstyle
   - type: horizontal-stack
