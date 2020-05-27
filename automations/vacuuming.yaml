@@ -23,15 +23,7 @@
     - service: notify.home_alerts
       entity_id: vacuum.xiaomi_vacuum_cleaner
       data:
-        zones:
-          - - 23199
-            - 24008
-            - 29749
-            - 28808
-          - - 29654
-            - 26405
-            - 31454
-            - 28355
+        zones: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
         repeats: 3
   condition:
     condition: and
@@ -68,15 +60,7 @@
     - service: notify.home_alerts
       entity_id: vacuum.xiaomi_vacuum_cleaner
       data:
-        zones:
-          - - 25083
-            - 19323
-            - 31833
-            - 23373
-          - - 29684
-            - 23319
-            - 33034
-            - 25969
+        zones: [[25083,19323,31833,23373],[29684,23319,33034,25969]]
         repeats: 3
   condition:
     condition: and
