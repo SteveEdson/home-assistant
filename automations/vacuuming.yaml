@@ -20,9 +20,9 @@
         message: "Starting the vacuum in the kitchen in 3 minutes"
     - delay:
         minutes: 3
-    - service: notify.home_alerts
-      entity_id: vacuum.xiaomi_vacuum_cleaner
+    - service: xiaomi_miio.vacuum_clean_zone
       data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
         zones: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
         repeats: 3
   condition:
@@ -57,9 +57,9 @@
         message: "Starting the vacuum in the lounge and hallway in 3 minutes"
     - delay:
         minutes: 3
-    - service: notify.home_alerts
-      entity_id: vacuum.xiaomi_vacuum_cleaner
+    - service: xiaomi_miio.vacuum_clean_zone
       data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
         zones: [[25083,19323,31833,23373],[29684,23319,33034,25969]]
         repeats: 3
   condition:
