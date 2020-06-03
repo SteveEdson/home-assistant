@@ -1,6 +1,7 @@
 version: '3'
 services:
   homeassistant:
+    privileged: true
     depends_on:
       - db
       - doods
