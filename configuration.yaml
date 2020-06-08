@@ -190,9 +190,9 @@ spotify:
 
 device_tracker:
   - platform: bluetooth_tracker
-  - platform: bluetooth_le_tracker
-    track_battery: true
-    track_new_devices: true
+  # - platform: bluetooth_le_tracker
+  #   track_battery: true
+  #   track_new_devices: true
   - platform: asuswrt
     host: 192.168.1.1
     username: !secret router_username
