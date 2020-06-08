@@ -58,7 +58,11 @@
   action:
     service: light.toggle
     data:
-      entity_id: light.wled
+      entity_id:
+        - light.wled
+        - light.table_light_1
+        - light.table_light_2
+        - light.table_light_3
       brightness_pct: 100
 
 - alias: Kitchen Button Hold Not Playing
