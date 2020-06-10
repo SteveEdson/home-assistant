@@ -50,6 +50,16 @@ cards:
 
   - type: entities
     entities:
+      - automation.kitchen_vacuum
+      - automation.kitchen_vacuum_alert
+      - automation.lounge_hallway_vacuum
+      - automation.lounge_hallway_vacuum_alert
+    title: Vacuum Automation
+    style: *cardstyle
+    show_header_toggle: true
+
+  - type: entities
+    entities:
       - light.shelly_b
       - light.shelly_c
     title: Lights
