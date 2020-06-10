@@ -1,7 +1,7 @@
 - alias: "Doorbell Notifications"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button_2
+    entity_id: binary_sensor.doorbell_button
     to: 'on'
   condition:
     condition: and
@@ -19,14 +19,14 @@
     - delay:
         seconds: 2
     - service: telegram_bot.send_photo
-      data: 
+      data:
         file: /config/www/camera-snapshot.jpg
         caption: Doorbell
 
 - alias: "Doorbell Camera"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button_2
+    entity_id: binary_sensor.doorbell_button
     to: 'on'
   condition:
     condition: and
@@ -44,7 +44,7 @@
 - alias: "Doorbell Music Alert"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button_2
+    entity_id: binary_sensor.doorbell_button
     to: 'on'
   condition:
     condition: and
@@ -68,7 +68,7 @@
 - alias: "Doorbell Office Notification"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button_2
+    entity_id: binary_sensor.doorbell_button
     to: 'on'
   condition:
     condition: template

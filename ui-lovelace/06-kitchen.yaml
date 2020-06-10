@@ -66,6 +66,17 @@ cards:
 
   - type: entities
     entities:
+      - light.wled
+      - sensor.wled_estimated_current
+      - switch.wled_nightlight
+      - switch.wled_sync_receive
+      - switch.wled_sync_send
+    title: Strip Lights
+    style: *cardstyle
+    show_header_toggle: false
+
+  - type: entities
+    entities:
       - light.table_light_1
       - light.table_light_2
       - light.table_light_3

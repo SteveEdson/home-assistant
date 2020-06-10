@@ -22,4 +22,6 @@ cards:
       exclude:
         - entity_id: "*doorbell*"
         - entity_id: "media_player.bedroom_tv"
+        - entity_id: "switch.wled_sync_receive"
+        - entity_id: "switch.wled_sync_send"
     style: *cardstyle
