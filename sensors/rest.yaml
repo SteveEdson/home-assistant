@@ -18,20 +18,20 @@
 #     - data
 #   scan_interval: 7200
 
-# - platform: rest
-#   resource: !secret bins_api
-#   name: Bin days
-#   value_template: >
-#     {% if value_json.success %}
-#     {% set numSeconds = (as_timestamp(strptime(value_json.date, "%d/%m/%Y")) | float) - (as_timestamp(now()) | float) %}{{ value_json.bins }} in {{ (numSeconds / 60 / 60 / 24) | round }} days
-#     {% else %}
-#     Bin data not available
-#     {% endif %}
-#   json_attributes:
-#     - date
-#     - bins
-#     - image
-#   scan_interval: 7200
+- platform: rest
+  resource: !secret bins_api
+  name: Bin days
+  value_template: >
+    {% if value_json.success %}
+    {% set numSeconds = (as_timestamp(strptime(value_json.date, "%d/%m/%Y")) | float) - (as_timestamp(now()) | float) %}{{ value_json.bins }} in {{ (numSeconds / 60 / 60 / 24) | round }} days
+    {% else %}
+    Bin data not available
+    {% endif %}
+  json_attributes:
+    - date
+    - bins
+    - image
+  scan_interval: 7200
 
 - platform: rest
   resource: !secret pay_day_api
