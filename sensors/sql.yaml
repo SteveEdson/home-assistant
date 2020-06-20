@@ -7,4 +7,4 @@
         where entity_id = "switch.bff5c4bbd438ed9847uxkj" and state = "on"
         order by last_changed DESC
         LIMIT 1
-      column: 'last_changed_local'
+      column: 'last_changed'
