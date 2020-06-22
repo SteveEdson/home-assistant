@@ -26,6 +26,9 @@ cards:
     refresh_interval: 60
     style: *cardstyle
   - type: entity
+    entity: sensor.last_feed_readable
+    style: *cardstyle
+  - type: entity
     entity: sensor.bottle_warmer_last_on
     style: *cardstyle
   - type: entity
