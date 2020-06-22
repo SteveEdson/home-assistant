@@ -23,7 +23,7 @@
 
     seconds_since_bottle_warmed:
       friendly_name: "Seconds since bottle warmed"
-      value_template: "{{ as_timestamp(now()) - (as_timestamp(states('sensor.bottle_warmer_last_on'))) }}"
+      value_template: "{{ (as_timestamp(now()) - (as_timestamp(states('sensor.bottle_warmer_last_on')))) | round }}"
 
     last_feed_readable:
       friendly_name: "Last Feed"
