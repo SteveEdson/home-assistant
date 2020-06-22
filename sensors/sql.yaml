@@ -3,9 +3,9 @@
   queries:
     - name: Bottle Warmer Last On
       query: >
-        select *, CONVERT_TZ(last_changed, 'UTC', 'BST') as last_changed_local 
+        select *, CONVERT_TZ(states.last_changed, 'UTC', 'Europe/London') as last_changed_local
         from states
         where entity_id = "switch.bff5c4bbd438ed9847uxkj" and state = "on"
         order by last_changed DESC
         LIMIT 1
-      column: 'last_changed'
+      column: 'last_changed_local'
