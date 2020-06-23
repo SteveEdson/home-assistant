@@ -7,6 +7,7 @@
     house_temperature:
       friendly_name: "House Temperature"
       unit_of_measurement: '°C'
+      entity_id: climate.netatmo_heating
       value_template: "{{ float(states.climate.netatmo_heating.attributes.current_temperature) }}"
 
     last_feed:
@@ -28,6 +29,7 @@
 
     last_feed_readable:
       friendly_name: "Last Feed"
+      entity_id: sensor.seconds_since_bottle_warmed
       value_template: >
         {%- set uptime = states('sensor.seconds_since_bottle_warmed') | round -%}
         {%- set uptime = uptime / 60 -%}
