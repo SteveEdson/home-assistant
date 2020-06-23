@@ -19,7 +19,7 @@
 
     predicted_next_feed:
       friendly_name: "Predicted Next Feed"
-      value_template: "{{ (as_timestamp(states('sensor.bottle_warmer_last_on')) + (60 * 60 * 3)) | timestamp_local }}"
+      value_template: "{{ (as_timestamp(states('sensor.bottle_warmer_last_on')) + (60 * 60 * 3.25)) | timestamp_local }}"
 
     seconds_since_bottle_warmed:
       friendly_name: "Seconds since bottle warmed"
