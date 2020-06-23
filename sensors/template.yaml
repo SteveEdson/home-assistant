@@ -12,6 +12,7 @@
 
     last_feed:
       friendly_name: "Time Since Last Feed"
+      entity_id: sensor.date_time
       value_template: "{{ now() - states.switch.bff5c4bbd438ed9847uxkj.last_changed }}"
 
     detected_objects:
@@ -26,6 +27,7 @@
     seconds_since_bottle_warmed:
       friendly_name: "Seconds since bottle warmed"
       value_template: "{{ (as_timestamp(now()) - (as_timestamp(states('sensor.bottle_warmer_last_on')))) | round }}"
+      entity_id: sensor.date_time
 
     last_feed_readable:
       friendly_name: "Last Feed"
