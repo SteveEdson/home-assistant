@@ -1,0 +1,28 @@
+card-style: &cardstyle |
+  hui-horizontal-stack-card,
+  ha-card {
+    margin: -5px 14px 15px 14px;
+    box-shadow: var(--card-box-shadow)
+  }
+
+icon: mdi:cctv
+path: cameras
+# Name of the view. Will be used as the tooltip for tab icon
+title: Cameras
+cards:
+  - type: picture-glance
+    title: Front
+    entities:
+      - person.steve_edson
+      - binary_sensor.door_window_sensor_158d0002253f18
+    camera_image: camera.g3_flex
+    camera_view: live
+    style: *cardstyle
+  - type: picture-glance
+    title: Garden
+    entities:
+      - person.steve_edson
+      - binary_sensor.door_window_sensor_158d00035c0c9a
+    camera_image: camera.garden
+    camera_view: live
+    style: *cardstyle
