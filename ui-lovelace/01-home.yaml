@@ -45,11 +45,19 @@ cards:
     entity: alarm_control_panel.house_alarm
     style: *cardstyle
   - type: picture-glance
-    title: Camera
+    title: Front
     entities:
       - person.steve_edson
       - binary_sensor.door_window_sensor_158d0002253f18
     camera_image: camera.g3_flex
+    camera_view: live
+    style: *cardstyle
+  - type: picture-glance
+    title: Garden
+    entities:
+      - person.steve_edson
+      - binary_sensor.door_window_sensor_158d00035c0c9a
+    camera_image: camera.garden
     camera_view: live
     style: *cardstyle
   # - type: thermostat
