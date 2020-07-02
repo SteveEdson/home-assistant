@@ -12,6 +12,16 @@
   stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_2
   name: G3 Flex Low Res
 
+- platform: generic
+  still_image_url: http://192.168.1.113/snap.jpeg
+  stream_source: rtsp://192.168.1.60:7447/5ef493165770c11225ae74f1_0
+  name: Garden
+
+- platform: generic
+  still_image_url: http://192.168.1.113/snap.jpeg
+  stream_source: rtsp://192.168.1.60:7447/5ef493165770c11225ae74f1_2
+  name: Garden Low Res
+
 - platform: mjpeg
   name: OctoPrint
   still_image_url: !secret octo_cam_still
