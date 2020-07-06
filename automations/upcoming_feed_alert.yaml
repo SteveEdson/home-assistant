@@ -2,7 +2,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.seconds_since_bottle_warmed
-      above: 9000
+      above: 10800
   condition:
     - condition: time
       after: '09:00:00'
