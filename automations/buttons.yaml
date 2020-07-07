@@ -1,5 +1,5 @@
-# SOPHIE BUTTON
-- alias: Sophie Button Single
+# Lounge button
+- alias: Lounge Button Single
   trigger:
     platform: event
     event_type: xiaomi_aqara.click
@@ -7,11 +7,11 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: single
   action:
-    service: ifttt.trigger
+    service: light.toggle
     data:
-      event: baby_button
+      entity_id: group.lounge_lights
 
-- alias: Sophie Button Double
+- alias: Lounge Button Double
   trigger:
     platform: event
     event_type: xiaomi_aqara.click
@@ -19,9 +19,11 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: double
   action:
-    service: script.good_night
+    service: scene.turn_on
+    data:
+      entity_id: scene.lounge_chill
 
-- alias: Sophie Button Hold
+- alias: Lounge Button Hold
   trigger:
     platform: event
     event_type: xiaomi_aqara.click
@@ -29,10 +31,8 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: long_click_press
   action:
-    service: light.toggle
-    data:
-      entity_id: group.bedroom_lights
-# SOPHIE BUTTON END
+    service: script.good_night
+# LOUNGE BUTTON END
 
 # KITCHEN BUTTON
 - alias: Kitchen Button Single
