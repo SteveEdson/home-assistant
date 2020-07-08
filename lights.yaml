@@ -4,6 +4,14 @@
     - light.porch
     - light.gateway_light_7811dcb25e74
 
+- platform: switch
+  name: Mini Lights
+  entity_id: switch.32002710bcddc226b4b0
+
+- platform: switch
+  name: Bonsai Lights
+  entity_id: switch.bf4cadf5e3e38fddf078v2
+
 # - platform: mqtt
 #   name: Cupboard
 #   schema: json
