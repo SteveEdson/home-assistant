@@ -41,6 +41,14 @@
     - light.bedside_light_rt
 
 - platform: group
+  name: Lounge Lights
+  entities:
+    - light.twigs
+    - light.lounge_tall_lamp
+    - light.mini_lights
+    - light.bonsai_lights
+
+- platform: group
   name: Bedroom Lights
   entities:
     - light.bedroom_spotlights

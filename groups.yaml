@@ -14,12 +14,6 @@ Lounge Protect:
   - sensor.living_room_nest_protect_smoke_status
   - sensor.living_room_nest_protect_color_status
 
-Lounge Lights:
-  - light.twigs
-  - light.lounge_tall_lamp
-  - light.mini_lights # Mini
-  - light.bonsai_lights
-
 Hallway:
   - binary_sensor.door_window_sensor_158d0002253f18
   - sensor.illumination_7811dcb25e74
