@@ -10,6 +10,7 @@
     service: light.toggle
     data:
       entity_id: light.lounge_lights
+      brightness_pct: 100
 
 - alias: Lounge Button Double
   trigger:
