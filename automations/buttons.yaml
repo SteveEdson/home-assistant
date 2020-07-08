@@ -9,7 +9,7 @@
   action:
     service: light.toggle
     data:
-      entity_id: group.lounge_lights
+      entity_id: light.lounge_lights
 
 - alias: Lounge Button Double
   trigger:
