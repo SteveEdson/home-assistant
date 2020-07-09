@@ -102,3 +102,7 @@ cards:
         toggle: true
       - type: custom:slider-entity-row
         entity: light.lounge_tall_lamp
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.spotlight
+        toggle: true

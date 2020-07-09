@@ -47,6 +47,7 @@
     - light.lounge_tall_lamp
     - light.mini_lights
     - light.bonsai_lights
+    - light.spotlight
 
 - platform: group
   name: Bedroom Lights
