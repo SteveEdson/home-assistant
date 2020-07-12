@@ -90,6 +90,8 @@ cards:
       - light.table_light_1
       - light.table_light_2
       - light.table_light_3
+      - light.hanging_light_1
+      - light.hanging_light_2
     title: Table Lights
     style: *cardstyle
     show_header_toggle: true

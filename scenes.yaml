@@ -229,10 +229,10 @@
   id: lounge_chill
   entities:
     light.twigs:
-      brightness_pct: 20
+      brightness_pct: 25
       state: on
     light.lounge_tall_lamp:
-      brightness_pct: 20
+      brightness_pct: 25
       state: on
     switch.32002710bcddc226b4b0: # Mini
       state: on
