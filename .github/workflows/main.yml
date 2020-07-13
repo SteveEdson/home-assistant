@@ -16,9 +16,10 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     strategy:
+      fail-fast: false
       matrix:
         HA_VERSION: [DEV, RC, STABLE]
-      max-parallel: 2
+      max-parallel: 3
       
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -29,6 +30,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: mv secrets.example.yaml secrets.yaml
+  
+    - run: mv google_service_account.example.json google_service_account.json
 
     # Runs a single command using the runners shell
     - name: Home Assistant Configuration Check
