@@ -22,7 +22,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - run: mv secrets.yaml.example secrets.yaml
+    - run: mv secrets.example.yaml secrets.yaml
 
     # Runs a single command using the runners shell
     - name: Home Assistant Configuration Check
