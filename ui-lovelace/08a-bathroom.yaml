@@ -5,7 +5,7 @@ card-style: &cardstyle |
     box-shadow: var(--card-box-shadow)
   }
 
-icon: mdi:scale-bathroom
+icon: mdi:hot-tub
 path: bathroom
 title: Bathroom
 cards:
