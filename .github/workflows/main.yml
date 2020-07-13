@@ -12,8 +12,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+ 
   # This workflow contains a single job called "build"
   build:
+    strategy:
+      matrix:
+        HA_VERSION: [DEV, RC, STABLE]
+      max-parallel: 2
+      
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,7 +35,7 @@ jobs:
       uses: ludeeus/action-ha-config-check@1.0.0
       with:
         # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
-        version: STABLE
+        version: matrix.HA_VERSION
         # Relative path to your configuration directory if not in the root
         config_path: .
         
@@ -38,7 +44,7 @@ jobs:
       uses: ludeeus/action-ha-config-check@1.0.0
       with:
         # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
-        version: RC
+        version: matrix.HA_VERSION
         # Relative path to your configuration directory if not in the root
         config_path: .
 
@@ -47,6 +53,6 @@ jobs:
       uses: ludeeus/action-ha-config-check@1.0.0
       with:
         # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
-        version: DEV
+        version: matrix.HA_VERSION
         # Relative path to your configuration directory if not in the root
         config_path: .
