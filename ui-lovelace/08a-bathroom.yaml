@@ -1,0 +1,18 @@
+card-style: &cardstyle |
+  hui-horizontal-stack-card,
+  ha-card {
+    margin: -5px 14px 15px 14px;
+    box-shadow: var(--card-box-shadow)
+  }
+
+icon: mdi:scale-bathroom
+path: bathroom
+title: Bathroom
+cards:
+  - type: light
+    entity: light.bath_light
+    style: *cardstyle
+  - type: light
+    entity: light.shelly_f
+    style: *cardstyle
+  
