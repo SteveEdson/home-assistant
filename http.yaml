@@ -1,4 +1,3 @@
-base_url: !secret base_url
 use_x_forwarded_for: true
 trusted_proxies:
   - 172.17.0.1
