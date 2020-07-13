@@ -38,21 +38,3 @@ jobs:
         version: matrix.HA_VERSION
         # Relative path to your configuration directory if not in the root
         config_path: .
-        
-    # Runs a single command using the runners shell
-    - name: Home Assistant Configuration Check
-      uses: ludeeus/action-ha-config-check@1.0.0
-      with:
-        # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
-        version: matrix.HA_VERSION
-        # Relative path to your configuration directory if not in the root
-        config_path: .
-
-    # Runs a single command using the runners shell
-    - name: Home Assistant Configuration Check
-      uses: ludeeus/action-ha-config-check@1.0.0
-      with:
-        # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
-        version: matrix.HA_VERSION
-        # Relative path to your configuration directory if not in the root
-        config_path: .
