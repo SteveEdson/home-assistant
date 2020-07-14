@@ -79,7 +79,13 @@ cards:
   - type: glance
     entities:
       - entity: script.good_night
+        tap_action:
+          action: call-service
+          service: script.good_night
       - entity: script.find_phone
+        tap_action:
+          action: call-service
+          service: script.find_phone
       - entity: script.play_radio_in_kitchen
       - entity: script.clean_kitchen
     show_state: false
