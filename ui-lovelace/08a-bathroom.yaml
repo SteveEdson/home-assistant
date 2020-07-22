@@ -15,4 +15,7 @@ cards:
   - type: light
     entity: light.shelly_f
     style: *cardstyle
-  
+  - type: entity
+    entity: binary_sensor.motion_sensor_158d0001d56ba5
+    style: *cardstyle
+

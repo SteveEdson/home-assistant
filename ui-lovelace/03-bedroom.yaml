@@ -9,6 +9,10 @@ path: bedroom
 icon: mdi:hotel
 title: Bedroom
 cards:
+  - type: entity
+    entity: binary_sensor.motion_sensor_158d000223ce57
+    style: *cardstyle
+
   - type: glance
     show_state: false
     columns: 2
