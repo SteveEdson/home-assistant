@@ -5,15 +5,14 @@
     from: 'off'
     to: 'on'
   condition:
-    conditions:
-      - condition: time
-        before: '20:30:00'
-      - condition: sun # after 20 mins before sunset
-        after: sunset
-        after_offset: "-1:00:00"
-      - condition: sun # before 1 hour after sunrise
-        before: sunrise
-        before_offset: "1:00:00"
+    - condition: time
+      before: '20:30:00'
+    - condition: sun # after 20 mins before sunset
+      after: sunset
+      after_offset: "-1:00:00"
+    - condition: sun # before 1 hour after sunrise
+      before: sunrise
+      before_offset: "1:00:00"
   action:
     - service: light.turn_on
       data:
@@ -26,15 +25,14 @@
     from: 'off'
     to: 'on'
   condition:
-    conditions:
-      - condition: time
-        after: '20:30:00'
-      - condition: sun # after 20 mins before sunset
-        after: sunset
-        after_offset: "-1:00:00"
-      - condition: sun # before 1 hour after sunrise
-        before: sunrise
-        before_offset: "1:00:00"
+    - condition: time
+      after: '20:30:00'
+    - condition: sun # after 20 mins before sunset
+      after: sunset
+      after_offset: "-1:00:00"
+    - condition: sun # before 1 hour after sunrise
+      before: sunrise
+      before_offset: "1:00:00"
   action:
     - service: light.turn_on
       data:
