@@ -156,3 +156,5 @@ binary_sensor.motion_sensor_158d0001d56ba5:
   name: Family Bathroom Motion
 binary_sensor.motion_sensor_158d000223ce57:
   name: Ensuite Motion
+binary_sensor.door_window_sensor_158d00047d0693:
+  name: Lounge Door
