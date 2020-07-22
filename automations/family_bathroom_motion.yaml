@@ -1,4 +1,4 @@
-- alias: Family bathroom motion on - main
+- alias: Family bathroom motion on main
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001d56ba5
@@ -18,7 +18,7 @@
       data:
         entity_id: light.shelly_f
 
-- alias: Family bathroom motion on - side
+- alias: Family bathroom motion on side
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001d56ba5
