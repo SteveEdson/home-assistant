@@ -7,12 +7,9 @@
   condition:
     - condition: time
       before: '20:30:00'
-    - condition: sun # after 20 mins before sunset
-      after: sunset
-      after_offset: "-1:00:00"
-    - condition: sun # before 1 hour after sunrise
-      before: sunrise
-      before_offset: "1:00:00"
+    - condition: state # after 20 mins before sunset
+      entity: binary_sensor.night
+      state: "on"
   action:
     - service: light.turn_on
       data:
@@ -27,12 +24,9 @@
   condition:
     - condition: time
       after: '20:30:00'
-    - condition: sun # after 20 mins before sunset
-      after: sunset
-      after_offset: "-1:00:00"
-    - condition: sun # before 1 hour after sunrise
-      before: sunrise
-      before_offset: "1:00:00"
+    - condition: state # after 20 mins before sunset
+      entity: binary_sensor.night
+      state: "on"
   action:
     - service: light.turn_on
       data:
