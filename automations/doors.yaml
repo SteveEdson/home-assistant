@@ -1,7 +1,7 @@
 - alias: 'Front door opened on Halloween'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e # front door
+      entity_id: binary_sensor.door_window_sensor_158d000490fd2d
       to: 'on'
   action:
     - service: media_player.volume_set
@@ -52,8 +52,6 @@
     conditions:
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.front_door_opened_alert', 'last_triggered') | default(0)) | int > 5)}}"
-      - condition: template
-        value_template: "{{ (now().strftime('%Y-%m-%d')) != '2020-02-08' }}"
   action:
     - service: telegram_bot.send_message
       data:
@@ -122,3 +120,31 @@
     - service: notify.home_alerts
       data:
         message: "Bi-fold door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+
+- id: back_door_opened_alert
+  alias: 'Back door opened alert'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d000490fd2d
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.back_door_opened_alert', 'last_triggered') | default(0)) | int > 5)}}"
+  action:
+    - service: telegram_bot.send_message
+      data:
+        message: "Back door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
+    - service: camera.record
+      data:
+        entity_id: camera.garden
+        filename: /config/www/camera-garden-latest.mp4
+        lookback: 8
+        duration: 5
+    - delay:
+        seconds: 15
+    - service: telegram_bot.send_video
+      data:
+        file: /config/www/camera-garden-latest.mp4
+        caption: Garden
