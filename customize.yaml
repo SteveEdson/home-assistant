@@ -158,3 +158,5 @@ binary_sensor.motion_sensor_158d000223ce57:
   name: Ensuite Motion
 binary_sensor.door_window_sensor_158d00047d0693:
   name: Lounge Door
+binary_sensor.motion_sensor_158d0001d55c60:
+  name: Nursery Sensor
