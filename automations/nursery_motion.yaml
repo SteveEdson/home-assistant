@@ -1,13 +1,13 @@
-- alias: Family bathroom motion on - main
+- alias: Nursery motion on - main
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001d56ba5
+      entity_id: binary_sensor.motion_sensor_158d0001d55c60
       from: 'off'
       to: 'on'
   condition:
     conditions:
       - condition: time
-        before: '20:30:00'
+        before: '19:30:00'
       - condition: sun # after 20 mins before sunset
         after: sunset
         after_offset: "-1:00:00"
@@ -17,18 +17,18 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.shelly_f
+        entity_id: light.nursery
 
-- alias: Family bathroom motion on - side
+- alias: Nursery motion on - side
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001d56ba5
+      entity_id: binary_sensor.motion_sensor_158d0001d55c60
       from: 'off'
       to: 'on'
   condition:
     conditions:
       - condition: time
-        after: '20:30:00'
+        after: '19:30:00'
       - condition: sun # after 20 mins before sunset
         after: sunset
         after_offset: "-1:00:00"
@@ -38,13 +38,13 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.bath_light
+        entity_id: light.yeelight_bslamp1_7c49eb28d971
         brightness_pct: 100
 
-- alias: Family bathroom motion off
+- alias: Nursery motion off
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d56ba5
+    entity_id: binary_sensor.motion_sensor_158d0001d55c60
     from: 'on'
     to: 'off'
     for:
@@ -52,7 +52,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.shelly_f
+        entity_id: light.nursery
     - service: light.turn_off
       data:
-        entity_id: light.bath_light
+        entity_id: light.yeelight_bslamp1_7c49eb28d971
