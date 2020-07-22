@@ -1,0 +1,6 @@
+- platform: tod
+  name: Night
+  after: sunset
+  after_offset: "-1:00:00"
+  before: sunrise
+  before_offset: "1:00:00"
