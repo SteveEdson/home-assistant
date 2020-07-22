@@ -9,6 +9,9 @@ icon: mdi:baby-face-outline
 title: Nursery
 path: nursery
 cards:
+  - type: entity
+    entity: binary_sensor.motion_sensor_158d0001d55c60
+    style: *cardstyle
   - type: entities
     entities:
       - type: custom:slider-entity-row
