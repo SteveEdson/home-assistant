@@ -30,6 +30,9 @@ cards:
       {% else %}
         ## Have a nice evening
       {% endif %}
+  - type: entity
+    entity: binary_sensor.night
+    style: *cardstyle
   - type: map
     aspect_ratio: 16:9
     entities:
