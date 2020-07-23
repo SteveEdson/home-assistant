@@ -34,7 +34,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Home Assistant Configuration Check
-      uses: ludeeus/action-ha-config-check@master
+      uses: steveedson/action-ha-config-check@master
       with:
         # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
         version: matrix.HA_VERSION
