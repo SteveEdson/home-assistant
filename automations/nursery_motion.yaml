@@ -25,7 +25,7 @@
     - condition: time
       after: '19:30:00'
     - condition: state # after 20 mins before sunset
-      _id binary_sensor.night
+      entity_id: binary_sensor.night
       state: "on"
   action:
     - service: light.turn_on
