@@ -7,10 +7,14 @@
       entity_id: binary_sensor.switch_158d00035a259e
       click_type: single
   action:
-    service: light.toggle
-    data:
-      entity_id: light.lounge_lights
-      brightness_pct: 100
+    - service: light.toggle
+      data:
+        entity_id: light.lounge_lights
+        brightness_pct: 100
+    - service: light.toggle
+      data:
+        entity_id: light.gateway_light_7811dcb25e74
+        brightness_pct: 100
 
 - alias: Lounge Button Double
   trigger:
