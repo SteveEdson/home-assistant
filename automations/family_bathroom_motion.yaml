@@ -1,12 +1,10 @@
-- alias: Family bathroom motion on main
+- alias: Family bathroom motion on
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001d56ba5
     from: 'off'
     to: 'on'
   condition:
-    - condition: time
-      before: '20:30:00'
     - condition: state # after 20 mins before sunset
       entity_id: binary_sensor.night
       state: "on"
@@ -16,8 +14,7 @@
           condition: or
           conditions:
           - condition: time
-            after: "20:30:00" #7pm - midnight
-          - condition: time
+            after: "21:00:00"
             before: "08:00:00"
         sequence:
             - service: light.turn_on
