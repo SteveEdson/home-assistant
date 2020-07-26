@@ -33,6 +33,9 @@ cards:
   - type: entity
     entity: binary_sensor.night
     style: *cardstyle
+  - type: entity
+    entity: sensor.sun_elevation
+    style: *cardstyle
   - type: map
     aspect_ratio: 16:9
     entities:
