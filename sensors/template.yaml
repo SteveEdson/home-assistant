@@ -13,6 +13,7 @@
     sun_elevation:
       friendly_name: Sun Elevation
       entity_id: sun.sun
+      unit_of_measurement: '°'
       value_template: "{{ states.sun.sun.attributes.elevation | float }}"
 
     last_feed:
