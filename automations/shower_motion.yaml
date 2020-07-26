@@ -8,7 +8,7 @@
     condition: or
     conditions:
       - condition: state # after 20 mins before sunset
-        entity_id: binary_sensor.night
+        entity_id: binary_sensor.activate_motion_lights
         state: "on"
       - condition: state
         entity_id: input_boolean.guest_mode

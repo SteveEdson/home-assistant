@@ -6,7 +6,7 @@
     to: 'on'
   condition:
     - condition: state # after 20 mins before sunset
-      entity_id: binary_sensor.night
+      entity_id: binary_sensor.activate_motion_lights
       state: "on"
   action:
     - choose:
