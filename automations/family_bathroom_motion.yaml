@@ -1,37 +1,31 @@
-- alias: Family bathroom motion on main
+- alias: Family bathroom motion on
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001d56ba5
     from: 'off'
     to: 'on'
   condition:
-    - condition: time
-      before: '20:30:00'
     - condition: state # after 20 mins before sunset
-      entity: binary_sensor.night
+      entity_id: binary_sensor.activate_motion_lights
       state: "on"
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.shelly_f
-
-- alias: Family bathroom motion on side
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d56ba5
-    from: 'off'
-    to: 'on'
-  condition:
-    - condition: time
-      after: '20:30:00'
-    - condition: state # after 20 mins before sunset
-      entity: binary_sensor.night
-      state: "on"
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.bath_light
-        brightness_pct: 100
+    - choose:
+      - conditions:
+          condition: or
+          conditions:
+          - condition: time
+            after: "20:00:00"
+            before: "08:00:00"
+        sequence:
+            - service: light.turn_on
+              data:
+                entity_id: light.bath_light
+                brightness_pct: 100
+      default:
+        - service: light.turn_on
+          data:
+            entity_id: light.shelly_f
+            brightness_pct: 100
 
 - alias: Family bathroom motion off
   trigger:
@@ -39,8 +33,6 @@
     entity_id: binary_sensor.motion_sensor_158d0001d56ba5
     from: 'on'
     to: 'off'
-    for:
-      minutes: 3
   action:
     - service: light.turn_off
       data:

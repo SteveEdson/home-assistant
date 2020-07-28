@@ -50,6 +50,16 @@
     - light.spotlight
 
 - platform: group
+  name: Conservatory Lights
+  entities:
+    - light.table_light_1
+    - light.table_light_2
+    - light.table_light_3
+    - light.hanging_light_1
+    - light.hanging_light_2
+    - light.wled
+
+- platform: group
   name: Bedroom Lights
   entities:
     - light.bedroom_spotlights
