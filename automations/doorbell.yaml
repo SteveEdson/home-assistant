@@ -9,6 +9,11 @@
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_notifications', 'last_triggered') | default(0)) | int > 5)}}"
   action:
+    - service: light.on
+      data:
+        entity_id: light.twigs
+        brightness_pct: 100
+        flash: short
     - service: telegram_bot.send_message
       data:
         message: "Door bell pressed at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
