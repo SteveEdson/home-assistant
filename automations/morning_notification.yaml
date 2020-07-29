@@ -2,8 +2,8 @@
   alias: 'Morning notification'
   trigger:
     platform: time_pattern
-    hours: 06
-    minutes: 55
+    hours: 8
+    minutes: 15
     seconds: 0
   condition:
     condition: and
