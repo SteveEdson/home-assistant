@@ -6,7 +6,7 @@ card-style: &cardstyle |
   }
 
 path: bedroom
-icon: mdi:hotel
+icon: mdi:bed
 title: Bedroom
 cards:
   - type: entity
