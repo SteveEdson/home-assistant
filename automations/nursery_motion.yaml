@@ -1,9 +1,9 @@
 - alias: Nursery motion on - main
   trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001d55c60
-      from: 'off'
-      to: 'on'
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001d55c60
+    from: 'off'
+    to: 'on'
   condition:
     - condition: state # after 20 mins before sunset
       entity_id: binary_sensor.activate_motion_lights
