@@ -1,2 +1,6 @@
 - platform: workday
   country: UK
+  workdays:
+    - wed
+    - thu
+    - fri
