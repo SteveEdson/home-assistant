@@ -17,10 +17,10 @@
             after: "20:00:00"
             before: "08:00:00"
         sequence:
-            - service: light.turn_on
-              data:
-                entity_id: light.bath_light
-                brightness_pct: 100
+          - service: light.turn_on
+            data:
+              entity_id: light.bath_light
+              brightness_pct: 100
       default:
         - service: light.turn_on
           data:

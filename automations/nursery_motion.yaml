@@ -14,24 +14,40 @@
     - service: light.turn_on
       data:
         entity_id: light.nursery
-
-- alias: Nursery motion on - side
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001d55c60
-      from: 'off'
-      to: 'on'
-  condition:
-    - condition: time
-      after: '19:30:00'
-    - condition: state # after 20 mins before sunset
-      entity_id: binary_sensor.activate_motion_lights
-      state: "on"
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.yeelight_bslamp1_7c49eb28d971
-        brightness_pct: 100
+    - choose:
+      # If night time and table lamp is working
+      - conditions:
+          condition: and
+          conditions:
+          - condition: time
+            after: "19:30:00"
+            before: "08:00:00"
+          - condition: state
+            entity_id: light.yeelight_bslamp1_7c49eb28d971
+            state: "off"
+        sequence:
+          - service: light.turn_on
+            data:
+              entity_id: light.yeelight_bslamp1_7c49eb28d971
+              brightness_pct: 100
+      # If night and table light not working
+      - conditions:
+          condition: and
+          conditions:
+          - condition: time
+            after: "19:30:00"
+            before: "08:00:00"
+        sequence:
+          - service: light.turn_on
+            data:
+              entity_id: light.nursery
+              brightness_pct: 20
+      default:
+        - service: light.turn_on
+          data:
+            entity_id: light.nursery
+            brightness_pct: 100
 
 - alias: Nursery motion off
   trigger:
