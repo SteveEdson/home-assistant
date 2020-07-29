@@ -5,15 +5,9 @@
       from: 'off'
       to: 'on'
   condition:
-    - condition: time
-      before: '19:30:00'
     - condition: state # after 20 mins before sunset
       entity_id: binary_sensor.activate_motion_lights
       state: "on"
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.nursery
   action:
     - choose:
       # If night time and table lamp is working
