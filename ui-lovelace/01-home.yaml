@@ -64,6 +64,10 @@ cards:
     camera_image: camera.g3_flex
     camera_view: live
     style: *cardstyle
+  - type: glance
+    entities:
+      - person.steve_edson
+      - person.sophie
   - type: picture-glance
     title: Garden
     entities:
