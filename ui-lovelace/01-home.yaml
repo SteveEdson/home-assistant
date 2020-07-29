@@ -43,6 +43,7 @@ cards:
         style: *cardstyle
   - type: map
     aspect_ratio: 16:9
+    dark_mode: true
     entities:
       - entity: device_tracker.oneplus_a6003
       - entity: device_tracker.gm1910
