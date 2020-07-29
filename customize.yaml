@@ -150,14 +150,19 @@ switch.doorbell_chime:
   icon: mdi:doorbell-video
 light.twigs:
   icon: mdi:floor-lamp-variant
+binary_sensor.door_window_sensor_158d00035c0c9a:
+  friendly_name: Bifold Doors
+  icon: mdi:door
 binary_sensor.door_window_sensor_158d000490fd2d:
   friendly_name: Back Door Sensor
+  icon: mdi:door
 binary_sensor.motion_sensor_158d0001d56ba5:
   friendly_name: Family Bathroom Motion
 binary_sensor.motion_sensor_158d000223ce57:
   friendly_name: Ensuite Motion
 binary_sensor.door_window_sensor_158d00047d0693:
   friendly_name: Lounge Door
+  icon: mdi:door
 binary_sensor.motion_sensor_158d0001d55c60:
   friendly_name: Nursery Sensor
 sensor.temperature_158d00027265db:
