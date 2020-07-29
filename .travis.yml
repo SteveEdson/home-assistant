@@ -8,4 +8,5 @@ install:
 script:
   - mv secrets.example.yaml secrets.yaml
   - sed -i '/stream:/d' ./configuration.yaml
+  - mv google_service_account.example.json google_service_account.json
   - hass --script check_config -c .
