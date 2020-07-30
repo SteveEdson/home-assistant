@@ -38,6 +38,7 @@ cards:
   - type: history-graph
     hours_to_show: 4
     refresh_interval: 30
+    title: Hot Tub Temperature
     entities: 
       - sensor.hot_tub_temperature
   - type: custom:mini-graph-card
