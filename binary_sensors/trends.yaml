@@ -3,16 +3,16 @@
     hot_tub_heating:
       friendly_name: Hot Tub Heating
       entity_id: sensor.hot_tub_temperature
-      sample_duration: 7200
-      max_samples: 120
+      sample_duration: 3600
+      max_samples: 60
       device_class: heat
       min_gradient: 0.00055
 
     hot_tub_cooling:
       friendly_name: Hot Tub Cooling
       entity_id: sensor.hot_tub_temperature
-      sample_duration: 7200
-      max_samples: 120
+      sample_duration: 3600
+      max_samples: 60
       device_class: cold
       invert: true
       min_gradient: -0.00035
