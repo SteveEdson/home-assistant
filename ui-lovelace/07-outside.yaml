@@ -32,9 +32,9 @@ cards:
   - type: horizontal-stack
     cards:
       - type: entity
-        entity_id: binary_sensor.hot_tub_heating
+        entity: binary_sensor.hot_tub_heating
       - type: entity
-        entity_id: binary_sensor.hot_tub_cooling
+        entity: binary_sensor.hot_tub_cooling
   - type: custom:mini-graph-card
     style: *cardstyle
     points_per_hour: 2
