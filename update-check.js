@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const _ = require('lodash');
 const git = require('simple-git/promise')();
 const Push = require('pushover-notifications');
 const exec = require('child-process-promise').exec;
@@ -18,7 +19,7 @@ const updateMessage = {
 async function checkUpdates() {
     const update = await git.pull('origin', 'master', {'--no-rebase': null});
     if(update && update.summary.changes) {
-        if(update.files.length === 1 && update.files[0] === 'ui-lovelace.yaml') {
+        if((update.files.length === 1 && update.files[0] === 'ui-lovelace.yaml') || _.every(update.files, x => x.toLowerCase().includes('ui-lovelace'))) {
             console.log('not restarting lovelace changes');
             return;
         }
