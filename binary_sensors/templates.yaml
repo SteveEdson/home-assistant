@@ -8,7 +8,9 @@
       friendly_name: 'Home Assistant Latest Version'
     activate_motion_lights:
       friendly_name: Activate Motion Lights?
-      entity_id: sun.sun
+      entity_id:
+        - sun.sun
+        - binary_sensor.night
       value_template: >
         {% if states('binary_sensor.night') == 'on' or states('sensor.sun_elevation')|float < 12 %}
         true
