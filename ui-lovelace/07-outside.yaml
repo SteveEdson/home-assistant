@@ -29,6 +29,10 @@ cards:
     camera_image: camera.garden
     camera_view: live
     style: *cardstyle
+  - type: horizontal-stack
+    cards:
+      - type: entity
+        entity_id:
   - type: custom:mini-graph-card
     style: *cardstyle
     points_per_hour: 2
