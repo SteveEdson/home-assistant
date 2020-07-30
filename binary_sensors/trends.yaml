@@ -1,11 +1,13 @@
 - platform: trend
   sensors:
     hot_tub_heating:
+      friendly_name: Hot Tub Heating
       entity_id: sensor.hot_tub_temperature
       sample_duration: 300
       device_class: heat
 
     hot_tub_cooling:
+      friendly_name: Hot Tub Cooling
       entity_id: sensor.hot_tub_temperature
       sample_duration: 300
       device_class: cold
