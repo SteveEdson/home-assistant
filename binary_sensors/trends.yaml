@@ -1,12 +1,12 @@
 - platform: trend
   sensors:
     hot_tub_heating:
-      entity_id: sensor.cpu_speed
+      entity_id: sensor.hot_tub_temperature
       sample_duration: 300
       device_class: heat
 
     hot_tub_cooling:
-      entity_id: sensor.cpu_speed
+      entity_id: sensor.hot_tub_temperature
       sample_duration: 300
       device_class: cold
       invert: true
