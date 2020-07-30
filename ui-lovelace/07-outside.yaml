@@ -35,6 +35,8 @@ cards:
         entity: binary_sensor.hot_tub_heating
       - type: entity
         entity: binary_sensor.hot_tub_cooling
+  - type: history-graph
+    entity: sensor.hot_tub_temperature
   - type: custom:mini-graph-card
     style: *cardstyle
     points_per_hour: 2
