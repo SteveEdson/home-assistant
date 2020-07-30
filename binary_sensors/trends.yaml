@@ -4,11 +4,13 @@
       friendly_name: Hot Tub Heating
       entity_id: sensor.hot_tub_temperature
       sample_duration: 300
+      sample_count: 30
       device_class: heat
 
     hot_tub_cooling:
       friendly_name: Hot Tub Cooling
       entity_id: sensor.hot_tub_temperature
       sample_duration: 300
+      sample_count: 30
       device_class: cold
       invert: true
