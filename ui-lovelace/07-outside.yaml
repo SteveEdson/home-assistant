@@ -37,6 +37,7 @@ cards:
         entity: binary_sensor.hot_tub_cooling
   - type: history-graph
     hours_to_show: 4
+    refresh_interval: 30
     entities: 
       - sensor.hot_tub_temperature
   - type: custom:mini-graph-card
