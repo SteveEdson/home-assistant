@@ -156,7 +156,7 @@ binary_sensor.bifold_door_contact:
 binary_sensor.back_door_contact:
   friendly_name: Back Door Sensor
   device_class: door
-binary_sensor.motion_sensor_158d0001d56ba5:
+binary_sensor.bathroom_motion_occupancy:
   friendly_name: Family Bathroom Motion
 binary_sensor.motion_sensor_158d000223ce57:
   friendly_name: Ensuite Motion

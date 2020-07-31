@@ -1,7 +1,7 @@
 - alias: Family bathroom motion on
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d56ba5
+    entity_id: binary_sensor.bathroom_motion_occupancy
     from: 'off'
     to: 'on'
   condition:
@@ -30,7 +30,7 @@
 - alias: Family bathroom motion off
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d56ba5
+    entity_id: binary_sensor.bathroom_motion_occupancy
     from: 'on'
     to: 'off'
   action:
