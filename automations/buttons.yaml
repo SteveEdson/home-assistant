@@ -1,11 +1,9 @@
 # Lounge button
 - alias: Lounge Button Single
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d00035a259e
-      click_type: single
+    platform: state
+    entity_id: sensor.lounge_button_click
+    state: 'single'
   action:
     - service: light.toggle
       data:
@@ -18,11 +16,9 @@
 
 - alias: Lounge Button Double
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d00035a259e
-      click_type: double
+    platform: state
+    entity_id: sensor.lounge_button_click
+    state: 'double'
   action:
     service: scene.turn_on
     data:
@@ -30,11 +26,9 @@
 
 - alias: Lounge Button Hold
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d00035a259e
-      click_type: long_click_press
+    platform: state
+    entity_id: sensor.lounge_button_click
+    state: 'long'
   action:
     service: script.good_night
 # LOUNGE BUTTON END
@@ -42,11 +36,9 @@
 # KITCHEN BUTTON
 - alias: Kitchen Button Single
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002fbe926
-      click_type: single
+    platform: state
+    entity_id: sensor.kitchen_button_click
+    state: 'single'
   action:
     service: light.toggle
     data:
@@ -55,11 +47,9 @@
 
 - alias: Kitchen Button Double
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002fbe926
-      click_type: double
+    platform: state
+    entity_id: sensor.kitchen_button_click
+    state: 'double'
   action:
     service: light.toggle
     data:
@@ -69,11 +59,9 @@
 
 - alias: Kitchen Button Hold Not Playing
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002fbe926
-      click_type: long_click_press
+    platform: state
+    entity_id: sensor.kitchen_button_click
+    state: 'long'
   condition:
     condition: template
     value_template: '{{ states("media_player.downstairs") != "playing" }}'
@@ -82,11 +70,9 @@
 
 - alias: Kitchen Button Hold When Playing
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002fbe926
-      click_type: long_click_press
+    platform: state
+    entity_id: sensor.kitchen_button_click
+    state: 'long'
   condition:
     condition: template
     value_template: '{{ states("media_player.downstairs") == "playing" }}'
@@ -100,11 +86,9 @@
 # STEVE BUTTON
 - alias: Bedroom Toggle Lights
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001f354ea
-      click_type: single
+    platform: state
+    entity_id: sensor.bedroom_button_click
+    state: 'single'
   action:
     service: light.toggle
     data:
@@ -112,22 +96,18 @@
 
 - alias: Bedroom Double Click Next Scene
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001f354ea
-      click_type: double
+    platform: state
+    entity_id: sensor.bedroom_button_click
+    state: 'double'
   action:
     - service: input_select.select_next
       entity_id: input_select.input_bedroom_scenes
 
 - alias: Bedroom Hold Goodnight
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001f354ea
-      click_type: long_click_press
+    platform: state
+    entity_id: sensor.bedroom_button_click
+    state: 'long'
   action:
     service: script.good_night
 # STEVE BUTTON END
