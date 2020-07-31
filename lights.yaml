@@ -52,11 +52,11 @@
 - platform: group
   name: Conservatory Lights
   entities:
-    - light.table_light_1
-    - light.table_light_2
-    - light.table_light_3
-    - light.hanging_light_1
-    - light.hanging_light_2
+    - light.0x0017880102752b29_light
+    - light.0x0017880102756f02_light
+    - light.0x00178801027cbd73_light
+    - light.0xec1bbdfffea7b4b1_light
+    - light.0xec1bbdfffeae28cb_light
     - light.wled
 
 - platform: group
