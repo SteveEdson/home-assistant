@@ -9,7 +9,7 @@
         entity_id: light.kitchen_lights
         brightness_pct: 100
 
-- alias: Kitchen Button On
+- alias: Kitchen Button Off
   trigger:
     platform: state
     entity_id: sensor.0x0017880106349624_action
