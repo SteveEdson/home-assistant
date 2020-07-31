@@ -2,7 +2,6 @@
   trigger:
     platform: state
     entity_id: binary_sensor.bathroom_motion_occupancy
-    from: 'off'
     to: 'on'
   condition:
     - condition: state # after 20 mins before sunset
@@ -19,7 +18,7 @@
         sequence:
           - service: light.turn_on
             data:
-              entity_id: light.bath_light
+              entity_id: light.bathroom_light_light
               brightness_pct: 100
       default:
         - service: light.turn_on
@@ -31,7 +30,6 @@
   trigger:
     platform: state
     entity_id: binary_sensor.bathroom_motion_occupancy
-    from: 'on'
     to: 'off'
   action:
     - service: light.turn_off
@@ -39,4 +37,4 @@
         entity_id: light.shelly_f
     - service: light.turn_off
       data:
-        entity_id: light.bath_light
+        entity_id: light.bathroom_light_light
