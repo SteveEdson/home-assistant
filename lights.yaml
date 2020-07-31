@@ -43,20 +43,20 @@
 - platform: group
   name: Lounge Lights
   entities:
-    - light.0x00178801026d4569_light
-    - light.lounge_tall_lamp
+    - light.twigs_light
+    - light.lounge_tall_lamp_light
     - light.mini_lights
     - light.bonsai_lights
-    - light.spotlight
+    - light.lounge_spotlight_light
 
 - platform: group
   name: Conservatory Lights
   entities:
-    - light.0x0017880102752b29_light
-    - light.0x0017880102756f02_light
-    - light.0x00178801027cbd73_light
-    - light.0xec1bbdfffea7b4b1_light
-    - light.0xec1bbdfffeae28cb_light
+    - light.table_light_1_light
+    - light.table_light_2_light
+    - light.table_light_3_light
+    - light.hanging_light_1_light
+    - light.hanging_light_2_light
     - light.wled
 
 - platform: group
