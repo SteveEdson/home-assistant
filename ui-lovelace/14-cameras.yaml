@@ -14,7 +14,7 @@ cards:
     title: Front
     entities:
       - person.steve_edson
-      - binary_sensor.door_window_sensor_158d0002253f18
+      - binary_sensor.cupboard_door_contact
     camera_image: camera.g3_flex
     camera_view: live
     style: *cardstyle

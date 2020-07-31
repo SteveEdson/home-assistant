@@ -9,7 +9,7 @@ icon: mdi:stairs
 path: hallway
 badges:
   - binary_sensor.front_door_contact
-  - binary_sensor.door_window_sensor_158d0002253f18
+  - binary_sensor.cupboard_door_contact
 # Name of the view. Will be used as the tooltip for tab icon
 title: Hallway
 cards:
