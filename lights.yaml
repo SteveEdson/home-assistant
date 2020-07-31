@@ -43,7 +43,7 @@
 - platform: group
   name: Lounge Lights
   entities:
-    - light.twigs
+    - light.0x00178801026d4569_light
     - light.lounge_tall_lamp
     - light.mini_lights
     - light.bonsai_lights

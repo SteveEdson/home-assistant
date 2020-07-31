@@ -7,7 +7,7 @@
 #    light.left_lamp:
 #      state: off
 
-    light.twigs:
+    light.0x00178801026d4569_light:
       state: off
 
     # switch.my_smart_plug:
@@ -32,7 +32,7 @@
 #        - 255
 #      brightness_pct: 100
 
-    light.twigs:
+    light.0x00178801026d4569_light:
       state: on
       brightness_pct: 100
 
@@ -58,7 +58,7 @@
 #        - 255
 #      brightness_pct: 100
 
-    light.twigs:
+    light.0x00178801026d4569_light:
       state: on
       brightness_pct: 100
 
@@ -78,7 +78,7 @@
 #      color_temp: 350
 #      brightness_pct: 100
 
-    light.twigs:
+    light.0x00178801026d4569_light:
       state: on
       brightness_pct: 100
 
@@ -228,7 +228,7 @@
 - name: Lounge Chill
   id: lounge_chill
   entities:
-    light.twigs:
+    light.0x00178801026d4569_light:
       brightness_pct: 25
       state: on
     light.lounge_tall_lamp:

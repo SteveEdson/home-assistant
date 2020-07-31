@@ -148,7 +148,7 @@ switch.doorbell_chime_active:
   icon: mdi:bell-ring
 switch.doorbell_chime:
   icon: mdi:doorbell-video
-light.twigs:
+light.0x00178801026d4569_light:
   icon: mdi:floor-lamp-variant
 binary_sensor.door_window_sensor_158d00035c0c9a:
   friendly_name: Bifold Doors
@@ -168,6 +168,6 @@ binary_sensor.motion_sensor_158d0001d55c60:
   friendly_name: Nursery Sensor
 sensor.temperature_158d00027265db:
   friendly_name: Office Temperature
-binary_sensor.door_window_sensor_158d00035c0b6e:
+binary_sensor.0x00158d00035c0b6e_contact:
   friendly_name: Front Door
   device_class: door

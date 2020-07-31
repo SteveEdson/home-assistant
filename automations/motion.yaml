@@ -97,7 +97,7 @@
 - alias: Hallway motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+      entity_id: binary_sensor.0x00158d00035c0b6e_contact
       from: 'off'
       to: 'on'
   condition:
@@ -120,7 +120,7 @@
 - alias: Hallway motion off
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e
+      entity_id: binary_sensor.0x00158d00035c0b6e_contact
       from: 'on'
       to: 'off'
       for:

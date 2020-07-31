@@ -1,7 +1,7 @@
 - alias: 'Trigger alarm while armed away'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00035c0b6e # front door
+      entity_id: binary_sensor.0x00158d00035c0b6e_contact # front door
       to: 'on'
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d0001643c27 # kitchen motion

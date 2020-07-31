@@ -6,7 +6,7 @@
 #     service: switch.turn_off
 #   condition: []
 #   trigger:
-#   - entity_id: light.twigs
+#   - entity_id: light.0x00178801026d4569_light
 #     from: 'on'
 #     platform: state
 #     to: 'off'
