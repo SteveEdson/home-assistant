@@ -1,7 +1,7 @@
 - alias: Kitchen Dimmer On
   trigger:
     platform: state
-    entity_id: sensor.0x0017880106349624_action
+    entity_id: sensor.kitchen_dimmer_switch_action
     to: 'on-press'
   action:
     - service: light.turn_on
@@ -12,9 +12,21 @@
 - alias: Kitchen Dimmer Off
   trigger:
     platform: state
-    entity_id: sensor.0x0017880106349624_action
+    entity_id: sensor.kitchen_dimmer_switch_action
     to: 'off-press'
   action:
     - service: light.turn_off
       data:
         entity_id: light.conservatory_lights
+
+- alias: Kitchen Dimmer Vacuum
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_dimmer_switch_action
+    to: 'down-hold'
+  action:
+    - service: xiaomi_miio.vacuum_clean_zone
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        zone: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
+        repeats: 3
