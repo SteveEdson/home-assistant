@@ -10,7 +10,7 @@
 - alias: Kitchen motion before 2130
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0002234460
+      entity_id: binary_sensor.kitchen_motion_occupancy
       from: 'off'
       to: 'on'
   condition:
@@ -40,7 +40,7 @@
 - alias: Kitchen motion after 2130
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0002234460
+      entity_id: binary_sensor.kitchen_motion_occupancy
       from: 'off'
       to: 'on'
   condition:
@@ -65,7 +65,7 @@
 - alias: Kitchen no motion 10 mins
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0002234460
+    entity_id: binary_sensor.kitchen_motion_occupancy
     from: 'on'
     to: 'off'
     for:
@@ -81,7 +81,7 @@
 - alias: Kitchen no motion 45 mins
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0002234460
+    entity_id: binary_sensor.kitchen_motion_occupancy
     from: 'on'
     to: 'off'
     for:

@@ -37,7 +37,7 @@ Home Assistant:
   - sensor.current_version
 
 Xiaomi:
-  - binary_sensor.motion_sensor_158d0002234460
+  - binary_sensor.kitchen_motion_occupancy
   - binary_sensor.motion_sensor_158d0001643c27
   - binary_sensor.cupboard_door_contact
   - binary_sensor.switch_158d0001f354ea
