@@ -10,7 +10,7 @@
       entity_id: binary_sensor.cupboard_door_contact # cupboard door
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0003589af9 # office door
+      entity_id: binary_sensor.office_door_contact # office door
       to: 'on'
     - platform: state
       entity_id: binary_sensor.bifold_door_contact # bifold door
