@@ -26,13 +26,6 @@ Hallway:
 Bedroom Lights:
   - light.bedroom_lights
 
-Kitchen Lights:
-  # - light.kitchen_light_1
-  # - light.kitchen_light_2
-  # - light.kitchen_light_3
-  # - light.kitchen_light_4
-  - light.cupboard
-
 Events:
   - sensor.bin_days
 

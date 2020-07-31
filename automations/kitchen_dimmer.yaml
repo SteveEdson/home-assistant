@@ -1,0 +1,21 @@
+- alias: Kitchen Button On
+  trigger:
+    platform: state
+    entity_id: sensor.0x0017880106349624_action
+    to: 'on-press'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_lights
+        brightness_pct: 100
+
+- alias: Kitchen Button On
+  trigger:
+    platform: state
+    entity_id: sensor.0x0017880106349624_action
+    to: 'off-press'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_lights
+        brightness_pct: 100
