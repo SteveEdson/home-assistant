@@ -1,8 +1,7 @@
 - alias: Ensuite motion on
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d000223ce57
-      from: 'off'
+      entity_id: binary_sensor.ensuite_motion_occupancy
       to: 'on'
   action:
     - service: light.turn_on
@@ -12,8 +11,7 @@
 - alias: Ensuite motion off
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d000223ce57
-    from: 'on'
+    entity_id: binary_sensor.ensuite_motion_occupancy
     to: 'off'
     for:
       minutes: 3
