@@ -153,7 +153,7 @@ light.0x00178801026d4569_light:
 binary_sensor.door_window_sensor_158d00035c0c9a:
   friendly_name: Bifold Doors
   device_class: door
-binary_sensor.door_window_sensor_158d000490fd2d:
+binary_sensor.back_door_contact:
   friendly_name: Back Door Sensor
   device_class: door
 binary_sensor.motion_sensor_158d0001d56ba5:
