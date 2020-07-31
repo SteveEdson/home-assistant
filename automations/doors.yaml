@@ -1,7 +1,7 @@
 - alias: 'Front door opened on Halloween'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d000490fd2d
+      entity_id: binary_sensor.front_door_contact
       to: 'on'
   action:
     - service: media_player.volume_set
@@ -45,7 +45,7 @@
   alias: 'Front door opened alert'
   trigger:
     - platform: state
-      entity_id: binary_sensor.0x00158d00035c0b6e_contact
+      entity_id: binary_sensor.front_door_contact
       to: 'on'
   condition:
     condition: and
@@ -73,7 +73,7 @@
   alias: 'Front door opened show display'
   trigger:
     - platform: state
-      entity_id: binary_sensor.0x00158d00035c0b6e_contact
+      entity_id: binary_sensor.front_door_contact
       to: 'on'
   condition:
     - condition: template

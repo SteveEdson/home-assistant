@@ -168,6 +168,6 @@ binary_sensor.motion_sensor_158d0001d55c60:
   friendly_name: Nursery Sensor
 sensor.temperature_158d00027265db:
   friendly_name: Office Temperature
-binary_sensor.0x00158d00035c0b6e_contact:
+binary_sensor.front_door_contact:
   friendly_name: Front Door
   device_class: door
