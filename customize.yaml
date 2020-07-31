@@ -150,7 +150,7 @@ switch.doorbell_chime:
   icon: mdi:doorbell-video
 light.0x00178801026d4569_light:
   icon: mdi:floor-lamp-variant
-binary_sensor.door_window_sensor_158d00035c0c9a:
+binary_sensor.bifold_door_contact:
   friendly_name: Bifold Doors
   device_class: door
 binary_sensor.back_door_contact:

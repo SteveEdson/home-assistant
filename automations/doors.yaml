@@ -114,7 +114,7 @@
   alias: 'Kitchen doors opened alert'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00035c0c9a
+      entity_id: binary_sensor.bifold_door_contact
       to: 'on'
   action:
     - service: notify.home_alerts

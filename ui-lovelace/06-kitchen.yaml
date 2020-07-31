@@ -9,7 +9,7 @@ icon: mdi:kettle
 title: Kitchen
 path: kitchen
 badges:
-  - binary_sensor.door_window_sensor_158d00035c0c9a
+  - binary_sensor.bifold_door_contact
 cards:
   - type: custom:xiaomi-vacuum-card
     entity: vacuum.xiaomi_vacuum_cleaner

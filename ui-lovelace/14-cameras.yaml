@@ -22,7 +22,7 @@ cards:
     title: Garden
     entities:
       - person.steve_edson
-      - binary_sensor.door_window_sensor_158d00035c0c9a
+      - binary_sensor.bifold_door_contact
     camera_image: camera.garden
     camera_view: live
     style: *cardstyle
