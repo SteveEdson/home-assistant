@@ -6,6 +6,8 @@ card-style: &cardstyle |
   }
 
 title: Zigbee Network
+path: zigbee
+icon: mdi:zigbee
 panel: true # this renders the first card on full width, other cards in this view will not be rendered
 cards:
   - type: custom:zigbee2mqtt-networkmap
