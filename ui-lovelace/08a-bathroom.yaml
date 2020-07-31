@@ -10,7 +10,7 @@ path: bathroom
 title: Bathroom
 cards:
   - type: light
-    entity: light.bath_light
+    entity: light.bathroom_light_light
     style: *cardstyle
   - type: light
     entity: light.shelly_f
