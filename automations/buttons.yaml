@@ -3,7 +3,7 @@
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
-    state: 'single'
+    to: 'single'
   action:
     - service: light.toggle
       data:
@@ -18,7 +18,7 @@
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
-    state: 'double'
+    to: 'double'
   action:
     service: scene.turn_on
     data:
@@ -28,7 +28,7 @@
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
-    state: 'long'
+    to: 'long'
   action:
     service: script.good_night
 # LOUNGE BUTTON END
@@ -38,7 +38,7 @@
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
-    state: 'single'
+    to: 'single'
   action:
     service: light.toggle
     data:
@@ -49,7 +49,7 @@
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
-    state: 'double'
+    to: 'double'
   action:
     service: light.toggle
     data:
@@ -61,7 +61,7 @@
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
-    state: 'long'
+    to: 'long'
   condition:
     condition: template
     value_template: '{{ states("media_player.downstairs") != "playing" }}'
@@ -72,7 +72,7 @@
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
-    state: 'long'
+    to: 'long'
   condition:
     condition: template
     value_template: '{{ states("media_player.downstairs") == "playing" }}'
@@ -88,7 +88,7 @@
   trigger:
     platform: state
     entity_id: sensor.bedroom_button_click
-    state: 'single'
+    to: 'single'
   action:
     service: light.toggle
     data:
@@ -98,7 +98,7 @@
   trigger:
     platform: state
     entity_id: sensor.bedroom_button_click
-    state: 'double'
+    to: 'double'
   action:
     - service: input_select.select_next
       entity_id: input_select.input_bedroom_scenes
@@ -107,7 +107,7 @@
   trigger:
     platform: state
     entity_id: sensor.bedroom_button_click
-    state: 'long'
+    to: 'long'
   action:
     service: script.good_night
 # STEVE BUTTON END
