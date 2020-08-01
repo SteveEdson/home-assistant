@@ -52,3 +52,12 @@ cards:
 #      - type: divider
 #      - entity: input_text.zigbee2mqtt_remove
 #      - entity: script.zigbee2mqtt_remove
+  - type: custom:auto-entities
+    card:
+      type: entities
+      title: Updatable Devices
+    filter:
+      include:
+        - attributes:
+            update_available: true
+    style: *cardstyle
