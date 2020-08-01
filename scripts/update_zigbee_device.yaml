@@ -3,4 +3,4 @@ sequence:
   service: mqtt.publish
   data_template:
     topic: zigbee2mqtt/bridge/ota_update/update
-    payload_template: {{ states.input_text.zigbee_update_device.state | string }}
+    payload_template: "{{ states.input_text.zigbee_update_device.state | string }}"
