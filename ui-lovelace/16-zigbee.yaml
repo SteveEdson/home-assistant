@@ -46,6 +46,11 @@ cards:
       - entity: switch.zigbee2mqtt_main_join
 #      - entity: timer.zigbee_permit_join
       - type: divider
+      - entity: input_text.zigbee_update_device
+      - entity: script.good_night
+        tap_action:
+          action: call-service
+          service: script.update_zigbee_device
 #      - entity: input_text.zigbee2mqtt_old_name
 #      - entity: input_text.zigbee2mqtt_new_name
 #      - entity: script.zigbee2mqtt_rename
@@ -63,4 +68,5 @@ cards:
       exclude:
         - name: "*_update_available"
         - name: "*_linkquality"
+        - name: "*_battery"
     style: *cardstyle

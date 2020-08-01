@@ -58,6 +58,10 @@ frontend: !include frontend.yaml
 input_select: !include_dir_named inputs
 # input_slider: !include inputs/input_slider.yaml
 
+input_text:
+  zigbee_update_device:
+    name: Update Zigbee Device
+
 input_number:
   servo_control:
     name: Servo Control
