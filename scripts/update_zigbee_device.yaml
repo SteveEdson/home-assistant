@@ -1,4 +1,4 @@
-alias: Zigbee2mqtt Rename
+alias: Update Zigbee Device
 sequence:
   service: mqtt.publish
   data_template:
