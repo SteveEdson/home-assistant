@@ -47,7 +47,7 @@ cards:
 #      - entity: timer.zigbee_permit_join
       - type: divider
       - entity: input_text.zigbee_update_device
-      - entity: script.good_night
+      - entity: script.update_zigbee_device
         tap_action:
           action: call-service
           service: script.update_zigbee_device
