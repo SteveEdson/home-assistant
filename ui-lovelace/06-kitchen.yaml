@@ -87,11 +87,11 @@ cards:
 
   - type: entities
     entities:
-      - light.table_light_1
-      - light.table_light_2
-      - light.table_light_3
-      - light.hanging_light_1
-      - light.hanging_light_2
+      - light.table_light_1_light
+      - light.table_light_2_light
+      - light.table_light_3_light
+      - light.hanging_light_1_light
+      - light.hanging_light_2_light
     title: Table Lights
     style: *cardstyle
     show_header_toggle: true

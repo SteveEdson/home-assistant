@@ -201,7 +201,7 @@
 - name: Table Pink and Blue
   id: table_pink_and_blue
   entities:
-    light.table_light_1:
+    light.table_light_1_light:
       brightness_pct: 100
       state: on
       rgb_color:
@@ -209,7 +209,7 @@
         - 43
         - 52
 
-    light.table_light_2:
+    light.table_light_2_light:
       brightness_pct: 100
       state: on
       rgb_color:
@@ -217,7 +217,7 @@
         - 80
         - 255
 
-    light.table_light_3:
+    light.table_light_3_light:
       brightness_pct: 100
       state: on
       rgb_color:
@@ -251,7 +251,7 @@
 - name: Table Bright
   id: table_bright
   entities:
-    light.table_light_1:
+    light.table_light_1_light:
       brightness_pct: 100
       state: on
       rgb_color:
@@ -259,7 +259,7 @@
         - 255
         - 255
 
-    light.table_light_2:
+    light.table_light_2_light:
       brightness_pct: 100
       state: on
       rgb_color:
@@ -267,7 +267,7 @@
         - 255
         - 255
 
-    light.table_light_3:
+    light.table_light_3_light:
       brightness_pct: 100
       state: on
       rgb_color:
