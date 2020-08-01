@@ -60,4 +60,7 @@ cards:
       include:
         - attributes:
             update_available: true
+      exclude:
+        - name: "*_update_available"
+        - name: "*_linkquality"
     style: *cardstyle
