@@ -10,7 +10,7 @@ icon: mdi:bed
 title: Bedroom
 cards:
   - type: entity
-    entity: binary_sensor.motion_sensor_158d000223ce57
+    entity: binary_sensor.ensuite_motion_occupancy
     style: *cardstyle
 
   - type: glance

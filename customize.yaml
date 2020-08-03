@@ -158,7 +158,7 @@ binary_sensor.back_door_contact:
   device_class: door
 binary_sensor.bathroom_motion_occupancy:
   friendly_name: Family Bathroom Motion
-binary_sensor.motion_sensor_158d000223ce57:
+binary_sensor.ensuite_motion_occupancy:
   friendly_name: Ensuite Motion
   device_class: occupancy
 binary_sensor.lounge_door_contact:
