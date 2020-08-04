@@ -148,7 +148,7 @@ switch.doorbell_chime_active:
   icon: mdi:bell-ring
 switch.doorbell_chime:
   icon: mdi:doorbell-video
-light.0x00178801026d4569_light:
+light.twigs_light:
   icon: mdi:floor-lamp-variant
 binary_sensor.bifold_door_contact:
   friendly_name: Bifold Doors

@@ -7,7 +7,7 @@
 #   condition: []
 #   id: '1508056350422'
 #   trigger:
-#   - entity_id: light.0x00178801026d4569_light
+#   - entity_id: light.twigs_light
 #     from: 'off'
 #     platform: state
 #     to: 'on'

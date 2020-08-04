@@ -7,7 +7,7 @@
     - service: light.turn_off
       data:
         entity_id:
-          - light.nursery_light_light_light_light
+          - light.nursery_light_light
           - light.yeelight_bslamp1_7c49eb28d971
 
 - alias: Nursery Dimmer On
@@ -20,7 +20,7 @@
       data:
         brightness_pct: 100
         entity_id:
-          - light.nursery_light_light_light_light
+          - light.nursery_light_light
           - light.yeelight_bslamp1_7c49eb28d971
 
 - alias: Nursery Dimmer Up
