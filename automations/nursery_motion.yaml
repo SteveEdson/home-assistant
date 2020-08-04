@@ -35,12 +35,12 @@
         sequence:
           - service: light.turn_on
             data:
-              entity_id: light.nursery
+              entity_id: light.nursery_light_light
               brightness_pct: 20
       default:
         - service: light.turn_on
           data:
-            entity_id: light.nursery
+            entity_id: light.nursery_light_light
             brightness_pct: 100
 
 - alias: Nursery motion off
@@ -54,7 +54,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.nursery
+        entity_id: light.nursery_light_light
     - service: light.turn_off
       data:
         entity_id: light.yeelight_bslamp1_7c49eb28d971
