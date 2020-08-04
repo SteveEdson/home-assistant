@@ -24,11 +24,11 @@ GetNextBusToTown:
 
 GetHotTubTemp:
   speech:
-    text: "The hot tub is currently unknown °c"
+    text: "The hot tub is currently {{ states('sensor.hot_tub_temperature') }}°c"
   card:
     type: simple
     title: Hot Tub
-    content: "The hot tub is currently unknown °c"
+    content: "The hot tub is currently states('sensor.hot_tub_temperature')°c"
 
 GetOfficeTemp:
   speech:
