@@ -30,15 +30,6 @@ GetHotTubTemp:
     title: Hot Tub
     content: "The hot tub is currently states('sensor.hot_tub_temperature')°c"
 
-GetHouseTemp:
-  speech:
-    text: "The house is currently {{ states('sensor.hue_motion_temperature') }} °c"
-  card:
-    type: simple
-    title: Office Temperature
-    content: "The office is currently {{ states('sensor.hue_motion_temperature') }}°c"
-
-
 GetOfficeTemp:
   speech:
     text: "The office is currently {{ states('sensor.office_temperature_temperature') }} °c"

@@ -36,7 +36,7 @@
     - service: light.turn_off
       data:
         entity_id:
-          - light.yeelight_bslamp1_7c49eb28d971
+          - light.nursery_light_light
 
 - alias: Nursery Dimmer Down
   trigger:
