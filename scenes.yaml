@@ -231,7 +231,7 @@
     light.0x00178801026d4569_light:
       brightness_pct: 25
       state: on
-    light.lounge_tall_lamp:
+    light.lounge_tall_lamp_light:
       brightness_pct: 25
       state: on
     switch.32002710bcddc226b4b0: # Mini
