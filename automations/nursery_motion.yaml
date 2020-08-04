@@ -17,9 +17,6 @@
           - condition: time
             after: "19:30:00"
             before: "08:00:00"
-          - condition: state
-            entity_id: light.yeelight_bslamp1_7c49eb28d971
-            state: "off"
         sequence:
           - service: light.turn_on
             data:
