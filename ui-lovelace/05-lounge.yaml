@@ -96,6 +96,7 @@ cards:
 
   - type: entities
     style: *cardstyle
+    title: Lights
     entities:
       - type: custom:slider-entity-row
         entity: light.twigs_light
