@@ -192,6 +192,7 @@ media_player:
   - platform: androidtv
     name: Kitchen Fire Stick
     device_class: firetv
+    adbkey: "/config/.storage/androidtv_adbkey"
     host: 192.168.1.139
 #      exclude_unnamed_apps: true
     apps:
