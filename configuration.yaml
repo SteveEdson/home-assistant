@@ -188,7 +188,15 @@ hue:
       allow_hue_groups: false
       allow_unreachable: true
 
-#media_player:
+media_player:
+  - platform: androidtv
+      name: Android TV
+      device_class: firetv
+      host: 192.168.1.139
+#      exclude_unnamed_apps: true
+      apps:
+        com.amazon.tv.launcher: "Fire TV"
+        air.ITVMobilePlayer: "ITV Player"
 
 spotify:
   client_id: !secret spotify_client_id
