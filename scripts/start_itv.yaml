@@ -4,3 +4,5 @@ sequence:
     data:
       entity_id: media_player.kitchen_fire_stick
       source: 'air.ITVMobilePlayer'
+  - delay:
+      seconds: 5
