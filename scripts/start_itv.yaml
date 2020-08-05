@@ -1,0 +1,6 @@
+alias: Start ITV
+sequence:
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.kitchen_fire_stick
+      source: 'air.ITVMobilePlayer'
