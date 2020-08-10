@@ -21,7 +21,7 @@
           - service: light.turn_on
             data:
               entity_id: light.yeelight_bslamp1_7c49eb28d971
-              brightness_pct: 100
+              # brightness_pct: 100
       # If night and table light not working
       default:
         - service: light.turn_on
