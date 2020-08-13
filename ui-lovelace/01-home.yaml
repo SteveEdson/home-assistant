@@ -108,6 +108,8 @@ cards:
     title: Quick Scripts
     columns: 2
     style: *cardstyle
+  - type: weather-forecast
+    entity: weather.home
 #      - type: map
 #        aspect_ratio: 16:9
 #        default_zoom: 16
