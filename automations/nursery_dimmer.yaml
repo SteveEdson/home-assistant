@@ -1,0 +1,49 @@
+- alias: Nursery Dimmer Off
+  trigger:
+    platform: state
+    entity_id: sensor.nursery_dimmer_action
+    to: 'off-press'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.nursery_light_light
+          - light.yeelight_bslamp1_7c49eb28d971
+
+- alias: Nursery Dimmer On
+  trigger:
+    platform: state
+    entity_id: sensor.nursery_dimmer_action
+    to: 'on-press'
+  action:
+    - service: light.turn_on
+      data:
+        brightness_pct: 100
+        entity_id:
+          - light.nursery_light_light
+          - light.yeelight_bslamp1_7c49eb28d971
+
+- alias: Nursery Dimmer Up
+  trigger:
+    platform: state
+    entity_id: sensor.nursery_dimmer_action
+    to: 'up-press'
+  action:
+    - service: light.turn_on
+      data:
+        brightness_pct: 20
+        entity_id: light.yeelight_bslamp1_7c49eb28d971
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.nursery_light_light
+
+- alias: Nursery Dimmer Down
+  trigger:
+    platform: state
+    entity_id: sensor.nursery_dimmer_action
+    to: 'down-press'
+  action:
+    - service: switch.toggle
+      data:
+        entity_id: switch.bff5c4bbd438ed9847uxkj

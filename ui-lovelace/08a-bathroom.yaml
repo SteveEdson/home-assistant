@@ -18,4 +18,11 @@ cards:
   - type: entity
     entity: binary_sensor.bathroom_motion_occupancy
     style: *cardstyle
-
+  - type: entities
+    title: Motion Controls
+    style: *cardstyle
+    entities:
+      - name: Motion Off
+        entity: automation.family_bathroom_motion_off
+      - name: Motion On
+        entity: automation.family_bathroom_motion_on

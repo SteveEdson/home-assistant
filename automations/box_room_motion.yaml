@@ -1,0 +1,27 @@
+- alias: Box Room motion on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.spare_motion_occupancy
+    to: 'on'
+  condition:
+    - condition: state # after 20 mins before sunset
+      entity_id: binary_sensor.activate_motion_lights
+      state: "on"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.box_room_light_light
+        brightness_pct: 100
+
+- alias: Box Room motion off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.spare_motion_occupancy
+    to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.shelly_f
+    - service: light.turn_off
+      data:
+        entity_id: light.box_room_light_light

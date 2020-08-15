@@ -15,7 +15,7 @@ lovelace:
       type: module
     - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
       type: module
-    - url: /local/custom_ui/unused-card.js?v=0.2
+    - url: /local/custom_ui/unused-card.js?v=0.3
       type: module
     - url: /local/custom_ui/simple-weather-card-bundle.js?v=0.5.0
       type: module
@@ -188,7 +188,27 @@ hue:
       allow_hue_groups: false
       allow_unreachable: true
 
-#media_player:
+media_player:
+  - platform: androidtv
+    name: Kitchen Fire Stick
+    device_class: firetv
+    #adbkey: "/config/.storage/androidtv_adbkey"
+    host: 192.168.1.139
+#      exclude_unnamed_apps: true
+    apps:
+      com.amazon.tv.launcher: "Fire TV"
+      air.ITVMobilePlayer: "ITV Player"
+    state_detection_rules:
+      'air.ITVMobilePlayer':
+        - 'playing':
+            'wake_lock_size': 4  # this indentation is important!
+        - 'playing':
+            'wake_lock_size': 3  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 2  # this indentation is important!
+        - 'paused':
+            'wake_lock_size': 1  # this indentation is important!
+        - 'standby'
 
 spotify:
   client_id: !secret spotify_client_id

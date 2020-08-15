@@ -108,6 +108,11 @@ cards:
     title: Quick Scripts
     columns: 2
     style: *cardstyle
+  - type: weather-forecast
+    entity: weather.home
+  - type: sensor
+    entity: sensor.gm1910_battery_level
+    graph: line
 #      - type: map
 #        aspect_ratio: 16:9
 #        default_zoom: 16

@@ -8,8 +8,6 @@ card-style: &cardstyle |
 icon: mdi:kettle
 title: Kitchen
 path: kitchen
-badges:
-  - binary_sensor.bifold_door_contact
 cards:
   - type: custom:xiaomi-vacuum-card
     entity: vacuum.xiaomi_vacuum_cleaner
@@ -177,3 +175,9 @@ cards:
     entity: climate.netatmo_heating
     name: Heating
     style: *cardstyle
+
+  - type: entity
+    entity: binary_sensor.bifold_door_contact
+
+  - type: entity
+    entity: binary_sensor.kitchen_motion_occupancy
