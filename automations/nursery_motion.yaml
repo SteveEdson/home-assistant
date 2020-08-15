@@ -1,7 +1,7 @@
 - alias: Nursery motion on - main
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d55c60
+    entity_id: binary_sensor.nursery_motion_occupancy
     from: 'off'
     to: 'on'
   condition:
@@ -46,7 +46,7 @@
 - alias: Nursery motion off
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001d55c60
+    entity_id: binary_sensor.nursery_motion_occupancy
     from: 'on'
     to: 'off'
     for:

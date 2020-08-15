@@ -10,7 +10,7 @@ title: Nursery
 path: nursery
 cards:
   - type: entity
-    entity: binary_sensor.motion_sensor_158d0001d55c60
+    entity: binary_sensor.nursery_motion_occupancy
     style: *cardstyle
   - type: entities
     entities:

@@ -164,7 +164,7 @@ binary_sensor.motion_sensor_158d000223ce57:
 binary_sensor.lounge_door_contact:
   friendly_name: Lounge Door
   device_class: door
-binary_sensor.motion_sensor_158d0001d55c60:
+binary_sensor.nursery_motion_occupancy:
   friendly_name: Nursery Sensor
 sensor.temperature_158d00027265db:
   friendly_name: Office Temperature
