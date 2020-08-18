@@ -23,16 +23,6 @@
 #   brightness_scale: 4095
 
 - platform: group
-  name: Bedroom Spotlights
-  entities:
-    - light.bedroom_light_1
-    - light.bedroom_light_2
-    - light.bedroom_light_3
-    - light.bedroom_light_4
-    - light.bedroom_light_5
-    - light.bedroom_light_6
-
-- platform: group
   name: Bedroom Reading Lights
   entities:
     - light.bedroom_light_lb
@@ -60,16 +50,18 @@
     - light.wled
 
 - platform: group
-  name: Bedroom Lights
-  entities:
-    - light.bedroom_spotlights
-    - light.bedroom_reading_lights
-
-- platform: group
   name: Kitchen Lights
   entities:
     - light.shelly_b
     - light.shelly_c
+
+- platform: mqtt
+  name: "Bedroom Spotlights"
+  schema: json
+  command_topic: "zigbee2mqtt/bedroom_lights/set"
+  state_topic: "zigbee2mqtt/bedroom_lights"
+  color_temp: false
+  brightness: true
 
 - platform: yeelight
   devices:
