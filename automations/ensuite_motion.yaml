@@ -3,6 +3,11 @@
     - platform: state
       entity_id: binary_sensor.ensuite_motion_occupancy
       to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '19:00:00'
   action:
     - service: light.turn_on
       data:
