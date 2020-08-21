@@ -22,7 +22,7 @@
   resource: !secret bins_api
   name: Bin days
   value_template: >
-    {% if value_json.success %}
+    {% if value_json.nextBinTime %}
     {% set numSeconds = (value_json.nextBinTime | float) - (as_timestamp(now()) | float) %}{{ value_json.nextBinColour }} in {{ (numSeconds / 60 / 60 / 24) | round }} days
     {% else %}
     Bin data not available
