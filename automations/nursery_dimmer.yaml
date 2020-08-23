@@ -31,7 +31,7 @@
   action:
     - service: light.turn_on
       data:
-        brightness_pct: 20
+        brightness_pct: 10
         entity_id: light.yeelight_bslamp1_7c49eb28d971
     - service: light.turn_off
       data:

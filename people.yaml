@@ -9,7 +9,7 @@
 - name: Sophie
   id: sophie
   device_trackers:
-    - device_tracker.oneplus_a6003
+    - device_tracker.in2010
 
 - name: Darren
   id: darren
