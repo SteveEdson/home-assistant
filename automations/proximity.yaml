@@ -2,7 +2,6 @@
   trigger:
     platform: state
     entity_id: proximity.sophie_home
-    # Optional
     value_template: "{{ state.attributes.dir_of_travel }}"
     to: "towards"
   action:
