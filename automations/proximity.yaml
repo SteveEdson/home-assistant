@@ -1,9 +1,7 @@
 - alias: 'Proximity'
   trigger:
-    platform: state
-    entity_id: proximity.sophie_home
-    value_template: "{{ state.attributes.dir_of_travel }}"
-    to: "towards"
+    platform: template
+    value_template: "{{ is_state_attr('states.proximity.sophie_home', 'dir_of_travel', 'towards') }}"
   action:
     - service: notify.mobile_app_steve_s_phone
       data_template:
