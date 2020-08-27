@@ -318,14 +318,14 @@ proximity:
       - work
     devices:
       - device_tracker.gm1910
-    tolerance: 50
+    tolerance: 10
     unit_of_measurement: mi
   sophie_home:
     ignored_zones:
       - work
     devices:
-      - device_tracker.oneplus_a6003
-    tolerance: 50
+      - device_tracker.in2010
+    tolerance: 10
     unit_of_measurement: mi
 
 xiaomi_aqara:
