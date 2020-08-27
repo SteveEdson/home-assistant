@@ -111,7 +111,7 @@
 - alias: Bedroom Hold Goodnight
   trigger:
     platform: state
-    entity_id: sensor.bedroom_button_action
+    entity_id: sensor.bedroom_button_click
     to: 'long'
   action:
     service: script.good_night
