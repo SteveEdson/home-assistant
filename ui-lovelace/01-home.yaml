@@ -45,7 +45,7 @@ cards:
     aspect_ratio: 16:9
     dark_mode: true
     entities:
-      - entity: device_tracker.oneplus_a6003
+      - entity: device_tracker.in2010
       - entity: device_tracker.gm1910
     hours_to_show: 6
   - type: custom:simple-weather-card
