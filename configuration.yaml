@@ -320,6 +320,14 @@ proximity:
       - device_tracker.gm1910
     tolerance: 10
     unit_of_measurement: mi
+  home:
+    ignored_zones:
+      - work
+    devices:
+      - device_tracker.in2010
+      - device_tracker.gm1910
+    tolerance: 10
+    unit_of_measurement: mi
   sophie_home:
     ignored_zones:
       - work
