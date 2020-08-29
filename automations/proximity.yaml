@@ -5,7 +5,7 @@
   action:
     - service: notify.mobile_app_steve_s_phone
       data_template:
-        title: "{{ state.attributes.friendly_name }} coming home"
+        title: "Coming home"
         message: "On their way"
         data:
           sticky: 'true'
