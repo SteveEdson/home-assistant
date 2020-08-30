@@ -21,6 +21,12 @@ cards:
       - person.steve_edson
     camera_image: camera.g3_flex
     camera_view: live
+  - type: entities
+    entities:
+      - light.garden_light_1_light
+      - light.garden_light_2_light
+      - light.garden_light_3_light
+      - light.garden_light_4_light
   - type: picture-glance
     title: Camera
     entities:
@@ -39,7 +45,7 @@ cards:
     hours_to_show: 4
     refresh_interval: 30
     title: Hot Tub Temperature
-    entities: 
+    entities:
       - sensor.hot_tub_temperature
   - type: custom:mini-graph-card
     style: *cardstyle
