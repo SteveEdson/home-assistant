@@ -31,6 +31,14 @@
     - light.bedside_light_rt
 
 - platform: group
+  name: Garden Lights
+  entities:
+    - light.garden_light_1_light
+    - light.garden_light_2_light
+    - light.garden_light_3_light
+    - light.garden_light_4_light
+
+- platform: group
   name: Lounge Lights
   entities:
     - light.twigs_light
