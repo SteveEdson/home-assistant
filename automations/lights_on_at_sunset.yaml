@@ -1,4 +1,9 @@
-- action:
+- id: '1506795142546'
+  trigger:
+  - event: sunset
+    platform: sun
+    offset: "-00:35:00"
+  action:
   - alias: Bright in Lounge
     data:
       transition: 900 # 15 minutes
@@ -6,19 +11,5 @@
       kelvin: 2700
       entity_id: light.lounge_lights
     service: light.turn_on
- # - service: switch.turn_on
- #   data:
-#      entity_id: switch.32002710bcddc226b4b0
- # - service: switch.turn_on
-  #  data:
- #     entity_id: switch.bf0b57d12c6b4b8272vkpj
- # - service: switch.turn_on
- #   data:
- #     entity_id: switch.bf4cadf5e3e38fddf078v2
   alias: Lights on at sunset
   condition: []
-  id: '1506795142546'
-  trigger:
-  - event: sunset
-    platform: sun
-    offset: "-00:35:00"
