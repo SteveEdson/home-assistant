@@ -23,6 +23,7 @@ cards:
     camera_view: live
   - type: entities
     entities:
+      - light.garden_lights
       - light.garden_light_1_light
       - light.garden_light_2_light
       - light.garden_light_3_light
