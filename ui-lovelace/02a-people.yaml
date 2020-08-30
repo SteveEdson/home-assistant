@@ -14,6 +14,7 @@ cards:
       - person.steve_edson
       - person.sophie
   - type: entities
+    title: Steve's Phone
     entities:
       - device_tracker.gm1910
       - sensor.steve_s_phone_audio_sensor
@@ -31,6 +32,7 @@ cards:
       - sensor.steve_s_phone_storage_sensor
       - sensor.gm1910_wifi_connection
   - type: entities
+    title: Sophie's Phone
     entities:
       - device_tracker.in2010
       - sensor.in2010_audio_sensor
