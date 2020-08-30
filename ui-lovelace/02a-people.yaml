@@ -1,0 +1,47 @@
+card-style: &cardstyle |
+  hui-horizontal-stack-card,
+  ha-card {
+    margin: -5px 14px 15px 14px;
+    box-shadow: var(--card-box-shadow)
+  }
+
+icon: mdi:account
+title: People
+path: people
+cards:
+  - type: glance
+    entities:
+      - person.steve_edson
+      - person.sophie
+  - type: entities
+    title: Steve's Phone
+    entities:
+      - device_tracker.gm1910
+      - sensor.steve_s_phone_audio_sensor
+      - sensor.steve_s_phone_bluetooth_connection
+      - sensor.steve_s_phone_do_not_disturb_sensor
+      - sensor.gm1910_geocoded_location
+      - sensor.steve_s_phone_last_reboot
+      - sensor.steve_s_phone_light_sensor
+      - sensor.steve_s_phone_next_alarm
+      - sensor.steve_s_phone_phone_state
+      - sensor.steve_s_phone_proximity_sensor
+      - sensor.steve_s_phone_sim_1
+      - sensor.steve_s_phone_sim_2
+      - sensor.steve_s_phone_steps_sensor
+      - sensor.steve_s_phone_storage_sensor
+      - sensor.gm1910_wifi_connection
+  - type: entities
+    title: Sophie's Phone
+    entities:
+      - device_tracker.in2010
+      - sensor.in2010_audio_sensor
+      - sensor.in2010_bluetooth_connection
+      - sensor.in2010_do_not_disturb_sensor
+      - sensor.in2010_geocoded_location
+      - sensor.in2010_last_reboot
+      - sensor.in2010_light_sensor
+      - sensor.in2010_next_alarm
+      - sensor.in2010_proximity_sensor
+      - sensor.in2010_storage_sensor
+      - sensor.in2010_wifi_connection
