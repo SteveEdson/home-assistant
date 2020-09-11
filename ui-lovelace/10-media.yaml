@@ -4,13 +4,39 @@ title: Media
 panel: true
 cards:
   - type: custom:auto-entities
-    max_columns: 3
     filter:
       include:
         - domain: media_player
           options:
             type: custom:mini-media-player # Make sure to specify a card type for every filter
             artwork: material
+      exclude:
+        - state: "unavailable"
+    sort:
+      method: name
+      ignore_case: true
+    card:
+      type: custom:layout-card
+      max_columns: 4
+  - type: custom:auto-entities
+    filter:
+      include:
+        - domain: media_player
+          options:
+            type: custom:mini-media-player # Make sure to specify a card type for every filter
+      exclude:
+        - state: "unavailable"
+    sort:
+      method: name
+      ignore_case: true
+    card:
+      type: custom:layout-card
+  - type: media-control
+    filter:
+      include:
+        - domain: media_player
+          options:
+            type: media # Make sure to specify a card type for every filter
       exclude:
         - state: "unavailable"
     sort:
