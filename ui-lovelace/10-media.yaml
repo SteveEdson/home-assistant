@@ -30,12 +30,12 @@ cards:
       ignore_case: true
     card:
       type: custom:layout-card
-  - type: media-control
+  - type: custom:auto-entities
     filter:
       include:
         - domain: media_player
           options:
-            type: media # Make sure to specify a card type for every filter
+            type: media-control # Make sure to specify a card type for every filter
       exclude:
         - state: "unavailable"
     sort:
