@@ -3,18 +3,21 @@ path: cameras
 # Name of the view. Will be used as the tooltip for tab icon
 title: Cameras
 cards:
-  - type: picture-glance
-    title: Front
-    entities:
-      - person.steve_edson
-      - binary_sensor.cupboard_door_contact
-    camera_image: camera.g3_flex
-    camera_view: live
+  - type: custom:layout-card
+    max_columns: 2
+    cards:
+      - type: picture-glance
+        title: Front
+        entities:
+          - person.steve_edson
+          - binary_sensor.cupboard_door_contact
+        camera_image: camera.g3_flex
+        camera_view: live
 
-  - type: picture-glance
-    title: Garden
-    entities:
-      - person.steve_edson
-      - binary_sensor.bifold_door_contact
-    camera_image: camera.garden
-    camera_view: live
+      - type: picture-glance
+        title: Garden
+        entities:
+          - person.steve_edson
+          - binary_sensor.bifold_door_contact
+        camera_image: camera.garden
+        camera_view: live
