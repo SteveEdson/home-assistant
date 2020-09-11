@@ -28,6 +28,16 @@ cards:
       - light.garden_light_2_light
       - light.garden_light_3_light
       - light.garden_light_4_light
+  - type: entities
+    entities:
+      - light.wled_2
+      - sensor.wled_2_estimated_current
+      - switch.wled_2_nightlight
+      - switch.wled_2_sync_receive
+      - switch.wled_2_sync_send
+    title: Strip Lights
+    style: *cardstyle
+    show_header_toggle: false
   - type: picture-glance
     title: Camera
     entities:
