@@ -17,4 +17,3 @@ cards:
       ignore_case: true
     card:
       type: custom:layout-card
-      max_columns: 4
