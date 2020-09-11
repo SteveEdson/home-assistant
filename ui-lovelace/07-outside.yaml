@@ -1,22 +1,13 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 path: outside
 icon: mdi:tree
 title: Outside
 cards:
   - type: entities
-    style: *cardstyle
     entities:
       - sensor.bin_days
       - sensor.next_bus_to_town
   - type: picture-glance
     title: Camera
-    style: *cardstyle
     entities:
       - person.steve_edson
     camera_image: camera.g3_flex
@@ -31,7 +22,6 @@ cards:
       - switch.wled_sync_receive_2
       - switch.wled_sync_send_2
     title: Strip Lights
-    style: *cardstyle
     show_header_toggle: false
   - type: picture-glance
     title: Camera
@@ -40,7 +30,6 @@ cards:
       - binary_sensor.bifold_door_contact
     camera_image: camera.garden
     camera_view: live
-    style: *cardstyle
   - type: horizontal-stack
     cards:
       - type: entity
@@ -54,7 +43,6 @@ cards:
     entities:
       - sensor.hot_tub_temperature
   - type: custom:mini-graph-card
-    style: *cardstyle
     points_per_hour: 2
     animate: true
     entities:
@@ -67,11 +55,9 @@ cards:
     entity: weather.dark_sky
     name: "at home"
     backdrop: true
-    style: *cardstyle
 #      - type: glance
 #        entities:
 #          - entity: switch.bf5bde9e7cf9134ab6kmf7
 #            tap_action:
 #              action: toggle
 #        show_state: false
-# todo: add hot tub temp eventually
