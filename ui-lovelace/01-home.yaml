@@ -7,13 +7,13 @@ cards:
     cards:
     - content: |
         {% if now().hour < 5 %}
-          ## Good night
+          # Good night
         {% elif now().hour < 12 %}
-          ## Good morning
+          # Good morning
         {% elif now().hour < 18 %}
-          ## Good afternoon
+          # Good afternoon
         {% else %}
-          ## Have a nice evening
+          # Have a nice evening
         {% endif %}
       style:
         .: |
