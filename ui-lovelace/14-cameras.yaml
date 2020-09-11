@@ -6,7 +6,6 @@ panel: true
 cards:
   - type: custom:layout-card
     min_columns: 2
-    column_width: 50%
     cards:
       - type: picture-glance
         title: Front
