@@ -1,6 +1,7 @@
 icon: mdi:music-box
 path: media
 title: Media
+panel: true
 cards:
   - type: custom:auto-entities
     filter:
@@ -8,7 +9,7 @@ cards:
         - domain: media_player
           options:
             type: custom:mini-media-player # Make sure to specify a card type for every filter
-            artwork: material
+            artwork: material # / full-cover
       exclude:
         - state: "unavailable"
     sort:
@@ -17,45 +18,3 @@ cards:
     card:
       type: custom:layout-card
       max_columns: 4
-  - type: custom:auto-entities
-    filter:
-      include:
-        - domain: media_player
-          options:
-            type: custom:mini-media-player
-            artwork: cover
-      exclude:
-        - state: "unavailable"
-    sort:
-      method: name
-      ignore_case: true
-    card:
-      type: custom:layout-card
-  - type: custom:auto-entities
-    filter:
-      include:
-        - domain: media_player
-          options:
-            type: custom:mini-media-player
-            artwork: full-cover
-      exclude:
-        - state: "unavailable"
-    sort:
-      method: name
-      ignore_case: true
-    card:
-      type: custom:layout-card
-  - type: custom:auto-entities
-    filter:
-      include:
-        - domain: media_player
-          options:
-            type: custom:mini-media-player
-            artwork: full-cover-fit
-      exclude:
-        - state: "unavailable"
-    sort:
-      method: name
-      ignore_case: true
-    card:
-      type: custom:layout-card
