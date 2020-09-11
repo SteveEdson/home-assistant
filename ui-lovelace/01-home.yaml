@@ -3,6 +3,52 @@ path: home
 # Name of the view. Will be used as the tooltip for tab icon
 title: Home
 cards:
+  - type: vertical-stack
+    cards:
+    - content: |
+        {% if now().hour < 5 %}
+          ## Good night
+        {% elif now().hour < 12 %}
+          ## Good morning
+        {% elif now().hour < 18 %}
+          ## Good afternoon
+        {% else %}
+          ## Have a nice evening
+        {% endif %}
+      style:
+        .: |
+          ha-card {
+            --ha-card-background: none !important;
+            box-shadow: none !important;
+            height: 20px;
+          }
+        ha-markdown:
+          $: |
+            h1 {
+              font-size: 20px;
+              font-weight: bold;
+              font-family: Helvetica;
+              letter-spacing: '-0.01em';
+            }
+      type: markdown
+    - content: |
+        # Enter what you want to display in the small text
+      style:
+        .: |
+          ha-card {
+            --ha-card-background: none !important;
+            box-shadow: none !important;
+            height: 50px;
+          }
+        ha-markdown:
+          $: |
+            h1 {
+              font-size: 15px;
+              font-weight: thin;
+              font-family: Helvetica;
+              letter-spacing: '-0.01em';
+            }
+      type: markdown
   - type: markdown
     style: |
       h2 {
