@@ -1,7 +1,6 @@
 icon: mdi:music-box
 path: media
 title: Media
-panel: true
 cards:
   - type: custom:auto-entities
     filter:
