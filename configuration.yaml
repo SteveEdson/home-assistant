@@ -13,7 +13,7 @@ lovelace:
       type: js
     - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.9.3
       type: module
-    - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.2
+    - url: /local/custom_ui/mini-media-player-bundle.js?v=1.11.0
       type: module
     - url: /local/custom_ui/unused-card.js?v=0.3
       type: module
