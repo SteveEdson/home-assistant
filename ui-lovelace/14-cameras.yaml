@@ -2,6 +2,7 @@ icon: mdi:cctv
 path: cameras
 # Name of the view. Will be used as the tooltip for tab icon
 title: Cameras
+panel: true
 cards:
   - type: custom:layout-card
     max_columns: 2
