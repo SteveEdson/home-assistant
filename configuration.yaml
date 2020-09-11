@@ -27,7 +27,7 @@ lovelace:
       type: module
     - url: /local/custom_ui/xiaomi-vacuum-card.js?v=2.3.2
       type: js
-    - url: /local/custom_ui/layout-card.js
+    - url: /local/custom_ui/layout-card.js?v=16
       type: module
     - url: /local/custom_ui/bignumber-card.js
       type: module
