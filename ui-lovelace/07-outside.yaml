@@ -24,10 +24,6 @@ cards:
   - type: entities
     entities:
       - light.garden_lights
-      - light.garden_light_1_light
-      - light.garden_light_2_light
-      - light.garden_light_3_light
-      - light.garden_light_4_light
   - type: entities
     entities:
       - light.wled_2
