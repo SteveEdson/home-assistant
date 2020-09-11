@@ -5,7 +5,7 @@ title: Cameras
 panel: true
 cards:
   - type: custom:layout-card
-    max_columns: 2
+    min_columns: 2
     column_width: 50%
     cards:
       - type: picture-glance
