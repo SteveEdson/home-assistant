@@ -5,9 +5,6 @@ title: Home
 cards:
   - type: markdown
     style: |
-      ha-card {
-        margin: 5px 14px 5px 10px;
-      }
       h2 {
         font-size: 20px;
         font-weight: 500;
