@@ -47,6 +47,20 @@ cards:
     animate: true
     entities:
       - sensor.hot_tub_temperature
+  - type: custom:bignumber-card
+    title: Hot Tub Temperature
+    entity: sensor.hot_tub_temperature
+    scale: 30px
+    from: left
+    min: 14
+    max: 45
+    severity:
+      - value: 14
+        style: 'var(--label-badge-blue)'
+      - value: 32
+        style: 'var(--label-badge-green)'
+      - value: 37
+        style: 'var(--label-badge-red)'
   - type: gauge
     entity: sensor.hot_tub_temperature
     min: 6

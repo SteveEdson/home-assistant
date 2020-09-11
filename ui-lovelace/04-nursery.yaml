@@ -1,20 +1,11 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 icon: mdi:baby-face-outline
 title: Nursery
 path: nursery
 cards:
   - type: entity
     entity: binary_sensor.nursery_motion_occupancy
-    style: *cardstyle
   - type: entities
     title: Lights
-    style: *cardstyle
     entities:
       - type: custom:slider-entity-row
         entity: light.nursery_light_light
@@ -28,25 +19,24 @@ cards:
     hours_to_show: 6
     title: Bottle History
     refresh_interval: 60
-    style: *cardstyle
+
   - type: entity
     entity: sensor.last_feed_readable
-    style: *cardstyle
+
   - type: entity
     entity: sensor.bottle_warmer_last_on
-    style: *cardstyle
+
   - type: entity
     entity: sensor.predicted_next_feed
-    style: *cardstyle
+
   - type: entities
     entities:
       - entity: script.bottle_warmer_on
       - entity: switch.bff5c4bbd438ed9847uxkj
       - entity: automation.bottle_warmer_auto_off
     show_header_toggle: false
-    style: *cardstyle
+
   - type: horizontal-stack
-    style: *cardstyle
     cards:
       - entity: script.log_feed
         name: Log 0.5oz Bottle

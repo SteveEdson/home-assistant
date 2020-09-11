@@ -1,26 +1,18 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 icon: mdi:hot-tub
 path: bathroom
 title: Bathroom
 cards:
   - type: light
     entity: light.bathroom_light_light
-    style: *cardstyle
+
   - type: light
     entity: light.shelly_f
-    style: *cardstyle
+
   - type: entity
     entity: binary_sensor.bathroom_motion_occupancy
-    style: *cardstyle
+
   - type: entities
     title: Motion Controls
-    style: *cardstyle
     entities:
       - name: Motion Off
         entity: automation.family_bathroom_motion_off

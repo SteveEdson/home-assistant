@@ -1,22 +1,13 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 path: bedroom
 icon: mdi:bed
 title: Bedroom
 cards:
   - type: entity
     entity: binary_sensor.ensuite_motion_occupancy
-    style: *cardstyle
 
   - type: glance
     show_state: false
     columns: 2
-    style: *cardstyle
     entities:
       - entity: scene.bedroom_reading
         name: Reading
@@ -51,7 +42,6 @@ cards:
             entity_id: scene.bedroom_off
 
   - type: entities
-    style: *cardstyle
     entities:
       - switch.bedroom_tv
       - sensor.bedroom_tv_media_input_source
@@ -62,7 +52,6 @@ cards:
   - type: glance
     show_state: false
     columns: 3
-    style: *cardstyle
     entities:
       - name: Sleep Timer 30m
         entity: timer.bedroom_sleep_timer
@@ -105,7 +94,6 @@ cards:
         show_name: true
 
   - type: entities
-    style: *cardstyle
     entities:
       - type: custom:slider-entity-row
         entity: light.bedroom_spotlights
@@ -117,7 +105,6 @@ cards:
   - type: custom:mini-media-player
     entity: media_player.bedroom_tv
     icon: mdi:television
-    style: *cardstyle
     artwork: cover
     hide:
       volume: false
@@ -137,14 +124,12 @@ cards:
     title: TV Sleep Timer
     show_name: false
     show_state: true
-    style: *cardstyle
     show_icon: true
 
   - type: custom:mini-media-player
     entity: media_player.lenovosmartclock6903
     icon: mdi:spotify
     artwork: cover
-    style: *cardstyle
     hide:
       volume: false
       source: true

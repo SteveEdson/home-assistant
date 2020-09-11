@@ -12,7 +12,6 @@ panel: true
 cards:
   - type: custom:auto-entities
     max_columns: 3
-    style: *cardstyle
     filter:
       include:
         - domain: media_player

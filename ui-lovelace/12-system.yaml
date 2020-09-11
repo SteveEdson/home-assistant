@@ -1,37 +1,24 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 path: system
 title: System
 icon: mdi:desktop-tower-monitor
 cards:
   - type: custom:mini-graph-card
-    style: *cardstyle
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
   - type: custom:mini-graph-card
-    style: *cardstyle
     entities:
       - sensor.speedtest_ping
   - type: custom:mini-graph-card
-    style: *cardstyle
     entities:
       - sensor.load_5m
   - type: custom:mini-graph-card
-    style: *cardstyle
     entities:
       - sensor.memory_free
   - type: custom:mini-graph-card
-    style: *cardstyle
     entities:
       - sensor.disk_free
   - type: entities
-    style: *cardstyle
     entities:
       - binary_sensor.do_1
       - sensor.rt_ac68u_b_received
@@ -45,14 +32,12 @@ cards:
     title: Network Stats
     show_header_toggle: false
   - type: entities
-    style: *cardstyle
     entities:
       - sensor.latest_version
       - sensor.current_version
     title: Home Assistant
     show_header_toggle: false
   - type: custom:auto-entities
-    style: *cardstyle
     unique: true
     show_empty: false
     card:
@@ -78,7 +63,6 @@ cards:
   - type: custom:auto-entities
     show_empty: false
     unique: true
-    style: *cardstyle
     card:
       type: custom:bar-card
       attribute: battery
@@ -113,7 +97,6 @@ cards:
     unit_of_measurement: "%"
 
   - type: custom:auto-entities
-    style: *cardstyle
     unique: true
     show_empty: false
     card:

@@ -1,10 +1,3 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 icon: mdi:home-assistant
 path: home
 # Name of the view. Will be used as the tooltip for tab icon
@@ -34,13 +27,10 @@ cards:
     cards:
       - type: entity
         entity: binary_sensor.night
-        style: *cardstyle
       - type: entity
         entity: sensor.sun_elevation
-        style: *cardstyle
       - type: entity
         entity: binary_sensor.activate_motion_lights
-        style: *cardstyle
   - type: map
     aspect_ratio: 16:9
     dark_mode: true
@@ -52,10 +42,8 @@ cards:
     entity: weather.dark_sky
     name: "at home"
     backdrop: true
-    style: *cardstyle
   - type: alarm-panel
     entity: alarm_control_panel.house_alarm
-    style: *cardstyle
   - type: picture-glance
     title: Front
     entities:
@@ -63,7 +51,6 @@ cards:
       - binary_sensor.front_door_contact
     camera_image: camera.g3_flex
     camera_view: live
-    style: *cardstyle
   - type: glance
     entities:
       - person.steve_edson
@@ -75,14 +62,12 @@ cards:
       - binary_sensor.bifold_door_contact
     camera_image: camera.garden
     camera_view: live
-    style: *cardstyle
   # - type: thermostat
   #   entity: climate.netatmo_heating
   #   name: Heating
   - type: custom:simple-thermostat
     entity: climate.netatmo_heating
     name: Heating
-    style: *cardstyle
   - type: entities
     title: Doorbell
     show_header_toggle: false
@@ -91,7 +76,6 @@ cards:
         name: Chime Active?
       - entity: switch.doorbell_chime
         name: Manual Press
-    style: *cardstyle
   - type: glance
     entities:
       - entity: script.good_night
@@ -107,7 +91,6 @@ cards:
     show_state: false
     title: Quick Scripts
     columns: 2
-    style: *cardstyle
   - type: weather-forecast
     entity: weather.home
   - type: sensor

@@ -1,16 +1,8 @@
-card-style: &cardstyle |
-  hui-horizontal-stack-card,
-  ha-card {
-    margin: -5px 14px 15px 14px;
-    box-shadow: var(--card-box-shadow)
-  }
-
 path: printing
 title: Printing
 icon: mdi:printer-3d-nozzle
 cards:
   - type: picture-entity
-    style: *cardstyle
     entity: camera.octoprint
     name: printcam
     show_state: false
@@ -22,13 +14,11 @@ cards:
     cards:
       - type: custom:mini-graph-card
         hours_to_show: 2
-        style: *cardstyle
         entities:
           - sensor.octoprint_actual_bed_temp
           - sensor.octoprint_target_bed_temp
       - type: custom:mini-graph-card
         hours_to_show: 2
-        style: *cardstyle
         entities:
           - sensor.octoprint_actual_tool0_temp
           - sensor.octoprint_target_tool0_temp
@@ -37,7 +27,6 @@ cards:
     cards:
       - type: gauge
         title: Bed Temp
-        style: *cardstyle
         entity: sensor.octoprint_actual_bed_temp
         unit_of_measurement: °C
         min: 0
@@ -50,7 +39,6 @@ cards:
 
       - type: gauge
         title: Hot End Temp
-        style: *cardstyle
         entity: sensor.octoprint_actual_tool0_temp
         unit_of_measurement: °C
         min: 0
@@ -65,7 +53,6 @@ cards:
     cards:
       - type: gauge
         title: Bed Target
-        style: *cardstyle
         entity: sensor.octoprint_target_bed_temp
         unit_of_measurement: °C
         min: 0
@@ -78,7 +65,6 @@ cards:
 
       - type: gauge
         title: Hot End Target
-        style: *cardstyle
         entity: sensor.octoprint_target_tool0_temp
         unit_of_measurement: °C
         min: 0
@@ -94,7 +80,6 @@ cards:
     entity: sensor.octoprint_job_percentage
     scale: 30px
     from: left
-    style: *cardstyle
     min: 0
     max: 100
     severity:
@@ -109,19 +94,16 @@ cards:
     cards:
       - type: sensor
         name: Elapsed
-        style: *cardstyle
         entity: sensor.octoprint_time_elapsed
         graph: none
 
       - type: sensor
         name: Remaining
-        style: *cardstyle
         entity: sensor.octoprint_time_remaining
         graph: none
 
   - type: glance
     show_header_toggle: false
-    style: *cardstyle
     column_width: calc(100% / 3)
     entities:
       - entity: binary_sensor.octoprint_printing
