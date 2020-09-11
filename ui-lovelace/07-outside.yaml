@@ -21,9 +21,8 @@ cards:
       - person.steve_edson
     camera_image: camera.g3_flex
     camera_view: live
-  - type: entities
-    entities:
-      - light.garden_lights
+  - type: light
+    entity: light.garden_lights
   - type: entities
     entities:
       - light.wled_2
