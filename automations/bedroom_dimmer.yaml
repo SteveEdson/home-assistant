@@ -7,6 +7,8 @@
     - service: light.turn_off
       data:
         entity_id:
+          - light.bedroom_reading_lights
+          - light.bedroom_ceiling_lights
 
 - alias: Bedroom Dimmer On
   trigger:
@@ -14,18 +16,24 @@
     entity_id: sensor.bedroom_dimmer_action
     to: 'on-press'
   action:
+    - service: light.turn_on
+      brightness_pct: 100
+      data:
+        entity_id:
+          - light.bedroom_reading_lights
+          - light.bedroom_ceiling_lights
 
-- alias: Bedroom Dimmer Up
-  trigger:
-    platform: state
-    entity_id: sensor.bedroom_dimmer_action
-    to: 'up-press'
-  action:
+# - alias: Bedroom Dimmer Up
+#   trigger:
+#     platform: state
+#     entity_id: sensor.bedroom_dimmer_action
+#     to: 'up-press'
+#   action:
 
 
-- alias: Bedroom Dimmer Down
-  trigger:
-    platform: state
-    entity_id: sensor.bedroom_dimmer_action
-    to: 'down-press'
-  action:
+# - alias: Bedroom Dimmer Down
+#   trigger:
+#     platform: state
+#     entity_id: sensor.bedroom_dimmer_action
+#     to: 'down-press'
+#   action:
