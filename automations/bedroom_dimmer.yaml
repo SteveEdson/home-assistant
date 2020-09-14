@@ -1,31 +1,31 @@
-# - alias: Bedroom Dimmer Off
-#   trigger:
-#     platform: state
-#     entity_id: sensor.Bedroom_dimmer_action
-#     to: 'off-press'
-#   action:
-#     - service: light.turn_off
-#       data:
-#         entity_id:
+- alias: Bedroom Dimmer Off
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_dimmer_action
+    to: 'off-press'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
 
-# - alias: Bedroom Dimmer On
-#   trigger:
-#     platform: state
-#     entity_id: sensor.Bedroom_dimmer_action
-#     to: 'on-press'
-#   action:
+- alias: Bedroom Dimmer On
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_dimmer_action
+    to: 'on-press'
+  action:
 
-# - alias: Bedroom Dimmer Up
-#   trigger:
-#     platform: state
-#     entity_id: sensor.Bedroom_dimmer_action
-#     to: 'up-press'
-#   action:
+- alias: Bedroom Dimmer Up
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_dimmer_action
+    to: 'up-press'
+  action:
 
 
-# - alias: Bedroom Dimmer Down
-#   trigger:
-#     platform: state
-#     entity_id: sensor.Bedroom_dimmer_action
-#     to: 'down-press'
-#   action:
+- alias: Bedroom Dimmer Down
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_dimmer_action
+    to: 'down-press'
+  action:
