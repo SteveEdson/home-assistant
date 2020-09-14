@@ -58,6 +58,16 @@
     - light.wled
 
 - platform: group
+  name: Bedroom Ceiling
+  entities:
+    - light.bedroom_light_1_light
+    - light.bedroom_light_2_light
+    - light.bedroom_light_3_light
+    - light.bedroom_light_4_light
+    - light.bedroom_light_5_light
+    - light.bedroom_light_6_light
+
+- platform: group
   name: Kitchen Lights
   entities:
     - light.shelly_b
