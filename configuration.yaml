@@ -182,12 +182,6 @@ mqtt:
 
 light: !include lights.yaml
 
-hue:
-  bridges:
-    - host: 192.168.1.16
-      allow_hue_groups: false
-      allow_unreachable: true
-
 media_player:
   - platform: androidtv
     name: Kitchen Fire Stick
