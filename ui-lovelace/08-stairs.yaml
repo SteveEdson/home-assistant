@@ -1,13 +1,20 @@
 icon: mdi:stairs
 path: hallway
-badges:
-  - binary_sensor.front_door_contact
-  - binary_sensor.cupboard_door_contact
 # Name of the view. Will be used as the tooltip for tab icon
 title: Hallway
 cards:
   - type: light
     entity: light.shelly_a
+
+  - type: light
+    entity: light.porch_lights
+
+  - type: horizontal-stack
+    cards:
+      - type: entity
+        entity: binary_sensor.front_door_contact
+      - type: entity
+        entity: binary_sensor.cupboard_door_contact
 
   - type: picture-elements
     image: /local/nest.jpg

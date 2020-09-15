@@ -114,8 +114,13 @@
         state: 'on'
   action:
     - service: light.turn_on
+      brightness_pct: 100
+      transition: 1
       data:
-        entity_id: light.shelly_a
+        entity_id:
+          - light.shelly_a
+          - light.porch_lights
+
 
 - alias: Hallway motion off
   trigger:
@@ -124,8 +129,10 @@
       from: 'on'
       to: 'off'
       for:
-        minutes: 10
+        minutes: 5
   action:
     - service: light.turn_off
       data:
-        entity_id: light.shelly_a
+        entity_id:
+          - light.shelly_a
+          - light.porch_lights

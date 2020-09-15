@@ -23,6 +23,12 @@
 #   brightness_scale: 4095
 
 - platform: group
+  name: Porch Lights
+  entities:
+    - light.porch_light_1_light
+    - light.porch_light_2_light
+
+- platform: group
   name: Bedroom Reading Lights
   entities:
     - light.bedroom_light_lb_light
