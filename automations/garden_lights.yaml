@@ -8,8 +8,9 @@
     data:
       transition: 900 # 15 minutes
       brightness_pct: 100
-      entity_id: light.garden_lights
-  alias: Lights on at sunset
+      entity_id: 
+        - light.garden_lights
+        - light.porch_lights
   condition:
     condition: or
     conditions:
@@ -28,4 +29,6 @@
   - service: light.turn_off
     data:
       transition: 15 # 15 seconds
-      entity_id: light.garden_lights
+      entity_id: 
+        - light.garden_lights
+        - light.porch_lights
