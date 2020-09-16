@@ -374,7 +374,6 @@ plant:
   lounge:
     sensors:
       moisture: sensor.xiaomi_hhccjcy01_moisture
-      battery: sensor.xiaomi_hhccjcy01_battery_level
       temperature: sensor.xiaomi_hhccjcy01_temperature
       conductivity: sensor.xiaomi_hhccjcy01_soil_conductivity
       brightness: sensor.xiaomi_hhccjcy01_illuminance
