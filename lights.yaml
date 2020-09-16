@@ -32,9 +32,9 @@
   name: Bedroom Reading Lights
   entities:
     - light.bedroom_light_lb_light
+    - light.bedroom_light_lt_light
     - light.bedroom_light_rb_light
-    - light.bedside_light_lt_light
-    - light.bedside_light_rt_light
+    - light.bedroom_light_rt_light
 
 - platform: group
   name: Garden Lights

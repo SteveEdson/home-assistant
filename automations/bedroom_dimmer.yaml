@@ -21,7 +21,7 @@
       data:
         entity_id:
           - light.bedroom_reading_lights
-          - light.bedroom_ceiling_lights
+          - light.bedroom_ceiling
 
 # - alias: Bedroom Dimmer Up
 #   trigger:
