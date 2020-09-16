@@ -81,13 +81,6 @@ google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
 
-# image_processing:
-#  - platform: openalpr_cloud
-#    api_key: !secret openalr_api_key
-#    region: eu
-#    source:
-#     - entity_id: camera.mjpeg_camera
-
 # Checks for available updates
 updater:
   reporting: true
