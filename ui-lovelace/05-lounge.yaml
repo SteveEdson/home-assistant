@@ -3,7 +3,7 @@ title: Lounge
 path: lounge
 cards:
   - type: plant-status
-    entity: plant.sunflower
+    entity: plant.lounge
     name: Lounge Plant
 
   - type: vertical-stack
