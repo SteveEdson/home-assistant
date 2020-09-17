@@ -3,12 +3,12 @@ path: media
 title: Media
 panel: true
 cards:
-  - type: media-control
+media-control custom:auto-entities
     filter:
       include:
         - domain: media_player
           options:
-            type: custom:mini-media-player # Make sure to specify a card type for every filter
+            type: media-control # Make sure to specify a card type for every filter
             artwork: material # / full-cover
       exclude:
         - state: "unavailable"
