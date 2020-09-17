@@ -52,6 +52,8 @@ system_log:
 # Show links to resources in log and frontend
 #introduction:
 
+media_source:
+
 # Enables the frontend
 frontend: !include frontend.yaml
 
