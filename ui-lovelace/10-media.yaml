@@ -3,7 +3,7 @@ path: media
 title: Media
 panel: true
 cards:
-media-control custom:auto-entities
+  - type: custom:auto-entities
     filter:
       include:
         - domain: media_player
