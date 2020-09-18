@@ -21,3 +21,14 @@
 #      friendly_name: Surround Sound
 #      command_on: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
 #      command_off: 'JgBQAAABKJMTEhQREhMTNxITExITEhITEjgSOBM3EhMSOBM3EjcTOBISFRESExISFTYUEBMTEhMSNxM3EzgUNRIUEzYSOBM4EwAFIAABKUgVAA0FAAAAAAAAAAA='
+
+- platform: template
+  switches:
+    my_computer:
+      friendly_name: "Aegis"
+      value_template: "{{ is_state('binary_sensor.aegis_connected', 'on') }}"
+      turn_on:
+        service: script.aegis_wake
+      turn_off:
+        service: script.aegis_shutdown
+      icon_template: mdi:desktop-tower-monitor

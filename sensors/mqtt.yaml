@@ -1,0 +1,230 @@
+- platform: mqtt
+  name: "Aegis - Current User"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/system/current-user"
+  unit_of_measurement: ''
+  icon: mdi:account
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Idle Time"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/system/idle-time"
+  unit_of_measurement: 'seconds'
+  icon: mdi:timer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - CPU Usage"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/cpu/usage"
+  unit_of_measurement: '%'
+  icon: mdi:speedometer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - RAM Usage"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/memory/usage"
+  unit_of_measurement: '%'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - RAM Available"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/memory/available"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - RAM Used"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/memory/used"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - RAM Total"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/memory/total"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Remaining Battery"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/battery/remaining-percent"
+  unit_of_measurement: '%'
+  device_class: battery
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Remaining Battery Time"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/battery/remaining-time"
+  unit_of_measurement: 'minutes'
+  icon: mdi:timer
+  value_template: "{{ ( value | float / 60 ) | int }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Predicted Lifetime"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/battery/full-lifetime"
+  unit_of_measurement: 'minutes'
+  icon: mdi:timer
+  value_template: "{{ ( value | float / 60 ) | int }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Usage (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/drive-usage"
+  unit_of_measurement: '%'
+  icon: mdi:chart-donut
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Total Size (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/total-size"
+  unit_of_measurement: 'GB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Total Free Space (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/total-free-space"
+  unit_of_measurement: 'GB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Free Space (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/available-free-space"
+  unit_of_measurement: 'GB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Used Space (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/used-space"
+  unit_of_measurement: 'GB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Format (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/drive-format"
+  unit_of_measurement: ''
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - HDD Label (C)"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/hard-drive/c/volume-label"
+  unit_of_measurement: ''
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Network IPv4"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/network/0/ipv4"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Network IPv6"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/network/0/ipv6"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Network Speed"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/network/0/speed"
+  unit_of_measurement: 'Mbps'
+  icon: mdi:speedometer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+
+- platform: mqtt
+  name: "Aegis - Network Wired"
+  state_topic: "iotlink/workgroup/my-computer/windows-monitor/stats/network/0/wired"
+  unit_of_measurement: ''
+  icon: mdi:ethernet
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/my-computer/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
