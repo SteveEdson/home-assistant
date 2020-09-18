@@ -52,6 +52,8 @@ system_log:
 # Show links to resources in log and frontend
 #introduction:
 
+media_source:
+
 # Enables the frontend
 frontend: !include frontend.yaml
 
@@ -80,13 +82,6 @@ input_boolean:
 google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
-
-# image_processing:
-#  - platform: openalpr_cloud
-#    api_key: !secret openalr_api_key
-#    region: eu
-#    source:
-#     - entity_id: camera.mjpeg_camera
 
 # Checks for available updates
 updater:
@@ -181,12 +176,6 @@ mqtt:
 #   certificate: /etc/ssl/certs/ca-certificates.crt
 
 light: !include lights.yaml
-
-hue:
-  bridges:
-    - host: 192.168.1.16
-      allow_hue_groups: false
-      allow_unreachable: true
 
 media_player:
   - platform: androidtv
@@ -384,13 +373,12 @@ rest_command:
     url: 'http://192.168.1.60:5000/command?message=Find my phone'
 
 plant:
-  sunflower:
+  lounge:
     sensors:
-      moisture: sensor.xiaomi_miflora_moisture
-      battery: sensor.xiaomi_miflora_battery_level
-      temperature: sensor.xiaomi_miflora_temperature
-      conductivity: sensor.xiaomi_miflora_soil_conductivity
-      brightness: sensor.xiaomi_miflora_illuminance
+      moisture: sensor.xiaomi_hhccjcy01_moisture
+      temperature: sensor.xiaomi_hhccjcy01_temperature
+      conductivity: sensor.xiaomi_hhccjcy01_soil_conductivity
+      brightness: sensor.xiaomi_hhccjcy01_illuminance
     min_moisture: 20
     max_moisture: 65
     min_temperature: 8

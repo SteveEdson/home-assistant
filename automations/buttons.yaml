@@ -120,7 +120,7 @@
 
 - alias: Ikea button 1 On
   trigger:
-    platform: state 
+    platform: state
     entity_id: sensor.ikea_switch_1_click
     to: 'on'
   action:
@@ -129,9 +129,48 @@
 
 - alias: Ikea button 1 Off
   trigger:
-    platform: state 
+    platform: state
     entity_id: sensor.ikea_switch_1_click
     to: 'off'
   action:
     service: switch.turn_off
     entity_id: switch.bf5bde9e7cf9134ab6kmf7
+
+- alias: Ikea button 2 On
+  trigger:
+    platform: state
+    entity_id: sensor.ikea_switch_2_click
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.box_room_light_light
+
+- alias: Ikea button 2 Off
+  trigger:
+    platform: state
+    entity_id: sensor.ikea_switch_2_click
+    to: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.box_room_light_light
+
+- alias: Ikea button 3 On
+  trigger:
+    platform: state
+    entity_id: sensor.ikea_switch_3_click
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.bedroom_reading_lights
+
+- alias: Ikea button 3 Off
+  trigger:
+    platform: state
+    entity_id: sensor.ikea_switch_3_click
+    to: 'off'
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.shelly_e
+      - light.bedroom_ceiling
+      - light.bedroom_reading_lights

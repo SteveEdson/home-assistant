@@ -8,7 +8,7 @@
       data:
         entity_id:
           - light.bedroom_reading_lights
-          - light.bedroom_ceiling_lights
+          - light.bedroom_ceiling
 
 - alias: Bedroom Dimmer On
   trigger:
@@ -17,11 +17,11 @@
     to: 'on-press'
   action:
     - service: light.turn_on
-      brightness_pct: 100
       data:
+        brightness_pct: 100
         entity_id:
           - light.bedroom_reading_lights
-          - light.bedroom_ceiling_lights
+          - light.bedroom_ceiling
 
 # - alias: Bedroom Dimmer Up
 #   trigger:
