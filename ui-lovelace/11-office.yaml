@@ -3,7 +3,7 @@ title: Office
 icon: mdi:google-controller
 cards:
   - type: entity-button
-    entity: switch.aegis
+    entity: switch.aegis_pc
 
   - type: entity-button
     entity: switch.bf5bde9e7cf9134ab6kmf7

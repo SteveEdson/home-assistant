@@ -24,11 +24,11 @@
 
 - platform: template
   switches:
-    my_computer:
+    aegis_pc:
       friendly_name: "Aegis"
       value_template: "{{ is_state('binary_sensor.desktop_b4rim5c_connected', 'on') }}"
       turn_on:
-        service: script.aegis_wake
+        service: script.turn_on_pc
       turn_off:
-        service: script.aegis_shutdown
+        service: script.shutdown_pc
       icon_template: mdi:desktop-tower-monitor
