@@ -49,6 +49,10 @@ cards:
               letter-spacing: '-0.01em';
             }
       type: markdown
+  - type: calendar
+    entities:
+      - calendar.steve_s_calendar
+      - calendar.steve_travlet_com
   - type: horizontal-stack
     cards:
       - type: entity
