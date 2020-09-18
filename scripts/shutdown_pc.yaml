@@ -1,0 +1,6 @@
+alias: "Aegis - Shutdown"
+sequence:
+  - service: mqtt.publish
+    data:
+      topic: "iotlink/workgroup/desktop-b4rim5c/commands/shutdown"
+      payload: ""

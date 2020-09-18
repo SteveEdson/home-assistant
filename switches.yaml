@@ -26,7 +26,7 @@
   switches:
     my_computer:
       friendly_name: "Aegis"
-      value_template: "{{ is_state('binary_sensor.aegis_connected', 'on') }}"
+      value_template: "{{ is_state('binary_sensor.desktop_b4rim5c_connected', 'on') }}"
       turn_on:
         service: script.aegis_wake
       turn_off:
