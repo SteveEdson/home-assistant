@@ -8,6 +8,40 @@ cards:
     name: false
     buttons: true
 
+  - type: 'custom:vacuum-card'
+    entity: vacuum.xiaomi_vacuum_cleaner
+    stats:
+      default:
+        - attribute: filter_left
+          unit: hours
+          subtitle: Filter
+        - attribute: side_brush_left
+          unit: hours
+          subtitle: Side brush
+        - attribute: main_brush_left
+          unit: hours
+          subtitle: Main brush
+        - attribute: sensor_dirty_left
+          unit: hours
+          subtitle: Sensors
+      cleaning:
+        - attribute: cleaned_area
+          unit: m2
+          subtitle: Cleaning area
+        - attribute: cleaning_time
+          unit: minutes
+          subtitle: Cleaning time
+    actions:
+      - name: Clean Hallway
+        service: script.clean_hallway
+        icon: 'mdi:stairs'
+      - name: Clean Kitchen
+        service: script.clean_kitchen
+        icon: 'mdi:kettle'
+      - name: Clean Lounge
+        service: script.clean_lounge
+        icon: 'mdi:sofa'
+
   - type: custom:xiaomi-vacuum-map-card
     entity: vacuum.xiaomi_vacuum_cleaner
     map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'

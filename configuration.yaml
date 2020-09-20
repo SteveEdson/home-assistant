@@ -41,6 +41,8 @@ lovelace:
       type: module
     - url: /local/custom_ui/zigbee2mqtt-networkmap.js
       type: module
+    - url: /local/custom_ui/vacuum-card.js?v=1.6.0
+      type: module
       # - url: /local/custom_ui/custom-header.js
       #   type: module
 
