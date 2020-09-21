@@ -38,6 +38,9 @@ cards:
       - name: Clean Kitchen
         service: script.clean_kitchen
         icon: 'mdi:kettle'
+      - name: Clean Kitchen Table
+        service: script.clean_kitchen_table
+        icon: 'mdi:table-chair'
       - name: Clean Lounge
         service: script.clean_lounge
         icon: 'mdi:sofa'
