@@ -45,7 +45,7 @@ cards:
   - type: custom:xiaomi-vacuum-map-card
     entity: vacuum.xiaomi_vacuum_cleaner
     map_image: '/local/custom_lovelace/xiaomi_vacuum_map_card/map.jpeg'
-    debug: true
+    debug: false
     default_mode: predefined_zones
     calibration_points:
       - vacuum:
@@ -70,6 +70,8 @@ cards:
       - [[23199,24008,29749,28808], [29654,26405,31454,28355]] # Kitchen
       - [[29684,23319,33034,25969]] # Hallway
       - [[25083,19323,31833,23373]] # Lounge
+      - [[23153,25267,26026,28374]] # Kitchen Table
+
 
   - type: entities
     entities:
