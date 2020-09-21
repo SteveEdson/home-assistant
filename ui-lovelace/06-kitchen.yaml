@@ -75,7 +75,6 @@ cards:
       - [[25083,19323,31833,23373]] # Lounge
       - [[23153,25267,26026,28374]] # Kitchen Table
 
-
   - type: entities
     entities:
       - automation.kitchen_vacuum
