@@ -7,9 +7,10 @@ cards:
       - sensor.bin_days
       - sensor.next_bus_to_town
   - type: picture-glance
-    title: Camera
+    title: Front
     entities:
       - person.steve_edson
+      - light.porch_lights
     camera_image: camera.g3_flex
     camera_view: live
   - type: light
@@ -24,10 +25,11 @@ cards:
     title: Strip Lights
     show_header_toggle: false
   - type: picture-glance
-    title: Camera
+    title: Garden
     entities:
       - person.steve_edson
       - binary_sensor.bifold_door_contact
+      - light.garden_lights
     camera_image: camera.garden
     camera_view: live
   - type: horizontal-stack
