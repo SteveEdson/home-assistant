@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "*.yaml": "yaml"
+        "*.yaml": "home-assistant"
     },
     "workbench.colorCustomizations": {}
 }
