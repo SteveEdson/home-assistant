@@ -19,7 +19,7 @@
         message: "Door bell pressed at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
     - service: camera.snapshot
       data:
-        entity_id: camera.g3_flex
+        entity_id: camera.front
         filename: /config/www/camera-snapshot.jpg
     - delay:
         seconds: 2
@@ -43,7 +43,7 @@
   action:
     - service: camera.play_stream
       data:
-        entity_id: camera.g3_flex
+        entity_id: camera.front
         media_player: media_player.kitchen_display
 
 - alias: "Doorbell Music Alert"

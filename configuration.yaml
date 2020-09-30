@@ -147,7 +147,7 @@ image_processing:
   # - platform: tensorflow
   #   scan_interval: 604800
   #   source:
-  #     - entity_id: camera.g3_flex
+  #     - entity_id: camera.front
   #   file_out:
   #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_latest.jpg"
   #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"

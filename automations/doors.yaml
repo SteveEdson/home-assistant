@@ -81,7 +81,7 @@
   action:
     - service: camera.play_stream
       data:
-        entity_id: camera.g3_flex
+        entity_id: camera.front
         media_player: media_player.kitchen_display
 
 - id: office_door_opened_alert
