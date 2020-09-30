@@ -27,6 +27,10 @@
   still_image_url: !secret octo_cam_still
   mjpeg_url: !secret octo_cam_stream
 
+- platform: uvc
+  nvr: 192.168.1.60
+  key: !secret unifi_key
+
 # - platform: onvif
 #   host: 192.168.1.48
 #   name: 360 Camera
