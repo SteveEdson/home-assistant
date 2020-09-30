@@ -79,6 +79,18 @@
     - light.shelly_b
     - light.shelly_c
 
+- platform: group
+  name: Kitchen All
+  entities:
+    - light.shelly_b
+    - light.shelly_c
+    - light.table_light_1_light
+    - light.table_light_2_light
+    - light.table_light_3_light
+    - light.hanging_light_1_light
+    - light.hanging_light_2_light
+    - light.wled
+
 - platform: mqtt
   name: "Bedroom Spotlights"
   schema: json

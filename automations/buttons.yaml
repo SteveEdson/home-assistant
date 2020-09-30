@@ -43,8 +43,7 @@
     service: light.toggle
     data:
       entity_id:
-        - light.kitchen_lights
-        - light.conservatory_lights
+        - light.kitchen_all
       brightness_pct: 100
 
 - alias: Kitchen Button Double
