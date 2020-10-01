@@ -40,11 +40,23 @@
     entity_id: sensor.kitchen_button_click
     to: 'single'
   action:
-    service: light.toggle
-    data:
-      entity_id:
-        - light.kitchen_all
-      brightness_pct: 100
+    - choose:
+        - conditions:
+          - condition: state
+            entity_id: binary_sensor.night
+            state: "on"
+          sequence:
+            - service: light.toggle
+              data:
+                entity_id:
+                  - light.kitchen_all
+                brightness_pct: 100
+      default:
+        - service: light.toggle
+          data:
+            entity_id:
+              - light.kitchen_lights
+            brightness_pct: 100
 
 - alias: Kitchen Button Double
   trigger:
