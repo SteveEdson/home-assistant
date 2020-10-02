@@ -3,5 +3,5 @@ sequence:
   - service: xiaomi_miio.vacuum_clean_zone
     data_template:
       entity_id: vacuum.xiaomi_vacuum_cleaner
-      repeats: 3
+      repeats: 2
       zone: [[23153,25267,26026,28374]]
