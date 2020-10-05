@@ -31,6 +31,8 @@
     platform: state
     entity_id: binary_sensor.bathroom_motion_occupancy
     to: 'off'
+    for:
+      minutes: 2
   action:
     - service: light.turn_off
       data:
