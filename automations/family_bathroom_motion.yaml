@@ -13,7 +13,7 @@
           condition: or
           conditions:
           - condition: time
-            after: "19:30:00"
+            after: "18:00:00"
             before: "08:00:00"
         sequence:
           - service: light.turn_on
