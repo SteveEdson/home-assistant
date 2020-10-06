@@ -10,5 +10,5 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: sun.sun
-        state: "below_horizon"
+        entity_id: binary_sensor.night
+        state: "on"
