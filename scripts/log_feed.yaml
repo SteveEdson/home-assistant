@@ -1,7 +1,0 @@
-alias: Log Feed
-sequence:
-  - service: ifttt.trigger
-    data_template:
-      event: baby_feed
-      value1: "{{ bottle_size }}"
-      value2: "{{ as_timestamp(now()) | timestamp_custom('%a, %b %d at %I:%M %p') }}"

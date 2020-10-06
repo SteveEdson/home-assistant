@@ -14,53 +14,9 @@
       unit_of_measurement: '°'
       value_template: "{{ states.sun.sun.attributes.elevation | float }}"
 
-    last_feed:
-      friendly_name: "Time Since Last Feed"
-      # entity_id: sensor.date_time
-      value_template: "{{ now() - states.switch.bff5c4bbd438ed9847uxkj.last_changed }}"
-
     detected_objects:
       friendly_name: "Detected Objects"
       value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
-
-    predicted_next_feed:
-      friendly_name: "Predicted Next Feed"
-      value_template: "{{ (as_timestamp(states('sensor.bottle_warmer_last_on')) + (60 * 60 * 3.25)) | timestamp_local }}"
-
-    seconds_since_bottle_warmed:
-      friendly_name: "Seconds since bottle warmed"
-      value_template: "{{ (as_timestamp(now()) - (as_timestamp(states('sensor.bottle_warmer_last_on')))) | round }}"
-
-    last_feed_readable:
-      friendly_name: "Last Feed"
-      value_template: >
-        {%- set uptime = states('sensor.seconds_since_bottle_warmed') | round -%}
-        {%- set uptime = uptime / 60 -%}
-          {%- set sep     = ', ' -%}
-          {%- set TIME_MAP = {
-              'week': (uptime / 10080) % 10080,
-               'day': (uptime / 1440) % 7,
-              'hour': (uptime / 60) % 24,
-            'minute': (uptime % 60)
-          }
-          -%}
-
-          {%- for unit, duration in TIME_MAP.items() if duration >= 1 -%}
-            {%- if not loop.first -%}
-              {{ sep }}
-            {%- endif -%}
-
-            {{ (duration | string).split('.')[0] }} {{ unit }}
-
-            {%- if duration >= 2 -%}
-              s
-            {%- endif -%}
-          {%- endfor -%}
-
-          {%- if uptime < 1 -%}
-            Just Now
-          {%- else %} ago{%- endif -%}
-
 
 - platform: time_date
   display_options:
