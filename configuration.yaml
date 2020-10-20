@@ -324,7 +324,7 @@ proximity:
       - work
     devices:
       - device_tracker.in2010
-    tolerance: 10
+    tolerance: 20
     unit_of_measurement: mi
 
 xiaomi_aqara:
