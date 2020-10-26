@@ -35,6 +35,8 @@
     entity_id: binary_sensor.nursery_motion_occupancy
     from: 'on'
     to: 'off'
+    for:
+      minutes: 15
   action:
     - service: light.turn_off
       data:
