@@ -12,7 +12,7 @@ sequence:
     data:
       entity_id: automation.family_bathroom_motion_off
   - delay:
-    hours: 2
+      hours: 2
   - service: automation.turn_on
     data:
       entity_id: automation.family_bathroom_motion_off
