@@ -11,6 +11,13 @@ cards:
   - type: entity
     entity: binary_sensor.bathroom_motion_occupancy
 
+  - type: glance
+    entities:
+      - entity: script.bathtime
+        tap_action:
+          action: call-service
+          service: script.bathtime
+
   - type: entities
     title: Motion Controls
     entities:
