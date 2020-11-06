@@ -21,7 +21,4 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.shelly_f
-    - service: light.turn_off
-      data:
         entity_id: light.box_room_light_light
