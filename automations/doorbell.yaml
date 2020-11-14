@@ -9,7 +9,7 @@
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_notifications', 'last_triggered') | default(0)) | int > 5)}}"
   action:
-    - service: light.on
+    - service: light.turn_on
       data:
         entity_id: light.twigs_light
         brightness_pct: 100
