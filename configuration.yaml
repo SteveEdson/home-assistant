@@ -231,9 +231,9 @@ alert: !include alerts.yaml
 
 notify: !include notifiers.yaml
 
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
+# nest:
+#   client_id: !secret nest_client_id
+#   client_secret: !secret nest_client_secret
 
 netatmo:
   client_id: !secret netatmo_client_id
