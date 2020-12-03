@@ -6,4 +6,4 @@ sequence:
       volume_level: 0.5
   - service: notify.home_alerts
     data_template:
-      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.bins }} tonight, ready for tomorrow."
+      message: "Don't forget to take out the {{ states.sensor.bin_days.attributes.nextBinColour }} tonight, ready for tomorrow."
