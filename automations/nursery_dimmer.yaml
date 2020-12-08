@@ -37,13 +37,3 @@
       data:
         entity_id:
           - light.nursery_light_light
-
-- alias: Nursery Dimmer Down
-  trigger:
-    platform: state
-    entity_id: sensor.nursery_dimmer_action
-    to: 'down-press'
-  action:
-    - service: switch.toggle
-      data:
-        entity_id: switch.bff5c4bbd438ed9847uxkj

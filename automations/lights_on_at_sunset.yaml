@@ -11,5 +11,8 @@
       kelvin: 2700
       entity_id: light.lounge_lights
     service: light.turn_on
+  - service: switch.turn_on
+    data:
+      entity_id: switch.bff5c4bbd438ed9847uxkj
   alias: Lights on at sunset
   condition: []
