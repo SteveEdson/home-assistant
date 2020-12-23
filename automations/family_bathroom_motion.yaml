@@ -1,8 +1,10 @@
 - alias: Family bathroom motion on
   trigger:
-    platform: state
-    entity_id: binary_sensor.bathroom_motion_occupancy
-    to: 'on'
+    - type: occupied
+      platform: device
+      device_id: 5659403a6168d39633f7e76655f55d47
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_a56bd501_occupancy
+      domain: binary_sensor
   condition:
     - condition: state # after 20 mins before sunset
       entity_id: binary_sensor.activate_motion_lights
@@ -18,7 +20,7 @@
         sequence:
           - service: light.turn_on
             data:
-              entity_id: light.bathroom_light_light
+              entity_id: light.bathroom_wall_light_level_light_color_on_off
               brightness_pct: 100
       default:
         - service: light.turn_on
@@ -28,15 +30,17 @@
 
 - alias: Family bathroom motion off
   trigger:
-    platform: state
-    entity_id: binary_sensor.bathroom_motion_occupancy
-    to: 'off'
-    for:
-      minutes: 2
+    - type: not_occupied
+      platform: device
+      device_id: 5659403a6168d39633f7e76655f55d47
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_a56bd501_occupancy
+      domain: binary_sensor
+      for:
+        minutes: 2
   action:
     - service: light.turn_off
       data:
         entity_id: light.shelly_f
     - service: light.turn_off
       data:
-        entity_id: light.bathroom_light_light
+        entity_id: light.bathroom_wall_light_level_light_color_on_off
