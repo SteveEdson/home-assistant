@@ -14,8 +14,8 @@ services:
       - ./:/config
       - /etc/localtime:/etc/localtime:ro
       - ./resources:/local
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
+    # devices:
+    #   - /dev/ttyACM0:/dev/ttyACM0
     restart: always
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "http://localhost:8123"]
