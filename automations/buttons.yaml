@@ -107,8 +107,8 @@
     data:
       brightness_pct: 20
       entity_id:
-        - light.bedroom_light_rb_light
-        - light.bedroom_light_rt_light
+        - light.bedroom_light_rb
+        - light.bedroom_light_rt
 
 #- alias: Bedroom Double Click Next Scene
 #  trigger:
@@ -154,7 +154,7 @@
     to: 'on'
   action:
     service: light.turn_on
-    entity_id: light.box_room_light_light
+    entity_id: light.box_room
 
 - alias: Ikea button 2 Off
   trigger:
@@ -163,7 +163,7 @@
     to: 'off'
   action:
     service: light.turn_off
-    entity_id: light.box_room_light_light
+    entity_id: light.box_room_light
 
 - alias: Ikea button 3 On
   trigger:

@@ -5,7 +5,7 @@ sequence:
       entity_id: light.shelly_f
   - service: light.turn_on
     data:
-      entity_id: light.bathroom_light_light
+      entity_id: light.bathroom_light
       brightness_pct: 20
       color_temp: 500
   - service: automation.turn_off
@@ -18,4 +18,4 @@ sequence:
       entity_id: automation.family_bathroom_motion_off
   - service: light.turn_off
     data:
-        entity_id: light.bathroom_light_light
+        entity_id: light.bathroom_light

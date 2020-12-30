@@ -8,7 +8,7 @@ cards:
     title: Lights
     entities:
       - type: custom:slider-entity-row
-        entity: light.nursery_light_light
+        entity: light.nursery_light
         toggle: true
       - type: custom:slider-entity-row
         entity: light.yeelight_bslamp1_7c49eb28d971

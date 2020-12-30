@@ -10,7 +10,7 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.box_room_light_light
+        entity_id: light.box_room_light
         brightness_pct: 100
 
 - alias: Box Room motion off
@@ -21,4 +21,4 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.box_room_light_light
+        entity_id: light.box_room_light
