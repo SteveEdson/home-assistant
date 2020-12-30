@@ -8,7 +8,7 @@
     data:
       transition: 900 # 15 minutes
       brightness_pct: 100
-      entity_id: 
+      entity_id:
         - light.garden_lights
         - light.porch_lights
   condition:
@@ -21,6 +21,19 @@
         entity_id: 'person.sophie'
         state: 'home'
 
+- alias: 'Porch Lights On'
+  trigger:
+  - event: sunset
+    platform: sun
+    offset: "-00:35:00"
+  action:
+  - service: light.turn_on
+    data:
+      transition: 900 # 15 minutes
+      brightness_pct: 100
+      entity_id:
+        - light.porch_lights
+
 - alias: 'Garden Lights off'
   trigger:
     platform: time
@@ -29,6 +42,6 @@
   - service: light.turn_off
     data:
       transition: 15 # 15 seconds
-      entity_id: 
+      entity_id:
         - light.garden_lights
         - light.porch_lights

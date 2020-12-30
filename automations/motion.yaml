@@ -137,4 +137,3 @@
       data:
         entity_id:
           - light.shelly_a
-          - light.porch_lights
