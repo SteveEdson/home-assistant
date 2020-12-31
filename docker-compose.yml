@@ -24,13 +24,6 @@ services:
       - "traefik.enable=false"
       - "traefik.frontend.rule=Host:$HA_HOSTNAME"
       - "traefik.port=8123"
-    logging:
-      driver: elastic/elastic-logging-plugin:7.8.1
-      options:
-        output.elasticsearch.hosts: "${ELASTIC_SEARCH_HOST}"
-        output.elasticsearch.username: "${ELASTIC_SEARCH_USERNAME}"
-        output.elasticsearch.password: "${ELASTIC_SEARCH_PASSWORD}"
-        output.elasticsearch.index: "home-assistant-%{+yyyy.MM.dd}"
     network_mode: host
 
   doods:
