@@ -10,12 +10,16 @@ sequence:
       color_temp: 500
   - service: automation.turn_off
     data:
-      entity_id: automation.family_bathroom_motion_off
+      entity_id: 
+        - automation.family_bathroom_motion_off
+        - automation.family_bathroom_motion_on
   - delay:
       hours: 2
   - service: automation.turn_on
     data:
-      entity_id: automation.family_bathroom_motion_off
+      entity_id: 
+        - automation.family_bathroom_motion_off
+        - automation.family_bathroom_motion_on
   - service: light.turn_off
     data:
         entity_id: light.bathroom_light
