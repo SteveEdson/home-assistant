@@ -10,9 +10,9 @@
 #
 # When something is detected on the camera, send an alert
 - alias: Detected Camera
-    trigger:
-      platform: mqtt
-      topic: frigate/events
+  trigger:
+    platform: mqtt
+    topic: frigate/events
   action:
     - service: telegram_bot.send_photo
       data_template:
