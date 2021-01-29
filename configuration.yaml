@@ -120,39 +120,39 @@ sensor: !include_dir_merge_list sensors/
 
 camera: !include cameras.yaml
 
-image_processing:
-  - platform: doods
-    url: "http://192.168.1.61:8080"
-    scan_interval: 10000
-    detector: default
-    file_out:
-      - "/config/www/{{ camera_entity.split('.')[1] }}_latest.jpg"
-      #- "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
-    confidence: 58
-    area:
-      # Exclude top 7% of image
-      top: 0.07
-      left: 0.08
-    labels:
-     # - car
-      - cat
-      - dog
-      - truck
-      - person
-      - bicycle
-      - motorcycle
-      - backpack
-    source:
-      - entity_id: camera.g3_flex_low_res
-  # - platform: tensorflow
-  #   scan_interval: 604800
-  #   source:
-  #     - entity_id: camera.front
-  #   file_out:
-  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_latest.jpg"
-  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
-  #   model:
-  #     graph: /config/tensorflow/frozen_inference_graph.pb
+#image_processing:
+#  - platform: doods
+#    url: "http://192.168.1.61:8080"
+#    scan_interval: 10000
+#    detector: default
+#    file_out:
+#      - "/config/www/{{ camera_entity.split('.')[1] }}_latest.jpg"
+#      #- "/config/www/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
+#    confidence: 58
+#    area:
+#      # Exclude top 7% of image
+#      top: 0.07
+#      left: 0.08
+#    labels:
+#     # - car
+#      - cat
+#      - dog
+#      - truck
+#      - person
+#      - bicycle
+#      - motorcycle
+#      - backpack
+#    source:
+#      - entity_id: camera.g3_flex_low_res
+#  # - platform: tensorflow
+#  #   scan_interval: 604800
+#  #   source:
+#  #     - entity_id: camera.front
+#  #   file_out:
+#  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_latest.jpg"
+#  #     - "/config/www/{{ camera_entity.split('.')[1] }}_tf_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
+#  #   model:
+#  #     graph: /config/tensorflow/frozen_inference_graph.pb
 
 # Text to speech
 tts:
