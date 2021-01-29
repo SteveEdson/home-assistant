@@ -11,7 +11,7 @@ cards:
     entities:
       - person.steve_edson
       - light.porch_lights
-    camera_image: camera.front
+    camera_image: camera.front_2
     camera_view: live
   - type: light
     entity: light.garden_lights

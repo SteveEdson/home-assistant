@@ -1,31 +1,23 @@
-# When motion is detected, trigger an image scan
-- alias: Doods scanning
-  trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.ffmpeg_motion
-  action:
-    - service: image_processing.scan
-      entity_id: image_processing.doods_g3_flex_low_res
-
+## When motion is detected, trigger an image scan
+#- alias: Doods scanning
+#  trigger:
+#    - platform: state
+#      entity_id:
+#        - binary_sensor.ffmpeg_motion
+#  action:
+#    - service: image_processing.scan
+#      entity_id: image_processing.doods_g3_flex_low_res
+#
 # When something is detected on the camera, send an alert
 - alias: Detected Camera
-  trigger:
-    platform: state
-    entity_id: sensor.detected_objects
+    trigger:
+      platform: mqtt
+      topic: frigate/events
   action:
     - service: telegram_bot.send_photo
       data_template:
-        file: /config/www/g3_flex_low_res_latest.jpg
+        url: http://192.168.1.61:5001/api/events/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
         caption: >-
-          {% if states.image_processing.doods_g3_flex_low_res.attributes.matches|length > 0 -%}
-            {{- states.image_processing.doods_g3_flex_low_res.attributes.matches|length }} match{{ '' if states.image_processing.doods_g3_flex_low_res.attributes.matches|length == 1 else 'es' }}:
-            {%- for entity in states.image_processing.doods_g3_flex_low_res.attributes.matches %}
-              {%- for match in states.image_processing.doods_g3_flex_low_res.attributes.matches[entity] -%}
-                {{ " " + entity }} ({{ match.score | round }}%)
-              {% endfor -%}
-            {% endfor -%}
-          {% else %}
-            Nothing detected
-          {% endif %}
+          A {{trigger.payload_json["after"]["label"]}} was detected.
+
 

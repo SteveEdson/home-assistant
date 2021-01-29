@@ -47,7 +47,7 @@ Manually trigger an automation
 ```js
 {
    position: [0, 0],
-   id: 'camera.front_gate',
+   id: 'camera.front_2_gate',
    type: TYPES.CAMERA_THUMBNAIL,
    bgSize: 'cover',
    width: 2,
@@ -130,7 +130,7 @@ Essentially a door entry tile is a pop-up with a fullscreen camera and a set of 
     layout: {
         camera: {
             type: TYPES.CAMERA,
-            id: 'camera.front_gate',
+            id: 'camera.front_2_gate',
             refresh: 1500,
             bgSize: 'cover'
         },

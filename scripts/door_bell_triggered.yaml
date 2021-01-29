@@ -5,7 +5,7 @@ sequence:
       message: "Door bell pressed at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
   - service: camera.play_stream
     data:
-      entity_id: camera.front
+      entity_id: camera.front_2
       media_player: media_player.kitchen_display
   - service: camera.record
     data:

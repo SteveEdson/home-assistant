@@ -71,7 +71,7 @@ cards:
   - type: calendar
     entities:
       - calendar.steve_s_calendar
-      - calendar.steve_travlet_com  
+      - calendar.steve_travlet_com
   - type: alarm-panel
     entity: alarm_control_panel.house_alarm
   - type: picture-glance
@@ -79,7 +79,7 @@ cards:
     entities:
       - person.steve_edson
       - binary_sensor.front_door_contact
-    camera_image: camera.front
+    camera_image: camera.front_2
     camera_view: live
   - type: glance
     entities:

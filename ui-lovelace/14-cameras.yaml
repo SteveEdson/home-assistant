@@ -12,7 +12,7 @@ cards:
         entities:
           - person.steve_edson
           - binary_sensor.cupboard_door_contact
-        camera_image: camera.front
+        camera_image: camera.front_2
         camera_view: live
 
       - type: picture-glance
