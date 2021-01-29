@@ -4,7 +4,7 @@ services:
     privileged: true
     depends_on:
       - db
-      - doods
+#      - doods
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
     ports:
