@@ -13,8 +13,8 @@
   trigger:
     platform: mqtt
     topic: frigate/events
-#  conditions:
-#    - "{{ trigger.payload_json['after']['type'] == 'new' }}"
+  conditions:
+    - "{{ trigger.payload_json['type'] == 'new' }}"
   action:
     - service: telegram_bot.send_photo
       data_template:
