@@ -189,7 +189,7 @@ cards:
       power_state: false
 
   - type: thermostat
-    entity: climate.netatmo_heating
+    entity: climate.hallway
     name: Heating
 
   - type: entity

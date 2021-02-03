@@ -93,10 +93,10 @@ cards:
     camera_image: camera.garden
     camera_view: live
   # - type: thermostat
-  #   entity: climate.netatmo_heating
+  #   entity: climate.hallway
   #   name: Heating
   - type: custom:simple-thermostat
-    entity: climate.netatmo_heating
+    entity: climate.hallway
     name: Heating
   - type: entities
     title: Doorbell

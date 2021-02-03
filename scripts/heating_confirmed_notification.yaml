@@ -3,4 +3,4 @@ sequence:
   - service: telegram_bot.send_message
     data:
       title: "Heating has been set to 19.5°c"
-      message: The house is currently {{ states.climate.netatmo_heating.attributes.current_temperature }}°c
+      message: The house is currently {{ states.climate.hallway.attributes.current_temperature }}°c

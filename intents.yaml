@@ -1,6 +1,6 @@
 GetTemperature:
   speech:
-    text: The temperature at home is {{ state_attr('climate.netatmo_heating', 'current_temperature') }}°c
+    text: The temperature at home is {{ state_attr('climate.hallway', 'current_temperature') }}°c
 
 GetPredictionStats:
   speech:

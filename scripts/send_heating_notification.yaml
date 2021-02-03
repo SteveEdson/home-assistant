@@ -3,6 +3,6 @@ sequence:
   - service: telegram_bot.send_message
     data:
       title: "Turn the heating on?"
-      message: Turn the heating on? The house is currently {{ states.climate.netatmo_heating.attributes.current_temperature }}°c
+      message: Turn the heating on? The house is currently {{ states.climate.hallway.attributes.current_temperature }}°c
       inline_keyboard:
         - "Set to 19.5°c:/heating_on, No:/do_nothing"

@@ -16,7 +16,7 @@ Merry Christmas!
 {%- set secondsInDay = (60 * 60 * 24) -%}
 
 The forecast is {{ states('sensor.dark_sky_hourly_summary') }} Between {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|min }}°C and {{ states.weather.dark_sky.attributes.forecast|map(attribute='temperature')|max }}°C.
-It is {{ states.climate.netatmo_heating.attributes.current_temperature }}°C inside the house.
+It is {{ states.climate.hallway.attributes.current_temperature }}°C inside the house.
 {%- if is_state("sensor.bin_days", "unavailable") == false and state_attr('sensor.bin_days', 'nextBinTime') != None and (states.sensor.bin_days.attributes.nextBinTime | int - as_timestamp(timeNow)) < (60 * 60 * 12) %}
   Make sure you have put the {{ states.sensor.bin_days.attributes.nextBinColour }} out, it is about to be collected.
 {% endif -%}
