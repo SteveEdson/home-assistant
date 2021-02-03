@@ -136,7 +136,9 @@
     to: 'on'
   action:
     service: switch.turn_on
-    entity_id: switch.bf5bde9e7cf9134ab6kmf7
+    entity_id:
+      - switch.bf5bde9e7cf9134ab6kmf7
+      - switch.bff5c4bbd438ed9847uxkj
 
 - alias: Ikea button 1 Off
   trigger:
@@ -145,7 +147,9 @@
     to: 'off'
   action:
     service: switch.turn_off
-    entity_id: switch.bf5bde9e7cf9134ab6kmf7
+    entity_id:
+      - switch.bf5bde9e7cf9134ab6kmf7
+      - switch.bff5c4bbd438ed9847uxkj
 
 - alias: Ikea button 2 On
   trigger:
