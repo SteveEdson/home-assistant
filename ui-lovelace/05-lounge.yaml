@@ -57,6 +57,42 @@ cards:
     # Card configuration starts here
     - type: 'custom:rgb-light-card'
       entity: light.lounge_spotlight_light
+      colors:
+        - rgb_color:
+          - 221
+          - 141
+          - 142
+          brightness_pct: 100
+        - rgb_color:
+          - 241
+          - 182
+          - 146
+          brightness_pct: 100
+        - rgb_color:
+          - 148
+          - 197
+          - 233
+          brightness_pct: 100
+        - rgb_color:
+          - 246
+          - 222
+          - 150
+          brightness_pct: 100
+        - rgb_color:
+          - 161
+          - 228
+          - 188
+          brightness_pct: 100
+        - rgb_color:
+          - 81
+          - 133
+          - 152
+          brightness_pct: 100
+        - rgb_color:
+          - 244
+          - 180
+          - 192
+          brightness_pct: 100
 
   - type: glance
     show_state: false
