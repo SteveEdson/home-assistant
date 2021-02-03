@@ -10,6 +10,22 @@ cards:
     tap_action:
       action: more-info
 
+  - type: 'custom:threedy-card'
+    base_entity: 'sensor.octoprint'
+    name: 'Ender 3'
+    printer_type: I3
+    monitored:
+      - Status
+      - ETA
+      - Elapsed
+      - Hotend
+      - Bed
+    # optionals
+    theme: 'Default'
+    font: 'Roboto'
+    scale: 1.0
+    round: false
+
   - type: horizontal-stack
     cards:
       - type: custom:mini-graph-card
