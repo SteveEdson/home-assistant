@@ -137,12 +137,27 @@ cards:
     entities:
       - sensor.cpu1_inference_speed
       - sensor.detection_fps
-      - camera.front_2
       - sensor.front_camera_fps
-      - camera.front_car
       - switch.front_clips
       - switch.front_detect
       - sensor.front_detection_fps
       - sensor.front_process_fps
       - sensor.front_skipped_fps
       - switch.front_snapshots
+  - type: grid
+    cards:
+      - type: picture-entity
+        entity: camera.front_2
+        show_info: false
+      - type: picture-entity
+        entity: camera.front_car
+        show_info: false
+      - type: picture-entity
+        entity: camera.front_cat
+        show_info: false
+      - type: picture-entity
+        entity: camera.front_person
+        show_info: false
+      - type: picture-entity
+        entity: camera.front_dog
+        show_info: false
