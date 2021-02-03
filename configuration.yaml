@@ -31,7 +31,7 @@ lovelace:
       type: module
     - url: /local/custom_ui/bignumber-card.js
       type: module
-    - url: /local/custom_ui/simple-thermostat.js?v=0.31
+    - url: /local/custom_ui/simple-thermostat.js?v=0.42
       type: module
     - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/swipe-card/swipe-card.js
       type: module
