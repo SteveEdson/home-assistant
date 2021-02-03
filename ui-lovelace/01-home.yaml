@@ -131,3 +131,18 @@ cards:
 #        default_zoom: 16
 #        entities:
 #          - device_tracker.steveedson_oneplus5t
+  - type: entities
+    title: Frigate
+    show_header_toggle: false
+    entities:
+      - sensor.cpu1_inference_speed
+      - sensor.detection_fps
+      - camera.front_2
+      - sensor.front_camera_fps
+      - camera.front_car
+      - switch.front_clips
+      - switch.front_detect
+      - sensor.front_detection_fps
+      - sensor.front_process_fps
+      - sensor.front_skipped_fps
+      - switch.front_snapshots
