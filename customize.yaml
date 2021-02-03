@@ -134,10 +134,12 @@ switch.32002710bcddc226b4b0:
   icon: mdi:car-side
   friendly_name: Mini Light
 switch.bff5c4bbd438ed9847uxkj:
-  icon: mdi:pine-tree
-  friendly_name: Lounge Tree
+  # icon: mdi:pine-tree
+  # friendly_name: Lounge Tree
+  friendly_name: Office Neon Light
+  icon: mdi:led-strip
 switch.bf0b57d12c6b4b8272vkpj:
-  icon: mdi:desk-lamp
+  icon: mdi:led-strip-variant
   friendly_name: Outside Strip Lights
 switch.bf5bde9e7cf9134ab6kmf7:
   icon: mdi:home-lightbulb
