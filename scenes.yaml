@@ -238,8 +238,6 @@
       state: on
     switch.bf4cadf5e3e38fddf078v2: # Bonsai
       state: on
-    switch.bf0b57d12c6b4b8272vkpj:
-      state: off
     light.lounge_spotlight_light:
       state: on
       brightness_pct: 100
