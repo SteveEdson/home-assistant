@@ -66,9 +66,9 @@
           entity_id: 'switch.doorbell_chime_active'
           state: 'off'
   action:
-    - service: notify.google_assistant_broadcast
+    - service: notify.google_assistant_command
       data_template:
-        message: "There is someone at the door"
+        message: "Broadcast There is someone at the door"
 
 - alias: "Doorbell Office Notification"
   trigger:
@@ -79,16 +79,19 @@
     condition: template
     value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.doorbell_office_notification', 'last_triggered') | default(0)) | int > 5)}}"
   action:
-    - service: scene.create
-      data:
-        scene_id: homeoffice_snapshot
-        snapshot_entities:
-          - media_player.home_office_speaker
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.home_office_speaker
-        media_content_id: !secret doorbell_mp3
-        media_content_type: music
-    - service: scene.turn_on
-      data:
-        entity_id: scene.homeoffice_snapshot
+    - service: notify.google_assistant_command
+      data_template:
+        message: "Broadcast to home office, Ding dong, there is someone at the door"
+#    - service: scene.create
+#      data:
+#        scene_id: homeoffice_snapshot
+#        snapshot_entities:
+#          - media_player.home_office_speaker
+#    - service: media_player.play_media
+#      data:
+#        entity_id: media_player.home_office_speaker
+#        media_content_id: !secret doorbell_mp3
+#        media_content_type: music
+#    - service: scene.turn_on
+#      data:
+#        entity_id: scene.homeoffice_snapshot
