@@ -49,6 +49,14 @@ cards:
       #     action: toggle
     show_state: false
 
+  - type: entities
+    show_header_toggle: false
+    entities:
+    # Displays the light entity. It's optional
+    - entity: light.lounge_spotlight_light
+    # Card configuration starts here
+    - type: 'custom:rgb-light-card'
+      entity: light.lounge_spotlight_light
 
   - type: glance
     show_state: false
