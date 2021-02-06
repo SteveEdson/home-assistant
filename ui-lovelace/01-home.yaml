@@ -135,7 +135,7 @@ cards:
     title: Frigate
     show_header_toggle: false
     entities:
-      - sensor.cpu1_inference_speed
+      - sensor.coral_inference_speed
       - sensor.detection_fps
       - sensor.front_camera_fps
       - switch.front_clips
