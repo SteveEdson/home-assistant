@@ -162,6 +162,18 @@ cards:
         entity: camera.front_dog
         show_info: false
 
+  - type: entities
+    header:
+      type: picture
+      image: '/local/car-bg.jpg'
+    entities:
+      - sensor.330i_remaining_fuel
+      - sensor.330i_remaining_range_fuel
+      - binary_sensor.330i_door_lock_state
+      - binary_sensor.330i_lids
+      - binary_sensor.330i_windows
+      - sensor.330i_mileage
+
   - type: picture-elements
     elements:
       - type: state-label
