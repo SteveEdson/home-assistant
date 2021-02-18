@@ -161,3 +161,69 @@ cards:
       - type: picture-entity
         entity: camera.front_dog
         show_info: false
+
+  - type: picture-elements
+    elements:
+      - type: state-label
+        entity: sensor.330i_remaining_fuel
+        prefix: "Fuel: "
+        suffix: "itres"
+        style:
+          top: 5%
+          left: 2%
+          color: black
+          transform: none
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+
+      - type: state-label
+        entity: sensor.330i_remaining_range_fuel
+        prefix: "Range: "
+        style:
+          top: 15%
+          left: 2%
+          color: black
+          transform: none
+          text-align: left
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+
+      - type: state-label
+        entity: binary_sensor.330i_door_lock_state
+        prefix: "Doors: "
+        style:
+          top: 25%
+          left: 2%
+          color: black
+          transform: none
+          text-align: left
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+      - type: state-label
+        entity: binary_sensor.330i_lids
+        prefix: "Boot: "
+        style:
+          top: 35%
+          left: 2%
+          color: black
+          transform: none
+          text-align: left
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+      - type: state-label
+        entity: binary_sensor.330i_windows
+        prefix: "Windows: "
+        style:
+          top: 45%
+          left: 2%
+          color: black
+          transform: none
+          text-align: left
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+      - type: state-label
+        entity: sensor.330i_mileage
+        prefix: "Mileage: "
+        style:
+          top: 55%
+          left: 2%
+          color: black
+          transform: none
+          text-align: left
+          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+    image: '/local/car-bg.jpg'
