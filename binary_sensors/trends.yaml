@@ -16,3 +16,6 @@
       device_class: cold
       invert: true
       min_gradient: 0.00035
+
+    car_fueled:
+      entity_id: sensor.330i_remaining_fuel

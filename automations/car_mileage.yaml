@@ -8,3 +8,17 @@
         event: 330i_mileage
         value1: "{{{ states.sensor['330i_mileage'].last_changed }}"
         value2: "{{ states('sensor.330i_mileage') }}"
+
+
+- alias: "Car Fueled"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.car_fueled_increase
+  condition:
+    - condition: state
+      entity_id: binary_sensor.car_fueled_increase
+      state: 'on'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message: "330i has been refueled, the tank has {{ states('sensor.330i_remaining_fuel') }} litres of petrol, with a range of {{ ((states.sensor['330i_remaining_range_fuel'].state | float) * 0.621371) | round }} miles"
