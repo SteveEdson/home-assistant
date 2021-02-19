@@ -178,7 +178,7 @@ cards:
       - binary_sensor.330i_door_lock_state
       - binary_sensor.330i_lids
       - binary_sensor.330i_windows
-      - sensor.330i_mileage
+      - sensor.330i_mileage_miles
 
   - type: picture-elements
     elements:
@@ -235,7 +235,7 @@ cards:
           text-align: left
           font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
       - type: state-label
-        entity: sensor.330i_mileage
+        entity: sensor.330i_mileage_miles
         prefix: "Mileage: "
         style:
           top: 55%
