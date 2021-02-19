@@ -15,7 +15,7 @@
       value_template: "{{ states.sun.sun.attributes.elevation | float }}"
 #
 
-    330i_mileage:
+    330i_mileage_miles:
       friendly_name: "330i mileage (miles)"
       unit_of_measurement: 'mi'
       value_template: "{{ ((states.sensor['330i_mileage'].state | float) * 0.621371) | round }}"
