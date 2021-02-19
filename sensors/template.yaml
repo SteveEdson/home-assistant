@@ -17,12 +17,8 @@
 
     330i_mileage_miles:
       friendly_name: "330i mileage (miles)"
-      unit_of_measuremet: 'mi'
-      value_template: {{ ((states.sensor['330i_remaining_range_fuel'].state | float) * 0.621371) | round }}
-
-#    detected_objects:
-#      friendly_name: "Detected Objects"
-#      value_template: "{% if states.image_processing.doods_g3_flex_low_res %}{{ states.image_processing.doods_g3_flex_low_res.attributes.matches|length }}: {{ states.image_processing.doods_g3_flex_low_res.attributes.matches.keys()|list|join(', ')}}{% else %}Nothing{% endif %}"
+      unit_of_measurement: 'mi'
+      value_template: "{{ ((states.sensor['330i_remaining_range_fuel'].state | float) * 0.621371) | round }}"
 
 - platform: time_date
   display_options:
