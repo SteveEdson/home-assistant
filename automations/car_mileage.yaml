@@ -6,5 +6,5 @@
     - service: ifttt.trigger
       data:
         event: 330i_mileage
-        value1: {{ as_timestamp(now()) }}
-        value2: {{ states('sensor.330i_mileage') }}
+        value1: "{{ as_timestamp(now()) }}"
+        value2: "{{ states('sensor.330i_mileage') }}"
