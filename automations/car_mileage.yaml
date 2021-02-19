@@ -6,7 +6,7 @@
     - service: ifttt.trigger
       data_template:
         event: 330i_mileage
-        value1: "{{ states.sensor['330i_mileage'].last_changed }}"
+        value1: "{{ as_timestamp(states.sensor['330i_mileage'].last_changed) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
         value2: "{{ states('sensor.330i_mileage') }}"
 
 
