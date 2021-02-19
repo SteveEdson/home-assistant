@@ -15,8 +15,14 @@
       value_template: "{{ states.sun.sun.attributes.elevation | float }}"
 #
 
-    330i_mileage_miles:
+    330i_mileage:
       friendly_name: "330i mileage (miles)"
+      unit_of_measurement: 'mi'
+      value_template: "{{ ((states.sensor['330i_mileage'].state | float) * 0.621371) | round }}"
+
+
+    330i_remaining_range_fuel_miles:
+      friendly_name: "330i remaining range (miles)"
       unit_of_measurement: 'mi'
       value_template: "{{ ((states.sensor['330i_remaining_range_fuel'].state | float) * 0.621371) | round }}"
 
