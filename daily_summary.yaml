@@ -26,6 +26,10 @@ It's pay day, hooray!
 It is only {{ states.sensor.pay_day.attributes.daysRemaining }} days until pay day!
 {% endif -%}
 
+{% if states('sensor.330i_remaining_fuel') | int < 10 %}
+The BMW is low on fuel, you will need to fill it up soon.
+{% endif %}
+
 {%- if secondsTillHoliday < (secondsInDay * 7) %}
 Woo! You have a day off coming up in {{ (secondsTillHoliday / secondsInDay) | round }} days.
 {% endif -%}
