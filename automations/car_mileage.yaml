@@ -8,7 +8,7 @@
     - service: ifttt.trigger
       data_template:
         event: 330i_mileage
-        value1: "{{ as_timestamp(states.sensor['330i_mileage'].last_changed) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
+        value1: "{{ now() | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
         value2: "{{ states('sensor.330i_mileage_miles') }}"
 
 - alias: "Car Fueled"
