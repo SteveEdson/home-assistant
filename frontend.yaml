@@ -1,3 +1,2 @@
 # Enables the frontend
 themes: !include_dir_merge_named themes
-javascript_version: latest
