@@ -215,13 +215,13 @@ device_tracker:
   # - platform: bluetooth_le_tracker
   #   track_battery: true
   #   track_new_devices: true
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: !secret router_username
-    password: !secret router_password
-    interval_seconds: 10
-    consider_home: 180
-    track_new_devices: yes
+#  - platform: asuswrt
+#    host: 192.168.1.1
+#    username: !secret router_username
+#    password: !secret router_password
+#    interval_seconds: 10
+#    consider_home: 180
+#    track_new_devices: yes
 
 asuswrt:
   host: 192.168.1.1
@@ -390,7 +390,6 @@ plant:
     max_temperature: 35
 
 climate:
-  - platform: netatmo
   - platform: generic_thermostat
     name: Home Office
     heater: switch.office_heating
