@@ -14,7 +14,7 @@
 - alias: "Car Fueled"
   trigger:
     platform: state
-    entity_id: binary_sensor.car_fueled_increase
+    entity_id: binary_sensor.car_fueled
   condition:
     - condition: state
       entity_id: binary_sensor.car_fueled_increase
