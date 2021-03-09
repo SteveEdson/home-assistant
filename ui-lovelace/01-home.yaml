@@ -66,6 +66,7 @@ cards:
     dark_mode: true
     entities:
       - entity: device_tracker.in2010
+      - entity: device_tracker.330i
       - entity: device_tracker.gm1910
     hours_to_show: 6
   - type: calendar
