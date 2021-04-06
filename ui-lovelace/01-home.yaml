@@ -100,13 +100,15 @@ cards:
     entity: climate.hallway
     name: Heating
   - type: entities
-    title: Doorbell
+    title: Alerts
     show_header_toggle: false
     entities:
+      - entity: automation.office_door_opened_alert
+        name: Office Door Opened Alert
       - entity: switch.doorbell_chime_active
-        name: Chime Active?
+        name: Doorbell Chime Active?
       - entity: switch.doorbell_chime
-        name: Manual Press
+        name: Doorbell Manual Press
   - type: glance
     entities:
       - entity: script.good_night
