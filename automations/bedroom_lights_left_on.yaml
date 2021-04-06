@@ -1,0 +1,15 @@
+- alias: Bedroom Lights Left On
+  trigger:
+    platform: state
+    entity_id: light.bedroom_ceiling
+    to: 'on'
+    for:
+      minutes: 30
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_ceiling
+    - service: telegram_bot.send_message
+        data_template:
+#          title: "Bedroom lights have been left on"
+          message: "Automatically turned off the bedroom lights"

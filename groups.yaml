@@ -22,10 +22,7 @@ Hallway:
   - sensor.landing_sensor_light_level
   - sensor.landing_sensor_temperature
   - binary_sensor.landing_sensor_motion
-
-Bedroom Lights:
-  - light.bedroom_lights
-
+  -
 Events:
   - sensor.bin_days
 
