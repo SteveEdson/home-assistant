@@ -1,0 +1,13 @@
+- alias: Car Windows Left Open
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.330i_windows
+      - binary_sensor.330i_lids
+    to: 'on'
+    for:
+      minutes: 45
+  action:
+    - service: telegram_bot.send_message
+      data:
+        message: "You have left the windows open on the 330i"
