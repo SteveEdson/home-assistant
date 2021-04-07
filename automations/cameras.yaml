@@ -10,7 +10,7 @@
 #
 # When something is detected on the camera, send an alert
 - id: detected_camera
-  lias: Detected Camera
+  alias: Detected Camera
   trigger:
     platform: mqtt
     topic: frigate/events
