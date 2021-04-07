@@ -1,4 +1,5 @@
-- alias: Bin notification
+- id: bin_notification
+  alias: Bin notification
   action:
     service: script.bin_notification
   condition:

@@ -1,4 +1,5 @@
-- alias: Bedroom Lights Left On
+- id: bedroom_lights_left_on
+  alias: Bedroom Lights Left On
   trigger:
     platform: state
     entity_id: light.bedroom_ceiling

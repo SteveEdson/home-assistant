@@ -1,4 +1,5 @@
-- alias: 'Trigger alarm while armed away'
+- id: 'trigger_alarm_while_armed_away'
+  alias: 'Trigger alarm while armed away'
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_contact # front door
@@ -30,7 +31,8 @@
     data:
       entity_id: alarm_control_panel.house_alarm
 
-- alias: 'Trigger alarm while armed home'
+- id: 'trigger_alarm_while_armed_home'
+  alias: 'Trigger alarm while armed home'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d0001e7e302 #Front door

@@ -1,4 +1,5 @@
-- alias: Kitchen Vacuum Alert
+- id: kitchen_vacuum_alert
+  alias: Kitchen Vacuum Alert
   action:
     - service: notify.home_alerts
       data_template:
@@ -13,7 +14,8 @@
     platform: time
     at: '19:30:00'
 
-- alias: Kitchen Vacuum
+- id: kitchen_vacuum
+  alias: Kitchen Vacuum
   action:
     - service: notify.home_alerts
       data:
@@ -35,7 +37,8 @@
     platform: time
     at: '23:00:00'
 
-- alias: Lounge Hallway Vacuum Alert
+- id: lounge_hallway_vacuum_alert
+  alias: Lounge Hallway Vacuum Alert
   action:
     - service: notify.home_alerts
       data_template:
@@ -50,7 +53,8 @@
     platform: time
     at: '19:30:00'
 
-- alias: Lounge Hallway Vacuum
+- id: lounge_hallway_vacuum
+  alias: Lounge Hallway Vacuum
   action:
     - service: notify.home_alerts
       data:

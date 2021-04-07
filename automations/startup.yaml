@@ -1,4 +1,5 @@
-- alias: 'Home Assistant Started'
+- id: home_assistant_started
+  alias: 'Home Assistant Started'
   trigger:
     - platform: homeassistant
       event: start

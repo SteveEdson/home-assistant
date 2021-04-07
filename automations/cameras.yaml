@@ -9,7 +9,8 @@
 #      entity_id: image_processing.doods_g3_flex_low_res
 #
 # When something is detected on the camera, send an alert
-- alias: Detected Camera
+- id: detected_camera
+  lias: Detected Camera
   trigger:
     platform: mqtt
     topic: frigate/events

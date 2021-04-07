@@ -40,7 +40,8 @@
 #     value_template: "{{ as_timestamp(now()) | timestamp_custom(\"%d/%m\", True) == '31/10' }}"
 
 
-- alias: 'Cupboard door opened'
+- id: cupboard_door_opened
+  alias: 'Cupboard door opened'
   trigger:
     - platform: state
       entity_id: binary_sensor.cupboard_door_contact # front door
@@ -51,7 +52,8 @@
       entity_id: light.cupboard_light
       brightness_pct: 100
 
-- alias: 'Cupboard door closed'
+- id: cupboard_door_closed
+  alias: 'Cupboard door closed'
   trigger:
     - platform: state
       entity_id: binary_sensor.cupboard_door_contact # front door

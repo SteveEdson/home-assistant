@@ -1,4 +1,5 @@
-- alias: 'Alarm triggered actions'
+- id: 'alarm_triggered_actions'
+  alias: 'Alarm triggered actions'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.house_alarm

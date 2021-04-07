@@ -1,4 +1,5 @@
-- alias: Kitchen motion
+- id: kitchen_motion
+  alias: Kitchen motion
   trigger:
     platform: time
     at: '21:30:00'
@@ -7,7 +8,8 @@
       data:
         entity_id: light.shelly_b
 
-- alias: Kitchen motion before 2130
+- id: kitchen_motion_before_2130
+  alias: Kitchen motion before 2130
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_motion_occupancy
@@ -38,7 +40,8 @@
       data:
         entity_id: scene.table_pink_and_blue
 
-- alias: Kitchen motion after 2130
+- id: kitchen_motion_after_2130
+  alias: Kitchen motion after 2130
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_motion_occupancy
@@ -64,7 +67,8 @@
         entity_id: light.shelly_c
 
 # Turn off kitchen light with no motion for 3 mins
-- alias: Kitchen no motion 10 mins
+- id: kitchen_no_motion_10_mins
+  alias: Kitchen no motion 10 mins
   trigger:
     platform: state
     entity_id: binary_sensor.kitchen_motion_occupancy
@@ -80,7 +84,8 @@
       data:
         entity_id: light.shelly_c
 
-- alias: Kitchen no motion 45 mins
+- id: kitchen_no_motion_45_mins
+  alias: Kitchen no motion 45 mins
   trigger:
     platform: state
     entity_id: binary_sensor.kitchen_motion_occupancy
@@ -96,7 +101,8 @@
           - light.table_light_2
           - light.table_light_3
 
-- alias: Hallway motion
+- id: hallway_motion
+  alias: Hallway motion
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_contact
@@ -124,7 +130,8 @@
           - light.porch_lights
 
 
-- alias: Hallway motion off
+- id: hallway_motion_off
+  alias: Hallway motion off
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_contact

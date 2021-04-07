@@ -1,4 +1,5 @@
-- alias: Race Time
+- id: race_time
+  alias: Race Time
   trigger:
     platform: state
     entity_id: calendar.f1_calendar_2018

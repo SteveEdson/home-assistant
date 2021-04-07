@@ -119,7 +119,8 @@
 #  action:
 #    - service: script.surround_sound_vol_down
 
-- alias: Cube flip90
+- id: cube_flip90
+  alias: Cube flip90
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -130,7 +131,8 @@
     - service: input_select.select_next
       entity_id: input_select.input_scenes
 
-- alias: Cube flip180
+- id: cube_flip180
+  alias: Cube flip180
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -141,7 +143,8 @@
     - service: scene.turn_on
       entity_id: scene.ocean
 
-- alias: Cube swing
+- id: cube_swing
+  alias: Cube swing
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -151,7 +154,8 @@
   action:
     - service: script.good_night
 
-- alias: Cube volume
+- id: cube_volume
+  alias: Cube volume
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -163,7 +167,8 @@
       entity_id: group.lounge_lights
 
 
-- alias: Cube Tap Twice
+- id: cube_tap_twice
+  alias: Cube Tap Twice
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -171,7 +176,7 @@
       entity_id: binary_sensor.cube_158d0001041dc7
       action_type: tap_twice
   action:
-    - service_template: >
+    - service: >
          {% if is_state('media_player.lounge_tv', 'on') %}
           media_player.toggle
          {% elif is_state('media_player.lounge', 'on') %}
@@ -179,7 +184,7 @@
          {% else %}
            script.pause_sky
          {% endif %}
-      data_template:
+      data:
         entity_id: >
          {% if is_state('media_player.lounge_tv', 'on') %}
          media_player.lounge_tv

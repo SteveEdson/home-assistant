@@ -1,4 +1,5 @@
-- alias: Write Servo Value to ESP
+- id: write_servo_value_to_esp
+  alias: Write Servo Value to ESP
   trigger:
     platform: state
     entity_id: input_number.servo_control

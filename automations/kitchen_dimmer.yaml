@@ -1,4 +1,5 @@
-- alias: Kitchen Dimmer On
+- id: kitchen_dimmer_on
+  alias: Kitchen Dimmer On
   trigger:
     platform: state
     entity_id: sensor.kitchen_dimmer_switch_action
@@ -9,7 +10,8 @@
         entity_id: light.conservatory_lights
         brightness_pct: 100
 
-- alias: Kitchen Dimmer Off
+- id: kitchen_dimmer_off
+  alias: Kitchen Dimmer Off
   trigger:
     platform: state
     entity_id: sensor.kitchen_dimmer_switch_action
@@ -19,7 +21,8 @@
       data:
         entity_id: light.conservatory_lights
 
-- alias: Kitchen Dimmer Vacuum
+- id: kitchen_dimmer_vacuum
+  alias: Kitchen Dimmer Vacuum
   trigger:
     platform: state
     entity_id: sensor.kitchen_dimmer_switch_action

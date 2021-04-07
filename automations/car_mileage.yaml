@@ -1,4 +1,5 @@
-- alias: "Car Mileage"
+- id: car_mileage
+  alias: "Car Mileage"
   trigger:
     platform: time
     at: "00:00:00"
@@ -11,7 +12,8 @@
         value1: "{{ as_timestamp(now()) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
         value2: "{{ states('sensor.330i_mileage_miles') }}"
 
-- alias: "Car Fueled"
+- id: car_fueled
+  alias: "Car Fueled"
   trigger:
     platform: state
     entity_id: binary_sensor.car_fueled

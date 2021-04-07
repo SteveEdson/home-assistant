@@ -1,5 +1,5 @@
 - alias: Lights off at night
-  id: '1509874606449'
+  id: lights_off_at_night
   trigger:
     platform: time
     at: '00:30:00'

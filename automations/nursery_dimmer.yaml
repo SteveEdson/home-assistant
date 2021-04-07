@@ -1,4 +1,5 @@
-- alias: Nursery Dimmer Off
+- id: nursery_dimmer_off
+  alias: Nursery Dimmer Off
   trigger:
     platform: state
     entity_id: sensor.nursery_dimmer_action
@@ -10,7 +11,8 @@
           - light.nursery_light
           - light.yeelight_bslamp1_7c49eb28d971
 
-- alias: Nursery Dimmer On
+- id: nursery_dimmer_on
+  alias: Nursery Dimmer On
   trigger:
     platform: state
     entity_id: sensor.nursery_dimmer_action
@@ -23,7 +25,8 @@
           - light.nursery_light
           - light.yeelight_bslamp1_7c49eb28d971
 
-- alias: Nursery Dimmer Up
+- id: nusery_dimmer_up
+  alias: Nursery Dimmer Up
   trigger:
     platform: state
     entity_id: sensor.nursery_dimmer_action

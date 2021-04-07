@@ -1,4 +1,5 @@
-- alias: Nursery motion on - main
+- id: nusery_motion_on_main
+  alias: Nursery motion on - main
   trigger:
     platform: state
     entity_id: binary_sensor.nursery_motion_occupancy
@@ -29,7 +30,8 @@
             entity_id: light.nursery_light
             brightness_pct: 100
 
-- alias: Nursery motion off
+- id: nusery_motion_off
+  alias: Nursery motion off
   trigger:
     platform: state
     entity_id: binary_sensor.nursery_motion_occupancy

@@ -1,4 +1,5 @@
-- alias: Family bathroom motion on
+- id: family_bathroom_motion_on
+  alias: Family bathroom motion on
   trigger:
     platform: state
     entity_id: binary_sensor.bathroom_motion_occupancy
@@ -26,7 +27,8 @@
             entity_id: light.shelly_f
             brightness_pct: 100
 
-- alias: Family bathroom motion off
+- id: family_bathroom_motion_off
+  alias: Family bathroom motion off
   trigger:
     platform: state
     entity_id: binary_sensor.bathroom_motion_occupancy

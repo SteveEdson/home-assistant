@@ -1,4 +1,5 @@
-- alias: 'Garden Lights on'
+- id: garden_lights_on
+  alias: 'Garden Lights on'
   trigger:
   - event: sunset
     platform: sun
@@ -21,7 +22,8 @@
         entity_id: 'person.sophie'
         state: 'home'
 
-- alias: 'Porch Lights On'
+- id: porch_lights_on
+  alias: 'Porch Lights On'
   trigger:
   - event: sunset
     platform: sun
@@ -34,7 +36,8 @@
       entity_id:
         - light.porch_lights
 
-- alias: 'Garden Lights off'
+- id: garden_lights_off
+  alias: 'Garden Lights off'
   trigger:
     platform: time
     at: '23:00:00'

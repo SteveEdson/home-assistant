@@ -1,14 +1,16 @@
-- alias: Dark theme at night
+- id: dark_theme_at_night
+  alias: Dark theme at night
   action:
   - data:
       name: midnight
     service: frontend.set_theme
   condition: []
   trigger:
-    platform: time 
+    platform: time
     at: '23:00:00'
 
-- alias: Light theme in day
+- id: light_theme_in_day
+  alias: Light theme in day
   action:
   - data:
       name: default

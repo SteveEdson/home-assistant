@@ -1,4 +1,5 @@
-- alias: 'Front door opened on Halloween'
+- id: front_door_opened_on_halloween
+  alias: 'Front door opened on Halloween'
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_contact

@@ -1,4 +1,5 @@
-- alias: Shower motion
+- id: shower_motion
+  alias: Shower motion
   trigger:
     - platform: state
       entity_id: binary_sensor.landing_sensor_motion
@@ -18,7 +19,8 @@
       data:
         entity_id: light.shelly_e
 
-- alias: Shower no motion
+- id: shower_no_motion
+  alias: Shower no motion
   trigger:
     platform: state
     entity_id: binary_sensor.landing_sensor_motion

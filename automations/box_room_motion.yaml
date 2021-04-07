@@ -1,4 +1,5 @@
-- alias: Box Room motion on
+- id: box_room_motion_on
+  alias: Box Room motion on
   trigger:
     platform: state
     entity_id: binary_sensor.spare_motion_occupancy
@@ -13,7 +14,8 @@
         entity_id: light.box_room_light
         brightness_pct: 100
 
-- alias: Box Room motion off
+- id: box_room_motion_off
+  alias: Box Room motion off
   trigger:
     platform: state
     entity_id: binary_sensor.spare_motion_occupancy

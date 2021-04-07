@@ -1,4 +1,5 @@
-- alias: Lounge Scenes
+- id: lounge_scenes
+  alias: Lounge Scenes
   trigger:
     - platform: state
       entity_id: input_select.input_scenes

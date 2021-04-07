@@ -1,4 +1,5 @@
-- alias: 'Telegram Heating On'
+- id: telegram_heating_on
+  alias: 'Telegram Heating On'
   trigger:
     platform: event
     event_type: telegram_callback

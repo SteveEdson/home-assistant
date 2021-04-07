@@ -1,4 +1,5 @@
-- alias: "Doorbell Notifications"
+- id: doorbell_notifications
+  alias: "Doorbell Notifications"
   trigger:
     platform: state
     entity_id: binary_sensor.doorbell_button
@@ -28,7 +29,8 @@
         file: /config/www/camera-snapshot.jpg
         caption: Doorbell
 
-- alias: "Doorbell Camera"
+- id: doorbell_camera
+  alias: "Doorbell Camera"
   trigger:
     platform: state
     entity_id: binary_sensor.doorbell_button
@@ -46,7 +48,8 @@
         entity_id: camera.front_2
         media_player: media_player.kitchen_display
 
-- alias: "Doorbell Music Alert"
+- id: doorbell_music_alert
+  alias: "Doorbell Music Alert"
   trigger:
     platform: state
     entity_id: binary_sensor.doorbell_button
@@ -70,7 +73,8 @@
       data_template:
         message: "Broadcast There is someone at the door"
 
-- alias: "Doorbell Office Notification"
+- id: doorbell_office_notification
+  alias: "Doorbell Office Notification"
   trigger:
     platform: state
     entity_id: binary_sensor.doorbell_button

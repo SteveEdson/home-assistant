@@ -1,4 +1,5 @@
-- alias: Bedroom Dimmer Off
+- id: 'bedroom_dimmer_off'
+  alias: Bedroom Dimmer Off
   trigger:
     platform: state
     entity_id: sensor.bedroom_dimmer_action
@@ -10,7 +11,8 @@
           - light.bedroom_reading_lights
           - light.bedroom_ceiling
 
-- alias: Bedroom Dimmer On
+- id: bedroom_dimmer_on
+  alias: Bedroom Dimmer On
   trigger:
     platform: state
     entity_id: sensor.bedroom_dimmer_action

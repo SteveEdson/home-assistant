@@ -1,4 +1,5 @@
-- alias: Ensuite motion on
+- id: ensuite_motion_on
+  alias: Ensuite motion on
   trigger:
     - platform: state
       entity_id: binary_sensor.ensuite_motion_occupancy
@@ -13,7 +14,8 @@
       data:
         entity_id: light.shelly_e
 
-- alias: Ensuite motion off
+- id: ensuite_motion_off
+  alias: Ensuite motion off
   trigger:
     platform: state
     entity_id: binary_sensor.ensuite_motion_occupancy

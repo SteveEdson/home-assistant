@@ -1,4 +1,5 @@
-- alias: BBC One
+- id: bbc_one
+  alias: BBC One
   trigger:
   - platform: state
     entity_id: input_select.channel
@@ -9,7 +10,8 @@
       topic: sky_command
       payload: "1 1 5"
 
-- alias: BBC Two
+- id: bbc_two
+  alias: BBC Two
   trigger:
   - platform: state
     entity_id: input_select.channel
@@ -20,7 +22,8 @@
       topic: sky_command
       payload: "1 0 2"
 
-- alias: ITV
+- id: itv
+  alias: ITV
   trigger:
   - platform: state
     entity_id: input_select.channel
@@ -31,7 +34,8 @@
       topic: sky_command
       payload: "1 0 3"
 
-- alias: Channel 4
+- id: channel_4
+  alias: Channel 4
   trigger:
   - platform: state
     entity_id: input_select.channel
@@ -42,7 +46,8 @@
       topic: sky_command
       payload: "1 3 8"
 
-- alias: Sky 1
+- id: sky_1
+  alias: Sky 1
   trigger:
   - platform: state
     entity_id: input_select.channel

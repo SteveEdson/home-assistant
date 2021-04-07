@@ -1,4 +1,5 @@
-- alias: Car Windows Left Open
+- id: car_left_unlocked
+  alias: Car Left Unlocked
   trigger:
     platform: state
     entity_id: binary_sensor.330i_door_lock_state

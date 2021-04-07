@@ -1,5 +1,6 @@
 # Lounge button
-- alias: Lounge Button Single
+- id: lounge_button_single
+  alias: Lounge Button Single
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
@@ -14,7 +15,8 @@
         entity_id: light.gateway_light_7811dcb25e74
         brightness_pct: 100
 
-- alias: Lounge Button Double
+- id: lounge_button_double
+  alias: Lounge Button Double
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
@@ -24,7 +26,8 @@
     data:
       entity_id: scene.lounge_chill
 
-- alias: Lounge Button Hold
+- id: lounge_button_hold
+  alias: Lounge Button Hold
   trigger:
     platform: state
     entity_id: sensor.lounge_button_click
@@ -34,7 +37,8 @@
 # LOUNGE BUTTON END
 
 # KITCHEN BUTTON
-- alias: Kitchen Button Single
+- id: kitchen_button_single
+  alias: Kitchen Button Single
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
@@ -58,7 +62,8 @@
               - light.kitchen_lights
             brightness_pct: 100
 
-- alias: Kitchen Button Double
+- id: kitchen_button_double
+  alias: Kitchen Button Double
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
@@ -70,7 +75,8 @@
         - light.conservatory_lights
       brightness_pct: 100
 
-- alias: Kitchen Button Hold Not Playing
+- id: kitchen_button_hold_not_playing
+  alias: Kitchen Button Hold Not Playing
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
@@ -81,7 +87,8 @@
   action:
     service: script.play_radio_in_kitchen
 
-- alias: Kitchen Button Hold When Playing
+- id: kitchen_button_hold_when_playing
+  alias: Kitchen Button Hold When Playing
   trigger:
     platform: state
     entity_id: sensor.kitchen_button_click
@@ -97,7 +104,8 @@
 # KITCHEN BUTTON END
 
 # STEVE BUTTON
-- alias: Bedroom Toggle Lights
+- id: bedroom_toggle_lights
+  alias: Bedroom Toggle Lights
   trigger:
     platform: state
     entity_id: sensor.bedroom_button_action
@@ -119,7 +127,8 @@
 #    - service: input_select.select_next
 #      entity_id: input_select.input_bedroom_scenes
 
-- alias: Bedroom Hold Goodnight
+- id: bedroom_hold_goodnight
+  alias: Bedroom Hold Goodnight
   trigger:
     platform: state
     entity_id: sensor.bedroom_button_click
@@ -129,7 +138,8 @@
 # STEVE BUTTON END
 
 
-- alias: Ikea button 1 On
+- id: ikea_button_1_on
+  alias: Ikea button 1 On
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_1_click
@@ -140,7 +150,8 @@
       - switch.bf5bde9e7cf9134ab6kmf7
       - switch.bff5c4bbd438ed9847uxkj
 
-- alias: Ikea button 1 Off
+- id: ikea_button_1_off
+  alias: Ikea button 1 Off
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_1_click
@@ -151,7 +162,8 @@
       - switch.bf5bde9e7cf9134ab6kmf7
       - switch.bff5c4bbd438ed9847uxkj
 
-- alias: Ikea button 2 On
+- id: ikea_button_2_on
+  alias: Ikea button 2 On
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_2_click
@@ -160,7 +172,8 @@
     service: light.turn_on
     entity_id: light.box_room
 
-- alias: Ikea button 2 Off
+- id: ikea_button_2_off
+  alias: Ikea button 2 Off
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_2_click
@@ -169,7 +182,8 @@
     service: light.turn_off
     entity_id: light.box_room_light
 
-- alias: Ikea button 3 On
+- id: ikea_button_3_on
+  alias: Ikea button 3 On
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_3_click
@@ -178,7 +192,8 @@
     service: light.turn_on
     entity_id: light.bedroom_reading_lights
 
-- alias: Ikea button 3 Off
+- id: ikea_button_3_off
+  alias: Ikea button 3 Off
   trigger:
     platform: state
     entity_id: sensor.ikea_switch_3_click

@@ -1,5 +1,5 @@
 - alias: Reset motion at midnight
-  id: f520c5bf-47e0-4983-ae87-642854c79dad
+  id: reset_motion_at_midnight
   trigger:
     platform: time
     at: '00:00:00'
