@@ -91,10 +91,10 @@
     - light.hanging_light_2
     - light.wled
 
-- platform: mqtt
-  name: "Bedroom Spotlights"
-  schema: json
-  command_topic: "zigbee2mqtt/bedroom_lights/set"
-  state_topic: "zigbee2mqtt/bedroom_lights"
-  color_temp: false
-  brightness: true
+#- platform: mqtt
+#  name: "Bedroom Spotlights"
+#  schema: json
+#  command_topic: "zigbee2mqtt/bedroom_lights/set"
+#  state_topic: "zigbee2mqtt/bedroom_lights"
+#  color_temp: false
+#  brightness: true
