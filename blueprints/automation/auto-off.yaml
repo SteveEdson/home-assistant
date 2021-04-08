@@ -4,9 +4,11 @@ blueprint:
   domain: automation
   input:
     the_entity:
+      name: Target Entity
       selector:
         entity:
     duration:
+      name: Turn Off After (Minutes)
       selector:
         number:
 trigger:
