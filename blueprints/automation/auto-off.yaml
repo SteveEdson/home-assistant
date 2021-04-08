@@ -4,7 +4,8 @@ blueprint:
   domain: automation
   input:
     the_entity:
-      entity:
+      selector:
+        entity:
     duration:
       selector:
         number:
