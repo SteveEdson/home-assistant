@@ -1,0 +1,22 @@
+blueprint:
+  name: Auto Off
+  description: Automatically turn off an entity after a set time
+  domain: automation
+  input:
+    the_entity:
+    duration:
+      selector:
+        number:
+trigger:
+  platform: state
+  entity_id: !input the_entity
+  to: 'on'
+  for:
+    minutes: !input duration
+action:
+  - service: light.turn_off
+    data:
+      entity_id: !input the_entity
+  - service: telegram_bot.send_message
+    data:
+      message: "Automatically turned off {{ the_entity }}"
