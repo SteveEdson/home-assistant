@@ -23,4 +23,4 @@ action:
       entity_id: !input the_entity
   - service: telegram_bot.send_message
     data:
-      message: "Automatically turned off {{ the_entity }}"
+      message: "Automatically turned off {{ trigger | to_json }} {{ the_entity | to_json }}"
