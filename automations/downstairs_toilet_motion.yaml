@@ -4,10 +4,10 @@
     platform: state
     entity_id: binary_sensor.hue_motion_occupancy
     to: 'on'
-  condition:
-    - condition: state # after 20 mins before sunset
-      entity_id: binary_sensor.activate_motion_lights
-      state: "on"
+#  condition:
+#    - condition: state # after 20 mins before sunset
+#      entity_id: binary_sensor.activate_motion_lights
+#      state: "on"
   action:
     - service: light.turn_on
       data:
