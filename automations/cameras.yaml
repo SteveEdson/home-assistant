@@ -23,6 +23,6 @@
         message_tag: "{{ trigger.payload_json['after']['camera'] }}"
         url: http://192.168.1.61:5001/api/events/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
         caption: >-
-          A {{trigger.payload_json["after"]["label"]}} was detected on {{ trigger.payload_json['after']['camera'] }} ({{ trigger.payload_json['after']['entered_zones'] | join: ", " }}).
+          A {{trigger.payload_json["after"]["label"]}} was detected on {{ trigger.payload_json['after']['camera'] }} ({{ trigger.payload_json['after']['entered_zones'] | join(', ') }}).
 
 
