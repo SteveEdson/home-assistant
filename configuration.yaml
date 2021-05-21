@@ -47,6 +47,8 @@ lovelace:
       type: module
     - url: /local/custom_ui/threedy-card.js?v=2021.0.b1
       type: module
+    - url: /local/community/home-assistant-sun-card.js
+      type: module
       # - url: /local/custom_ui/custom-header.js
       #   type: module
 
