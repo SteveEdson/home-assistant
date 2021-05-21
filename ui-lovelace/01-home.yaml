@@ -69,6 +69,8 @@ cards:
       - entity: device_tracker.330i
       - entity: device_tracker.gm1910
     hours_to_show: 6
+  - type: custom:sun-card
+    show_elevation: true
   - type: calendar
     entities:
       - calendar.steve_s_calendar
