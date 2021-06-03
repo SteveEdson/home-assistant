@@ -7,6 +7,15 @@ const repeats = "repeats";
 const confirmation = "confirmation";
 
 const texts = {
+    "cz": {
+        mode: "Mód",
+        goToTarget: "Poslat na zvolený bod",
+        zonedCleanup: "Úklid zóny",
+        zones: "Zóny",
+        run: "Start",
+        repeats: "Opakovat:",
+        confirmation: "Příkaz odeslán!"
+    },
     "en": {
         mode: "Mode",
         goToTarget: "Go to target",
@@ -43,6 +52,15 @@ const texts = {
         repeats: "Veces:",
         confirmation: "Comando enviado!"
     },
+    "fi": {
+        mode: "Toiminto",
+        goToTarget: "Mene kohteeseen",
+        zonedCleanup: "Siivoa alue",
+        zones: "Alueet",
+        run: "Aloita",
+        repeats: "Toistot:",
+        confirmation: "Komento lähetetty!"
+    },
     "fr": {
         mode: "Mode",
         goToTarget: "Aller sur la cible",
@@ -51,6 +69,15 @@ const texts = {
         run: "Démarrage",
         repeats: "Répéter:",
         confirmation: "Commande envoyée!"
+    },
+    "hu": {
+        mode: "Mód",
+        goToTarget: "Mozgás a célponthoz",
+        zonedCleanup: "Zóna tisztítása",
+        zones: "Zónák",
+        run: "Indítás",
+        repeats: "Ismétlések:",
+        confirmation: "Parancs elküldve!"
     },
     "it": {
         mode: "Modalità",
@@ -88,6 +115,15 @@ const texts = {
         repeats: "Razy:",
         confirmation: "Komenda wysłana!"
     },
+    "pt": {
+        mode: "Modo",
+        goToTarget: "Mover-se até um ponto",
+        zonedCleanup: "Limpeza por zona",
+        zones: "Zonas",
+        run: "Iniciar",
+        repeats: "Repetições:",
+        confirmation: "Comando enviado!"
+    },
     "ru": {
         mode: "Режим",
         goToTarget: "Движение к цели",
@@ -105,7 +141,25 @@ const texts = {
         run: "Start",
         repeats: "Repetitioner:",
         confirmation: "Kommando skickat!"
-    }
+    },
+    "sk": {
+        mode: "Mód",
+        goToTarget: "Poslať na zvolený bod",
+        zonedCleanup: "Upratanie zóny",
+        zones: "Zóny",
+        run: "Štart",
+        repeats: "Opakovať:",
+        confirmation: "Príkaz odoslaný!"
+    },
+    "uk": {
+        mode: "Режим",
+        goToTarget: "Рух до цілі",
+        zonedCleanup: "Зональне прибирання",
+        zones: "Зони",
+        run: "Старт",
+        repeats: "Разів:",
+        confirmation: "Команда надіслана"
+    },
 };
 
 export {

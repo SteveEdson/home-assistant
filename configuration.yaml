@@ -35,7 +35,7 @@ lovelace:
       type: module
     - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/swipe-card/swipe-card.js
       type: module
-    - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js
+    - url: /local/custom_lovelace/xiaomi_vacuum_map_card/xiaomi-vacuum-map-card.js?v=1.2.3
       type: module
     - url: /local/custom_ui/card-mod.js
       type: module
