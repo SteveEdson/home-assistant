@@ -17,7 +17,7 @@ lovelace:
       type: module
     - url: /local/custom_ui/unused-card.js?v=0.3
       type: module
-    - url: /local/custom_ui/simple-weather-card-bundle.js?v=0.5.0
+    - url: /local/custom_ui/simple-weather-card-bundle.js?v=0.8.2
       type: module
     - url: /local/custom_ui/slider-entity-row.js?v=8
       type: module
@@ -47,7 +47,7 @@ lovelace:
       type: module
     - url: /local/custom_ui/threedy-card.js?v=2021.0.b1
       type: module
-    - url: /local/community/home-assistant-sun-card.js
+    - url: /local/community/home-assistant-sun-card/home-assistant-sun-card.js
       type: module
       # - url: /local/custom_ui/custom-header.js
       #   type: module
