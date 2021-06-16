@@ -9,7 +9,7 @@
     activate_motion_lights:
       friendly_name: Activate Motion Lights?
       value_template: >
-        {% if states('binary_sensor.night') == 'on' or states('sensor.sun_elevation')|float < 12 %}
+        {% if states('binary_sensor.night') == 'on' or states('sensor.sun_elevation')|float < 20 %}
         true
         {% else %}
         false
