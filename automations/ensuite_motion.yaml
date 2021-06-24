@@ -10,9 +10,9 @@
  #     - condition: time
  #       before: '19:00:00'
   action:
-    - service: light.turn_on
+    - service: switch.turn_on
       data:
-        entity_id: light.shelly_e
+        entity_id: switch.ensuite_switch_left
 
 - id: ensuite_motion_off
   alias: Ensuite motion off
@@ -23,6 +23,6 @@
     for:
       minutes: 3
   action:
-    - service: light.turn_off
+    - service: switch.turn_off
       data:
-        entity_id: light.shelly_e
+        entity_id: switch.ensuite_switch_left
