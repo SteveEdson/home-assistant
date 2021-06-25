@@ -174,3 +174,9 @@ sensor.temperature_158d00027265db:
 binary_sensor.front_door_contact:
   friendly_name: Front Door
   device_class: door
+switch.ensuite_switch_left:
+  icon: mdi:wall-sconce-flat
+  friendly_name: Ensuite Lights
+switch.ensuite_switch_right:
+  device_class: fan
+  friendly_name: Ensuite Fan

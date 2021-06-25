@@ -101,7 +101,8 @@ cards:
       - type: custom:slider-entity-row
         entity: light.bedroom_reading_lights
         toggle: true
-      - light.shelly_e
+      - switch.ensuite_switch_left
+      - switch.ensuite_switch_right
   - type: custom:mini-media-player
     entity: media_player.bedroom_tv
     icon: mdi:television
