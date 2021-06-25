@@ -2,7 +2,7 @@
   alias: Downstairs Toilet Motion On
   trigger:
     platform: state
-    entity_id: binary_sensor.hue_motion_occupancy
+    entity_id: binary_sensor.downstairs_loo_motion_occupancy
     to: 'on'
 #  condition:
 #    - condition: state # after 20 mins before sunset
@@ -18,7 +18,7 @@
   alias: Downstairs Toilet Motion Off
   trigger:
     platform: state
-    entity_id: binary_sensor.hue_motion_occupancy
+    entity_id: binary_sensor.downstairs_loo_motion_occupancy
     to: 'off'
     for:
       minutes: 3
