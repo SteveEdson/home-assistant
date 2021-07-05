@@ -103,6 +103,11 @@ cards:
         toggle: true
       - switch.ensuite_switch_left
       - switch.ensuite_switch_right
+
+  - type: custom:mini-graph-card
+    entities:
+      - sensor.ensuite_switch_power
+
   - type: custom:mini-media-player
     entity: media_player.bedroom_tv
     icon: mdi:television
