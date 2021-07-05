@@ -115,6 +115,18 @@ cards:
       - value: "on"
         label: "On"
 
+
+  - type: gauge
+    title: Bed Target
+    entity: sensor.ensuite_switch_power
+    unit_of_measurement: W
+    min: 0
+    max: 80
+    severity:
+      red: 80
+      amber: 50
+      green: 30
+
   - type: custom:mini-media-player
     entity: media_player.bedroom_tv
     icon: mdi:television
