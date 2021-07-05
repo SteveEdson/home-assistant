@@ -109,6 +109,11 @@ cards:
       - sensor.ensuite_switch_power
       - switch.ensuite_switch_left
       - switch.ensuite_switch_right
+    state_map:
+      - value: "off"
+        label: Clear
+      - value: "on"
+        label: Detected
 
   - type: custom:mini-media-player
     entity: media_player.bedroom_tv
