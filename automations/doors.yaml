@@ -95,9 +95,6 @@
     - service: telegram_bot.send_message
       data:
         message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
-    - service: notify.google_assistant_broadcast
-      data:
-        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
     - service: camera.record
       data:
         entity_id: camera.g3_flex_low_res
@@ -110,6 +107,14 @@
       data:
         file: /config/www/camera-latest.mp4
         caption: Office door opened
+    - condition: and
+      conditions:
+        - condition: time
+          before: "08:45"
+          after: "17:15"
+    - service: notify.google_assistant_broadcast
+      data:
+        message: "Office door opened at {{ as_timestamp(now()) | timestamp_custom(\"%H:%M\") }}"
 
 - id: kitchen_door_opened_alert
   alias: 'Kitchen doors opened alert'
