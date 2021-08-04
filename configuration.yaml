@@ -111,6 +111,8 @@ history:
 # View all events in a logbook
 logbook:
 
+energy:
+
 map:
 
 # Track the sun
