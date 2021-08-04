@@ -94,7 +94,6 @@ google:
 
 # Checks for available updates
 updater:
-  reporting: true
 
 # Discover some devices automatically
 discovery:
@@ -225,10 +224,10 @@ spotify:
 #    consider_home: 180
 #    track_new_devices: yes
 
-asuswrt:
-  host: 192.168.1.1
-  username: !secret router_username
-  password: !secret router_password
+#asuswrt:
+#  host: 192.168.1.1
+#  username: !secret router_username
+#  password: !secret router_password
 
 switch: !include switches.yaml
 
