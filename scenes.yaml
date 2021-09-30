@@ -16,22 +16,6 @@
 - name: Deep Blue
   id: deep_blue
   entities:
-#    light.corner_lamp:
-#      state: on
-#      rgb_color:
-#        - 255
-#        - 97
-#        - 45
-#      brightness_pct: 100
-
-#    light.left_lamp:
-#      state: on
-#      rgb_color:
-#        - 103
-#        - 55
-#        - 255
-#      brightness_pct: 100
-
     light.twigs_light:
       state: on
       brightness_pct: 100
