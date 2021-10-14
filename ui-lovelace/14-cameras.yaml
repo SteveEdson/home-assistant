@@ -22,3 +22,8 @@ cards:
           - binary_sensor.bifold_door_contact
         camera_image: camera.garden
         camera_view: live
+
+      - type: picture-glance
+        title: Kitchen
+        camera_image: camera.kitchen
+        camera_view: live
