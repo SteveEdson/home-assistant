@@ -1,5 +1,6 @@
 use_x_forwarded_for: true
 cors_allowed_origins:
+  - http://localhost:3000
   - http://192.168.1.140:3001
 trusted_proxies:
   - 172.18.0.5
