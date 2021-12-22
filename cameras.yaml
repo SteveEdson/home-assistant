@@ -1,6 +1,6 @@
 # - platform: ffmpeg
 #   name: DaFang3
-#   input: -rtsp_transport tcp -i rtsp://192.168.1.61:8554/unicast
+#   input: -rtsp_transport tcp -i rtsp://192.168.1.140:8554/unicast
 
 # - platform: generic
 #   still_image_url: http://192.168.1.96/snap.jpeg

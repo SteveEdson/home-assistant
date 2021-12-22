@@ -98,6 +98,11 @@ cards:
   # - type: thermostat
   #   entity: climate.hallway
   #   name: Heating
+  - type: statistics-graph
+    title: Temperatures
+    entities:
+      - climate.hallway
+      - sensor.ensuite_motion_temperature
   - type: custom:simple-thermostat
     entity: climate.hallway
     name: Heating
