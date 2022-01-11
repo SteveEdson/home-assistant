@@ -20,6 +20,22 @@
       state: on
       brightness_pct: 100
 
+- name: Lounge Relaxed
+  id: lounge_relaxed
+  entities:
+    light.lounge_spotlight:
+      state: on
+      brightness_pct: 100
+      rgb_color:
+        - 255
+        - 193
+        - 155
+
+    light.lounge_tall_lamp:
+      state: on
+      brightness_pct: 100
+      color_temp: 432
+
     # switch.my_smart_plug:
     #   state: on
 

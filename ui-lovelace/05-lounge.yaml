@@ -104,6 +104,13 @@ cards:
           service_data:
             entity_id: scene.bright
 
+      - entity: scene.lounge_relaxed
+        tap_action:
+          action: call-service
+          service: scene.turn_on
+          service_data:
+            entity_id: scene.lounge_relaxed
+
       - entity: scene.deep_blue
         tap_action:
           action: call-service
