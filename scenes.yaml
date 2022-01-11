@@ -28,8 +28,8 @@
       brightness_pct: 100
       rgb_color:
         - 255
-        - 193
-        - 155
+        - 129
+        - 2
 
     light.lounge_tall_lamp:
       state: on
