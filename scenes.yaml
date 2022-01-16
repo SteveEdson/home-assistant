@@ -68,15 +68,15 @@
 - name: Bright
   id: bright
   entities:
-#    light.corner_lamp:
-#      state: on
-#      color_temp: 350
-#      brightness_pct: 100
+    light.lounge_spotlight:
+      state: on
+      color_temp: 350
+      brightness_pct: 100
 
-#    light.left_lamp:
-#      state: on
-#      color_temp: 350
-#      brightness_pct: 100
+    light.lounge_tall_lamp:
+      state: on
+      color_temp: 350
+      brightness_pct: 100
 
     light.twigs_light:
       state: on
