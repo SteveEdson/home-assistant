@@ -3,6 +3,7 @@ options:
 #  - ocean
   - bright
   - lounge_relaxed
+  - lounge_chill
   - lounge_off
 #  - deep_blue
 initial: bright
