@@ -1,7 +1,8 @@
-name: Active Scene
+name: Lounge Scene
 options:
-  - ocean
+#  - ocean
   - bright
-  - deep_blue
+  - relax
+#  - deep_blue
 initial: bright
 icon: mdi:ceiling-light
