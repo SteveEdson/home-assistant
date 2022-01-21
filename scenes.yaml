@@ -82,8 +82,17 @@
       state: on
       brightness_pct: 100
 
-    # switch.my_smart_plug:
-    #   state: on
+- name: Off
+  id: lounge_off
+  entities:
+    light.lounge_spotlight:
+      state: off
+
+    light.lounge_tall_lamp:
+      state: off
+
+    light.twigs_light:
+      state: off
 
 - name: Bedroom Main Lights
   id: bedroom_main_lights
