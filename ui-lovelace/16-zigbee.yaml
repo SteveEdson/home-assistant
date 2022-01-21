@@ -56,9 +56,8 @@ cards:
       title: Updatable Devices
     filter:
       include:
-        - attributes:
-            update_available: true
+        - name: "* update available"
+          state: "on"
       exclude:
-        - name: "*_update_available"
         - name: "*_linkquality"
         - name: "*_battery"
