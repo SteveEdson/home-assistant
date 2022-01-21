@@ -3,7 +3,7 @@ options:
 #  - ocean
   - bright
   - lounge_relaxed
-  - lounge_lights_off
+  - lounge_off
 #  - deep_blue
 initial: bright
 icon: mdi:ceiling-light

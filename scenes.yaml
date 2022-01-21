@@ -1,18 +1,3 @@
-- name: Lounge Lights Off
-  id: lounge_lights_off
-  entities:
-#    light.corner_lamp:
-#      state: off
-
-#    light.left_lamp:
-#      state: off
-
-    light.twigs_light:
-      state: off
-
-    # switch.my_smart_plug:
-    #   state: off
-
 - name: Deep Blue
   id: deep_blue
   entities:
