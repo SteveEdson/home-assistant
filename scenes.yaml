@@ -60,7 +60,6 @@
 
     light.twigs_light:
       state: on
-      brightness_pct: 100
 
     # switch.my_smart_plug:
     #   state: on
@@ -80,7 +79,6 @@
 
     light.twigs_light:
       state: on
-      brightness_pct: 100
 
 - name: Off
   id: lounge_off
