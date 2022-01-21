@@ -1,0 +1,21 @@
+- id: lounge_remote_right
+  alias: Lounge Remove Right
+  trigger:
+    platform: state
+    entity_id: sensor.lounge_remote_action
+    to: 'arrow_right_click'
+  action:
+    - service: input_select.select_next
+      data:
+        entity_id: input_select.input_scenes
+
+- id: lounge_remote_left
+  alias: Lounge Remove Left
+  trigger:
+    platform: state
+    entity_id: sensor.lounge_remote_action
+    to: 'arrow_left_click'
+  action:
+    - service: input_select.select_previous
+      data:
+        entity_id: input_select.input_scenes
