@@ -3,14 +3,14 @@
   entities:
     light.twigs_light:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
 - name: Lounge Relaxed
   id: lounge_relaxed
   entities:
     light.lounge_spotlight:
       state: on
-      brightness_pct: 100
+      brightness: 255
       rgb_color:
         - 255
         - 129
@@ -18,7 +18,7 @@
 
     light.lounge_tall_lamp:
       state: on
-      brightness_pct: 100
+      brightness: 255
       color_temp: 432
 
     # switch.my_smart_plug:
@@ -33,7 +33,7 @@
 #        - 188
 #        - 83
 #        - 255
-#      brightness_pct: 100
+#      brightness: 255
 
 #    light.left_lamp:
 #      state: on
@@ -41,7 +41,7 @@
 #        - 77
 #        - 247
 #        - 255
-#      brightness_pct: 100
+#      brightness: 255
 
     light.twigs_light:
       state: on
@@ -55,12 +55,12 @@
     light.lounge_spotlight:
       state: on
       color_temp: 350
-      brightness_pct: 100
+      brightness: 255
 
     light.lounge_tall_lamp:
       state: on
       color_temp: 350
-      brightness_pct: 100
+      brightness: 255
 
     light.twigs_light:
       state: on
@@ -94,41 +94,41 @@
 
     light.bedroom_lights:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
 - name: Bedroom All Lights
   id: bedroom_all_lights
   entities:
     light.bedroom_light_lb:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.bedroom_light_rt:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.bedroom_light_lt:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.bedroom_light_rb:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.bedroom_lights:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.yeelight_bslamp1_7c49eb28d971:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
 - name: Bedroom Steve Reading
   id: bedroom_steve_reading
   entities:
     light.bedroom_light_rb:
       state: on
-      brightness_pct: 20
+      brightness: 51
 
     light.bedroom_light_rt:
       state: off
@@ -147,7 +147,7 @@
   entities:
     light.bedroom_light_lb:
       state: on
-      brightness_pct: 20
+      brightness: 51
 
     light.bedroom_light_rt:
       state: off
@@ -166,7 +166,7 @@
   entities:
     light.bedroom_reading_lights:
       state: on
-      brightness_pct: 100
+      brightness: 255
 
     light.bedroom_lights:
       state: off
@@ -175,7 +175,7 @@
   id: table_pink_and_blue
   entities:
     light.table_light_1_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 255
@@ -183,7 +183,7 @@
         - 52
 
     light.table_light_2_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 241
@@ -191,7 +191,7 @@
         - 255
 
     light.table_light_3_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 63
@@ -202,10 +202,10 @@
   id: lounge_chill
   entities:
     light.twigs_light:
-      brightness_pct: 25
+      brightness: 64
       state: on
     light.lounge_tall_lamp_light:
-      brightness_pct: 25
+      brightness: 163
       state: on
     switch.32002710bcddc226b4b0: # Mini
       state: on
@@ -213,7 +213,7 @@
       state: on
     light.lounge_spotlight_light:
       state: on
-      brightness_pct: 100
+      brightness: 255
       rgb_color:
         - 165
         - 82
@@ -223,7 +223,7 @@
   id: table_bright
   entities:
     light.table_light_1_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 255
@@ -231,7 +231,7 @@
         - 255
 
     light.table_light_2_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 255
@@ -239,7 +239,7 @@
         - 255
 
     light.table_light_3_light:
-      brightness_pct: 100
+      brightness: 255
       state: on
       rgb_color:
         - 255
