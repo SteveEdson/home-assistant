@@ -2,8 +2,8 @@ name: Lounge Scene
 options:
 #  - ocean
   - bright
-  - relax
-  - lounge_off
+  - lounge_relaxed
+  - lounge_lights_off
 #  - deep_blue
 initial: bright
 icon: mdi:ceiling-light
