@@ -9,3 +9,4 @@
     service: scene.turn_on
     data_template:
       entity_id: scene.{{trigger.to_state.state}}
+      transition: 2
