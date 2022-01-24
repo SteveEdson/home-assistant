@@ -9,7 +9,7 @@ cards:
     entity: switch.bf5bde9e7cf9134ab6kmf7
 
   - type: entity-button
-    entity: switch.bff5c4bbd438ed9847uxkj
+    entity: switch.office_tube_socket_1
 
   - type: entities
     entities:
