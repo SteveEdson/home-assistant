@@ -27,38 +27,38 @@ cards:
         entity: light.hue_play_left
         colors:
           - rgb_color:
-              - 221
-              - 141
-              - 142
+              - 255
+              - 0
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 241
-              - 182
-              - 146
+              - 0
+              - 255
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 148
-              - 197
-              - 233
+              - 0
+              - 0
+              - 255
             brightness_pct: 100
           - rgb_color:
               - 246
               - 222
-              - 150
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 161
+              - 0
               - 228
               - 188
             brightness_pct: 100
           - rgb_color:
-              - 81
+              - 0
               - 133
               - 152
             brightness_pct: 100
           - rgb_color:
               - 244
-              - 180
+              - 0
               - 192
             brightness_pct: 100
 
@@ -72,38 +72,38 @@ cards:
         entity: light.hue_play_right
         colors:
           - rgb_color:
-              - 221
-              - 141
-              - 142
+              - 255
+              - 0
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 241
-              - 182
-              - 146
+              - 0
+              - 255
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 148
-              - 197
-              - 233
+              - 0
+              - 0
+              - 255
             brightness_pct: 100
           - rgb_color:
               - 246
               - 222
-              - 150
+              - 0
             brightness_pct: 100
           - rgb_color:
-              - 161
+              - 0
               - 228
               - 188
             brightness_pct: 100
           - rgb_color:
-              - 81
+              - 0
               - 133
               - 152
             brightness_pct: 100
           - rgb_color:
               - 244
-              - 180
+              - 0
               - 192
             brightness_pct: 100
 
