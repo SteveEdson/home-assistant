@@ -17,6 +17,13 @@ cards:
     title: Steam
     show_header_toggle: false
 
+  - type: entities
+    entities:
+      - scene.office_off
+      - scene.office_blue_red
+    title: Scenes
+    show_header_toggle: false
+
   - type: glance
     entities:
       - binary_sensor.hue_motion_occupancy
