@@ -18,6 +18,96 @@ cards:
     show_header_toggle: false
 
   - type: entities
+    show_header_toggle: false
+    entities:
+      # Displays the light entity. It's optional
+      - entity: light.hue_play_left
+      # Card configuration starts here
+      - type: 'custom:rgb-light-card'
+        entity: light.hue_play_left
+        colors:
+          - rgb_color:
+              - 221
+              - 141
+              - 142
+            brightness_pct: 100
+          - rgb_color:
+              - 241
+              - 182
+              - 146
+            brightness_pct: 100
+          - rgb_color:
+              - 148
+              - 197
+              - 233
+            brightness_pct: 100
+          - rgb_color:
+              - 246
+              - 222
+              - 150
+            brightness_pct: 100
+          - rgb_color:
+              - 161
+              - 228
+              - 188
+            brightness_pct: 100
+          - rgb_color:
+              - 81
+              - 133
+              - 152
+            brightness_pct: 100
+          - rgb_color:
+              - 244
+              - 180
+              - 192
+            brightness_pct: 100
+
+  - type: entities
+    show_header_toggle: false
+    entities:
+      # Displays the light entity. It's optional
+      - entity: light.hue_play_right
+      # Card configuration starts here
+      - type: 'custom:rgb-light-card'
+        entity: light.hue_play_right
+        colors:
+          - rgb_color:
+              - 221
+              - 141
+              - 142
+            brightness_pct: 100
+          - rgb_color:
+              - 241
+              - 182
+              - 146
+            brightness_pct: 100
+          - rgb_color:
+              - 148
+              - 197
+              - 233
+            brightness_pct: 100
+          - rgb_color:
+              - 246
+              - 222
+              - 150
+            brightness_pct: 100
+          - rgb_color:
+              - 161
+              - 228
+              - 188
+            brightness_pct: 100
+          - rgb_color:
+              - 81
+              - 133
+              - 152
+            brightness_pct: 100
+          - rgb_color:
+              - 244
+              - 180
+              - 192
+            brightness_pct: 100
+
+  - type: entities
     entities:
       - scene.office_off
       - scene.office_blue_red
