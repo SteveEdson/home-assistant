@@ -219,6 +219,27 @@
         - 82
         - 255
 
+- name: Lounge Pink
+  id: lounge_pink
+  entities:
+    light.twigs_light:
+      brightness: 64
+      state: on
+    light.lounge_tall_lamp_light:
+      brightness: 163
+      state: on
+    switch.32002710bcddc226b4b0: # Mini
+      state: on
+    switch.bf4cadf5e3e38fddf078v2: # Bonsai
+      state: on
+    light.lounge_spotlight_light:
+      state: on
+      brightness: 255
+      rgb_color:
+        - 255
+        - 7
+        - 129
+
 - name: Table Bright
   id: table_bright
   entities:

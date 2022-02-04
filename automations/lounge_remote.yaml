@@ -1,5 +1,5 @@
 - id: lounge_remote_right
-  alias: Lounge Remove Right
+  alias: Lounge Remote Right
   trigger:
     platform: state
     entity_id: sensor.lounge_remote_action
@@ -10,7 +10,7 @@
         entity_id: input_select.input_scenes
 
 - id: lounge_remote_left
-  alias: Lounge Remove Left
+  alias: Lounge Remote Left
   trigger:
     platform: state
     entity_id: sensor.lounge_remote_action

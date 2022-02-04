@@ -4,6 +4,7 @@ options:
   - bright
   - lounge_relaxed
   - lounge_chill
+  - lounge_pink
   - lounge_off
 #  - deep_blue
 initial: bright
