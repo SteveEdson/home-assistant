@@ -1,5 +1,5 @@
 - platform: rest
-  name: awair_livingroom_sensors
+  name: awair_office_sensors
   resource: http://192.168.1.30/air-data/latest
   json_attributes:
     - timestamp
