@@ -38,8 +38,7 @@ cards:
       - type: custom:mushroom-template-card
         tap_action:
           action: more-info
-          data:
-            entity_id: sensor.awair_lr_score
+        entity: sensor.awair_lr_score
         primary: >-
           {{ states('sensor.awair_lr_score') }}{{
           states.sensor.awair_lr_score.attributes.unit_of_measurement }}
@@ -57,8 +56,7 @@ cards:
       - type: custom:mushroom-template-card
         tap_action:
           action: more-info
-          data:
-            entity_id: sensor.awair_lr_temp
+        entity: sensor.awair_lr_temp
         primary: >-
           {{ states('sensor.awair_lr_temp') }}{{
           states.sensor.awair_lr_temp.attributes.unit_of_measurement }}
@@ -78,8 +76,7 @@ cards:
       - type: custom:mushroom-template-card
         tap_action:
           action: more-info
-          data:
-            entity_id: sensor.awair_lr_pm25
+        entity: sensor.awair_lr_pm25
         primary: >-
           {{ states('sensor.awair_lr_pm25') }}{{
           states.sensor.awair_lr_pm25.attributes.unit_of_measurement }}
@@ -89,8 +86,7 @@ cards:
       - type: custom:mushroom-template-card
         tap_action:
           action: more-info
-          data:
-            entity_id: sensor.awair_lr_co2
+        entity: sensor.awair_lr_co2
         primary: >-
           {{ states('sensor.awair_lr_co2') }}{{
           states.sensor.awair_lr_co2.attributes.unit_of_measurement }}
@@ -100,8 +96,7 @@ cards:
       - type: custom:mushroom-template-card
         tap_action:
           action: more-info
-          data:
-            entity_id: sensor.awair_lr_humid
+        entity: sensor.awair_lr_humid
         primary: >-
           {{ states('sensor.awair_lr_humid') }}{{
           states.sensor.awair_lr_humid.attributes.unit_of_measurement }}
