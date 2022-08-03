@@ -16,7 +16,7 @@
     - voc_ethanol_raw
     - pm25
     - pm10_est
-    value_template: 'OK'
+  value_template: 'OK'
 - platform: template
   sensors:
     awair_lr_score:
