@@ -28,11 +28,74 @@ cards:
       - shuffle
     volume_controls:
       - volume_buttons
-    icon: mdi:speaker  
+    icon: mdi:speaker
   - type: custom:simple-weather-card
     entity: weather.dark_sky
     name: "at home"
     backdrop: true
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ states('sensor.awair_lr_score') }}{{
+          states.sensor.awair_lr_score.attributes.unit_of_measurement }}
+        secondary: '{{ states.sensor.awair_lr_score.attributes.friendly_name }}'
+        icon: mdi:leaf
+        layout: vertical
+        icon_color: |-
+          {%- if states('sensor.awair_lr_score')|int > 90 -%}
+          green
+          {%- elif states('sensor.awair_lr_score')|int > 85 -%}
+          orange
+          {% else %}
+          red
+          {%- endif -%}
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ states('sensor.awair_lr_temp') }}{{
+          states.sensor.awair_lr_temp.attributes.unit_of_measurement }}
+        secondary: '{{ states.sensor.awair_lr_temp.attributes.friendly_name }}'
+        icon: mdi:thermometer
+        layout: vertical
+        icon_color: |-
+          {%- if states('sensor.awair_lr_temp')|int > 30 -%}
+          red
+          {%- elif states('sensor.awair_lr_temp')|int > 25 -%}
+          orange
+          {%- elif states('sensor.awair_lr_temp')|int > 15 -%}
+          yellow
+          {% else %}
+          blue
+          {%- endif -%}
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ states('sensor.sensor.awair_lr_pm25') }}{{
+          states.sensor.sensor.awair_lr_pm25.attributes.unit_of_measurement }}
+        secondary: '{{ states.sensor.sensor.awair_lr_pm25.attributes.friendly_name }}'
+        icon: mdi:atom-variant
+        layout: vertical
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ states('sensor.sensor.awair_lr_co2') }}{{
+          states.sensor.sensor.awair_lr_co2.attributes.unit_of_measurement }}
+        secondary: '{{ states.sensor.sensor.awair_lr_co2.attributes.friendly_name }}'
+        icon: mdi:molecule-co2
+        layout: vertical
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ states('sensor.awair_lr_humid') }}{{
+          states.sensor.awair_lr_humid.attributes.unit_of_measurement }}
+        secondary: '{{ states.sensor.awair_lr_humid.attributes.friendly_name }}'
+        icon: mdi:water
+        layout: vertical
+        icon_color: |-
+          {%- if states('sensor.awair_lr_humid')|int > 60 -%}
+          red
+          {%- elif states('sensor.awair_lr_humid')|int > 45 -%}
+          orange
+          {% else %}
+          green
+          {%- endif -%}
   - type: horizontal-stack
     cards:
       - type: entity
