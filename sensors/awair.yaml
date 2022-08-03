@@ -21,27 +21,27 @@
   sensors:
     awair_lr_score:
       friendly_name: "Quality Score"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["score"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["score"] }}'
       unit_of_measurement: '%'
     awair_lr_temp:
       friendly_name: "Temperature"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["temp"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["temp"] }}'
       device_class: temperature
       unit_of_measurement: '°C'
     awair_lr_humid:
       friendly_name: "Relative Humidity"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["humid"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["humid"] }}'
       device_class: humidity
       unit_of_measurement: '%'
     awair_lr_co2:
       friendly_name: "Carbon Dioxide"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["co2"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["co2"] }}'
       unit_of_measurement: 'ppm'
     awair_lr_voc:
       friendly_name: "Total VOC"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["voc"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["voc"] }}'
       unit_of_measurement: 'ppb'
     awair_lr_pm25:
       friendly_name: "Particulate Matter 2.5"
-      value_template: '{{ states.sensor.await_office_sensors.attributes["pm25"] }}'
+      value_template: '{{ states.sensor.awair_office_sensors.attributes["pm25"] }}'
       unit_of_measurement: 'μg/m³'
