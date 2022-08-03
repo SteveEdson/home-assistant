@@ -44,4 +44,4 @@
     awair_lr_pm25:
       friendly_name: "Particulate Matter 2.5"
       value_template: '{{ states.sensor.awair_livingroom_sensors.attributes["pm25"] }}'
-      unit_of_measurement: 'μg/m³
+      unit_of_measurement: 'μg/m³'
