@@ -71,14 +71,14 @@ cards:
         primary: >-
           {{ states('sensor.sensor.awair_lr_pm25') }}{{
           states.sensor.sensor.awair_lr_pm25.attributes.unit_of_measurement }}
-        secondary: '{{ states.sensor.sensor.awair_lr_pm25.attributes.friendly_name }}'
+        secondary: '{{ states.sensor.awair_lr_pm25.attributes.friendly_name }}'
         icon: mdi:atom-variant
         layout: vertical
       - type: custom:mushroom-template-card
         primary: >-
           {{ states('sensor.sensor.awair_lr_co2') }}{{
           states.sensor.sensor.awair_lr_co2.attributes.unit_of_measurement }}
-        secondary: '{{ states.sensor.sensor.awair_lr_co2.attributes.friendly_name }}'
+        secondary: '{{ states.sensor.awair_lr_co2.attributes.friendly_name }}'
         icon: mdi:molecule-co2
         layout: vertical
       - type: custom:mushroom-template-card
