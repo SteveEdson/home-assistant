@@ -4,16 +4,16 @@ path: home
 title: Home
 cards:
   - type: custom:mushroom-template-card
-    primary: Hello, {{user}}
+    primary: Hello, {{ user }}
     secondary: |
       {% if now().hour < 5 %}
-        # Good night
+        Good night
       {% elif now().hour < 12 %}
-        # Good morning
+        Good morning
       {% elif now().hour < 18 %}
-        # Good afternoon
+        Good afternoon
       {% else %}
-        # Have a nice evening
+        Have a nice evening
       {% endif %}
     icon: mdi:home
   - type: custom:mushroom-media-player-card
