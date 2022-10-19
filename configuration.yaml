@@ -196,6 +196,7 @@ mqtt:
       state_topic: "zigbee2mqtt/bridge/config"
       value_template: "{{ value_json.coordinator }}"
       icon: mdi:chip
+  binary_sensor:
     - name: "Aegis - Connected"
       state_topic: "iotlink/workgroup/desktop-b4rim5c/lwt"
       value_template: "{{ value }}"
