@@ -1,8 +1,3 @@
-- name: Pushover
-  platform: pushover
-  api_key: !secret pushover_api_key
-  user_key: !secret pushover_user_key
-
 - name: HTML5
   platform: html5
   vapid_pub_key: !secret vapid_pub_key
@@ -27,5 +22,4 @@
   platform: group
   services:
     - service: google_assistant_broadcast
-    - service: pushover
     - service: telegram
