@@ -269,6 +269,8 @@ media_player:
             'wake_lock_size': 1  # this indentation is important!
         - 'standby'
 
+bluetooth:
+
 #device_tracker:
  # - platform: bluetooth_tracker
   # - platform: bluetooth_le_tracker
