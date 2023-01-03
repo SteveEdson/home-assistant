@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/SteveEdson/home-assistant#readme",
   "devDependencies": {
-    "husky": "^0.15.0-rc.3"
+    "husky": "^8.0.3"
   },
   "dependencies": {
     "child-process-promise": "^2.2.1",
