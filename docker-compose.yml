@@ -14,7 +14,6 @@ services:
       - ./:/config
       - /etc/localtime:/etc/localtime:ro
       - ./resources:/local
-      - /run/dbus:/run/dbus:ro
     restart: always
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "http://localhost:8123"]
@@ -40,7 +39,7 @@ services:
     environment:
       - 'HA_URL=homeassistant'
       - 'TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8'
-      - 'DASH_URL=http://$HOSTNAME:5050'
+      - 'DASH_URL=http://192.168.1.140:5060'
     network_mode: host
     image: 'acockburn/appdaemon:latest'
 
