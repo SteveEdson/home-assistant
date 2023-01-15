@@ -35,7 +35,7 @@ services:
 
   appdaemon:
     ports:
-      - '5060:5050'
+      - '5060:5060'
     environment:
       - 'HA_URL=homeassistant'
       - 'TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8'
