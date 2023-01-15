@@ -35,11 +35,11 @@ services:
 
   appdaemon:
     ports:
-      - '5060:5060'
+      - '5055:5055'
     environment:
       - 'HA_URL=https://home.edson.co'
       - 'TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8'
-      - 'DASH_URL=http://192.168.1.140:5060'
+      - 'DASH_URL=http://192.168.1.140:5055'
     volumes:
       - ./appdaemon:/conf
     network_mode: host
