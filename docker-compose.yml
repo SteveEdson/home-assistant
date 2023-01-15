@@ -40,7 +40,10 @@ services:
       - 'HA_URL=192.168.1.140:8123'
       - 'TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8'
       - 'DASH_URL=http://192.168.1.140:5060'
+    volumes:
+      - ./appdaemon:/conf
     network_mode: host
+    restart: always
     image: 'acockburn/appdaemon:latest'
 
   autoheal:
