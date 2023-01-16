@@ -355,6 +355,8 @@ media_extractor:
 
 backup:
 
+homeassistant_alerts:
+
 my:
 
 zone:
