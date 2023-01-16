@@ -27,6 +27,7 @@ nspanel-1:
           - entity: switch.mini_light_socket
           - entity: switch.nspanel_lounge_relay_1
           - entity: script.good_night
+          - entity: sensor.nspanel_lounge_temperature
       - type: cardMedia
         entity: media_player.spotify_steve_edson
       - type: cardQR
