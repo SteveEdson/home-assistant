@@ -13,3 +13,5 @@ customize: !include customize.yaml
 customize_glob: !include customize_glob.yaml
 internal_url: "http://192.168.1.140:8123"
 external_url: !secret base_url
+currency: GBP
+country: GB
