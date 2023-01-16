@@ -1,0 +1,25 @@
+appdaemon:
+  latitude: 0
+  longitude: 0
+  elevation: 30
+  time_zone: Europe/London
+  plugins:
+    MQTT:
+      type: mqtt
+      namespace: mqtt
+      client_id: "appdaemon"
+      client_host: 192.168.1.140 # This should work if you are using supervised HomeAssistant; if not use the IP Address instead.
+      #client_host: 192.168.75.30
+      client_port: 1883
+      #client_user: "mqttuser"
+      #client_password: "mqttpassword"
+      client_topics: NONE
+    HASS:
+      type: hass
+      ha_url: https://home.edson.co
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8
+http:
+  url: http://192.168.1.140:5055
+admin:
+api:
+hadashboard:

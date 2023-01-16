@@ -1,0 +1,41 @@
+hello_world:
+  module: hello
+  class: HelloWorld
+nspanel-1:
+  module: nspanel-lovelace-ui
+  class: NsPanelLovelaceUIManager
+  config:
+    panelRecvTopic: "tele/ns1/RESULT"
+    panelSendTopic: "cmnd/ns1/CustomSend"
+    model: eu
+    sleepTimeout: 20
+    sleepBrightness:
+      - time: "7:00:00"
+        value: 10
+      - time: "23:59:59"
+        value: 0
+    screensaver:
+      theme:
+        autoWeather: true
+      entity: weather.dark_sky
+    cards:
+      - type: cardGrid
+        title: Lounge
+        entities:
+          - entity: light.lounge_spotlight
+          - entity: light.lounge_tall_lamp
+          - entity: switch.mini_light_socket
+          - entity: switch.nspanel_lounge_relay_1
+          - entity: script.good_night
+      - type: cardMedia
+        entity: media_player.spotify_steve_edson
+      - type: cardQR
+        title: Guest Wifi
+        qrCode: "WIFI:S:ASUS;T:WPA;P:TGLTSJQM;;"
+        entities:
+          - entity: iText.ASUS
+            name: Name
+            icon: mdi:wifi
+          - entity: iText.TGLTSJQM
+            name: Password
+            icon: mdi:key
