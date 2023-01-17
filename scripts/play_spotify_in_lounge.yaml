@@ -3,6 +3,6 @@ sequence:
   - service: spotcast.start
     data:
       spotify_device_id: "38b7504eb228681147d7d598721b63a91a724d11"
-      uri: "spotify:playlist:3acF9tYbUAzmB9aRD6TYiZ"
+      uri: "spotify:playlist:37i9dQZF1E3ai3NiYg7bmy"
       random_song: true
       force_playback : true
