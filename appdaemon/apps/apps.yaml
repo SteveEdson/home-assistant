@@ -30,6 +30,9 @@ nspanel-1:
           - entity: sensor.nspanel_lounge_temperature
       - type: cardMedia
         entity: media_player.spotify_steve_edson
+      - type: cardThermo
+        title: Nest
+        entity: climate.hallway
       - type: cardQR
         title: Guest Wifi
         qrCode: "WIFI:S:ASUS;T:WPA;P:TGLTSJQM;;"
