@@ -166,9 +166,10 @@ cards:
     entities:
       - climate.hallway
       - sensor.ensuite_motion_temperature
-  - type: custom:simple-thermostat
+  - type: custom:mushroom-climate-card
     entity: climate.hallway
-    name: Heating
+    name: Nest Heating
+    show_temperature_control: true
   - type: entities
     title: Alerts
     show_header_toggle: false
