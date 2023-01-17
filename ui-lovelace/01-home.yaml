@@ -168,7 +168,7 @@ cards:
     entity: climate.hallway
     name: Nest Heating
     show_temperature_control: true
-  - type: horizontal-stack
+  - type: vertical-stack
     title: Alerts
     cards:
       - entity: automation.office_door_opened_alert
