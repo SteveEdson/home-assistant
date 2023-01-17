@@ -113,11 +113,11 @@ cards:
           {%- endif -%}
   - type: horizontal-stack
     cards:
-      - type: entity
+      - type: custom:mushroom-entity-card
         entity: binary_sensor.night
-      - type: entity
+      - type: custom:mushroom-entity-card
         entity: sensor.sun_elevation
-      - type: entity
+      - type: custom:mushroom-entity-card
         entity: binary_sensor.activate_motion_lights
   - type: map
     aspect_ratio: 16:9
