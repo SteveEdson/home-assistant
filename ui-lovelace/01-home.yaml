@@ -122,6 +122,7 @@ cards:
   - type: map
     aspect_ratio: 16:9
     dark_mode: true
+    auto_fit: true
     entities:
       - entity: device_tracker.sm_s908b
       - entity: device_tracker.gm1910
@@ -147,6 +148,12 @@ cards:
       - binary_sensor.front_door_contact
     camera_image: camera.front_2
     camera_view: live
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: person.steve_edson
+      - type: custom:mushroom-entity-card
+        entity: person.sophie
   - type: glance
     entities:
       - person.steve_edson
