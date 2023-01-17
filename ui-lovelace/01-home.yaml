@@ -172,13 +172,13 @@ cards:
     title: Alerts
     cards:
       - entity: automation.office_door_opened_alert
-        type: custom:mushroom_entity_card
+        type: custom:mushroom-entity-card
         name: Office Door Opened Alert
       - entity: switch.doorbell_chime_active
-        type: custom:mushroom_entity_card
+        type: custom:mushroom-entity-card
         name: Doorbell Chime Active?
       - entity: switch.doorbell_chime
-        type: custom:mushroom_entity_card
+        type: custom:mushroom-entity-card
         name: Doorbell Manual Press
   - type: entities
     title: Alerts
