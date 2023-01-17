@@ -131,9 +131,11 @@ cards:
   - type: custom:sun-card
     show_elevation: true
   - type: calendar
+    initial_view: listWeek
     entities:
       - calendar.steve_s_calendar
-      - calendar.steve_travlet_com
+      - calendar.steve_spacestardigital_com
+      - calendar.sophiegiles_sky_com
   - type: custom:mushroom-alarm-control-panel-card
     entity: alarm_control_panel.house_alarm
     states:
