@@ -186,16 +186,6 @@ cards:
         name: Doorbell Manual Press
         tap_action:
           action: toggle
-  - type: entities
-    title: Alerts
-    show_header_toggle: false
-    entities:
-      - entity: automation.office_door_opened_alert
-        name: Office Door Opened Alert
-      - entity: switch.doorbell_chime_active
-        name: Doorbell Chime Active?
-      - entity: switch.doorbell_chime
-        name: Doorbell Manual Press
   - type: glance
     entities:
       - entity: script.good_night
@@ -221,36 +211,7 @@ cards:
 #        default_zoom: 16
 #        entities:
 #          - device_tracker.steveedson_oneplus5t
-  - type: entities
-    title: Frigate
-    show_header_toggle: false
-    entities:
-      - sensor.coral_inference_speed
-      - sensor.detection_fps
-      - sensor.front_camera_fps
-      - switch.front_clips
-      - switch.front_detect
-      - sensor.front_detection_fps
-      - sensor.front_process_fps
-      - sensor.front_skipped_fps
-      - switch.front_snapshots
-  - type: grid
-    cards:
-      - type: picture-entity
-        entity: camera.front_2
-        show_info: false
-      - type: picture-entity
-        entity: camera.front_car
-        show_info: false
-      - type: picture-entity
-        entity: camera.front_cat
-        show_info: false
-      - type: picture-entity
-        entity: camera.front_person
-        show_info: false
-      - type: picture-entity
-        entity: camera.front_dog
-        show_info: false
+
   - type: custom:mushroom-lock-card
     entity: lock.330i_lock
     name: 330i
@@ -266,7 +227,6 @@ cards:
       - device_tracker.330i
       - binary_sensor.330i_check_control_messages
       - binary_sensor.330i_condition_based_services
-      - binary_sensor.330i_lights_parking
       - sensor.330i_remaining_fuel
       - sensor.330i_remaining_range_fuel
       - sensor.330i_remaining_range_total
@@ -274,69 +234,3 @@ cards:
       - binary_sensor.330i_lids
       - binary_sensor.330i_windows
       - sensor.330i_mileage_miles
-
-  - type: picture-elements
-    elements:
-      - type: state-label
-        entity: sensor.330i_remaining_fuel
-        prefix: "Fuel: "
-        suffix: "itres"
-        style:
-          top: 5%
-          left: 2%
-          color: black
-          transform: none
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-
-      - type: state-label
-        entity: sensor.330i_remaining_range_fuel
-        prefix: "Range: "
-        style:
-          top: 15%
-          left: 2%
-          color: black
-          transform: none
-          text-align: left
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-
-      - type: state-label
-        entity: binary_sensor.330i_door_lock_state
-        prefix: "Doors: "
-        style:
-          top: 25%
-          left: 2%
-          color: black
-          transform: none
-          text-align: left
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-      - type: state-label
-        entity: binary_sensor.330i_lids
-        prefix: "Boot: "
-        style:
-          top: 35%
-          left: 2%
-          color: black
-          transform: none
-          text-align: left
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-      - type: state-label
-        entity: binary_sensor.330i_windows
-        prefix: "Windows: "
-        style:
-          top: 45%
-          left: 2%
-          color: black
-          transform: none
-          text-align: left
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-      - type: state-label
-        entity: sensor.330i_mileage_miles
-        prefix: "Mileage: "
-        style:
-          top: 55%
-          left: 2%
-          color: black
-          transform: none
-          text-align: left
-          font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-    image: '/local/car-bg.jpg'
