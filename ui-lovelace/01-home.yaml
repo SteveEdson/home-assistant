@@ -148,12 +148,6 @@ cards:
       - binary_sensor.front_door_contact
     camera_image: camera.front_2
     camera_view: live
-  - type: horizontal-stack
-    cards:
-      - type: custom:mushroom-entity-card
-        entity: person.steve_edson
-      - type: custom:mushroom-entity-card
-        entity: person.sophie
   - type: glance
     entities:
       - person.steve_edson
@@ -165,9 +159,6 @@ cards:
       - binary_sensor.bifold_door_contact
     camera_image: camera.garden
     camera_view: live
-  # - type: thermostat
-  #   entity: climate.hallway
-  #   name: Heating
   - type: statistics-graph
     title: Temperatures
     entities:
@@ -177,6 +168,18 @@ cards:
     entity: climate.hallway
     name: Nest Heating
     show_temperature_control: true
+  - type: horizontal-stack
+    title: Alerts
+    cards:
+      - entity: automation.office_door_opened_alert
+        type: custom:mushroom_entity_card
+        name: Office Door Opened Alert
+      - entity: switch.doorbell_chime_active
+        type: custom:mushroom_entity_card
+        name: Doorbell Chime Active?
+      - entity: switch.doorbell_chime
+        type: custom:mushroom_entity_card
+        name: Doorbell Manual Press
   - type: entities
     title: Alerts
     show_header_toggle: false
