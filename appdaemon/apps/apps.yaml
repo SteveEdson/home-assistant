@@ -24,8 +24,10 @@ nspanel-1:
         entities:
           - entity: light.lounge_spotlight
           - entity: light.lounge_tall_lamp
+          - entity: light.orb
+          - entity: light.hue_play_left
+          - entity: light.hue_play_right
           - entity: switch.mini_light_socket
-          - entity: switch.nspanel_lounge_relay_1
           - entity: script.good_night
           - entity: sensor.nspanel_lounge_temperature
       - type: cardMedia
