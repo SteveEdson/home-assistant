@@ -47,7 +47,7 @@ nspanel-1:
             icon: mdi:key
 nursery_controller:
   module: controllerx
-  class: E2002LightController
+  class: E2002Z2MLightController
   integration:
     name: z2m
     listen_to: mqtt
