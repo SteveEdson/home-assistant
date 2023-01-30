@@ -47,10 +47,9 @@ nspanel-1:
             icon: mdi:key
 nursery_controller:
   module: controllerx
-  class: E2002Z2MLightController
-  controller: lounge_remote
+  class: E2002LightController
   integration:
     name: z2m
     listen_to: mqtt
-    action_key: action
+  controller: lounge_remote
   light: light.yeelight_bslamp1_7c49eb28d971
