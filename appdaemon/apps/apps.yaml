@@ -48,6 +48,9 @@ nspanel-1:
 nursery_controller:
   module: controllerx
   class: E2002Z2MLightController
-  controller: sensor.lounge_remote_action
-  integration: z2m
+  controller: lounge_remote
+  integration:
+    name: z2m
+    listen_to: mqtt
+    action_key: action
   light: light.yeelight_bslamp1_7c49eb28d971
