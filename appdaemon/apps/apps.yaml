@@ -51,5 +51,5 @@ nursery_controller:
   integration:
     name: z2m
     listen_to: mqtt
-  controller: lounge_remote
+  controller: 'Lounge Remote'
   light: light.yeelight_bslamp1_7c49eb28d971
