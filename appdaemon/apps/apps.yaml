@@ -45,3 +45,9 @@ nspanel-1:
           - entity: iText.TGLTSJQM
             name: Password
             icon: mdi:key
+nursery_controller:
+  module: controllerx
+  class: E2002Z2MLightController
+  controller: sensor.lounge_remote_action
+  integration: z2m
+  light: light.yeelight_bslamp1_7c49eb28d971
