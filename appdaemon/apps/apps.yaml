@@ -48,6 +48,6 @@ nspanel-1:
 nursery_controller:
   module: controllerx
   class: E2002LightController
-  controller: 'zigbee2mqtt/Lounge Remote/action'
-  integration: mqtt
+  controller: sensor.lounge_remote_action
+  integration: z2m
   light: light.yeelight_bslamp1_7c49eb28d971
