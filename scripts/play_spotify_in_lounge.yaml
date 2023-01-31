@@ -6,3 +6,4 @@ sequence:
       uri: "spotify:playlist:37i9dQZF1E3ai3NiYg7bmy"
       random_song: true
       force_playback: true
+      start_volume: 8
