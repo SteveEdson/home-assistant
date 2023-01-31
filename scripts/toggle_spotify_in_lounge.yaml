@@ -1,5 +1,4 @@
 alias: Toggle Spotify In Lounge
-id: toggle_spotify_in_lounge
 mode: single
 icon: mdi:spotify
 sequence:
