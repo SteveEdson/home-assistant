@@ -13,11 +13,14 @@ sequence:
         - switch.bf4cadf5e3e38fddf078v2
         - switch.bf5bde9e7cf9134ab6kmf7
         - switch.ensuite_switch_left
+  - service: light.turn_on
+    data:
+      entity_id: light.wardrobe_lights
   # - service: switch.turn_off
   #   data:
   #     entity_id: switch.my_smart_plug
-  - service: media_player.turn_off 
-    data: 
+  - service: media_player.turn_off
+    data:
       entity_id:
         - media_player.samsung_tv_remote
         - media_player.downstairs
