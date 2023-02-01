@@ -99,6 +99,9 @@ cards:
         entity: light.bedroom_ceiling
         toggle: true
       - type: custom:slider-entity-row
+        entity: light.wardrobe_lights
+        toggle: true
+      - type: custom:slider-entity-row
         entity: light.bedroom_reading_lights
         toggle: true
       - switch.ensuite_switch_left
