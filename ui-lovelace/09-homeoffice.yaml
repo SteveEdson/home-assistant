@@ -25,6 +25,10 @@ cards:
       power_state: true
   - type: thermostat
     entity: climate.home_office
+  - type: history-graph
+    title: Temperature
+    entities:
+      - sensor.office_temperature_temperature
 
   - type: custom:simple-thermostat
     entity: climate.home_office

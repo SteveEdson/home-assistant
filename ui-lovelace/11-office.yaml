@@ -1,6 +1,6 @@
 path: office
 title: Office
-icon: mdi:google-controller
+icon: mdi:controller
 cards:
   - type: entity-button
     entity: switch.aegis_pc
