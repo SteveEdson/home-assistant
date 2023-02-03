@@ -93,7 +93,7 @@ cards:
           - 180
           - 192
           brightness_pct: 100
-		  
+
     - type: 'custom:rgb-light-card'
       entity: light.orb
       colors:
