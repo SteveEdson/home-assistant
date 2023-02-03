@@ -222,7 +222,7 @@ cards:
               - 0
               - 192
 			  brightness_pct: 100
-		  
+
   - type: entities
     show_header_toggle: false
     entities:
