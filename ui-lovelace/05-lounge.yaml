@@ -141,6 +141,7 @@ cards:
   - type: entities
     title: Lights
     entities:
+      - entity: switch.nspanel_lounge_relay_1
       - type: custom:slider-entity-row
         entity: light.twigs
         toggle: true
@@ -150,3 +151,7 @@ cards:
       - type: custom:slider-entity-row
         entity: light.lounge_spotlight
         toggle: true
+
+  - type: sensor
+    entity: sensor.nspanel_lounge_temperature
+    graph: line
