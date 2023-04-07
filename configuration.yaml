@@ -348,10 +348,6 @@ calendar:
 shell_command:
   generate_gif: 'gifsicle --loop /config/www/g3_flex_2*.jpg /config/www/g3_flex.gif'
 
-weather:
- - platform: darksky
-   api_key: !secret darksky_api_key
-
 media_extractor:
 
 backup:
