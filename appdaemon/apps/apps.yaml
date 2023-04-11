@@ -15,9 +15,10 @@ nspanel-1:
       - time: "23:59:59"
         value: 0
     screensaver:
+      type: screensaver2
       theme:
         autoWeather: true
-      entity: weather.dark_sky
+      entity: weather.openweathermap
     cards:
       - type: cardGrid
         title: Lounge
