@@ -14,6 +14,22 @@ cards:
           - binary_sensor.cupboard_door_contact
         camera_image: camera.front_2
         camera_view: live
+        
+      - type: custom:auto-entities
+        filter:
+          include:
+           - domain: camera
+             options:
+               type: picture-glance
+               camera_view: live
+          exclude:
+           - state: "unavailable"
+        sort:
+          method: name
+          ignore_case: true
+        card:
+          type: picture-glance
+          camera_view: live
 
       - type: picture-glance
         title: Garden
