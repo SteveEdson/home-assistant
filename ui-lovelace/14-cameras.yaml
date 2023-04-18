@@ -11,9 +11,6 @@ cards:
         filter:
           include:
            - domain: camera
-             options:
-               type: picture-entity
-               camera_view: live
           exclude:
            - state: "unavailable"
         sort:
