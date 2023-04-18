@@ -12,7 +12,7 @@ cards:
           include:
            - domain: camera
              options:
-               type: picture-glance
+               type: picture-entity
                camera_view: live
           exclude:
            - state: "unavailable"
