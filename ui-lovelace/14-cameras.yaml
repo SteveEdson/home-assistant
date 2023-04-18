@@ -20,13 +20,5 @@ cards:
           method: name
           ignore_case: true
         card:
-          type: picture-entity
-          camera_view: live
-
-      - type: picture-glance
-        title: Garden
-        entities:
-          - person.steve_edson
-          - binary_sensor.bifold_door_contact
-        camera_image: camera.garden
-        camera_view: live
+          type: custom:layout-card
+          max_columns: 4
