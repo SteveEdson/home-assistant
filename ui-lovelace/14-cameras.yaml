@@ -7,14 +7,6 @@ cards:
   - type: custom:layout-card
     min_columns: 2
     cards:
-      - type: picture-glance
-        title: Front
-        entities:
-          - person.steve_edson
-          - binary_sensor.cupboard_door_contact
-        camera_image: camera.front_2
-        camera_view: live
-        
       - type: custom:auto-entities
         filter:
           include:
@@ -28,7 +20,7 @@ cards:
           method: name
           ignore_case: true
         card:
-          type: picture-glance
+          type: picture-entity
           camera_view: live
 
       - type: picture-glance
@@ -37,9 +29,4 @@ cards:
           - person.steve_edson
           - binary_sensor.bifold_door_contact
         camera_image: camera.garden
-        camera_view: live
-
-      - type: picture-glance
-        title: Kitchen
-        camera_image: camera.kitchen
         camera_view: live
