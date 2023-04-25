@@ -1,0 +1,13 @@
+- id: washing_office_notification
+  alias: "Washing Machine Office Notification"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_load_washer_wash_completed
+    to: 'on'
+  condition:
+    condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('automation.washing_office_notification', 'last_triggered') | default(0)) | int > 5)}}"
+  action:
+    - service: notify.google_assistant_command
+      data_template:
+        message: "Broadcast to home office, the washing machine has finished"
