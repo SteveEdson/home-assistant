@@ -15,7 +15,7 @@ nspanel-1:
       - time: "23:59:59"
         value: 0
     screensaver:
-      type: screensaver2
+      #type: screensaver2
       theme:
         autoWeather: true
       entity: weather.openweathermap

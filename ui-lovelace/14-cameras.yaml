@@ -7,23 +7,18 @@ cards:
   - type: custom:layout-card
     min_columns: 2
     cards:
-      - type: picture-glance
-        title: Front
-        entities:
-          - person.steve_edson
-          - binary_sensor.cupboard_door_contact
-        camera_image: camera.front_2
-        camera_view: live
-
-      - type: picture-glance
-        title: Garden
-        entities:
-          - person.steve_edson
-          - binary_sensor.bifold_door_contact
-        camera_image: camera.garden
-        camera_view: live
-
-      - type: picture-glance
-        title: Kitchen
-        camera_image: camera.kitchen
-        camera_view: live
+      - type: custom:auto-entities
+        filter:
+          include:
+           - domain: camera
+             options: 
+               type: picture-entity
+               camera_view: live
+          exclude:
+           - state: "unavailable"
+        sort:
+          method: name
+          ignore_case: true
+        card:
+          type: custom:layout-card
+          max_columns: 4
