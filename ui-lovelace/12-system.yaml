@@ -18,17 +18,14 @@ cards:
   - type: custom:mini-graph-card
     entities:
       - sensor.disk_free
-  - type: entities
-    entities:
-      - binary_sensor.do_1
-      - sensor.rt_ac68u_b_received
-      - sensor.rt_ac68u_b_sent
-      - sensor.rt_ac68u_kib_s_received
-      - sensor.rt_ac68u_kib_s_sent
-      - sensor.rt_ac68u_packets_received
-      - sensor.rt_ac68u_packets_sent
-      - sensor.rt_ac68u_packets_s_received
-      - sensor.rt_ac68u_packets_s_sent
+  - type: custom:auto-entities
+    unique: true
+    show_empty: false
+    card:
+      type: entities
+    filter:
+      include:
+        - entity_id: "*_dream_machine*"
     title: Network Stats
     show_header_toggle: false
   - type: entities
@@ -90,10 +87,8 @@ cards:
     direction: up
     stack: horizontal
     entities:
-      - sensor.hp_officejet_pro_6230_black_ink
-      - sensor.hp_officejet_pro_6230_cyan_ink
-      - sensor.hp_officejet_pro_6230_magenta_ink
-      - sensor.hp_officejet_pro_6230_yellow_ink
+      - sensor.hl_l2350dw_black_toner_remaining
+      - sensor.hl_l2350dw_drum_remaining_life
     unit_of_measurement: "%"
 
   - type: custom:auto-entities
