@@ -25,7 +25,7 @@ cards:
       type: entities
     filter:
       include:
-        - entity_id: "*_dream_machine*"
+        - entity_id: "*_dream_machine_*"
     title: Network Stats
     show_header_toggle: false
   - type: entities
