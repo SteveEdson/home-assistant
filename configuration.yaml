@@ -272,6 +272,8 @@ media_player:
 
 bluetooth:
 
+assist_pipeline:
+
 #device_tracker:
  # - platform: bluetooth_tracker
   # - platform: bluetooth_le_tracker
