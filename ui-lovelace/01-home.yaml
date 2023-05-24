@@ -191,16 +191,6 @@ cards:
         name: Office Door Opened Alert
         tap_action:
           action: toggle
-      - entity: switch.doorbell_chime_active
-        type: custom:mushroom-entity-card
-        name: Doorbell Chime Active?
-        tap_action:
-          action: toggle
-      - entity: switch.doorbell_chime
-        type: custom:mushroom-entity-card
-        name: Doorbell Manual Press
-        tap_action:
-          action: toggle
   - type: glance
     entities:
       - entity: script.good_night
