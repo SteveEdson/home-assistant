@@ -2,7 +2,7 @@
   alias: "Doorbell Notifications"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button
+    entity_id: binary_sensor.front_doorbell_doorbell
     to: 'on'
   condition:
     condition: and
@@ -33,7 +33,7 @@
   alias: "Doorbell Camera"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button
+    entity_id: binary_sensor.front_doorbell_doorbell
     to: 'on'
   condition:
     condition: and
@@ -52,7 +52,7 @@
   alias: "Doorbell Music Alert"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button
+    entity_id: binary_sensor.front_doorbell_doorbell
     to: 'on'
   condition:
     condition: and
@@ -77,7 +77,7 @@
   alias: "Doorbell Office Notification"
   trigger:
     platform: state
-    entity_id: binary_sensor.doorbell_button
+    entity_id: binary_sensor.front_doorbell_doorbell
     to: 'on'
   condition:
     condition: template

@@ -8,5 +8,3 @@
     entity_id:
       - automation.kitchen_motion_after_2130
       - automation.kitchen_motion_before_2130
-  - service: switch.turn_on
-    entity_id: switch.doorbell_chime_active
