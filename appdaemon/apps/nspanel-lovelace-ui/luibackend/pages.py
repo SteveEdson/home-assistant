@@ -178,7 +178,10 @@ class LuiPagesGen(object):
             name = apis.ha_api.render_template(item.nameOverride)
         
         # type of the item is the string before the "." in the entityId
-        entityType = entityId.split(".")[0]
+        if entityId is not None:
+            entityType = entityId.split(".")[0]
+        else:
+            entityType = "delete"
 
         apis.ha_api.log(f"Generating item for {entityId} with type {entityType}", level="DEBUG")
 
@@ -369,7 +372,7 @@ class LuiPagesGen(object):
             entityTypePanel = "text"
             unit = get_attr_safe(entity, "temperature_unit", "")
             if type(item.stype) == int and len(entity.attributes.forecast) >= item.stype:
-                fdate = dp.parse(entity.attributes.forecast[item.stype]['datetime']).astimezone()
+                fdate = dp.parse(entity.attributes.forecast[item.stype]['datetime'])
                 global babel_spec
                 if babel_spec is not None:
                     dateformat = "E" if item.nameOverride is None else item.nameOverride
@@ -655,8 +658,8 @@ class LuiPagesGen(object):
             speed = 0
             if apis.ha_api.entity_exists(item.entityId):
                 entity = apis.ha_api.get_entity(item.entityId)
-                if float(entity.state) > 0:
-                    speed = str(item.entity_input_config.get("speed", 1))
+                speed = str(item.entity_input_config.get("speed", 0))
+                if isinstance(speed, str):
                     speed = apis.ha_api.render_template(speed)
             command += f"~{speed}"
         self._send_mqtt_msg(command)
@@ -704,6 +707,8 @@ class LuiPagesGen(object):
 
         # Switch to page
         if send_page_type:
+            if card.cardType == "cardGrid" and len(card.entities) > 6:
+                card.cardType = "cardGrid2"
             self.page_type(card.cardType)
 
         # send sleep timeout if there is one configured for the current card
@@ -713,7 +718,7 @@ class LuiPagesGen(object):
             self._send_mqtt_msg(f'timeout~{self._config.get("sleepTimeout")}')
         
         temp_unit = card.raw_config.get("temperatureUnit", "celsius")
-        if card.cardType in ["cardEntities", "cardGrid"]:
+        if card.cardType in ["cardEntities", "cardGrid", "cardGrid2"]:
             self.generate_entities_page(navigation, card.title, card.entities, card.cardType, temp_unit)
             return
         if card.cardType == "cardThermo":
