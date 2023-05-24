@@ -326,6 +326,10 @@ google_assistant:
     - camera
     - vacuum
     - scene
+    - media_player
+    - sensor
+    - lock
+    - button
 #  entity_config:
 #    light.cupboard:
 #      name: Cupboard lights
