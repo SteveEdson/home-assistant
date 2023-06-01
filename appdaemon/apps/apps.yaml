@@ -53,7 +53,7 @@ nursery_controller:
   light: light.yeelight_bslamp1_7c49eb28d971
 kitchen_controller:
   module: controllerx
-  class: HueDimmerZ2MLightController
+  class: HueDimmerController
   controller: sensor.kitchen_dimmer_switch_action
   integration: z2m
   light: light.conservatory_lights
