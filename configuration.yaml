@@ -505,7 +505,7 @@ octoprint:
   api_key: !secret octoprint_api
 
 waste_collection_schedule:
-    sources:
+  sources:
     - name: rotherham_gov_uk
       args:
         uprn: !secret bins_uprn
