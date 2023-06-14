@@ -48,8 +48,14 @@ async def async_setup_electricity_rates_coordinator(hass, account_id: str):
       rates = {}
       for ((meter_point, is_smart_meter), tariff_code) in tariff_codes.items():
         key = meter_point
-        new_rates = await client.async_get_electricity_rates(tariff_code, is_smart_meter, period_from, period_to)
-        if new_rates != None:
+
+        new_rates = None
+        try:
+          new_rates = await client.async_get_electricity_rates(tariff_code, is_smart_meter, period_from, period_to)
+        except:
+          _LOGGER.debug('Failed to retrieve electricity rates')
+          
+        if new_rates is not None:
           # if is_intelligent_tariff(tariff_code):
           #   rates[key] = adjust_intelligent_rates(new_rates, 
           #                                         hass.data[DOMAIN][DATA_INTELLIGENT_DISPATCHES]["planned"] if "planned" in hass.data[DOMAIN][DATA_INTELLIGENT_DISPATCHES] else [],
