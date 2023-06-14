@@ -138,7 +138,7 @@ cards:
     auto_fit: true
     entities:
       - entity: device_tracker.sm_s908b
-      - entity: device_tracker.gm1910
+      - entity: device_tracker.pixel_7_pro
       - entity: device_tracker.330i
     hours_to_show: 6
   - type: custom:sun-card
