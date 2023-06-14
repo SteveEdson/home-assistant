@@ -85,6 +85,12 @@ input_number:
     mode: slider
 
 input_boolean:
+  automoli:
+    name: Light Automations
+    initial: off
+  disable_my_house:
+    name: Disable House
+    initial: off
   guest_mode:
     name: Guest mode
     initial: off
