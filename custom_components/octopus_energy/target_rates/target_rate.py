@@ -3,10 +3,9 @@ import logging
 import re
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import generate_entity_id
 
-from homeassistant.core import callback
 from homeassistant.util.dt import (utcnow, now)
 from homeassistant.helpers.update_coordinator import (
   CoordinatorEntity
@@ -14,9 +13,10 @@ from homeassistant.helpers.update_coordinator import (
 from homeassistant.components.binary_sensor import (
     BinarySensorEntity,
 )
-from ..const import (
-  CONFIG_TARGET_OFFSET,
 
+from homeassistant.helpers import translation
+
+from ..const import (
   CONFIG_TARGET_NAME,
   CONFIG_TARGET_HOURS,
   CONFIG_TARGET_TYPE,
@@ -25,6 +25,10 @@ from ..const import (
   CONFIG_TARGET_MPAN,
   CONFIG_TARGET_ROLLING_TARGET,
   CONFIG_TARGET_LAST_RATES,
+  CONFIG_TARGET_INVERT_TARGET_RATES,
+  CONFIG_TARGET_OFFSET,
+  DATA_ACCOUNT,
+  DOMAIN,
   
   REGEX_HOURS,
   REGEX_TIME,
@@ -37,6 +41,9 @@ from . import (
   get_target_rate_info
 )
 
+from .config import validate_target_rate_config
+from ..target_rates.repairs import check_for_errors
+
 _LOGGER = logging.getLogger(__name__)
 
 class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
@@ -47,6 +54,7 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
     # Pass coordinator to base class
     super().__init__(coordinator)
 
+    self._state = None
     self._config = config
     self._is_export = is_export
     self._attributes = self._config.copy()
@@ -65,6 +73,7 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
 
     self._target_rates = []
     
+    self._hass = hass
     self.entity_id = generate_entity_id("binary_sensor.{}", self.unique_id, hass=hass)
 
   @property
@@ -86,15 +95,16 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
   def extra_state_attributes(self):
     """Attributes of the sensor."""
     return self._attributes
-
+  
   @property
   def is_on(self):
-    """The state of the sensor."""
-
+    """Determines if the target rate sensor is active."""
     if CONFIG_TARGET_OFFSET in self._config:
       offset = self._config[CONFIG_TARGET_OFFSET]
     else:
       offset = None
+
+    check_for_errors(self._hass, self._config, self._hass.data[DOMAIN][DATA_ACCOUNT], now())
 
     # Find the current rate. Rates change a maximum of once every 30 minutes.
     current_date = utcnow()
@@ -109,7 +119,7 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
           break
       
       if all_rates_in_past:
-        if self.coordinator.data is not None:
+        if self.coordinator is not None and self.coordinator.data is not None:
           all_rates = self.coordinator.data
           
           # Retrieve our rates. For backwards compatibility, if CONFIG_TARGET_MPAN is not set, then pick the first set
@@ -144,6 +154,12 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
 
         target_hours = float(self._config[CONFIG_TARGET_HOURS])
 
+        invert_target_rates = False
+        if (CONFIG_TARGET_INVERT_TARGET_RATES in self._config):
+          invert_target_rates = self._config[CONFIG_TARGET_INVERT_TARGET_RATES]
+
+        find_highest_rates = (self._is_export and invert_target_rates == False) or (self._is_export == False and invert_target_rates)
+
         if (self._config[CONFIG_TARGET_TYPE] == "Continuous"):
           self._target_rates = calculate_continuous_times(
             now(),
@@ -152,7 +168,7 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
             target_hours,
             all_rates,
             is_rolling_target,
-            self._is_export,
+            find_highest_rates,
             find_last_rates
           )
         elif (self._config[CONFIG_TARGET_TYPE] == "Intermittent"):
@@ -163,7 +179,7 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
             target_hours,
             all_rates,
             is_rolling_target,
-            self._is_export,
+            find_highest_rates,
             find_last_rates
           )
         else:
@@ -188,61 +204,48 @@ class OctopusEnergyTargetRate(CoordinatorEntity, BinarySensorEntity):
     self._attributes["next_min_cost"] = f'{active_result["next_min_cost"]}p' if active_result["next_min_cost"] is not None else None
     self._attributes["next_max_cost"] = f'{active_result["next_max_cost"]}p' if active_result["next_max_cost"] is not None else None
 
-    return active_result["is_active"]
+    self._state = active_result["is_active"]
+
+    return self._state
 
   @callback
-  def async_update_config(self, target_start_time=None, target_end_time=None, target_hours=None, target_offset=None):
+  async def async_update_config(self, target_start_time=None, target_end_time=None, target_hours=None, target_offset=None):
     """Update sensors config"""
 
     config = dict(self._config)
-    
     if target_hours is not None:
       # Inputs from automations can include quotes, so remove these
       trimmed_target_hours = target_hours.strip('\"')
-      matches = re.search(REGEX_HOURS, trimmed_target_hours)
-      if matches is None:
-        raise vol.Invalid(f"Target hours of '{trimmed_target_hours}' must be in half hour increments.")
-      else:
-        trimmed_target_hours = float(trimmed_target_hours)
-        if trimmed_target_hours % 0.5 != 0:
-          raise vol.Invalid(f"Target hours of '{trimmed_target_hours}' must be in half hour increments.")
-        else:
-          config.update({
-            CONFIG_TARGET_HOURS: trimmed_target_hours
-          })
+      config.update({
+        CONFIG_TARGET_HOURS: trimmed_target_hours
+      })
 
     if target_start_time is not None:
       # Inputs from automations can include quotes, so remove these
       trimmed_target_start_time = target_start_time.strip('\"')
-      matches = re.search(REGEX_TIME, trimmed_target_start_time)
-      if matches is None:
-        raise vol.Invalid("Start time must be in the format HH:MM")
-      else:
-        config.update({
-          CONFIG_TARGET_START_TIME: trimmed_target_start_time
-        })
+      config.update({
+        CONFIG_TARGET_START_TIME: trimmed_target_start_time
+      })
 
     if target_end_time is not None:
       # Inputs from automations can include quotes, so remove these
       trimmed_target_end_time = target_end_time.strip('\"')
-      matches = re.search(REGEX_TIME, trimmed_target_end_time)
-      if matches is None:
-        raise vol.Invalid("End time must be in the format HH:MM")
-      else:
-        config.update({
-          CONFIG_TARGET_END_TIME: trimmed_target_end_time
-        })
+      config.update({
+        CONFIG_TARGET_END_TIME: trimmed_target_end_time
+      })
 
     if target_offset is not None:
       # Inputs from automations can include quotes, so remove these
       trimmed_target_offset = target_offset.strip('\"')
-      matches = re.search(REGEX_OFFSET_PARTS, trimmed_target_offset)
-      if matches is None:
-        raise vol.Invalid("Offset must be in the form of HH:MM:SS with an optional negative symbol")
-      else:
-        config.update({
-          CONFIG_TARGET_OFFSET: trimmed_target_offset
-        })
+      config.update({
+        CONFIG_TARGET_OFFSET: trimmed_target_offset
+      })
+
+    errors = validate_target_rate_config(config, self._hass.data[DOMAIN][DATA_ACCOUNT], now())
+    keys = list(errors.keys())
+    if (len(keys)) > 0:
+      translations = await translation.async_get_translations(self._hass, self._hass.config.language, "options", {DOMAIN})
+      raise vol.Invalid(translations[f'component.{DOMAIN}.options.error.{errors[keys[0]]}'])
 
     self._config = config
     self._attributes = self._config.copy()

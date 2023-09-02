@@ -10,6 +10,7 @@ from homeassistant.helpers.update_coordinator import (
 from homeassistant.components.binary_sensor import (
     BinarySensorEntity,
 )
+from homeassistant.helpers.restore_state import RestoreEntity
 
 from ..intelligent import (
   is_in_planned_dispatch
@@ -19,7 +20,7 @@ from .base import OctopusEnergyIntelligentSensor
 
 _LOGGER = logging.getLogger(__name__)
 
-class OctopusEnergyIntelligentDispatching(CoordinatorEntity, BinarySensorEntity, OctopusEnergyIntelligentSensor):
+class OctopusEnergyIntelligentDispatching(CoordinatorEntity, BinarySensorEntity, OctopusEnergyIntelligentSensor, RestoreEntity):
   """Sensor for determining if an intelligent is dispatching."""
 
   def __init__(self, hass: HomeAssistant, coordinator, device):
@@ -31,7 +32,10 @@ class OctopusEnergyIntelligentDispatching(CoordinatorEntity, BinarySensorEntity,
     self._state = None
     self._attributes = {
       "planned_dispatches": [],
-      "completed_dispatches": []
+      "completed_dispatches": [],
+      "last_updated_timestamp": None,
+      "vehicle_battery_size_in_kwh": device["vehicleBatterySizeInKwh"],
+      "charge_point_power_in_kw": device["chargePointPowerInKw"]
     }
 
     self.entity_id = generate_entity_id("binary_sensor.{}", self.unique_id, hass=hass)
@@ -58,18 +62,21 @@ class OctopusEnergyIntelligentDispatching(CoordinatorEntity, BinarySensorEntity,
 
   @property
   def is_on(self):
-    """The state of the sensor."""
-    dispatches = self.coordinator.data
+    """Determine if OE is currently dispatching energy."""
+    dispatches = self.coordinator.data if self.coordinator is not None else None
     if (dispatches is not None):
       self._attributes["planned_dispatches"] = self.coordinator.data["planned"]
-      self._attributes["completed_dispatches"] = self.coordinator.data["complete"]
+      self._attributes["completed_dispatches"] = self.coordinator.data["completed"]
+
+      if "last_updated" in self.coordinator.data:
+        self._attributes["last_updated_timestamp"] = self.coordinator.data["last_updated"]
     else:
       self._attributes["planned_dispatches"] = []
       self._attributes["completed_dispatches"] = []
 
     current_date = now()
     self._state = is_in_planned_dispatch(current_date, self._attributes["planned_dispatches"])
-
+    
     return self._state
 
   async def async_added_to_hass(self):

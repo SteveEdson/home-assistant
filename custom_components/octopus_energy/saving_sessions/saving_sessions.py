@@ -58,8 +58,8 @@ class OctopusEnergySavingSessions(CoordinatorEntity, BinarySensorEntity, Restore
 
   @property
   def is_on(self):
-    """The state of the sensor."""
-    saving_session = self.coordinator.data
+    """Determine if the user is in a saving session."""
+    saving_session = self.coordinator.data if self.coordinator is not None else None
     if (saving_session is not None and "events" in saving_session):
       self._events = saving_session["events"]
     else:

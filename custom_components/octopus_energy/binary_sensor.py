@@ -10,7 +10,7 @@ from .saving_sessions.saving_sessions import OctopusEnergySavingSessions
 from .target_rates.target_rate import OctopusEnergyTargetRate
 from .intelligent.dispatching import OctopusEnergyIntelligentDispatching
 from .api_client import OctopusEnergyApiClient
-from .intelligent import is_intelligent_tariff
+from .intelligent import async_mock_intelligent_data, is_intelligent_tariff, mock_intelligent_device
 from .utils import get_active_tariff_code
 
 from .const import (
@@ -30,14 +30,12 @@ from .const import (
 
 _LOGGER = logging.getLogger(__name__)
 
-SCAN_INTERVAL = timedelta(minutes=1)
-
 async def async_setup_entry(hass, entry, async_add_entities):
   """Setup sensors based on our entry"""
 
   if CONFIG_MAIN_API_KEY in entry.data:
-    await async_setup_season_sensors(hass, entry, async_add_entities)
-    # await async_setup_intelligent_sensors(hass, async_add_entities)
+    await async_setup_saving_session_sensors(hass, entry, async_add_entities)
+    await async_setup_intelligent_sensors(hass, async_add_entities)
   elif CONFIG_TARGET_NAME in entry.data:
     await async_setup_target_sensors(hass, entry, async_add_entities)
 
@@ -63,8 +61,8 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
   return True
 
-async def async_setup_season_sensors(hass, entry, async_add_entities):
-  _LOGGER.debug('Setting up Season Saving entity')
+async def async_setup_saving_session_sensors(hass, entry, async_add_entities):
+  _LOGGER.debug('Setting up Saving Session entities')
   config = dict(entry.data)
 
   if entry.options:
@@ -92,11 +90,16 @@ async def async_setup_intelligent_sensors(hass, async_add_entities):
         has_intelligent_tariff = True
         break
 
-  if has_intelligent_tariff:
+  should_mock_intelligent_data = await async_mock_intelligent_data(hass)
+  if has_intelligent_tariff or should_mock_intelligent_data:
     coordinator = hass.data[DOMAIN][DATA_INTELLIGENT_DISPATCHES_COORDINATOR]
     client: OctopusEnergyApiClient = hass.data[DOMAIN][DATA_CLIENT]
 
-    device = await client.async_get_intelligent_device(hass.data[DOMAIN][DATA_ACCOUNT_ID])
+    account_id = hass.data[DOMAIN][DATA_ACCOUNT_ID]
+    if should_mock_intelligent_data:
+      device = mock_intelligent_device()
+    else:
+      device = await client.async_get_intelligent_device(account_id)
 
     async_add_entities([OctopusEnergyIntelligentDispatching(hass, coordinator, device)], True)
 

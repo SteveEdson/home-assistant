@@ -1,27 +1,26 @@
-from datetime import timedelta
 import logging
 
 from homeassistant.core import HomeAssistant
 
-from homeassistant.util.dt import (utcnow, as_utc, parse_datetime)
 from homeassistant.components.sensor import (
     SensorDeviceClass
 )
-
-from ..api_client import (OctopusEnergyApiClient)
+from homeassistant.helpers.update_coordinator import (
+  CoordinatorEntity,
+)
 
 from .base import (OctopusEnergyElectricitySensor)
 
 _LOGGER = logging.getLogger(__name__)
 
-class OctopusEnergyElectricityCurrentStandingCharge(OctopusEnergyElectricitySensor):
+class OctopusEnergyElectricityCurrentStandingCharge(CoordinatorEntity, OctopusEnergyElectricitySensor):
   """Sensor for displaying the current standing charge."""
 
-  def __init__(self, hass: HomeAssistant, client: OctopusEnergyApiClient, tariff_code, meter, point):
+  def __init__(self, hass: HomeAssistant, coordinator, tariff_code, meter, point):
     """Init sensor."""
+    super().__init__(coordinator)
     OctopusEnergyElectricitySensor.__init__(self, hass, meter, point)
 
-    self._client = client
     self._tariff_code = tariff_code
 
     self._state = None
@@ -60,30 +59,21 @@ class OctopusEnergyElectricityCurrentStandingCharge(OctopusEnergyElectricitySens
   @property
   def state(self):
     """Retrieve the latest electricity standing charge"""
+    _LOGGER.debug('Updating OctopusEnergyElectricityCurrentStandingCharge')
+
+    standard_charge_result = self.coordinator.data[self._mpan] if self.coordinator is not None and self.coordinator.data is not None and self._mpan in self.coordinator.data else None
+    
+    if standard_charge_result is not None:
+      self._latest_date = standard_charge_result["valid_from"]
+      self._state = standard_charge_result["value_inc_vat"] / 100
+
+      # Adjust our period, as our gas only changes on a daily basis
+      self._attributes["valid_from"] = standard_charge_result["valid_from"]
+      self._attributes["valid_to"] = standard_charge_result["valid_to"]
+    else:
+      self._state = None
+
     return self._state
-
-  async def async_update(self):
-    """Get the current price."""
-    # Find the current rate. We only need to do this every day
-
-    utc_now = utcnow()
-    if (self._latest_date is None or (self._latest_date + timedelta(days=1)) < utc_now):
-      _LOGGER.debug('Updating OctopusEnergyElectricityCurrentStandingCharge')
-
-      period_from = as_utc(parse_datetime(utc_now.strftime("%Y-%m-%dT00:00:00Z")))
-      period_to = as_utc(parse_datetime((utc_now + timedelta(days=1)).strftime("%Y-%m-%dT00:00:00Z")))
-
-      standard_charge_result = await self._client.async_get_electricity_standing_charge(self._tariff_code, period_from, period_to)
-      
-      if standard_charge_result is not None:
-        self._latest_date = period_from
-        self._state = standard_charge_result["value_inc_vat"] / 100
-
-        # Adjust our period, as our gas only changes on a daily basis
-        self._attributes["valid_from"] = period_from
-        self._attributes["valid_to"] = period_to
-      else:
-        self._state = None
 
   async def async_added_to_hass(self):
     """Call when entity about to be added to hass."""
