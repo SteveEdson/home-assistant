@@ -198,8 +198,8 @@ class LuiPagesGen(object):
                 return ""
             if item.condStateNot is not None and item.condStateNot == state:
                 return ""
-            if item.condTemplate is not None and apis.ha_api.render_template(item.condTemplate):
-                return ""
+        if item.condTemplate is not None and apis.ha_api.render_template(item.condTemplate):
+            return ""
 
         # Internal types
         if entityType == "delete":
@@ -212,7 +212,7 @@ class LuiPagesGen(object):
                 if status_entity:
                     icon_res = get_icon_ha(item.status, overwrite=icon)
                     icon_color = self.get_entity_color(status_entity, ha_type=item.status.split(".")[0], overwrite=colorOverride)
-                    if item.status.startswith("sensor") and cardType == "cardGrid" and item.iconOverride is None:
+                    if item.status.startswith("sensor") and (cardType == "cardGrid" or cardType == "cardGrid2") and item.iconOverride is None:
                         icon_res = status_entity.state[:4]
                         if icon_res[-1] == ".":
                             icon_res = icon_res[:-1]
@@ -236,7 +236,7 @@ class LuiPagesGen(object):
             if status_entity:
                 icon_id = get_icon_ha(item.status, overwrite=icon)
                 icon_color = self.get_entity_color(status_entity, ha_type=item.status.split(".")[0], overwrite=colorOverride)
-                if item.status.startswith("sensor") and cardType == "cardGrid" and item.iconOverride is None:
+                if item.status.startswith("sensor") and (cardType == "cardGrid" or cardType == "cardGrid2") and item.iconOverride is None:
                     icon_id = status_entity.state[:4]
                     if icon_id[-1] == ".":
                         icon_id = icon_id[:-1]
@@ -299,7 +299,7 @@ class LuiPagesGen(object):
             value = entity.state
             
             # limit value to 4 chars on us-p
-            if self._config.get("model") == "us-p":
+            if self._config.get("model") == "us-p" and cardType == "cardEntities":
                 value = entity.state[:4]
                 if value[-1] == ".":
                     value = value[:-1]
@@ -309,7 +309,7 @@ class LuiPagesGen(object):
             value = value + unit_of_measurement
             if entityType == "binary_sensor":
                 value = get_translation(self._locale, f"backend.component.binary_sensor.state.{device_class}.{entity.state}")
-            if cardType == "cardGrid" and entityType == "sensor" and icon is None:
+            if (cardType == "cardGrid" or cardType == "cardGrid2") and entityType == "sensor" and icon is None:
                 icon_id = entity.state[:4]
                 if icon_id[-1] == ".":
                     icon_id = icon_id[:-1]
@@ -376,10 +376,10 @@ class LuiPagesGen(object):
                 global babel_spec
                 if babel_spec is not None:
                     dateformat = "E" if item.nameOverride is None else item.nameOverride
-                    name = babel.dates.format_datetime(fdate, dateformat, locale=self._locale)
+                    name = babel.dates.format_datetime(fdate.astimezone(), dateformat, locale=self._locale)
                 else:
                     dateformat = "%a" if item.nameOverride is None else item.nameOverride
-                    name = fdate.strftime(dateformat)
+                    name = fdate.astimezone().strftime(dateformat)
                 icon_id = get_icon_ha(entityId, stateOverwrite=entity.attributes.forecast[item.stype]['condition'])
                 value = f'{entity.attributes.forecast[item.stype].get("temperature", "")}{unit}'
                 color = self.get_entity_color(entity, ha_type=entityType, stateOverwrite=entity.attributes.forecast[item.stype]['condition'], overwrite=colorOverride)
@@ -390,7 +390,10 @@ class LuiPagesGen(object):
         # Overwrite for value
         ovalue = item.value
         if ovalue is not None:
-            value = apis.ha_api.render_template(ovalue)
+            splitted_string = ovalue.rpartition('}')
+            template_string = f"{splitted_string[0]}{splitted_string[1]}"
+            templates_result = apis.ha_api.render_template(template_string)
+            value = f"{templates_result}{splitted_string[2]}"
         if self._locale == "he_IL" and any("\u0590" <= c <= "\u05EA" for c in name):
             name = name[::-1]
         # use uuid instead for some types and probably expand on this in future

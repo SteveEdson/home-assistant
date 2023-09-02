@@ -85,7 +85,11 @@ class LuiController(object):
         elif type(defaultBackgroundColor) is list:
             dbc = rgb_dec565(defaultBackgroundColor)
 
-        self._send_mqtt_msg(f"dimmode~{sleepBrightness}~{brightness}~{dbc}")
+        featureExperimentalSliders=0
+        if self._config.get("featureExperimentalSliders"):
+            featureExperimentalSliders=1
+
+        self._send_mqtt_msg(f"dimmode~{sleepBrightness}~{brightness}~{dbc}~~{featureExperimentalSliders}")
         
     def calc_current_brightness(self, sleep_brightness_config):
         current_screensaver_brightness = 20
@@ -160,21 +164,22 @@ class LuiController(object):
         res_uuid = "uuid.notfound"
         if entity in sum(entities_on_card.values(), []):
             for uuid, names in entities_on_card.items():
-                apis.ha_api.log(f"test124 items: {entities_on_card.items()} names: {names}")
+                #apis.ha_api.log(f"test124 items: {entities_on_card.items()} names: {names}")
+                #apis.ha_api.log(f"State change callback matched for entity on current page: {names}")
                 if entity in names:
                     res_uuid = uuid
 
             #apis.ha_api.log(f"Callback Entity is on current page: {entity}")
             self._pages_gen.render_card(self._current_card, send_page_type=False)
             # send detail page update, just in case
-            if self._current_card.cardType in ["cardGrid", "cardEntities", "cardMedia"]:
+            if self._current_card.cardType in ["cardGrid", "cardGrid2", "cardEntities", "cardMedia"]:
                 if entity.startswith("light"):
                     self._pages_gen.generate_light_detail_page(res_uuid)
                 if entity.startswith("cover"):
                     self._pages_gen.generate_shutter_detail_page(entity)
                 if entity.startswith("fan"):
                     self._pages_gen.generate_fan_detail_page(entity)
-                if entity.startswith("input_select"):
+                if entity.startswith("input_select") or entity.startswith("select"):
                     self._pages_gen.generate_input_select_detail_page(entity)
                 if entity.startswith("media_player"):
                     self._pages_gen.generate_input_select_detail_page(entity)
@@ -274,7 +279,7 @@ class LuiController(object):
             apis.ha_api.get_entity(entity_id).call_service("close_cover_tilt")
         if button_type == "tiltSlider":
             pos = int(value)
-            apis.ha_api.get_entity(entity_id).call_service("set_cover_tilt_position", position=pos)
+            apis.ha_api.get_entity(entity_id).call_service("set_cover_tilt_position", tilt_position=pos)
 
 
         if button_type == "button":
