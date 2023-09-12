@@ -135,7 +135,6 @@ cards:
   - type: map
     aspect_ratio: 16:9
     dark_mode: true
-    auto_fit: true
     entities:
       - entity: device_tracker.sm_s908b
       - entity: device_tracker.pixel_7_pro
@@ -144,7 +143,7 @@ cards:
   - type: custom:sun-card
     show_elevation: true
   - type: calendar
-    initial_view: listWeek
+    initial_view: list
     entities:
       - calendar.steve_s_calendar
       - calendar.steve_spacestardigital_com
@@ -231,26 +230,26 @@ cards:
           action: toggle
         entity: lock.phoenix_doors
         style:
-          top: 5%
-          left: 10%
+          top: 8%
+          left: 5%
       - type: state-icon
         tap_action:
           action: toggle
         entity: lock.phoenix_charge_port_latch
         style:
-          top: 10%
-          left: 10%
+          top: 16%
+          left: 5%
       - type: state-icon
         tap_action:
           action: toggle
         entity: cover.phoenix_charger_door
         style:
-          top: 5%
-          left: 15% 
+          top: 24%
+          left: 5% 
       - type: state-icon
         tap_action:
           action: toggle
         entity: cover.phoenix_windows
         style:
-          top: 5%
-          left: 20%  
+          top: 32%
+          left: 5%  
