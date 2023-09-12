@@ -252,4 +252,5 @@ cards:
         entity: sensor.phoenix_battery
         style:
           top: 8%
-          left: 5%  
+          left: 5% 
+          color: white 
