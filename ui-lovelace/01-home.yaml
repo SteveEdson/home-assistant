@@ -230,26 +230,19 @@ cards:
           action: toggle
         entity: lock.phoenix_doors
         style:
-          top: 8%
-          left: 5%
-      - type: state-icon
-        tap_action:
-          action: toggle
-        entity: lock.phoenix_charge_port_latch
-        style:
-          top: 16%
-          left: 5%
+          top: 54%
+          left: 63%
       - type: state-icon
         tap_action:
           action: toggle
         entity: cover.phoenix_charger_door
         style:
-          top: 24%
-          left: 5% 
+          top: 32%
+          left: 86% 
       - type: state-icon
         tap_action:
           action: toggle
         entity: cover.phoenix_windows
         style:
-          top: 32%
-          left: 5%  
+          top: 30%
+          left: 73%  
