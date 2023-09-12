@@ -246,3 +246,10 @@ cards:
         style:
           top: 30%
           left: 73%  
+      - type: state-icon
+        tap_action:
+          action: toggle
+        entity: sensor.phoenix_battery
+        style:
+          top: 5%
+          left: 5%  
