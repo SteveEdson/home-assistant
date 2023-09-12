@@ -139,7 +139,7 @@ cards:
     entities:
       - entity: device_tracker.sm_s908b
       - entity: device_tracker.pixel_7_pro
-      - entity: device_tracker.330i
+      - entity: device_tracker.phoenix_location_tracker
     hours_to_show: 6
   - type: custom:sun-card
     show_elevation: true
