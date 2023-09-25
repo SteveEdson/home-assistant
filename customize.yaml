@@ -176,3 +176,6 @@ switch.ensuite_switch_left:
 switch.ensuite_switch_right:
   device_class: fan
   friendly_name: Ensuite Fan
+device_tracker.phoenix_location_tracker:
+  friendly_name: Tesla
+  
