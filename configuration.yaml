@@ -51,6 +51,8 @@ lovelace:
       type: module
     - url: /hacsfiles/lovelace-mushroom/mushroom.js
       type: module
+    - url: /local/community/power-flow-card-plus/power-flow-card-plus.js
+      type: module  
       # - url: /local/custom_ui/custom-header.js
       #   type: module
 
