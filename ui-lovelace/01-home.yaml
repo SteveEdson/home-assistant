@@ -244,11 +244,6 @@ cards:
   - type: sensor
     entity: sensor.sm_s908b_battery_level
     graph: line
-#      - type: map
-#        aspect_ratio: 16:9
-#        default_zoom: 16
-#        entities:
-#          - device_tracker.steveedson_oneplus5t
 
   - type: custom:mushroom-lock-card
     entity: lock.330i_lock
