@@ -2,13 +2,13 @@ path: office
 title: Office
 icon: mdi:controller
 cards:
-  - type: entity-button
+  - type: button
     entity: switch.aegis_pc
 
-  - type: entity-button
+  - type: button
     entity: switch.office_porsche_light_socket_1
 
-  - type: entity-button
+  - type: button
     entity: switch.office_tube_socket_1
 
   - type: entities
