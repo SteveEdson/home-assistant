@@ -45,7 +45,7 @@ cards:
           top: 50%
           left: 70%
 
-  - type: entity-button
+  - type: button
     entity: script.find_phone
     tap_action:
       action: call-service
