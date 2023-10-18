@@ -162,10 +162,4 @@ cards:
       volume: false
       source: true
       power_state: true
-#        shortcuts:
-#          columns: 4 # Max buttons per row
-#          buttons:
-#            # Start predefined playlist
-#            - icon: mdi:radio
-#              type: script
-#              id: script.play_radio_in_office
+
