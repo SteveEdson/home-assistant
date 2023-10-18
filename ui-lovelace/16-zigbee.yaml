@@ -44,12 +44,6 @@ cards:
         tap_action:
           action: call-service
           service: script.update_zigbee_device
-#      - entity: input_text.zigbee2mqtt_old_name
-#      - entity: input_text.zigbee2mqtt_new_name
-#      - entity: script.zigbee2mqtt_rename
-#      - type: divider
-#      - entity: input_text.zigbee2mqtt_remove
-#      - entity: script.zigbee2mqtt_remove
   - type: custom:auto-entities
     card:
       type: entities
