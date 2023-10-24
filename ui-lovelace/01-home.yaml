@@ -210,13 +210,6 @@ cards:
       home:
         entity: sensor.myenergi_my_home_generated_today
         color_icon: solar
-      # fossil_fuel_percentage:
-      #   entity: sensor.fossil_fuel_percentage
-      #   icon: mdi:pine-tree
-      #   color_icon: true
-      #   display_zero: true
-      #   name: Non Fossil
-      #   state_type: power
       grid:
         icon: mdi:ab-testing
         name: Provider
