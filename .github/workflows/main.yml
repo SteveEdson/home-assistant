@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        HA_VERSION: [dev, beta, stable]
+        version: ["stable", "beta", "dev"]
       max-parallel: 3
 
     # The type of runner that the job will run on
@@ -35,4 +35,5 @@ jobs:
       uses: frenck/action-home-assistant@v1.4.1
       with:
         secrets: "secrets.example.yaml"
-        version: matrix.HA_VERSION
+        version: "${{ matrix.version }}"
+        path: "./"
