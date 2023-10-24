@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        HA_VERSION: [STABLE, RC, DEV]
+        HA_VERSION: [dev, beta, stable]
       max-parallel: 3
 
     # The type of runner that the job will run on
@@ -28,15 +28,11 @@ jobs:
     # Chec  ks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v4
 
-    - run: mv secrets.example.yaml secrets.yaml
-
     - run: mv google_service_account.example.json google_service_account.json
 
     # Runs a single command using the runners shell
     - name: Home Assistant Configuration Check
-      uses: steveedson/action-ha-config-check@master
+      uses: frenck/action-home-assistant@v1.4.1
       with:
-        # The version to use of Home Assistant ('DEV', 'RC', 'STABLE')
+        secrets: "secrets.example.yaml"
         version: matrix.HA_VERSION
-        # Relative path to your configuration directory if not in the root
-        config_path: .
