@@ -1,0 +1,40 @@
+- id: '1675159427448'
+  alias: Toggle Spotify
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ''
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: media_player.spotify_steve_edson
+        state: playing
+      sequence:
+      - service: media_player.media_pause
+        data: {}
+        target:
+          entity_id: media_player.spotify_steve_edson
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.spotify_steve_edson
+          state: playing
+      sequence:
+      - service: media_player.play_media
+        target:
+          entity_id: media_player.spotify_steve_edson
+        data:
+          media_content_id: ''
+          media_content_type: ''
+        metadata: {}
+  mode: single
+- id: '8415430427624'
+  alias: New Automation
+  description: ''
+  trigger: []
+  condition: []
+  action: []
+  mode: single

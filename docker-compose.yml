@@ -7,13 +7,14 @@ services:
 #      - doods
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
-    ports:
-      - 80:80
-      - 8123:8123
+#    ports:
+#      - 80:80
+#      - 8123:8123
     volumes:
       - ./:/config
       - /etc/localtime:/etc/localtime:ro
       - ./resources:/local
+      - /run/dbus:/run/dbus:ro
     restart: always
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "http://localhost:8123"]
@@ -34,12 +35,12 @@ services:
 #    restart: always
 
   appdaemon:
-    ports:
-      - '5055:5055'
+ #   ports:
+ #     - '5055:5055'
     environment:
       - 'HA_URL=https://home.edson.co'
-      - 'TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNzFjMTdkNjM3MWU0ODk0OWIxMTJjNTVlMmM5NjZmOSIsImlhdCI6MTY3MzgwMzI2NCwiZXhwIjoxOTg5MTYzMjY0fQ.WPP24ARbh877wewnU7czlKTRra0TMOL1oIOtpcsxH-8'
-      - 'DASH_URL=http://192.168.1.140:5055'
+      - 'TOKEN=${TOKEN}'
+      - 'DASH_URL=http://192.168.1.99:5055'
       - 'TZ=Europe/London'
     volumes:
       - ./appdaemon:/conf
@@ -47,15 +48,15 @@ services:
     restart: always
     image: 'acockburn/appdaemon:latest'
 
-  autoheal:
-    depends_on:
-      - homeassistant
-    restart: always
-    image: willfarrell/autoheal
-    environment:
-      - AUTOHEAL_CONTAINER_LABEL=all
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+#  autoheal:
+#    depends_on:
+#      - homeassistant
+#    restart: always
+#    image: willfarrell/autoheal
+#    environment:
+#      - AUTOHEAL_CONTAINER_LABEL=all
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
 
 #  mosquitto:
 #    restart: always
@@ -77,8 +78,8 @@ services:
     image: mariadb
     restart: always
     env_file: .env
-    ports:
-      - 3306:3306
+  #  ports:
+  #    - 3306:3306
     volumes:
       - 'mysql_data:/var/lib/mysql'
       - './db:/etc/mysql/conf.d'

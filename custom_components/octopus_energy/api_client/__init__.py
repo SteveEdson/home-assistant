@@ -5,9 +5,11 @@ from datetime import (datetime, timedelta, time)
 
 from homeassistant.util.dt import (as_utc, now, as_local, parse_datetime)
 
-from .utils import (
+from ..utils import (
   get_tariff_parts,
 )
+
+from .intelligent_settings import IntelligentSettings
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -134,6 +136,7 @@ intelligent_dispatches_query = '''query {{
     delta
     meta {{
 			source
+      location
 		}}
 	}}
 	completedDispatches(accountNumber: "{account_id}") {{
@@ -142,6 +145,7 @@ intelligent_dispatches_query = '''query {{
     delta
     meta {{
 			source
+      location
 		}}
 	}}
 }}'''
@@ -296,7 +300,7 @@ class RequestError(Exception): ...
 
 class OctopusEnergyApiClient:
 
-  def __init__(self, api_key, electricity_price_cap = None, gas_price_cap = None):
+  def __init__(self, api_key, electricity_price_cap = None, gas_price_cap = None, timeout_in_seconds = 15):
     if (api_key is None):
       raise Exception('API KEY is not set')
 
@@ -311,12 +315,14 @@ class OctopusEnergyApiClient:
     self._electricity_price_cap = electricity_price_cap
     self._gas_price_cap = gas_price_cap
 
+    self.timeout = aiohttp.ClientTimeout(total=timeout_in_seconds)
+
   async def async_refresh_token(self):
     """Get the user's refresh token"""
     if (self._graphql_expiration is not None and (self._graphql_expiration - timedelta(minutes=5)) > now()):
       return
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": api_token_query.format(api_key=self._api_key) }
       async with client.post(url, json=payload) as token_response:
@@ -336,7 +342,7 @@ class OctopusEnergyApiClient:
     """Get the user's account"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       # Get account response
       payload = { "query": account_query.format(account_id=account_id) }
@@ -439,7 +445,7 @@ class OctopusEnergyApiClient:
     """Get the user's seasons savings"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       # Get account response
       payload = { "query": saving_session_query.format(account_id=account_id) }
@@ -464,7 +470,7 @@ class OctopusEnergyApiClient:
     """Get the user's smart meter consumption"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
 
       payload = { "query": live_consumption_query.format(device_id=device_id, period_from=period_from.strftime("%Y-%m-%dT%H:%M:%S%z"), period_to=period_to.strftime("%Y-%m-%dT%H:%M:%S%z")) }
@@ -487,7 +493,7 @@ class OctopusEnergyApiClient:
   async def async_get_electricity_standard_rates(self, product_code, tariff_code, period_from, period_to): 
     """Get the current standard rates"""
     results = []
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}/electricity-tariffs/{tariff_code}/standard-unit-rates?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -502,7 +508,7 @@ class OctopusEnergyApiClient:
   async def async_get_electricity_day_night_rates(self, product_code, tariff_code, is_smart_meter, period_from, period_to):
     """Get the current day and night rates"""
     results = []
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}/electricity-tariffs/{tariff_code}/day-unit-rates?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -533,7 +539,7 @@ class OctopusEnergyApiClient:
 
     return results
 
-  async def async_get_electricity_rates(self, tariff_code, is_smart_meter, period_from, period_to):
+  async def async_get_electricity_rates(self, tariff_code: str, is_smart_meter: bool, period_from: datetime, period_to: datetime):
     """Get the current rates"""
 
     tariff_parts = get_tariff_parts(tariff_code)
@@ -549,7 +555,7 @@ class OctopusEnergyApiClient:
 
   async def async_get_electricity_consumption(self, mpan, serial_number, period_from, period_to):
     """Get the current electricity consumption"""
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/electricity-meter-points/{mpan}/meters/{serial_number}/consumption?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -580,7 +586,7 @@ class OctopusEnergyApiClient:
     product_code = tariff_parts.product_code
 
     results = []
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}/gas-tariffs/{tariff_code}/standard-unit-rates?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -594,7 +600,7 @@ class OctopusEnergyApiClient:
 
   async def async_get_gas_consumption(self, mprn, serial_number, period_from, period_to):
     """Get the current gas rates"""
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/gas-meter-points/{mprn}/meters/{serial_number}/consumption?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -617,7 +623,7 @@ class OctopusEnergyApiClient:
 
   async def async_get_product(self, product_code):
     """Get all products"""
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}'
       async with client.get(url, auth=auth) as response:
@@ -630,12 +636,9 @@ class OctopusEnergyApiClient:
       return None
     
     product_code = tariff_parts.product_code
-
-    if self.__is_tracker_tariff__(tariff_code):
-      return await self.__async_get_tracker_standing_charge__(tariff_code, period_from, period_to)
     
     result = None
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}/electricity-tariffs/{tariff_code}/standing-charges?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -657,11 +660,8 @@ class OctopusEnergyApiClient:
     
     product_code = tariff_parts.product_code
 
-    if self.__is_tracker_tariff__(tariff_code):
-      return await self.__async_get_tracker_standing_charge__(tariff_code, period_from, period_to)
-
     result = None
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       auth = aiohttp.BasicAuth(self._api_key, '')
       url = f'{self._base_url}/v1/products/{product_code}/gas-tariffs/{tariff_code}/standing-charges?period_from={period_from.strftime("%Y-%m-%dT%H:%M:%SZ")}&period_to={period_to.strftime("%Y-%m-%dT%H:%M:%SZ")}'
       async with client.get(url, auth=auth) as response:
@@ -679,7 +679,7 @@ class OctopusEnergyApiClient:
     """Get the user's intelligent dispatches"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       # Get account response
       payload = { "query": intelligent_dispatches_query.format(account_id=account_id) }
@@ -695,6 +695,7 @@ class OctopusEnergyApiClient:
                 "end": as_utc(parse_datetime(ev["endDt"])),
                 "charge_in_kwh": float(ev["delta"]) if "delta" in ev and ev["delta"] is not None else None,
                 "source": ev["meta"]["source"] if "meta" in ev and "source" in ev["meta"] else None,
+                "location": ev["meta"]["location"] if "meta" in ev and "location" in ev["meta"] else None,
               }, response_body["data"]["plannedDispatches"]
               if "plannedDispatches" in response_body["data"] and response_body["data"]["plannedDispatches"] is not None
               else [])
@@ -704,6 +705,7 @@ class OctopusEnergyApiClient:
                 "end": as_utc(parse_datetime(ev["endDt"])),
                 "charge_in_kwh": float(ev["delta"]) if "delta" in ev and ev["delta"] is not None else None,
                 "source": ev["meta"]["source"] if "meta" in ev and "source" in ev["meta"] else None,
+                "location": ev["meta"]["location"] if "meta" in ev and "location" in ev["meta"] else None,
               }, response_body["data"]["completedDispatches"]
               if "completedDispatches" in response_body["data"] and response_body["data"]["completedDispatches"] is not None
               else [])
@@ -718,7 +720,7 @@ class OctopusEnergyApiClient:
     """Get the user's intelligent settings"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_settings_query.format(account_id=account_id) }
       headers = { "Authorization": f"JWT {self._graphql_token}" }
@@ -729,23 +731,23 @@ class OctopusEnergyApiClient:
         _LOGGER.debug(f'Intelligent Settings: {response_body}')
         if (response_body is not None and "data" in response_body):
 
-          return {
-            "smart_charge": response_body["data"]["registeredKrakenflexDevice"]["suspended"] == False
-                            if "registeredKrakenflexDevice" in response_body["data"] and "suspended" in response_body["data"]["registeredKrakenflexDevice"]
-                            else None,
-            "charge_limit_weekday": int(response_body["data"]["vehicleChargingPreferences"]["weekdayTargetSoc"])
-                                    if "vehicleChargingPreferences" in response_body["data"] and "weekdayTargetSoc" in response_body["data"]["vehicleChargingPreferences"]
-                                    else None,
-            "charge_limit_weekend": int(response_body["data"]["vehicleChargingPreferences"]["weekendTargetSoc"])
-                                    if "vehicleChargingPreferences" in response_body["data"] and "weekendTargetSoc" in response_body["data"]["vehicleChargingPreferences"]
-                                    else None,
-            "ready_time_weekday": self.__ready_time_to_time__(response_body["data"]["vehicleChargingPreferences"]["weekdayTargetTime"])
-                                  if "vehicleChargingPreferences" in response_body["data"] and "weekdayTargetTime" in response_body["data"]["vehicleChargingPreferences"]
-                                  else None,
-            "ready_time_weekend": self.__ready_time_to_time__(response_body["data"]["vehicleChargingPreferences"]["weekendTargetTime"])
-                                  if "vehicleChargingPreferences" in response_body["data"] and "weekendTargetTime" in response_body["data"]["vehicleChargingPreferences"]
-                                  else None, 
-          }
+          return IntelligentSettings(
+            response_body["data"]["registeredKrakenflexDevice"]["suspended"] == False
+            if "registeredKrakenflexDevice" in response_body["data"] and "suspended" in response_body["data"]["registeredKrakenflexDevice"]
+            else None,
+            int(response_body["data"]["vehicleChargingPreferences"]["weekdayTargetSoc"])
+            if "vehicleChargingPreferences" in response_body["data"] and "weekdayTargetSoc" in response_body["data"]["vehicleChargingPreferences"]
+            else None,
+            int(response_body["data"]["vehicleChargingPreferences"]["weekendTargetSoc"])
+            if "vehicleChargingPreferences" in response_body["data"] and "weekendTargetSoc" in response_body["data"]["vehicleChargingPreferences"]
+            else None,
+            self.__ready_time_to_time__(response_body["data"]["vehicleChargingPreferences"]["weekdayTargetTime"])
+            if "vehicleChargingPreferences" in response_body["data"] and "weekdayTargetTime" in response_body["data"]["vehicleChargingPreferences"]
+            else None,
+            self.__ready_time_to_time__(response_body["data"]["vehicleChargingPreferences"]["weekendTargetTime"])
+            if "vehicleChargingPreferences" in response_body["data"] and "weekendTargetTime" in response_body["data"]["vehicleChargingPreferences"]
+            else None
+          )
         else:
           _LOGGER.error("Failed to retrieve intelligent settings")
     
@@ -761,30 +763,54 @@ class OctopusEnergyApiClient:
 
     return None
   
-  async def async_update_intelligent_car_preferences(
-      self, account_id: str,
-      weekday_target_percentage: int,
-      weekend_target_percentage: int,
-      weekday_target_time: time,
-      weekend_target_time: time,
+  async def async_update_intelligent_car_target_percentage(
+      self, 
+      account_id: str,
+      target_percentage: int
     ):
-    """Update a user's intelligent car preferences"""
+    """Update a user's intelligent car target percentage"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    settings = await self.async_get_intelligent_settings(account_id)
+
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_settings_mutation.format(
         account_id=account_id,
-        weekday_target_percentage=weekday_target_percentage,
-        weekend_target_percentage=weekend_target_percentage,
-        weekday_target_time=weekday_target_time.strftime("%H:%M"),
-        weekend_target_time=weekend_target_time.strftime("%H:%M")
+        weekday_target_percentage=target_percentage,
+        weekend_target_percentage=target_percentage,
+        weekday_target_time=settings.ready_time_weekday.strftime("%H:%M"),
+        weekend_target_time=settings.ready_time_weekend.strftime("%H:%M")
       ) }
 
       headers = { "Authorization": f"JWT {self._graphql_token}" }
       async with client.post(url, json=payload, headers=headers) as response:
         response_body = await self.__async_read_response__(response, url)
-        _LOGGER.debug(f'async_update_intelligent_car_preferences: {response_body}')
+        _LOGGER.debug(f'async_update_intelligent_car_target_percentage: {response_body}')
+
+  async def async_update_intelligent_car_target_time(
+      self, account_id: str,
+      target_time: time,
+    ):
+    """Update a user's intelligent car target time"""
+    await self.async_refresh_token()
+    
+    settings = await self.async_get_intelligent_settings(account_id)
+
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
+      url = f'{self._base_url}/v1/graphql/'
+      payload = { "query": intelligent_settings_mutation.format(
+        account_id=account_id,
+        weekday_target_percentage=settings.charge_limit_weekday,
+        weekend_target_percentage=settings.charge_limit_weekend,
+        weekday_target_time=target_time.strftime("%H:%M"),
+        weekend_target_time=target_time.strftime("%H:%M")
+      ) }
+
+      headers = { "Authorization": f"JWT {self._graphql_token}" }
+      async with client.post(url, json=payload, headers=headers) as response:
+        response_body = await self.__async_read_response__(response, url)
+        _LOGGER.debug(f'async_update_intelligent_car_target_time: {response_body}')
 
   async def async_turn_on_intelligent_bump_charge(
       self, account_id: str,
@@ -792,7 +818,7 @@ class OctopusEnergyApiClient:
     """Turn on an intelligent bump charge"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_turn_on_bump_charge_mutation.format(
         account_id=account_id,
@@ -809,7 +835,7 @@ class OctopusEnergyApiClient:
     """Turn off an intelligent bump charge"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_turn_off_bump_charge_mutation.format(
         account_id=account_id,
@@ -826,7 +852,7 @@ class OctopusEnergyApiClient:
     """Turn on an intelligent bump charge"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_turn_on_smart_charge_mutation.format(
         account_id=account_id,
@@ -843,7 +869,7 @@ class OctopusEnergyApiClient:
     """Turn off an intelligent bump charge"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_turn_off_smart_charge_mutation.format(
         account_id=account_id,
@@ -858,7 +884,7 @@ class OctopusEnergyApiClient:
     """Get the user's intelligent dispatches"""
     await self.async_refresh_token()
 
-    async with aiohttp.ClientSession() as client:
+    async with aiohttp.ClientSession(timeout=self.timeout) as client:
       url = f'{self._base_url}/v1/graphql/'
       payload = { "query": intelligent_device_query.format(account_id=account_id) }
       headers = { "Authorization": f"JWT {self._graphql_token}" }
@@ -883,18 +909,6 @@ class OctopusEnergyApiClient:
           _LOGGER.error("Failed to retrieve intelligent device")
     
     return None
-
-  def __is_tracker_tariff__(self, tariff_code):
-    tariff_parts = get_tariff_parts(tariff_code)
-    if tariff_parts is None:
-      return None
-    
-    product_code = tariff_parts.product_code
-
-    if product_code in self._product_tracker_cache:
-      return self._product_tracker_cache[product_code]
-    
-    return False
 
   def __get_interval_end(self, item):
     return item["interval_end"]

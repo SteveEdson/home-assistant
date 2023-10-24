@@ -1,8 +1,11 @@
+import logging
 from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
 from waste_collection_schedule import Collection
+
+_LOGGER = logging.getLogger(__name__)
 
 TITLE = "GVU Scheibbs"
 DESCRIPTION = "Source for waste collection services Association of Municipalities in the District of Scheibbs"
@@ -26,6 +29,9 @@ class Source:
         self._region = region
 
     def fetch(self):
+        _LOGGER.warning(
+            "The scheibbs_umweltverbaende_at source is depreciated and may be removed in the future. Please migrate to the umweltverbaende_at source"
+        )
         s = requests.Session()
         # get list of regions and weblinks
         r0 = s.get("https://scheibbs.umweltverbaende.at/?kat=32")
@@ -41,9 +47,7 @@ class Source:
                     soup = BeautifulSoup(r1.text, "html.parser")
                     schedule = soup.find_all("div", {"class": "tunterlegt"})
                     for day in schedule:
-                        txt = day.text.strip().split(
-                            "   "
-                        )  # this is not 3 space characters, the middle one is U+00a0
+                        txt = day.text.strip().split(" \u00a0 ")
                         entries.append(
                             Collection(
                                 date=datetime.strptime(txt[1], "%d.%m.%Y").date(),

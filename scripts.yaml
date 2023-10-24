@@ -1,0 +1,40 @@
+toggle_spotify_in_lounge:
+  alias: Toggle Spotify In Lounge
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: media_player.spotify_steve_edson
+        state: playing
+      sequence:
+      - service: media_player.media_pause
+        data: {}
+        target:
+          entity_id: media_player.spotify_steve_edson
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.spotify_steve_edson
+          state: playing
+      - condition: and
+        conditions:
+        - condition: not
+          conditions:
+          - condition: state
+            entity_id: media_player.spotify_steve_edson
+            state: playing
+          - condition: state
+            entity_id: media_player.spotify_steve_edson
+            state: paused
+      sequence:
+      - service: media_player.media_play
+        data: {}
+        target:
+          entity_id: media_player.spotify_steve_edson
+    default:
+    - service: spotcast.start
+      data:
+        device_name: foo
+  mode: single
+  icon: mdi:spotify
