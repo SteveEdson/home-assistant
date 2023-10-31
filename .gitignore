@@ -30,3 +30,5 @@ tts/
 .DS_Store
 camera-latest.mp4
 custom_components/hacs
+backups/
+google_service_account.json
