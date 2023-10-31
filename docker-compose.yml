@@ -75,16 +75,16 @@ services:
 #      - 'cron.action=restart'
 
   db:
-    image: mariadb
+    image: mysql:8
     restart: always
     env_file: .env
-  #  ports:
-  #    - 3306:3306
+    ports:
+     - 3306:3306
     volumes:
-      - 'mysql_data:/var/lib/mysql'
+      - 'mysql8_data:/var/lib/mysql'
       - './db:/etc/mysql/conf.d'
 
 volumes:
   mosquitto_data:
-  mysql_data:
+  mysql8_data:
 
