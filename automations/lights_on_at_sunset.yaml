@@ -13,7 +13,7 @@
   #   service: light.turn_on
   - service: light.turn_on
     data:
-      entity_id: smart_flood_lights
+      entity_id: light.smart_flood_lights
   - service: switch.turn_on
     data:
       entity_id: switch.bff5c4bbd438ed9847uxkj
