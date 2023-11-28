@@ -15,7 +15,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./resources:/local
       - /run/dbus:/run/dbus:ro
-    restart: always
+    restart: unless-stopped
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "http://localhost:8123"]
     #   interval: 1m30s
@@ -76,7 +76,7 @@ services:
 
   db:
     image: mysql:8
-    restart: always
+    restart: unless-stopped
     env_file: .env
     ports:
      - 3306:3306
