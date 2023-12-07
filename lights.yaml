@@ -47,11 +47,11 @@
 - platform: group
   name: Lounge Lights
   entities:
-    - light.hue_play_left
-    - light.hue_play_right
+    # - light.hue_play_left
+    # - light.hue_play_right
     - light.orb
     - light.lounge_tall_lamp
-    - light.lounge_spotlight
+    # - light.lounge_spotlight
 
 - platform: group
   name: Conservatory Lights
