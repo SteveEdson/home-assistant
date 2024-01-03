@@ -277,6 +277,15 @@ cards:
       - type: custom:slider-entity-row
         entity: light.lounge_spotlight
         toggle: true
+      - type: custom:slider-entity-row
+        entity: light.twigs
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.hue_play_left
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.hue_play_right
+        toggle: true
 
   - type: sensor
     entity: sensor.nspanel_lounge_temperature
