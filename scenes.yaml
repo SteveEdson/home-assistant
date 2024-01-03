@@ -2,7 +2,7 @@
   id: deep_blue
   entities:
     light.twigs_light:
-      state: on
+      state: "on"
       brightness: 255
 
 - name: Lounge Relaxed
@@ -27,7 +27,7 @@
       color_temp: 432
 
     # switch.my_smart_plug:
-    #   state: on
+    #   state: "on"
 
 - name: Ocean
   id: ocean
@@ -69,17 +69,17 @@
   id: bright
   entities:
     light.lounge_spotlight:
-      state: on
+      state: "on"
       color_temp: 350
       brightness: 255
 
     light.lounge_tall_lamp:
-      state: on
+      state: "on"
       color_temp: 350
       brightness: 255
 
     light.twigs_light:
-      state: on
+      state: "on"
 
 - name: "Lounge Off"
   id: lounge_off
@@ -103,102 +103,102 @@
   id: bedroom_main_lights
   entities:
     light.bedroom_light_lb:
-      state: off
+      state: "off"
 
     light.bedroom_light_rt:
-      state: off
+      state: "off"
 
     light.bedroom_light_lt:
-      state: off
+      state: "off"
 
     light.bedroom_light_rb:
-      state: off
+      state: "off"
 
     light.bedroom_lights:
-      state: on
+      state: "on"
       brightness: 255
 
 - name: Bedroom All Lights
   id: bedroom_all_lights
   entities:
     light.bedroom_light_lb:
-      state: on
+      state: "on"
       brightness: 255
 
     light.bedroom_light_rt:
-      state: on
+      state: "on"
       brightness: 255
 
     light.bedroom_light_lt:
-      state: on
+      state: "on"
       brightness: 255
 
     light.bedroom_light_rb:
-      state: on
+      state: "on"
       brightness: 255
 
     light.bedroom_lights:
-      state: on
+      state: "on"
       brightness: 255
 
     light.yeelight_bslamp1_7c49eb28d971:
-      state: on
+      state: "on"
       brightness: 255
 
 - name: Bedroom Steve Reading
   id: bedroom_steve_reading
   entities:
     light.bedroom_light_rb:
-      state: on
+      state: "on"
       brightness: 51
 
     light.bedroom_light_rt:
-      state: off
+      state: "off"
 
     light.bedroom_light_lt:
-      state: off
+      state: "off"
 
     light.bedroom_light_lb:
-      state: off
+      state: "off"
 
     light.bedroom_lights:
-      state: off
+      state: "off"
 
 - name: Bedroom Sophie Reading
   id: bedroom_sophie_reading
   entities:
     light.bedroom_light_lb:
-      state: on
+      state: "on"
       brightness: 51
 
     light.bedroom_light_rt:
-      state: off
+      state: "off"
 
     light.bedroom_light_lt:
-      state: off
+      state: "off"
 
     light.bedroom_light_rb:
-      state: off
+      state: "off"
 
     light.bedroom_lights:
-      state: off
+      state: "off"
 
 - name: Bedroom Reading
   id: bedroom_reading
   entities:
     light.bedroom_reading_lights:
-      state: on
+      state: "on"
       brightness: 255
 
     light.bedroom_lights:
-      state: off
+      state: "off"
 
 - name: Table Pink and Blue
   id: table_pink_and_blue
   entities:
     light.table_light_1_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 255
         - 43
@@ -206,7 +206,7 @@
 
     light.table_light_2_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 241
         - 80
@@ -214,7 +214,7 @@
 
     light.table_light_3_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 63
         - 79
@@ -225,16 +225,16 @@
   entities:
     light.twigs_light:
       brightness: 64
-      state: on
+      state: "on"
     light.lounge_tall_lamp_light:
       brightness: 163
-      state: on
+      state: "on"
     switch.32002710bcddc226b4b0: # Mini
-      state: on
+      state: "on"
     switch.bf4cadf5e3e38fddf078v2: # Bonsai
-      state: on
+      state: "on"
     light.lounge_spotlight_light:
-      state: on
+      state: "on"
       brightness: 255
       rgb_color:
         - 165
@@ -246,16 +246,16 @@
   entities:
     light.twigs_light:
       brightness: 64
-      state: on
+      state: "on"
     light.lounge_tall_lamp_light:
       brightness: 163
-      state: on
+      state: "on"
     switch.32002710bcddc226b4b0: # Mini
-      state: on
+      state: "on"
     switch.bf4cadf5e3e38fddf078v2: # Bonsai
-      state: on
+      state: "on"
     light.lounge_spotlight_light:
-      state: on
+      state: "on"
       brightness: 255
       rgb_color:
         - 255
@@ -267,7 +267,7 @@
   entities:
     light.table_light_1_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 255
         - 255
@@ -275,7 +275,7 @@
 
     light.table_light_2_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 255
         - 255
@@ -283,19 +283,19 @@
 
     light.table_light_3_light:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 255
         - 255
         - 255
 
 
-- name: Office Blue + Red
+- name: "Office Blue + Red"
   id: office_blue_red
   entities:
     light.hue_play_left:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 255
         - 0
@@ -303,7 +303,7 @@
 
     light.hue_play_right:
       brightness: 255
-      state: on
+      state: "on"
       rgb_color:
         - 0
         - 0
@@ -313,7 +313,7 @@
   id: office_off
   entities:
     light.hue_play_left:
-      state: off
+      state: "off"
 
     light.hue_play_right:
-      state: off
+      state: "off"
