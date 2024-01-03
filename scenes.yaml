@@ -69,7 +69,7 @@
       state: "on"
       color_temp: 454
       brightness_pct: 20
-      
+
    light.lounge_spotlight:
      state: "on"
      rgb_color:
@@ -119,7 +119,7 @@
       state: "on"
 
 - name: "Lounge All Off"
-  id: "lounge_dark"
+  id: lounge_dark
   entities:
     light.lounge_spotlight:
       state: "off"
@@ -325,32 +325,3 @@
         - 255
         - 255
         - 255
-
-
-- name: "Office Blue + Red"
-  id: office_blue_red
-  entities:
-    light.hue_play_left:
-      brightness: 255
-      state: "on"
-      rgb_color:
-        - 255
-        - 0
-        - 0
-
-    light.hue_play_right:
-      brightness: 255
-      state: "on"
-      rgb_color:
-        - 0
-        - 0
-        - 255
-
-- name: Office Off
-  id: office_off
-  entities:
-    light.hue_play_left:
-      state: "off"
-
-    light.hue_play_right:
-      state: "off"
