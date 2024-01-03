@@ -81,17 +81,23 @@
     light.twigs_light:
       state: on
 
-- name: Off
+- name: "Lounge Off"
   id: lounge_off
   entities:
     light.lounge_spotlight:
-      state: off
+      state: "off"
 
     light.lounge_tall_lamp:
-      state: off
+      state: "off"
 
-    light.twigs_light:
-      state: off
+    light.hue_play_left:
+      state: "off"
+
+    light.hue_play_right:
+      state: "off"
+
+    light.orb:
+      state: "off"
 
 - name: Bedroom Main Lights
   id: bedroom_main_lights
