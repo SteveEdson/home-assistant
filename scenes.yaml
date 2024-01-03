@@ -4,7 +4,7 @@
     light.lounge_tall_lamp:
       state: "on"
       color_temp: 454
-      brightness_pct: 51
+      brightness_pct: 20
 
     light.hue_play_left:
       state: "on"
@@ -65,7 +65,11 @@
 - name: Ocean
   id: ocean
   entities:
-
+   light.lounge_tall_lamp:
+      state: "on"
+      color_temp: 454
+      brightness_pct: 20
+      
    light.lounge_spotlight:
      state: "on"
      rgb_color:
