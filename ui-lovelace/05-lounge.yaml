@@ -130,95 +130,89 @@ cards:
           - 192
           brightness_pct: 100
   
-  - type: entities
-    show_header_toggle: false
-    entities:
+  
       # Displays the light entity. It's optional
-      - entity: light.hue_play_left
-      # Card configuration starts here
-      - type: 'custom:rgb-light-card'
-        entity: light.hue_play_left
-        colors:
-          - rgb_color:
-              - 255
-              - 0
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 255
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 0
-              - 255
-            brightness_pct: 100
-          - rgb_color:
-              - 246
-              - 222
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 228
-              - 188
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 133
-              - 152
-            brightness_pct: 100
-          - rgb_color:
-              - 244
-              - 0
-              - 192
-            brightness_pct: 100
-
-  - type: entities
-    show_header_toggle: false
-    entities:
-      # Displays the light entity. It's optional
-      - entity: light.hue_play_right
-      # Card configuration starts here
-      - type: 'custom:rgb-light-card'
-        entity: light.hue_play_right
-        colors:
-          - rgb_color:
-              - 255
-              - 0
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 255
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 0
-              - 255
-            brightness_pct: 100
-          - rgb_color:
-              - 246
-              - 222
-              - 0
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 228
-              - 188
-            brightness_pct: 100
-          - rgb_color:
-              - 0
-              - 133
-              - 152
-            brightness_pct: 100
-          - rgb_color:
-              - 244
-              - 0
-              - 192
-            brightness_pct: 100
+    - entity: light.hue_play_left
+    # Card configuration starts here
+    - type: 'custom:rgb-light-card'
+      entity: light.hue_play_left
+      colors:
+        - rgb_color:
+            - 255
+            - 0
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 255
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 0
+            - 255
+          brightness_pct: 100
+        - rgb_color:
+            - 246
+            - 222
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 228
+            - 188
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 133
+            - 152
+          brightness_pct: 100
+        - rgb_color:
+            - 244
+            - 0
+            - 192
+          brightness_pct: 100
+    # Displays the light entity. It's optional
+    - entity: light.hue_play_right
+    # Card configuration starts here
+    - type: 'custom:rgb-light-card'
+      entity: light.hue_play_right
+      colors:
+        - rgb_color:
+            - 255
+            - 0
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 255
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 0
+            - 255
+          brightness_pct: 100
+        - rgb_color:
+            - 246
+            - 222
+            - 0
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 228
+            - 188
+          brightness_pct: 100
+        - rgb_color:
+            - 0
+            - 133
+            - 152
+          brightness_pct: 100
+        - rgb_color:
+            - 244
+            - 0
+            - 192
+          brightness_pct: 100
 
   - type: entities
     show_header_toggle: false
