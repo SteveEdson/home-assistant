@@ -268,7 +268,6 @@ cards:
           service: scene.turn_on
           service_data:
             entity_id: scene.bright
-          data:
             transition: 2.5
       - entity: scene.lounge_relaxed
         tap_action:
@@ -276,7 +275,6 @@ cards:
           service: scene.turn_on
           service_data:
             entity_id: scene.lounge_relaxed
-          data:
             transition: 2.5
       - entity: scene.deep_blue
         tap_action:
@@ -284,7 +282,6 @@ cards:
           service: scene.turn_on
           service_data:
             entity_id: scene.deep_blue
-          data:
             transition: 2.5
       - entity: scene.ocean
         tap_action:
@@ -292,7 +289,6 @@ cards:
           service: scene.turn_on
           service_data:
             entity_id: scene.ocean
-          data:
             transition: 2.5
       - entity: scene.lounge_dark
         name: Lights Off
@@ -301,7 +297,6 @@ cards:
           service: scene.turn_on
           service_data:
             entity_id: scene.lounge_dark
-          data:
             transition: 2.5
   - type: entities
     title: Lights
