@@ -9,7 +9,7 @@
   id: lounge_relaxed
   entities:
     light.lounge_spotlight:
-      state: on
+      state: "on"
       brightness: 255
       rgb_color:
         - 255
@@ -17,8 +17,13 @@
         - 2
 
     light.lounge_tall_lamp:
-      state: on
-      brightness: 255
+      state: "on"
+      brightness: 175
+      color_temp: 432
+
+    light.orb:
+      state: "on"
+      brightness: 175
       color_temp: 432
 
     # switch.my_smart_plug:
@@ -27,27 +32,38 @@
 - name: Ocean
   id: ocean
   entities:
-#    light.corner_lamp:
-#      state: on
-#      rgb_color:
-#        - 188
-#        - 83
-#        - 255
-#      brightness: 255
 
-#    light.left_lamp:
-#      state: on
-#      rgb_color:
-#        - 77
-#        - 247
-#        - 255
-#      brightness: 255
+   light.lounge_spotlight:
+     state: "on"
+     rgb_color:
+       - 77
+       - 247
+       - 255
+     brightness: 255
 
-    light.twigs_light:
-      state: on
+   light.hue_play_right:
+     state: "on"
+     rgb_color:
+       - 77
+       - 247
+       - 255
+     brightness: 255
 
-    # switch.my_smart_plug:
-    #   state: on
+   light.hue_play_left:
+     state: "on"
+     rgb_color:
+       - 188
+       - 83
+       - 255
+     brightness: 255  
+
+   light.orb:
+     state: "on"
+     rgb_color:
+       - 188
+       - 83
+       - 255
+     brightness: 255
 
 - name: Bright
   id: bright
