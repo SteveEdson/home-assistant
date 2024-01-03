@@ -290,13 +290,13 @@ cards:
           service_data:
             entity_id: scene.ocean
 
-      - entity: scene.lounge_lights_off
+      - entity: scene.lounge_dark
         name: Lights Off
         tap_action:
           action: call-service
           service: scene.turn_on
           service_data:
-            entity_id: scene.lounge_lights_off
+            entity_id: scene.lounge_dark
 
   - type: entities
     title: Lights

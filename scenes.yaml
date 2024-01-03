@@ -1,9 +1,42 @@
 - name: Deep Blue
   id: deep_blue
   entities:
-    light.twigs_light:
+    light.lounge_tall_lamp:
       state: "on"
-      brightness: 255
+      color_temp: 454
+      brightness_pct: 51
+
+    light.hue_play_left:
+      state: "on"
+      brightness_pct: 100
+      rgb_color:
+        - 0
+        - 0
+        - 255
+
+    light.hue_play_right:
+      state: "on"
+      brightness_pct: 100
+      rgb_color:
+        - 255
+        - 0
+        - 0
+
+    light.orb:
+      state: "on"
+      brightness_pct: 100
+      rgb_color:
+        - 0
+        - 0
+        - 255
+
+    light.lounge_spotlight:
+      state: "on"
+      brightness_pct: 100
+      rgb_color:
+        - 255
+        - 0
+        - 0
 
 - name: Lounge Relaxed
   id: lounge_relaxed
@@ -81,8 +114,8 @@
     light.twigs_light:
       state: "on"
 
-- name: "Lounge Off"
-  id: lounge_off
+- name: "Lounge All Off"
+  id: "lounge_dark"
   entities:
     light.lounge_spotlight:
       state: "off"
