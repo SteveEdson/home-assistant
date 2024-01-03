@@ -4,7 +4,7 @@
     light.lounge_tall_lamp:
       state: "on"
       color_temp: 454
-      brightness_pct: 20
+      brightness: 175
 
     light.hue_play_left:
       state: "on"
@@ -68,7 +68,7 @@
    light.lounge_tall_lamp:
       state: "on"
       color_temp: 454
-      brightness_pct: 20
+      brightness: 175
 
    light.lounge_spotlight:
      state: "on"
@@ -123,18 +123,23 @@
   entities:
     light.lounge_spotlight:
       state: "off"
+      brightness: 0
 
     light.lounge_tall_lamp:
       state: "off"
+      brightness: 0
 
     light.hue_play_left:
       state: "off"
+      brightness: 0
 
     light.hue_play_right:
       state: "off"
+      brightness: 0
 
     light.orb:
       state: "off"
+      brightness: 0
 
 - name: Bedroom Main Lights
   id: bedroom_main_lights
