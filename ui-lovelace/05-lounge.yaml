@@ -90,46 +90,6 @@ cards:
           - 180
           - 192
           brightness_pct: 100
-    - entity: light.lounge_tall_lamp
-    # Card configuration starts here
-    - type: 'custom:rgb-light-card'
-      entity: light.lounge_tall_lamp
-      colors:
-        - rgb_color:
-          - 221
-          - 141
-          - 142
-          brightness_pct: 100
-        - rgb_color:
-          - 241
-          - 182
-          - 146
-          brightness_pct: 100
-        - rgb_color:
-          - 148
-          - 197
-          - 233
-          brightness_pct: 100
-        - rgb_color:
-          - 246
-          - 222
-          - 150
-          brightness_pct: 100
-        - rgb_color:
-          - 161
-          - 228
-          - 188
-          brightness_pct: 100
-        - rgb_color:
-          - 81
-          - 133
-          - 152
-          brightness_pct: 100
-        - rgb_color:
-          - 244
-          - 180
-          - 192
-          brightness_pct: 100      
     - entity: light.orb
     - type: 'custom:rgb-light-card'
       entity: light.orb
@@ -342,9 +302,6 @@ cards:
       - entity: switch.nspanel_lounge_relay_1
       - type: custom:slider-entity-row
         entity: light.twigs
-        toggle: true
-      - type: custom:slider-entity-row
-        entity: light.lounge_tall_lamp
         toggle: true
       - type: custom:slider-entity-row
         entity: light.lounge_spotlight
