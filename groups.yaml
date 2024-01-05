@@ -41,14 +41,6 @@ Xiaomi:
   - binary_sensor.cube_158d0001041dc7
   - sensor.illumination_7811dcb25e74
 
-Jaywing:
-  - sensor.pay_day
-  - sensor.next_holiday
-  - sensor.time_to_work
-  - sensor.time_to_home
-  - sensor.home_eta
-  - binary_sensor.home_away
-
 Home Office:
   - sensor.pressure_158d00027265db
   - sensor.humidity_158d00027265db

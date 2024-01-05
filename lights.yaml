@@ -50,7 +50,7 @@
     - light.hue_play_left
     - light.hue_play_right
     - light.orb
-    - light.lounge_tall_lamp
+    - light.lounge_stick
     - light.lounge_spotlight
 
 - platform: group
