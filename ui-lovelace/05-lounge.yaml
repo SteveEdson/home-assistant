@@ -169,7 +169,45 @@ cards:
           - 180
           - 192
           brightness_pct: 100
-  
+    - entity: light.lounge_stick
+    - type: 'custom:rgb-light-card'
+      entity: light.lounge_stick
+      colors:
+        - rgb_color:
+          - 221
+          - 141
+          - 142
+          brightness_pct: 100
+        - rgb_color:
+          - 241
+          - 182
+          - 146
+          brightness_pct: 100
+        - rgb_color:
+          - 148
+          - 197
+          - 233
+          brightness_pct: 100
+        - rgb_color:
+          - 246
+          - 222
+          - 150
+          brightness_pct: 100
+        - rgb_color:
+          - 161
+          - 228
+          - 188
+          brightness_pct: 100
+        - rgb_color:
+          - 81
+          - 133
+          - 152
+          brightness_pct: 100
+        - rgb_color:
+          - 244
+          - 180
+          - 192
+          brightness_pct: 100
   
       # Displays the light entity. It's optional
     - entity: light.hue_play_left
@@ -319,6 +357,9 @@ cards:
         toggle: true
       - type: custom:slider-entity-row
         entity: light.hue_play_right
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.lounge_stick
         toggle: true
 
   - type: sensor
