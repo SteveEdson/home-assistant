@@ -181,3 +181,6 @@ device_tracker.phoenix_location_tracker:
   
 switch.nspanel_lounge_relay_1:
   friendly_name: Lounge Big Lights
+
+sensor.nspanel_lounge_temperature:
+  friendly_name: Lounge Temperature
