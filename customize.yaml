@@ -179,3 +179,5 @@ switch.ensuite_switch_right:
 device_tracker.phoenix_location_tracker:
   friendly_name: Tesla
   
+switch.nspanel_lounge_relay_1:
+  friendly_name: Lounge Big Lights
