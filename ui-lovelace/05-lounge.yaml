@@ -129,9 +129,9 @@ cards:
           - 180
           - 192
           brightness_pct: 100
-    - entity: light.lounge_stick_2
+    - entity: light.smart_light_strip
     - type: 'custom:rgb-light-card'
-      entity: light.lounge_stick_2
+      entity: light.smart_light_strip
       colors:
         - rgb_color:
           - 221
@@ -311,7 +311,7 @@ cards:
         entity: light.hue_play_right
         toggle: true
       - type: custom:slider-entity-row
-        entity: light.lounge_stick_2
+        entity: light.smart_light_strip
         toggle: true
 
   - type: sensor
