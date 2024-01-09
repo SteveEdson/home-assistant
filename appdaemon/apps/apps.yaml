@@ -8,6 +8,7 @@ nspanel-1:
     panelRecvTopic: "tele/ns1/RESULT"
     panelSendTopic: "cmnd/ns1/CustomSend"
     model: eu
+    screenBrightness: 100
     sleepTimeout: 0
     sleepBrightness:
       - time: "7:00:00"
