@@ -110,14 +110,29 @@
       color_temp: 350
       brightness: 255
 
-    light.lounge_tall_lamp:
+    light.hue_play_left:
       state: "on"
       color_temp: 350
       brightness: 255
 
-    light.twigs_light:
+    light.hue_play_right:
       state: "on"
+      color_temp: 350
+      brightness: 255
 
+    light.smart_light_strip:
+      state: "on"
+      brightness: 255
+      rgb_color:
+        - 255
+        - 255
+        - 255
+
+    light.orb:
+      state: "on"
+      color_temp: 350
+      brightness: 255
+      
 - name: "Lounge All Off"
   id: lounge_dark
   entities:
