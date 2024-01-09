@@ -8,17 +8,17 @@ nspanel-1:
     panelRecvTopic: "tele/ns1/RESULT"
     panelSendTopic: "cmnd/ns1/CustomSend"
     model: eu
-    sleepTimeout: 20
+    sleepTimeout: 0
     sleepBrightness:
       - time: "7:00:00"
         value: 10
       - time: "23:59:59"
         value: 0
-    # screensaver:
-    #   #type: screensaver2
-    #   theme:
-    #     autoWeather: true
-    #   entity: weather.openweathermap
+    screensaver:
+      #type: screensaver2
+      theme:
+        autoWeather: true
+      entity: weather.openweathermap
     cards:
       - type: cardGrid
         title: Lounge
