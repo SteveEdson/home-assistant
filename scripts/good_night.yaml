@@ -3,7 +3,14 @@ sequence:
   # Turn off all lights
   - service: light.turn_off
     data:
-      entity_id: all
+      entity_id: >-
+        {% set domains = ['light'] %}
+        {% set exclude = ['light.smart_flood_lights','light.lounge_stick_2', 'light.wardrobe_lights'] %}
+        {%- for device in states|selectattr('domain','in', domains)|rejectattr('entity_id','in',exclude)|selectattr('state','in','on') %}
+          {%- if loop.first %}{%- else %},{% endif %}
+          {{device.entity_id }}
+          {%- if loop.last %}{% endif %}
+        {%- endfor  %}
       # transition: 2
   - service: switch.turn_off
     data:
