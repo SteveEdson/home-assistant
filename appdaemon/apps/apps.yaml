@@ -23,12 +23,11 @@ nspanel-1:
       - type: cardGrid
         title: Lounge
         entities:
-          - entity: light.lounge_lights
-          - entity: light.lounge_spotlight
-          - entity: light.lounge_tall_lamp
-          - entity: light.orb
-          - entity: light.hue_play_left
-          - entity: light.hue_play_right
+          - entity: scene.bright
+          - entity: scene.lounge_chill
+          - entity: scene.lounge_lights_off
+          - entity: scene.deep_blue
+          - entity: scene.ocean
           - entity: switch.mini_light_socket
       - type: cardMedia
         entity: media_player.spotify_steve_edson
