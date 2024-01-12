@@ -28,7 +28,24 @@ cards:
       - shuffle
     volume_controls:
       - volume_buttons
-    icon: mdi:speaker
+    icon: mdi:speaker  
+  - type: thermostat
+    entity: climate.phoenix_hvac_climate_system
+    features:
+      - type: climate-hvac-modes
+        hvac_modes:
+          - heat_cool
+          - 'off'
+      - type: climate-preset-modes
+        style: dropdown
+        preset_modes:
+          - Normal
+          - Defrost
+          - Keep On
+          - Dog Mode
+          - Camp Mode
+    show_current_as_primary: true
+    name: Phoenix Temperature  
   - type: custom:mushroom-media-player-card
     entity: media_player.downstairs_5
     use_media_info: true
