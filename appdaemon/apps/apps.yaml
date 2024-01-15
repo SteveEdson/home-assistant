@@ -25,7 +25,7 @@ nspanel-1:
         title: Lounge
         entities:
           - entity: scene.bright
-          - entity: scene.lounge_chill
+          - entity: scene.lounge_relaxed
           - entity: scene.lounge_lights_off
           - entity: scene.deep_blue
           - entity: scene.ocean
