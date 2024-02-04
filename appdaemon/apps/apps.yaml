@@ -29,7 +29,7 @@ nspanel-1:
           - entity: scene.lounge_lights_off
           - entity: scene.deep_blue
           - entity: scene.ocean
-          - entity: switch.mini_light_socket
+          - entity: media_player.lounge_tv_2
       - type: cardMedia
         entity: media_player.spotify_steve_edson
       - type: cardThermo
