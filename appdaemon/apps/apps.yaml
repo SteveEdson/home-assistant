@@ -31,6 +31,8 @@ nspanel-1:
           - entity: scene.ocean
           - entity: media_player.lounge_tv_2
       - type: cardMedia
+        entity: media_player.lounge_tv_2
+      - type: cardMedia
         entity: media_player.spotify_steve_edson
       - type: cardThermo
         title: Nest
