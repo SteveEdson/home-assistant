@@ -52,6 +52,11 @@
     - light.orb
     - light.smart_light_strip
     - light.lounge_spotlight
+
+- platform: group
+  name: Lounge Lights With Panel
+  entities:
+    - light.lounge_lights
     - light.lounge_panel
 
 - platform: group
