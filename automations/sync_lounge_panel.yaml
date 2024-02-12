@@ -1,0 +1,25 @@
+- id: "sync_lounge_panel_on" 
+  description: ""
+  mode: single
+  trigger:
+    - platform: state
+      entity_id:
+        - light.lounge_lights
+      to: "on"
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.lounge_panel
+
+- id: "sync_lounge_panel_off" 
+  description: ""
+  mode: single
+  trigger:
+    - platform: state
+      entity_id:
+        - light.lounge_lights
+      to: "off"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.lounge_panel
