@@ -52,6 +52,7 @@
     - light.orb
     - light.smart_light_strip
     - light.lounge_spotlight
+    - light.lounge_panel
 
 - platform: group
   name: Conservatory Lights
