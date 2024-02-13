@@ -316,7 +316,8 @@ cards:
       - type: custom:slider-entity-row
         entity: light.lounge_panel
         toggle: true
-
+  - type: media-control
+    entity: media_player.lounge_tv_2
   - type: sensor
     entity: sensor.nspanel_lounge_temperature
     graph: line
