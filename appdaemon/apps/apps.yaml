@@ -52,7 +52,7 @@ nursery_controller:
   class: E2002LightController
   controller: sensor.lounge_remote_action
   integration: z2m
-  light: light.yeelight_bslamp1_7c49eb28d971
+  light: light.orb
 kitchen_controller:
   module: controllerx
   class: HueDimmerController
