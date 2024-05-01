@@ -76,20 +76,20 @@
     to: 'off'
     for:
       minutes: 10
-    condition:
-      condition: and
-      conditions:
-        - condition: time
-          before: '23:30:00'
-          after: '08:00:00'
-        - condition: or
-          conditions:
-          - condition: state # after 20 mins before sunset
-            entity_id: binary_sensor.night
-            state: "on"
-          - condition: state
-            entity_id: input_boolean.guest_mode
-            state: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '23:30:00'
+        after: '08:00:00'
+      - condition: or
+        conditions:
+        - condition: state # after 20 mins before sunset
+          entity_id: binary_sensor.night
+          state: "on"
+        - condition: state
+          entity_id: input_boolean.guest_mode
+          state: 'on'
   action:
     - service: light.turn_off
       data:
@@ -107,20 +107,20 @@
     to: 'off'
     for:
       minutes: 1
-    condition:
-      condition: and
-      conditions:
-        - condition: time
-          after: '23:30:00'
-          before: "08:00:00"
-        - condition: or
-          conditions:
-          - condition: state # after 20 mins before sunset
-            entity_id: binary_sensor.night
-            state: "on"
-          - condition: state
-            entity_id: input_boolean.guest_mode
-            state: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '23:30:00'
+        before: "08:00:00"
+      - condition: or
+        conditions:
+        - condition: state # after 20 mins before sunset
+          entity_id: binary_sensor.night
+          state: "on"
+        - condition: state
+          entity_id: input_boolean.guest_mode
+          state: 'on'
   action:
     - service: light.turn_off
       data:
