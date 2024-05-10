@@ -84,7 +84,15 @@ services:
       - 'mysql8_data:/var/lib/mysql'
       - './db:/etc/mysql/conf.d'
 
+  ma:
+    network_mode: host
+    privileged: true
+    volumes:
+        - ma_data:/data
+    image: ghcr.io/music-assistant/server
+
 volumes:
   mosquitto_data:
   mysql8_data:
+  ma_data:
 
