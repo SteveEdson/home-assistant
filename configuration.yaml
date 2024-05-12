@@ -245,6 +245,28 @@ mqtt:
 
 light: !include lights.yaml
 
+template:
+  - trigger:
+      - platform: time_pattern
+        hours: /1
+      - platform: homeassistant
+        event: start
+    action:
+      - service: weather.get_forecasts
+        data:
+          type: daily
+        target:
+          entity_id: weather.openweathermap # change to your weather entity
+        response_variable: daily
+    sensor:
+      - name: Weather Forecast Daily
+        unique_id: weather_forecast_daily
+        state: "{{ states('weather.openweathermap') }}" # # change to your weather entity in this line
+        attributes:
+          temperature: "{{ state_attr('weather.openweathermap', 'temperature') }}" # change to your weather entity
+          temperature_unit: "{{ state_attr('weather.openweathermap', 'temperature_unit') }}" # change to your weather entity
+          forecast: "{{ daily['weather.openweathermap'].forecast }}" # change to your weather entity
+
 spotcast:
   sp_dc: !secret sp_dc
   sp_key: !secret sp_key
