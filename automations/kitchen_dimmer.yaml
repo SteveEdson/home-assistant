@@ -21,15 +21,15 @@
       data:
         entity_id: light.conservatory_lights
 
-- id: kitchen_dimmer_vacuum
-  alias: Kitchen Dimmer Vacuum
-  trigger:
-    platform: state
-    entity_id: sensor.kitchen_dimmer_switch_action
-    to: 'down-hold'
-  action:
-    - service: xiaomi_miio.vacuum_clean_zone
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
-        zone: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
-        repeats: 3
+# - id: kitchen_dimmer_vacuum
+#   alias: Kitchen Dimmer Vacuum
+#   trigger:
+#     platform: state
+#     entity_id: sensor.kitchen_dimmer_switch_action
+#     to: 'down-hold'
+#   action:
+#     - service: xiaomi_miio.vacuum_clean_zone
+#       data:
+#         entity_id: vacuum.xiaomi_vacuum_cleaner
+#         zone: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
+#         repeats: 3

@@ -14,28 +14,28 @@
     platform: time
     at: '19:30:00'
 
-- id: kitchen_vacuum
-  alias: Kitchen Vacuum
-  action:
-    - service: notify.home_alerts
-      data:
-        message: "Starting the vacuum in the kitchen in 3 minutes"
-    - delay:
-        minutes: 3
-    - service: xiaomi_miio.vacuum_clean_zone
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
-        zone: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
-        repeats: 3
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - wed
-  trigger:
-    platform: time
-    at: '23:00:00'
+# - id: kitchen_vacuum
+#   alias: Kitchen Vacuum
+#   action:
+#     - service: notify.home_alerts
+#       data:
+#         message: "Starting the vacuum in the kitchen in 3 minutes"
+#     - delay:
+#         minutes: 3
+#     - service: xiaomi_miio.vacuum_clean_zone
+#       data:
+#         entity_id: vacuum.xiaomi_vacuum_cleaner
+#         zone: [[23199,24008,29749,28808],[29654,26405,31454,28355]]
+#         repeats: 3
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: time
+#         weekday:
+#           - wed
+#   trigger:
+#     platform: time
+#     at: '23:00:00'
 
 - id: lounge_hallway_vacuum_alert
   alias: Lounge Hallway Vacuum Alert

@@ -1,7 +1,7 @@
-alias: Clean Hallway
-sequence:
-  - service: xiaomi_miio.vacuum_clean_zone
-    data_template:
-      entity_id: vacuum.xiaomi_vacuum_cleaner
-      repeats: 3
-      zone: [[29684,23319,33034,25969]]
+# alias: Clean Hallway
+# sequence:
+#   - service: xiaomi_miio.vacuum_clean_zone
+#     data_template:
+#       entity_id: vacuum.xiaomi_vacuum_cleaner
+#       repeats: 3
+#       zone: [[29684,23319,33034,25969]]

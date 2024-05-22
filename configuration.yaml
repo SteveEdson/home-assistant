@@ -125,8 +125,6 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 
 sensor: !include_dir_merge_list sensors/
 
-camera: !include cameras.yaml
-
 #image_processing:
 #  - platform: doods
 #    url: "http://192.168.1.140:8080"
