@@ -80,8 +80,6 @@ binary_sensor.ha_domain_due:
   hidden: true
 script.bin_notification:
   icon: mdi:delete
-binary_sensor.workday_sensor:
-  hidden: true
 light.gateway_light_7811dcb25e74:
   friendly_name: Gateway Light
   icon: mdi:google-circles-extended

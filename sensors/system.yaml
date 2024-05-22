@@ -1,9 +1,3 @@
-- platform: version
-  source: local
-
-- platform: version
-  source: docker
-
 - platform: statistics
   name: Hot Tub Stats
   state_characteristic: mean

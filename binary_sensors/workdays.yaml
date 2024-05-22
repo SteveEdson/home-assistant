@@ -1,8 +1,0 @@
-- platform: workday
-  country: GB
-  workdays:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
