@@ -114,8 +114,6 @@ logbook:
 
 energy:
 
-map:
-
 # Track the sun
 sun:
 
@@ -273,27 +271,7 @@ spotcast:
   country: GB
 
 media_player:
-  - platform: androidtv
-    name: Kitchen Fire Stick
-    device_class: firetv
-    #adbkey: "/config/.storage/androidtv_adbkey"
-    host: 192.168.1.139
-#      exclude_unnamed_apps: true
-    apps:
-      com.amazon.tv.launcher: "Fire TV"
-      air.ITVMobilePlayer: "ITV Player"
-    state_detection_rules:
-      'air.ITVMobilePlayer':
-        - 'playing':
-            'wake_lock_size': 4  # this indentation is important!
-        - 'playing':
-            'wake_lock_size': 3  # this indentation is important!
-        - 'paused':
-            'wake_lock_size': 2  # this indentation is important!
-        - 'paused':
-            'wake_lock_size': 1  # this indentation is important!
-        - 'standby'
-
+  
 bluetooth:
 
 assist_pipeline:
@@ -398,36 +376,6 @@ zone:
     radius: 150
     icon: mdi:brush
 
-proximity:
-  steve_home:
-    ignored_zones:
-      - work
-    devices:
-      - device_tracker.gm1910
-    tolerance: 10
-    unit_of_measurement: mi
-  home:
-    ignored_zones:
-      - work
-    devices:
-      - device_tracker.in2010
-      - device_tracker.gm1910
-    tolerance: 10
-    unit_of_measurement: mi
-  sophie_home:
-    ignored_zones:
-      - work
-    devices:
-      - device_tracker.in2010
-    tolerance: 20
-    unit_of_measurement: mi
-
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret xiaomi_gateway
-      mac: '78:11:DC:B2:5E:74'
-
 alarm_control_panel:
   - platform: manual
     name: House Alarm
@@ -447,8 +395,6 @@ recorder:
 
 person: !include people.yaml
 
-tplink:
-
 stream:
 
 emulated_hue:
@@ -456,14 +402,6 @@ emulated_hue:
 
 #prometheus:
 #  namespace: ha
-
-speedtestdotnet:
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-  scan_interval:
-    hours: 3
 
 rest_command:
   find_phone:
@@ -505,13 +443,6 @@ telegram_bot:
     api_key: !secret telegram_secret
     parse_mode: html
     allowed_chat_ids: !secret telegram_chats
-
-panel_iframe: !secret panels
-
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.1.216
-    token: !secret roborock_token
 
 owntracks:
   max_gps_accuracy: 200

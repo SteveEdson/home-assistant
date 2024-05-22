@@ -7,15 +7,7 @@
 #   stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_0
 #   name: G3 Flex
 
-- platform: generic
-  still_image_url: http://192.168.1.96/snap.jpeg
-  stream_source: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_2
-  name: G3 Flex Low Res
 
-- platform: ffmpeg
-  name: Front Mute
-  input: rtsp://192.168.1.60:7447/5de6188051ec9659eb6441b2_2
-  extra_arguments: -an
 
 # - platform: generic
 #   still_image_url: http://192.168.1.113/snap.jpeg

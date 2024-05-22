@@ -1,4 +1,0 @@
-- platform: steam_online
-  api_key: !secret steam_api_key
-  accounts:
-    - !secret steam_account_id
