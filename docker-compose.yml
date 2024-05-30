@@ -91,6 +91,14 @@ services:
         - ma_data:/data
     image: ghcr.io/music-assistant/server
 
+  pv2mqtt:
+    image: ghcr.io/wez/govee2mqtt:latest
+    container_name: govee2mqtt
+    restart: unless-stopped
+    env_file:
+      - .govee.env
+    network_mode: host
+
 volumes:
   mosquitto_data:
   mysql8_data:
