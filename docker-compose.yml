@@ -99,6 +99,30 @@ services:
       - .govee.env
     network_mode: host
 
+  whisper:
+    container_name: whisper
+    image: rhasspy/wyoming-whisper
+    command: --model tiny-int8 --language en
+    volumes:
+      - /opt/whisper-data:/data
+    environment:
+      - TZ=Europe/London
+    restart: unless-stopped
+    ports:
+      - 10300:10300
+
+  piper:
+    container_name: piper
+    image: rhasspy/wyoming-piper
+    command: --voice en_US-lessac-medium
+    volumes:
+      - /opt/piper-data:/data
+    environment:
+      - TZ=Europe/London
+    restart: unless-stopped
+    ports:
+      - 10200:10200
+
 volumes:
   mosquitto_data:
   mysql8_data:
