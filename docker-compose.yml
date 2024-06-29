@@ -104,7 +104,7 @@ services:
     image: rhasspy/wyoming-whisper
     command: --model tiny-int8 --language en
     volumes:
-      - /opt/whisper-data:/data
+      - whisper_data:/data
     environment:
       - TZ=Europe/London
     restart: unless-stopped
@@ -116,7 +116,7 @@ services:
     image: rhasspy/wyoming-piper
     command: --voice en_US-lessac-medium
     volumes:
-      - /opt/piper-data:/data
+      - piper_data:/data
     environment:
       - TZ=Europe/London
     restart: unless-stopped
@@ -124,6 +124,8 @@ services:
       - 10200:10200
 
 volumes:
+  piper_data:
+  whisper_data:
   mosquitto_data:
   mysql8_data:
   ma_data:
