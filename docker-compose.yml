@@ -123,9 +123,18 @@ services:
     ports:
       - 10200:10200
 
+  openwakeword:
+    image: dalehumby/openwakeword-rhasspy
+    restart: always
+    ports:
+      - "12202:12202/udp"
+    volumes:
+      - openwakeword:/config
+
 volumes:
   piper_data:
   whisper_data:
+  openwakeword:
   mosquitto_data:
   mysql8_data:
   ma_data:
