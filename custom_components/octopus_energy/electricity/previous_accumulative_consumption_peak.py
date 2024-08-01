@@ -1,7 +1,11 @@
 import logging
 from datetime import datetime
 
-from homeassistant.core import HomeAssistant
+from homeassistant.const import (
+    STATE_UNAVAILABLE,
+    STATE_UNKNOWN,
+)
+from homeassistant.core import HomeAssistant, callback
 
 from homeassistant.helpers.update_coordinator import (
   CoordinatorEntity,
@@ -12,27 +16,30 @@ from homeassistant.components.sensor import (
   SensorStateClass,
 )
 from homeassistant.const import (
-    ENERGY_KILO_WATT_HOUR
+    UnitOfEnergy
 )
+
+from homeassistant.util.dt import (utcnow)
 
 from . import (
   calculate_electricity_consumption_and_cost,
 )
 
 from .base import (OctopusEnergyElectricitySensor)
+from ..utils.attributes import dict_to_typed_dict
+from ..coordinators.previous_consumption_and_rates import PreviousConsumptionCoordinatorResult
 
 _LOGGER = logging.getLogger(__name__)
 
 class OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak(CoordinatorEntity, OctopusEnergyElectricitySensor, RestoreSensor):
   """Sensor for displaying the previous days accumulative electricity reading during peak hours."""
 
-  def __init__(self, hass: HomeAssistant, coordinator, tariff_code, meter, point):
+  def __init__(self, hass: HomeAssistant, coordinator, meter, point):
     """Init sensor."""
     CoordinatorEntity.__init__(self, coordinator)
     OctopusEnergyElectricitySensor.__init__(self, hass, meter, point)
 
     self._state = None
-    self._tariff_code = tariff_code
     self._last_reset = None
     self._hass = hass
 
@@ -65,9 +72,9 @@ class OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak(CoordinatorEnt
     return SensorStateClass.TOTAL
 
   @property
-  def unit_of_measurement(self):
+  def native_unit_of_measurement(self):
     """The unit of measurement of sensor"""
-    return ENERGY_KILO_WATT_HOUR
+    return UnitOfEnergy.KILO_WATT_HOUR
 
   @property
   def icon(self):
@@ -85,18 +92,24 @@ class OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak(CoordinatorEnt
     return self._last_reset
 
   @property
-  def state(self):
+  def native_value(self):
+    return self._state
+  
+  @callback
+  def _handle_coordinator_update(self) -> None:
     """Retrieve the previous days accumulative consumption"""
-    consumption_data = self.coordinator.data["consumption"] if self.coordinator is not None and self.coordinator.data is not None and "consumption" in self.coordinator.data else None
-    rate_data = self.coordinator.data["rates"] if self.coordinator is not None and self.coordinator.data is not None and "rates" in self.coordinator.data else None
-    standing_charge = self.coordinator.data["standing_charge"] if self.coordinator is not None and self.coordinator.data is not None and "standing_charge" in self.coordinator.data else None
+    result: PreviousConsumptionCoordinatorResult = self.coordinator.data if self.coordinator is not None and self.coordinator.data is not None else None
+    consumption_data = result.consumption if result is not None else None
+    rate_data = result.rates if result is not None else None
+    standing_charge = result.standing_charge if result is not None else None
+    current = consumption_data[0]["start"] if consumption_data is not None and len(consumption_data) > 0 else None
 
     consumption_and_cost = calculate_electricity_consumption_and_cost(
+      current,
       consumption_data,
       rate_data,
       standing_charge,
-      self._last_reset,
-      self._tariff_code
+      self._last_reset
     )
 
     if (consumption_and_cost is not None):
@@ -105,9 +118,12 @@ class OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak(CoordinatorEnt
       self._state = consumption_and_cost["total_consumption_peak"] if "total_consumption_peak" in consumption_and_cost else 0
       self._last_reset = consumption_and_cost["last_reset"]
 
-      self._attributes["last_calculated_timestamp"] = consumption_and_cost["last_calculated_timestamp"]
+      self._attributes["last_evaluated"] = utcnow()
 
-    return self._state
+    if result is not None:
+      self._attributes["data_last_retrieved"] = result.last_retrieved
+
+    super()._handle_coordinator_update()
 
   async def async_added_to_hass(self):
     """Call when entity about to be added to hass."""
@@ -116,12 +132,10 @@ class OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak(CoordinatorEnt
     state = await self.async_get_last_state()
     
     if state is not None and self._state is None:
-      self._state = state.state
-      self._attributes = {}
-      for x in state.attributes.keys():
-        self._attributes[x] = state.attributes[x]
-
-        if x == "last_reset":
-          self._last_reset = datetime.strptime(state.attributes[x], "%Y-%m-%dT%H:%M:%S%z")
+      self._state = None if state.state in (STATE_UNAVAILABLE, STATE_UNKNOWN) else state.state
+      
+      # For some reason this sensor is having issues with HA recognising last_reset updating unless we update it like the following :shrug:
+      self._attributes = dict_to_typed_dict(state.attributes, ["last_reset"])
+      self._last_reset = datetime.fromisoformat(state.attributes["last_reset"]) if "last_reset" in state.attributes else None
 
       _LOGGER.debug(f'Restored OctopusEnergyPreviousAccumulativeElectricityConsumptionPeak state: {self._state}')

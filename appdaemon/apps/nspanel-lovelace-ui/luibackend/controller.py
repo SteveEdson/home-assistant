@@ -3,6 +3,7 @@ import datetime
 import apis
 from helper import scale, pos_to_color, rgb_dec565
 from pages import LuiPagesGen
+from luibackend.config import Card
 
 class LuiController(object):
 
@@ -324,7 +325,7 @@ class LuiController(object):
                     apis.ha_api.get_entity(entity_id).call_service("lock")
             elif entity_id.startswith('button') or entity_id.startswith('input_button'):
                 apis.ha_api.get_entity(entity_id).call_service("press")
-            elif entity_id.startswith('input_select'):
+            elif entity_id.startswith('input_select') or entity_id.startswith('select'):
                 apis.ha_api.get_entity(entity_id).call_service("select_next")
             elif entity_id.startswith('vacuum'):
                 if apis.ha_api.get_entity(entity_id).state == "docked":
@@ -424,7 +425,7 @@ class LuiController(object):
             fan_mode = entity.attributes.fan_modes[int(value)]
             entity.call_service("set_fan_mode", fan_mode=fan_mode)
 
-        if button_type == "mode-input_select":
+        if button_type in ["mode-input_select", "mode-select"]:
             entity = apis.ha_api.get_entity(entity_id)
             option = entity.attributes.options[int(value)]
             entity.call_service("select_option", option=option)
@@ -458,3 +459,9 @@ class LuiController(object):
             apis.ha_api.get_entity(entity_id).call_service("pause")
         if button_type == "timer-finish":
             apis.ha_api.get_entity(entity_id).call_service("finish")
+            
+    @property
+    def current_card(self) -> Card:
+        """Used to get the current card"""
+
+        return self._current_card

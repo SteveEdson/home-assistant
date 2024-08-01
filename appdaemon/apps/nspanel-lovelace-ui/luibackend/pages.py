@@ -1,4 +1,5 @@
 import datetime
+from dateutil import tz
 import dateutil.parser as dp
 import time
 
@@ -108,10 +109,17 @@ class LuiPagesGen(object):
 
 
     def update_time(self, kwargs):
-        time = datetime.datetime.now().strftime(self._config.get("timeFormat"))
+        time = None
+        # get current time, with timezone if set
+        if self._config.get("timezone"):
+            timezone = tz.gettz(self._config.get("timezone"))
+            time = datetime.datetime.now(tz=timezone)
+        else:
+            time = datetime.datetime.now()
+        nice_time = time.strftime(self._config.get("timeFormat"))
         addTemplate = self._config.get("timeAdditionalTemplate")
         addTimeText = apis.ha_api.render_template(addTemplate)
-        self._send_mqtt_msg(f"time~{time}~{addTimeText}")
+        self._send_mqtt_msg(f"time~{nice_time}~{addTimeText}")
 
     def update_date(self, kwargs):
         global babel_spec
@@ -184,6 +192,9 @@ class LuiPagesGen(object):
         else:
             entityType = "delete"
 
+        if entityId in ["sensor.weather_forecast_daily", "sensor.weather_forecast_hourly"]:
+            entityType = "weather"
+
         apis.ha_api.log(f"Generating item for {entityId} with type {entityType}", level="DEBUG")
 
         status_entity = apis.ha_api.get_entity(item.status) if item.status and apis.ha_api.entity_exists(item.status) else None
@@ -213,7 +224,7 @@ class LuiPagesGen(object):
                 if status_entity:
                     icon_res = get_icon_ha(item.status, overwrite=icon)
                     icon_color = self.get_entity_color(status_entity, ha_type=item.status.split(".")[0], overwrite=colorOverride)
-                    if item.status.startswith("sensor") and (cardType == "cardGrid" or cardType == "cardGrid2") and item.iconOverride is None:
+                    if item.status.startswith("sensor") and cardType in ["cardGrid", "cardGrid1", "cardGrid2"] and item.iconOverride is None:
                         icon_res = status_entity.state[:4]
                         if icon_res[-1] == ".":
                             icon_res = icon_res[:-1]
@@ -237,7 +248,7 @@ class LuiPagesGen(object):
             if status_entity:
                 icon_id = get_icon_ha(item.status, overwrite=icon)
                 icon_color = self.get_entity_color(status_entity, ha_type=item.status.split(".")[0], overwrite=colorOverride)
-                if item.status.startswith("sensor") and (cardType == "cardGrid" or cardType == "cardGrid2") and item.iconOverride is None:
+                if item.status.startswith("sensor") and cardType in ["cardGrid", "cardGrid1", "cardGrid2"] and item.iconOverride is None:
                     icon_id = status_entity.state[:4]
                     if icon_id[-1] == ".":
                         icon_id = icon_id[:-1]
@@ -310,7 +321,7 @@ class LuiPagesGen(object):
             value = value + unit_of_measurement
             if entityType == "binary_sensor":
                 value = get_translation(self._locale, f"backend.component.binary_sensor.state.{device_class}.{entity.state}")
-            if (cardType == "cardGrid" or cardType == "cardGrid2") and entityType == "sensor" and icon is None:
+            if cardType in ["cardGrid", "cardGrid1", "cardGrid2"] and entityType == "sensor" and icon is None:
                 icon_id = entity.state[:4]
                 if icon_id[-1] == ".":
                     icon_id = icon_id[:-1]
@@ -520,6 +531,50 @@ class LuiPagesGen(object):
             command = f"entityUpd~{heading}~{navigation}~{item}~{current_temp} {temperature_unit}~{dest_temp}~{state_value}~{min_temp}~{max_temp}~{step_temp}{icon_res}~{currently_translation}~{state_translation}~{action_translation}~{temperature_unit_icon}~{dest_temp2}~{detailPage}"
         self._send_mqtt_msg(command)
 
+    def generate_chart_page(self, navigation, title, entity):
+        item = entity.entityId
+        if not apis.ha_api.entity_exists(item):
+            command = f"entityUpd~Not found~{navigation}"
+        else:
+            entity       = apis.ha_api.get_entity(item)
+            heading      = title if title != "unknown" else entity.attributes.friendly_name
+
+            # get data from homeassistant
+            data_raw = apis.ha_api.get_history(entity_id = item, days = 7)
+            data = [(d.get('last_updated', None),d.get('state', None)) for d in data_raw[0]]
+            data = dict(data)
+
+            # Parse timestamps and convert to datetime objects, excluding 'unavailable' values
+            time_temp_pairs = [(datetime.datetime.fromisoformat(timestamp), int(val)) for timestamp, val in data.items() if val != 'unavailable']
+            # Sort the data based on timestamps
+            time_temp_pairs.sort(key=lambda x: x[0])
+            # Calculate the time span
+            start_time = time_temp_pairs[0][0]
+            end_time = time_temp_pairs[-1][0]
+            time_span = end_time - start_time
+            # Calculate time intervals for evenly spaced data points
+            num_data_points = 24
+            time_intervals = [start_time + i * time_span / (num_data_points - 1) for i in range(num_data_points)]
+            # Find the closest data points for these time intervals
+            evenly_spaced_data = []
+            for interval in time_intervals:
+                closest_pair = min(time_temp_pairs, key=lambda x: abs(x[0] - interval))
+                time, val = closest_pair
+                val = int(val)
+                evenly_spaced_data.append((time, val))
+
+            datapoints = ""
+            for idx, (time, val) in enumerate(evenly_spaced_data):
+                datapoints += f"{val}~"
+
+            color = 65504
+            ydesc = "Akku [%]"
+            yscale = "25:50:75:100"
+            #datapoints = "19^22:00~17~12~8~7^2:00~6~6~5~5^6:00~5~15~19~12^10:00~17~24~18~12^14:00~13~13~13~15^18:00~25~28~26"
+
+            command = f"entityUpd~{heading}~{navigation}~{color}~{ydesc}~{yscale}~{datapoints}"
+        self._send_mqtt_msg(command)
+
     def generate_media_page(self, navigation, title, entity, entities, mediaBtn):
         entityId = entity.entityId
         if entity.status is not None:
@@ -727,6 +782,8 @@ class LuiPagesGen(object):
         if send_page_type:
             if card.cardType == "cardGrid" and len(card.entities) > 6:
                 card.cardType = "cardGrid2"
+            if card.cardType == "cardGrid1":
+                card.cardType = "cardGrid"
             self.page_type(card.cardType)
 
         # send sleep timeout if there is one configured for the current card
@@ -736,7 +793,7 @@ class LuiPagesGen(object):
             self._send_mqtt_msg(f'timeout~{self._config.get("sleepTimeout")}')
         
         temp_unit = card.raw_config.get("temperatureUnit", "celsius")
-        if card.cardType in ["cardEntities", "cardGrid", "cardGrid2"]:
+        if card.cardType in ["cardEntities", "cardGrid", "cardGrid1","cardGrid2"]:
             self.generate_entities_page(navigation, card.title, card.entities, card.cardType, temp_unit)
             return
         if card.cardType == "cardThermo":
@@ -771,6 +828,10 @@ class LuiPagesGen(object):
         if card.cardType == "cardPower":
             self.generate_power_page(navigation, card.title, card.entities)
             return
+        if card.cardType == "cardChart":
+            self.generate_chart_page(navigation, card.title, card.entity)
+            return
+
 
     def generate_light_detail_page(self, entity_id, is_open_detail=False):
         if entity_id.startswith('uuid'):

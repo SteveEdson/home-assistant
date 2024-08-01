@@ -1,5 +1,5 @@
 import re
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 import requests
 from bs4 import BeautifulSoup
@@ -15,7 +15,19 @@ TEST_CASES = {
     "Test_004": {"uprn": 90092621},
 }
 ICON_MAP = {"RECYCLING": "mdi:recycle", "GARDEN": "mdi:leaf", "REFUSE": "mdi:trash-can"}
-REGEX = r"(\d+ \w{3})"
+REGEX = {
+    "DATES": r"(\d+ \w{3})",
+    "DAYS": r"every: (Monday|Tuesday|Wednesday|Thursday|Friday)",
+}
+DAYS = {
+    "Monday": 0,
+    "Tuesday": 1,
+    "Wednesday": 2,
+    "Thursday": 3,
+    "Friday": 4,
+    "Saturday": 5,
+    "Sunday": 6,
+}
 
 
 class Source:
@@ -29,18 +41,15 @@ class Source:
         This tries to deal year-end dates when the YEAR is missing
         """
         d += " " + str(y)
-        date = datetime.strptime(d, "%d %b %Y")
+        try:
+            date = datetime.strptime(d, "%d %b %Y")
+        except ValueError:
+            date = datetime.strptime(d, "%A %d %b %Y")
         if (date - t) < timedelta(days=-31):
             date = date.replace(year=date.year + 1)
         return date.date()
 
     def append_entries(self, d: datetime, w: str, e: list) -> list:
-        """
-        Append provided entry and Refuse entry for the same day.
-
-        Refuse is collected on the same dates as alternating Recycling/Garden collections,
-        so create two entries for each date Refuse & Recycling, or Refuse & Garden
-        """
         e.append(
             Collection(
                 date=d,
@@ -48,17 +57,30 @@ class Source:
                 icon=ICON_MAP.get(w.upper()),
             )
         )
-        e.append(
-            Collection(
-                date=d,
-                t="Refuse",
-                icon=ICON_MAP.get("REFUSE"),
-            )
-        )
         return e
 
-    def fetch(self):
+    def get_xmas_map(self, footer_panel) -> dict[date, date]:
+        if not (
+            footer_panel
+            and footer_panel.find("table")
+            and footer_panel.find("table").find("tr")
+        ):
+            return {}
+        xmas_map: dict = {}
+        today = datetime.now()
+        yr = int(today.year)
+        for tr in footer_panel.find("table").findAll("tr")[1:]:
+            try:
+                moved, moved_to = tr.findAll("td")
+                moved = self.check_date(moved.text, today, yr)
+                moved_to = self.check_date(moved_to.text, today, yr)
+                xmas_map[moved] = moved_to
+            except Exception as e:
+                print(e)
+                continue
+        return xmas_map
 
+    def fetch(self):
         today = datetime.now()
         today = today.replace(hour=0, minute=0, second=0, microsecond=0)
         yr = int(today.year)
@@ -71,22 +93,37 @@ class Source:
 
         panel = soup.find("div", {"aria-label": "Refuse and Recycling Collection"})
         panel_data = panel.find("div", {"class": "atPanelData"})
-        panel_data = panel_data.text.split("Next")[
+        waste_data = panel_data.text.split("Next")[
             1:
         ]  # remove first element it just contains general info
 
+        # get table of holiday moved dates (only around xmas)
+        footer_panel = panel.find("div", {"class": "atPanelFooter"})
+        xmas_map = self.get_xmas_map(footer_panel)
+
         entries = []
-        for item in panel_data:
+        # Deal with Recycling and Garden collections
+        for item in waste_data:
             text = item.replace("\r\n", "").strip()
             if "recycling" in text:
-                dates = re.findall(REGEX, text)
+                dates = re.findall(REGEX["DATES"], text)
                 for dt in dates:
                     dt = self.check_date(dt, today, yr)
+                    dt = xmas_map.get(dt, dt)
                     self.append_entries(dt, "Recycling", entries)
             elif "garden" in text:
-                dates = re.findall(REGEX, text)
+                dates = re.findall(REGEX["DATES"], text)
                 for dt in dates:
                     dt = self.check_date(dt, today, yr)
+                    dt = xmas_map.get(dt, dt)
                     self.append_entries(dt, "Garden", entries)
+
+        # Refuse collections only have a DAY not a date, so work out dates for the next few collections
+        refuse_day = re.findall(REGEX["DAYS"], panel_data.text)[0]
+        refuse_date = today + timedelta((int(DAYS[refuse_day]) - today.weekday()) % 7)
+        for i in range(0, 4):
+            temp_date = (refuse_date + timedelta(days=7 * i)).date()
+            temp_date = xmas_map.get(temp_date, temp_date)
+            self.append_entries(temp_date, "Refuse", entries)
 
         return entries

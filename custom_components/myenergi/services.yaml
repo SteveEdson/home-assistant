@@ -63,3 +63,19 @@ myenergi_smart_boost:
       required: true
       selector:
         time:
+myenergi_stop_boost:
+  name: Stop boost
+  description: Stop boost
+  target:
+    device:
+      model: Zappi
+    entity:
+      domain: select
+myenergi_unlock:
+  name: Unlock
+  description: Unlock
+  target:
+    device:
+      model: Zappi
+    entity:
+      domain: select

@@ -40,7 +40,7 @@ services:
     environment:
       - 'HA_URL=https://home.edson.co'
       - 'TOKEN=${TOKEN}'
-      - 'DASH_URL=http://192.168.1.99:5055'
+      - 'DASH_URL=http://192.168.1.145:5055'
       - 'TZ=Europe/London'
     volumes:
       - ./appdaemon:/conf

@@ -1,14 +1,17 @@
 """Support for Tesla cars."""
+
 import asyncio
 from datetime import timedelta
 from functools import partial
 from http import HTTPStatus
 import logging
+import ssl
 
 import async_timeout
 from homeassistant.config_entries import SOURCE_IMPORT
 from homeassistant.const import (
     CONF_ACCESS_TOKEN,
+    CONF_CLIENT_ID,
     CONF_DOMAIN,
     CONF_SCAN_INTERVAL,
     CONF_TOKEN,
@@ -28,6 +31,8 @@ from teslajsonpy.exceptions import IncompleteCredentials, TeslaException
 
 from .config_flow import CannotConnect, InvalidAuth, validate_input
 from .const import (
+    CONF_API_PROXY_CERT,
+    CONF_API_PROXY_URL,
     CONF_ENABLE_TESLAMATE,
     CONF_EXPIRATION,
     CONF_INCLUDE_ENERGYSITES,
@@ -130,11 +135,22 @@ async def async_setup(hass, base_config):
 
 async def async_setup_entry(hass, config_entry):
     """Set up Tesla as config entry."""
-    # pylint: disable=too-many-locals,too-many-statements
+    # pylint: disable=too-many-locals,too-many-statements,too-many-branches
     hass.data.setdefault(DOMAIN, {})
     config = config_entry.data
     # Because users can have multiple accounts, we always
     # create a new session so they have separate cookies
+
+    if config.get(CONF_API_PROXY_CERT):
+        try:
+            SSL_CONTEXT.load_verify_locations(config[CONF_API_PROXY_CERT])
+            _LOGGER.debug("Trusting CA: %s", SSL_CONTEXT.get_ca_certs()[-1])
+        except (FileNotFoundError, ssl.SSLError):
+            _LOGGER.warning(
+                "Unable to load custom SSL certificate from %s",
+                config[CONF_API_PROXY_CERT],
+            )
+
     async_client = httpx.AsyncClient(
         headers={USER_AGENT: SERVER_SOFTWARE}, timeout=60, verify=SSL_CONTEXT
     )
@@ -164,6 +180,9 @@ async def async_setup_entry(hass, config_entry):
             polling_policy=config_entry.options.get(
                 CONF_POLLING_POLICY, DEFAULT_POLLING_POLICY
             ),
+            api_proxy_cert=config.get(CONF_API_PROXY_CERT),
+            api_proxy_url=config.get(CONF_API_PROXY_URL),
+            client_id=config.get(CONF_CLIENT_ID),
         )
         result = await controller.connect(
             include_vehicles=config.get(CONF_INCLUDE_VEHICLES),
@@ -434,6 +453,7 @@ class TeslaDataUpdateCoordinator(DataUpdateCoordinator):
             )
             _LOGGER.debug("Saving new tokens in config_entry")
 
+        data = None
         try:
             # Note: asyncio.TimeoutError and aiohttp.ClientError are already
             # handled by the data update coordinator.
