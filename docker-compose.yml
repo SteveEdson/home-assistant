@@ -131,6 +131,16 @@ services:
     volumes:
       - openwakeword:/config
 
+  python-matter-server:
+    container_name: matter-server
+    restart: unless-stopped
+    security_opt:
+        - apparmor=unconfined
+    volumes:
+        - $(pwd)/data:/data
+    network_mode: host
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable    
+
 volumes:
   piper_data:
   whisper_data:
