@@ -138,6 +138,7 @@ services:
         - apparmor=unconfined
     volumes:
         - matter_data:/data
+        - /run/dbus:/run/dbus:ro
     network_mode: host
     image: ghcr.io/home-assistant-libs/python-matter-server:stable    
 
