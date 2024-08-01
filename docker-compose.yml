@@ -137,7 +137,7 @@ services:
     security_opt:
         - apparmor=unconfined
     volumes:
-        - $(pwd)/data:/data
+        - matter_data:/data
     network_mode: host
     image: ghcr.io/home-assistant-libs/python-matter-server:stable    
 
@@ -148,4 +148,5 @@ volumes:
   mosquitto_data:
   mysql8_data:
   ma_data:
+  matter_data:
 
