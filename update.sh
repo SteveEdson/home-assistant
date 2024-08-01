@@ -10,5 +10,6 @@ docker-compose up -d --build --remove-orphans ma
 docker-compose up -d --build --remove-orphans whisper
 docker-compose up -d --build --remove-orphans piper
 docker-compose up -d --build --remove-orphans openwakeword
+docker-compose up -d --build --remove-orphans python-matter-server
 docker image prune -f
 docker container prune -f
